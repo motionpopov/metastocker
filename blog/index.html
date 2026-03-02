@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" class="h-full light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fafafa" />
+    <title>Blog - MetaStocker</title>
+    <link rel="icon" href="../assets/metalogo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/metalogo.png" />
+
+    <meta name="description" content="MetaStocker Blog: Guides, tips, and tutorials for AI metadata generation." />
+    <link rel="canonical" href="/blog/" />
+
+    <link rel="stylesheet" href="../style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="particles"></div>
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="topbar-inner container">
+            <a href="/" class="brand headline flex items-center gap-2" id="brandWrap"
+                style="text-decoration:none; color:inherit;">
+                <img id="brandLogo" src="../assets/metalogo.png" alt="MetaStocker" width="41" height="41"
+                    class="rounded" />
+                <span id="brandText">MetaStocker</span>
+            </a>
+            <div class="grow"></div>
+            <a href="/blog/" id="blogBtn" class="btn ghost" style="background:var(--muted); color:var(--text);">Blog</a>
+            <a href="/#about" id="aboutBtn" class="btn ghost">About</a>
+            <a href="/#contact" id="contactBtn" class="btn ghost">Contact</a>
+        </div>
+    </header>
+
+    <main class="container grid" style="gap:20px; padding-top:40px; padding-bottom: 60px;">
+        <!-- Lead -->
+        <section class="card pad text-center" style="padding: 60px 20px;">
+            <div class="flex flex-col gap-2 max-w-2xl mx-auto">
+                <h1 class="headline" style="font-size: clamp(32px, 4vw, 42px);">MetaStocker Blog</h1>
+                <p class="subtitle" style="font-size: 16px;">Insights, guides, and tools to help you master AI metadata
+                    and optimize your stock portfolio.</p>
+            </div>
+        </section>
+
+        <!-- Filters -->
+        <section class="flex justify-center mb-4">
+            <div id="categoryFilters" class="segments" role="group" aria-label="Blog Categories">
+                <input type="radio" id="cat-all" name="blogCat" value="all" checked>
+                <label for="cat-all">All</label>
+
+                <input type="radio" id="cat-guides" name="blogCat" value="guides">
+                <label for="cat-guides">Guides</label>
+
+                <input type="radio" id="cat-tips" name="blogCat" value="tips">
+                <label for="cat-tips">Tips</label>
+
+                <input type="radio" id="cat-tools" name="blogCat" value="tools">
+                <label for="cat-tools">Tools</label>
+
+                <input type="radio" id="cat-tutorials" name="blogCat" value="tutorials">
+                <label for="cat-tutorials">Tutorials</label>
+
+                <input type="radio" id="cat-industry" name="blogCat" value="industry">
+                <label for="cat-industry">Industry</label>
+            </div>
+        </section>
+
+        <!-- Articles Grid -->
+        <section id="blogGrid" class="grid cols-2" style="gap:24px;">
+            <!-- Populated by JS -->
+        </section>
+    </main>
+
+    <script>
+        const articles = [
+            {
+                "slug": "stock-photo-keywords-guide",
+                "title": "How to Write Keywords for Stock Photos in 2025",
+                "excerpt": "Learn the best practices for keywording stock photos to maximize your reach and sales on Adobe Stock, Shutterstock, and Envato.",
+                "category": "guides",
+                "date": "2025-02-25",
+                "tags": ["keywords", "shutterstock", "metadata"],
+                "readingTime": 6
+            }
+            // Add more articles here
+        ];
+
+        const blogGrid = document.getElementById('blogGrid');
+        const filterInputs = document.querySelectorAll('input[name="blogCat"]');
+
+        function renderArticles(filterCat = 'all') {
+            blogGrid.innerHTML = '';
+
+            const filtered = filterCat === 'all'
+                ? articles
+                : articles.filter(a => a.category === filterCat);
+
+            if (filtered.length === 0) {
+                blogGrid.innerHTML = '<div class="col-span-2 text-center text-subtle py-10">No articles found in this category.</div>';
+                return;
+            }
+
+            filtered.forEach(article => {
+                // Format date
+                const dateObj = new Date(article.date);
+                const formattedDate = dateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+                // Capitalize category
+                const catName = article.category.charAt(0).toUpperCase() + article.category.slice(1);
+
+                const card = document.createElement('a');
+                card.href = `${article.slug}.html`;
+                card.className = 'card pad flex flex-col hover:bg-muted/30 transition-colors';
+                card.style.textDecoration = 'none';
+                card.style.color = 'inherit';
+
+                // Use existing MetaStocker badge/hint classes
+                let tagsHtml = article.tags.map(t => `<span class="badge" style="font-size:10px;">#${t}</span>`).join(' ');
+
+                card.innerHTML = `
+          <div class="flex items-center gap-3 mb-3">
+            <span class="badge" style="background:var(--accent); color:var(--accent-contrast); border-color:var(--accent); font-weight:600;">${catName}</span>
+            <span class="hint">${formattedDate} · ${article.readingTime} min read</span>
+          </div>
+          <h2 class="headline" style="font-size:20px; line-height:1.3; margin-bottom:8px;">${article.title}</h2>
+          <p class="subtitle mb-4 flex-1" style="line-height:1.5;">${article.excerpt}</p>
+          <div class="flex items-center gap-2 mt-auto pt-4 border-t" style="border-color:var(--border);">
+            ${tagsHtml}
+            <div class="grow"></div>
+            <span class="btn ghost py-1 px-3 text-xs" style="pointer-events:none;">Read article</span>
+          </div>
+        `;
+
+                blogGrid.appendChild(card);
+            });
+        }
+
+        // Initial render
+        renderArticles();
+
+        // Filter logic
+        filterInputs.forEach(input => {
+            input.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    renderArticles(e.target.value);
+                }
+            });
+        });
+
+        // Handle standard site buttons (About/Contact functionality is in main app, here we just link back)
+        document.getElementById('aboutBtn').addEventListener('click', (e) => {
+            // Just let the anchor tag do its work to go to /#about
+        });
+
+        // Quick and simple TSParticles initialization for the background
+        tsParticles.load("particles", {
+            particles: {
+                number: { value: 30 },
+                color: { value: "#6b7280" },
+                opacity: { value: 0.2 },
+                size: { value: 3 },
+                move: { enable: true, speed: 0.5, direction: "none", outModes: "out" }
+            },
+            interactivity: { events: { onHover: { enable: false } } }
+        });
+    </script>
+</body>
+
+</html>
