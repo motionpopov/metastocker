@@ -371,8 +371,20 @@ label:has(#accessKey) {
   opacity: 0;
   transform: translateY(4px);
   pointer-events: none;
-  transition: opacity .15s ease, transform .15s ease;
+  transition: opacity .15s ease, transform .15s ease, visibility .15s ease;
+  visibility: hidden;
   z-index: 50;
+}
+
+/* Bridge the gap so mouse can move from icon to tooltip without losing hover */
+.hint-tooltip .tooltip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 12px;
+  background: transparent;
 }
 
 /* Threads tooltip */
@@ -387,6 +399,7 @@ label:has(#accessKey) {
 .hint-tooltip:hover .tooltip,
 .hint-tooltip:focus-within .tooltip {
   opacity: 1;
+  visibility: visible;
   transform: translateY(0);
   pointer-events: auto;
 }

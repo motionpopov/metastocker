@@ -18,6 +18,9 @@
   <!-- exifr for image metadata extraction -->
   <script src="https://cdn.jsdelivr.net/npm/exifr/dist/full.umd.js"></script>
 
+  <!-- PDF.js for extracting previews from Adobe Illustrator (.ai) files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
   <!-- GoatCounter Analytics -->
   <script data-goatcounter="https://metastocker.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
@@ -31,7 +34,7 @@
         <img id="brandLogo" src="assets/metalogo.png" alt="MetaStocker" width="41" height="41" class="rounded" />
         <span id="brandText">MetaStocker</span>
       </div>
-      <span class="badge">v1.40</span>
+      <span class="badge">v1.50</span>
       <span id="tokenCounter" class="badge hidden" title="Total tokens used in this session">0 tokens</span>
       <div class="grow"></div>
       <a href="/blog/" id="blogBtn" class="btn ghost">Blog</a>
@@ -60,9 +63,10 @@
                 <span class="label flex items-center gap-2">Access Token
                   <span class="hint-tooltip">
                     <span class="qmark" tabindex="0" aria-label="Where to get the access token">?</span>
-                    <span class="tooltip">To use this app, register on the OpenAI Platform and create an API key. See
-                      the <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener"
-                        class="underline">official instructions</a>.</span>
+                    <span class="tooltip">For GPT models — get a key at <a href="https://platform.openai.com/api-keys"
+                        target="_blank" rel="noopener" class="underline">OpenAI</a>. For Grok models — get a key at <a
+                        href="https://console.x.ai/" target="_blank" rel="noopener" class="underline">xAI
+                        Console</a>.</span>
                   </span>
                 </span>
                 <div class="flex items-center gap-2">
@@ -90,16 +94,12 @@
               </label>
               <div class="grid cols-2" style="gap:12px">
                 <label class="block">
-                  <span class="label flex items-center gap-2">Model
-                    <span class="hint-tooltip">
-                      <span class="qmark" tabindex="0" aria-label="Model cost">?</span>
-                      <span class="tooltip">Approx. $0.30 for 5,000 images/videos (titles + tags).</span>
-                    </span>
-                  </span>
+                  <span class="label flex items-center gap-2">Model</span>
                   <select id="model" class="select">
                     <option value="gpt-5">gpt-5</option>
                     <option value="gpt-5-mini">gpt-5-mini</option>
                     <option value="gpt-5-nano" selected>gpt-5-nano</option>
+                    <option value="grok-4-1-fast-reasoning">grok-4-1-fast-reasoning</option>
                   </select>
                   <div id="modelHint" class="hint mt-1.5 min-h-[1.25rem]"></div>
                 </label>
@@ -158,7 +158,7 @@
           </label>
           <label class="block mt-2">
             <div class="flex items-center gap-2">
-              <input id="useMetadata" type="checkbox" checked
+              <input id="useMetadata" type="checkbox"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
               <span class="label !m-0 !mb-0 cursor-pointer text-sm">Use image metadata (if available)</span>
             </div>
@@ -192,8 +192,8 @@
                 experimental, three is conservative. Raise it to accelerate processing.</span>
             </span>
           </label>
-          <input id="concurrency" type="range" value="3" min="1" max="10" class="w-40" />
-          <span id="concurrencyValue" class="badge">3</span>
+          <input id="concurrency" type="range" value="10" min="1" max="20" class="w-40" />
+          <span id="concurrencyValue" class="badge">10</span>
         </div>
         <button id="startBtn" class="btn primary">Start</button>
         <button id="pauseBtn" class="btn ghost hidden" disabled>Pause</button>
@@ -215,7 +215,7 @@
           <div class="hint" id="fileCount"><span id="fileCountText">0 files imported</span></div>
         </div>
         <input id="fileInput" type="file" multiple class="hidden"
-          accept="image/jpeg,image/png,image/svg+xml,video/mp4,video/webm,video/ogg,video/quicktime,video/*" />
+          accept="image/jpeg,image/png,image/svg+xml,video/mp4,video/webm,video/ogg,video/quicktime,video/*,.ai" />
       </div>
 
       <!-- Minimalist Progress (IDs preserved for JS) -->
@@ -300,8 +300,11 @@
       <div class="text-sm leading-relaxed">
         MetaStocker helps creators attribute stock assets with high-quality metadata for Adobe Stock, Envato Elements,
         and Shutterstock.
-        Supported formats: images (JPEG, PNG, SVG) and videos (MP4, WEBM, OGG, QuickTime). All processing runs locally
+        Supported formats: images (JPEG, PNG, SVG, AI) and videos (MP4, WEBM, OGG, QuickTime). All processing runs
+        locally
         in your browser; API keys stay on your device.
+        <br><br>
+        <span class="hint">Note: .ai files must be saved with "PDF Compatibility" to be processed.</span>
       </div>
     </div>
   </div>

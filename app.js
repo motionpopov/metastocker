@@ -376,6 +376,36 @@ function buildPrompt(metadata) {
 }
 
 /************** Preview builders **************/
+if (typeof pdfjsLib !== 'undefined') {
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+function isAiFile(file) { return extOf(file.name) === 'ai'; }
+
+async function extractAiPreviewToDataUrl(file, maxEdge) {
+  if (typeof pdfjsLib === 'undefined') throw new Error('PDF.js not loaded');
+  const arrayBuffer = await file.arrayBuffer();
+  try {
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+    const pdf = await loadingTask.promise;
+    const page = await pdf.getPage(1);
+    const viewport = page.getViewport({ scale: 1.0 });
+    const scale = Math.min(1, maxEdge / Math.max(viewport.width, viewport.height));
+    const scaledViewport = page.getViewport({ scale });
+
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = scaledViewport.width;
+    canvas.height = scaledViewport.height;
+
+    const renderContext = { canvasContext: ctx, viewport: scaledViewport };
+    await page.render(renderContext).promise;
+    return canvas.toDataURL('image/jpeg', 0.85);
+  } catch (e) {
+    throw new Error('Failed to parse .ai file (Make sure "Create PDF Compatible File" was checked): ' + e.message);
+  }
+}
+
 async function fileToDataUrl(file) { return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(r.result); r.onerror = rej; r.readAsDataURL(file); }); }
 async function downscaleDataUrlToJpeg(dataUrl, maxEdge, q = 0.85) {
   const img = await new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = dataUrl; });
@@ -434,13 +464,20 @@ function isImage(file) { return file.type.startsWith('image/'); }
 async function buildThumbDataUrl(file) {
   const EDGE = 1920;
   try {
+    if (isAiFile(file)) return await extractAiPreviewToDataUrl(file, EDGE);
     if (isImage(file)) return await downscaleImageToJpegDataUrl(file, EDGE);
     if (isVideo(file)) return await captureMiddleFrameToDataUrl(file, EDGE);
     throw new Error('Unsupported file type');
-  } catch (e) { return createPlaceholderImage(EDGE); }
+  } catch (e) {
+    if (isAiFile(file)) throw e; // Fail hard for AI files without PDF compatibility
+    console.warn('Preview error:', e);
+    return createPlaceholderImage(EDGE);
+  }
 }
 
 /************** OpenAI call **************/
+function isGrokModel(m) { return m.startsWith('grok'); }
+function getApiEndpoint(m) { return isGrokModel(m) ? 'https://api.x.ai/v1/chat/completions' : 'https://api.openai.com/v1/chat/completions'; }
 function modelTemperature(m) {
   if (m.startsWith('gpt-5')) return undefined;
   return 0.2;
@@ -461,14 +498,14 @@ async function callOpenAI({ accessKey, model, imageDataUrl, prompt, responseForm
   const temp = modelTemperature(model);
   if (temp !== undefined) body.temperature = temp;
   if (model.startsWith('gpt-5')) body.reasoning_effort = 'medium';
-  const tierEl = document.getElementById('serviceTier'); const tier = tierEl ? (tierEl.value || 'flex') : 'flex'; body.service_tier = tier;
+  if (!isGrokModel(model)) { const tierEl = document.getElementById('serviceTier'); const tier = tierEl ? (tierEl.value || 'flex') : 'flex'; body.service_tier = tier; }
   const headers = { 'Authorization': `Bearer ${accessKey}`, 'Content-Type': 'application/json' };
   const fetchOptions = { method: 'POST', headers, body: JSON.stringify(body) };
   for (let attempt = 1; attempt <= 3; attempt++) {
     let result;
     try {
       addLog(`Attempt ${attempt}/3 for API call`, 'info');
-      result = await workerFetch('https://api.openai.com/v1/chat/completions', fetchOptions);
+      result = await workerFetch(getApiEndpoint(model), fetchOptions);
     } catch (err) {
       addLog(`Attempt ${attempt} failed: ${err.message}`, 'warning');
       if (attempt < 3) { await sleep(2000 * attempt); continue; }
@@ -608,6 +645,7 @@ async function processOne(idx) {
     const metadata = await extractMetadata(file);
     const prompt = buildPrompt(metadata);
     let previewUrl = thumbCache.get(file.name) || '';
+    if (!previewUrl && isAiFile(file)) throw new Error('Cannot extract PDF preview from .ai. Was it saved with "Create PDF Compatible File" checked?');
     const raw = await callOpenAI({ accessKey, model, imageDataUrl: previewUrl, prompt });
     const title = clip(raw.title || '', ADOBE_CONFIG.titleMax);
     let tags = normalizeTags(raw.tags || [], parseAlwaysTags(), ADOBE_CONFIG.tagsMax);
@@ -798,19 +836,22 @@ function updateModelHint() {
 
   let hintText = '';
   let isNano = model === 'gpt-5-nano';
+  const isGrok = isGrokModel(model);
 
   if (model === 'gpt-5') {
-    hintText = '<span class="text-red-500 font-bold">⚠️ High cost.</span> Only for rare cases where deep reasoning is needed.';
+    hintText = '<span class="text-red-500 font-bold">⚠️ High cost.</span> Deep reasoning. (~$0.30 per 100 files)';
   } else if (model === 'gpt-5-mini') {
-    hintText = 'Perfect balance of quality and cost.';
+    hintText = '⚖️ Perfect balance of quality and cost.';
   } else if (model === 'gpt-5-nano') {
-    hintText = 'Fast and cheapest. Supports Flex mode.';
+    hintText = '⚡ Fast and cheapest. (~$0.30 per 5,000 files). Supports Flex mode.';
+  } else if (isGrok) {
+    hintText = '<span class="text-blue-500 font-bold">🚀 xAI Grok</span> — fast reasoning, 2M context. Excellent choice! Requires xAI API key.';
   }
 
   if (hintEl) hintEl.innerHTML = hintText;
 
   if (serviceTier) {
-    if (!isNano) {
+    if (!isNano || isGrok) {
       serviceTier.value = 'default';
       serviceTier.disabled = true;
       serviceTier.style.opacity = '0.5';
