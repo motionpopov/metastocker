@@ -206,6 +206,7 @@ function updateFileCount() {
 }
 
 /************** Types & Globals **************/
+const SUPPORTED = ['image/jpeg', 'image/png', 'image/svg+xml', 'video/mp4', 'video/webm', 'video/ogg', 'video/quicktime'];
 let files = [];
 let fileStatuses = [];
 let csvStore = new Map();
@@ -376,9 +377,7 @@ function buildPrompt(metadata) {
 
 /************** Preview builders **************/
 if (typeof pdfjsLib !== 'undefined') {
-  // Version 3.x+ setup
-  const workerUrl = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-  pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 }
 
 function isAiFile(file) { return extOf(file.name) === 'ai'; }
@@ -387,7 +386,6 @@ async function extractAiPreviewToDataUrl(file, maxEdge) {
   if (typeof pdfjsLib === 'undefined') throw new Error('PDF.js not loaded');
   const arrayBuffer = await file.arrayBuffer();
   try {
-    addLog(`Starting PDF.js extraction for ${file.name}`, 'info');
     const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
     const pdf = await loadingTask.promise;
     const page = await pdf.getPage(1);
@@ -404,7 +402,6 @@ async function extractAiPreviewToDataUrl(file, maxEdge) {
     await page.render(renderContext).promise;
     return canvas.toDataURL('image/jpeg', 0.85);
   } catch (e) {
-    addLog(`.ai extraction failed for ${file.name}: ${e.message}`, 'error');
     throw new Error('Failed to parse .ai file (Make sure "Create PDF Compatible File" was checked): ' + e.message);
   }
 }
@@ -747,12 +744,8 @@ async function handleFiles(list) {
   }
   for (let i = 0; i < arr.length; i++) {
     try {
-      const dataUrl = await buildThumbDataUrl(arr[i]);
-      thumbCache.set(arr[i].name, dataUrl);
-      setThumb(startIdx + i, dataUrl);
-    } catch (e) {
-      addLog(`Thumbnail error for ${arr[i].name}: ${e.message}`, 'warning');
-    }
+      const dataUrl = await buildThumbDataUrl(arr[i]); thumbCache.set(arr[i].name, dataUrl); setThumb(startIdx + i, dataUrl);
+    } catch (e) { }
     document.getElementById('loaderText2').textContent = `${i + 1} / ${arr.length}`;
     document.getElementById('loaderBar2').style.width = `${Math.round(((i + 1) / arr.length) * 100)}%`;
     await tick();
