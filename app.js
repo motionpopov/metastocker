@@ -682,25 +682,32 @@ function buildFreepikCsv() {
 
 /************** Processing pipeline **************/
 const PRICING = {
-  'gpt-5.4-mini': { in: 0.75 / 1000000, out: 4.50 / 1000000 },
-  'gpt-5.4-nano': { in: 0.20 / 1000000, out: 1.25 / 1000000 }
+  'gpt-5.4-mini': { in: 0.75 / 1000000, cachedIn: 0.075 / 1000000, out: 4.50 / 1000000 },
+  'gpt-5.4-nano': { in: 0.20 / 1000000, cachedIn: 0.020 / 1000000, out: 1.25 / 1000000 }
 };
-const state = { running: false, paused: false, nextIdx: 0, inFlight: 0, completed: 0, phaseTotal: 0, totalTokens: 0, promptTokens: 0, completionTokens: 0, totalCost: 0 };
+const state = { running: false, paused: false, nextIdx: 0, inFlight: 0, completed: 0, phaseTotal: 0, totalTokens: 0, promptTokens: 0, cachedTokens: 0, completionTokens: 0, totalCost: 0 };
 function addTokens(usage, model) {
   if (!usage) return;
   const pt = usage.prompt_tokens || 0;
   const ct = usage.completion_tokens || 0;
+  const cached = usage.prompt_tokens_details?.cached_tokens || 0;
+  const normalPt = pt - cached;
+
   const tt = usage.total_tokens || (pt + ct);
   state.totalTokens = (state.totalTokens || 0) + tt;
-  state.promptTokens = (state.promptTokens || 0) + pt;
+  state.promptTokens = (state.promptTokens || 0) + normalPt;
+  state.cachedTokens = (state.cachedTokens || 0) + cached;
   state.completionTokens = (state.completionTokens || 0) + ct;
   if (model && PRICING[model]) {
-    state.totalCost = (state.totalCost || 0) + (pt * PRICING[model].in) + (ct * PRICING[model].out);
+    state.totalCost = (state.totalCost || 0) + (normalPt * PRICING[model].in) + (cached * PRICING[model].cachedIn) + (ct * PRICING[model].out);
   }
   const el = $('#tokenCounter');
   if (el) {
     let costStr = state.totalCost > 0 ? ` ≈ $${state.totalCost.toFixed(4)}` : '';
-    el.innerHTML = `${state.totalTokens.toLocaleString()} tokens <span class="opacity-70">(In: ${state.promptTokens.toLocaleString()}, Out: ${state.completionTokens.toLocaleString()})</span>${costStr}`;
+    let details = `In: ${state.promptTokens.toLocaleString()}`;
+    if (state.cachedTokens > 0) details += `, Cached: ${state.cachedTokens.toLocaleString()}`;
+    details += `, Out: ${state.completionTokens.toLocaleString()}`;
+    el.innerHTML = `${state.totalTokens.toLocaleString()} tokens <span class="opacity-70">(${details})</span>${costStr}`;
     el.classList.remove('hidden');
   }
 }
