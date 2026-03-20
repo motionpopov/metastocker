@@ -428,9 +428,11 @@ function createPlaceholderImage(maxEdge) {
 }
 function captureFrameAt(file, frac, maxEdge, q = 0.85) {
   return new Promise((resolve, reject) => {
-    const url = URL.createObjectURL(file);
+    const safeType = file.type ? file.type : (extOf(file.name) === 'mov' ? 'video/quicktime' : 'video/mp4');
+    const safeFile = !file.type ? new File([file], file.name, { type: safeType }) : file;
+    const url = URL.createObjectURL(safeFile);
     const video = document.createElement('video');
-    video.preload = 'metadata'; video.src = url; video.muted = true; video.playsInline = true; video.crossOrigin = 'anonymous';
+    video.preload = 'metadata'; video.src = url; video.muted = true; video.playsInline = true;
     let timer, loadTimer, done = false;
     const cleanup = () => { if (done) return; done = true; URL.revokeObjectURL(url); clearTimeout(timer); clearTimeout(loadTimer); video.remove(); };
     const draw = () => {
@@ -454,10 +456,13 @@ function captureFrameAt(file, frac, maxEdge, q = 0.85) {
 }
 async function captureMiddleFrameToDataUrl(file, maxEdge) {
   const order = [0.25, 0.5, 0.75];
+  let lastErr = null;
   for (let i = 0; i < order.length; i++) {
     try { return await captureFrameAt(file, order[i], maxEdge); }
-    catch (e) { if (i === order.length - 1) return createPlaceholderImage(maxEdge); await sleep(100); }
+    catch (e) { lastErr = e; await sleep(100); }
   }
+  console.warn('Video decode failed after all attempts:', lastErr);
+  throw new Error('VIDEO_DECODE_FAILED');
 }
 function isVideo(file) { return file.type.startsWith('video/') || VIDEO_EXT.includes(extOf(file.name)); }
 function isImage(file) { return file.type.startsWith('image/') || IMAGE_EXT.includes(extOf(file.name)); }
@@ -469,7 +474,7 @@ async function buildThumbDataUrl(file) {
     if (isVideo(file)) return await captureMiddleFrameToDataUrl(file, EDGE);
     throw new Error('Unsupported file type');
   } catch (e) {
-    if (isAiFile(file)) throw e; // Fail hard for AI files without PDF compatibility
+    if (isAiFile(file) || e.message === 'VIDEO_DECODE_FAILED') throw e; // Fail hard
     console.warn('Preview error:', e);
     return createPlaceholderImage(EDGE);
   }
@@ -554,9 +559,15 @@ function addTableRow(idx, file) {
     <td class="p-3 text-[color:var(--subtle)]">${idx + 1}</td>
     <td class="p-3"><div class="h-16 w-16 rounded-lg overflow-hidden" style="background:var(--muted)"><img id="thumb-${idx}" class="h-16 w-16 object-cover" alt="" /></div></td>
     <td class="p-3 cell">${file.name.length > 25 ? file.name.substring(0, 25) + '...' : file.name} ${isV ? '<span class="badge">video</span>' : ''}</td>
-  <td class="p-3 cell col-title" id="t-${idx}">—</td>
+    <td class="p-3 cell col-title" id="t-${idx}">—</td>
   <td class="p-3 cell col-tags" id="g-${idx}">—</td>
-  <td class="p-3" id="s-${idx}"><span class="text-amber-600">queued</span></td>`;
+  <td class="p-3" id="s-${idx}"><span class="text-amber-600">queued</span></td>
+  <td class="p-3 text-center">
+    <div class="flex items-center justify-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity">
+      <button onclick="window.regenerateFile(${idx})" class="hover:bg-blue-100 rounded p-1 text-blue-600" title="Regenerate">↻</button>
+      <button onclick="window.deleteFile(${idx})" class="hover:bg-red-100 rounded p-1 text-red-600" title="Delete">✕</button>
+    </div>
+  </td>`;
   document.getElementById('resultsBody').appendChild(tr);
 }
 function setThumb(idx, src) { const img = document.getElementById('thumb-' + idx); if (img) { img.src = src; img.classList.remove('hidden'); } }
@@ -566,6 +577,32 @@ function updateTableRow(idx, { title, description, tags, category, status, error
   if (status) { const el = document.getElementById('s-' + idx); if (el) el.innerHTML = `<span class="${status === 'done' ? 'text-green-700' : 'text-amber-600'}">${status}</span>`; }
   if (error) { const el = document.getElementById('s-' + idx); if (el) el.innerHTML = `<span class="text-red-600">${error}</span>`; }
 }
+window.deleteFile = function (idx) {
+  if (state.running && fileStatuses[idx] === 'processing') return alert('Cannot delete while processing');
+  const file = files[idx]; if (!file) return;
+  const tr = document.getElementById('row-' + idx); if (tr) tr.remove();
+  const name = file.name;
+  csvStore.delete(name); envatoRows.delete(name); shutterRows.delete(name); thumbCache.delete(name);
+  if (fileStatuses[idx] === 'done' || fileStatuses[idx] === 'error') { if (state.completed > 0) state.completed--; }
+  files[idx] = null; fileStatuses[idx] = 'deleted';
+  updateFileCount(); uiUpdate();
+};
+
+window.regenerateFile = async function (idx) {
+  if (state.running && fileStatuses[idx] === 'processing') return alert('Already processing');
+  const file = files[idx]; if (!file) return;
+  if (fileStatuses[idx] === 'done' || fileStatuses[idx] === 'error') { if (state.completed > 0) state.completed--; }
+  fileStatuses[idx] = 'queued';
+  updateTableRow(idx, { status: 'queued', title: '—', tags: '—', error: '' });
+  const name = file.name;
+  csvStore.delete(name); envatoRows.delete(name); shutterRows.delete(name);
+  if (!state.running) {
+    state.inFlight++; uiUpdate();
+    try { await processOne(idx); } finally { state.inFlight--; uiUpdate(); }
+  } else {
+    if (state.nextIdx > idx) { state.inFlight++; uiUpdate(); processOne(idx).finally(() => { state.inFlight--; uiUpdate(); }); }
+  }
+};
 
 /************** Build CSVs **************/
 const ENVATO_HEADERS = [
@@ -662,7 +699,12 @@ async function processOne(idx) {
     const prompt = buildPrompt(metadata);
     let previewUrl = thumbCache.get(file.name) || '';
     if (!previewUrl && isAiFile(file)) throw new Error('Cannot extract PDF preview from .ai. Was it saved with "Create PDF Compatible File" checked?');
-    const raw = await callOpenAI({ accessKey, model, imageDataUrl: previewUrl, prompt });
+    if (!previewUrl && isVideoFilename(file.name)) throw new Error('Skipped: Video thumbnail could not be decoded (codec unsupported).');
+
+    // Instead of sending placeholder, if previewUrl isn't empty but is the placeholder string
+    let finalImageUrl = previewUrl.includes('f3f4f6') ? '' : previewUrl;
+
+    const raw = await callOpenAI({ accessKey, model, imageDataUrl: finalImageUrl, prompt });
     const title = clip(raw.title || '', ADOBE_CONFIG.titleMax);
     let tags = normalizeTags(raw.tags || [], parseAlwaysTags(), ADOBE_CONFIG.tagsMax);
     updateTableRow(idx, { title, tags, status: 'done' });
@@ -761,7 +803,16 @@ async function handleFiles(list) {
   for (let i = 0; i < arr.length; i++) {
     try {
       const dataUrl = await buildThumbDataUrl(arr[i]); thumbCache.set(arr[i].name, dataUrl); setThumb(startIdx + i, dataUrl);
-    } catch (e) { }
+    } catch (e) {
+      setThumb(startIdx + i, createPlaceholderImage(1024));
+      if (e.message === 'VIDEO_DECODE_FAILED') {
+        const isWin = /Win/i.test(navigator.userAgent);
+        const msg = isWin
+          ? '⚠️ Внимание: Некоторые видео (например ProRes или HEVC) не поддерживаются вашим Windows-браузером. Мы не смогли извлечь кадр, поэтому этот файл будет ПРОПУЩЕН при генерации (чтобы не тратить ваши токены впустую).\n\nРешение: переведите эти файлы в MP4-прокси (h264) или используйте браузер Safari на Mac.'
+          : '⚠️ Внимание: Браузер не смог извлечь кадр из видео (возможно неподдерживаемый кодек). Файл будет пропущен.';
+        if (!window.codecWarningShown) { window.codecWarningShown = true; setTimeout(() => alert(msg), 150); }
+      }
+    }
     document.getElementById('loaderText2').textContent = `${i + 1} / ${arr.length}`;
     document.getElementById('loaderBar2').style.width = `${Math.round(((i + 1) / arr.length) * 100)}%`;
     await tick();
