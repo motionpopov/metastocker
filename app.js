@@ -705,7 +705,7 @@ function addTokens(usage, model) {
   if (el) {
     let costStr = state.totalCost > 0 ? ` ≈ $${state.totalCost.toFixed(4)}` : '';
     let details = `In: ${state.promptTokens.toLocaleString()}`;
-    if (state.cachedTokens > 0) details += `, Cached: ${state.cachedTokens.toLocaleString()}`;
+    details += `, Cached: ${state.cachedTokens.toLocaleString()}`;
     details += `, Out: ${state.completionTokens.toLocaleString()}`;
     el.innerHTML = `${state.totalTokens.toLocaleString()} tokens <span class="opacity-70">(${details})</span>${costStr}`;
     el.classList.remove('hidden');
