@@ -459,8 +459,8 @@ async function captureMiddleFrameToDataUrl(file, maxEdge) {
     catch (e) { if (i === order.length - 1) return createPlaceholderImage(maxEdge); await sleep(100); }
   }
 }
-function isVideo(file) { return file.type.startsWith('video/'); }
-function isImage(file) { return file.type.startsWith('image/'); }
+function isVideo(file) { return file.type.startsWith('video/') || VIDEO_EXT.includes(extOf(file.name)); }
+function isImage(file) { return file.type.startsWith('image/') || IMAGE_EXT.includes(extOf(file.name)); }
 async function buildThumbDataUrl(file) {
   const EDGE = 1920;
   try {
@@ -517,7 +517,7 @@ async function callOpenAI({ accessKey, model, imageDataUrl, prompt, responseForm
     }
     const data = result.data;
     if (result.ok) {
-      addTokens(data?.usage);
+      addTokens(data?.usage, model);
       let txt = data?.choices?.[0]?.message?.content?.trim();
       if (!txt) { if (attempt < 3) { await sleep(3000 * attempt); continue; } throw new Error('Empty content from model'); }
       if (responseFormat && responseFormat.type === "text") { return txt; }
@@ -628,12 +628,28 @@ function buildFreepikCsv() {
 }
 
 /************** Processing pipeline **************/
-const state = { running: false, paused: false, nextIdx: 0, inFlight: 0, completed: 0, phaseTotal: 0, totalTokens: 0 };
-function addTokens(usage) {
+const PRICING = {
+  'gpt-5.4-mini': { in: 0.75 / 1000000, out: 4.50 / 1000000 },
+  'gpt-5.4-nano': { in: 0.20 / 1000000, out: 1.25 / 1000000 }
+};
+const state = { running: false, paused: false, nextIdx: 0, inFlight: 0, completed: 0, phaseTotal: 0, totalTokens: 0, promptTokens: 0, completionTokens: 0, totalCost: 0 };
+function addTokens(usage, model) {
   if (!usage) return;
-  state.totalTokens = (state.totalTokens || 0) + (usage.total_tokens || 0);
+  const pt = usage.prompt_tokens || 0;
+  const ct = usage.completion_tokens || 0;
+  const tt = usage.total_tokens || (pt + ct);
+  state.totalTokens = (state.totalTokens || 0) + tt;
+  state.promptTokens = (state.promptTokens || 0) + pt;
+  state.completionTokens = (state.completionTokens || 0) + ct;
+  if (model && PRICING[model]) {
+    state.totalCost = (state.totalCost || 0) + (pt * PRICING[model].in) + (ct * PRICING[model].out);
+  }
   const el = $('#tokenCounter');
-  if (el) { el.textContent = `${state.totalTokens.toLocaleString()} tokens`; el.classList.remove('hidden'); }
+  if (el) {
+    let costStr = state.totalCost > 0 ? ` ≈ $${state.totalCost.toFixed(4)}` : '';
+    el.innerHTML = `${state.totalTokens.toLocaleString()} tokens <span class="opacity-70">(In: ${state.promptTokens.toLocaleString()}, Out: ${state.completionTokens.toLocaleString()})</span>${costStr}`;
+    el.classList.remove('hidden');
+  }
 }
 async function processOne(idx) {
   const file = files[idx];

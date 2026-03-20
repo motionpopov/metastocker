@@ -64,9 +64,7 @@
                   <span class="hint-tooltip">
                     <span class="qmark" tabindex="0" aria-label="Where to get the access token">?</span>
                     <span class="tooltip">For GPT models — get a key at <a href="https://platform.openai.com/api-keys"
-                        target="_blank" rel="noopener" class="underline">OpenAI</a>. For Grok models — get a key at <a
-                        href="https://console.x.ai/" target="_blank" rel="noopener" class="underline">xAI
-                        Console</a>.</span>
+                        target="_blank" rel="noopener" class="underline">OpenAI</a>.</span>
                   </span>
                 </span>
                 <div class="flex items-center gap-2">
@@ -96,10 +94,8 @@
                 <label class="block">
                   <span class="label flex items-center gap-2">Model</span>
                   <select id="model" class="select">
-                    <option value="gpt-5">gpt-5</option>
                     <option value="gpt-5.4-mini">gpt-5.4-mini</option>
                     <option value="gpt-5.4-nano" selected>gpt-5.4-nano</option>
-                    <option value="grok-4-1-fast-reasoning">grok-4-1-fast-reasoning</option>
                   </select>
                   <div id="modelHint" class="hint mt-1.5 min-h-[1.25rem]"></div>
                 </label>
@@ -215,7 +211,7 @@
           <div class="hint" id="fileCount"><span id="fileCountText">0 files imported</span></div>
         </div>
         <input id="fileInput" type="file" multiple class="hidden"
-          accept="image/jpeg,image/png,image/svg+xml,video/mp4,video/webm,video/ogg,video/quicktime,video/*,.ai" />
+          accept="image/jpeg,image/png,image/svg+xml,video/mp4,video/webm,video/ogg,video/quicktime,video/*,.ai,.mov,.mp4" />
       </div>
 
       <!-- Minimalist Progress (IDs preserved for JS) -->
