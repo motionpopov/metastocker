@@ -34,7 +34,7 @@
         <img id="brandLogo" src="assets/metalogo.png" alt="MetaStocker" width="41" height="41" class="rounded" />
         <span id="brandText">MetaStocker</span>
       </div>
-      <span class="badge">v1.52</span>
+      <span class="badge">v1.53</span>
       <span id="tokenCounter" class="badge hidden" title="Total tokens used in this session">0 tokens</span>
       <div class="grow"></div>
       <a href="/blog/" id="blogBtn" class="btn ghost">Blog</a>
@@ -90,28 +90,14 @@
                 <div class="hint mt-1">Your API key is stored locally in your browser; the site doesn't store your keys.
                 </div>
               </label>
-              <div class="grid cols-2" style="gap:12px">
-                <label class="block">
-                  <span class="label flex items-center gap-2">Model</span>
-                  <select id="model" class="select">
-                    <option value="gpt-5.4-mini">gpt-5.4-mini</option>
-                    <option value="gpt-5.4-nano" selected>gpt-5.4-nano</option>
-                  </select>
-                  <div id="modelHint" class="hint mt-1.5 min-h-[1.25rem]"></div>
-                </label>
-                <label class="block">
-                  <span class="label flex items-center gap-2" id="serviceTierLabel">Mode
-                    <span class="hint-tooltip">
-                      <span class="qmark" tabindex="0" aria-label="Mode help">?</span>
-                      <span class="tooltip">Flex — slower, cheaper. Default — standard speed.</span>
-                    </span>
-                  </span>
-                  <select id="serviceTier" class="select">
-                    <option value="flex" selected>flex</option>
-                    <option value="default">default</option>
-                  </select>
-                </label>
-              </div>
+              <label class="block">
+                <span class="label flex items-center gap-2">Model</span>
+                <select id="model" class="select">
+                  <option value="gpt-5.4-mini">gpt-5.4-mini</option>
+                  <option value="gpt-5.4-nano" selected>gpt-5.4-nano</option>
+                </select>
+                <div id="modelHint" class="hint mt-1.5 min-h-[1.25rem]"></div>
+              </label>
             </div>
           </div>
 

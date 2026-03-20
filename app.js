@@ -682,8 +682,8 @@ function buildFreepikCsv() {
 
 /************** Processing pipeline **************/
 const PRICING = {
-  'gpt-5.4-mini': { in: 0.75 / 1000000, cachedIn: 0.075 / 1000000, out: 4.50 / 1000000 },
-  'gpt-5.4-nano': { in: 0.20 / 1000000, cachedIn: 0.020 / 1000000, out: 1.25 / 1000000 }
+  'gpt-5.4-mini': { in: 0.375 / 1000000, cachedIn: 0.0375 / 1000000, out: 2.25 / 1000000 },
+  'gpt-5.4-nano': { in: 0.10 / 1000000, cachedIn: 0.010 / 1000000, out: 0.625 / 1000000 }
 };
 const state = { running: false, paused: false, nextIdx: 0, inFlight: 0, completed: 0, phaseTotal: 0, totalTokens: 0, promptTokens: 0, cachedTokens: 0, completionTokens: 0, totalCost: 0 };
 function addTokens(usage, model) {
