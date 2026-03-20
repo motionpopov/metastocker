@@ -239,7 +239,7 @@ const ENVATO_DEFAULTS = {
 let envatoDefaults = { ...ENVATO_DEFAULTS };
 let envatoRows = new Map();
 let shutterRows = new Map();
-const ADOBE_PROMPT_EXPERT = `You are an expert Adobe Stock Metadata Specialist. Your goal is to maximize the commercial visibility and sales potential of stock assets through precise, SEO-optimized metadata.
+const ADOBE_PROMPT_EXPERT = (tagsCount) => `You are an expert Adobe Stock Metadata Specialist. Your goal is to maximize the commercial visibility and sales potential of stock assets through precise, SEO-optimized metadata.
 
 ### CORE GUIDELINES:
 1. **Title (The "Hook")**: 
@@ -248,7 +248,7 @@ const ADOBE_PROMPT_EXPERT = `You are an expert Adobe Stock Metadata Specialist. 
    - Content: Include the main subject, setting, and primary action.
 
 2. **Keywords (The "Engine")**:
-   - Quantity: Exactly 20-25 tags.
+   - Quantity: Exactly ${tagsCount} tags.
    - **CRITICAL: Order of Importance**: The first 10 tags MUST be the most descriptive and relevant.
    - Diversity: Include a mix of:
      - *Literal*: What is in the image (subject, objects, colors).
@@ -262,37 +262,37 @@ const ADOBE_PROMPT_EXPERT = `You are an expert Adobe Stock Metadata Specialist. 
 ### OUTPUT FORMAT:
 Return ONLY a JSON object with:
 1. "title": A string (60-80 chars).
-2. "tags": An array of 20-25 strings, sorted by relevance.
+2. "tags": An array of ${tagsCount} strings, sorted by relevance.
 
 Example:
 {
   "title": "Diverse business team collaborating on digital strategy in sunlit modern office",
-  "tags": ["business", "teamwork", "office", "collaboration", "diversity", "strategy", "meeting", "corporate", "planning", "innovation", "technology", "startup", "communication", "professional", "leadership", "success", "brainstorming", "modern", "bright", "coworking", "group", "men", "women", "multi-ethnic", "discussion", "digital", "workspace", "creative", "engagement", "partnership", "growth", "opportunity", "efficiency", "productivity", "management", "consulting", "analysis", "development", "implementation", "vision", "future", "ambition", "inspiration", "cooperation", "synergy"]
+  "tags": ["business", "teamwork", "office", "collaboration", "diversity", "strategy", "meeting"]
 }`;
 
-const ADOBE_PROMPT_NANO = `You are a professional stock content metadata editor for Adobe Stock. Your job is to attribute images and videos with high-quality metadata that follows Adobe Stock guidelines.
+const ADOBE_PROMPT_NANO = (tagsCount) => `You are a professional stock content metadata editor for Adobe Stock. Your job is to attribute images and videos with high-quality metadata that follows Adobe Stock guidelines.
 
 Key requirements:
 - Title: Clear, descriptive, between 80-100 characters. Use natural language, avoid ALL CAPS or hashtags.
-- Tags: Generate between 20-25 relevant, search-friendly tags. Use singular forms where natural, avoid duplicates.
+- Tags: Generate exactly ${tagsCount} relevant, search-friendly tags. Use singular forms where natural, avoid duplicates.
 - Focus on commercial appeal and searchability
 - Avoid brand names, trademarks, or copyrighted content
 - Use English language only
 
 CRITICAL: You MUST return a JSON object with exactly these two fields:
 1. "title" - the title string (80-100 characters)
-2. "tags" - an array of 20-25 tag strings
+2. "tags" - an array of exactly ${tagsCount} tag strings
 
-IMPORTANT: Always generate at least 20 tags, maximum 25 tags. Title must be between 80-100 characters.
+IMPORTANT: Always generate exactly ${tagsCount} tags. Title must be between 80-100 characters.
 
 Example response:
-{"title": "Professional business team collaborating in modern office environment during strategic planning meeting", "tags": ["business", "meeting", "office", "professional", "corporate", "teamwork", "collaboration", "presentation", "conference", "discussion", "planning", "strategy", "leadership", "management", "consultation", "brainstorming", "decision", "agenda", "participation", "engagement", "communication", "interaction", "cooperation", "synergy", "innovation"]}
+{"title": "Professional business team collaborating in modern office environment during strategic planning meeting", "tags": ["business", "meeting", "office", "professional", "corporate", "teamwork"]}
 Return ONLY the JSON object.`;
 
 const ADOBE_CONFIG = {
-  get titleMax() { return $('#model').value === 'gpt-5-nano' ? 100 : 80; },
-  get tagsMax() { return $('#model').value === 'gpt-5-nano' ? 25 : 25; },
-  get prompt() { return $('#model').value === 'gpt-5-nano' ? ADOBE_PROMPT_NANO : ADOBE_PROMPT_EXPERT; }
+  get titleMax() { return $('#model').value === 'gpt-5.4-nano' ? 100 : 80; },
+  get tagsMax() { return parseInt($('#tagsCount')?.value || 20, 10); },
+  prompt(tagsCount) { return $('#model').value === 'gpt-5.4-nano' ? ADOBE_PROMPT_NANO(tagsCount) : ADOBE_PROMPT_EXPERT(tagsCount); }
 };
 
 const ENVATO_CONFIG = {
@@ -374,19 +374,26 @@ function normalizeTags(modelTags, always, maxN) {
 }
 function buildPrompt(metadata) {
   const model = $('#model').value;
+  const tagsCount = ADOBE_CONFIG.tagsMax;
   const storageKey = `meta_system_prompt_${model}`;
-  let prompt = localStorage.getItem(storageKey) || ADOBE_CONFIG.prompt;
+  let savedPrompt = localStorage.getItem(storageKey);
+  let prompt = savedPrompt ? savedPrompt : ADOBE_CONFIG.prompt(tagsCount);
+
+  if (savedPrompt) {
+    prompt += `\n\nCRITICAL INSTRUCTION: You MUST generate EXACTLY ${tagsCount} tags.`;
+  }
+
   const comments = ($('#comments')?.value || '').trim();
   const always = parseAlwaysTags();
-  if (comments) prompt += `\\n\\nBatch comments: ${comments}`;
-  if (always.length > 0) prompt += `\\n\\nAlways include these tags if relevant: ${always.join(', ')}`;
+  if (comments) prompt += `\n\nBatch comments: ${comments}`;
+  if (always.length > 0) prompt += `\n\nAlways include these tags if relevant: ${always.join(', ')}`;
 
   if (metadata) {
-    prompt += `\\n\\nImage Metadata (use this to guide the title and keywords generation):\\n`;
-    prompt += `IMPORTANT: The user has provided specific metadata. You MUST use this information. If the metadata contains brand names or specific terms, you MUST include them in the title and tags, IGNORING any general instructions to avoid brands. The metadata is the primary source of truth.\\n`;
-    if (metadata.title) prompt += `Title: ${metadata.title}\\n`;
-    if (metadata.description) prompt += `Description: ${metadata.description}\\n`;
-    if (metadata.keywords && metadata.keywords.length) prompt += `Keywords: ${metadata.keywords.join(', ')}\\n`;
+    prompt += `\n\nImage Metadata (use this to guide the title and keywords generation):\n`;
+    prompt += `IMPORTANT: The user has provided specific metadata. You MUST use this information. If the metadata contains brand names or specific terms, you MUST include them in the title and tags, IGNORING any general instructions to avoid brands. The metadata is the primary source of truth.\n`;
+    if (metadata.title) prompt += `Title: ${metadata.title}\n`;
+    if (metadata.description) prompt += `Description: ${metadata.description}\n`;
+    if (metadata.keywords && metadata.keywords.length) prompt += `Keywords: ${metadata.keywords.join(', ')}\n`;
   }
   return prompt;
 }
@@ -881,8 +888,9 @@ document.getElementById('contactClose').addEventListener('click', () => document
 // Flip Card Logic
 document.getElementById('openPromptBtn').addEventListener('click', () => {
   const model = $('#model').value;
+  const tagsCount = ADOBE_CONFIG.tagsMax;
   const storageKey = `meta_system_prompt_${model}`;
-  const current = localStorage.getItem(storageKey) || ADOBE_CONFIG.prompt;
+  const current = localStorage.getItem(storageKey) || ADOBE_CONFIG.prompt(tagsCount);
   document.getElementById('systemPromptInp').value = current;
   document.getElementById('settingsCard').classList.add('flipped');
 });
@@ -890,12 +898,14 @@ document.getElementById('closePromptBtn').addEventListener('click', () => {
   document.getElementById('settingsCard').classList.remove('flipped');
   const val = document.getElementById('systemPromptInp').value.trim();
   const model = $('#model').value;
+  const tagsCount = ADOBE_CONFIG.tagsMax;
   const storageKey = `meta_system_prompt_${model}`;
-  if (val && val !== ADOBE_CONFIG.prompt) {
+  if (val && val !== ADOBE_CONFIG.prompt(tagsCount)) {
     localStorage.setItem(storageKey, val);
   } else {
     localStorage.removeItem(storageKey);
   }
+  uiUpdate();
 });
 
 // Guide Modal Logic

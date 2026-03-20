@@ -34,7 +34,7 @@
         <img id="brandLogo" src="assets/metalogo.png" alt="MetaStocker" width="41" height="41" class="rounded" />
         <span id="brandText">MetaStocker</span>
       </div>
-      <span class="badge">v1.53</span>
+      <span class="badge">v1.54</span>
       <span id="tokenCounter" class="badge hidden" title="Total tokens used in this session">0 tokens</span>
       <div class="grow"></div>
       <a href="/blog/" id="blogBtn" class="btn ghost">Blog</a>
@@ -90,14 +90,26 @@
                 <div class="hint mt-1">Your API key is stored locally in your browser; the site doesn't store your keys.
                 </div>
               </label>
-              <label class="block">
-                <span class="label flex items-center gap-2">Model</span>
-                <select id="model" class="select">
-                  <option value="gpt-5.4-mini">gpt-5.4-mini</option>
-                  <option value="gpt-5.4-nano" selected>gpt-5.4-nano</option>
-                </select>
-                <div id="modelHint" class="hint mt-1.5 min-h-[1.25rem]"></div>
-              </label>
+              <div class="grid cols-2" style="gap:12px">
+                <label class="block">
+                  <span class="label flex items-center gap-2">Model</span>
+                  <select id="model" class="select">
+                    <option value="gpt-5.4-mini">gpt-5.4-mini</option>
+                    <option value="gpt-5.4-nano" selected>gpt-5.4-nano</option>
+                  </select>
+                  <div id="modelHint" class="hint mt-1.5 min-h-[1.25rem]"></div>
+                </label>
+                <label class="block">
+                  <span class="label flex items-center gap-2">Tags Count
+                    <span class="hint-tooltip">
+                      <span class="qmark" tabindex="0">?</span>
+                      <span class="tooltip">Adobe Stock recommends using fewer, highly relevant tags (around 20-30), and
+                        we agree! But you can adjust this limit.</span>
+                    </span>
+                  </span>
+                  <input id="tagsCount" type="number" min="10" max="49" value="20" class="input" />
+                </label>
+              </div>
             </div>
           </div>
 
@@ -170,12 +182,11 @@
           <label class="label !m-0 flex items-center gap-2" id="threadsTooltip">Threads
             <span class="hint-tooltip">
               <span class="qmark" tabindex="0" aria-label="Threads help">?</span>
-              <span class="tooltip">This setting determines how many parallel requests go to OpenAI. Since it's
-                experimental, three is conservative. Raise it to accelerate processing.</span>
+              <span class="tooltip">This setting determines how many parallel requests go to OpenAI.</span>
             </span>
           </label>
-          <input id="concurrency" type="range" value="10" min="1" max="20" class="w-40" />
-          <span id="concurrencyValue" class="badge">10</span>
+          <input id="concurrency" type="number" value="10" min="1" max="20"
+            class="input w-16 text-center !py-1 !px-2" />
         </div>
         <button id="startBtn" class="btn primary">Start</button>
         <button id="pauseBtn" class="btn ghost hidden" disabled>Pause</button>
