@@ -596,7 +596,17 @@ function addTableRow(idx, file) {
 function setThumb(idx, src) { const img = document.getElementById('thumb-' + idx); if (img) { img.src = src; img.classList.remove('hidden'); } }
 function updateTableRow(idx, { title, description, tags, category, status, error }) {
   if (title !== undefined) { const el = document.getElementById('t-' + idx); if (el) el.textContent = title; }
-  if (tags !== undefined) { const el = document.getElementById('g-' + idx); if (el) el.textContent = Array.isArray(tags) ? tags.join(', ') : tags; }
+  if (tags !== undefined) {
+    const el = document.getElementById('g-' + idx);
+    if (el) {
+      if (Array.isArray(tags)) {
+        el.innerHTML = `<span class="badge mr-1.5">${tags.length}</span>`;
+        el.appendChild(document.createTextNode(tags.join(', ')));
+      } else {
+        el.textContent = tags;
+      }
+    }
+  }
   if (status) { const el = document.getElementById('s-' + idx); if (el) el.innerHTML = `<span class="${status === 'done' ? 'text-green-700' : 'text-amber-600'}">${status}</span>`; }
   if (error) { const el = document.getElementById('s-' + idx); if (el) el.innerHTML = `<span class="text-red-600">${error}</span>`; }
 }
