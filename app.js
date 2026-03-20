@@ -1,6 +1,6 @@
 /************** Utils **************/
-const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-const tick = () => new Promise(r => requestAnimationFrame(() => r()));
+const yieldToMain = () => new Promise(r => { const c = new MessageChannel(); c.port1.onmessage = r; c.port2.postMessage(null); });
+const tick = () => document.hidden ? yieldToMain() : new Promise(r => requestAnimationFrame(() => r()));
 const $ = s => document.querySelector(s);
 
 /************** Web Worker for Background Processing **************/
@@ -69,23 +69,39 @@ function workerFetch(url, options) {
 /************** Keep-Alive for Background Tabs **************/
 let keepAliveInterval = null;
 let lastActivityTime = Date.now();
+let keepAliveAudio = null;
 
 function startKeepAlive() {
   if (keepAliveInterval) return;
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (AudioContext) {
+      const ctx = new AudioContext();
+      const buffer = ctx.createBuffer(1, 1, 22050);
+      const source = ctx.createBufferSource();
+      source.buffer = buffer; source.loop = true; source.connect(ctx.destination); source.start(0);
+      keepAliveAudio = { ctx, source };
+      addLog('Audio background keep-alive started', 'info');
+    }
+  } catch (err) { }
+
   keepAliveInterval = setInterval(() => {
     lastActivityTime = Date.now();
-    if (state.running && !state.paused) {
-      uiUpdate();
-    }
+    if (state.running && !state.paused) uiUpdate();
   }, 500);
-  addLog('Keep-alive started for background processing', 'info');
+  addLog('Keep-alive interval started', 'info');
 }
 
 function stopKeepAlive() {
+  if (keepAliveAudio) {
+    try { keepAliveAudio.source.stop(); keepAliveAudio.ctx.close(); } catch (e) { }
+    keepAliveAudio = null;
+    addLog('Audio background keep-alive stopped', 'info');
+  }
   if (keepAliveInterval) {
     clearInterval(keepAliveInterval);
     keepAliveInterval = null;
-    addLog('Keep-alive stopped', 'info');
+    addLog('Keep-alive interval stopped', 'info');
   }
 }
 
@@ -792,6 +808,9 @@ async function handleFiles(list) {
   let arr = Array.from(list || []).filter(f => !files.some(existing => existing.name === f.name));
   if (!arr.length) return;
   importing = true;
+  let localKeepAliveStarted = false;
+  if (!keepAliveInterval) { startKeepAlive(); localKeepAliveStarted = true; }
+
   document.getElementById('loader').classList.remove('hidden');
   const startIdx = files.length; files.push(...arr);
   for (let i = 0; i < arr.length; i++) {
@@ -817,6 +836,7 @@ async function handleFiles(list) {
     document.getElementById('loaderBar2').style.width = `${Math.round(((i + 1) / arr.length) * 100)}%`;
     await tick();
   }
+  if (localKeepAliveStarted && !state.running) stopKeepAlive();
   document.getElementById('loader').classList.add('hidden'); importing = false; uiUpdate();
 }
 
