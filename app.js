@@ -295,30 +295,45 @@ const ADOBE_CONFIG = {
   prompt(tagsCount) { return $('#model').value === 'gpt-5.4-nano' ? ADOBE_PROMPT_NANO(tagsCount) : ADOBE_PROMPT_EXPERT(tagsCount); }
 };
 
+const ENVATO_CATEGORIES_FOOTAGE = [
+  'Buildings', 'Business, Corporate', 'Cartoons', 'City', 'Construction', 'Education', 'Food', 'Holidays', 'Industrial', 'Kids', 'Lifestyle', 'Medical', 'Military', 'Nature', 'Overhead', 'People', 'Religious', 'Science', 'Slow Motion', 'Special Events', 'Sports', 'Stop Motion', 'Technology', 'Time Lapse', 'Vehicles', 'Weather'
+];
+
+const ENVATO_CATEGORIES_MG = [
+  'backgrounds', 'backgrounds/3d-object', 'backgrounds/abstract', 'backgrounds/cartoons', 'backgrounds/corporate', 'backgrounds/electric', 'backgrounds/events', 'backgrounds/fire', 'backgrounds/grunge', 'backgrounds/industrial', 'backgrounds/kids', 'backgrounds/light', 'backgrounds/medical', 'backgrounds/nature', 'backgrounds/retro', 'backgrounds/sky-clouds', 'backgrounds/space', 'backgrounds/sports', 'backgrounds/technology', 'backgrounds/water', 'backgrounds/miscellaneous', 'bugs', 'bugs/3d-object', 'bugs/abstract', 'bugs/cartoons', 'bugs/corporate', 'bugs/electric', 'bugs/events', 'bugs/fire', 'bugs/grunge', 'bugs/industrial', 'bugs/kids', 'bugs/light', 'bugs/medical', 'bugs/nature', 'bugs/retro', 'bugs/sky-clouds', 'bugs/space', 'bugs/sports', 'bugs/technology', 'bugs/water', 'bugs/miscellaneous', 'distortions', 'elements', 'elements/3d-object', 'elements/abstract', 'elements/cartoons', 'elements/corporate', 'elements/electric', 'elements/events', 'elements/fire', 'elements/grunge', 'elements/industrial', 'elements/kids', 'elements/light', 'elements/medical', 'elements/nature', 'elements/retro', 'elements/sky-clouds', 'elements/space', 'elements/sports', 'elements/technology', 'elements/water', 'elements/miscellaneous', 'interface-effects', 'interface-effects/3d-object', 'interface-effects/abstract', 'interface-effects/cartoons', 'interface-effects/corporate', 'interface-effects/electric', 'interface-effects/events', 'interface-effects/fire', 'interface-effects/grunge', 'interface-effects/industrial', 'interface-effects/kids', 'interface-effects/light', 'interface-effects/medical', 'interface-effects/nature', 'interface-effects/retro', 'interface-effects/sky-clouds', 'interface-effects/space', 'interface-effects/sports', 'interface-effects/technology', 'interface-effects/water', 'interface-effects/miscellaneous', 'lower-thirds', 'lower-thirds/3d-object', 'lower-thirds/abstract', 'lower-thirds/cartoons', 'lower-thirds/corporate', 'lower-thirds/electric', 'lower-thirds/events', 'lower-thirds/fire', 'lower-thirds/grunge', 'lower-thirds/industrial', 'lower-thirds/kids', 'lower-thirds/light', 'lower-thirds/medical', 'lower-thirds/nature', 'lower-thirds/retro', 'lower-thirds/sky-clouds', 'lower-thirds/space', 'lower-thirds/sports', 'lower-thirds/technology', 'lower-thirds/water', 'lower-thirds/miscellaneous', 'overlays', 'overlays/3d-object', 'overlays/abstract', 'overlays/cartoons', 'overlays/corporate', 'overlays/electric', 'overlays/events', 'overlays/fire', 'overlays/grunge', 'overlays/industrial', 'overlays/kids', 'overlays/light', 'overlays/medical', 'overlays/nature', 'overlays/retro', 'overlays/sky-clouds', 'overlays/space', 'overlays/sports', 'overlays/technology', 'overlays/water', 'overlays/miscellaneous', 'particles', 'revealer', 'revealer/3d-object', 'revealer/abstract', 'revealer/cartoons', 'revealer/corporate', 'revealer/electric', 'revealer/events', 'revealer/fire', 'revealer/grunge', 'revealer/industrial', 'revealer/kids', 'revealer/light', 'revealer/medical', 'revealer/nature', 'revealer/retro', 'revealer/sky-clouds', 'revealer/space', 'revealer/sports', 'revealer/technology', 'revealer/water', 'revealer/miscellaneous', 'transitions', 'transitions/3d-object', 'transitions/abstract', 'transitions/cartoons', 'transitions/corporate', 'transitions/electric', 'transitions/events', 'transitions/fire', 'transitions/grunge', 'transitions/industrial', 'transitions/kids', 'transitions/light', 'transitions/medical', 'transitions/nature', 'transitions/retro', 'transitions/sky-clouds', 'transitions/space', 'transitions/sports', 'transitions/technology', 'transitions/water', 'transitions/miscellaneous', 'water-and-fluid', 'miscellaneous', 'miscellaneous/3d-object', 'miscellaneous/abstract', 'miscellaneous/cartoons', 'miscellaneous/corporate', 'miscellaneous/electric', 'miscellaneous/events', 'miscellaneous/fire', 'miscellaneous/grunge', 'miscellaneous/industrial', 'miscellaneous/kids', 'miscellaneous/light', 'miscellaneous/medical', 'miscellaneous/nature', 'miscellaneous/retro', 'miscellaneous/sky-clouds', 'miscellaneous/space', 'miscellaneous/sports', 'miscellaneous/technology', 'miscellaneous/water', 'miscellaneous/miscellaneous', 'infographics'
+];
+
 const ENVATO_CONFIG = {
-  prompt: ({ title, tags }) => `
+  prompt: ({ title, tags, isMG }) => {
+    const categories = isMG ? ENVATO_CATEGORIES_MG : ENVATO_CATEGORIES_FOOTAGE;
+    const catStr = categories.join(' | ');
+    return `
 You are a metadata editor for Envato Elements Stock Video.
 Given an approved Adobe Stock title and keywords, prepare Envato-specific fields.
 
 Rules:
 - Make a concise Title up to 90 characters (no hashtags, no ALL CAPS, no brand names).
 - Make an SEO-optimized Description up to 300 characters. This description must naturally weave in the provided keywords to improve searchability while remaining readable and compelling.
+- Select ONE category that best fits the visual asset from the following list: ${catStr}
 - Keep the language EN only.
 
 CRITICAL: Return a JSON object with exactly these fields:
 1. "title90" - the title string (up to 90 characters)
 2. "description300" - the SEO description string (up to 300 characters)
+3. "category" - the chosen category string from the provided list
 
-IMPORTANT: The input TITLE comes from Adobe Stock; rewrite it to fit Envato's 90-char limit, and create a rich SEO description based on the title and keywords.
+IMPORTANT: The input TITLE comes from Adobe Stock; rewrite it to fit Envato's 90-char limit, and create a rich SEO description based on the title and keywords. Also, you must accurately categorize the asset observing the provided frame.
 
 Example response:
-{"title90": "Professional business team collaborating in modern office", "description300": "Professional business team collaborating in a modern office. Highly relevant for corporate teamwork, strategic planning, business development, diversity in workplace, executive meetings, and successful professional partnerships."}
+{"title90": "Professional business team collaborating in modern office", "description300": "Professional business team collaborating in a modern office. Highly relevant for corporate teamwork, strategic planning, business development, diversity in workplace, executive meetings, and successful professional partnerships.", "category": "Business, Corporate"}
 
 Input:
 TITLE: ${title}
 KEYWORDS: ${Array.isArray(tags) ? tags.join(', ') : String(tags)}
 
-Return ONLY the JSON object.` };
+Return ONLY the JSON object.`;
+  }
+};
 
 const SHUTTER_VIDEO_CATEGORIES = Object.freeze([
   'Animals/Wildlife', 'Arts', 'Backgrounds/Textures', 'Buildings/Landmarks', 'Business/Finance',
@@ -561,9 +576,13 @@ async function callOpenAI({ accessKey, model, imageDataUrl, prompt, responseForm
   }
 }
 
-async function fetchEnvatoMeta({ accessKey, model, title, tags }) {
-  const prompt = ENVATO_CONFIG.prompt({ title, tags });
-  const txt = await callOpenAI({ accessKey, model, imageDataUrl: '', prompt, responseFormat: { type: 'text' } });
+async function fetchEnvatoMeta({ accessKey, model, title, tags, isMG, imageDataUrl }) {
+  const prompt = ENVATO_CONFIG.prompt({ title, tags, isMG });
+  const contents = [{ type: 'text', text: "Process this asset." }];
+  if (imageDataUrl) {
+    contents.push({ type: 'image_url', image_url: { url: imageDataUrl } });
+  }
+  const txt = await callOpenAI({ accessKey, model, imageDataUrl, prompt, responseFormat: { type: 'text' }, contents });
   try { const jsonStr = (txt.match(/\{[\s\S]*\}/) || [txt])[0]; return JSON.parse(jsonStr); } catch (e) { return {}; }
 }
 async function fetchShutterstockCategories({ accessKey, model, filename, adobeTitle, adobeKeywords }) {
@@ -662,8 +681,9 @@ function buildEnvatoCsv() {
     const title90 = (env.title90 || String(r.title || '').slice(0, 90)).trim();
     const desc300 = (env.description300 || env.description200 || String(r.title || '').slice(0, 300)).trim();
     const d = envatoDefaults;
+    const category = env.category || d.category || '';
     lines.push([
-      r.name, title90, desc300, (r.tags || []).join(', '), d.category || '', d.priceSingle || '', d.priceMulti || '',
+      r.name, title90, desc300, (r.tags || []).join(', '), category, d.priceSingle || '', d.priceMulti || '',
       d.people || 'No', d.buildings || 'No', d.releases || '', d.isMG || 'No', d.aj || '', d.color || '',
       d.pace || '', d.movement || '', d.composition || '', d.setting || '', d.numPeople || '',
       d.gender || '', d.age || '', d.ethnicity || '', d.alpha || 'No', d.looped || 'No', d.audio || ''
@@ -753,9 +773,10 @@ async function processOne(idx) {
     updateCsvRow(file.name, title, '', tags, null);
     if ($('#outEnvato').checked) {
       try {
-        const env = await fetchEnvatoMeta({ accessKey, model, title, tags });
-        envatoRows.set(file.name, { title90: String(env.title90 || title).slice(0, 90).trim(), description300: String(env.description300 || title).slice(0, 300).trim() });
-      } catch (e) { envatoRows.set(file.name, { title90: String(title).slice(0, 90).trim(), description300: String(title).slice(0, 300).trim() }); }
+        const isMG = envatoDefaults.isMG === 'Yes';
+        const env = await fetchEnvatoMeta({ accessKey, model, title, tags, isMG, imageDataUrl: finalImageUrl });
+        envatoRows.set(file.name, { title90: String(env.title90 || title).slice(0, 90).trim(), description300: String(env.description300 || title).slice(0, 300).trim(), category: env.category });
+      } catch (e) { envatoRows.set(file.name, { title90: String(title).slice(0, 90).trim(), description300: String(title).slice(0, 300).trim(), category: '' }); }
     }
     if ($('#outShutter').checked) {
       try {
