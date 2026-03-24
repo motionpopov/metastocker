@@ -302,15 +302,17 @@ Given an approved Adobe Stock title and keywords, prepare Envato-specific fields
 
 Rules:
 - Make a concise Title up to 90 characters (no hashtags, no ALL CAPS, no brand names).
+- Make an SEO-optimized Description up to 300 characters. This description must naturally weave in the provided keywords to improve searchability while remaining readable and compelling.
 - Keep the language EN only.
 
-CRITICAL: Return a JSON object with exactly this field:
+CRITICAL: Return a JSON object with exactly these fields:
 1. "title90" - the title string (up to 90 characters)
+2. "description300" - the SEO description string (up to 300 characters)
 
-IMPORTANT: The input TITLE comes from Adobe Stock; rewrite it to fit Envato's 90-char limit.
+IMPORTANT: The input TITLE comes from Adobe Stock; rewrite it to fit Envato's 90-char limit, and create a rich SEO description based on the title and keywords.
 
 Example response:
-{"title90": "Professional business team collaborating in modern office"}
+{"title90": "Professional business team collaborating in modern office", "description300": "Professional business team collaborating in a modern office. Highly relevant for corporate teamwork, strategic planning, business development, diversity in workplace, executive meetings, and successful professional partnerships."}
 
 Input:
 TITLE: ${title}
@@ -658,10 +660,10 @@ function buildEnvatoCsv() {
   for (const r of rows) {
     const env = envatoRows.get(r.name) || {};
     const title90 = (env.title90 || String(r.title || '').slice(0, 90)).trim();
-    const desc200 = (env.description200 || String(r.title || '').slice(0, 200)).trim();
+    const desc300 = (env.description300 || env.description200 || String(r.title || '').slice(0, 300)).trim();
     const d = envatoDefaults;
     lines.push([
-      r.name, title90, desc200, (r.tags || []).join(', '), d.category || '', d.priceSingle || '', d.priceMulti || '',
+      r.name, title90, desc300, (r.tags || []).join(', '), d.category || '', d.priceSingle || '', d.priceMulti || '',
       d.people || 'No', d.buildings || 'No', d.releases || '', d.isMG || 'No', d.aj || '', d.color || '',
       d.pace || '', d.movement || '', d.composition || '', d.setting || '', d.numPeople || '',
       d.gender || '', d.age || '', d.ethnicity || '', d.alpha || 'No', d.looped || 'No', d.audio || ''
@@ -752,8 +754,8 @@ async function processOne(idx) {
     if ($('#outEnvato').checked) {
       try {
         const env = await fetchEnvatoMeta({ accessKey, model, title, tags });
-        envatoRows.set(file.name, { title90: String(env.title90 || title).slice(0, 90).trim(), description200: String(title).slice(0, 200).trim() });
-      } catch (e) { envatoRows.set(file.name, { title90: String(title).slice(0, 90).trim(), description200: String(title).slice(0, 200).trim() }); }
+        envatoRows.set(file.name, { title90: String(env.title90 || title).slice(0, 90).trim(), description300: String(env.description300 || title).slice(0, 300).trim() });
+      } catch (e) { envatoRows.set(file.name, { title90: String(title).slice(0, 90).trim(), description300: String(title).slice(0, 300).trim() }); }
     }
     if ($('#outShutter').checked) {
       try {
