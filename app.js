@@ -226,6 +226,7 @@ const SUPPORTED = ['image/jpeg', 'image/png', 'image/svg+xml', 'video/mp4', 'vid
 let files = [];
 let fileStatuses = [];
 let csvStore = new Map();
+const editingTags = new Set();
 let importing = false;
 const thumbCache = new Map();
 
@@ -646,75 +647,94 @@ function updateTableRow(idx, { title, description, tags, category, status, error
     const el = document.getElementById('g-' + idx);
     if (el) {
       if (Array.isArray(tags)) {
-        const wasFocused = document.activeElement && document.activeElement.id === 'tag-input-' + idx;
+        const isEditing = editingTags.has(idx);
+        const wasFocused = isEditing && document.activeElement && document.activeElement.id === 'tag-input-' + idx;
         
         el.innerHTML = '';
         const headerTop = document.createElement('div');
-        headerTop.className = 'flex items-center mb-1 group w-full justify-end';
-        headerTop.innerHTML = `
-          <button class="opacity-0 group-hover:opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm focus:opacity-100">Copy</button>
-        `;
-        const cBtn = headerTop.querySelector('button');
+        headerTop.className = 'flex items-center mb-1 group w-full justify-end gap-1.5';
+        
+        const editBtn = document.createElement('button');
+        editBtn.className = 'opacity-0 group-hover:opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm focus:opacity-100';
+        editBtn.textContent = isEditing ? 'Done' : 'Edit';
+        editBtn.onclick = () => window.toggleEditTags(idx);
+        
+        const cBtn = document.createElement('button');
+        cBtn.className = 'opacity-0 group-hover:opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm focus:opacity-100';
+        cBtn.textContent = 'Copy';
         cBtn.onclick = () => window.copyText(cBtn, idx, 'tags');
+        
+        headerTop.appendChild(editBtn);
+        headerTop.appendChild(cBtn);
         el.appendChild(headerTop);
+
         const tagsContainer = document.createElement('div');
-        tagsContainer.className = 'flex flex-wrap gap-1 mt-1';
         
-        tags.forEach((tag, tagIndex) => {
-            const tagEl = document.createElement('span');
-            tagEl.className = 'val-tag inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2.5 py-0.5 rounded-full border border-[color:var(--border)] max-w-full cursor-grab active:cursor-grabbing hover:border-gray-400 transition-colors duration-150';
-            const tagText = document.createElement('span');
-            tagText.className = 'truncate pointer-events-none';
-            tagText.textContent = tag;
-            const rmBtn = document.createElement('button');
-            rmBtn.className = 'opacity-50 hover:opacity-100 hover:text-red-500 ml-0.5 transition-opacity outline-none cursor-pointer p-0.5 leading-none bg-transparent border-none font-bold shrink-0';
-            rmBtn.innerHTML = '&times;';
-            rmBtn.onclick = () => window.removeTag(idx, tagIndex);
+        if (isEditing) {
+            tagsContainer.className = 'flex flex-wrap gap-1 mt-1';
             
-            tagEl.appendChild(tagText);
-            tagEl.appendChild(rmBtn);
-            tagsContainer.appendChild(tagEl);
-        });
-
-        const tagInputWrap = document.createElement('div');
-        tagInputWrap.className = 'ignore-sort flex-1 min-w-[70px] flex';
-        
-        const tagInput = document.createElement('input');
-        tagInput.id = 'tag-input-' + idx;
-        tagInput.className = 'w-full border border-[color:var(--border)] rounded-full px-2.5 py-0.5 text-[12px] outline-none focus:border-[color:var(--ring)] bg-transparent text-[color:var(--text)]';
-        tagInput.placeholder = '+ Add...';
-        tagInput.onkeydown = (e) => {
-            if (e.key === 'Enter' || e.key === ',') {
-                e.preventDefault();
-                const v = tagInput.value.trim();
-                if (v) window.addTag(idx, v);
-            }
-        };
-        
-        tagInputWrap.appendChild(tagInput);
-        tagsContainer.appendChild(tagInputWrap);
-        el.appendChild(tagsContainer);
-        
-        if (typeof Sortable !== 'undefined') {
-            new Sortable(tagsContainer, {
-                animation: 250,
-                filter: '.ignore-sort, button',
-                preventOnFilter: false,
-                draggable: '.val-tag',
-                ghostClass: 'opacity-40',
-                onEnd: function (evt) {
-                    if (evt.oldDraggableIndex !== undefined && evt.newDraggableIndex !== undefined && evt.oldDraggableIndex !== evt.newDraggableIndex) {
-                        window.moveTag(idx, evt.oldDraggableIndex, evt.newDraggableIndex);
-                    }
-                }
+            tags.forEach((tag, tagIndex) => {
+                const tagEl = document.createElement('span');
+                tagEl.className = 'val-tag inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2.5 py-0.5 rounded-full border border-[color:var(--border)] max-w-full cursor-grab active:cursor-grabbing hover:border-gray-400 transition-colors duration-150';
+                
+                const tagText = document.createElement('span');
+                tagText.className = 'truncate pointer-events-none';
+                tagText.textContent = tag;
+                
+                const rmBtn = document.createElement('button');
+                rmBtn.className = 'opacity-50 hover:opacity-100 hover:text-red-500 ml-0.5 transition-opacity outline-none cursor-pointer p-0.5 leading-none bg-transparent border-none font-bold shrink-0';
+                rmBtn.innerHTML = '&times;';
+                rmBtn.onclick = () => window.removeTag(idx, tagIndex);
+                
+                tagEl.appendChild(tagText);
+                tagEl.appendChild(rmBtn);
+                tagsContainer.appendChild(tagEl);
             });
-        }
 
-        if (wasFocused) {
-            setTimeout(() => {
-                const newInput = document.getElementById('tag-input-' + idx);
-                if (newInput) newInput.focus();
-            }, 0);
+            const tagInputWrap = document.createElement('div');
+            tagInputWrap.className = 'ignore-sort flex-1 min-w-[70px] flex';
+            
+            const tagInput = document.createElement('input');
+            tagInput.id = 'tag-input-' + idx;
+            tagInput.className = 'w-full border border-[color:var(--border)] rounded-full px-2.5 py-0.5 text-[12px] outline-none focus:border-[color:var(--ring)] bg-transparent text-[color:var(--text)]';
+            tagInput.placeholder = '+ Add...';
+            tagInput.onkeydown = (e) => {
+                if (e.key === 'Enter' || e.key === ',') {
+                    e.preventDefault();
+                    const v = tagInput.value.trim();
+                    if (v) window.addTag(idx, v);
+                }
+            };
+            
+            tagInputWrap.appendChild(tagInput);
+            tagsContainer.appendChild(tagInputWrap);
+            el.appendChild(tagsContainer);
+            
+            if (typeof Sortable !== 'undefined') {
+                new Sortable(tagsContainer, {
+                    animation: 250,
+                    filter: '.ignore-sort, button',
+                    preventOnFilter: false,
+                    draggable: '.val-tag',
+                    ghostClass: 'opacity-40',
+                    onEnd: function (evt) {
+                        if (evt.oldDraggableIndex !== undefined && evt.newDraggableIndex !== undefined && evt.oldDraggableIndex !== evt.newDraggableIndex) {
+                            window.moveTag(idx, evt.oldDraggableIndex, evt.newDraggableIndex);
+                        }
+                    }
+                });
+            }
+
+            if (wasFocused) {
+                setTimeout(() => {
+                    const newInput = document.getElementById('tag-input-' + idx);
+                    if (newInput) newInput.focus();
+                }, 0);
+            }
+        } else {
+            tagsContainer.className = 'text-[13px] leading-snug break-words';
+            tagsContainer.textContent = tags.join(', ');
+            el.appendChild(tagsContainer);
         }
       } else {
         el.textContent = tags;
@@ -875,8 +895,21 @@ window.movePreviewHover = function(e) {
    tooltip.style.top = y + 'px';
 };
 
+window.toggleEditTags = function(idx) {
+    if (editingTags.has(idx)) {
+        editingTags.delete(idx);
+    } else {
+        editingTags.add(idx);
+    }
+    const file = files[idx];
+    if (file && csvStore.has(file.name)) {
+        updateTableRow(idx, { tags: csvStore.get(file.name).tags });
+    }
+};
+
 window.deleteFile = function (idx) {
   if (state.running && fileStatuses[idx] === 'processing') return alert('Cannot delete while processing');
+  editingTags.delete(idx);
   const file = files[idx]; if (!file) return;
   const tr = document.getElementById('row-' + idx); if (tr) tr.remove();
   const name = file.name;
@@ -888,6 +921,7 @@ window.deleteFile = function (idx) {
 
 window.regenerateFile = async function (idx) {
   if (state.running && fileStatuses[idx] === 'processing') return alert('Already processing');
+  editingTags.delete(idx);
   const file = files[idx]; if (!file) return;
   if (fileStatuses[idx] === 'done' || fileStatuses[idx] === 'error') { if (state.completed > 0) state.completed--; }
   fileStatuses[idx] = 'queued';
