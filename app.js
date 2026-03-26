@@ -629,7 +629,7 @@ function updateTableRow(idx, { title, description, tags, category, status, error
         
         tags.forEach((tag, tagIndex) => {
             const tagEl = document.createElement('span');
-            tagEl.className = 'val-tag inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2 py-0.5 rounded border border-[color:var(--border)] max-w-full cursor-grab active:cursor-grabbing hover:border-gray-400 transition-colors duration-150';
+            tagEl.className = 'val-tag inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2.5 py-0.5 rounded-full border border-[color:var(--border)] max-w-full cursor-grab active:cursor-grabbing hover:border-gray-400 transition-colors duration-150';
             const tagText = document.createElement('span');
             tagText.className = 'truncate pointer-events-none';
             tagText.textContent = tag;
@@ -648,7 +648,7 @@ function updateTableRow(idx, { title, description, tags, category, status, error
         
         const tagInput = document.createElement('input');
         tagInput.id = 'tag-input-' + idx;
-        tagInput.className = 'w-full border border-[color:var(--border)] rounded px-2 py-0.5 text-[12px] outline-none focus:border-[color:var(--ring)] bg-transparent text-[color:var(--text)]';
+        tagInput.className = 'w-full border border-[color:var(--border)] rounded-full px-2.5 py-0.5 text-[12px] outline-none focus:border-[color:var(--ring)] bg-transparent text-[color:var(--text)]';
         tagInput.placeholder = '+ Add...';
         tagInput.onkeydown = (e) => {
             if (e.key === 'Enter' || e.key === ',') {
