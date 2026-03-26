@@ -601,7 +601,7 @@ function addTableRow(idx, file) {
   const tr = document.createElement('tr'); tr.id = 'row-' + idx;
   tr.innerHTML = `
     <td class="p-3 text-[color:var(--subtle)]">${idx + 1}</td>
-    <td class="p-3"><div class="h-16 w-16 rounded-lg overflow-hidden" style="background:var(--muted)"><img id="thumb-${idx}" class="h-16 w-16 object-cover" alt="" /></div></td>
+    <td class="p-3"><div class="h-16 w-16 rounded-lg overflow-hidden relative" style="background:var(--muted)"><img id="thumb-${idx}" class="h-16 w-16 object-cover hidden cursor-zoom-in" alt="" onmouseenter="window.showPreviewHover(event, this.src)" onmouseleave="window.hidePreviewHover()" onmousemove="window.movePreviewHover(event)" /></div></td>
     <td class="p-3 cell">${file.name.length > 25 ? file.name.substring(0, 25) + '...' : file.name} ${isV ? '<span class="badge">video</span>' : ''}</td>
     <td class="p-3 cell col-title" id="t-${idx}">—</td>
   <td class="p-3 cell col-tags" id="g-${idx}">—</td>
@@ -825,6 +825,38 @@ window.moveTag = function(idx, fromIndex, toIndex) {
     }
     updateTableRow(idx, { tags: csvStore.get(name).tags });
   }
+};
+
+window.showPreviewHover = function(e, src) {
+   const tooltip = document.getElementById('imagePreviewTooltip');
+   const img = document.getElementById('imagePreviewImg');
+   if(!tooltip || !img || !src || src.includes('f3f4f6')) return;
+   img.src = src;
+   tooltip.classList.remove('hidden');
+   window.movePreviewHover(e);
+};
+
+window.hidePreviewHover = function() {
+   const tooltip = document.getElementById('imagePreviewTooltip');
+   if(tooltip) tooltip.classList.add('hidden');
+};
+
+window.movePreviewHover = function(e) {
+   const tooltip = document.getElementById('imagePreviewTooltip');
+   if(!tooltip || tooltip.classList.contains('hidden')) return;
+   
+   let x = e.clientX + 16;
+   let y = e.clientY + 16;
+   
+   const rect = tooltip.getBoundingClientRect();
+   const viewportW = window.innerWidth;
+   const viewportH = window.innerHeight;
+   
+   if(x + rect.width > viewportW - 16) x = e.clientX - rect.width - 16;
+   if(y + rect.height > viewportH - 16) y = e.clientY - rect.height - 16;
+   
+   tooltip.style.left = x + 'px';
+   tooltip.style.top = y + 'px';
 };
 
 window.deleteFile = function (idx) {
