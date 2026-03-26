@@ -629,7 +629,24 @@ function updateTableRow(idx, { title, description, tags, category, status, error
         
         tags.forEach((tag, tagIndex) => {
             const tagEl = document.createElement('span');
-            tagEl.className = 'inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2 py-0.5 rounded border border-[color:var(--border)] max-w-full';
+            tagEl.className = 'inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2 py-0.5 rounded border border-[color:var(--border)] max-w-full cursor-grab active:cursor-grabbing hover:border-gray-400 transition-colors duration-150';
+            tagEl.draggable = true;
+            tagEl.ondragstart = (e) => {
+                e.dataTransfer.setData('text/plain', tagIndex.toString());
+                e.dataTransfer.effectAllowed = 'move';
+                setTimeout(() => tagEl.classList.add('opacity-40'), 0);
+            };
+            tagEl.ondragend = () => { tagEl.classList.remove('opacity-40'); };
+            tagEl.ondragover = (e) => { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; };
+            tagEl.ondragenter = (e) => { e.preventDefault(); tagEl.classList.add('!border-[color:var(--ring)]'); };
+            tagEl.ondragleave = () => { tagEl.classList.remove('!border-[color:var(--ring)]'); };
+            tagEl.ondrop = (e) => {
+                e.preventDefault();
+                tagEl.classList.remove('!border-[color:var(--ring)]');
+                const fromIndex = parseInt(e.dataTransfer.getData('text/plain'), 10);
+                if (!isNaN(fromIndex) && fromIndex !== tagIndex) window.moveTag(idx, fromIndex, tagIndex);
+            };
+
             const tagText = document.createElement('span');
             tagText.className = 'truncate';
             tagText.textContent = tag;
@@ -707,6 +724,25 @@ window.addTag = function(idx, tagStr) {
       }
       updateTableRow(idx, { tags: csvStore.get(name).tags });
     }
+  }
+};
+
+window.moveTag = function(idx, fromIndex, toIndex) {
+  const file = files[idx];
+  if (!file) return;
+  const name = file.name;
+  let rowData = csvStore.get(name);
+  if (rowData && rowData.tags) {
+    const newTags = [...rowData.tags];
+    const [moved] = newTags.splice(fromIndex, 1);
+    newTags.splice(toIndex, 0, moved);
+    updateCsvRow(name, rowData.title, rowData.description, newTags, rowData.category);
+    if (shutterRows.has(name)) {
+      const sRow = shutterRows.get(name);
+      sRow.keywords = [...csvStore.get(name).tags];
+      shutterRows.set(name, sRow);
+    }
+    updateTableRow(idx, { tags: csvStore.get(name).tags });
   }
 };
 
