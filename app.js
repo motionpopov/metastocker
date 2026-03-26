@@ -616,14 +616,48 @@ function addTableRow(idx, file) {
 }
 function setThumb(idx, src) { const img = document.getElementById('thumb-' + idx); if (img) { img.src = src; img.classList.remove('hidden'); } }
 function updateTableRow(idx, { title, description, tags, category, status, error }) {
-  if (title !== undefined) { const el = document.getElementById('t-' + idx); if (el) el.textContent = title; }
+  if (title !== undefined) {
+    const el = document.getElementById('t-' + idx);
+    if (el) {
+      if (title === '—' && !csvStore.has(files[idx]?.name)) {
+         el.textContent = '—';
+      } else {
+         el.innerHTML = '';
+         const wrap = document.createElement('div');
+         wrap.className = 'relative group h-full min-h-[48px] flex flex-col';
+         
+         const ta = document.createElement('textarea');
+         ta.className = 'w-full h-full min-h-[60px] resize-y bg-transparent outline-none p-0 border-none text-[color:var(--text)] text-[13px] leading-snug';
+         ta.value = title;
+         ta.onblur = () => window.updateTitle(idx, ta.value);
+         
+         const btn = document.createElement('button');
+         btn.className = 'absolute bottom-1 right-1 opacity-0 group-hover:opacity-80 hover:!opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm z-10';
+         btn.innerHTML = 'Copy';
+         btn.onclick = () => window.copyText(btn, idx, 'title');
+         
+         wrap.appendChild(ta);
+         wrap.appendChild(btn);
+         el.appendChild(wrap);
+      }
+    }
+  }
   if (tags !== undefined) {
     const el = document.getElementById('g-' + idx);
     if (el) {
       if (Array.isArray(tags)) {
         const wasFocused = document.activeElement && document.activeElement.id === 'tag-input-' + idx;
         
-        el.innerHTML = `<div class="flex items-center mb-1"><span class="badge mr-1.5">${tags.length}</span></div>`;
+        el.innerHTML = '';
+        const headerTop = document.createElement('div');
+        headerTop.className = 'flex items-center mb-1 group w-full';
+        headerTop.innerHTML = `
+          <span class="badge mr-1.5">${tags.length}</span>
+          <button class="opacity-0 group-hover:opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm ml-auto focus:opacity-100">Copy</button>
+        `;
+        const cBtn = headerTop.querySelector('button');
+        cBtn.onclick = () => window.copyText(cBtn, idx, 'tags');
+        el.appendChild(headerTop);
         const tagsContainer = document.createElement('div');
         tagsContainer.className = 'flex flex-wrap gap-1 mt-1';
         
@@ -691,6 +725,51 @@ function updateTableRow(idx, { title, description, tags, category, status, error
   if (status) { const el = document.getElementById('s-' + idx); if (el) el.innerHTML = `<span class="${status === 'done' ? 'text-green-700' : 'text-amber-600'}">${status}</span>`; }
   if (error) { const el = document.getElementById('s-' + idx); if (el) el.innerHTML = `<span class="text-red-600">${error}</span>`; }
 }
+window.copyText = function(btn, idx, type) {
+  const file = files[idx];
+  if (!file) return;
+  const name = file.name;
+  let rowData = csvStore.get(name);
+  if (!rowData) return;
+  
+  let text = '';
+  if (type === 'title') {
+     const ta = btn.parentElement.querySelector('textarea');
+     text = ta ? ta.value : rowData.title;
+  } else if (type === 'tags') {
+     text = (rowData.tags || []).join(', ');
+  }
+  
+  if (text) {
+     navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = 'Copied!';
+        setTimeout(() => { btn.innerHTML = orig; }, 1500);
+     });
+  }
+};
+
+window.updateTitle = function(idx, newTitle) {
+  const file = files[idx];
+  if (!file) return;
+  const name = file.name;
+  let rowData = csvStore.get(name);
+  if (rowData) {
+    updateCsvRow(name, newTitle, rowData.description, rowData.tags, rowData.category);
+    if (shutterRows.has(name)) {
+      const sRow = shutterRows.get(name);
+      sRow.description = String(newTitle).slice(0, 200).trim();
+      shutterRows.set(name, sRow);
+    }
+    if (envatoRows.has(name)) {
+      const eRow = envatoRows.get(name);
+      eRow.title90 = String(newTitle).slice(0, 90).trim();
+      eRow.description300 = String(newTitle).slice(0, 300).trim();
+      envatoRows.set(name, eRow);
+    }
+  }
+};
+
 window.removeTag = function(idx, tagIndex) {
   const file = files[idx];
   if (!file) return;
