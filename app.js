@@ -606,7 +606,7 @@ function addTableRow(idx, file) {
     <td class="p-3 cell">${file.name.length > 25 ? file.name.substring(0, 25) + '...' : file.name} ${isV ? '<span class="badge">video</span>' : ''}</td>
     <td class="p-3 cell col-title" id="t-${idx}">—</td>
   <td class="p-3 cell col-tags" id="g-${idx}">—</td>
-  <td class="p-3" id="s-${idx}"><span class="text-amber-600">queued</span></td>
+  <td class="p-3" id="s-${idx}"><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium border bg-gray-100 text-gray-600 border-gray-200">queued</span></td>
   <td class="p-3 text-center">
     <div class="flex items-center justify-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity">
       <button onclick="window.regenerateFile(${idx})" class="hover:bg-blue-100 rounded p-1 text-blue-600" title="Regenerate">↻</button>
@@ -752,11 +752,19 @@ function updateTableRow(idx, { title, description, tags, category, status, error
     const curErr = sEl.dataset.error || '';
 
     if (curErr) {
-      sEl.innerHTML = `<span class="text-red-600">${curErr}</span>`;
+      sEl.innerHTML = `<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-red-100 text-red-700 border border-red-200">${curErr}</span>`;
     } else {
       let html = '';
-      if (curTags && curStatus === 'done') html += `<span class="badge mr-2">tags: ${curTags}</span>`;
-      if (curStatus) html += `<span class="${curStatus === 'done' ? 'text-green-700' : 'text-amber-600'}">${curStatus}</span>`;
+      if (curTags && curStatus === 'done') html += `<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium border bg-green-100 text-green-800 border-green-200 mr-2">tags: ${curTags}</span>`;
+      if (curStatus) {
+         let colorClass = 'bg-amber-100 text-amber-800 border-amber-200';
+         if (curStatus === 'done') colorClass = 'bg-green-100 text-green-800 border-green-200';
+         else if (curStatus === 'error') colorClass = 'bg-red-100 text-red-800 border-red-200';
+         else if (curStatus === 'queued') colorClass = 'bg-gray-100 text-gray-700 border-gray-200';
+         else if (curStatus === 'processing') colorClass = 'bg-blue-100 text-blue-800 border-blue-200';
+         
+         html += `<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium border ${colorClass}">${curStatus}</span>`;
+      }
       sEl.innerHTML = html ? `<div class="flex items-center">${html}</div>` : '';
     }
   }
