@@ -18,7 +18,14 @@
   --ring: #1f6feb;
   --accent: #111111;
   --accent-contrast: #ffffff;
-  --radius: 14px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+  --radius: var(--radius-xl);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, .06), 0 1px 1px rgba(0, 0, 0, .04);
   --shadow-md: 0 10px 25px rgba(0, 0, 0, .06);
   --shadow-lg: 0 20px 40px rgba(0, 0, 0, .10);
@@ -185,7 +192,7 @@ body {
 /* Dots Button - Integrated horizontally next to input */
 .menu-btn {
   padding: 8px;
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   background: var(--muted);
   color: var(--subtle);
   border: 1px solid var(--border);
@@ -223,7 +230,7 @@ body {
   background: var(--card);
   color: var(--text);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   padding: 10px 12px;
   font-size: 14px;
   transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
@@ -246,7 +253,7 @@ body {
 .btn {
   -webkit-tap-highlight-color: transparent;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   padding: 10px 14px;
   font-weight: 600;
   font-size: 14px;
@@ -313,7 +320,7 @@ label:has(#accessKey) {
   background: var(--card);
   color: var(--subtle);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   padding: 6px;
   line-height: 0;
   cursor: pointer;
@@ -339,7 +346,7 @@ label:has(#accessKey) {
   justify-content: center;
   width: 20px;
   height: 20px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--card);
   color: var(--subtle);
   border: 1px solid var(--border);
@@ -361,7 +368,7 @@ label:has(#accessKey) {
   background: var(--card);
   color: var(--text);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
   padding: 8px 10px;
   font-size: 12px;
@@ -436,7 +443,7 @@ label:has(#accessKey) {
   font-size: 11px;
   color: var(--subtle);
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   padding: 2px 8px;
 }
 
@@ -447,7 +454,7 @@ label:has(#accessKey) {
   gap: 6px;
   background: var(--muted);
   padding: 6px;
-  border-radius: 12px;
+  border-radius: var(--radius-full);
   border: 1px solid var(--border);
 }
 
@@ -458,7 +465,7 @@ label:has(#accessKey) {
 }
 
 .segments label {
-  padding: 8px 12px;
+  padding: 8px var(--radius-full);
   border-radius: 12px;
   font-size: 13px;
   cursor: pointer;
@@ -480,7 +487,7 @@ label:has(#accessKey) {
   text-align: center;
   padding: 28px;
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: var(--radius-xl);
   background: linear-gradient(180deg, color-mix(in oklab, var(--card) 96%, transparent),
       color-mix(in oklab, var(--card) 92%, transparent));
   transition: background .18s ease, box-shadow .18s ease;
@@ -506,7 +513,7 @@ label:has(#accessKey) {
   overflow-y: auto;
   overflow-x: hidden;
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: var(--radius-xl);
   background: var(--card);
   max-height: min(55vh, calc(100vh - 480px));
 }
@@ -587,7 +594,7 @@ th.resizing .resizer::after {
   position: fixed;
   right: 22px;
   bottom: 22px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   box-shadow: var(--shadow-md);
   background: var(--accent);
   color: var(--accent-contrast);
@@ -596,7 +603,7 @@ th.resizing .resizer::after {
 #logsPanel .sheet {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
@@ -605,7 +612,7 @@ th.resizing .resizer::after {
 /* Nyan progress */
 #nyanProgressBar {
   height: 112px;
-  border-radius: 16px;
+  border-radius: var(--radius-2xl);
   background: var(--muted);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
@@ -624,14 +631,14 @@ th.resizing .resizer::after {
 #loader .panel {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-lg);
 }
 
 .ring {
   width: 22px;
   height: 22px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   border: 3px solid color-mix(in oklab, var(--text) 10%, transparent);
   border-top-color: var(--text);
   animation: spin .9s linear infinite;
