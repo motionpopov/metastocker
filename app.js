@@ -651,23 +651,6 @@ function updateTableRow(idx, { title, description, tags, category, status, error
         const wasFocused = isEditing && document.activeElement && document.activeElement.id === 'tag-input-' + idx;
         
         el.innerHTML = '';
-        const headerTop = document.createElement('div');
-        headerTop.className = 'flex items-center mb-1 group w-full justify-end gap-1.5';
-        
-        const editBtn = document.createElement('button');
-        editBtn.className = 'opacity-0 group-hover:opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm focus:opacity-100';
-        editBtn.textContent = isEditing ? 'Done' : 'Edit';
-        editBtn.onclick = () => window.toggleEditTags(idx);
-        
-        const cBtn = document.createElement('button');
-        cBtn.className = 'opacity-0 group-hover:opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm focus:opacity-100';
-        cBtn.textContent = 'Copy';
-        cBtn.onclick = () => window.copyText(cBtn, idx, 'tags');
-        
-        headerTop.appendChild(editBtn);
-        headerTop.appendChild(cBtn);
-        el.appendChild(headerTop);
-
         const tagsContainer = document.createElement('div');
         
         if (isEditing) {
@@ -732,10 +715,27 @@ function updateTableRow(idx, { title, description, tags, category, status, error
                 }, 0);
             }
         } else {
-            tagsContainer.className = 'text-[13px] leading-snug break-words';
+            tagsContainer.className = 'text-[13px] leading-snug break-words mb-1';
             tagsContainer.textContent = tags.join(', ');
             el.appendChild(tagsContainer);
         }
+        
+        const footerBottom = document.createElement('div');
+        footerBottom.className = 'flex items-center w-full justify-start gap-1.5 mt-1.5';
+        
+        const editBtn = document.createElement('button');
+        editBtn.className = 'bg-[color:var(--card)] hover:bg-[color:var(--muted)] border border-[color:var(--border)] rounded px-2 py-0.5 text-[10px] text-[color:var(--subtle)] hover:text-[color:var(--text)] transition-colors shadow-sm';
+        editBtn.textContent = isEditing ? 'Done' : 'Edit';
+        editBtn.onclick = () => window.toggleEditTags(idx);
+        
+        const cBtn = document.createElement('button');
+        cBtn.className = 'bg-[color:var(--card)] hover:bg-[color:var(--muted)] border border-[color:var(--border)] rounded px-2 py-0.5 text-[10px] text-[color:var(--subtle)] hover:text-[color:var(--text)] transition-colors shadow-sm';
+        cBtn.textContent = 'Copy';
+        cBtn.onclick = () => window.copyText(cBtn, idx, 'tags');
+        
+        footerBottom.appendChild(editBtn);
+        footerBottom.appendChild(cBtn);
+        el.appendChild(footerBottom);
       } else {
         el.textContent = tags;
       }
