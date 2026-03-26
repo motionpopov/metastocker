@@ -1102,8 +1102,27 @@ async function workerLoop() {
 }
 
 async function startProcessing() {
-  const pendingCount = fileStatuses.filter(s => s !== 'done').length;
-  if (pendingCount === 0) return;
+  let pendingCount = fileStatuses.filter(s => s !== 'done').length;
+  if (pendingCount === 0 && files.length > 0) {
+    if (confirm('All files are already processed. Do you want to re-generate metadata for ALL files from scratch?')) {
+      for (let i = 0; i < files.length; i++) {
+        if (fileStatuses[i] === 'done' || fileStatuses[i] === 'error') {
+          editingTags.delete(i);
+          fileStatuses[i] = 'queued';
+          updateTableRow(i, { status: 'queued', title: '—', tags: '—', error: '' });
+          const name = files[i].name;
+          csvStore.delete(name); envatoRows.delete(name); shutterRows.delete(name);
+        }
+      }
+      state.completed = 0;
+      pendingCount = files.length;
+      uiUpdate();
+    } else {
+      return;
+    }
+  } else if (pendingCount === 0) {
+    return;
+  }
   const accessKey = $('#accessKey').value.trim();
   if (!accessKey) { alert('Enter Access Token'); return; }
   requestWakeLock(); startKeepAlive();
