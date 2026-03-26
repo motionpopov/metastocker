@@ -629,26 +629,9 @@ function updateTableRow(idx, { title, description, tags, category, status, error
         
         tags.forEach((tag, tagIndex) => {
             const tagEl = document.createElement('span');
-            tagEl.className = 'inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2 py-0.5 rounded border border-[color:var(--border)] max-w-full cursor-grab active:cursor-grabbing hover:border-gray-400 transition-colors duration-150';
-            tagEl.draggable = true;
-            tagEl.ondragstart = (e) => {
-                e.dataTransfer.setData('text/plain', tagIndex.toString());
-                e.dataTransfer.effectAllowed = 'move';
-                setTimeout(() => tagEl.classList.add('opacity-40'), 0);
-            };
-            tagEl.ondragend = () => { tagEl.classList.remove('opacity-40'); };
-            tagEl.ondragover = (e) => { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; };
-            tagEl.ondragenter = (e) => { e.preventDefault(); tagEl.classList.add('!border-[color:var(--ring)]'); };
-            tagEl.ondragleave = () => { tagEl.classList.remove('!border-[color:var(--ring)]'); };
-            tagEl.ondrop = (e) => {
-                e.preventDefault();
-                tagEl.classList.remove('!border-[color:var(--ring)]');
-                const fromIndex = parseInt(e.dataTransfer.getData('text/plain'), 10);
-                if (!isNaN(fromIndex) && fromIndex !== tagIndex) window.moveTag(idx, fromIndex, tagIndex);
-            };
-
+            tagEl.className = 'val-tag inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2 py-0.5 rounded border border-[color:var(--border)] max-w-full cursor-grab active:cursor-grabbing hover:border-gray-400 transition-colors duration-150';
             const tagText = document.createElement('span');
-            tagText.className = 'truncate';
+            tagText.className = 'truncate pointer-events-none';
             tagText.textContent = tag;
             const rmBtn = document.createElement('button');
             rmBtn.className = 'opacity-50 hover:opacity-100 hover:text-red-500 ml-0.5 transition-opacity outline-none cursor-pointer p-0.5 leading-none bg-transparent border-none font-bold shrink-0';
@@ -660,9 +643,12 @@ function updateTableRow(idx, { title, description, tags, category, status, error
             tagsContainer.appendChild(tagEl);
         });
 
+        const tagInputWrap = document.createElement('div');
+        tagInputWrap.className = 'ignore-sort flex-1 min-w-[70px] flex';
+        
         const tagInput = document.createElement('input');
         tagInput.id = 'tag-input-' + idx;
-        tagInput.className = 'border border-[color:var(--border)] rounded px-2 py-0.5 text-[12px] outline-none focus:border-[color:var(--ring)] min-w-[70px] flex-1 bg-transparent text-[color:var(--text)]';
+        tagInput.className = 'w-full border border-[color:var(--border)] rounded px-2 py-0.5 text-[12px] outline-none focus:border-[color:var(--ring)] bg-transparent text-[color:var(--text)]';
         tagInput.placeholder = '+ Add...';
         tagInput.onkeydown = (e) => {
             if (e.key === 'Enter' || e.key === ',') {
@@ -672,9 +658,25 @@ function updateTableRow(idx, { title, description, tags, category, status, error
             }
         };
         
-        tagsContainer.appendChild(tagInput);
+        tagInputWrap.appendChild(tagInput);
+        tagsContainer.appendChild(tagInputWrap);
         el.appendChild(tagsContainer);
         
+        if (typeof Sortable !== 'undefined') {
+            new Sortable(tagsContainer, {
+                animation: 250,
+                filter: '.ignore-sort, button',
+                preventOnFilter: false,
+                draggable: '.val-tag',
+                ghostClass: 'opacity-40',
+                onEnd: function (evt) {
+                    if (evt.oldDraggableIndex !== undefined && evt.newDraggableIndex !== undefined && evt.oldDraggableIndex !== evt.newDraggableIndex) {
+                        window.moveTag(idx, evt.oldDraggableIndex, evt.newDraggableIndex);
+                    }
+                }
+            });
+        }
+
         if (wasFocused) {
             setTimeout(() => {
                 const newInput = document.getElementById('tag-input-' + idx);
