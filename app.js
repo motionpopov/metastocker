@@ -621,8 +621,49 @@ function updateTableRow(idx, { title, description, tags, category, status, error
     const el = document.getElementById('g-' + idx);
     if (el) {
       if (Array.isArray(tags)) {
-        el.innerHTML = `<span class="badge mr-1.5">${tags.length}</span>`;
-        el.appendChild(document.createTextNode(tags.join(', ')));
+        const wasFocused = document.activeElement && document.activeElement.id === 'tag-input-' + idx;
+        
+        el.innerHTML = `<div class="flex items-center mb-1"><span class="badge mr-1.5">${tags.length}</span></div>`;
+        const tagsContainer = document.createElement('div');
+        tagsContainer.className = 'flex flex-wrap gap-1 mt-1';
+        
+        tags.forEach((tag, tagIndex) => {
+            const tagEl = document.createElement('span');
+            tagEl.className = 'inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2 py-0.5 rounded border border-[color:var(--border)] max-w-full';
+            const tagText = document.createElement('span');
+            tagText.className = 'truncate';
+            tagText.textContent = tag;
+            const rmBtn = document.createElement('button');
+            rmBtn.className = 'opacity-50 hover:opacity-100 hover:text-red-500 ml-0.5 transition-opacity outline-none cursor-pointer p-0.5 leading-none bg-transparent border-none font-bold shrink-0';
+            rmBtn.innerHTML = '&times;';
+            rmBtn.onclick = () => window.removeTag(idx, tagIndex);
+            
+            tagEl.appendChild(tagText);
+            tagEl.appendChild(rmBtn);
+            tagsContainer.appendChild(tagEl);
+        });
+
+        const tagInput = document.createElement('input');
+        tagInput.id = 'tag-input-' + idx;
+        tagInput.className = 'border border-[color:var(--border)] rounded px-2 py-0.5 text-[12px] outline-none focus:border-[color:var(--ring)] min-w-[70px] flex-1 bg-transparent text-[color:var(--text)]';
+        tagInput.placeholder = '+ Add...';
+        tagInput.onkeydown = (e) => {
+            if (e.key === 'Enter' || e.key === ',') {
+                e.preventDefault();
+                const v = tagInput.value.trim();
+                if (v) window.addTag(idx, v);
+            }
+        };
+        
+        tagsContainer.appendChild(tagInput);
+        el.appendChild(tagsContainer);
+        
+        if (wasFocused) {
+            setTimeout(() => {
+                const newInput = document.getElementById('tag-input-' + idx);
+                if (newInput) newInput.focus();
+            }, 0);
+        }
       } else {
         el.textContent = tags;
       }
@@ -631,6 +672,44 @@ function updateTableRow(idx, { title, description, tags, category, status, error
   if (status) { const el = document.getElementById('s-' + idx); if (el) el.innerHTML = `<span class="${status === 'done' ? 'text-green-700' : 'text-amber-600'}">${status}</span>`; }
   if (error) { const el = document.getElementById('s-' + idx); if (el) el.innerHTML = `<span class="text-red-600">${error}</span>`; }
 }
+window.removeTag = function(idx, tagIndex) {
+  const file = files[idx];
+  if (!file) return;
+  const name = file.name;
+  let rowData = csvStore.get(name);
+  if (rowData && rowData.tags) {
+    const newTags = [...rowData.tags];
+    newTags.splice(tagIndex, 1);
+    updateCsvRow(name, rowData.title, rowData.description, newTags, rowData.category);
+    if (shutterRows.has(name)) {
+      const sRow = shutterRows.get(name);
+      sRow.keywords = [...csvStore.get(name).tags];
+      shutterRows.set(name, sRow);
+    }
+    updateTableRow(idx, { tags: csvStore.get(name).tags });
+  }
+};
+
+window.addTag = function(idx, tagStr) {
+  const file = files[idx];
+  if (!file) return;
+  const name = file.name;
+  let rowData = csvStore.get(name);
+  if (rowData && rowData.tags) {
+    const rawTags = tagStr.split(',').map(s => s.trim()).filter(Boolean);
+    if (rawTags.length > 0) {
+      const newTags = [...rowData.tags, ...rawTags];
+      updateCsvRow(name, rowData.title, rowData.description, newTags, rowData.category);
+      if (shutterRows.has(name)) {
+        const sRow = shutterRows.get(name);
+        sRow.keywords = [...csvStore.get(name).tags];
+        shutterRows.set(name, sRow);
+      }
+      updateTableRow(idx, { tags: csvStore.get(name).tags });
+    }
+  }
+};
+
 window.deleteFile = function (idx) {
   if (state.running && fileStatuses[idx] === 'processing') return alert('Cannot delete while processing');
   const file = files[idx]; if (!file) return;
