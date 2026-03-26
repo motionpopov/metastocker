@@ -603,15 +603,15 @@ function addTableRow(idx, file) {
   const tr = document.createElement('tr'); tr.id = 'row-' + idx;
   tr.innerHTML = `
     <td class="p-3 text-[color:var(--subtle)]">${idx + 1}</td>
-    <td class="p-3"><div class="h-16 w-16 rounded-md overflow-hidden relative" style="background:var(--muted)"><img id="thumb-${idx}" class="h-16 w-16 object-cover hidden cursor-zoom-in" alt="" onmouseenter="window.showPreviewHover(event, this.src)" onmouseleave="window.hidePreviewHover()" onmousemove="window.movePreviewHover(event)" /></div></td>
+    <td class="p-3"><div class="h-16 w-16 rounded-lg overflow-hidden relative" style="background:var(--muted)"><img id="thumb-${idx}" class="h-16 w-16 object-cover hidden cursor-zoom-in" alt="" onmouseenter="window.showPreviewHover(event, this.src)" onmouseleave="window.hidePreviewHover()" onmousemove="window.movePreviewHover(event)" /></div></td>
     <td class="p-3 cell">${file.name.length > 25 ? file.name.substring(0, 25) + '...' : file.name} ${isV ? '<span class="badge">video</span>' : ''}</td>
     <td class="p-3 cell col-title" id="t-${idx}">—</td>
   <td class="p-3 cell col-tags" id="g-${idx}">—</td>
-  <td class="p-3" id="s-${idx}"><span class="inline-flex items-center px-2 py-0.5 rounded-sm text-[11px] font-medium border bg-gray-100 text-gray-600 border-gray-200">queued</span></td>
+  <td class="p-3" id="s-${idx}"><span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium border bg-gray-100 text-gray-600 border-gray-200">queued</span></td>
   <td class="p-3 text-center">
     <div class="flex items-center justify-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity">
-      <button onclick="window.regenerateFile(${idx})" class="hover:bg-blue-100 rounded-sm p-1 text-blue-600" title="Regenerate">↻</button>
-      <button onclick="window.deleteFile(${idx})" class="hover:bg-red-100 rounded-sm p-1 text-red-600" title="Delete">✕</button>
+      <button onclick="window.regenerateFile(${idx})" class="hover:bg-blue-100 rounded p-1 text-blue-600" title="Regenerate">↻</button>
+      <button onclick="window.deleteFile(${idx})" class="hover:bg-red-100 rounded p-1 text-red-600" title="Delete">✕</button>
     </div>
   </td>`;
   document.getElementById('resultsBody').appendChild(tr);
@@ -634,7 +634,7 @@ function updateTableRow(idx, { title, description, tags, category, status, error
          ta.onblur = () => window.updateTitle(idx, ta.value);
          
          const btn = document.createElement('button');
-         btn.className = 'absolute bottom-1 right-1 opacity-0 group-hover:opacity-80 hover:!opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded-sm px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm z-10';
+         btn.className = 'absolute bottom-1 right-1 opacity-0 group-hover:opacity-80 hover:!opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm z-10';
          btn.innerHTML = 'Copy';
          btn.onclick = () => window.copyText(btn, idx, 'title');
          
@@ -659,7 +659,7 @@ function updateTableRow(idx, { title, description, tags, category, status, error
             
             tags.forEach((tag, tagIndex) => {
                 const tagEl = document.createElement('span');
-                tagEl.className = 'val-tag inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2.5 py-0.5 rounded-md border border-[color:var(--border)] max-w-full cursor-grab active:cursor-grabbing hover:border-gray-400 transition-colors duration-150';
+                tagEl.className = 'val-tag inline-flex items-center gap-1 bg-[color:var(--muted)] text-[color:var(--text)] text-[12px] px-2.5 py-0.5 rounded-full border border-[color:var(--border)] max-w-full cursor-grab active:cursor-grabbing hover:border-gray-400 transition-colors duration-150';
                 
                 const tagText = document.createElement('span');
                 tagText.className = 'truncate pointer-events-none';
@@ -680,7 +680,7 @@ function updateTableRow(idx, { title, description, tags, category, status, error
             
             const tagInput = document.createElement('input');
             tagInput.id = 'tag-input-' + idx;
-            tagInput.className = 'w-full border border-[color:var(--border)] rounded-md px-2.5 py-0.5 text-[12px] outline-none focus:border-[color:var(--ring)] bg-transparent text-[color:var(--text)]';
+            tagInput.className = 'w-full border border-[color:var(--border)] rounded-full px-2.5 py-0.5 text-[12px] outline-none focus:border-[color:var(--ring)] bg-transparent text-[color:var(--text)]';
             tagInput.placeholder = '+ Add...';
             tagInput.onkeydown = (e) => {
                 if (e.key === 'Enter' || e.key === ',') {
@@ -725,12 +725,12 @@ function updateTableRow(idx, { title, description, tags, category, status, error
         footerBottom.className = 'flex items-center w-full justify-start gap-1.5 mt-1.5';
         
         const editBtn = document.createElement('button');
-        editBtn.className = 'bg-[color:var(--card)] hover:bg-[color:var(--muted)] border border-[color:var(--border)] rounded-sm px-2 py-0.5 text-[10px] text-[color:var(--subtle)] hover:text-[color:var(--text)] transition-colors shadow-sm';
+        editBtn.className = 'bg-[color:var(--card)] hover:bg-[color:var(--muted)] border border-[color:var(--border)] rounded px-2 py-0.5 text-[10px] text-[color:var(--subtle)] hover:text-[color:var(--text)] transition-colors shadow-sm';
         editBtn.textContent = isEditing ? 'Done' : 'Edit';
         editBtn.onclick = () => window.toggleEditTags(idx);
         
         const cBtn = document.createElement('button');
-        cBtn.className = 'bg-[color:var(--card)] hover:bg-[color:var(--muted)] border border-[color:var(--border)] rounded-sm px-2 py-0.5 text-[10px] text-[color:var(--subtle)] hover:text-[color:var(--text)] transition-colors shadow-sm';
+        cBtn.className = 'bg-[color:var(--card)] hover:bg-[color:var(--muted)] border border-[color:var(--border)] rounded px-2 py-0.5 text-[10px] text-[color:var(--subtle)] hover:text-[color:var(--text)] transition-colors shadow-sm';
         cBtn.textContent = 'Copy';
         cBtn.onclick = () => window.copyText(cBtn, idx, 'tags');
         
@@ -753,10 +753,10 @@ function updateTableRow(idx, { title, description, tags, category, status, error
     const curErr = sEl.dataset.error || '';
 
     if (curErr) {
-      sEl.innerHTML = `<span class="inline-flex items-center px-2 py-0.5 rounded-sm text-[11px] font-medium bg-red-100 text-red-700 border border-red-200">${curErr}</span>`;
+      sEl.innerHTML = `<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-red-100 text-red-700 border border-red-200">${curErr}</span>`;
     } else {
       let html = '';
-      if (curTags && curStatus === 'done') html += `<span class="inline-flex items-center px-2 py-0.5 rounded-sm text-[11px] font-medium border bg-green-100 text-green-800 border-green-200 mr-2">tags: ${curTags}</span>`;
+      if (curTags && curStatus === 'done') html += `<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium border bg-green-100 text-green-800 border-green-200 mr-2">tags: ${curTags}</span>`;
       if (curStatus) {
          let colorClass = 'bg-amber-100 text-amber-800 border-amber-200';
          if (curStatus === 'done') colorClass = 'bg-green-100 text-green-800 border-green-200';
@@ -764,7 +764,7 @@ function updateTableRow(idx, { title, description, tags, category, status, error
          else if (curStatus === 'queued') colorClass = 'bg-gray-100 text-gray-700 border-gray-200';
          else if (curStatus === 'processing') colorClass = 'bg-blue-100 text-blue-800 border-blue-200';
          
-         html += `<span class="inline-flex items-center px-2 py-0.5 rounded-sm text-[11px] font-medium border ${colorClass}">${curStatus}</span>`;
+         html += `<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium border ${colorClass}">${curStatus}</span>`;
       }
       sEl.innerHTML = html ? `<div class="flex items-center">${html}</div>` : '';
     }
