@@ -650,10 +650,9 @@ function updateTableRow(idx, { title, description, tags, category, status, error
         
         el.innerHTML = '';
         const headerTop = document.createElement('div');
-        headerTop.className = 'flex items-center mb-1 group w-full';
+        headerTop.className = 'flex items-center mb-1 group w-full justify-end';
         headerTop.innerHTML = `
-          <span class="badge mr-1.5">${tags.length}</span>
-          <button class="opacity-0 group-hover:opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm ml-auto focus:opacity-100">Copy</button>
+          <button class="opacity-0 group-hover:opacity-100 transition-opacity bg-[color:var(--card)] border border-[color:var(--border)] rounded px-1.5 py-0.5 text-[10px] text-[color:var(--text)] shadow-sm focus:opacity-100">Copy</button>
         `;
         const cBtn = headerTop.querySelector('button');
         cBtn.onclick = () => window.copyText(cBtn, idx, 'tags');
@@ -722,8 +721,25 @@ function updateTableRow(idx, { title, description, tags, category, status, error
       }
     }
   }
-  if (status) { const el = document.getElementById('s-' + idx); if (el) el.innerHTML = `<span class="${status === 'done' ? 'text-green-700' : 'text-amber-600'}">${status}</span>`; }
-  if (error) { const el = document.getElementById('s-' + idx); if (el) el.innerHTML = `<span class="text-red-600">${error}</span>`; }
+  const sEl = document.getElementById('s-' + idx);
+  if (sEl) {
+    if (status !== undefined) sEl.dataset.status = status;
+    if (tags !== undefined) sEl.dataset.tagCount = Array.isArray(tags) ? tags.length : '';
+    if (error !== undefined) sEl.dataset.error = error;
+
+    const curStatus = sEl.dataset.status || '';
+    const curTags = sEl.dataset.tagCount || '';
+    const curErr = sEl.dataset.error || '';
+
+    if (curErr) {
+      sEl.innerHTML = `<span class="text-red-600">${curErr}</span>`;
+    } else {
+      let html = '';
+      if (curTags && curStatus === 'done') html += `<span class="badge mr-2">tags: ${curTags}</span>`;
+      if (curStatus) html += `<span class="${curStatus === 'done' ? 'text-green-700' : 'text-amber-600'}">${curStatus}</span>`;
+      sEl.innerHTML = html ? `<div class="flex items-center">${html}</div>` : '';
+    }
+  }
 }
 window.copyText = function(btn, idx, type) {
   const file = files[idx];
