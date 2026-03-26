@@ -1,4 +1,5 @@
 /************** Utils **************/
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 const yieldToMain = () => new Promise(r => { const c = new MessageChannel(); c.port1.onmessage = r; c.port2.postMessage(null); });
 const tick = () => document.hidden ? yieldToMain() : new Promise(r => requestAnimationFrame(() => r()));
 const $ = s => document.querySelector(s);
