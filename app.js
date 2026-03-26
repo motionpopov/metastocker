@@ -457,24 +457,7 @@ async function downscaleDataUrlToJpeg(dataUrl, maxEdge, q = 0.85) {
   const canvas = document.createElement('canvas'); canvas.width = w; canvas.height = h;
   const ctx = canvas.getContext('2d'); ctx.drawImage(img, 0, 0, w, h); return canvas.toDataURL('image/jpeg', q);
 }
-async function downscaleImageToJpegDataUrl(file, maxEdge, q = 0.85) {
-  return new Promise((resolve, reject) => {
-    const url = URL.createObjectURL(file);
-    const img = new Image();
-    img.onload = () => {
-      const srcW = (img.naturalWidth || img.width || 1024);
-      const srcH = (img.naturalHeight || img.height || 1024);
-      const scale = Math.min(1, maxEdge / Math.max(srcW, srcH));
-      const w = Math.round(srcW * scale), h = Math.round(srcH * scale);
-      const canvas = document.createElement('canvas'); canvas.width = w; canvas.height = h;
-      const ctx = canvas.getContext('2d'); ctx.drawImage(img, 0, 0, w, h);
-      URL.revokeObjectURL(url);
-      resolve(canvas.toDataURL('image/jpeg', q));
-    };
-    img.onerror = (e) => { URL.revokeObjectURL(url); reject(e); };
-    img.src = url;
-  });
-}
+async function downscaleImageToJpegDataUrl(file, maxEdge) { const dataUrl = await fileToDataUrl(file); return downscaleDataUrlToJpeg(dataUrl, maxEdge, 0.85); }
 function createPlaceholderImage(maxEdge) {
   const canvas = document.createElement('canvas'); canvas.width = maxEdge; canvas.height = maxEdge;
   const ctx = canvas.getContext('2d');
@@ -525,7 +508,7 @@ async function captureMiddleFrameToDataUrl(file, maxEdge) {
 function isVideo(file) { return file.type.startsWith('video/') || VIDEO_EXT.includes(extOf(file.name)); }
 function isImage(file) { return file.type.startsWith('image/') || IMAGE_EXT.includes(extOf(file.name)); }
 async function buildThumbDataUrl(file) {
-  const EDGE = 420;
+  const EDGE = 1920;
   try {
     if (isAiFile(file)) return await extractAiPreviewToDataUrl(file, EDGE);
     if (isImage(file)) return await downscaleImageToJpegDataUrl(file, EDGE);
@@ -1068,17 +1051,6 @@ async function processOne(idx) {
 
     // Instead of sending placeholder, if previewUrl isn't empty but is the placeholder string
     let finalImageUrl = previewUrl.includes('f3f4f6') ? '' : previewUrl;
-    
-    // Dynamically generate the high-res 1920px frame specifically for the Vision AI to keep UI fast
-    if (finalImageUrl) {
-      if (isImage(file)) {
-         try { finalImageUrl = await downscaleImageToJpegDataUrl(file, 1920); } catch(e) { console.warn('High-res image failed, using low-res', e); }
-      } else if (isVideo(file)) {
-         try { finalImageUrl = await captureMiddleFrameToDataUrl(file, 1920); } catch(e) { console.warn('High-res video frame failed, using low-res', e); }
-      } else if (isAiFile(file)) {
-         try { finalImageUrl = await extractAiPreviewToDataUrl(file, 1920); } catch(e) { console.warn('High-res AI frame failed, using low-res', e); }
-      }
-    }
 
     const raw = await callOpenAI({ accessKey, model, imageDataUrl: finalImageUrl, prompt });
     const title = clip(raw.title || '', ADOBE_CONFIG.titleMax);
