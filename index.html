@@ -5,27 +5,36 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#fafafa" />
+  <script>
+    try {
+      if (localStorage.getItem('meta_theme') === 'dark') {
+        document.documentElement.classList.replace('light', 'dark');
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#12131b');
+      }
+    } catch { }
+  </script>
   <title>MetaStocker</title>
   <link rel="icon" href="assets/metalogo.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/metalogo.png" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.4">
 
   <!-- Tailwind только для раскладки -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="tailwind.generated.css?v=2.4">
   <!-- tsParticles (CDN) for background particles -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.9.1/tsparticles.bundle.min.js"
+    integrity="sha384-k5y1MdALoG8qJ5FfC4SfwHtiC9/IZ8rQXlTxDRDIFriSZwBqIdOa2M8mcmQLs2pS" crossorigin="anonymous"></script>
 
   <!-- exifr for image metadata extraction -->
-  <script src="https://cdn.jsdelivr.net/npm/exifr/dist/full.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/full.umd.js"
+    integrity="sha384-KrOocIA+lZcNUz2MDavnT/FuX+CbTREJihUi0bp8QUSwhE2AkGTNpv2b7yMbBkx5" crossorigin="anonymous"></script>
 
   <!-- PDF.js for extracting previews from Adobe Illustrator (.ai) files -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+    integrity="sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e" crossorigin="anonymous"></script>
 
   <!-- SortableJS for smooth tag drag-and-drop -->
-  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-
-  <!-- GoatCounter Analytics -->
-  <script data-goatcounter="https://metastocker.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.7/Sortable.min.js"
+    integrity="sha384-DgmC6Xe2bSN2WjTDXzWYbUbxyhNP+NNkGDR/g78pCXV7E7rcVTGxVg0uIVCUUcBc" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -34,25 +43,38 @@
   <header class="topbar">
     <div class="topbar-inner container">
       <div class="brand headline flex items-center gap-2" id="brandWrap">
-        <img id="brandLogo" src="assets/metalogo.png" alt="MetaStocker" width="41" height="41" class="rounded" />
+        <img id="brandLogo" src="assets/metalogo.png" alt="" width="41" height="41" class="rounded" />
         <span id="brandText">MetaStocker</span>
       </div>
-      <span class="badge">v1.56</span>
+      <span class="badge version-badge">v2.4</span>
       <span id="tokenCounter" class="badge hidden" title="Total tokens used in this session">0 tokens</span>
       <div class="grow"></div>
-      <a href="/blog/" id="blogBtn" class="btn ghost">Blog</a>
-      <button id="aboutBtn" class="btn ghost">About</button>
-      <button id="contactBtn" class="btn ghost">Contact</button>
+      <button type="button" id="themeToggle" class="btn ghost theme-toggle" aria-label="Switch to dark theme"
+        aria-pressed="false" title="Switch to dark theme">
+        <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+      </button>
+      <nav class="topbar-nav" aria-label="Primary navigation">
+        <a href="blog/" id="blogBtn" class="btn ghost">Blog</a>
+        <button type="button" id="aboutBtn" class="btn ghost">About</button>
+        <button type="button" id="contactBtn" class="btn ghost">Contact</button>
+      </nav>
     </div>
   </header>
 
   <main class="container grid" style="gap:20px">
     <!-- Lead -->
-    <section class="card pad">
-      <div class="flex flex-col gap-1">
-        <div class="headline">Fast. Easy. Almost free.</div>
-        <div class="subtitle">AI tags and descriptions for photos and videos.</div>
+    <section class="card pad hero-card">
+      <div class="hero-copy">
+        <div class="eyebrow">AI metadata workspace</div>
+        <h1 class="hero-title">Stock-ready titles and tags in one pass.</h1>
+        <p class="hero-subtitle">Import photos or videos and export marketplace-ready CSV files. Original files stay in your browser; selected previews and metadata are sent directly to your chosen AI provider.</p>
       </div>
+      <ul class="hero-points">
+        <li>Adobe · Envato · Shutterstock · Freepik</li>
+        <li>Browser-based workflow</li>
+        <li>CSV export included</li>
+      </ul>
     </section>
 
     <!-- Controls -->
@@ -60,20 +82,27 @@
       <div id="settingsCard" class="card flip-card">
         <div class="flip-card-inner">
           <!-- Front Face: API & Model Settings -->
-          <div class="flip-card-front">
+          <div class="flip-card-front" aria-hidden="false">
             <div class="grid" style="gap:12px">
-              <label class="block">
-                <span class="label flex items-center gap-2">Access Token
+              <div class="section-heading">
+                <span class="step-badge">1</span>
+                <div>
+                  <h2>Connect OpenAI</h2>
+                  <p>Add your API key, then choose the model and limits for this batch.</p>
+                </div>
+              </div>
+              <div class="block access-token-field">
+                <div class="label flex items-center gap-2"><label for="accessKey">OpenAI API key</label>
                   <span class="hint-tooltip">
-                    <span class="qmark" tabindex="0" aria-label="Where to get the access token">?</span>
-                    <span class="tooltip">For GPT models — get a key at <a href="https://platform.openai.com/api-keys"
-                        target="_blank" rel="noopener" class="underline">OpenAI</a>.</span>
+                    <a class="qmark" href="blog/how-to-get-openai-api-key.html" target="_blank" rel="noopener"
+                      aria-label="Open the illustrated guide to getting an OpenAI API key" aria-describedby="accessTokenHelp">?</a>
+                    <span class="tooltip" id="accessTokenHelp" role="tooltip">This private key lets MetaStocker send requests to OpenAI on your account. API billing is separate from ChatGPT. Open the illustrated beginner guide from this question mark.</span>
                   </span>
-                </span>
+                </div>
                 <div class="flex items-center gap-2">
                   <div class="flex-1 relative">
-                    <input id="accessKey" type="password" placeholder="sk-..." class="input pr-10" />
-                    <button id="accessKeyToggle" type="button" aria-label="Show/Hide access token">
+                    <input id="accessKey" type="password" placeholder="sk-proj-..." class="input pr-10" autocomplete="off" autocapitalize="none" spellcheck="false" />
+                    <button id="accessKeyToggle" type="button" aria-label="Show OpenAI API key" aria-pressed="false">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="1.6">
                         <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" />
@@ -81,7 +110,7 @@
                       </svg>
                     </button>
                   </div>
-                  <button id="openPromptBtn" class="menu-btn" title="Edit System Prompt">
+                  <button type="button" id="openPromptBtn" class="menu-btn" title="Edit System Prompt" aria-label="Edit system prompt">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                       stroke-linecap="round" stroke-linejoin="round">
                       <circle cx="12" cy="12" r="1.5" />
@@ -90,43 +119,44 @@
                     </svg>
                   </button>
                 </div>
-                <div class="hint mt-1">Your API key is stored locally in your browser; the site doesn't store your keys.
+                <div class="hint api-key-hint mt-1">Kept only in this browser tab and sent directly to OpenAI with your requests. Use a dedicated key on a trusted device.
+                  <a class="api-key-guide-link" href="blog/how-to-get-openai-api-key.html" target="_blank" rel="noopener">How to create a key safely&nbsp;→</a>
                 </div>
-              </label>
+              </div>
               <div class="grid cols-2" style="gap:12px">
-                <label class="block">
-                  <span class="label flex items-center gap-2">Model</span>
+                <div class="block">
+                  <label for="model" class="label flex items-center gap-2">Model</label>
                   <select id="model" class="select">
                     <option value="gpt-5.4-mini">gpt-5.4-mini</option>
                     <option value="gpt-5.4-nano" selected>gpt-5.4-nano</option>
                   </select>
                   <div id="modelHint" class="hint mt-1.5 min-h-[1.25rem]"></div>
-                </label>
-                <label class="block">
-                  <span class="label flex items-center gap-2">Tags Count
+                </div>
+                <div class="block">
+                  <div class="label flex items-center gap-2"><label for="tagsCount">Tags Count</label>
                     <span class="hint-tooltip">
-                      <span class="qmark" tabindex="0">?</span>
-                      <span class="tooltip">Adobe Stock recommends using fewer, highly relevant tags (around 20-30), and
+                      <button type="button" class="qmark" aria-label="Tags count help" aria-describedby="tagsCountHelp">?</button>
+                      <span class="tooltip" id="tagsCountHelp" role="tooltip">Adobe Stock recommends using fewer, highly relevant tags (around 20-30), and
                         we agree! But you can adjust this limit.</span>
                     </span>
-                  </span>
+                  </div>
                   <input id="tagsCount" type="number" min="10" max="49" value="20" class="input" />
-                </label>
+                </div>
               </div>
             </div>
           </div>
 
           <!-- Back Face: System Prompt Editor -->
-          <div class="flip-card-back">
+          <div class="flip-card-back" aria-hidden="true" inert>
             <div class="flex flex-col h-full gap-2">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
-                  <span class="label !m-0">System Prompt</span>
-                  <button id="guideBtn"
+                  <label for="systemPromptInp" class="label !m-0">System Prompt</label>
+                  <button type="button" id="guideBtn"
                     class="bg-muted text-subtle hover:text-text rounded-full w-5 h-5 flex items-center justify-center text-[10px] border border-border transition-colors transition-transform hover:scale-110"
-                    title="Attribution Guide">?</button>
+                    title="Attribution Guide" aria-label="Open attribution guide">?</button>
                 </div>
-                <button id="closePromptBtn" class="btn ghost btn-sm py-1 px-2 text-xs">Done</button>
+                <button type="button" id="closePromptBtn" class="btn ghost btn-sm py-1 px-2 text-xs">Done</button>
               </div>
               <textarea id="systemPromptInp" class="textarea flex-1 text-xs font-mono"
                 placeholder="Default strategy will be used if empty..."></textarea>
@@ -138,35 +168,59 @@
 
       <div class="card pad">
         <div class="grid" style="gap:12px">
+          <div class="section-heading">
+            <span class="step-badge">2</span>
+            <div>
+              <h2>Set metadata defaults</h2>
+              <p>Add creative context and reusable keywords before import.</p>
+            </div>
+          </div>
           <label class="block">
-            <span class="label">Batch comments (optional)</span>
+            <span class="label">Describe this batch (optional)</span>
             <textarea id="comments" class="textarea"
-              placeholder="3D icons; consistent tag style; avoid brand names..."></textarea>
+              placeholder="e.g. modern 3D icons for a finance app"></textarea>
+            <span class="hint mt-1">Added to every prompt in this batch.</span>
           </label>
-          <label class="block">
-            <span class="label flex items-center gap-2">Always add these tags (optional)
+          <div class="block">
+            <div class="label flex items-center gap-2"><label for="alwaysTags">Always add these tags (optional)</label>
               <span class="hint-tooltip">
-                <span class="qmark" tabindex="0" aria-label="Tags help">?</span>
-                <span class="tooltip">These tags will be added at the beginning.</span>
+                <button type="button" class="qmark" aria-label="Always-added tags help" aria-describedby="alwaysTagsHelp">?</button>
+                <span class="tooltip" id="alwaysTagsHelp" role="tooltip">Choose where these tags appear in every generated tag list.</span>
               </span>
-            </span>
+            </div>
             <textarea id="alwaysTags" class="textarea" rows="2"
               placeholder="ui, ux, 3d icons, minimal, gradient"></textarea>
-          </label>
-          <label class="block mt-2">
-            <div class="flex items-center gap-2">
+            <div class="mt-2">
+              <label for="alwaysTagsPosition" class="label">Place added tags</label>
+              <select id="alwaysTagsPosition" class="select" aria-describedby="alwaysTagsPositionHelp">
+                <option value="start">At the beginning</option>
+                <option value="end">At the end</option>
+                <option value="random">Randomly among other tags</option>
+              </select>
+              <p id="alwaysTagsPositionHelp" class="hint mt-1">Keep these tags first in every generated list.</p>
+            </div>
+          </div>
+          <div class="block mt-2">
+            <label for="useMetadata" class="flex items-center gap-2">
               <input id="useMetadata" type="checkbox"
                 class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
               <span class="label !m-0 !mb-0 cursor-pointer text-sm">Use image metadata (if available)</span>
-            </div>
-          </label>
+            </label>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Export toggles & run controls -->
-    <section class="card pad">
-      <div class="flex flex-wrap items-center gap-4">
+    <section class="card pad run-card">
+      <div class="section-heading run-heading">
+        <span class="step-badge">3</span>
+        <div>
+          <h2>Choose outputs and run</h2>
+          <p>Select marketplace formats, then start processing.</p>
+        </div>
+      </div>
+      <div class="run-controls">
         <div id="stockOutputs" class="segments" role="group" aria-label="Export formats">
           <span class="sr-only">Export formats</span>
           <input id="outAdobe" type="checkbox" checked>
@@ -178,28 +232,25 @@
           <input id="outFreepik" type="checkbox">
           <label for="outFreepik">Freepik CSV</label>
         </div>
-        <button id="downloadAdobeBtn" class="btn ghost" disabled>Download CSV</button>
-        <button id="envatoSettingsBtn" class="btn ghost hidden ml-2">Edit Envato rows...</button>
+        <button type="button" id="downloadAdobeBtn" class="btn ghost" disabled>Download CSV</button>
+        <button type="button" id="envatoSettingsBtn" class="btn ghost hidden ml-2">Edit Envato rows...</button>
         <div class="grow"></div>
         <div class="flex items-center gap-2 text-sm">
-          <label class="label !m-0 flex items-center gap-2" id="threadsTooltip">Threads
-            <span class="hint-tooltip">
-              <span class="qmark" tabindex="0" aria-label="Threads help">?</span>
-              <span class="tooltip">This setting determines how many parallel requests go to OpenAI.</span>
+          <div class="label !m-0 flex items-center gap-2"><label for="concurrency">Threads</label>
+            <span class="hint-tooltip" id="threadsTooltip">
+              <button type="button" class="qmark" aria-label="Threads help" aria-describedby="threadsHelp">?</button>
+              <span class="tooltip" id="threadsHelp" role="tooltip">This setting determines how many parallel requests go to the selected AI provider.</span>
             </span>
-          </label>
+          </div>
           <input id="concurrency" type="number" value="10" min="1" max="20"
             class="input w-16 text-center !py-1 !px-2" />
         </div>
-        <button id="startBtn" class="btn primary">Start</button>
-        <button id="pauseBtn" class="btn ghost hidden" disabled>Pause</button>
-        <button id="resumeBtn" class="btn ghost hidden" disabled>Resume</button>
-        <div id="progress" class="subtitle hidden"></div>
+        <button type="button" id="startBtn" class="btn primary">Start</button>
       </div>
     </section>
 
     <!-- Drag & Drop -->
-    <section id="drop" class="dropzone">
+    <section id="drop" class="dropzone" role="button" tabindex="0" aria-describedby="dropHint">
       <div id="dragDropContent">
         <div id="importContent" class="flex flex-col items-center gap-2">
           <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -207,16 +258,16 @@
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M12 16V4m0 0l-3.5 3.5M12 4l3.5 3.5M6 20h12a2 2 0 002-2v-4a4 4 0 00-4-4H8a4 4 0 00-4 4v4a2 2 0 002 2z" />
           </svg>
-          <p class="text-[15px] font-semibold">Import files</p>
-          <div class="hint" id="fileCount"><span id="fileCountText">0 files imported</span></div>
+          <p class="text-[15px] font-semibold">Drop files here or click to browse</p>
+          <p id="dropHint" class="hint">Images, PDF-compatible AI files, and common video formats</p>
+          <div class="hint" id="fileCount" aria-live="polite"><span id="fileCountText">0 files imported</span></div>
         </div>
-        <input id="fileInput" type="file" multiple class="hidden"
-          accept="image/jpeg,image/png,image/svg+xml,video/mp4,video/webm,video/ogg,video/quicktime,video/*,.ai,.mov,.mp4" />
+        <input id="fileInput" type="file" multiple class="hidden" accept="image/*,video/*,.ai" />
       </div>
 
       <!-- Minimalist Progress (IDs preserved for JS) -->
       <div id="nyanLoaderContent" class="hidden w-full">
-        <div id="nyanProgressBar" class="relative w-full">
+        <div id="nyanProgressBar" class="relative w-full" role="progressbar" aria-label="Metadata generation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
           <div id="nyanProgressFill" class="absolute top-0 left-0 h-full" style="width:0%"></div>
           <div class="absolute inset-0 flex items-center justify-center px-4 py-3 text-center">
             <div class="flex items-center gap-3">
@@ -240,46 +291,32 @@
     <div id="debugInfo" class="card pad" style="display:none">
       <div class="flex items-center justify-between mb-2">
         <div class="font-medium">Debug information</div>
-        <button onclick="document.getElementById('debugInfo').style.display='none'" class="btn ghost">&times;</button>
+        <button type="button" id="debugClose" class="btn ghost" aria-label="Close debug information">&times;</button>
       </div>
       <div id="debugContent" class="font-mono text-sm"></div>
     </div>
 
     <!-- Logs Panel trigger -->
-    <button id="showLogsBtn" class="btn primary">📋</button>
-
-    <!-- Logs Panel -->
-    <div id="logsPanel" class="fixed inset-0 bg-black/50 z-50 hidden">
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sheet w-[min(880px,92vw)] h-[80vh] p-0 overflow-hidden">
-        <div class="flex items-center justify-between px-4 py-3 border-b" style="border-color:var(--border)">
-          <h3 class="text-base font-semibold">System Logs</h3>
-          <button onclick="document.getElementById('logsPanel').classList.add('hidden')"
-            class="btn ghost">&times;</button>
-        </div>
-        <div id="logsContent" class="flex-1 overflow-auto p-4 bg-[color:var(--muted)] font-mono text-[12px]"></div>
-        <div class="flex items-center justify-between px-4 py-3 border-t" style="border-color:var(--border)">
-          <button onclick="copyLogs()" class="btn ghost">📋 Copy logs</button>
-          <button onclick="clearLogs()" class="btn ghost text-red-600">Clear logs</button>
-          <button onclick="downloadLogs()" class="btn ghost">Download logs</button>
-        </div>
-      </div>
-    </div>
+    <button type="button" id="showLogsBtn" class="btn primary" aria-label="Open system logs">Logs</button>
 
     <!-- Live table -->
     <section class="table-wrap">
+      <div class="table-empty" role="status">
+        <strong>No files yet</strong>
+        <span>Imported assets and generated metadata will appear here.</span>
+      </div>
       <table class="min-w-full text-sm table-fixed">
         <thead>
           <tr>
             <th class="th-sticky w-14">#</th>
             <th class="th-sticky w-28">Preview</th>
             <th class="th-sticky w-48">File</th>
-            <th class="th-sticky col-title" id="th-title">Title<div class="resizer" data-col="title"></div>
+            <th class="th-sticky col-title" id="th-title">Title<div class="resizer" data-col="title" role="separator" aria-orientation="vertical" aria-label="Resize title column" aria-valuemin="200" aria-valuemax="2400" aria-valuenow="300" tabindex="0"></div>
             </th>
-            <th class="th-sticky col-tags" id="th-tags">Tags<div class="resizer" data-col="tags"></div>
+            <th class="th-sticky col-tags" id="th-tags">Tags<div class="resizer" data-col="tags" role="separator" aria-orientation="vertical" aria-label="Resize tags column" aria-valuemin="200" aria-valuemax="2400" aria-valuenow="300" tabindex="0"></div>
             </th>
             <th class="th-sticky w-28">Status</th>
-            <th class="th-sticky w-20 text-center"></th>
+            <th class="th-sticky w-20 text-center"><span class="sr-only">Actions</span></th>
           </tr>
         </thead>
         <tbody id="resultsBody"></tbody>
@@ -287,19 +324,35 @@
     </section>
   </main>
 
+  <!-- Logs Panel -->
+  <div id="logsPanel" class="fixed inset-0 bg-black/50 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="logsTitle" aria-hidden="true" tabindex="-1" inert>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sheet w-[min(880px,92vw)] h-[80vh] p-0 overflow-hidden">
+      <div class="flex items-center justify-between px-4 py-3 border-b" style="border-color:var(--border)">
+        <h3 id="logsTitle" class="text-base font-semibold">System Logs</h3>
+        <button type="button" id="logsClose" class="btn ghost" aria-label="Close system logs">&times;</button>
+      </div>
+      <div id="logsContent" class="flex-1 overflow-auto p-4 bg-[color:var(--muted)] font-mono text-[12px]"></div>
+      <div class="logs-actions flex items-center justify-between px-4 py-3 border-t" style="border-color:var(--border)">
+        <button type="button" onclick="copyLogs()" class="btn ghost">Copy logs</button>
+        <button type="button" onclick="clearLogs()" class="btn ghost text-red-700">Clear logs</button>
+        <button type="button" onclick="downloadLogs()" class="btn ghost">Download logs</button>
+      </div>
+    </div>
+  </div>
+
   <!-- About modal -->
-  <div id="aboutModal" class="fixed inset-0 bg-black/50 z-50 hidden">
+  <div id="aboutModal" class="fixed inset-0 bg-black/50 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="aboutTitle" aria-hidden="true" tabindex="-1" inert>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 card pad w-[min(640px,92vw)]">
       <div class="flex items-center justify-between mb-2">
-        <h3 class="text-lg font-semibold">About MetaStocker</h3>
-        <button id="aboutClose" class="btn ghost">&times;</button>
+        <h3 id="aboutTitle" class="text-lg font-semibold">About MetaStocker</h3>
+        <button type="button" id="aboutClose" class="btn ghost" aria-label="Close about dialog">&times;</button>
       </div>
       <div class="text-sm leading-relaxed">
         MetaStocker helps creators attribute stock assets with high-quality metadata for Adobe Stock, Envato Elements,
         and Shutterstock.
-        Supported formats: images (JPEG, PNG, SVG, AI) and videos (MP4, WEBM, OGG, QuickTime). All processing runs
-        locally
-        in your browser; API keys stay on your device.
+        Supported formats: images (JPEG, PNG, SVG, AI) and videos (MP4, WEBM, OGG, QuickTime). Original files remain
+        in your browser; previews and metadata are sent directly to the selected AI provider for generation.
         <br><br>
         <span class="hint">Note: .ai files must be saved with "PDF Compatibility" to be processed.</span>
       </div>
@@ -307,11 +360,11 @@
   </div>
 
   <!-- Contact modal -->
-  <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden">
+  <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true" tabindex="-1" inert>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 card pad w-[min(520px,92vw)]">
       <div class="flex items-center justify-between mb-2">
-        <h3 class="text-lg font-semibold">Contact</h3>
-        <button id="contactClose" class="btn ghost">&times;</button>
+        <h3 id="contactTitle" class="text-lg font-semibold">Contact</h3>
+        <button type="button" id="contactClose" class="btn ghost" aria-label="Close contact dialog">&times;</button>
       </div>
       <div class="text-sm space-y-2">
         <div>For inquiries: <a href="mailto:metastocker.connect@gmail.com"
@@ -324,19 +377,19 @@
   </div>
 
   <!-- Envato modal -->
-  <div id="envatoModal" class="fixed inset-0 bg-black/50 z-50 hidden">
+  <div id="envatoModal" class="fixed inset-0 bg-black/50 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="envatoTitle" aria-hidden="true" tabindex="-1" inert>
     <div
       class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 card pad w-[min(800px,92vw)] max-h-[80vh] overflow-auto">
       <div class="flex items-center justify-between mb-2">
-        <h3 class="text-lg font-semibold">Edit rows (apply to all rows)</h3>
-        <button id="envatoClose" class="btn ghost">&times;</button>
+        <h3 id="envatoTitle" class="text-lg font-semibold">Edit rows (apply to all rows)</h3>
+        <button type="button" id="envatoClose" class="btn ghost" aria-label="Close Envato settings">&times;</button>
       </div>
       <div class="grid cols-2" style="gap:12px">
-        <label class="block">Category* <input id="envCat" class="input" placeholder="e.g. Nature" /></label>
+        <label class="block">Category override <input type="text" id="envCat" class="input" placeholder="e.g. Nature" /></label>
         <label class="block">Price: Single Use ($USD)* <input id="envPriceSingle" class="input" type="number" min="0"
-            step="1" value="15" /></label>
+            step="1" value="15" required /></label>
         <label class="block">Price: Multi-use ($USD)* <input id="envPriceMulti" class="input" type="number" min="0"
-            step="1" value="49" /></label>
+            step="1" value="49" required /></label>
         <label class="block">Recognisable people?*
           <select id="envPeople" class="select">
             <option>No</option>
@@ -349,7 +402,7 @@
             <option>Yes</option>
           </select>
         </label>
-        <label class="block">Releases <input id="envReleases" class="input"
+        <label class="block">Releases <input type="text" id="envReleases" class="input"
             placeholder="None / Model / Property" /></label>
         <label class="block">Is Motion Graphics?
           <select id="envIsMG" class="select">
@@ -357,16 +410,16 @@
             <option>Yes</option>
           </select>
         </label>
-        <label class="block">AudioJungle Track (IDs) <input id="envAJ" class="input" placeholder="e.g. 12345" /></label>
-        <label class="block">Color <input id="envColor" class="input" placeholder="" /></label>
-        <label class="block">Pace <input id="envPace" class="input" placeholder="" /></label>
-        <label class="block">Movement <input id="envMovement" class="input" placeholder="" /></label>
-        <label class="block">Composition <input id="envComposition" class="input" placeholder="" /></label>
-        <label class="block">Setting <input id="envSetting" class="input" placeholder="" /></label>
+        <label class="block">AudioJungle Track (IDs) <input type="text" id="envAJ" class="input" placeholder="e.g. 12345" /></label>
+        <label class="block">Color <input type="text" id="envColor" class="input" placeholder="" /></label>
+        <label class="block">Pace <input type="text" id="envPace" class="input" placeholder="" /></label>
+        <label class="block">Movement <input type="text" id="envMovement" class="input" placeholder="" /></label>
+        <label class="block">Composition <input type="text" id="envComposition" class="input" placeholder="" /></label>
+        <label class="block">Setting <input type="text" id="envSetting" class="input" placeholder="" /></label>
         <label class="block">No. of People <input id="envNumPeople" class="input" type="number" min="0" /></label>
-        <label class="block">Gender <input id="envGender" class="input" placeholder="" /></label>
-        <label class="block">Age <input id="envAge" class="input" placeholder="" /></label>
-        <label class="block">Ethnicity <input id="envEthnicity" class="input" placeholder="" /></label>
+        <label class="block">Gender <input type="text" id="envGender" class="input" placeholder="" /></label>
+        <label class="block">Age <input type="text" id="envAge" class="input" placeholder="" /></label>
+        <label class="block">Ethnicity <input type="text" id="envEthnicity" class="input" placeholder="" /></label>
         <label class="block">Alpha Channel
           <select id="envAlpha" class="select">
             <option>No</option>
@@ -379,20 +432,20 @@
             <option>Yes</option>
           </select>
         </label>
-        <label class="block">Source Audio <input id="envAudio" class="input" placeholder="" /></label>
+        <label class="block">Source Audio <input type="text" id="envAudio" class="input" placeholder="" /></label>
       </div>
       <div class="flex items-center justify-end gap-2 mt-4">
-        <button id="envatoSave" class="btn primary">Save</button>
+        <button type="button" id="envatoSave" class="btn primary">Save</button>
       </div>
     </div>
   </div>
 
   <!-- Download modal -->
-  <div id="downloadModal" class="fixed inset-0 bg-black/50 z-50 hidden">
+  <div id="downloadModal" class="fixed inset-0 bg-black/50 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="downloadTitle" aria-hidden="true" tabindex="-1" inert>
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 card pad w-[min(520px,92vw)]">
       <div class="flex items-center justify-between mb-2">
-        <h3 class="text-lg font-semibold">Download CSV</h3>
-        <button id="downloadClose" class="btn ghost">&times;</button>
+        <h3 id="downloadTitle" class="text-lg font-semibold">Download CSV</h3>
+        <button type="button" id="downloadClose" class="btn ghost" aria-label="Close download dialog">&times;</button>
       </div>
       <div id="downloadButtons" class="grid" style="gap:8px"></div>
     </div>
@@ -400,7 +453,7 @@
 
 
   <!-- Fullscreen Loader -->
-  <div id="loader" class="fixed inset-0 z-50 hidden">
+  <div id="loader" class="fixed inset-0 z-50 hidden" role="status" aria-live="polite" aria-label="Import progress" aria-hidden="true">
     <div class="absolute inset-0 bg-black/60"></div>
     <div class="relative h-full w-full flex items-center justify-center p-4">
       <div class="panel w-[min(520px,92vw)] p-5">
@@ -411,25 +464,25 @@
         <div class="text-sm mb-1">Step 1/2: Adding files</div>
         <div id="loaderText1" class="hint mb-3">0 / 0</div>
         <div class="w-full h-2 rounded-full overflow-hidden" style="background:var(--muted)">
-          <div id="loaderBar1" class="h-2 rounded-full" style="width:0%; background:var(--text)"></div>
+          <div id="loaderBar1" class="h-2 rounded-full" style="width:0%; background:var(--text)" role="progressbar" aria-label="Adding files" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
         </div>
 
         <div class="text-sm mt-4 mb-1">Step 2/2: Generating previews</div>
         <div id="loaderText2" class="hint mb-3">0 / 0</div>
         <div class="w-full h-2 rounded-full overflow-hidden" style="background:var(--muted)">
-          <div id="loaderBar2" class="h-2 rounded-full" style="width:0%; background:var(--text)"></div>
+          <div id="loaderBar2" class="h-2 rounded-full" style="width:0%; background:var(--text)" role="progressbar" aria-label="Generating previews" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="guideModal"
+  <div id="guideModal" role="dialog" aria-modal="true" aria-labelledby="guideTitle" aria-hidden="true" tabindex="-1" inert
     class="hidden fixed inset-0 z-[200] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 text-text">
     <div
       class="bg-card modal-content-white w-full max-w-2xl max-h-[85vh] rounded-3xl border border-border shadow-2xl flex flex-col overflow-hidden">
       <div class="p-6 border-b border-border flex justify-between items-center bg-muted/30">
-        <h2 class="text-xl font-bold">Attribution Strategy 2026</h2>
-        <button id="guideClose" class="btn ghost p-2">✕</button>
+        <h2 id="guideTitle" class="text-xl font-bold">Attribution Strategy 2026</h2>
+        <button type="button" id="guideClose" class="btn ghost p-2" aria-label="Close attribution guide">✕</button>
       </div>
       <div
         class="p-8 modal-content-white overflow-y-auto prose max-w-none prose-table:border-collapse prose-table:w-full prose-td:border prose-td:border-border prose-td:p-2 prose-th:bg-muted/50 prose-th:border prose-th:border-border prose-th:p-2">
@@ -491,16 +544,16 @@
         </ul>
       </div>
       <div class="p-4 border-t border-border bg-muted/20 text-center">
-        <button id="guideCloseAlt" class="btn primary px-8">Got it!</button>
+        <button type="button" id="guideCloseAlt" class="btn primary px-8">Got it!</button>
       </div>
     </div>
   </div>
 
-  <div id="imagePreviewTooltip" class="fixed z-[9999] hidden pointer-events-none rounded-xl overflow-hidden shadow-2xl p-1.5" style="background:var(--card); border:1px solid var(--border);">
-    <img id="imagePreviewImg" class="max-w-[420px] max-h-[420px] object-contain rounded-lg" alt="" />
+  <div id="imagePreviewTooltip" class="fixed z-[9999] hidden pointer-events-none rounded-xl overflow-hidden shadow-2xl p-1.5" aria-hidden="true" style="background:var(--card); border:1px solid var(--border);">
+    <img id="imagePreviewImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" class="max-w-[420px] max-h-[420px] object-contain rounded-lg" alt="Enlarged asset preview" />
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2.4"></script>
 </body>
 
 </html>

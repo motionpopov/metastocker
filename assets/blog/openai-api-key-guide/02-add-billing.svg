@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Set up OpenAI API billing</title>
+  <desc id="desc">Illustrated OpenAI Platform billing page highlighting Add payment details and the auto-recharge choice.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eef7ff"/><stop offset="1" stop-color="#f5efff"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#20223a" flood-opacity=".15"/></filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6547f5"/></marker>
+    <style>.ui{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#11121a}.muted{fill:#676b7a}.small{font-size:17px}.body{font-size:21px}.label{font-size:16px;font-weight:750;letter-spacing:.07em}.title{font-size:32px;font-weight:750}.button{font-size:19px;font-weight:750}.step{font-size:22px;font-weight:800;fill:#fff}.value{font-size:42px;font-weight:800}.note{font-size:19px;font-weight:700;fill:#5137cc}</style>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g class="ui">
+    <rect x="62" y="44" width="246" height="48" rx="24" fill="#6547f5"/><text x="89" y="76" class="step">STEP 2 · API BILLING</text>
+    <g filter="url(#shadow)">
+      <rect x="78" y="118" width="1044" height="490" rx="24" fill="#fff" stroke="#dfe2ea" stroke-width="2"/>
+      <rect x="78" y="118" width="260" height="490" rx="24" fill="#fafafd"/>
+      <path d="M338 118v490" stroke="#dfe2ea" stroke-width="2"/>
+      <text x="116" y="171" class="label">OPENAI PLATFORM</text>
+      <text x="116" y="230" class="body muted">Dashboard</text>
+      <text x="116" y="278" class="body muted">API keys</text>
+      <text x="116" y="326" class="body muted">Usage</text>
+      <rect x="99" y="348" width="220" height="52" rx="12" fill="#f2efff"/>
+      <text x="116" y="382" class="body" fill="#5137cc" font-weight="750">Billing</text>
+      <text x="116" y="444" class="body muted">Limits</text>
+      <text x="390" y="176" class="title">Billing overview</text>
+      <text x="390" y="212" class="body muted">API charges are managed separately from ChatGPT.</text>
+      <rect x="390" y="252" width="315" height="170" rx="18" fill="#fafafd" stroke="#dfe2ea"/>
+      <text x="420" y="292" class="label muted">CREDIT BALANCE</text>
+      <text x="420" y="352" class="value">$0.00</text>
+      <text x="420" y="390" class="small muted">Add funds before your first API request.</text>
+      <rect x="744" y="252" width="318" height="170" rx="18" fill="#f7f5ff" stroke="#bfb3ff" stroke-width="2"/>
+      <text x="774" y="294" class="label" fill="#5137cc">START HERE</text>
+      <rect x="774" y="320" width="258" height="62" rx="13" fill="#6547f5"/>
+      <text x="812" y="358" class="button" fill="#fff">Add payment details</text>
+      <rect x="390" y="456" width="642" height="104" rx="16" fill="#fff8e8" stroke="#f1ce78"/>
+      <circle cx="430" cy="508" r="22" fill="#ffd166"/><text x="423" y="516" class="button">!</text>
+      <text x="468" y="495" class="button">Review Auto recharge before confirming.</text>
+      <text x="468" y="529" class="small muted">Turn it off if you do not want automatic top-ups.</text>
+    </g>
+    <path d="M1070 230C1126 266 1117 327 1044 350" fill="none" stroke="#6547f5" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+    <rect x="918" y="170" width="228" height="54" rx="27" fill="#6547f5"/><text x="947" y="204" class="step">API, not ChatGPT</text>
+  </g>
+</svg>

@@ -49,7 +49,7 @@
 1.  **Queue System**: Files have statuses: `queued`, `processing`, `done`, `error`.
 2.  **Smart Skipping**: If "Start" is clicked again, it skips files marked as `done` and only processes `queued` ones.
 3.  **Prompt Engineering**:
-    - **Base Prompt**: Generates Adobe Stock compatible Title (150-180 chars) and 40-49 Keywords.
+    - **Base Prompt**: Generates an Adobe Stock-compatible title and the exact configured number of unique keywords (10-49).
     - **Envato Prompt**: Rewrites title to be <90 chars.
     - **Shutterstock Prompt**: Selects specific categories from a predefined list.
 
@@ -59,7 +59,7 @@
   - **Adobe Stock**: Filename, Title, Keywords, Category.
   - **Envato Elements**: Specific columns for price, codec, resolution, etc.
   - **Shutterstock**: Description, Keywords, Categories.
-- **Persistence**: `localStorage` saves API key and column widths.
+- **Persistence**: `sessionStorage` keeps the API key for the current tab; `localStorage` keeps non-secret preferences such as column widths and custom prompts.
 
 ### E. Logs & Debugging
 - **System Logs**: In-app console showing success/error messages, API retries, network status.

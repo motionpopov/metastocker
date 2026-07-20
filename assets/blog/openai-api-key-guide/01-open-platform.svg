@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Open the OpenAI API Platform and sign in</title>
+  <desc id="desc">Illustrated browser window showing platform.openai.com with Log in and Sign up actions highlighted.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2efff"/>
+      <stop offset="1" stop-color="#e9f8ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#20223a" flood-opacity=".15"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6547f5"/>
+    </marker>
+    <style>
+      .ui{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#11121a}.muted{fill:#676b7a}.small{font-size:18px}.body{font-size:22px}.label{font-size:17px;font-weight:700;letter-spacing:.08em}.title{font-size:34px;font-weight:750}.button{font-size:20px;font-weight:700}.step{font-size:22px;font-weight:800;fill:#fff}.note{font-size:20px;font-weight:700;fill:#5137cc}
+    </style>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="1050" cy="90" r="120" fill="#6547f5" opacity=".08"/>
+  <circle cx="115" cy="600" r="150" fill="#00aee8" opacity=".07"/>
+  <g class="ui">
+    <rect x="62" y="44" width="245" height="48" rx="24" fill="#6547f5"/>
+    <text x="88" y="76" class="step">STEP 1 · OPEN PLATFORM</text>
+    <g filter="url(#shadow)">
+      <rect x="78" y="118" width="1044" height="490" rx="24" fill="#fff" stroke="#dfe2ea" stroke-width="2"/>
+      <path d="M78 176h1044" stroke="#dfe2ea" stroke-width="2"/>
+      <circle cx="111" cy="147" r="7" fill="#ff6b6b"/>
+      <circle cx="135" cy="147" r="7" fill="#ffd166"/>
+      <circle cx="159" cy="147" r="7" fill="#58c77b"/>
+      <rect x="205" y="132" width="710" height="31" rx="15.5" fill="#f1f2f7"/>
+      <circle cx="228" cy="147.5" r="7" fill="none" stroke="#676b7a" stroke-width="2"/>
+      <path d="M233 153l7 7" stroke="#676b7a" stroke-width="2" stroke-linecap="round"/>
+      <text x="255" y="154" class="small muted">https://platform.openai.com</text>
+      <rect x="79" y="177" width="360" height="430" fill="#fafafd"/>
+      <text x="119" y="239" class="label">OPENAI API PLATFORM</text>
+      <text x="119" y="302" class="title">Use the API site,</text>
+      <text x="119" y="344" class="title">not ChatGPT settings.</text>
+      <text x="119" y="395" class="body muted">The same OpenAI account can be</text>
+      <text x="119" y="426" class="body muted">used, but API billing is separate.</text>
+      <rect x="119" y="486" width="244" height="66" rx="16" fill="#f2efff" stroke="#c9bfff"/>
+      <text x="146" y="526" class="note">Check the URL first</text>
+      <g transform="translate(564 222)">
+        <text x="0" y="0" class="title">Welcome to OpenAI</text>
+        <text x="0" y="38" class="body muted">Sign in to continue to the API Platform</text>
+        <rect x="0" y="78" width="430" height="58" rx="12" fill="#fff" stroke="#cfd3de" stroke-width="2"/>
+        <text x="115" y="114" class="button">Continue with Google</text>
+        <rect x="0" y="154" width="430" height="58" rx="12" fill="#fff" stroke="#cfd3de" stroke-width="2"/>
+        <text x="127" y="190" class="button">Continue with email</text>
+        <text x="193" y="252" class="small muted">or</text>
+        <rect x="0" y="276" width="205" height="60" rx="12" fill="#6547f5"/>
+        <text x="73" y="314" class="button" fill="#fff">Log in</text>
+        <rect x="225" y="276" width="205" height="60" rx="12" fill="#f2efff" stroke="#6547f5" stroke-width="2"/>
+        <text x="286" y="314" class="button" fill="#5137cc">Sign up</text>
+      </g>
+    </g>
+    <path d="M1010 548 C1080 535 1088 465 1028 447" fill="none" stroke="#6547f5" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+    <rect x="902" y="538" width="224" height="54" rx="27" fill="#6547f5"/>
+    <text x="934" y="572" class="step">New account? Sign up</text>
+  </g>
+</svg>

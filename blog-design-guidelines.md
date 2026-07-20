@@ -4,7 +4,7 @@ This document provides ai-instructions and design guidelines for generating new 
 
 ## General Principles
 
-1. **No External Frameworks**: The site relies heavily on a lightweight, custom CSS structure (`style.css`) augmented by partial inline Tailwind classes (`<script src="https://cdn.tailwindcss.com"></script>`) exclusively for structure/layout padding.
+1. **Static Styles**: The site uses custom `style.css` plus the generated `tailwind.generated.css` utility bundle. After changing utility classes, rebuild it from `tailwind.input.css` with the pinned Tailwind 3.4.17 command documented in `README.md`.
 2. **Minimalist & Clean**: The design favors a minimal UI scheme, utilizing explicit CSS variables for theming (supporting both light and an eventual dark mode based on media queries).
 
 ---
@@ -90,4 +90,4 @@ If you need to construct custom UI elements outside the standard `.article-conte
 - [ ] Correctly set the Category Badge text, Date, and Read Time in the article header.
 - [ ] Implement article body using standard HTML structure (`h2`, `p`, `ul`, `blockquote`) inside `<article class="article-content">`.
 - [ ] Check if the CTA segment and FAQ correctly align with the overarching context of the piece. (Expand the FAQ if relevant to the article context).
-- [ ] DO NOT add external CSS links other than `../style.css` and the Tailwind CDN.
+- [ ] Do not add an external Tailwind CDN script. Use `../style.css` and `../tailwind.generated.css`, then rebuild the static bundle when utility classes change.

@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en" class="h-full light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fafafa" />
+    <title>How to Get an OpenAI API Key: Beginner Guide | MetaStocker</title>
+    <link rel="icon" href="../assets/metalogo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="../assets/metalogo.png" />
+
+    <meta name="description"
+        content="Create an OpenAI API account, add billing, generate a secret API key, and connect it to MetaStocker with this illustrated beginner guide." />
+    <link rel="canonical" href="/blog/how-to-get-openai-api-key.html" />
+    <meta property="og:title" content="How to Get an OpenAI API Key: A Beginner’s Step-by-Step Guide" />
+    <meta property="og:description"
+        content="No coding required: follow every step from OpenAI sign-up and API billing to your first MetaStocker test." />
+    <meta property="og:type" content="article" />
+
+    <link rel="stylesheet" href="../style.css?v=2.4">
+    <link rel="stylesheet" href="../tailwind.generated.css?v=2.4">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.9.1/tsparticles.bundle.min.js"
+        integrity="sha384-k5y1MdALoG8qJ5FfC4SfwHtiC9/IZ8rQXlTxDRDIFriSZwBqIdOa2M8mcmQLs2pS"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .article-content {
+            color: var(--text);
+            font-size: 17px;
+            line-height: 1.72;
+        }
+
+        .article-content h2,
+        .article-content h3 {
+            font-weight: 750;
+            letter-spacing: -.025em;
+            scroll-margin-top: 96px;
+        }
+
+        .article-content h2 {
+            margin: 2.75rem 0 1rem;
+            font-size: clamp(24px, 3vw, 30px);
+        }
+
+        .article-content h3 {
+            margin: 1.75rem 0 .75rem;
+            font-size: 21px;
+        }
+
+        .article-content p {
+            margin: 0 0 1.25rem;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 0 0 1.4rem;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: .65rem;
+        }
+
+        .article-content ul {
+            list-style: disc;
+        }
+
+        .article-content ol {
+            list-style: decimal;
+        }
+
+        .article-content strong {
+            font-weight: 750;
+        }
+
+        .article-content code {
+            padding: 2px 5px;
+            border-radius: 5px;
+            background: var(--muted);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: .9em;
+        }
+
+        .article-content a:not(.guide-button) {
+            color: var(--ring);
+            font-weight: 650;
+            text-underline-offset: 3px;
+        }
+
+        .article-content a:focus-visible,
+        .guide-toc a:focus-visible,
+        details summary:focus-visible {
+            border-radius: 5px;
+            outline: 3px solid color-mix(in oklab, var(--ring) 35%, transparent);
+            outline-offset: 3px;
+        }
+
+        .article-content figure {
+            margin: 2rem 0 2.25rem;
+        }
+
+        .article-content figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .article-content figcaption {
+            margin-top: .75rem;
+            color: var(--subtle);
+            font-size: 14px;
+            line-height: 1.55;
+            text-align: center;
+        }
+
+        .guide-intro {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .guide-intro div {
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--muted);
+        }
+
+        .guide-intro strong,
+        .guide-intro span {
+            display: block;
+        }
+
+        .guide-intro strong {
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        .guide-intro span {
+            color: var(--subtle);
+            font-size: 14px;
+        }
+
+        .guide-toc {
+            margin: 1.75rem 0;
+            padding: 20px 22px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: color-mix(in oklab, var(--muted) 72%, white);
+        }
+
+        .guide-toc h2 {
+            margin: 0 0 12px;
+            font-size: 18px;
+        }
+
+        .guide-toc ol {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px 28px;
+            margin: 0;
+        }
+
+        .guide-toc li {
+            margin: 0;
+        }
+
+        .guide-callout {
+            margin: 1.5rem 0;
+            padding: 18px 20px;
+            border: 1px solid color-mix(in oklab, var(--ring) 38%, var(--border));
+            border-left: 5px solid var(--ring);
+            border-radius: 14px;
+            background: color-mix(in oklab, var(--ring) 7%, var(--card));
+        }
+
+        .guide-callout.warning {
+            border-color: #edc66a;
+            border-left-color: #d89400;
+            background: #fff9ea;
+        }
+
+        .guide-callout.danger {
+            border-color: #efb2b2;
+            border-left-color: #d43d3d;
+            background: #fff3f3;
+        }
+
+        .guide-callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        .guide-callout-title {
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 800;
+        }
+
+        .step-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .step-number {
+            display: inline-grid;
+            flex: 0 0 38px;
+            width: 38px;
+            height: 38px;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--ring);
+            color: white;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .guide-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .guide-button {
+            display: inline-flex;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 16px;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            background: var(--card);
+            color: var(--text);
+            font-size: 15px;
+            font-weight: 750;
+            text-decoration: none;
+            transition: border-color .18s ease, background .18s ease, transform .18s ease;
+        }
+
+        .guide-button.primary {
+            border-color: var(--ring);
+            background: var(--ring);
+            color: white;
+        }
+
+        .guide-button:hover {
+            border-color: var(--ring);
+            background: var(--muted);
+            transform: translateY(-1px);
+        }
+
+        .guide-button.primary:hover {
+            background: color-mix(in oklab, var(--ring) 88%, black);
+        }
+
+        .guide-button:focus-visible {
+            outline: 3px solid color-mix(in oklab, var(--ring) 35%, transparent);
+            outline-offset: 3px;
+        }
+
+        .micro-steps {
+            counter-reset: micro-step;
+            padding: 0 !important;
+            list-style: none !important;
+        }
+
+        .micro-steps li {
+            position: relative;
+            min-height: 36px;
+            padding-left: 48px;
+        }
+
+        .micro-steps li::before {
+            counter-increment: micro-step;
+            content: counter(micro-step);
+            position: absolute;
+            top: -2px;
+            left: 0;
+            display: grid;
+            width: 30px;
+            height: 30px;
+            place-items: center;
+            border: 1px solid color-mix(in oklab, var(--ring) 45%, var(--border));
+            border-radius: 50%;
+            background: color-mix(in oklab, var(--ring) 9%, white);
+            color: var(--ring);
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .troubleshooting {
+            display: grid;
+            gap: 10px;
+            margin-top: 1.25rem;
+        }
+
+        details {
+            border: 1px solid var(--border);
+            border-radius: 13px;
+            background: var(--card);
+        }
+
+        details summary {
+            padding: 15px 48px 15px 17px;
+            cursor: pointer;
+            font-weight: 750;
+        }
+
+        details p {
+            padding: 0 17px 16px;
+            color: var(--subtle);
+        }
+
+        .source-list {
+            font-size: 15px;
+        }
+
+        @media (max-width: 680px) {
+            .guide-intro,
+            .guide-toc ol {
+                grid-template-columns: 1fr;
+            }
+
+            .article-content {
+                font-size: 16px;
+            }
+
+            .article-content h2 {
+                margin-top: 2.25rem;
+            }
+
+            .step-title {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="particles"></div>
+
+    <header class="topbar">
+        <div class="topbar-inner container">
+            <a href="/" class="brand headline flex items-center gap-2" id="brandWrap"
+                style="text-decoration:none; color:inherit;">
+                <img id="brandLogo" src="../assets/metalogo.png" alt="" width="41" height="41" class="rounded" />
+                <span id="brandText">MetaStocker</span>
+            </a>
+            <div class="grow"></div>
+            <nav class="topbar-nav" aria-label="Primary navigation">
+                <a href="/blog/" id="blogBtn" class="btn ghost"
+                    style="background:var(--muted); color:var(--text);">Blog</a>
+                <a href="/#about" id="aboutBtn" class="btn ghost">About</a>
+                <a href="/#contact" id="contactBtn" class="btn ghost">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 920px; padding-top:40px; padding-bottom:60px;">
+        <div class="mb-8">
+            <div class="flex flex-wrap items-center gap-3 mb-4">
+                <a href="/blog/?cat=tutorials" class="badge hover:bg-muted transition-colors"
+                    style="background:var(--accent); color:var(--accent-contrast); border-color:var(--accent); font-weight:600; text-decoration:none;">Tutorials</a>
+                <span class="hint">Updated Jul 18, 2026 · 10 min read · No coding required</span>
+            </div>
+            <h1 class="headline" style="font-size:clamp(30px, 5vw, 46px); line-height:1.12; margin-bottom:16px;">
+                How to Get an OpenAI API Key: A Beginner’s Step-by-Step Guide</h1>
+            <p class="subtitle" style="font-size:18px; line-height:1.55;">Create your OpenAI API account, activate API
+                billing, make a private key, and connect MetaStocker—even if you have never used an API before.</p>
+        </div>
+
+        <article class="article-content bg-card border border-border shadow-sm rounded-[14px] p-6 md:p-10 mb-10">
+            <p><strong>Short version:</strong> open the official OpenAI API Platform, add API billing, create a secret
+                key, copy it once, and paste it into MetaStocker. The detailed version below shows every click and the
+                safety settings worth checking first.</p>
+
+            <div class="guide-intro">
+                <div><strong>What you need</strong><span>An OpenAI account and, if requested, a payment card</span></div>
+                <div><strong>Time needed</strong><span>About 5–10 minutes for a first-time setup</span></div>
+                <div><strong>Best practice</strong><span>A private device and a dedicated MetaStocker key</span></div>
+            </div>
+
+            <div class="guide-callout danger">
+                <span class="guide-callout-title">Treat an API key like a password</span>
+                <p>It can authorize paid requests on your OpenAI account. Never send it by email or chat, publish it,
+                    show it during screen sharing, or include it in a screenshot. MetaStocker support will never need
+                    your secret key.</p>
+            </div>
+
+            <nav class="guide-toc" aria-labelledby="tocTitle">
+                <h2 id="tocTitle">In this guide</h2>
+                <ol>
+                    <li><a href="#what-is-a-key">Understand what the key does</a></li>
+                    <li><a href="#step-one">Open the API Platform</a></li>
+                    <li><a href="#step-two">Set up API billing</a></li>
+                    <li><a href="#step-three">Create a secret key</a></li>
+                    <li><a href="#step-four">Copy and protect it</a></li>
+                    <li><a href="#step-five">Connect MetaStocker</a></li>
+                    <li><a href="#step-six">Run a safe first test</a></li>
+                    <li><a href="#troubleshooting">Fix common errors</a></li>
+                </ol>
+            </nav>
+
+            <h2 id="what-is-a-key">First: what is an OpenAI API key?</h2>
+            <p>An <strong>OpenAI API key</strong> is a private code that allows MetaStocker to request AI-generated
+                titles and keywords from OpenAI using your API account. It is <strong>not</strong> your OpenAI password,
+                your ChatGPT password, or a ChatGPT subscription code.</p>
+
+            <div class="guide-callout warning">
+                <span class="guide-callout-title">ChatGPT and the API are billed separately</span>
+                <p>ChatGPT Free, Plus, Pro, Business, and API usage are different products. Paying for ChatGPT does not
+                    automatically add API credits. OpenAI confirms this in its <a
+                        href="https://help.openai.com/en/articles/9039756-billing-settings-in-chatgpt-vs-platform"
+                        target="_blank" rel="noopener">official billing explanation</a>.</p>
+            </div>
+
+            <h2 id="step-one" class="step-title"><span class="step-number">1</span><span>Open the official OpenAI API Platform</span></h2>
+            <p>Use the API Platform—not the normal ChatGPT conversation page. Before entering account details, verify
+                that the address begins with <strong>platform.openai.com</strong>.</p>
+            <ol class="micro-steps">
+                <li>Select <strong>Sign up</strong> if this is your first OpenAI account, or <strong>Log in</strong> if
+                    you already have one.</li>
+                <li>Continue with email or one of the sign-in providers offered on your screen.</li>
+                <li>If OpenAI asks for email or phone verification, complete it and return to the Platform.</li>
+                <li>When possible, use a strong unique password and enable multi-factor authentication.</li>
+            </ol>
+            <div class="guide-actions">
+                <a class="guide-button primary" href="https://platform.openai.com/login" target="_blank"
+                    rel="noopener">Open OpenAI API Platform ↗</a>
+                <a class="guide-button" href="https://help.openai.com/en/articles/6613629-why-can-t-i-log-in-to-openai-platform"
+                    target="_blank" rel="noopener">Login help ↗</a>
+            </div>
+            <figure>
+                <img src="../assets/blog/openai-api-key-guide/01-open-platform.svg" width="1200" height="675"
+                    loading="lazy" decoding="async"
+                    alt="Illustration of the official OpenAI API Platform login and sign-up page">
+                <figcaption>Open the API Platform and choose Log in or Sign up. Illustration only—OpenAI may adjust
+                    labels or layout.</figcaption>
+            </figure>
+
+            <h2 id="step-two" class="step-title"><span class="step-number">2</span><span>Activate OpenAI API billing</span></h2>
+            <p>Most new API accounts need payment details or prepaid credits before the first paid request. Open the API
+                billing page and follow the setup shown for your account.</p>
+            <ol class="micro-steps">
+                <li>Open <strong>Billing overview</strong>.</li>
+                <li>Select <strong>Add payment details</strong> or <strong>Add to balance</strong>.</li>
+                <li>Start with an amount you are comfortable using for tests.</li>
+                <li>Review <strong>Auto recharge</strong> before confirming. OpenAI currently enables it by default in
+                    the prepaid setup flow; turn it off if you do not want automatic top-ups.</li>
+                <li>If you keep auto recharge, set a sensible recharge amount, threshold, and monthly recharge limit.</li>
+            </ol>
+            <div class="guide-callout warning">
+                <span class="guide-callout-title">Billing changes may take a few minutes</span>
+                <p>Purchased credits are generally available shortly after payment, but OpenAI notes that account
+                    balances can take a little time to update. Purchased credits expire after one year and are
+                    non-refundable under the current prepaid billing rules.</p>
+            </div>
+            <div class="guide-actions">
+                <a class="guide-button primary" href="https://platform.openai.com/settings/organization/billing/overview"
+                    target="_blank" rel="noopener">Open API Billing ↗</a>
+                <a class="guide-button" href="https://help.openai.com/en/articles/8264644" target="_blank"
+                    rel="noopener">Official prepaid billing guide ↗</a>
+                <a class="guide-button" href="https://developers.openai.com/api/docs/pricing" target="_blank"
+                    rel="noopener">Current API pricing ↗</a>
+            </div>
+            <figure>
+                <img src="../assets/blog/openai-api-key-guide/02-add-billing.svg" width="1200" height="675"
+                    loading="lazy" decoding="async" alt="Illustration showing where to add OpenAI API billing details">
+                <figcaption>API billing is separate from ChatGPT billing. Check the auto-recharge choice before you
+                    confirm payment.</figcaption>
+            </figure>
+
+            <h2 id="step-three" class="step-title"><span class="step-number">3</span><span>Create a secret API key</span></h2>
+            <p>Every OpenAI organization includes a <strong>Default project</strong>. A beginner can use it, but a
+                separate project named “MetaStocker” makes spending and key rotation easier to understand. Creating a
+                separate project is optional and may require organization-owner access.</p>
+            <ol class="micro-steps">
+                <li>Open the direct <strong>API keys</strong> page.</li>
+                <li>Check the selected project near the top of the Platform.</li>
+                <li>Select <strong>+ Create new secret key</strong>.</li>
+                <li>Name the key <strong>MetaStocker</strong> so you can identify it later.</li>
+                <li>If asked for permissions, the simplest first test is <strong>All</strong> on a dedicated project.
+                    Advanced users can choose <strong>Restricted</strong> and allow request/write access for Chat
+                    Completions. <strong>Read Only will not generate metadata.</strong></li>
+                <li>Select <strong>Create secret key</strong>. Your first key may require phone verification, depending
+                    on the account and country.</li>
+            </ol>
+            <div class="guide-actions">
+                <a class="guide-button primary" href="https://platform.openai.com/api-keys" target="_blank"
+                    rel="noopener">Open API Keys ↗</a>
+                <a class="guide-button" href="https://help.openai.com/en/articles/8867743-assign-api-key-permissions"
+                    target="_blank" rel="noopener">Permission levels ↗</a>
+                <a class="guide-button" href="https://help.openai.com/en/articles/9186755" target="_blank"
+                    rel="noopener">Projects explained ↗</a>
+            </div>
+            <figure>
+                <img src="../assets/blog/openai-api-key-guide/03-create-secret-key.svg" width="1200" height="675"
+                    loading="lazy" decoding="async"
+                    alt="Illustration of creating a new OpenAI secret key named MetaStocker">
+                <figcaption>Create a clearly named project-scoped key. The exact permission labels can change as the
+                    OpenAI Platform evolves.</figcaption>
+            </figure>
+
+            <h2 id="step-four" class="step-title"><span class="step-number">4</span><span>Copy the key immediately</span></h2>
+            <p>After creation, OpenAI displays the full secret only once. It usually begins with
+                <code>sk-proj-</code>, although formats can change.</p>
+            <ol class="micro-steps">
+                <li>Select <strong>Copy</strong> while the “Save your key” window is still open.</li>
+                <li>Paste it directly into MetaStocker or temporarily store it in a trusted password manager.</li>
+                <li>Never paste it into Notes shared through the cloud, email, chat, a support message, source code, or
+                    a public repository.</li>
+                <li>If you close the window before copying, create a new key. The full old secret cannot be revealed
+                    again.</li>
+            </ol>
+            <figure>
+                <img src="../assets/blog/openai-api-key-guide/04-copy-key.svg" width="1200" height="675"
+                    loading="lazy" decoding="async" alt="Illustration showing a fake redacted API key and the Copy button">
+                <figcaption>The key shown here is deliberately fake. Never create a screenshot containing your real
+                    secret.</figcaption>
+            </figure>
+
+            <h2 id="step-five" class="step-title"><span class="step-number">5</span><span>Paste the key into MetaStocker</span></h2>
+            <ol class="micro-steps">
+                <li>Return to MetaStocker and find the <strong>Connect OpenAI</strong> card.</li>
+                <li>Paste the copied secret into <strong>OpenAI API key</strong>. Do not retype it by hand.</li>
+                <li>Choose a GPT model. The economical option is a good place to begin.</li>
+                <li>Add one small test image before importing a large batch.</li>
+                <li>Select <strong>Start</strong> and wait for the title and tags.</li>
+            </ol>
+            <figure>
+                <img src="../assets/blog/openai-api-key-guide/05-connect-metastocker.svg" width="1200" height="675"
+                    loading="lazy" decoding="async" alt="Illustration of the OpenAI API key field in MetaStocker">
+                <figcaption>Paste the key into MetaStocker, choose a model, and begin with one small test file.</figcaption>
+            </figure>
+
+            <div class="guide-callout danger">
+                <span class="guide-callout-title">Important browser-security note</span>
+                <p>MetaStocker runs in your browser. It keeps the key in <code>sessionStorage</code> for the current tab
+                    and sends requests directly to OpenAI; there is no MetaStocker backend receiving the key. However,
+                    OpenAI generally recommends keeping API keys on a backend because scripts running in a browser can
+                    potentially access credentials entered there. Use only a MetaStocker copy and device you trust,
+                    avoid untrusted browser extensions, use a dedicated low-budget key, and revoke it immediately if
+                    you think it was exposed.</p>
+            </div>
+
+            <h2 id="step-six" class="step-title"><span class="step-number">6</span><span>Check usage before a large batch</span></h2>
+            <p>After the first successful file, open OpenAI Usage and confirm the activity looks correct. Then review
+                Limits and create budget alerts. OpenAI’s project monthly budget is a <strong>warning threshold, not a
+                    guaranteed hard stop</strong>, so prepaid balance and regular Usage checks are useful safeguards.</p>
+            <div class="guide-actions">
+                <a class="guide-button primary" href="https://platform.openai.com/usage" target="_blank"
+                    rel="noopener">Check API Usage ↗</a>
+                <a class="guide-button" href="https://platform.openai.com/settings/organization/limits"
+                    target="_blank" rel="noopener">Review Limits ↗</a>
+                <a class="guide-button" href="https://platform.openai.com/api-keys" target="_blank"
+                    rel="noopener">Rotate or delete keys ↗</a>
+            </div>
+            <p>When you finish, remove the value from MetaStocker if you no longer need it in that tab. For a one-time
+                job, consider deleting the API key in OpenAI. If a key may have leaked, deleting and replacing it is the
+                only reliable response.</p>
+
+            <h2 id="troubleshooting">Troubleshooting common problems</h2>
+            <div class="troubleshooting">
+                <details>
+                    <summary>I cannot find “API keys”</summary>
+                    <p>You may be on ChatGPT instead of the API Platform. Open the direct <a
+                            href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">API Keys
+                            page</a>, sign in, and confirm the correct account and project.</p>
+                </details>
+                <details>
+                    <summary>The entire key is no longer visible</summary>
+                    <p>This is expected. OpenAI shows the complete secret only when it is created. Delete the old key if
+                        it is unused, create a replacement, and copy the new value immediately.</p>
+                </details>
+                <details>
+                    <summary>“Invalid API key” or error 401</summary>
+                    <p>Remove spaces before or after the value, confirm that the key was not deleted, and check the
+                        selected project. If uncertain, create a new key and paste it directly. See OpenAI’s <a
+                            href="https://help.openai.com/en/articles/6882433-incorrect-api-key-provided"
+                            target="_blank" rel="noopener">401 guide</a>.</p>
+                </details>
+                <details>
+                    <summary>“Insufficient quota” or billing error</summary>
+                    <p>ChatGPT billing does not cover API usage. Check API Billing and Usage, add credits if necessary,
+                        and allow a few minutes for the balance to update.</p>
+                </details>
+                <details>
+                    <summary>Permission denied or error 403</summary>
+                    <p>A Restricted key may not allow the endpoint MetaStocker needs. Edit or recreate the key with
+                        request/write permission for Chat Completions, or test an All-permissions key inside a dedicated
+                        MetaStocker project.</p>
+                </details>
+                <details>
+                    <summary>Rate limit or error 429</summary>
+                    <p>Wait briefly and retry. In MetaStocker, reduce Threads to send fewer requests at once. Also check
+                        whether your prepaid balance or organization usage limit has been reached.</p>
+                </details>
+                <details>
+                    <summary>The key disappeared after I closed the tab</summary>
+                    <p>MetaStocker stores the value only for the current tab session. Paste it again from your secure
+                        password manager or create a fresh key. This behavior avoids permanent browser storage.</p>
+                </details>
+                <details>
+                    <summary>I think my key was exposed</summary>
+                    <p>Delete it immediately on the API Keys page, create a replacement, review Usage for unfamiliar
+                        activity, and contact OpenAI Support if anything looks wrong.</p>
+                </details>
+            </div>
+
+            <h2>Frequently asked questions</h2>
+            <h3>Do I need ChatGPT Plus?</h3>
+            <p>No. ChatGPT subscriptions and the API are billed independently. You need an API account with available
+                billing or credits.</p>
+
+            <h3>Is creating the key itself expensive?</h3>
+            <p>Creating a key does not itself generate metadata. Charges come from API usage. Prices vary by model and
+                can change, so use the official pricing page and check Usage after your first file.</p>
+
+            <h3>Can I use one key everywhere?</h3>
+            <p>Technically a key can make requests wherever its permissions allow, but a separate key per tool or
+                workflow is safer. It is easier to monitor and revoke without interrupting other work.</p>
+
+            <h3>Can MetaStocker support ask me for the key?</h3>
+            <p>No. Never send your secret to support or anyone claiming they need it. A screenshot of an error should
+                always hide the entire key.</p>
+
+            <h2>Official OpenAI references</h2>
+            <ul class="source-list">
+                <li><a href="https://developers.openai.com/api/docs/quickstart" target="_blank"
+                        rel="noopener">OpenAI API developer quickstart</a></li>
+                <li><a href="https://help.openai.com/en/articles/9039756-billing-settings-in-chatgpt-vs-platform"
+                        target="_blank" rel="noopener">ChatGPT billing versus API billing</a></li>
+                <li><a href="https://help.openai.com/en/articles/8264644" target="_blank"
+                        rel="noopener">Prepaid API billing setup</a></li>
+                <li><a href="https://help.openai.com/en/articles/9186755" target="_blank"
+                        rel="noopener">Managing projects and project API keys</a></li>
+                <li><a href="https://help.openai.com/en/articles/8867743-assign-api-key-permissions"
+                        target="_blank" rel="noopener">API key permission levels</a></li>
+                <li><a href="https://help.openai.com/en/articles/5112595" target="_blank"
+                        rel="noopener">Official API key safety guidance</a></li>
+            </ul>
+
+            <p class="hint" style="margin-top:2rem;">This guide was checked against official OpenAI information on
+                July 18, 2026. OpenAI can change navigation labels and account-specific setup screens.</p>
+        </article>
+
+        <section class="card pad text-center"
+            style="background:linear-gradient(180deg, var(--card), var(--muted)); border-color:var(--ring);">
+            <h2 class="headline" style="font-size:24px; margin-bottom:8px;">Your API key is ready</h2>
+            <p class="subtitle mb-6" style="max-width:580px; margin-left:auto; margin-right:auto;">Return to
+                MetaStocker, paste the key into Connect OpenAI, and start with one test image.</p>
+            <a href="/" class="btn primary inline-block"
+                style="text-decoration:none; padding:12px 32px; font-size:16px;">Open MetaStocker</a>
+        </section>
+    </main>
+
+    <footer class="text-center py-6 border-t" style="border-color:var(--border);">
+        <div class="hint">&copy; 2026 MetaStocker. All rights reserved.</div>
+    </footer>
+
+    <script>
+        if (window.tsParticles && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            window.tsParticles.load("particles", {
+                particles: {
+                    number: { value: 20 },
+                    color: { value: "#6b7280" },
+                    opacity: { value: 0.15 },
+                    size: { value: 3 },
+                    move: { enable: true, speed: 0.3, direction: "none", outModes: "out" }
+                },
+                interactivity: { events: { onHover: { enable: false } } }
+            });
+        }
+    </script>
+    <script data-goatcounter="https://metastocker.goatcounter.com/count" async
+        src="https://gc.zgo.at/count.js"></script>
+</body>
+
+</html>

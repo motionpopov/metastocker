@@ -13,13 +13,13 @@
         content="Discover why you need an AI stock photo keyword generator in 2026 and how to optimize your metadata for Adobe Stock, Shutterstock, and more." />
     <link rel="canonical" href="/blog/ai-stock-keyword-generator.html" />
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style.css?v=2.4">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+    <link rel="stylesheet" href="../tailwind.generated.css?v=2.4">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.9.1/tsparticles.bundle.min.js"></script>
 
     <!-- GoatCounter Analytics -->
-    <script data-goatcounter="https://metastocker.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://metastocker.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
     <style>
         .article-content {
@@ -134,14 +134,16 @@
         <div class="topbar-inner container">
             <a href="/" class="brand headline flex items-center gap-2" id="brandWrap"
                 style="text-decoration:none; color:inherit;">
-                <img id="brandLogo" src="../assets/metalogo.png" alt="MetaStocker" width="41" height="41"
+                <img id="brandLogo" src="../assets/metalogo.png" alt="" width="41" height="41"
                     class="rounded" />
                 <span id="brandText">MetaStocker</span>
             </a>
             <div class="grow"></div>
-            <a href="/blog/" id="blogBtn" class="btn ghost" style="background:var(--muted); color:var(--text);">Blog</a>
-            <a href="/#about" id="aboutBtn" class="btn ghost">About</a>
-            <a href="/#contact" id="contactBtn" class="btn ghost">Contact</a>
+            <nav class="topbar-nav" aria-label="Primary navigation">
+                <a href="/blog/" id="blogBtn" class="btn ghost" style="background:var(--muted); color:var(--text);">Blog</a>
+                <a href="/#about" id="aboutBtn" class="btn ghost">About</a>
+                <a href="/#contact" id="contactBtn" class="btn ghost">Contact</a>
+            </nav>
         </div>
     </header>
 
@@ -201,7 +203,7 @@
             style="background: linear-gradient(180deg, var(--card), var(--muted)); border-color: var(--ring);">
             <h2 class="headline" style="font-size: 24px; margin-bottom: 8px;">Try MetaStocker for Free</h2>
             <p class="subtitle mb-6" style="max-width: 500px; margin-left: auto; margin-right: auto;">
-                Automate your stock photo and video metadata in seconds using AI. Fast, accurate, and completely local.
+                Automate stock metadata in your browser; only selected previews and metadata go to your AI provider.
             </p>
             <a href="/" class="btn primary inline-block"
                 style="text-decoration:none; padding: 12px 32px; font-size: 16px;">Get Started</a>
@@ -215,7 +217,7 @@
 
     <script>
         // Minimal TSParticles initialization for article pages
-        tsParticles.load("particles", {
+        if (window.tsParticles && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) window.tsParticles.load("particles", {
             particles: {
                 number: { value: 20 },
                 color: { value: "#6b7280" },
