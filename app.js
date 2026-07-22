@@ -1252,7 +1252,7 @@ function buildAdobeCsv() {
   const rows = Array.from(csvStore.values());
   const header = ['Filename', 'Title', 'Keywords', 'Category', 'Releases'];
   const lines = [header, ...rows.map(r => [r.name, clip(r.title || '', 200), (r.tags || []).slice(0, 49).join(', '), r.category || '', ''])];
-  return lines.map(line => line.map(csvEscape).join(',')).join('\r\n');
+  return lines.map(line => line.map(value => csvEscape(value)).join(',')).join('\r\n');
 }
 function buildEnvatoCsv() {
   const rows = Array.from(csvStore.values());
@@ -1268,7 +1268,7 @@ function buildEnvatoCsv() {
       d.people || 'No', d.buildings || 'No', d.releases || '', d.isMG || 'No', d.aj || '', d.color || '',
       d.pace || '', d.movement || '', d.composition || '', d.setting || '', d.numPeople || '',
       d.gender || '', d.age || '', d.ethnicity || '', d.alpha || 'No', d.looped || 'No', d.audio || ''
-    ].map(csvEscape));
+    ].map(value => csvEscape(value)));
   }
   return lines.map(row => row.join(',')).join('\r\n');
 }
@@ -1279,7 +1279,7 @@ function buildShutterstockCsv() {
     const allowed = pickShutterListByName(r.name);
     const description = (entry.description ?? r.title ?? '').toString().slice(0, 200).trim();
     const categories = sanitizeShutterCategories(entry.categories, allowed);
-    lines.push([r.name, description, (entry.keywords ?? r.tags ?? []).join(', '), categories].map(csvEscape));
+    lines.push([r.name, description, (entry.keywords ?? r.tags ?? []).join(', '), categories].map(value => csvEscape(value)));
   }
   return lines.map(row => row.join(',')).join('\r\n');
 }
