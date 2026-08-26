@@ -67,7 +67,7 @@ const sharedRow = {
   title: 'Abstract background, with cinematic light',
   description: '',
   tags: ['abstract', 'background', 'cinematic light'],
-  category: ''
+  category: 8
 };
 
 const context = {
@@ -103,6 +103,7 @@ assert.equal(adobeRows[1].length, 5);
 assert.equal(adobeRows[1][0], filename);
 assert.equal(adobeRows[1][1], sharedRow.title);
 assert.equal(adobeRows[1][2], 'abstract, background, cinematic light');
+assert.equal(adobeRows[1][3], '8');
 
 const envatoRows = parseCsv(context.buildEnvatoCsv());
 assert.equal(envatoRows[1].length, envatoRows[0].length);

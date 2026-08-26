@@ -46,7 +46,7 @@
         <img id="brandLogo" src="assets/metalogo.png" alt="" width="41" height="41" class="rounded" />
         <span id="brandText">MetaStocker</span>
       </div>
-      <span class="badge version-badge">v2.5</span>
+      <span class="badge version-badge">v2.6</span>
       <span id="tokenCounter" class="badge hidden" title="Total tokens used in this session">0 tokens</span>
       <div class="grow"></div>
       <button type="button" id="themeToggle" class="btn ghost theme-toggle" aria-label="Switch to dark theme"
@@ -127,8 +127,9 @@
                 <div class="block">
                   <label for="model" class="label flex items-center gap-2">Model</label>
                   <select id="model" class="select">
+                    <option value="gpt-5.6-luna" selected>GPT-5.6 Luna</option>
                     <option value="gpt-5.4-mini">gpt-5.4-mini</option>
-                    <option value="gpt-5.4-nano" selected>gpt-5.4-nano</option>
+                    <option value="gpt-5.4-nano">gpt-5.4-nano</option>
                   </select>
                   <div id="modelHint" class="hint mt-1.5 min-h-[1.25rem]"></div>
                 </div>
@@ -534,9 +535,9 @@
           </table>
         </div>
 
-        <h4 class="mt-6 mb-2 font-bold text-text">The GPT-5.4 Nano Phenomenon</h4>
-        <p>Practice shows that <strong>GPT-5.4 Nano</strong> often outperforms larger models by providing factual, dry,
-          and strictly instructions-following output, which is perfect for stock SEO.</p>
+        <h4 class="mt-6 mb-2 font-bold text-text">GPT-5.6 Luna for High-Volume Metadata</h4>
+        <p><strong>GPT-5.6 Luna</strong> is the default cost-efficient model for large batches. Its dedicated Adobe prompt
+          also selects the numbered category used by Adobe Stock CSV imports.</p>
         <ul class="list-disc pl-5 space-y-2">
           <li><strong>No "Fluff":</strong> Dry data, no excessive adjectives.</li>
           <li><strong>Instruction Following:</strong> Strictly adheres to tag limits.</li>
@@ -553,7 +554,7 @@
     <img id="imagePreviewImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" class="max-w-[420px] max-h-[420px] object-contain rounded-lg" alt="Enlarged asset preview" />
   </div>
 
-  <script src="app.js?v=2.5"></script>
+  <script src="app.js?v=2.6"></script>
 </body>
 
 </html>

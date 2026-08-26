@@ -315,6 +315,69 @@ const ENVATO_DEFAULTS = {
 let envatoDefaults = { ...ENVATO_DEFAULTS };
 let envatoRows = new Map();
 let shutterRows = new Map();
+const MODEL_GPT_5_6_LUNA = 'gpt-5.6-luna';
+const ADOBE_CATEGORIES = Object.freeze([
+  Object.freeze({ id: 1, name: 'Animals' }),
+  Object.freeze({ id: 2, name: 'Buildings and Architecture' }),
+  Object.freeze({ id: 3, name: 'Business' }),
+  Object.freeze({ id: 4, name: 'Drinks' }),
+  Object.freeze({ id: 5, name: 'The Environment' }),
+  Object.freeze({ id: 6, name: 'States of Mind' }),
+  Object.freeze({ id: 7, name: 'Food' }),
+  Object.freeze({ id: 8, name: 'Graphic Resources' }),
+  Object.freeze({ id: 9, name: 'Hobbies and Leisure' }),
+  Object.freeze({ id: 10, name: 'Industry' }),
+  Object.freeze({ id: 11, name: 'Landscape' }),
+  Object.freeze({ id: 12, name: 'Lifestyle' }),
+  Object.freeze({ id: 13, name: 'People' }),
+  Object.freeze({ id: 14, name: 'Plants and Flowers' }),
+  Object.freeze({ id: 15, name: 'Culture and Religion' }),
+  Object.freeze({ id: 16, name: 'Science' }),
+  Object.freeze({ id: 17, name: 'Social Issues' }),
+  Object.freeze({ id: 18, name: 'Sports' }),
+  Object.freeze({ id: 19, name: 'Technology' }),
+  Object.freeze({ id: 20, name: 'Transport' }),
+  Object.freeze({ id: 21, name: 'Travel' })
+]);
+const ADOBE_CATEGORY_IDS = Object.freeze(ADOBE_CATEGORIES.map(category => category.id));
+const ADOBE_CATEGORY_PROMPT_LIST = ADOBE_CATEGORIES.map(category => `${category.id}. ${category.name}`).join('\n');
+
+function isLunaModel(model) {
+  return model === MODEL_GPT_5_6_LUNA;
+}
+
+function getAdobeTitleMax(model) {
+  if (isLunaModel(model)) return 70;
+  return model === 'gpt-5.4-nano' ? 100 : 80;
+}
+
+function buildAdobeResponseSchema(model, tagsCount) {
+  const properties = {
+    title: { type: 'string' },
+    tags: { type: 'array', items: { type: 'string' }, minItems: tagsCount, maxItems: tagsCount }
+  };
+  const required = ['title', 'tags'];
+  if (isLunaModel(model)) {
+    properties.category = { type: 'integer', enum: ADOBE_CATEGORY_IDS };
+    required.push('category');
+  }
+  return {
+    name: 'stock_fields',
+    schema: {
+      type: 'object',
+      properties,
+      required,
+      additionalProperties: false
+    },
+    strict: true
+  };
+}
+
+function normalizeAdobeCategory(value, model) {
+  if (!isLunaModel(model) || typeof value !== 'number') return null;
+  return Number.isInteger(value) && ADOBE_CATEGORY_IDS.includes(value) ? value : null;
+}
+
 const ADOBE_PROMPT_EXPERT = (tagsCount) => `You are an expert Adobe Stock Metadata Specialist. Your goal is to maximize the commercial visibility and sales potential of stock assets through precise, SEO-optimized metadata.
 
 ### CORE GUIDELINES:
@@ -365,10 +428,30 @@ Example response:
 {"title": "Professional business team collaborating in modern office environment during strategic planning meeting", "tags": ["business", "meeting", "office", "professional", "corporate", "teamwork"]}
 Return ONLY the JSON object.`;
 
+const ADOBE_PROMPT_LUNA = (tagsCount) => `Create upload-ready Adobe Stock metadata for the supplied image or video.
+
+Requirements:
+- Title: A clear, factual English description of 70 characters or fewer. Do not use commas, ALL CAPS, hashtags, brand names, trademarks, or copyrighted names.
+- Tags: Exactly ${tagsCount} unique English keywords, ordered by relevance. Put the 10 strongest keywords first, prefer singular forms where natural, and avoid brands or duplicates.
+- Category: Choose exactly one numeric Adobe Stock upload-CSV category ID. Base it on the primary subject, context, mood, and intent; if no category is perfect, choose the closest match.
+
+Adobe Stock category IDs:
+${ADOBE_CATEGORY_PROMPT_LIST}
+
+Return ONLY a JSON object with exactly these fields:
+1. "title" - the title string
+2. "tags" - an array of exactly ${tagsCount} strings
+3. "category" - one integer category ID from 1 through 21`;
+
+function getAdobePrompt(model, tagsCount) {
+  if (isLunaModel(model)) return ADOBE_PROMPT_LUNA(tagsCount);
+  return model === 'gpt-5.4-nano' ? ADOBE_PROMPT_NANO(tagsCount) : ADOBE_PROMPT_EXPERT(tagsCount);
+}
+
 const ADOBE_CONFIG = {
-  get titleMax() { return $('#model').value === 'gpt-5.4-nano' ? 100 : 80; },
+  get titleMax() { return getAdobeTitleMax($('#model').value); },
   get tagsMax() { return Math.max(10, Math.min(49, parseInt($('#tagsCount')?.value || 20, 10) || 20)); },
-  prompt(tagsCount) { return $('#model').value === 'gpt-5.4-nano' ? ADOBE_PROMPT_NANO(tagsCount) : ADOBE_PROMPT_EXPERT(tagsCount); }
+  prompt(tagsCount) { return getAdobePrompt($('#model').value, tagsCount); }
 };
 
 const ENVATO_CATEGORIES_FOOTAGE = [
@@ -544,7 +627,7 @@ function createRunConfig() {
     accessKey: $('#accessKey').value.trim(),
     model,
     tagsCount,
-    titleMax: model === 'gpt-5.4-nano' ? 100 : 80,
+    titleMax: getAdobeTitleMax(model),
     savedPrompt,
     comments: ($('#comments')?.value || '').trim(),
     alwaysTags: Object.freeze(parseAlwaysTags()),
@@ -559,10 +642,13 @@ function createRunConfig() {
 
 function buildPrompt(metadata, config = createRunConfig()) {
   const { model, tagsCount, savedPrompt, comments, alwaysTags } = config;
-  let prompt = savedPrompt || (model === 'gpt-5.4-nano' ? ADOBE_PROMPT_NANO(tagsCount) : ADOBE_PROMPT_EXPERT(tagsCount));
+  let prompt = savedPrompt || getAdobePrompt(model, tagsCount);
 
   if (savedPrompt) {
     prompt += `\n\nCRITICAL INSTRUCTION: You MUST generate EXACTLY ${tagsCount} tags.`;
+    if (isLunaModel(model)) {
+      prompt += `\nReturn "category" as one integer Adobe Stock upload-CSV category ID using this mapping:\n${ADOBE_CATEGORY_PROMPT_LIST}`;
+    }
   }
 
   if (comments) prompt += `\n\nBatch context: ${comments}`;
@@ -704,19 +790,7 @@ function getRetryDelay(result, attempt, isRateLimit) {
   return attempt * 1000 + (isRateLimit ? 2000 : 0) + Math.round(Math.random() * 750);
 }
 async function callOpenAI({ accessKey, model, imageDataUrl, prompt, responseFormat, contents, tagsCount = ADOBE_CONFIG.tagsMax, serviceTier = 'flex' }) {
-  const schema = {
-    name: 'stock_fields',
-    schema: {
-      type: 'object',
-      properties: {
-        title: { type: 'string' },
-        tags: { type: 'array', items: { type: 'string' }, minItems: tagsCount, maxItems: tagsCount }
-      },
-      required: ['title', 'tags'],
-      additionalProperties: false
-    },
-    strict: true
-  };
+  const schema = buildAdobeResponseSchema(model, tagsCount);
   let body, messages = [];
   messages.push({ role: 'developer', content: prompt });
   if (responseFormat && responseFormat.type === "text") {
@@ -767,11 +841,13 @@ async function callOpenAI({ accessKey, model, imageDataUrl, prompt, responseForm
       const title = typeof parsed?.title === 'string' ? parsed.title.trim() : '';
       const tags = Array.isArray(parsed?.tags) ? parsed.tags.map(tag => String(tag).trim()).filter(Boolean) : [];
       const uniqueTags = new Set(tags.map(tag => tag.toLowerCase()));
-      if (!title || tags.length !== tagsCount || uniqueTags.size !== tagsCount) {
+      const category = normalizeAdobeCategory(parsed?.category, model);
+      if (!title || tags.length !== tagsCount || uniqueTags.size !== tagsCount || (isLunaModel(model) && category === null)) {
         if (attempt < 3) { await sleep(1500 * attempt); continue; }
-        throw new Error(`Model returned invalid metadata; expected exactly ${tagsCount} unique tags.`);
+        const categoryRequirement = isLunaModel(model) ? ' and one Adobe category ID from 1 through 21' : '';
+        throw new Error(`Model returned invalid metadata; expected exactly ${tagsCount} unique tags${categoryRequirement}.`);
       }
-      return { ...parsed, title, tags };
+      return { ...parsed, title, tags, category };
     }
     const isRate = result.status === 429, isServer = result.status >= 500, isAuth = result.status === 401 || result.status === 403;
     if (isAuth) { throw new Error(result.status === 401 ? 'Invalid key. Please check your credentials.' : 'Access forbidden. Please check the API key permissions.'); }
@@ -1302,6 +1378,7 @@ function buildFreepikCsv() {
 
 /************** Processing pipeline **************/
 const PRICING = {
+  'gpt-5.6-luna': { in: 0.10 / 1000000, cachedIn: 0.010 / 1000000, out: 0.60 / 1000000 },
   'gpt-5.4-mini': { in: 0.375 / 1000000, cachedIn: 0.0375 / 1000000, out: 2.25 / 1000000 },
   'gpt-5.4-nano': { in: 0.10 / 1000000, cachedIn: 0.010 / 1000000, out: 0.625 / 1000000 }
 };
@@ -1363,7 +1440,7 @@ async function processOne(idx, config = activeRunConfig || createRunConfig()) {
     const tags = normalizeTags(raw.tags || [], alwaysTags, tagsMax, alwaysTagsPlacement);
     if (!title || tags.length !== tagsMax) throw new Error(`Invalid metadata: expected a title and exactly ${tagsMax} unique tags.`);
     updateTableRow(idx, { title, tags, status: 'processing' });
-    updateCsvRow(file.name, title, '', tags, null);
+    updateCsvRow(file.name, title, '', tags, raw.category);
     const outputErrors = [];
     let fatalOutputError = false;
     if (outputEnvato) {
@@ -1840,13 +1917,15 @@ document.getElementById('alwaysTagsPosition').addEventListener('change', updateA
 function updateModelHint() {
   const model = $('#model').value;
   const hintEl = $('#modelHint');
-  const hintText = model === 'gpt-5.4-nano'
-    ? 'Fast and economical for large batches.'
-    : model === 'gpt-5.4-mini'
-      ? 'Higher-quality descriptions for complex scenes.'
-      : isGrokModel(model)
-        ? 'Requires a compatible xAI API key.'
-        : '';
+  const hintText = isLunaModel(model)
+    ? 'Default for efficient batches; also generates Adobe category IDs.'
+    : model === 'gpt-5.4-nano'
+      ? 'Fast and economical for large batches.'
+      : model === 'gpt-5.4-mini'
+        ? 'Higher-quality descriptions for complex scenes.'
+        : isGrokModel(model)
+          ? 'Requires a compatible xAI API key.'
+          : '';
 
   if (hintEl) hintEl.textContent = hintText;
 
