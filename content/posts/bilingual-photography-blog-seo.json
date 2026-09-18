@@ -1,0 +1,463 @@
+{
+  "slug": "bilingual-photography-blog-seo",
+  "category": "seo",
+  "source_ids": [
+    "google-language",
+    "google-helpful",
+    "google-images"
+  ],
+  "en": {
+    "title": "How to Organize a Bilingual Photography Blog for SEO",
+    "description": "Build English and Russian photography articles with clear URLs, canonicals, hreflang, and a language switch that respects readers and search engines.",
+    "intro": "A bilingual photography blog works best when every article has two deliberate versions rather than one page that changes language unpredictably. Give the English and Russian editions separate, stable URLs; let each page identify itself as canonical; connect the translations with reciprocal hreflang; and make switching languages preserve the reader’s place in the article. This structure helps visitors choose the language they want while giving search engines clear localization signals. It does not guarantee indexing, traffic, or rankings, so the editorial quality of the photography guidance still matters most.",
+    "sections": [
+      {
+        "heading": "Choose a URL structure you can maintain",
+        "paragraphs": [
+          "Select one consistent pattern before publishing several articles. Subdirectories such as /en/ and /ru/ are straightforward for a single domain, while language subdomains or separate domains require more operational care. The exact pattern matters less than consistency, readable slugs, and a one-to-one relationship between translations.",
+          "For example, an article about photographing fog on a river might use /en/foggy-river-photography/ and /ru/foggy-river-photography/. Keep the subject recognizable in both URLs, but do not force an awkward word-for-word translation. Avoid query parameters that merely alter visible language, because they make sharing, canonicalization, and switching harder to reason about."
+        ],
+        "bullets": [
+          "Use one permanent URL per language edition.",
+          "Keep slugs short, descriptive, lowercase, and stable.",
+          "Link translations directly to each other."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Write two useful editions, not duplicated pages",
+        "paragraphs": [
+          "Translate the reader’s problem, not just every sentence. A Russian reader may need different examples, terminology, or explanations even when the article’s workflow is the same. Preserve the core promise, facts, and recommended actions, but rewrite introductions and examples so each version sounds natural.",
+          "For photography topics, explain what the reader should photograph, how to prepare, and how to evaluate the result. Avoid padding an article with repeated keyword variations. Helpful, original content has no magic word count, and a longer translation is not automatically a better page."
+        ],
+        "bullets": [
+          "Keep the main intent aligned across languages.",
+          "Adapt examples and phrasing to natural reader expectations.",
+          "Do not publish an unfinished translation solely to create another URL."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Set self-canonical URLs on both pages",
+        "paragraphs": [
+          "The English page should have a canonical pointing to its own absolute English URL. The Russian page should do the same for its Russian URL. A canonical tells search engines which URL represents that particular page; it should not be used to collapse legitimate translations into one language edition.",
+          "Check that canonicals use the final HTTPS address, the intended host, and the preferred trailing-slash style. Also check that neither language page accidentally canonicalizes to the other. Canonicals and hreflang serve different purposes: one identifies the preferred URL for a page, while the other describes equivalent localized alternatives."
+        ],
+        "bullets": [
+          "Use an absolute self-canonical on every translated article.",
+          "Keep canonical and visible URL conventions consistent.",
+          "Review rendered HTML, not only your content-management-screen settings."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Connect translations with reciprocal hreflang",
+        "paragraphs": [
+          "Each edition should declare both language alternatives, using the exact URL of each page. The English page can reference en and ru; the Russian page should reference ru and en. Include an x-default only when you have a meaningful neutral landing page or language-choice page. Do not invent a fallback that immediately redirects visitors by IP.",
+          "Reciprocity is important: if English points to Russian, Russian should point back to English. Use the same language identifiers consistently and verify spelling, protocol, host, and path. Hreflang is a signal for localized versions, not a promise that Google will crawl, index, or display the chosen version for every query."
+        ],
+        "bullets": [
+          "Make every language reference return a reachable page.",
+          "Use matching hreflang declarations in both editions.",
+          "Treat x-default as optional, not as an automatic redirect target."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Design a language switch that preserves context",
+        "paragraphs": [
+          "Place an English/Russian switch near the article title or in a persistent header. The link should point to the corresponding translation of the current article, not to the blog homepage. If a translation does not exist, say so clearly and offer the closest useful destination rather than silently changing language.",
+          "Do not redirect by IP address. A traveler, bilingual reader, search crawler, or shared-device user may not want the language inferred from network location. A visible switch gives people control and makes the selected URL shareable. Keep navigation labels understandable, such as “English” and “Русский,” even when the current article body is long."
+        ],
+        "bullets": [
+          "Preserve the article slug relationship when switching.",
+          "Let users switch manually at any time.",
+          "Keep the selected language in the URL, not only in a cookie."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Apply image and technical checks to a real article",
+        "paragraphs": [
+          "Consider this hypothetical article: “Photographing a Foggy River at Dawn.” The English edition explains how to protect highlights, focus before contrast drops, and describe the scene without inventing a location. The Russian edition covers the same decisions in natural Russian and links back to the matching English page.",
+          "Before publishing, inspect the two pages as a reader. Confirm that each has a self-canonical, reciprocal hreflang, descriptive surrounding text, and useful alt text for meaningful images. If you use a sitemap, include the canonical absolute URLs; a sitemap can help discovery but cannot guarantee crawling or indexing. Remember that website image alt text and stock-marketplace keyword metadata are separate systems."
+        ],
+        "bullets": [
+          "Compare the two editions for intent and factual consistency.",
+          "Use alt text that describes the image’s purpose or content.",
+          "Test the switch from both language pages and on mobile.",
+          "Check the contributor or search platform’s current guidance when requirements change."
+        ],
+        "example": "Hypothetical publication check:\nEnglish: /en/foggy-river-photography/\nRussian: /ru/foggy-river-photography/\nEnglish canonical: its own English URL\nRussian canonical: its own Russian URL\nBoth pages: hreflang en ↔ ru\nSwitch: current article in the other language"
+      }
+    ],
+    "checklist": [
+      "Choose a stable URL pattern for English and Russian.",
+      "Publish genuinely useful, natural editions with the same search intent.",
+      "Add a self-canonical to each language URL.",
+      "Add reciprocal hreflang with exact absolute URLs.",
+      "Make the switch open the matching article, never an IP-based redirect.",
+      "Use descriptive image context and alt text.",
+      "Test links, canonicals, and language signals after deployment.",
+      "Review current search-engine guidance when your setup changes."
+    ],
+    "illustration": {
+      "title": "Bilingual article publishing workflow",
+      "steps": [
+        {
+          "label": "Pair the article URLs",
+          "detail": "Create stable English and Russian URLs for the same reader need."
+        },
+        {
+          "label": "Link language signals",
+          "detail": "Add self-canonicals and reciprocal hreflang declarations."
+        },
+        {
+          "label": "Test the reader path",
+          "detail": "Switch languages on the article and check images, links, and HTML."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как организовать двуязычный фотоблог для SEO",
+    "description": "Практическая схема для англо-русских статей о фотографии: отдельные URL, self-canonical, взаимный hreflang и удобный переключатель языка.",
+    "intro": "Двуязычный фотоблог проще продвигать и поддерживать, когда у каждой статьи есть две самостоятельные версии, а язык не меняется неожиданно. Английская и русская страницы должны иметь отдельные постоянные URL, собственный canonical, взаимные hreflang-ссылки и переключатель, который оставляет читателя в той же статье. Такая структура помогает людям выбрать язык и дает поисковым системам понятный сигнал о локализованных версиях. Она не обещает индексацию, трафик или позиции: ценность текста и фотографий по-прежнему важнее технической разметки.",
+    "sections": [
+      {
+        "heading": "Сначала выберите устойчивую структуру URL",
+        "paragraphs": [
+          "Заранее определите схему, которую сможете применять ко всем материалам. Для одного домена удобны каталоги /en/ и /ru/. Поддомены и отдельные домены тоже возможны, но требуют более строгого контроля. Важнее не конкретный вариант, а единообразие, читаемые адреса и понятная связь между переводами.",
+          "Например, статья о съемке туманной реки может иметь адреса /en/foggy-river-photography/ и /ru/foggy-river-photography/. Смысл должен быть узнаваемым, но дословный перевод не обязателен. Не прячьте язык только в параметре запроса: такие адреса сложнее проверять, распространять и правильно канонизировать."
+        ],
+        "bullets": [
+          "Один постоянный URL на каждую языковую версию.",
+          "Короткие стабильные адреса в нижнем регистре.",
+          "Прямая связь между переводами."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Адаптируйте статью, а не копируйте фразы",
+        "paragraphs": [
+          "У двух страниц должна быть одна поисковая задача, но текст не обязан звучать одинаково. Переводите решение проблемы читателя: меняйте примеры, порядок пояснений и терминологию там, где этого требует естественный русский или английский. Сохраняйте факты, обещание статьи и практические действия.",
+          "В материале о фотографии объясните, что снимать, как подготовиться и по каким признакам оценить кадр. Не добавляйте искусственные повторы ключевых слов. У полезного оригинального текста нет обязательного магического объема, а более длинный перевод не становится автоматически качественнее."
+        ],
+        "bullets": [
+          "Сохраняйте одинаковое основное намерение.",
+          "Пишите естественно для каждой аудитории.",
+          "Не создавайте незавершенный перевод только ради нового URL."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Поставьте self-canonical на каждой странице",
+        "paragraphs": [
+          "Английская страница должна указывать canonical на собственный абсолютный английский URL. Русская — на собственный русский URL. Canonical не предназначен для объединения двух легитимных переводов в одну страницу: он обозначает предпочтительный адрес конкретной версии.",
+          "Проверьте HTTPS, домен, путь и правило завершающего слеша. Особенно важно убедиться, что русская страница случайно не канонизируется на английскую и наоборот. Canonical и hreflang решают разные задачи: первый описывает предпочтительный URL страницы, второй связывает локализованные варианты."
+        ],
+        "bullets": [
+          "Используйте абсолютный self-canonical на каждой версии.",
+          "Согласуйте видимый URL и canonical.",
+          "Проверяйте итоговый HTML, а не только настройки CMS."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Свяжите версии взаимным hreflang",
+        "paragraphs": [
+          "Каждая страница должна объявлять обе языковые версии с их точными URL. На английской укажите en и ru, на русской — ru и en. x-default нужен только тогда, когда у вас есть осмысленная нейтральная страница выбора языка или общий вход. Не превращайте его в повод для автоматического перенаправления по IP.",
+          "Взаимность означает, что ссылка English на Russian подтверждается обратной ссылкой Russian на English. Проверьте коды языков, протокол, домен и путь. Hreflang помогает описать локализованные версии, но не гарантирует обход, индексацию или показ нужной страницы по каждому запросу."
+        ],
+        "bullets": [
+          "Все языковые URL должны открываться.",
+          "Одинаково проверьте hreflang на обеих страницах.",
+          "Используйте x-default только при реальной необходимости."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Сделайте переключатель частью текущей статьи",
+        "paragraphs": [
+          "Разместите переключатель English/Русский возле заголовка или в постоянной шапке. Он должен вести на перевод именно текущей статьи, а не на главную блога. Если перевода пока нет, честно сообщите об этом и предложите ближайший полезный материал вместо незаметной смены языка.",
+          "Не определяйте язык по IP. Человек может путешествовать, пользоваться общим устройством, читать на двух языках или проверять сайт как поисковый робот. Явный переключатель оставляет решение читателю, а URL можно скопировать и открыть в нужной версии. Подписи “English” и “Русский” должны быть понятны независимо от языка текста."
+        ],
+        "bullets": [
+          "Сохраняйте соответствие между текущими статьями.",
+          "Позволяйте менять язык вручную в любой момент.",
+          "Фиксируйте язык в URL, а не только в cookie."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Проверьте схему на одном практическом материале",
+        "paragraphs": [
+          "Возьмем гипотетический пример: статья «Съемка туманной реки на рассвете». В английской версии автор объясняет, как сохранить детали в светах, заранее навести фокус при низком контрасте и не выдумывать место съемки. Русская версия передает те же решения естественным русским языком и ведет на соответствующую английскую страницу.",
+          "Перед публикацией прочитайте обе страницы как посетитель. Убедитесь, что у каждой есть self-canonical, взаимный hreflang, понятный окружающий текст и уместный alt-текст для важных изображений. Если используете sitemap, внесите туда абсолютные canonical URL: карта помогает обнаружению, но не гарантирует обход или индексацию. Alt-текст сайта и ключевые слова фотостоков — разные системы."
+        ],
+        "bullets": [
+          "Сверьте намерение и факты в двух версиях.",
+          "Описывайте в alt-тексте содержание или назначение изображения.",
+          "Проверьте переключатель с обеих страниц и на телефоне.",
+          "При изменении требований проверяйте актуальные правила поисковой платформы."
+        ],
+        "example": "Гипотетическая проверка перед публикацией:\nEnglish: /en/foggy-river-photography/\nRussian: /ru/foggy-river-photography/\nEnglish canonical: собственный английский URL\nRussian canonical: собственный русский URL\nОбе страницы: hreflang en ↔ ru\nПереключатель: та же статья на другом языке"
+      }
+    ],
+    "checklist": [
+      "Выберите устойчивую схему URL для English и Russian.",
+      "Опубликуйте полезные естественные версии с одним поисковым намерением.",
+      "Добавьте self-canonical на каждый языковой URL.",
+      "Настройте взаимный hreflang с точными абсолютными адресами.",
+      "Проверьте, что переключатель ведет в ту же статью и не использует IP-редирект.",
+      "Добавьте описательный контекст и alt-текст к изображениям.",
+      "После публикации проверьте ссылки, canonical и HTML-разметку.",
+      "При изменениях сверяйтесь с актуальными правилами поисковых систем."
+    ],
+    "illustration": {
+      "title": "Схема публикации двуязычной статьи",
+      "steps": [
+        {
+          "label": "Свяжите URL статей",
+          "detail": "Создайте стабильные английский и русский адреса для одной задачи."
+        },
+        {
+          "label": "Добавьте языковые сигналы",
+          "detail": "Поставьте self-canonical и взаимный hreflang."
+        },
+        {
+          "label": "Проверьте путь читателя",
+          "detail": "Переключите язык и проверьте ссылки, изображения и HTML."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "এসইও-এর জন্য দ্বিভাষিক ফটোগ্রাফি ব্লগ কীভাবে সাজাবেন",
+    "description": "স্পষ্ট URL, ক্যানোনিক্যাল, hreflang ও পাঠকবান্ধব ভাষা বদলের সুবিধাসহ ইংরেজি ও রুশ ফটোগ্রাফি নিবন্ধ তৈরি করুন।",
+    "intro": "দ্বিভাষিক ফটোগ্রাফি ব্লগে প্রতিটি নিবন্ধের দুটি পরিকল্পিত সংস্করণ থাকলে সবচেয়ে ভালো কাজ করে; ভাষা অনির্দেশ্যভাবে বদলে যায় এমন একটি পৃষ্ঠার ওপর নির্ভর করা উচিত নয়। ইংরেজি ও রুশ সংস্করণের জন্য আলাদা, স্থিতিশীল URL দিন; প্রতিটি পৃষ্ঠাকে নিজেকে ক্যানোনিক্যাল হিসেবে চিহ্নিত করতে দিন; পারস্পরিক hreflang দিয়ে অনুবাদগুলো যুক্ত করুন; এবং ভাষা বদলানোর সময় পাঠকের নিবন্ধের অবস্থান বজায় রাখুন। এই কাঠামো দর্শকদের পছন্দের ভাষা বেছে নিতে সাহায্য করে এবং সার্চ ইঞ্জিনকে স্পষ্ট স্থানীয়করণ সংকেত দেয়। এটি ইনডেক্সিং, ট্রাফিক বা র‍্যাঙ্কিংয়ের নিশ্চয়তা দেয় না, তাই ফটোগ্রাফি নির্দেশিকার সম্পাদকীয় মানই সবচেয়ে গুরুত্বপূর্ণ।",
+    "sections": [
+      {
+        "heading": "যে URL কাঠামো বজায় রাখতে পারবেন, সেটি বেছে নিন",
+        "paragraphs": [
+          "একাধিক নিবন্ধ প্রকাশের আগে একটি সামঞ্জস্যপূর্ণ ধরন বেছে নিন। একটি ডোমেনের জন্য /en/ ও /ru/-এর মতো সাবডিরেক্টরি সহজবোধ্য, আর ভাষাভিত্তিক সাবডোমেন বা আলাদা ডোমেন পরিচালনায় বেশি যত্ন প্রয়োজন। নির্দিষ্ট ধরনটির চেয়ে ধারাবাহিকতা, পাঠযোগ্য স্লাগ এবং অনুবাদগুলোর এক-থেকে-এক সম্পর্ক বেশি গুরুত্বপূর্ণ।",
+          "উদাহরণস্বরূপ, নদীর ওপর কুয়াশা তোলার একটি নিবন্ধে /en/foggy-river-photography/ এবং /ru/foggy-river-photography/ ব্যবহার করা যেতে পারে। উভয় URL-এ বিষয়টি চেনা যায় এমন রাখুন, তবে জোর করে অস্বাভাবিক শব্দে-শব্দে অনুবাদ করবেন না। দৃশ্যমান ভাষা বদলানোর জন্য ব্যবহৃত কুয়েরি প্যারামিটার এড়িয়ে চলুন, কারণ এতে শেয়ারিং, ক্যানোনিক্যাল নির্ধারণ ও ভাষা বদলের যুক্তি জটিল হয়।"
+        ],
+        "bullets": [
+          "প্রতি ভাষা সংস্করণের জন্য একটি স্থায়ী URL ব্যবহার করুন।",
+          "স্লাগ সংক্ষিপ্ত, বর্ণনামূলক, ছোট হাতের এবং স্থিতিশীল রাখুন।",
+          "অনুবাদগুলোকে সরাসরি একে অপরের সঙ্গে যুক্ত করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ডুপ্লিকেট পৃষ্ঠা নয়, দুটি কার্যকর সংস্করণ লিখুন",
+        "paragraphs": [
+          "শুধু প্রতিটি বাক্য অনুবাদ না করে পাঠকের সমস্যাটিও অনুবাদ করুন। নিবন্ধটির কর্মপ্রবাহ একই হলেও রুশ পাঠকের ভিন্ন উদাহরণ, পরিভাষা বা ব্যাখ্যার প্রয়োজন হতে পারে। মূল প্রতিশ্রুতি, তথ্য ও সুপারিশকৃত কাজগুলো বজায় রাখুন, তবে প্রতিটি সংস্করণ স্বাভাবিক শোনানোর জন্য ভূমিকা ও উদাহরণ নতুনভাবে লিখুন।",
+          "ফটোগ্রাফির বিষয়গুলোর ক্ষেত্রে পাঠক কী তুলবেন, কীভাবে প্রস্তুতি নেবেন এবং ফলাফল কীভাবে মূল্যায়ন করবেন তা ব্যাখ্যা করুন। বারবার কীওয়ার্ডের ভিন্ন রূপ যোগ করে নিবন্ধ ফুলিয়ে তুলবেন না। সহায়ক ও মৌলিক বিষয়বস্তুর কোনো জাদুকরী শব্দসংখ্যা নেই, আর দীর্ঘ অনুবাদ স্বয়ংক্রিয়ভাবে উন্নত পৃষ্ঠা হয় না।"
+        ],
+        "bullets": [
+          "ভাষাগুলোর মধ্যে মূল উদ্দেশ্য এক রাখুন।",
+          "পাঠকের স্বাভাবিক প্রত্যাশা অনুযায়ী উদাহরণ ও বাক্যরীতি মানিয়ে নিন।",
+          "আরেকটি URL তৈরির জন্য অসম্পূর্ণ অনুবাদ প্রকাশ করবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "উভয় পৃষ্ঠায় নিজস্ব ক্যানোনিক্যাল URL নির্ধারণ করুন",
+        "paragraphs": [
+          "ইংরেজি পৃষ্ঠার ক্যানোনিক্যাল তার নিজের সম্পূর্ণ ইংরেজি URL-এ নির্দেশ করা উচিত। রুশ পৃষ্ঠার ক্ষেত্রেও তার নিজস্ব রুশ URL ব্যবহার করুন। ক্যানোনিক্যাল সার্চ ইঞ্জিনকে জানায় কোন URL নির্দিষ্ট পৃষ্ঠাটিকে উপস্থাপন করে; বৈধ অনুবাদগুলোকে একটি ভাষা সংস্করণে মিলিয়ে দেওয়ার জন্য এটি ব্যবহার করা উচিত নয়।",
+          "ক্যানোনিক্যালে চূড়ান্ত HTTPS ঠিকানা, নির্ধারিত হোস্ট এবং পছন্দের ট্রেইলিং-স্ল্যাশ ধরন আছে কি না দেখুন। কোনো ভাষার পৃষ্ঠা যেন ভুল করে অন্য ভাষার পৃষ্ঠাকে ক্যানোনিক্যাল না করে, সেটিও পরীক্ষা করুন। ক্যানোনিক্যাল ও hreflang-এর উদ্দেশ্য আলাদা: একটি পৃষ্ঠার পছন্দের URL নির্ধারণ করে, অন্যটি সমতুল্য স্থানীয় সংস্করণগুলোর বর্ণনা দেয়।"
+        ],
+        "bullets": [
+          "প্রতিটি অনূদিত নিবন্ধে সম্পূর্ণ নিজস্ব ক্যানোনিক্যাল ব্যবহার করুন।",
+          "ক্যানোনিক্যাল ও দৃশ্যমান URL-এর রীতি এক রাখুন।",
+          "শুধু কনটেন্ট-ম্যানেজমেন্ট স্ক্রিনের সেটিং নয়, রেন্ডার করা HTML পরীক্ষা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "পারস্পরিক hreflang দিয়ে অনুবাদ যুক্ত করুন",
+        "paragraphs": [
+          "প্রতিটি সংস্করণে প্রতিটি ভাষার বিকল্পের সঠিক URL ঘোষণা করা উচিত। ইংরেজি পৃষ্ঠা en ও ru উল্লেখ করতে পারে; রুশ পৃষ্ঠা ru ও en উল্লেখ করবে। অর্থবহ নিরপেক্ষ ল্যান্ডিং পৃষ্ঠা বা ভাষা-বাছাই পৃষ্ঠা থাকলেই x-default যোগ করুন। দর্শককে IP অনুযায়ী সঙ্গে সঙ্গে পুনর্নির্দেশ করে এমন কাল্পনিক ফলব্যাক তৈরি করবেন না।",
+          "পারস্পরিকতা গুরুত্বপূর্ণ: ইংরেজি যদি রুশ পৃষ্ঠায় নির্দেশ করে, রুশ পৃষ্ঠারও ইংরেজির দিকে নির্দেশ করা উচিত। একই ভাষা-পরিচয় ধারাবাহিকভাবে ব্যবহার করুন এবং বানান, প্রোটোকল, হোস্ট ও পথ যাচাই করুন। hreflang স্থানীয় সংস্করণের সংকেত, প্রতিটি অনুসন্ধানে Google নির্বাচিত সংস্করণ ক্রল, ইনডেক্স বা প্রদর্শন করবে—এমন প্রতিশ্রুতি নয়।"
+        ],
+        "bullets": [
+          "প্রতিটি ভাষা-নির্দেশ যেন একটি পৌঁছানো যায় এমন পৃষ্ঠা ফেরত দেয়।",
+          "উভয় সংস্করণে মিল থাকা hreflang ঘোষণা ব্যবহার করুন।",
+          "x-default-কে ঐচ্ছিক হিসেবে দেখুন, স্বয়ংক্রিয় পুনর্নির্দেশের লক্ষ্য হিসেবে নয়।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "প্রসঙ্গ বজায় রাখে এমন ভাষা বদলের সুবিধা নকশা করুন",
+        "paragraphs": [
+          "নিবন্ধের শিরোনামের কাছে বা স্থায়ী হেডারে ইংরেজি/রুশ ভাষা বদলের সুবিধা রাখুন। লিংকটি ব্লগের হোমপেজে নয়, বর্তমান নিবন্ধের সংশ্লিষ্ট অনুবাদে নিয়ে যাবে। অনুবাদ না থাকলে তা স্পষ্টভাবে জানান এবং নীরবে ভাষা বদলে দেওয়ার বদলে সবচেয়ে কাছের কার্যকর গন্তব্য দিন।",
+          "IP অনুযায়ী পুনর্নির্দেশ করবেন না। ভ্রমণকারী, দ্বিভাষিক পাঠক, সার্চ ক্রলার বা শেয়ার করা ডিভাইসের ব্যবহারকারী নেটওয়ার্কের অবস্থান থেকে ভাষা অনুমান করা নাও চাইতে পারেন। দৃশ্যমান বদল-সুবিধা মানুষকে নিয়ন্ত্রণ দেয় এবং নির্বাচিত URL শেয়ারযোগ্য করে। বর্তমান নিবন্ধের মূল লেখা দীর্ঘ হলেও “English” ও “Русский”-এর মতো নেভিগেশন লেবেল বোধগম্য রাখুন।"
+        ],
+        "bullets": [
+          "ভাষা বদলানোর সময় নিবন্ধের স্লাগের সম্পর্ক বজায় রাখুন।",
+          "ব্যবহারকারীদের যেকোনো সময় নিজে ভাষা বদলাতে দিন।",
+          "শুধু কুকিতে নয়, URL-এ নির্বাচিত ভাষা রাখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "বাস্তব নিবন্ধে ছবি ও প্রযুক্তিগত পরীক্ষা প্রয়োগ করুন",
+        "paragraphs": [
+          "এই কাল্পনিক নিবন্ধটি বিবেচনা করুন: “Photographing a Foggy River at Dawn.” ইংরেজি সংস্করণে হাইলাইট রক্ষা করা, কনট্রাস্ট কমার আগে ফোকাস করা এবং স্থান না বানিয়ে দৃশ্যটি বর্ণনা করার পদ্ধতি ব্যাখ্যা করা হয়েছে। রুশ সংস্করণে একই সিদ্ধান্তগুলো স্বাভাবিক রুশ ভাষায় তুলে ধরা হয়েছে এবং সংশ্লিষ্ট ইংরেজি পৃষ্ঠায় লিংক দেওয়া হয়েছে।",
+          "প্রকাশের আগে পাঠক হিসেবে দুটি পৃষ্ঠা পরীক্ষা করুন। প্রতিটিতে নিজস্ব ক্যানোনিক্যাল, পারস্পরিক hreflang, বর্ণনামূলক পারিপার্শ্বিক লেখা এবং অর্থবহ ছবির জন্য কার্যকর alt text আছে কি না নিশ্চিত করুন। সাইটম্যাপ ব্যবহার করলে ক্যানোনিক্যাল সম্পূর্ণ URL যুক্ত করুন; সাইটম্যাপ আবিষ্কারে সাহায্য করতে পারে, কিন্তু ক্রল বা ইনডেক্সিংয়ের নিশ্চয়তা দেয় না। মনে রাখবেন, ওয়েবসাইটের ছবির alt text এবং স্টক-মার্কেটপ্লেসের কীওয়ার্ড মেটাডেটা আলাদা ব্যবস্থা।"
+        ],
+        "bullets": [
+          "উদ্দেশ্য ও তথ্যের সামঞ্জস্যের জন্য দুটি সংস্করণ তুলনা করুন।",
+          "ছবির উদ্দেশ্য বা বিষয়বস্তু বর্ণনা করে এমন alt text ব্যবহার করুন।",
+          "উভয় ভাষার পৃষ্ঠা ও মোবাইলে বদল-সুবিধা পরীক্ষা করুন।",
+          "প্রয়োজনীয়তা বদলালে কনট্রিবিউটর বা সার্চ প্ল্যাটফর্মের বর্তমান নির্দেশিকা দেখুন।"
+        ],
+        "example": "কাল্পনিক প্রকাশনা পরীক্ষা:\nইংরেজি: /en/foggy-river-photography/\nরুশ: /ru/foggy-river-photography/\nইংরেজি ক্যানোনিক্যাল: নিজস্ব ইংরেজি URL\nরুশ ক্যানোনিক্যাল: নিজস্ব রুশ URL\nউভয় পৃষ্ঠা: hreflang en ↔ ru\nবদল: অন্য ভাষায় বর্তমান নিবন্ধ"
+      }
+    ],
+    "checklist": [
+      "ইংরেজি ও রুশের জন্য স্থিতিশীল URL ধরন বেছে নিন।",
+      "একই অনুসন্ধান-উদ্দেশ্য রেখে সত্যিই কার্যকর ও স্বাভাবিক সংস্করণ প্রকাশ করুন।",
+      "প্রতিটি ভাষার URL-এ নিজস্ব ক্যানোনিক্যাল যোগ করুন।",
+      "সঠিক সম্পূর্ণ URL-সহ পারস্পরিক hreflang যোগ করুন।",
+      "বদল-সুবিধা যেন মিল থাকা নিবন্ধ খোলে, কখনো IP-ভিত্তিক পুনর্নির্দেশ নয়।",
+      "বর্ণনামূলক ছবির প্রসঙ্গ ও alt text ব্যবহার করুন।",
+      "প্রকাশের পর লিংক, ক্যানোনিক্যাল ও ভাষার সংকেত পরীক্ষা করুন।",
+      "সেটআপ বদলালে বর্তমান সার্চ-ইঞ্জিন নির্দেশিকা পর্যালোচনা করুন।"
+    ],
+    "illustration": {
+      "title": "দ্বিভাষিক নিবন্ধ প্রকাশের কর্মপ্রবাহ",
+      "steps": [
+        {
+          "label": "নিবন্ধের URL জোড়া বানান",
+          "detail": "একই পাঠক-প্রয়োজনের জন্য স্থিতিশীল ইংরেজি ও রুশ URL তৈরি করুন।"
+        },
+        {
+          "label": "ভাষার সংকেত যুক্ত করুন",
+          "detail": "নিজস্ব ক্যানোনিক্যাল ও পারস্পরিক hreflang ঘোষণা যোগ করুন।"
+        },
+        {
+          "label": "পাঠকের পথ পরীক্ষা করুন",
+          "detail": "নিবন্ধে ভাষা বদলে ছবি, লিংক ও HTML পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "SEO के लिए द्विभाषी फ़ोटोग्राफी ब्लॉग कैसे व्यवस्थित करें",
+    "description": "स्पष्ट URL, कैनोनिकल, hreflang और पाठक व सर्च इंजन का सम्मान करने वाले भाषा-स्विच के साथ अंग्रेज़ी और रूसी लेख बनाएं।",
+    "intro": "द्विभाषी फ़ोटोग्राफी ब्लॉग तब सबसे अच्छा काम करता है जब हर लेख के दो सोच-समझकर बनाए गए संस्करण हों, न कि एक ऐसा पृष्ठ जिसकी भाषा अनिश्चित रूप से बदलती रहे। अंग्रेज़ी और रूसी संस्करणों के लिए अलग, स्थिर URL दें; हर पृष्ठ को स्वयं को कैनोनिकल बताने दें; पारस्परिक hreflang से अनुवाद जोड़ें; और भाषा बदलते समय पाठक की लेख में स्थिति बनाए रखें। यह संरचना आगंतुकों को अपनी पसंद की भाषा चुनने देती है और सर्च इंजन को स्पष्ट स्थानीयकरण संकेत देती है। यह इंडेक्सिंग, ट्रैफ़िक या रैंकिंग की गारंटी नहीं देती, इसलिए फ़ोटोग्राफी मार्गदर्शन की संपादकीय गुणवत्ता अब भी सबसे महत्वपूर्ण है।",
+    "sections": [
+      {
+        "heading": "ऐसी URL संरचना चुनें जिसे आप संभाल सकें",
+        "paragraphs": [
+          "कई लेख प्रकाशित करने से पहले एक सुसंगत तरीका चुनें। एक ही डोमेन के लिए /en/ और /ru/ जैसे सबडायरेक्टरी सीधे-सादे होते हैं, जबकि भाषा-आधारित सबडोमेन या अलग डोमेन के लिए अधिक संचालन-सावधानी चाहिए। सटीक तरीका उतना महत्वपूर्ण नहीं है जितनी सुसंगतता, पढ़ने योग्य स्लग और अनुवादों का एक-से-एक संबंध।",
+          "उदाहरण के लिए, नदी पर कोहरा फ़ोटोग्राफ़ करने वाला लेख /en/foggy-river-photography/ और /ru/foggy-river-photography/ का उपयोग कर सकता है। दोनों URL में विषय को पहचानने योग्य रखें, लेकिन अटपटा शब्दशः अनुवाद थोपें नहीं। ऐसे क्वेरी पैरामीटर से बचें जो केवल दिखाई देने वाली भाषा बदलते हैं, क्योंकि उनसे साझा करना, कैनोनिकल तय करना और भाषा बदलना अधिक कठिन हो जाता है।"
+        ],
+        "bullets": [
+          "हर भाषा संस्करण के लिए एक स्थायी URL रखें।",
+          "स्लग छोटे, वर्णनात्मक, लोअरकेस और स्थिर रखें।",
+          "अनुवादों को सीधे एक-दूसरे से जोड़ें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "डुप्लिकेट पृष्ठ नहीं, दो उपयोगी संस्करण लिखें",
+        "paragraphs": [
+          "सिर्फ हर वाक्य का अनुवाद न करें; पाठक की समस्या का भी अनुवाद करें। लेख का कार्यप्रवाह समान होने पर भी रूसी पाठक को अलग उदाहरणों, शब्दावली या व्याख्याओं की आवश्यकता हो सकती है। मूल वादा, तथ्य और सुझाए गए कार्य बनाए रखें, लेकिन हर संस्करण स्वाभाविक लगे, इसके लिए परिचय और उदाहरण फिर से लिखें।",
+          "फ़ोटोग्राफी विषयों में समझाएं कि पाठक को क्या फ़ोटोग्राफ़ करना चाहिए, तैयारी कैसे करनी चाहिए और परिणाम का मूल्यांकन कैसे करना चाहिए। बार-बार कीवर्ड के रूप जोड़कर लेख को न भरें। उपयोगी, मौलिक सामग्री की कोई जादुई शब्द-सीमा नहीं होती, और लंबा अनुवाद अपने-आप बेहतर पृष्ठ नहीं बन जाता।"
+        ],
+        "bullets": [
+          "भाषाओं में मुख्य उद्देश्य समान रखें।",
+          "उदाहरण और वाक्य-विन्यास को पाठकों की स्वाभाविक अपेक्षाओं के अनुसार ढालें।",
+          "सिर्फ दूसरा URL बनाने के लिए अधूरा अनुवाद प्रकाशित न करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "दोनों पृष्ठों पर स्वयं के कैनोनिकल URL सेट करें",
+        "paragraphs": [
+          "अंग्रेज़ी पृष्ठ का कैनोनिकल उसके अपने पूर्ण अंग्रेज़ी URL पर जाना चाहिए। रूसी पृष्ठ के लिए भी उसके अपने रूसी URL का उपयोग करें। कैनोनिकल सर्च इंजन को बताता है कि कौन-सा URL उस विशेष पृष्ठ का प्रतिनिधित्व करता है; वैध अनुवादों को एक ही भाषा संस्करण में समेटने के लिए इसका उपयोग नहीं करना चाहिए।",
+          "जांचें कि कैनोनिकल में अंतिम HTTPS पता, इच्छित होस्ट और पसंदीदा ट्रेलिंग-स्लैश शैली है। यह भी जांचें कि कोई भाषा पृष्ठ गलती से दूसरे भाषा पृष्ठ को कैनोनिकल न बना दे। कैनोनिकल और hreflang के उद्देश्य अलग हैं: एक पृष्ठ का पसंदीदा URL बताता है, जबकि दूसरा समकक्ष स्थानीय विकल्पों का वर्णन करता है।"
+        ],
+        "bullets": [
+          "हर अनूदित लेख पर पूर्ण स्वयं-कैनोनिकल लगाएं।",
+          "कैनोनिकल और दिखाई देने वाले URL की शैली सुसंगत रखें।",
+          "केवल कंटेंट-मैनेजमेंट स्क्रीन की सेटिंग नहीं, रेंडर किया हुआ HTML जांचें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "पारस्परिक hreflang से अनुवाद जोड़ें",
+        "paragraphs": [
+          "हर संस्करण को प्रत्येक भाषा विकल्प का सटीक URL घोषित करना चाहिए। अंग्रेज़ी पृष्ठ en और ru का संदर्भ दे सकता है; रूसी पृष्ठ को ru और en का संदर्भ देना चाहिए। x-default तभी शामिल करें जब आपके पास सार्थक तटस्थ लैंडिंग पृष्ठ या भाषा-चयन पृष्ठ हो। ऐसा काल्पनिक फ़ॉलबैक न बनाएं जो आगंतुकों को तुरंत IP के आधार पर पुनर्निर्देशित कर दे।",
+          "पारस्परिकता महत्वपूर्ण है: यदि अंग्रेज़ी रूसी की ओर संकेत करती है, तो रूसी को भी अंग्रेज़ी की ओर संकेत करना चाहिए। समान भाषा पहचानकर्ताओं का लगातार उपयोग करें और वर्तनी, प्रोटोकॉल, होस्ट और पथ सत्यापित करें। hreflang स्थानीय संस्करणों का संकेत है, यह वादा नहीं कि Google हर क्वेरी के लिए चुने गए संस्करण को क्रॉल, इंडेक्स या प्रदर्शित करेगा।"
+        ],
+        "bullets": [
+          "हर भाषा संदर्भ से पहुंच योग्य पृष्ठ लौटना चाहिए।",
+          "दोनों संस्करणों में मेल खाते hreflang घोषणाएं रखें।",
+          "x-default को वैकल्पिक मानें, स्वचालित पुनर्निर्देश लक्ष्य नहीं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ऐसा भाषा-स्विच बनाएं जो संदर्भ बनाए रखे",
+        "paragraphs": [
+          "लेख के शीर्षक के पास या स्थायी हेडर में अंग्रेज़ी/रूसी स्विच रखें। लिंक वर्तमान लेख के संबंधित अनुवाद पर जाना चाहिए, ब्लॉग के होमपेज पर नहीं। यदि अनुवाद उपलब्ध नहीं है, तो इसे स्पष्ट रूप से बताएं और चुपचाप भाषा बदलने के बजाय सबसे उपयोगी निकटतम गंतव्य दें।",
+          "IP के आधार पर पुनर्निर्देश न करें। यात्री, द्विभाषी पाठक, सर्च क्रॉलर या साझा-डिवाइस उपयोगकर्ता नेटवर्क स्थान से भाषा का अनुमान नहीं लगाना चाह सकते। दिखाई देने वाला स्विच लोगों को नियंत्रण देता है और चुने गए URL को साझा करने योग्य बनाता है। वर्तमान लेख का मुख्य भाग लंबा होने पर भी “English” और “Русский” जैसे नेविगेशन लेबल समझने योग्य रखें।"
+        ],
+        "bullets": [
+          "भाषा बदलते समय लेख के स्लग का संबंध बनाए रखें।",
+          "उपयोगकर्ताओं को किसी भी समय स्वयं भाषा बदलने दें।",
+          "चुनी हुई भाषा केवल कुकी में नहीं, URL में रखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "किसी वास्तविक लेख पर चित्र और तकनीकी जांच लागू करें",
+        "paragraphs": [
+          "इस काल्पनिक लेख पर विचार करें: “Photographing a Foggy River at Dawn.” अंग्रेज़ी संस्करण में हाइलाइट सुरक्षित रखने, कॉन्ट्रास्ट घटने से पहले फ़ोकस करने और स्थान गढ़े बिना दृश्य का वर्णन करने की विधि समझाई गई है। रूसी संस्करण में इन्हीं निर्णयों को स्वाभाविक रूसी में बताया गया है और संबंधित अंग्रेज़ी पृष्ठ से जोड़ा गया है।",
+          "प्रकाशित करने से पहले दोनों पृष्ठों को पाठक की तरह देखें। सुनिश्चित करें कि हर पृष्ठ पर स्वयं-कैनोनिकल, पारस्परिक hreflang, वर्णनात्मक आसपास का पाठ और अर्थपूर्ण चित्रों के लिए उपयोगी alt text हो। यदि आप साइटमैप का उपयोग करते हैं, तो कैनोनिकल पूर्ण URL शामिल करें; साइटमैप खोज में मदद कर सकता है, लेकिन क्रॉलिंग या इंडेक्सिंग की गारंटी नहीं देता। याद रखें कि वेबसाइट का चित्र alt text और स्टॉक-मार्केटप्लेस का कीवर्ड मेटाडेटा अलग प्रणालियां हैं।"
+        ],
+        "bullets": [
+          "उद्देश्य और तथ्यों की सुसंगतता के लिए दोनों संस्करणों की तुलना करें।",
+          "चित्र के उद्देश्य या सामग्री का वर्णन करने वाला alt text उपयोग करें।",
+          "दोनों भाषा पृष्ठों और मोबाइल पर स्विच का परीक्षण करें।",
+          "आवश्यकताएं बदलने पर योगदानकर्ता या सर्च प्लेटफ़ॉर्म के वर्तमान दिशा-निर्देश देखें।"
+        ],
+        "example": "काल्पनिक प्रकाशन जांच:\nअंग्रेज़ी: /en/foggy-river-photography/\nरूसी: /ru/foggy-river-photography/\nअंग्रेज़ी कैनोनिकल: अपना अंग्रेज़ी URL\nरूसी कैनोनिकल: अपना रूसी URL\nदोनों पृष्ठ: hreflang en ↔ ru\nस्विच: दूसरे भाषा संस्करण में वर्तमान लेख"
+      }
+    ],
+    "checklist": [
+      "अंग्रेज़ी और रूसी के लिए स्थिर URL तरीका चुनें।",
+      "समान सर्च उद्देश्य वाले सचमुच उपयोगी, स्वाभाविक संस्करण प्रकाशित करें।",
+      "हर भाषा URL पर स्वयं-कैनोनिकल जोड़ें।",
+      "सटीक पूर्ण URL के साथ पारस्परिक hreflang जोड़ें।",
+      "स्विच से संबंधित लेख खुले, कभी भी IP-आधारित पुनर्निर्देश न हो।",
+      "वर्णनात्मक चित्र संदर्भ और alt text का उपयोग करें।",
+      "डिप्लॉयमेंट के बाद लिंक, कैनोनिकल और भाषा संकेतों का परीक्षण करें।",
+      "सेटअप बदलने पर वर्तमान सर्च-इंजन दिशा-निर्देशों की समीक्षा करें।"
+    ],
+    "illustration": {
+      "title": "द्विभाषी लेख प्रकाशन कार्यप्रवाह",
+      "steps": [
+        {
+          "label": "लेख के URL जोड़ें",
+          "detail": "एक ही पाठक-ज़रूरत के लिए स्थिर अंग्रेज़ी और रूसी URL बनाएं।"
+        },
+        {
+          "label": "भाषा संकेत जोड़ें",
+          "detail": "स्वयं-कैनोनिकल और पारस्परिक hreflang घोषणाएं जोड़ें।"
+        },
+        {
+          "label": "पाठक का मार्ग जांचें",
+          "detail": "लेख में भाषा बदलें और चित्र, लिंक व HTML जांचें।"
+        }
+      ]
+    }
+  }
+}

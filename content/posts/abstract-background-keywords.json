@@ -1,0 +1,455 @@
+{
+  "slug": "abstract-background-keywords",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-quality"
+  ],
+  "en": {
+    "title": "How to Keyword Abstract Blue Backgrounds Without Spam",
+    "description": "Create accurate, searchable metadata for blue curved abstract backgrounds while keeping titles, keywords, and platform exports relevant.",
+    "intro": "Abstract backgrounds are easy to describe badly. A contributor sees blue curves, glossy-looking highlights, and open space, then produces a long list containing every possible design trend. The result may sound busy while telling a buyer very little about the actual file.\n\nA better approach is to describe what is visible, how it is arranged, and what practical use the composition supports. This guide uses a hypothetical example: a wide blue abstract background with several curved translucent-looking forms rising from the left and an uncluttered lower area. The forms may resemble glass, but the pixels alone do not prove a material, manufacturing process, or 3D render. Metadata should stay with observable visual evidence.",
+    "sections": [
+      {
+        "heading": "Start with the buyer’s visual problem",
+        "paragraphs": [
+          "Before writing keywords, identify why someone would search for this background. The empty lower area may provide room for a headline, presentation copy, a product label, or a website banner. That is a composition and use-case clue, not a promise that the file will work for every layout.",
+          "Separate objective description from interpretation. Objective terms can include blue, curved, abstract, flowing, layered, translucent-looking, smooth, and spacious. Interpretive terms such as glass, crystal, liquid, holographic, or 3D should be used only when the work clearly supports them and the marketplace permits that description."
+        ],
+        "bullets": [
+          "Describe visible color, form, texture, direction, and negative space.",
+          "Use design-use terms only when the composition genuinely supports them.",
+          "Do not add subjects, locations, identities, or production methods that are not known."
+        ],
+        "example": "Visual inventory: deep blue and cyan tones; sweeping curved forms; soft highlights; layered appearance; open lower area; wide horizontal composition."
+      },
+      {
+        "heading": "Build a precise title first",
+        "paragraphs": [
+          "A title should read like a short description, not like a keyword list. Put the strongest identifying ideas near the beginning because some contributor guidance gives special attention to the first terms. Keep the wording natural and check the current platform limit before export; Adobe’s CSV guidance currently gives a 70-character title limit.",
+          "For the hypothetical file, “Blue curved abstract background with open copy space” is more useful than “Blue background abstract modern design technology banner.” The first version identifies color, form, subject type, and composition. The second repeats broad commercial language and introduces “technology” without visual evidence."
+        ],
+        "bullets": [
+          "Lead with the dominant visual subject.",
+          "Mention orientation or copy space when it is clearly visible.",
+          "Remove adjectives that do not help distinguish the file."
+        ],
+        "example": "Recommended example title: Blue curved abstract background with open copy space"
+      },
+      {
+        "heading": "Organize keywords by evidence",
+        "paragraphs": [
+          "Think in small groups rather than searching for a maximum count. Start with the core subject: abstract background, blue background, curved shapes. Add visual structure: flowing lines, layered forms, wave shape, soft highlights, negative space, horizontal composition. Then add carefully chosen uses such as banner, presentation, website header, or backdrop if the format and empty area make those uses credible.",
+          "Avoid near-duplicates such as blue, bluish, azure, cobalt, sapphire, and navy unless each meaning is genuinely useful. Do not add “wallpaper,” “poster,” “cover,” and “template” automatically; these may describe different deliverables or buyer intentions. A smaller set of distinct, relevant terms is stronger than a padded list. Adobe’s general keyword guidance permits up to 49 keywords, but a maximum is not a target."
+        ],
+        "bullets": [
+          "Use one clear phrase for the main subject.",
+          "Add distinctive visual details before broad marketing words.",
+          "Review every term as if a buyer used it to judge this exact file."
+        ],
+        "example": "Keyword draft: abstract background, blue background, curved shapes, flowing lines, layered forms, wave shape, soft highlights, translucent-looking, negative space, copy space, horizontal, banner, website header, presentation backdrop"
+      },
+      {
+        "heading": "Worked example: edit the noisy draft",
+        "paragraphs": [
+          "Imagine the contributor’s first draft contains: blue, abstract, background, modern, cool, glass, crystal, 3d, render, technology, futuristic, business, template, wallpaper, poster, banner, wave, curves, light, design. It contains useful starting points, but it also mixes uncertain production claims, generic adjectives, and several possible product types.",
+          "Edit it in three passes. First, remove unsupported production claims: 3d and render. Second, remove generic or redundant terms: cool, modern, design, business, futuristic. Third, retain terms that describe the visible composition and plausible use: blue background, abstract background, curved shapes, wave, soft highlights, banner, copy space, horizontal. If “glass” is only an impression, replace it with “translucent-looking” or omit it. The final list should describe the asset, not the imagination surrounding it."
+        ],
+        "bullets": [
+          "Keep “glass” only when the visual basis is clear and accurate.",
+          "Do not turn a visual impression into a factual manufacturing claim.",
+          "Compare the final list with the actual thumbnail before saving."
+        ],
+        "example": "Edited example: abstract background, blue background, curved shapes, flowing lines, layered forms, wave shape, soft highlights, negative space, copy space, horizontal, banner, website header, presentation backdrop"
+      },
+      {
+        "heading": "Adapt metadata to each marketplace",
+        "paragraphs": [
+          "A single keyword list may need adjustment for different platforms. Shutterstock guidance emphasizes English descriptive metadata, relevant keywords, and avoiding repetition; it currently describes a range of 7 to 50 keywords and requires at least one category. Adobe’s guidance differs in wording and limits, so inspect the current contributor requirements before submitting. Other marketplaces may use different fields or tag limits.",
+          "If your contributor account requires English metadata, write the title and keywords in English even when your editorial workflow is Russian. A translated article does not change the language requirement of the destination platform. For a website, treat the task separately: descriptive surrounding text and alt text support Google image understanding, while marketplace keywords affect internal marketplace search. Neither approach guarantees indexing, ranking, sales, or acceptance."
+        ],
+        "bullets": [
+          "Check the current portal rules before importing or submitting.",
+          "Choose a category that fits the actual asset.",
+          "Keep marketplace metadata separate from website SEO copy."
+        ],
+        "example": "English metadata example for an English-language marketplace: Title: Blue curved abstract background with open copy space. Category: Backgrounds or the closest current option."
+      },
+      {
+        "heading": "Review with a local generator, then inspect manually",
+        "paragraphs": [
+          "MetaStocker can generate editable metadata locally in the browser using its supported local vision and thinking models. In local mode, the model runs on the visitor’s device; the first model download needs internet. Loading a model into memory is different from retaining downloaded browser files in cache, and browser storage can be removed or evicted. Start with one local parallel thread and review the output before trying more.",
+          "Provide a factual batch description, such as “wide blue abstract background with curved layered forms and an empty lower area.” Do not give mixed files a blanket description. Check each suggested tag against the image, remove unsupported claims, and export only rows that are ready. The exporter can produce marketplace CSV formats, but it does not upload or submit files, embed metadata into originals, or prove that a marketplace will accept the result. Check exact filenames and inspect imported metadata in the relevant contributor portal."
+        ],
+        "bullets": [
+          "Use the generator for a draft, not an authority.",
+          "Edit every title and keyword list before export.",
+          "Verify the platform’s current CSV rules and imported fields."
+        ],
+        "example": "Practical review question: Could a buyer point to this term in the image, or is it merely a mood, trend, or imagined production method?"
+      }
+    ],
+    "checklist": [
+      "Identify the dominant color, forms, texture, direction, and empty space.",
+      "Write a natural title with the most useful facts first.",
+      "Remove unsupported material, software, and production claims.",
+      "Prefer distinct relevant keywords over repeated synonyms.",
+      "Keep English metadata when the target marketplace requires English.",
+      "Review generated suggestions per file and inspect the final portal fields.",
+      "Check current limits, categories, filenames, and CSV rules before submission."
+    ],
+    "illustration": {
+      "title": "From image to clean metadata",
+      "steps": [
+        {
+          "label": "Inventory visible features",
+          "detail": "Note blue tones, curved forms, texture, direction, and open space."
+        },
+        {
+          "label": "Write and trim metadata",
+          "detail": "Build a natural title, then remove guesses and repeated synonyms."
+        },
+        {
+          "label": "Review before export",
+          "detail": "Check each row, current portal rules, filenames, and imported fields."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как описывать синие абстрактные фоны без спама",
+    "description": "Практическое руководство по точным названиям и ключевым словам для синих абстрактных фонов с изгибами и свободным местом.",
+    "intro": "Абстрактный фон легко описать неточно. Автор видит синие изгибы, мягкие блики и свободную нижнюю часть, а затем добавляет в список все модные слова о технологиях и дизайне. В итоге метаданные становятся длинными, но не помогают понять, что именно изображено.\n\nНадёжнее разделить описание на наблюдаемые признаки, композицию и осторожные варианты использования. Ниже приведён гипотетический пример: широкий синий абстрактный фон с несколькими изогнутыми полупрозрачно выглядящими формами слева и незанятым пространством внизу. Эти формы могут напоминать стекло, но по одним пикселям нельзя доказать наличие настоящего материала, способ создания или 3D-рендеринг. Метаданные должны соответствовать видимому изображению.",
+    "sections": [
+      {
+        "heading": "Сначала определите задачу покупателя",
+        "paragraphs": [
+          "Подумайте, зачем покупателю искать такой фон. Свободная нижняя область может оставить место для заголовка, текста презентации, этикетки товара или баннера сайта. Это характеристика композиции и возможного применения, а не обещание, что файл подойдёт для любого макета.",
+          "Отделяйте факт от впечатления. К фактам могут относиться синий цвет, изгибающиеся формы, слоистость, мягкие блики, плавные линии и свободное пространство. Слова «стекло», «кристалл», «жидкость», «голограмма» или «3D» используйте только при явной визуальной опоре и соответствии правилам площадки."
+        ],
+        "bullets": [
+          "Описывайте цвет, форму, фактуру, направление и пустое пространство.",
+          "Добавляйте назначение только тогда, когда его поддерживает композиция.",
+          "Не приписывайте изображению людей, места, материал или технологию без оснований."
+        ],
+        "example": "Инвентаризация: тёмно-синие и голубые оттенки; плавные изгибы; мягкие блики; слоистый вид; свободная нижняя область; горизонтальный формат."
+      },
+      {
+        "heading": "Сформулируйте точное название",
+        "paragraphs": [
+          "Название должно звучать как короткое описание, а не как набор тегов. Самые важные признаки лучше поставить в начало: некоторые рекомендации площадок уделяют первым словам особое внимание. Перед экспортом проверьте актуальное ограничение конкретной площадки; в текущих требованиях Adobe для CSV указано ограничение названия в 70 символов.",
+          "Для нашего гипотетического файла подходит название “Blue curved abstract background with open copy space”. Оно сообщает цвет, форму, тип изображения и композицию. Вариант “Blue background abstract modern design technology banner” перегружен общими словами и без доказательств добавляет технологическую тематику."
+        ],
+        "bullets": [
+          "Начинайте с главного визуального объекта.",
+          "Указывайте горизонтальный формат или место для текста, если это действительно видно.",
+          "Удаляйте прилагательные, которые не помогают отличить файл."
+        ],
+        "example": "Пример названия для англоязычной площадки: Blue curved abstract background with open copy space"
+      },
+      {
+        "heading": "Соберите ключевые слова по признакам",
+        "paragraphs": [
+          "Думайте не о максимальном количестве тегов, а о небольших группах. Сначала назовите предмет поиска: abstract background, blue background, curved shapes. Затем добавьте структуру: flowing lines, layered forms, wave shape, soft highlights, negative space, horizontal composition. После этого можно осторожно указать применение: banner, presentation, website header или backdrop, если формат и свободная область это оправдывают.",
+          "Не складывайте в список все оттенки и синонимы: blue, bluish, azure, cobalt, sapphire, navy. Они не всегда дают разные полезные намерения поиска. Также не добавляйте автоматически wallpaper, poster, cover и template: эти слова могут обозначать разные типы продукта. Релевантный короткий список лучше искусственно расширенного. Общие рекомендации Adobe допускают до 49 ключевых слов, но это верхняя граница, а не обязательная цель."
+        ],
+        "bullets": [
+          "Используйте одну ясную фразу для главного объекта.",
+          "Ставьте отличительные визуальные признаки выше рекламных слов.",
+          "Проверяйте каждый тег по конкретной миниатюре."
+        ],
+        "example": "Черновик: abstract background, blue background, curved shapes, flowing lines, layered forms, wave shape, soft highlights, translucent-looking, negative space, copy space, horizontal, banner, website header, presentation backdrop"
+      },
+      {
+        "heading": "Рабочий пример: очистите шумный список",
+        "paragraphs": [
+          "Представим, что первоначальный список выглядит так: blue, abstract, background, modern, cool, glass, crystal, 3d, render, technology, futuristic, business, template, wallpaper, poster, banner, wave, curves, light, design. Здесь есть полезные основы, но также смешаны непроверенные утверждения, общие эпитеты и разные типы продукта.",
+          "Отредактируйте список в три прохода. Сначала удалите неподтверждённые производственные заявления: 3d и render. Затем уберите общие или повторяющиеся слова: cool, modern, design, business, futuristic. В конце оставьте признаки композиции и осторожное применение: blue background, abstract background, curved shapes, wave, soft highlights, banner, copy space, horizontal. Если “glass” лишь создаёт впечатление, замените его на “translucent-looking” или удалите. Финальный список должен описывать файл, а не фантазию о его происхождении."
+        ],
+        "bullets": [
+          "Оставляйте “glass” только при убедительном визуальном основании.",
+          "Не превращайте визуальное впечатление в утверждение о материале.",
+          "Сверяйте готовые теги с изображением перед сохранением."
+        ],
+        "example": "Очищенный пример: abstract background, blue background, curved shapes, flowing lines, layered forms, wave shape, soft highlights, negative space, copy space, horizontal, banner, website header, presentation backdrop"
+      },
+      {
+        "heading": "Адаптируйте данные к площадке",
+        "paragraphs": [
+          "Один и тот же список не обязан одинаково подходить всем маркетплейсам. В рекомендациях Shutterstock подчёркиваются англоязычные описательные метаданные, релевантные ключевые слова и отсутствие повторов; там также указаны диапазон от 7 до 50 ключевых слов и необходимость хотя бы одной категории. У Adobe и других площадок свои поля и ограничения, поэтому перед отправкой проверяйте текущие правила кабинета.",
+          "Если аккаунт автора требует английские метаданные, пишите название и теги на английском, даже если рабочая статья или интерфейсный процесс у вас на русском. Язык статьи не меняет требования площадки. Для собственного сайта задача отдельная: описательный окружающий текст и alt-текст относятся к пониманию изображений Google, а ключевые слова маркетплейса — к его внутреннему поиску. Ни один из этих подходов не гарантирует индексацию, позиции, продажи или принятие файла."
+        ],
+        "bullets": [
+          "Перед импортом проверьте актуальные правила кабинета.",
+          "Выбирайте категорию по реальному содержанию файла.",
+          "Не смешивайте метаданные маркетплейса с SEO-текстом сайта."
+        ],
+        "example": "Пример англоязычных данных: Title: Blue curved abstract background with open copy space. Category: Backgrounds или ближайшая актуальная категория."
+      },
+      {
+        "heading": "Сделайте черновик локально и проверьте вручную",
+        "paragraphs": [
+          "MetaStocker может создать редактируемый черновик метаданных в браузере с помощью поддерживаемых локальных моделей зрения и рассуждения. В локальном режиме модель работает на устройстве посетителя; первая загрузка модели требует интернета. Загрузка модели в память не равна сохранению скачанных файлов в кэше: браузер может удалить или выселить такие данные. Начните с одного локального параллельного потока и только после проверки попробуйте увеличить число.",
+          "Для нашей серии задайте фактический контекст: “wide blue abstract background with curved layered forms and an empty lower area”. Не применяйте общий текст ко всем разным файлам. Проверьте каждый предложенный тег, удалите неподтверждённые формулировки и экспортируйте только готовые строки. Экспортёр создаёт CSV для поддерживаемых форматов, но не загружает и не отправляет файлы, не встраивает метаданные в оригиналы и не доказывает принятие площадкой. Проверьте точные имена файлов и осмотрите импортированные данные в кабинете."
+        ],
+        "bullets": [
+          "Используйте генератор как черновик, а не как окончательный источник истины.",
+          "Редактируйте название и теги каждого файла.",
+          "Перед отправкой сверяйте текущие правила CSV, категории и имена файлов."
+        ],
+        "example": "Вопрос для проверки: можно ли указать на этот признак в изображении, или это только настроение, тренд либо воображаемый способ создания?"
+      }
+    ],
+    "checklist": [
+      "Зафиксируйте главный цвет, формы, фактуру, направление и свободную область.",
+      "Составьте естественное название с важными фактами в начале.",
+      "Удалите неподтверждённые заявления о материале и способе создания.",
+      "Выбирайте отдельные релевантные теги вместо повторяющихся синонимов.",
+      "Сохраняйте английские метаданные, если этого требует площадка.",
+      "Проверяйте подсказки генератора отдельно для каждого файла.",
+      "Перед отправкой сверяйте лимиты, категорию, имена файлов и поля CSV."
+    ],
+    "illustration": {
+      "title": "От изображения к точным метаданным",
+      "steps": [
+        {
+          "label": "Опишите видимые признаки",
+          "detail": "Отметьте синие оттенки, изгибы, фактуру, направление и свободное место."
+        },
+        {
+          "label": "Составьте и сократите данные",
+          "detail": "Напишите естественное название, удалив догадки и повторы."
+        },
+        {
+          "label": "Проверьте перед экспортом",
+          "detail": "Сверьте строки, правила площадки, имена файлов и импортированные поля."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "স্প্যাম ছাড়া বিমূর্ত নীল পটভূমির কীওয়ার্ড লিখবেন যেভাবে",
+    "description": "নীল বাঁকানো বিমূর্ত পটভূমির জন্য নির্ভুল, অনুসন্ধানযোগ্য মেটাডেটা তৈরি করুন এবং শিরোনাম, কীওয়ার্ড ও প্ল্যাটফর্ম রপ্তানি প্রাসঙ্গিক রাখুন।",
+    "intro": "বিমূর্ত পটভূমি খারাপভাবে বর্ণনা করা সহজ। অবদানকারী নীল বাঁক, চকচকে দেখানো হাইলাইট এবং খালি জায়গা দেখে সম্ভাব্য সব ডিজাইন ট্রেন্ডের দীর্ঘ তালিকা তৈরি করেন। ফলে বর্ণনাটি ব্যস্ত শোনাতে পারে, কিন্তু ক্রেতাকে আসল ফাইলটি সম্পর্কে খুব কমই জানায়।\n\nআরও ভালো পদ্ধতি হলো কী দেখা যাচ্ছে, তা কীভাবে সাজানো হয়েছে এবং বিন্যাসটি কোন বাস্তব ব্যবহারের উপযোগিতা সমর্থন করে—তা বর্ণনা করা। এই নির্দেশিকায় একটি কাল্পনিক উদাহরণ ব্যবহার করা হয়েছে: প্রশস্ত নীল বিমূর্ত পটভূমি, যেখানে বাম দিক থেকে কয়েকটি বাঁকানো, স্বচ্ছ-দেখানো আকৃতি উঠে এসেছে এবং নিচের অংশটি অগোছালো নয়। আকৃতিগুলো কাচের মতো মনে হতে পারে, কিন্তু শুধু পিক্সেল কোনো উপাদান, উৎপাদনপ্রক্রিয়া বা 3D রেন্ডার প্রমাণ করে না। মেটাডেটা পর্যবেক্ষণযোগ্য দৃশ্যমান প্রমাণের মধ্যেই সীমাবদ্ধ থাকা উচিত।",
+    "sections": [
+      {
+        "heading": "ক্রেতার দৃশ্যগত সমস্যাটি দিয়ে শুরু করুন",
+        "paragraphs": [
+          "কীওয়ার্ড লেখার আগে শনাক্ত করুন, কেন কেউ এই পটভূমিটি খুঁজবে। নিচের খালি অংশে শিরোনাম, উপস্থাপনার লেখা, পণ্যের লেবেল বা ওয়েবসাইট ব্যানারের জন্য জায়গা থাকতে পারে। এটি বিন্যাস ও ব্যবহারের ইঙ্গিত, ফাইলটি সব ধরনের লেআউটে কাজ করবে—এমন প্রতিশ্রুতি নয়।",
+          "নিরপেক্ষ বর্ণনাকে ব্যাখ্যা থেকে আলাদা রাখুন। নিরপেক্ষ শব্দ হতে পারে নীল, বাঁকানো, বিমূর্ত, প্রবাহমান, স্তরযুক্ত, স্বচ্ছ-দেখানো, মসৃণ এবং প্রশস্ত। কাচ, ক্রিস্টাল, তরল, হলোগ্রাফিক বা 3D-এর মতো ব্যাখ্যামূলক শব্দ কেবল তখনই ব্যবহার করুন, যখন কাজটি সেগুলোকে স্পষ্টভাবে সমর্থন করে এবং মার্কেটপ্লেসে এমন বর্ণনা অনুমোদিত।"
+        ],
+        "bullets": [
+          "দৃশ্যমান রং, আকৃতি, টেক্সচার, দিক এবং নেগেটিভ স্পেস বর্ণনা করুন।",
+          "বিন্যাস সত্যিই সমর্থন করলে তবেই নকশা-ব্যবহারের শব্দ ব্যবহার করুন।",
+          "অজানা বিষয়, স্থান, পরিচয় বা উৎপাদনপদ্ধতি যোগ করবেন না।"
+        ],
+        "example": "দৃশ্যমান তালিকা: গাঢ় নীল ও সায়ান টোন; বিস্তৃত বাঁকানো আকৃতি; কোমল হাইলাইট; স্তরযুক্ত চেহারা; খোলা নিচের অংশ; প্রশস্ত অনুভূমিক বিন্যাস।"
+      },
+      {
+        "heading": "আগে একটি নির্ভুল শিরোনাম তৈরি করুন",
+        "paragraphs": [
+          "শিরোনামটি কীওয়ার্ডের তালিকার মতো নয়, ছোট বর্ণনার মতো পড়া উচিত। সবচেয়ে পরিচয়সূচক ধারণাগুলো শুরুতেই রাখুন, কারণ কিছু অবদানকারী নির্দেশিকায় প্রথম শব্দগুলোর প্রতি বিশেষ গুরুত্ব দেওয়া হয়। ভাষা স্বাভাবিক রাখুন এবং রপ্তানির আগে বর্তমান প্ল্যাটফর্মের সীমা যাচাই করুন; Adobe-এর CSV নির্দেশিকায় বর্তমানে শিরোনামের সীমা 70 অক্ষর বলা আছে।",
+          "কাল্পনিক ফাইলের জন্য “Blue curved abstract background with open copy space” বাক্যটি “Blue background abstract modern design technology banner”-এর চেয়ে বেশি কার্যকর। প্রথম সংস্করণে রং, আকৃতি, বিষয়ের ধরন এবং বিন্যাস চিহ্নিত হয়। দ্বিতীয়টি বিস্তৃত বাণিজ্যিক ভাষা পুনরাবৃত্তি করে এবং দৃশ্যমান প্রমাণ ছাড়াই “technology” যোগ করে।"
+        ],
+        "bullets": [
+          "প্রধান দৃশ্যমান বিষয় দিয়ে শুরু করুন।",
+          "স্পষ্টভাবে দেখা গেলে দিক বা কপি স্পেস উল্লেখ করুন।",
+          "ফাইলটি আলাদা করে চেনাতে সাহায্য করে না—এমন বিশেষণ বাদ দিন।"
+        ],
+        "example": "প্রস্তাবিত উদাহরণ শিরোনাম: Blue curved abstract background with open copy space"
+      },
+      {
+        "heading": "প্রমাণ অনুযায়ী কীওয়ার্ড সাজান",
+        "paragraphs": [
+          "সর্বোচ্চ সংখ্যা পূরণের চেষ্টা না করে ছোট ছোট গোষ্ঠী ধরে ভাবুন। মূল বিষয় দিয়ে শুরু করুন: abstract background, blue background, curved shapes। এরপর দৃশ্যমান কাঠামো যোগ করুন: flowing lines, layered forms, wave shape, soft highlights, negative space, horizontal composition। তারপর banner, presentation, website header বা backdrop-এর মতো সাবধানে নির্বাচিত ব্যবহার যোগ করুন, যদি বিন্যাস ও খালি অংশ সেগুলোকে বিশ্বাসযোগ্য করে।",
+          "blue, bluish, azure, cobalt, sapphire এবং navy-এর মতো কাছাকাছি অর্থের শব্দ প্রত্যেকটির আলাদা প্রয়োজন না থাকলে একসঙ্গে যোগ করবেন না। “wallpaper”, “poster”, “cover” এবং “template” স্বয়ংক্রিয়ভাবে যোগ করবেন না; এগুলো ভিন্ন ডেলিভারেবল বা ক্রেতার উদ্দেশ্য বোঝাতে পারে। প্যাড করা তালিকার চেয়ে কম কিন্তু স্বতন্ত্র ও প্রাসঙ্গিক শব্দের সেট শক্তিশালী। Adobe-এর সাধারণ কীওয়ার্ড নির্দেশিকায় সর্বোচ্চ 49টি কীওয়ার্ডের অনুমতি আছে, কিন্তু সর্বোচ্চ সংখ্যাটি লক্ষ্য নয়।"
+        ],
+        "bullets": [
+          "মূল বিষয়ের জন্য একটি স্পষ্ট বাক্যাংশ ব্যবহার করুন।",
+          "বিস্তৃত বিপণন-শব্দের আগে স্বতন্ত্র দৃশ্যমান বিবরণ যোগ করুন।",
+          "প্রতিটি শব্দ এমনভাবে যাচাই করুন, যেন ক্রেতা ঠিক এই ফাইলটি বিচার করতে তা ব্যবহার করেছেন।"
+        ],
+        "example": "কীওয়ার্ডের খসড়া: abstract background, blue background, curved shapes, flowing lines, layered forms, wave shape, soft highlights, translucent-looking, negative space, copy space, horizontal, banner, website header, presentation backdrop"
+      },
+      {
+        "heading": "কাজের উদাহরণ: অগোছালো খসড়া সম্পাদনা করুন",
+        "paragraphs": [
+          "ধরা যাক, অবদানকারীর প্রথম খসড়ায় আছে: blue, abstract, background, modern, cool, glass, crystal, 3d, render, technology, futuristic, business, template, wallpaper, poster, banner, wave, curves, light, design। এতে কিছু উপযোগী শুরুর শব্দ আছে, তবে অনিশ্চিত উৎপাদন-দাবি, সাধারণ বিশেষণ এবং সম্ভাব্য কয়েক ধরনের পণ্যও মিশে আছে।",
+          "তিন ধাপে সম্পাদনা করুন। প্রথমে সমর্থনহীন উৎপাদন-দাবি বাদ দিন: 3d এবং render। দ্বিতীয়ত সাধারণ বা পুনরাবৃত্ত শব্দ বাদ দিন: cool, modern, design, business, futuristic। তৃতীয়ত দৃশ্যমান বিন্যাস ও সম্ভাব্য ব্যবহার বর্ণনা করা শব্দ রাখুন: blue background, abstract background, curved shapes, wave, soft highlights, banner, copy space, horizontal। “glass” যদি কেবল একটি ধারণা হয়, তবে তা “translucent-looking” দিয়ে বদলান বা বাদ দিন। চূড়ান্ত তালিকায় সম্পদটির বর্ণনা থাকবে, তাকে ঘিরে থাকা কল্পনার নয়।"
+        ],
+        "bullets": [
+          "দৃশ্যমান ভিত্তি স্পষ্ট ও নির্ভুল হলেই “glass” রাখুন।",
+          "দৃশ্যগত ধারণাকে বাস্তব উৎপাদন-দাবিতে পরিণত করবেন না।",
+          "সংরক্ষণের আগে প্রকৃত থাম্বনেইলের সঙ্গে চূড়ান্ত তালিকা মিলিয়ে দেখুন।"
+        ],
+        "example": "সম্পাদিত উদাহরণ: abstract background, blue background, curved shapes, flowing lines, layered forms, wave shape, soft highlights, negative space, copy space, horizontal, banner, website header, presentation backdrop"
+      },
+      {
+        "heading": "প্রতিটি মার্কেটপ্লেস অনুযায়ী মেটাডেটা মানিয়ে নিন",
+        "paragraphs": [
+          "ভিন্ন প্ল্যাটফর্মের জন্য একই কীওয়ার্ড তালিকা সামঞ্জস্য করতে হতে পারে। Shutterstock-এর নির্দেশিকায় ইংরেজি বর্ণনামূলক মেটাডেটা, প্রাসঙ্গিক কীওয়ার্ড এবং পুনরাবৃত্তি এড়ানোর ওপর জোর দেওয়া হয়; এতে বর্তমানে 7 থেকে 50টি কীওয়ার্ডের পরিসর এবং অন্তত একটি বিভাগ প্রয়োজন বলা হয়েছে। Adobe-এর ভাষা ও সীমা আলাদা, তাই জমা দেওয়ার আগে বর্তমান অবদানকারী-শর্ত দেখুন। অন্যান্য মার্কেটপ্লেসে ভিন্ন ক্ষেত্র বা ট্যাগ-সীমা থাকতে পারে।",
+          "আপনার অবদানকারী অ্যাকাউন্টে ইংরেজি মেটাডেটা আবশ্যক হলে, আপনার সম্পাদনার কাজের ভাষা রুশ হলেও শিরোনাম ও কীওয়ার্ড ইংরেজিতেই লিখুন। অনূদিত নিবন্ধ গন্তব্য প্ল্যাটফর্মের ভাষার শর্ত বদলায় না। ওয়েবসাইটের ক্ষেত্রে কাজটি আলাদা হিসেবে দেখুন: বর্ণনামূলক পার্শ্ববর্তী লেখা ও alt text Google-এর ছবি বোঝার কাজে সহায়তা করে, আর মার্কেটপ্লেসের কীওয়ার্ড অভ্যন্তরীণ মার্কেটপ্লেস অনুসন্ধানকে প্রভাবিত করে। কোনো পদ্ধতিই ইনডেক্সিং, র‌্যাঙ্কিং, বিক্রি বা গ্রহণযোগ্যতার নিশ্চয়তা দেয় না।"
+        ],
+        "bullets": [
+          "আমদানি বা জমা দেওয়ার আগে বর্তমান পোর্টালের নিয়ম দেখুন।",
+          "প্রকৃত সম্পদের সঙ্গে মানানসই একটি বিভাগ বেছে নিন।",
+          "মার্কেটপ্লেসের মেটাডেটা ও ওয়েবসাইটের SEO লেখা আলাদা রাখুন।"
+        ],
+        "example": "ইংরেজি-ভাষার মার্কেটপ্লেসের জন্য ইংরেজি মেটাডেটার উদাহরণ: Title: Blue curved abstract background with open copy space. Category: Backgrounds or the closest current option."
+      },
+      {
+        "heading": "স্থানীয় জেনারেটর দিয়ে পর্যালোচনা করুন, তারপর নিজে পরীক্ষা করুন",
+        "paragraphs": [
+          "MetaStocker সমর্থিত স্থানীয় ভিশন ও চিন্তন মডেল ব্যবহার করে ব্রাউজারে স্থানীয়ভাবে সম্পাদনাযোগ্য মেটাডেটা তৈরি করতে পারে। স্থানীয় মোডে মডেলটি ব্যবহারকারীর ডিভাইসে চলে; প্রথম মডেল ডাউনলোডে ইন্টারনেট প্রয়োজন। মডেল মেমরিতে লোড হওয়া এবং ডাউনলোড করা ব্রাউজার ফাইল ক্যাশে রাখা এক বিষয় নয়, আর ব্রাউজারের স্টোরেজ মুছে যেতে বা স্বয়ংক্রিয়ভাবে সরেও যেতে পারে। একটি স্থানীয় সমান্তরাল থ্রেড দিয়ে শুরু করুন এবং আরও চেষ্টা করার আগে ফলাফল পর্যালোচনা করুন।",
+          "“wide blue abstract background with curved layered forms and an empty lower area”-এর মতো তথ্যনির্ভর ব্যাচ বর্ণনা দিন। মিশ্র ফাইলের জন্য একক সাধারণ বর্ণনা দেবেন না। প্রতিটি প্রস্তাবিত ট্যাগ ছবির সঙ্গে মিলিয়ে দেখুন, সমর্থনহীন দাবি বাদ দিন এবং প্রস্তুত সারিগুলোই রপ্তানি করুন। রপ্তানিকারক মার্কেটপ্লেসের CSV বিন্যাস তৈরি করতে পারে, কিন্তু ফাইল আপলোড বা জমা দেয় না, মূল ফাইলে মেটাডেটা বসায় না এবং মার্কেটপ্লেস ফলটি গ্রহণ করবে—এমন প্রমাণও দেয় না। নির্দিষ্ট ফাইলনাম যাচাই করুন এবং সংশ্লিষ্ট অবদানকারী পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "জেনারেটরকে খসড়ার সহায়ক হিসেবে ব্যবহার করুন, চূড়ান্ত কর্তৃপক্ষ হিসেবে নয়।",
+          "রপ্তানির আগে প্রতিটি শিরোনাম ও কীওয়ার্ড তালিকা সম্পাদনা করুন।",
+          "প্ল্যাটফর্মের বর্তমান CSV নিয়ম ও আমদানি করা ক্ষেত্র যাচাই করুন।"
+        ],
+        "example": "ব্যবহারিক পর্যালোচনা প্রশ্ন: ক্রেতা কি ছবিতে এই শব্দটির দিকে আঙুল দেখাতে পারবেন, নাকি এটি কেবল আবহ, ট্রেন্ড বা কল্পিত উৎপাদনপদ্ধতি?"
+      }
+    ],
+    "checklist": [
+      "প্রধান রং, আকৃতি, টেক্সচার, দিক এবং খালি জায়গা শনাক্ত করুন।",
+      "সবচেয়ে কার্যকর তথ্য আগে রেখে স্বাভাবিক শিরোনাম লিখুন।",
+      "সমর্থনহীন উপাদান, সফটওয়্যার ও উৎপাদন-দাবি বাদ দিন।",
+      "পুনরাবৃত্ত সমার্থক শব্দের বদলে স্বতন্ত্র প্রাসঙ্গিক কীওয়ার্ড বেছে নিন।",
+      "লক্ষ্য মার্কেটপ্লেসে ইংরেজি আবশ্যক হলে ইংরেজি মেটাডেটা রাখুন।",
+      "প্রতিটি ফাইলের তৈরি প্রস্তাব পর্যালোচনা করুন এবং পোর্টালের চূড়ান্ত ক্ষেত্র পরীক্ষা করুন।",
+      "জমা দেওয়ার আগে বর্তমান সীমা, বিভাগ, ফাইলনাম এবং CSV নিয়ম যাচাই করুন।"
+    ],
+    "illustration": {
+      "title": "ছবি থেকে পরিষ্কার মেটাডেটা",
+      "steps": [
+        {
+          "label": "দৃশ্যমান বৈশিষ্ট্যের তালিকা করুন",
+          "detail": "নীল টোন, বাঁকানো আকৃতি, টেক্সচার, দিক এবং খোলা জায়গা লিখে নিন।"
+        },
+        {
+          "label": "মেটাডেটা লিখে ছাঁটাই করুন",
+          "detail": "স্বাভাবিক শিরোনাম তৈরি করুন, তারপর অনুমান ও পুনরাবৃত্ত সমার্থক শব্দ বাদ দিন।"
+        },
+        {
+          "label": "রপ্তানির আগে পর্যালোচনা করুন",
+          "detail": "প্রতিটি সারি, বর্তমান পোর্টাল নিয়ম, ফাইলনাম ও আমদানি করা ক্ষেত্র পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "स्पैम के बिना अमूर्त नीली पृष्ठभूमि के कीवर्ड कैसे लिखें",
+    "description": "नीली घुमावदार अमूर्त पृष्ठभूमि के लिए सटीक, खोजयोग्य मेटाडेटा बनाएँ और शीर्षक, कीवर्ड तथा प्लेटफ़ॉर्म निर्यात को प्रासंगिक रखें।",
+    "intro": "अमूर्त पृष्ठभूमियों का गलत वर्णन करना आसान है। योगदानकर्ता नीली घुमावदार आकृतियाँ, चमकदार दिखने वाले हाइलाइट और खाली जगह देखते हैं, फिर हर संभव डिज़ाइन ट्रेंड वाली लंबी सूची बना देते हैं। नतीजा व्यस्त लग सकता है, जबकि खरीदार को वास्तविक फ़ाइल के बारे में बहुत कम जानकारी मिलती है।\n\nबेहतर तरीका है कि जो दिखाई दे रहा है, वह कैसे व्यवस्थित है और रचना किस व्यावहारिक उपयोग को सहारा देती है—इन बातों का वर्णन किया जाए। यह मार्गदर्शिका एक काल्पनिक उदाहरण लेती है: चौड़ी नीली अमूर्त पृष्ठभूमि, जिसमें बाईं ओर से उठती कई घुमावदार, पारदर्शी-जैसी आकृतियाँ और नीचे खुला क्षेत्र है। आकृतियाँ काँच जैसी लग सकती हैं, लेकिन केवल पिक्सेल किसी सामग्री, निर्माण प्रक्रिया या 3D रेंडर का प्रमाण नहीं देते। मेटाडेटा को दिखाई देने वाले दृश्य प्रमाण तक सीमित रहना चाहिए।",
+    "sections": [
+      {
+        "heading": "खरीदार की दृश्य समस्या से शुरुआत करें",
+        "paragraphs": [
+          "कीवर्ड लिखने से पहले पहचानें कि कोई इस पृष्ठभूमि को क्यों खोजेगा। नीचे का खाली क्षेत्र शीर्षक, प्रस्तुति-पाठ, उत्पाद लेबल या वेबसाइट बैनर के लिए जगह दे सकता है। यह रचना और उपयोग का संकेत है, हर लेआउट में फ़ाइल के काम करने का वादा नहीं।",
+          "वस्तुनिष्ठ वर्णन को व्याख्या से अलग रखें। वस्तुनिष्ठ शब्दों में नीला, घुमावदार, अमूर्त, प्रवाहमान, परतदार, पारदर्शी-जैसा, चिकना और खुला शामिल हो सकते हैं। काँच, क्रिस्टल, तरल, होलोग्राफ़िक या 3D जैसे व्याख्यात्मक शब्द तभी इस्तेमाल करें जब काम स्पष्ट रूप से उनका समर्थन करता हो और मार्केटप्लेस ऐसा वर्णन स्वीकार करता हो।"
+        ],
+        "bullets": [
+          "दिखाई देने वाले रंग, आकार, बनावट, दिशा और नकारात्मक स्थान का वर्णन करें।",
+          "रचना वास्तव में सहारा दे तभी डिज़ाइन-उपयोग वाले शब्द जोड़ें।",
+          "अज्ञात विषय, स्थान, पहचान या निर्माण विधि न जोड़ें।"
+        ],
+        "example": "दृश्य सूची: गहरे नीले और सायन टोन; बहती हुई घुमावदार आकृतियाँ; नरम हाइलाइट; परतदार रूप; खुला निचला क्षेत्र; चौड़ी क्षैतिज रचना।"
+      },
+      {
+        "heading": "पहले सटीक शीर्षक बनाएँ",
+        "paragraphs": [
+          "शीर्षक को कीवर्ड सूची की तरह नहीं, छोटे वर्णन की तरह पढ़ा जाना चाहिए। सबसे पहचान योग्य विचार शुरुआत में रखें, क्योंकि कुछ योगदानकर्ता निर्देशिकाएँ पहले शब्दों को विशेष महत्व देती हैं। भाषा स्वाभाविक रखें और निर्यात से पहले वर्तमान प्लेटफ़ॉर्म की सीमा जाँचें; Adobe की CSV मार्गदर्शिका में वर्तमान में शीर्षक की सीमा 70 वर्ण दी गई है।",
+          "काल्पनिक फ़ाइल के लिए “Blue curved abstract background with open copy space”, “Blue background abstract modern design technology banner” से अधिक उपयोगी है। पहला संस्करण रंग, आकार, विषय का प्रकार और रचना पहचानता है। दूसरा व्यापक व्यावसायिक भाषा दोहराता है और दृश्य प्रमाण के बिना “technology” जोड़ता है।"
+        ],
+        "bullets": [
+          "प्रमुख दृश्य विषय से शुरुआत करें।",
+          "दिशा या कॉपी स्पेस स्पष्ट रूप से दिखाई दे तो उसका उल्लेख करें।",
+          "ऐसे विशेषण हटाएँ जो फ़ाइल को अलग पहचानने में मदद नहीं करते।"
+        ],
+        "example": "अनुशंसित उदाहरण शीर्षक: Blue curved abstract background with open copy space"
+      },
+      {
+        "heading": "प्रमाण के आधार पर कीवर्ड व्यवस्थित करें",
+        "paragraphs": [
+          "अधिकतम संख्या भरने के बजाय छोटे समूहों में सोचें। मुख्य विषय से शुरू करें: abstract background, blue background, curved shapes। फिर दृश्य संरचना जोड़ें: flowing lines, layered forms, wave shape, soft highlights, negative space, horizontal composition। उसके बाद banner, presentation, website header या backdrop जैसे सावधानी से चुने गए उपयोग जोड़ें, यदि प्रारूप और खाली क्षेत्र उन्हें विश्वसनीय बनाते हों।",
+          "blue, bluish, azure, cobalt, sapphire और navy जैसे लगभग समान शब्द तभी साथ रखें जब हर शब्द का वास्तविक अलग उपयोग हो। “wallpaper”, “poster”, “cover” और “template” अपने-आप न जोड़ें; ये अलग डिलिवरेबल या खरीदार के इरादे बता सकते हैं। भरी हुई सूची से कम लेकिन अलग और प्रासंगिक शब्दों का समूह अधिक मजबूत होता है। Adobe की सामान्य कीवर्ड मार्गदर्शिका अधिकतम 49 कीवर्ड की अनुमति देती है, लेकिन अधिकतम संख्या लक्ष्य नहीं है।"
+        ],
+        "bullets": [
+          "मुख्य विषय के लिए एक स्पष्ट वाक्यांश इस्तेमाल करें।",
+          "व्यापक विपणन शब्दों से पहले विशिष्ट दृश्य विवरण जोड़ें।",
+          "हर शब्द को ऐसे जाँचें जैसे खरीदार इसी फ़ाइल का मूल्यांकन करने के लिए उसे इस्तेमाल कर रहा हो।"
+        ],
+        "example": "कीवर्ड मसौदा: abstract background, blue background, curved shapes, flowing lines, layered forms, wave shape, soft highlights, translucent-looking, negative space, copy space, horizontal, banner, website header, presentation backdrop"
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण: शोर वाले मसौदे को संपादित करें",
+        "paragraphs": [
+          "मान लें कि योगदानकर्ता के पहले मसौदे में ये शब्द हैं: blue, abstract, background, modern, cool, glass, crystal, 3d, render, technology, futuristic, business, template, wallpaper, poster, banner, wave, curves, light, design। इसमें कुछ उपयोगी शुरुआती शब्द हैं, लेकिन असमर्थित निर्माण-दावे, सामान्य विशेषण और कई संभावित उत्पाद-प्रकार भी मिले हुए हैं।",
+          "इसे तीन चरणों में संपादित करें। पहले असमर्थित निर्माण-दावे हटाएँ: 3d और render। दूसरे, सामान्य या दोहराए गए शब्द हटाएँ: cool, modern, design, business, futuristic। तीसरे, दिखाई देने वाली रचना और संभावित उपयोग बताने वाले शब्द रखें: blue background, abstract background, curved shapes, wave, soft highlights, banner, copy space, horizontal। यदि “glass” केवल एक आभास है, तो उसे “translucent-looking” से बदलें या हटा दें। अंतिम सूची परिसंपत्ति का वर्णन करे, उसके आसपास की कल्पना का नहीं।"
+        ],
+        "bullets": [
+          "दृश्य आधार स्पष्ट और सटीक हो तभी “glass” रखें।",
+          "दृश्य आभास को तथ्यात्मक निर्माण-दावे में न बदलें।",
+          "सहेजने से पहले अंतिम सूची की वास्तविक थंबनेल से तुलना करें।"
+        ],
+        "example": "संपादित उदाहरण: abstract background, blue background, curved shapes, flowing lines, layered forms, wave shape, soft highlights, negative space, copy space, horizontal, banner, website header, presentation backdrop"
+      },
+      {
+        "heading": "हर मार्केटप्लेस के अनुसार मेटाडेटा ढालें",
+        "paragraphs": [
+          "अलग-अलग प्लेटफ़ॉर्म के लिए एक ही कीवर्ड सूची में बदलाव करना पड़ सकता है। Shutterstock की मार्गदर्शिका अंग्रेज़ी वर्णनात्मक मेटाडेटा, प्रासंगिक कीवर्ड और दोहराव से बचने पर ज़ोर देती है; इसमें वर्तमान में 7 से 50 कीवर्ड की सीमा और कम-से-कम एक श्रेणी आवश्यक बताई गई है। Adobe की भाषा और सीमाएँ अलग हैं, इसलिए जमा करने से पहले वर्तमान योगदानकर्ता आवश्यकताएँ देखें। अन्य मार्केटप्लेस में अलग फ़ील्ड या टैग सीमाएँ हो सकती हैं।",
+          "यदि आपके योगदानकर्ता खाते में अंग्रेज़ी मेटाडेटा आवश्यक है, तो आपकी संपादकीय कार्यप्रणाली रूसी होने पर भी शीर्षक और कीवर्ड अंग्रेज़ी में लिखें। अनूदित लेख गंतव्य प्लेटफ़ॉर्म की भाषा-आवश्यकता नहीं बदलता। वेबसाइट के लिए काम को अलग समझें: आसपास का वर्णनात्मक पाठ और alt text Google को छवि समझने में सहायता करते हैं, जबकि मार्केटप्लेस कीवर्ड आंतरिक मार्केटप्लेस खोज को प्रभावित करते हैं। इनमें से कोई भी तरीका इंडेक्सिंग, रैंकिंग, बिक्री या स्वीकृति की गारंटी नहीं देता।"
+        ],
+        "bullets": [
+          "आयात या जमा करने से पहले वर्तमान पोर्टल के नियम जाँचें।",
+          "वास्तविक परिसंपत्ति के अनुरूप श्रेणी चुनें।",
+          "मार्केटप्लेस मेटाडेटा और वेबसाइट SEO पाठ को अलग रखें।"
+        ],
+        "example": "अंग्रेज़ी-भाषी मार्केटप्लेस के लिए अंग्रेज़ी मेटाडेटा उदाहरण: Title: Blue curved abstract background with open copy space. Category: Backgrounds or the closest current option."
+      },
+      {
+        "heading": "स्थानीय जनरेटर से समीक्षा करें, फिर स्वयं जाँचें",
+        "paragraphs": [
+          "MetaStocker अपने समर्थित स्थानीय विज़न और सोचने वाले मॉडल का उपयोग करके ब्राउज़र में स्थानीय रूप से संपादनयोग्य मेटाडेटा बना सकता है। स्थानीय मोड में मॉडल उपयोगकर्ता के डिवाइस पर चलता है; पहली बार मॉडल डाउनलोड करने के लिए इंटरनेट चाहिए। मॉडल को मेमोरी में लोड करना और डाउनलोड की गई ब्राउज़र फ़ाइलों को कैश में रखना अलग बातें हैं, और ब्राउज़र स्टोरेज हट या स्वतः खाली हो सकती है। एक स्थानीय समानांतर थ्रेड से शुरू करें और अधिक आज़माने से पहले परिणाम की समीक्षा करें।",
+          "“wide blue abstract background with curved layered forms and an empty lower area” जैसा तथ्यात्मक बैच वर्णन दें। मिली-जुली फ़ाइलों के लिए एक सामान्य वर्णन न दें। हर सुझाए गए टैग को छवि से मिलाएँ, असमर्थित दावे हटाएँ और केवल तैयार पंक्तियाँ निर्यात करें। निर्यातक मार्केटप्लेस CSV प्रारूप बना सकता है, लेकिन वह फ़ाइलें अपलोड या जमा नहीं करता, मूल फ़ाइलों में मेटाडेटा एम्बेड नहीं करता और यह सिद्ध नहीं करता कि मार्केटप्लेस परिणाम स्वीकार करेगा। सटीक फ़ाइलनाम जाँचें और संबंधित योगदानकर्ता पोर्टल में आयात किया गया मेटाडेटा देखें।"
+        ],
+        "bullets": [
+          "जनरेटर को मसौदे के लिए सहायक मानें, अंतिम प्राधिकारी नहीं।",
+          "निर्यात से पहले हर शीर्षक और कीवर्ड सूची संपादित करें।",
+          "प्लेटफ़ॉर्म के वर्तमान CSV नियम और आयात किए गए फ़ील्ड सत्यापित करें।"
+        ],
+        "example": "व्यावहारिक समीक्षा प्रश्न: क्या खरीदार छवि में इस शब्द की ओर संकेत कर सकता है, या यह केवल माहौल, ट्रेंड या कल्पित निर्माण विधि है?"
+      }
+    ],
+    "checklist": [
+      "प्रमुख रंग, आकृतियाँ, बनावट, दिशा और खाली स्थान पहचानें।",
+      "सबसे उपयोगी तथ्य पहले रखते हुए स्वाभाविक शीर्षक लिखें।",
+      "असमर्थित सामग्री, सॉफ़्टवेयर और निर्माण-दावे हटाएँ।",
+      "दोहराए गए समानार्थी शब्दों के बजाय अलग और प्रासंगिक कीवर्ड चुनें।",
+      "लक्षित मार्केटप्लेस में अंग्रेज़ी आवश्यक हो तो अंग्रेज़ी मेटाडेटा रखें।",
+      "हर फ़ाइल के लिए जनरेट किए गए सुझावों की समीक्षा करें और अंतिम पोर्टल फ़ील्ड जाँचें।",
+      "जमा करने से पहले वर्तमान सीमाएँ, श्रेणियाँ, फ़ाइलनाम और CSV नियम जाँचें।"
+    ],
+    "illustration": {
+      "title": "छवि से साफ़ मेटाडेटा तक",
+      "steps": [
+        {
+          "label": "दिखने वाली विशेषताएँ सूचीबद्ध करें",
+          "detail": "नीले टोन, घुमावदार आकृतियाँ, बनावट, दिशा और खुली जगह नोट करें।"
+        },
+        {
+          "label": "मेटाडेटा लिखकर छाँटें",
+          "detail": "स्वाभाविक शीर्षक बनाएँ, फिर अनुमान और दोहराए गए समानार्थी शब्द हटाएँ।"
+        },
+        {
+          "label": "निर्यात से पहले समीक्षा करें",
+          "detail": "हर पंक्ति, वर्तमान पोर्टल नियम, फ़ाइलनाम और आयात किए गए फ़ील्ड जाँचें।"
+        }
+      ]
+    }
+  }
+}

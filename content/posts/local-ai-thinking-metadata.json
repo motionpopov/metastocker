@@ -1,0 +1,455 @@
+{
+  "slug": "local-ai-thinking-metadata",
+  "category": "local-ai",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "browser-cache"
+  ],
+  "en": {
+    "title": "Thinking Mode in Local Metadata Generation: What to Review",
+    "description": "Understand how MetaStocker’s local thinking mode shapes metadata generation, what gets exported, and how to check hallucinations before publishing.",
+    "intro": "When a local metadata generator appears to “think,” it is easy to assume that you can inspect its reasoning, choose how much reasoning it uses, or export the reasoning with the result. MetaStocker works differently. Every request sent to a local model uses thinking automatically. The app has no thinking switch, no standard-mode control, and no manual selector for reasoning tokens. The useful question is therefore not how to turn thinking on or off, but how to review the final title, description and keywords that thinking produces.\n\nThinking can help a model connect visual clues into a usable description, but it consumes additional generation time and does not make an answer factually reliable. Intermediate reasoning is not exported. Only the parsed final metadata reaches the editable result and, if you choose, the CSV exporter. Treat the model as a drafting assistant and make the final decisions yourself.",
+    "sections": [
+      {
+        "heading": "What thinking mode actually does",
+        "paragraphs": [
+          "MetaStocker’s local models—Gemma 4 E2B, Gemma 4 E4B and Qwen3.5 2B—run in the browser through WebGPU workers. Thinking is enabled for every local model request, including requests made with the default Gemma E2B model.",
+          "There is no control for switching to a standard mode or selecting a reasoning-token budget manually. Qwen has a bounded reasoning budget, but that boundary is not an accuracy promise. More internal work can also mean more waiting, especially on a device with limited GPU resources."
+        ],
+        "bullets": [
+          "Reasoning happens locally in the visitor’s browser.",
+          "The intermediate reasoning is not shown as exported metadata.",
+          "The final result remains editable before export."
+        ],
+        "example": "Example: if a preview shows a ceramic mug beside a notebook, thinking may help the model connect the objects into a coherent scene description. It may still invent a material, location or intended use."
+      },
+      {
+        "heading": "What is exported—and what is not",
+        "paragraphs": [
+          "The exporter parses only the final metadata fields. It does not export hidden reasoning or a chain-of-thought transcript. You receive the final title, description and tags in the app’s editable results, then can export a format such as Adobe, Envato, Shutterstock or Freepik CSV.",
+          "Export is a preparation step, not a submission. MetaStocker does not upload the CSV, submit it to a marketplace, guarantee acceptance or embed metadata into the original files. Inspect the completed rows before taking them to a contributor portal."
+        ],
+        "bullets": [
+          "Only final parsed fields are exported.",
+          "Hidden reasoning is not a marketplace field.",
+          "A CSV still needs platform-specific checking and upload."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "A practical review method",
+        "paragraphs": [
+          "Start by checking nouns: is the main subject identified correctly? Next check attributes such as color, count, material and visible activity. Finally check context: does the wording claim a location, season, identity, event or purpose that the image does not establish? Delete unsupported claims rather than trying to make them sound more precise.",
+          "For video, remember that generation uses sampled previews. Watch the full motion yourself before accepting action words, timing or continuity claims. A convincing still frame is not proof of what happens throughout the clip."
+        ],
+        "bullets": [
+          "Circle every concrete claim in the final text.",
+          "Keep only details visible or supplied as reliable context.",
+          "Remove guessed identities, ownership, releases, locations and species."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: correcting a plausible draft",
+        "paragraphs": [
+          "Consider this hypothetical example: a contributor previews a flat-lay photograph of a blue notebook, a pencil and a coffee cup on a wooden desk. The local model returns a title suggesting “remote work planning,” keywords for “office,” “morning routine” and “student,” and a description saying the coffee belongs to a freelancer.",
+          "The image supports a desk scene, notebook, pencil, cup and blue color. It does not prove the person’s occupation, the time of day, the viewer’s role or whether the cup contains coffee. A careful edit preserves useful discoverability while removing invented context."
+        ],
+        "bullets": [
+          "Retain: blue notebook, pencil, cup, wooden desk, flat lay.",
+          "Remove: freelancer, student, remote work, morning and coffee unless confirmed.",
+          "Put the strongest accurate terms first."
+        ],
+        "example": "Hypothetical corrected metadata\nTitle: Blue notebook, pencil and cup on wooden desk\nKeywords: notebook, blue, pencil, cup, wooden desk, stationery, writing, workspace, flat lay, planning\nDescription: Blue notebook, pencil and cup arranged on a wooden desk in a flat-lay composition."
+      },
+      {
+        "heading": "Match the destination’s rules",
+        "paragraphs": [
+          "Review the target marketplace’s current contributor requirements after editing. For Adobe Stock, relevant terms should lead the metadata, with special attention to the first ten keywords; the general keyword guidance permits up to 49, while CSV requirements should still be checked at upload time. The account’s metadata language must match the contributor account.",
+          "Do not confuse marketplace search with Google website indexing. Keywords for a stock platform help describe an asset inside that platform. Website image SEO involves surrounding text and appropriate alt text, and neither guarantees indexing or ranking."
+        ],
+        "bullets": [
+          "Use English metadata when the target platform requires English.",
+          "Avoid repeated or irrelevant tags.",
+          "Check current portal limits and inspect the imported fields."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "A safer local workflow",
+        "paragraphs": [
+          "Download and load a model explicitly, begin with one local parallel thread, and test additional threads only if your device handles them comfortably. Model memory is not the same as a downloaded browser cache: cached files may be evicted, and local storage does not promise permanent offline availability.",
+          "Generate in small batches when the images differ substantially. Batch description is context sent with generation, so use factual shared information rather than broad tags that apply only to some files. Review each file’s tags, edit questionable rows, and export only rows you consider ready."
+        ],
+        "bullets": [
+          "Confirm the image or readable preview is available.",
+          "Use factual batch context and file-specific corrections.",
+          "Keep the final review with the contributor, not the model."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Remember that thinking is always enabled for local requests.",
+      "Do not look for a nonexistent standard-mode switch or token selector.",
+      "Review every factual claim in the final metadata.",
+      "Inspect video across its full motion, not only sampled previews.",
+      "Remove guesses about identity, ownership, releases, location and species.",
+      "Check the destination marketplace’s current rules before upload.",
+      "Export only edited rows that you are prepared to verify yourself."
+    ],
+    "illustration": {
+      "title": "From local thinking to reviewed metadata",
+      "steps": [
+        {
+          "label": "Generate with thinking",
+          "detail": "Let the local model draft metadata; expect extra processing time."
+        },
+        {
+          "label": "Audit visible claims",
+          "detail": "Compare every noun, attribute and context claim with the asset."
+        },
+        {
+          "label": "Export reviewed fields",
+          "detail": "Send only edited final metadata to the destination workflow."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Режим рассуждения при локальной генерации метаданных",
+    "description": "Разберитесь, как локальный режим рассуждения MetaStocker создаёт метаданные, что попадает в экспорт и как проверять выдуманные детали.",
+    "intro": "Когда генератор метаданных «рассуждает», легко предположить, что его ход мыслей можно посмотреть, отключить или добавить в экспорт. В MetaStocker это устроено иначе. Для каждого запроса локальной модели рассуждение включается автоматически. В приложении нет переключателя рассуждения, режима без рассуждения и ручного выбора числа токенов рассуждения. Поэтому главный практический вопрос — не как управлять скрытым процессом, а как проверить готовые заголовок, описание и ключевые слова.\n\nРассуждение может помочь модели связать визуальные признаки в связное описание, но требует дополнительного времени и не гарантирует фактическую точность. Промежуточные рассуждения не экспортируются: в результат попадают только разобранные финальные метаданные. Относитесь к ним как к черновику, который нужно отредактировать перед публикацией.",
+    "sections": [
+      {
+        "heading": "Как на самом деле работает рассуждение",
+        "paragraphs": [
+          "Локальные модели MetaStocker — Gemma 4 E2B, Gemma 4 E4B и Qwen3.5 2B — работают в браузере через WebGPU-воркеры. Рассуждение включено для каждого локального запроса, в том числе для модели Gemma E2B, выбранной по умолчанию.",
+          "Нельзя переключиться в стандартный режим или вручную задать бюджет токенов рассуждения. У Qwen есть ограниченный бюджет рассуждения, но это не обещание точности. Дополнительная внутренняя работа также может увеличить ожидание, особенно на устройстве с ограниченными ресурсами GPU."
+        ],
+        "bullets": [
+          "Рассуждение выполняется локально в браузере.",
+          "Промежуточный ход мыслей не показывается в экспорте.",
+          "Финальный результат можно редактировать."
+        ],
+        "example": "Пример: по превью керамической кружки рядом с блокнотом рассуждение может помочь составить связное описание сцены. Но модель всё равно способна придумать материал, место съёмки или назначение предметов."
+      },
+      {
+        "heading": "Что экспортируется, а что остаётся внутри",
+        "paragraphs": [
+          "Экспортёр обрабатывает только финальные поля метаданных. Скрытые рассуждения и стенограмма цепочки рассуждений в CSV не попадают. В приложение возвращаются редактируемые заголовок, описание и теги, после чего можно выбрать формат Adobe, Envato, Shutterstock или Freepik.",
+          "Экспорт — это подготовка, а не отправка работы. MetaStocker не загружает CSV на площадку, не отправляет его на проверку, не гарантирует принятие и не встраивает метаданные в исходные файлы. Перед передачей файла на площадку проверьте готовые строки."
+        ],
+        "bullets": [
+          "Экспортируются только разобранные финальные поля.",
+          "Скрытые рассуждения не являются полем маркетплейса.",
+          "CSV всё равно требует проверки по правилам площадки."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Метод практической проверки",
+        "paragraphs": [
+          "Сначала проверьте существительные: правильно ли определён главный объект? Затем проверьте признаки — цвет, количество, материал и видимое действие. В конце проверьте контекст: не заявляет ли текст место, сезон, личность, событие или назначение, которых изображение не подтверждает. Неподтверждённые детали лучше удалить, а не формулировать осторожнее.",
+          "Для видео учитывайте, что генерация использует выборочные превью. Полностью просмотрите ролик сами, прежде чем принимать слова о движении, времени или последовательности действий. Удачный кадр не доказывает, что происходит на протяжении всего видео."
+        ],
+        "bullets": [
+          "Отметьте в финальном тексте каждое конкретное утверждение.",
+          "Оставьте только видимые или надёжно предоставленные факты.",
+          "Не угадывайте личности, владельцев, релизы, места и виды."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Рабочий пример: исправляем правдоподобный черновик",
+        "paragraphs": [
+          "Гипотетический пример: автор загружает предметную фотографию синего блокнота, карандаша и чашки на деревянном столе. Локальная модель предлагает заголовок про планирование удалённой работы, ключевые слова «офис», «утренняя рутина» и «студент», а в описании называет чашку частью рабочего места фрилансера.",
+          "Фотография подтверждает стол, блокнот, карандаш, чашку и синий цвет. Она не доказывает профессию человека, время суток, роль зрителя или то, что в чашке именно кофе. После правки остаются полезные точные термины, а выдуманный контекст удаляется."
+        ],
+        "bullets": [
+          "Оставить: синий блокнот, карандаш, чашка, деревянный стол, канцелярия.",
+          "Удалить: фрилансер, студент, удалённая работа, утро и кофе без подтверждения.",
+          "Поставить самые важные точные термины в начало."
+        ],
+        "example": "Гипотетические исправленные метаданные\nЗаголовок: Синий блокнот, карандаш и чашка на деревянном столе\nКлючевые слова: notebook, blue, pencil, cup, wooden desk, stationery, writing, workspace, flat lay, planning\nОписание: Blue notebook, pencil and cup arranged on a wooden desk in a flat-lay composition."
+      },
+      {
+        "heading": "Учитывайте правила площадки",
+        "paragraphs": [
+          "После редактирования проверьте актуальные требования нужного маркетплейса. Для Adobe Stock релевантные термины следует ставить в начале, уделяя особое внимание первым десяти; общее руководство допускает до 49 ключевых слов, но требования к CSV и экрану загрузки нужно сверять отдельно. Язык метаданных должен соответствовать языку аккаунта автора.",
+          "Не смешивайте поиск внутри маркетплейса с индексацией сайта Google. Ключевые слова описывают файл внутри площадки. Для изображений на собственном сайте важны окружающий текст и подходящий alt-текст, но ни то ни другое не гарантирует индексацию или позиции."
+        ],
+        "bullets": [
+          "Если площадка требует английский, используйте английские метаданные.",
+          "Удаляйте повторяющиеся и нерелевантные теги.",
+          "Перед загрузкой проверьте текущие ограничения портала и импортированные поля."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Более надёжный локальный процесс",
+        "paragraphs": [
+          "Явно скачайте и загрузите модель, начните с одного локального параллельного потока и добавляйте потоки только после проверки работы устройства. Память загруженной модели — не то же самое, что кэш браузера: кэш может быть удалён браузером, а локальное хранение не обещает постоянную работу без интернета.",
+          "Обрабатывайте небольшими партиями, если изображения заметно различаются. Описание партии передаётся модели как контекст, поэтому указывайте общие факты, а не широкие теги, подходящие лишь части файлов. Проверьте каждый файл, исправьте сомнительные строки и экспортируйте только готовые результаты."
+        ],
+        "bullets": [
+          "Проверьте наличие изображения или читаемого превью.",
+          "Используйте фактический контекст партии и индивидуальные исправления.",
+          "Окончательная ответственность за проверку остаётся у автора."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Помните: рассуждение включено для каждого локального запроса.",
+      "Не ищите несуществующий стандартный режим или селектор токенов.",
+      "Проверьте каждое фактическое утверждение в финальных метаданных.",
+      "Просматривайте видео целиком, а не только выборочные превью.",
+      "Удаляйте догадки о личности, владельце, релизе, месте и виде.",
+      "Проверьте актуальные правила маркетплейса перед загрузкой.",
+      "Экспортируйте только отредактированные строки, которые готовы проверить сами."
+    ],
+    "illustration": {
+      "title": "От локального рассуждения к проверенным метаданным",
+      "steps": [
+        {
+          "label": "Генерация с рассуждением",
+          "detail": "Дайте модели создать черновик и учитывайте дополнительное время."
+        },
+        {
+          "label": "Проверка видимых фактов",
+          "detail": "Сверьте каждый объект, признак и контекст с исходным файлом."
+        },
+        {
+          "label": "Экспорт финальных полей",
+          "detail": "Передайте в рабочий процесс только проверенные отредактированные данные."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "স্থানীয় মেটাডেটা তৈরিতে থিংকিং মোড: কী পর্যালোচনা করবেন",
+    "description": "MetaStocker-এর স্থানীয় থিংকিং মোড কীভাবে মেটাডেটা তৈরি করে, কী রপ্তানি হয় এবং প্রকাশের আগে ভুল তথ্য কীভাবে যাচাই করবেন তা জানুন।",
+    "intro": "স্থানীয় মেটাডেটা নির্মাতা যখন “চিন্তা” করছে বলে মনে হয়, তখন সহজেই ধরে নেওয়া যায় যে তার যুক্তি দেখা যাবে, সে কতটা যুক্তি ব্যবহার করবে তা বেছে নেওয়া যাবে, অথবা ফলাফলের সঙ্গে যুক্তিও রপ্তানি করা যাবে। MetaStocker ভিন্নভাবে কাজ করে। স্থানীয় মডেলে পাঠানো প্রতিটি অনুরোধে স্বয়ংক্রিয়ভাবে থিংকিং ব্যবহৃত হয়। অ্যাপটিতে থিংকিং চালু বা বন্ধ করার সুইচ, সাধারণ মোড নিয়ন্ত্রণ কিংবা যুক্তির টোকেনের জন্য হাতে বেছে নেওয়ার কোনো ব্যবস্থা নেই। তাই কার্যকর প্রশ্ন হলো থিংকিং কীভাবে চালু বা বন্ধ করবেন তা নয়, বরং থিংকিং থেকে তৈরি চূড়ান্ত শিরোনাম, বর্ণনা ও কীওয়ার্ড কীভাবে পর্যালোচনা করবেন।\n\nথিংকিং মডেলকে দৃশ্যগত সূত্রগুলো যুক্ত করে ব্যবহারযোগ্য বর্ণনা তৈরি করতে সাহায্য করতে পারে, কিন্তু এতে অতিরিক্ত তৈরির সময় লাগে এবং উত্তরের তথ্যগত নির্ভরযোগ্যতা নিশ্চিত হয় না। মধ্যবর্তী যুক্তি রপ্তানি করা হয় না। কেবল বিশ্লেষিত চূড়ান্ত মেটাডেটা সম্পাদনাযোগ্য ফলাফলে এবং আপনার পছন্দ হলে CSV রপ্তানিকারকের কাছে পৌঁছায়। মডেলকে খসড়া তৈরির সহকারী হিসেবে ব্যবহার করুন এবং চূড়ান্ত সিদ্ধান্ত নিজেই নিন।",
+    "sections": [
+      {
+        "heading": "থিংকিং মোড আসলে কী করে",
+        "paragraphs": [
+          "MetaStocker-এর স্থানীয় মডেল—Gemma 4 E2B, Gemma 4 E4B এবং Qwen3.5 2B—WebGPU কর্মীদের মাধ্যমে ব্রাউজারে চলে। ডিফল্ট Gemma E2B মডেল দিয়ে করা অনুরোধসহ প্রতিটি স্থানীয় মডেল অনুরোধে থিংকিং চালু থাকে।",
+          "সাধারণ মোডে বদলানো বা হাতে যুক্তির টোকেনের সীমা বেছে নেওয়ার কোনো নিয়ন্ত্রণ নেই। Qwen-এর একটি নির্দিষ্ট যুক্তি-সীমা আছে, কিন্তু সেই সীমা নির্ভুলতার প্রতিশ্রুতি নয়। বেশি অভ্যন্তরীণ কাজের অর্থ অপেক্ষার সময়ও বেশি হতে পারে, বিশেষ করে সীমিত GPU-সম্পদের যন্ত্রে।"
+        ],
+        "bullets": [
+          "যুক্তির কাজ দর্শকের ব্রাউজারেই স্থানীয়ভাবে হয়।",
+          "মধ্যবর্তী যুক্তি রপ্তানি করা মেটাডেটা হিসেবে দেখানো হয় না।",
+          "রপ্তানির আগে চূড়ান্ত ফলাফল সম্পাদনা করা যায়।"
+        ],
+        "example": "উদাহরণ: প্রিভিউতে একটি মাটির মগের পাশে নোটবই দেখা গেলে, থিংকিং মডেলকে বস্তুগুলো যুক্ত করে সুসংগত দৃশ্য-বর্ণনা তৈরি করতে সাহায্য করতে পারে। তবুও এটি উপাদান, স্থান বা ব্যবহারের উদ্দেশ্য বানিয়ে বলতে পারে।"
+      },
+      {
+        "heading": "কী রপ্তানি হয়—আর কী হয় না",
+        "paragraphs": [
+          "রপ্তানিকারক কেবল চূড়ান্ত মেটাডেটা ক্ষেত্রগুলো বিশ্লেষণ করে। এটি গোপন যুক্তি বা চিন্তার ধারার প্রতিলিপি রপ্তানি করে না। অ্যাপের সম্পাদনাযোগ্য ফলে আপনি চূড়ান্ত শিরোনাম, বর্ণনা ও ট্যাগ পান; এরপর Adobe, Envato, Shutterstock বা Freepik CSV-এর মতো বিন্যাসে রপ্তানি করতে পারেন।",
+          "রপ্তানি প্রস্তুতির একটি ধাপ, জমা দেওয়া নয়। MetaStocker CSV আপলোড করে না, কোনো বাজারে জমা দেয় না, গ্রহণযোগ্যতার নিশ্চয়তা দেয় না এবং মূল ফাইলে মেটাডেটা বসায় না। অবদানকারীর পোর্টালে নেওয়ার আগে সম্পূর্ণ সারিগুলো পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "শুধু বিশ্লেষিত চূড়ান্ত ক্ষেত্রগুলো রপ্তানি হয়।",
+          "গোপন যুক্তি কোনো বাজারের ক্ষেত্র নয়।",
+          "CSV-এর জন্যও প্ল্যাটফর্মভিত্তিক পরীক্ষা ও আপলোড প্রয়োজন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ব্যবহারিক পর্যালোচনা পদ্ধতি",
+        "paragraphs": [
+          "প্রথমে বিশেষ্যগুলো পরীক্ষা করুন: প্রধান বিষয়টি কি সঠিকভাবে শনাক্ত হয়েছে? এরপর রং, সংখ্যা, উপাদান ও দৃশ্যমান কাজের মতো বৈশিষ্ট্য পরীক্ষা করুন। সবশেষে প্রেক্ষাপট দেখুন: ছবিটি যে স্থান, ঋতু, পরিচয়, ঘটনা বা উদ্দেশ্য নিশ্চিত করে না, ভাষাটি কি তা দাবি করছে? সমর্থনহীন দাবি আরও নির্দিষ্ট শোনানোর চেষ্টা না করে মুছে ফেলুন।",
+          "ভিডিওর ক্ষেত্রে মনে রাখুন, তৈরি করার সময় নমুনা প্রিভিউ ব্যবহার করা হয়। ক্রিয়ার শব্দ, সময় বা ধারাবাহিকতার দাবি গ্রহণের আগে পুরো গতিচিত্র নিজে দেখুন। বিশ্বাসযোগ্য স্থিরচিত্র ক্লিপজুড়ে কী ঘটে তার প্রমাণ নয়।"
+        ],
+        "bullets": [
+          "চূড়ান্ত লেখার প্রতিটি নির্দিষ্ট দাবি চিহ্নিত করুন।",
+          "শুধু দৃশ্যমান বা নির্ভরযোগ্য প্রেক্ষাপট হিসেবে দেওয়া তথ্য রাখুন।",
+          "অনুমান করা পরিচয়, মালিকানা, অনুমতিপত্র, স্থান ও প্রজাতি বাদ দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজ করা উদাহরণ: বিশ্বাসযোগ্য খসড়া সংশোধন",
+        "paragraphs": [
+          "এই কাল্পনিক উদাহরণটি বিবেচনা করুন: একজন অবদানকারী কাঠের ডেস্কের ওপর নীল নোটবই, পেন্সিল ও একটি কফির কাপের সমতল-বিন্যাসের ছবি প্রিভিউ করেন। স্থানীয় মডেল “remote work planning” প্রস্তাব করা একটি শিরোনাম, “office”, “morning routine” ও “student”-এর কীওয়ার্ড এবং কাপের কফি একজন ফ্রিল্যান্সারের—এমন বর্ণনা দেয়।",
+          "ছবিটি ডেস্কের দৃশ্য, নোটবই, পেন্সিল, কাপ ও নীল রং সমর্থন করে। এটি ব্যক্তির পেশা, দিনের সময়, দর্শকের ভূমিকা বা কাপে কফি আছে কি না—কোনোটিই প্রমাণ করে না। সতর্ক সম্পাদনা বানানো প্রেক্ষাপট বাদ দিয়েও অনুসন্ধানে খুঁজে পাওয়ার উপযোগী তথ্য রাখে।"
+        ],
+        "bullets": [
+          "রাখুন: blue notebook, pencil, cup, wooden desk, flat lay।",
+          "বাদ দিন: freelancer, student, remote work, morning এবং coffee—যদি নিশ্চিত না হয়।",
+          "সবচেয়ে শক্তিশালী সঠিক শব্দগুলো আগে রাখুন।"
+        ],
+        "example": "কাল্পনিক সংশোধিত মেটাডেটা\nTitle: Blue notebook, pencil and cup on wooden desk\nKeywords: notebook, blue, pencil, cup, wooden desk, stationery, writing, workspace, flat lay, planning\nDescription: Blue notebook, pencil and cup arranged on a wooden desk in a flat-lay composition."
+      },
+      {
+        "heading": "গন্তব্যের নিয়মের সঙ্গে মিলিয়ে নিন",
+        "paragraphs": [
+          "সম্পাদনার পর লক্ষ্য করা বাজারের বর্তমান অবদানকারী-সংক্রান্ত শর্তগুলো দেখুন। Adobe Stock-এর ক্ষেত্রে প্রাসঙ্গিক শব্দগুলো মেটাডেটার শুরুতে থাকা উচিত; বিশেষ করে প্রথম দশটি কীওয়ার্ডে নজর দিন। সাধারণ কীওয়ার্ড নির্দেশিকায় সর্বোচ্চ 49টি পর্যন্ত অনুমোদিত হলেও, আপলোডের সময় CSV-এর শর্ত অবশ্যই যাচাই করতে হবে। অ্যাকাউন্টের মেটাডেটার ভাষা অবদানকারী অ্যাকাউন্টের ভাষার সঙ্গে মিলতে হবে।",
+          "বাজারের অনুসন্ধানকে Google-এর ওয়েবসাইট সূচিভুক্তির সঙ্গে গুলিয়ে ফেলবেন না। স্টক প্ল্যাটফর্মের কীওয়ার্ড সেই প্ল্যাটফর্মের ভেতরে সম্পদটির বর্ণনা দিতে সাহায্য করে। ওয়েবসাইটের ছবির অনুসন্ধান-উপযোগিতায় আশপাশের লেখা ও উপযুক্ত বিকল্প লেখা লাগে, এবং কোনোটিই সূচিভুক্তি বা ক্রমের নিশ্চয়তা দেয় না।"
+        ],
+        "bullets": [
+          "লক্ষ্য প্ল্যাটফর্মে ইংরেজি প্রয়োজন হলে ইংরেজি মেটাডেটা ব্যবহার করুন।",
+          "পুনরাবৃত্ত বা অপ্রাসঙ্গিক ট্যাগ এড়িয়ে চলুন।",
+          "বর্তমান পোর্টালের সীমা দেখুন এবং আমদানি করা ক্ষেত্রগুলো পরীক্ষা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "আরও নিরাপদ স্থানীয় কর্মপ্রবাহ",
+        "paragraphs": [
+          "একটি মডেল স্পষ্টভাবে ডাউনলোড ও লোড করুন, একটি স্থানীয় সমান্তরাল থ্রেড দিয়ে শুরু করুন এবং যন্ত্রটি স্বচ্ছন্দে সামলাতে পারলে তবেই অতিরিক্ত থ্রেড পরীক্ষা করুন। মডেলের মেমরি ডাউনলোড করা ব্রাউজার ক্যাশের সমান নয়: ক্যাশ করা ফাইল সরিয়ে ফেলা হতে পারে, আর স্থানীয় সংরক্ষণ স্থায়ী অফলাইন ব্যবহারের প্রতিশ্রুতি দেয় না।",
+          "ছবিগুলোতে উল্লেখযোগ্য পার্থক্য থাকলে ছোট ব্যাচে তৈরি করুন। ব্যাচের বর্ণনা তৈরির সময় পাঠানো প্রেক্ষাপট, তাই কিছু ফাইলে প্রযোজ্য এমন বিস্তৃত ট্যাগের বদলে তথ্যভিত্তিক অভিন্ন তথ্য ব্যবহার করুন। প্রতিটি ফাইলের ট্যাগ পরীক্ষা করুন, সন্দেহজনক সারি সম্পাদনা করুন এবং কেবল প্রস্তুত মনে হওয়া সারিগুলো রপ্তানি করুন।"
+        ],
+        "bullets": [
+          "ছবি বা পাঠযোগ্য প্রিভিউ পাওয়া যাচ্ছে কি না নিশ্চিত করুন।",
+          "তথ্যভিত্তিক ব্যাচ-প্রেক্ষাপট ও ফাইল-নির্দিষ্ট সংশোধন ব্যবহার করুন।",
+          "চূড়ান্ত পর্যালোচনার দায়িত্ব মডেলের নয়, অবদানকারীর কাছে রাখুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "মনে রাখুন, স্থানীয় অনুরোধে থিংকিং সবসময় চালু থাকে।",
+      "অস্তিত্বহীন সাধারণ-মোড সুইচ বা টোকেন বাছাইয়ের নিয়ন্ত্রণ খুঁজবেন না।",
+      "চূড়ান্ত মেটাডেটার প্রতিটি তথ্যগত দাবি পরীক্ষা করুন।",
+      "শুধু নমুনা প্রিভিউ নয়, ভিডিওর সম্পূর্ণ গতিচিত্র দেখুন।",
+      "পরিচয়, মালিকানা, অনুমতিপত্র, স্থান ও প্রজাতি সম্পর্কে অনুমান বাদ দিন।",
+      "আপলোডের আগে লক্ষ্য বাজারের বর্তমান নিয়ম পরীক্ষা করুন।",
+      "শুধু সম্পাদিত সারি রপ্তানি করুন, যেগুলো নিজে যাচাই করার প্রস্তুতি আছে।"
+    ],
+    "illustration": {
+      "title": "স্থানীয় থিংকিং থেকে পর্যালোচিত মেটাডেটা",
+      "steps": [
+        {
+          "label": "থিংকিংসহ তৈরি করুন",
+          "detail": "স্থানীয় মডেলকে মেটাডেটার খসড়া তৈরি করতে দিন; অতিরিক্ত প্রক্রিয়াকরণের সময় ধরুন।"
+        },
+        {
+          "label": "দৃশ্যমান দাবি পরীক্ষা করুন",
+          "detail": "প্রতিটি বিশেষ্য, বৈশিষ্ট্য ও প্রেক্ষাপটের দাবি সম্পদের সঙ্গে মিলিয়ে দেখুন।"
+        },
+        {
+          "label": "পর্যালোচিত ক্ষেত্র রপ্তানি করুন",
+          "detail": "শুধু সম্পাদিত চূড়ান্ত মেটাডেটা গন্তব্য কর্মপ্রবাহে পাঠান।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "स्थानीय मेटाडेटा निर्माण में थिंकिंग मोड: क्या जाँचें",
+    "description": "जानें कि MetaStocker का स्थानीय थिंकिंग मोड मेटाडेटा कैसे बनाता है, क्या निर्यात होता है और प्रकाशन से पहले गलत दावों की जाँच कैसे करें।",
+    "intro": "जब कोई स्थानीय मेटाडेटा जनरेटर “सोचता” हुआ दिखाई देता है, तो यह मान लेना आसान है कि आप उसकी सोच देख सकते हैं, वह कितनी सोच का उपयोग करेगा यह चुन सकते हैं, या परिणाम के साथ उसकी सोच निर्यात कर सकते हैं। MetaStocker अलग तरह से काम करता है। स्थानीय मॉडल को भेजे गए हर अनुरोध में थिंकिंग अपने-आप उपयोग होती है। ऐप में थिंकिंग चालू या बंद करने का स्विच, मानक-मोड नियंत्रण या रीजनिंग टोकन चुनने का मैनुअल विकल्प नहीं है। इसलिए उपयोगी प्रश्न यह नहीं है कि थिंकिंग को कैसे चालू या बंद करें, बल्कि यह है कि उससे बने अंतिम शीर्षक, विवरण और कीवर्ड की जाँच कैसे करें।\n\nथिंकिंग किसी मॉडल को दृश्य संकेतों को जोड़कर उपयोगी विवरण बनाने में मदद कर सकती है, लेकिन इसमें अतिरिक्त निर्माण समय लगता है और उत्तर की तथ्यात्मक विश्वसनीयता सुनिश्चित नहीं होती। मध्यवर्ती रीजनिंग निर्यात नहीं होती। केवल पार्स किया गया अंतिम मेटाडेटा संपादन योग्य परिणाम तक और, यदि आप चाहें, CSV निर्यातक तक पहुँचता है। मॉडल को प्रारूप तैयार करने वाले सहायक की तरह मानें और अंतिम निर्णय स्वयं लें।",
+    "sections": [
+      {
+        "heading": "थिंकिंग मोड वास्तव में क्या करता है",
+        "paragraphs": [
+          "MetaStocker के स्थानीय मॉडल—Gemma 4 E2B, Gemma 4 E4B और Qwen3.5 2B—WebGPU वर्करों के ज़रिए ब्राउज़र में चलते हैं। डिफ़ॉल्ट Gemma E2B मॉडल से किए गए अनुरोधों सहित हर स्थानीय मॉडल अनुरोध में थिंकिंग सक्षम रहती है।",
+          "मानक मोड में बदलने या रीजनिंग-टोकन की सीमा मैन्युअल रूप से चुनने का कोई नियंत्रण नहीं है। Qwen की रीजनिंग सीमा निर्धारित है, लेकिन वह सीमा सटीकता का वादा नहीं है। अधिक आंतरिक काम का अर्थ अधिक प्रतीक्षा भी हो सकता है, खासकर सीमित GPU संसाधनों वाले उपकरण पर।"
+        ],
+        "bullets": [
+          "रीजनिंग उपयोगकर्ता के ब्राउज़र में स्थानीय रूप से होती है।",
+          "मध्यवर्ती रीजनिंग निर्यात किए गए मेटाडेटा के रूप में दिखाई नहीं जाती।",
+          "निर्यात से पहले अंतिम परिणाम संपादन योग्य रहता है।"
+        ],
+        "example": "उदाहरण: यदि प्रीव्यू में नोटबुक के पास सिरेमिक मग दिखाई दे, तो थिंकिंग मॉडल को वस्तुओं को जोड़कर एक सुसंगत दृश्य-विवरण बनाने में मदद कर सकती है। फिर भी वह सामग्री, स्थान या उपयोग का उद्देश्य गढ़ सकता है।"
+      },
+      {
+        "heading": "क्या निर्यात होता है—और क्या नहीं",
+        "paragraphs": [
+          "निर्यातक केवल अंतिम मेटाडेटा फ़ील्ड को पार्स करता है। यह छिपी हुई रीजनिंग या सोच की पूरी प्रतिलिपि निर्यात नहीं करता। ऐप के संपादन योग्य परिणामों में आपको अंतिम शीर्षक, विवरण और टैग मिलते हैं; फिर आप Adobe, Envato, Shutterstock या Freepik CSV जैसे प्रारूप में निर्यात कर सकते हैं।",
+          "निर्यात तैयारी का चरण है, सबमिशन नहीं। MetaStocker CSV अपलोड नहीं करता, किसी मार्केटप्लेस पर सबमिट नहीं करता, स्वीकृति की गारंटी नहीं देता और मूल फ़ाइलों में मेटाडेटा शामिल नहीं करता। योगदानकर्ता पोर्टल पर ले जाने से पहले पूरी की गई पंक्तियों की जाँच करें।"
+        ],
+        "bullets": [
+          "केवल अंतिम पार्स किए गए फ़ील्ड निर्यात होते हैं।",
+          "छिपी हुई रीजनिंग मार्केटप्लेस का फ़ील्ड नहीं है।",
+          "CSV को अभी भी प्लेटफ़ॉर्म-विशिष्ट जाँच और अपलोड की आवश्यकता होती है।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "व्यावहारिक जाँच-पद्धति",
+        "paragraphs": [
+          "सबसे पहले संज्ञाएँ जाँचें: क्या मुख्य विषय सही पहचाना गया है? फिर रंग, संख्या, सामग्री और दिखाई देने वाली गतिविधि जैसे गुण जाँचें। अंत में संदर्भ देखें: क्या भाषा ऐसे स्थान, मौसम, पहचान, घटना या उद्देश्य का दावा कर रही है जिसे चित्र स्थापित नहीं करता? बिना समर्थन वाले दावों को अधिक सटीक सुनाने की कोशिश करने के बजाय हटा दें।",
+          "वीडियो के लिए याद रखें कि निर्माण में नमूना प्रीव्यू का उपयोग होता है। क्रिया-सूचक शब्द, समय या निरंतरता से जुड़े दावे स्वीकार करने से पहले पूरी गति स्वयं देखें। भरोसेमंद स्थिर फ़्रेम इस बात का प्रमाण नहीं है कि पूरे क्लिप में क्या होता है।"
+        ],
+        "bullets": [
+          "अंतिम पाठ में हर ठोस दावे को चिह्नित करें।",
+          "केवल दिखाई देने वाले या विश्वसनीय संदर्भ के रूप में दिए गए विवरण रखें।",
+          "अनुमानित पहचान, स्वामित्व, रिलीज़, स्थान और प्रजाति हटाएँ।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण: संभावित प्रारूप सुधारना",
+        "paragraphs": [
+          "इस काल्पनिक उदाहरण पर विचार करें: एक योगदानकर्ता लकड़ी की मेज़ पर नीली नोटबुक, पेंसिल और कॉफी कप की फ्लैट-ले फ़ोटोग्राफ़ का प्रीव्यू देखता है। स्थानीय मॉडल “remote work planning” सुझाने वाला शीर्षक, “office”, “morning routine” और “student” के कीवर्ड, तथा यह विवरण देता है कि कॉफी किसी फ़्रीलांसर की है।",
+          "चित्र डेस्क का दृश्य, नोटबुक, पेंसिल, कप और नीला रंग समर्थित करता है। यह व्यक्ति का पेशा, दिन का समय, दर्शक की भूमिका या कप में कॉफी है या नहीं—इनमें से किसी बात को सिद्ध नहीं करता। सावधानीपूर्वक संपादन गढ़े हुए संदर्भ हटाकर भी उपयोगी खोज-योग्यता बनाए रखता है।"
+        ],
+        "bullets": [
+          "रखें: blue notebook, pencil, cup, wooden desk, flat lay।",
+          "हटाएँ: freelancer, student, remote work, morning और coffee, जब तक पुष्टि न हो।",
+          "सबसे महत्वपूर्ण सटीक शब्द पहले रखें।"
+        ],
+        "example": "काल्पनिक संशोधित मेटाडेटा\nTitle: Blue notebook, pencil and cup on wooden desk\nKeywords: notebook, blue, pencil, cup, wooden desk, stationery, writing, workspace, flat lay, planning\nDescription: Blue notebook, pencil and cup arranged on a wooden desk in a flat-lay composition."
+      },
+      {
+        "heading": "गंतव्य के नियमों से मिलान करें",
+        "paragraphs": [
+          "संपादन के बाद लक्षित मार्केटप्लेस की वर्तमान योगदानकर्ता आवश्यकताओं की जाँच करें। Adobe Stock के लिए प्रासंगिक शब्द मेटाडेटा में आगे होने चाहिए; पहले दस कीवर्ड पर विशेष ध्यान दें। सामान्य कीवर्ड मार्गदर्शन अधिकतम 49 की अनुमति देता है, फिर भी अपलोड के समय CSV आवश्यकताओं की जाँच करनी चाहिए। खाते की मेटाडेटा भाषा योगदानकर्ता खाते की भाषा से मेल खानी चाहिए।",
+          "मार्केटप्लेस खोज को Google वेबसाइट इंडेक्सिंग के साथ न मिलाएँ। स्टॉक प्लेटफ़ॉर्म के कीवर्ड उस प्लेटफ़ॉर्म के भीतर किसी एसेट का वर्णन करने में मदद करते हैं। वेबसाइट की इमेज SEO में आसपास का पाठ और उपयुक्त वैकल्पिक पाठ शामिल होते हैं, और इनमें से कोई भी इंडेक्सिंग या रैंकिंग की गारंटी नहीं देता।"
+        ],
+        "bullets": [
+          "लक्षित प्लेटफ़ॉर्म में अंग्रेज़ी आवश्यक हो तो अंग्रेज़ी मेटाडेटा इस्तेमाल करें।",
+          "दोहराए गए या अप्रासंगिक टैग से बचें।",
+          "वर्तमान पोर्टल सीमाएँ जाँचें और आयात किए गए फ़ील्ड की समीक्षा करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "अधिक सुरक्षित स्थानीय कार्यप्रवाह",
+        "paragraphs": [
+          "किसी मॉडल को स्पष्ट रूप से डाउनलोड और लोड करें, एक स्थानीय समानांतर थ्रेड से शुरुआत करें और अतिरिक्त थ्रेड तभी आज़माएँ जब आपका उपकरण उन्हें सहजता से संभाल सके। मॉडल मेमोरी डाउनलोड किए गए ब्राउज़र कैश जैसी नहीं होती: कैश की गई फ़ाइलें हटाई जा सकती हैं और स्थानीय स्टोरेज स्थायी ऑफ़लाइन उपलब्धता का वादा नहीं करता।",
+          "जब चित्रों में पर्याप्त अंतर हो, तो छोटे बैच में निर्माण करें। बैच विवरण निर्माण के साथ भेजा गया संदर्भ होता है, इसलिए केवल कुछ फ़ाइलों पर लागू होने वाले व्यापक टैग के बजाय तथ्यात्मक साझा जानकारी दें। हर फ़ाइल के टैग जाँचें, संदिग्ध पंक्तियाँ संपादित करें और केवल उन्हीं पंक्तियों को निर्यात करें जिन्हें आप तैयार मानते हैं।"
+        ],
+        "bullets": [
+          "पुष्टि करें कि चित्र या पढ़ने योग्य प्रीव्यू उपलब्ध है।",
+          "तथ्यात्मक बैच संदर्भ और फ़ाइल-विशिष्ट सुधार इस्तेमाल करें।",
+          "अंतिम जाँच मॉडल के पास नहीं, योगदानकर्ता के पास रखें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "याद रखें कि स्थानीय अनुरोधों के लिए थिंकिंग हमेशा सक्षम रहती है।",
+      "मौजूद न होने वाले मानक-मोड स्विच या टोकन चयनकर्ता को न खोजें।",
+      "अंतिम मेटाडेटा में हर तथ्यात्मक दावे की जाँच करें।",
+      "वीडियो को केवल नमूना प्रीव्यू में नहीं, पूरी गति में देखें।",
+      "पहचान, स्वामित्व, रिलीज़, स्थान और प्रजाति से जुड़े अनुमान हटाएँ।",
+      "अपलोड से पहले लक्षित मार्केटप्लेस के वर्तमान नियम जाँचें।",
+      "केवल उन्हीं संपादित पंक्तियों को निर्यात करें जिन्हें आप स्वयं सत्यापित करने के लिए तैयार हैं।"
+    ],
+    "illustration": {
+      "title": "स्थानीय थिंकिंग से जाँचा हुआ मेटाडेटा",
+      "steps": [
+        {
+          "label": "थिंकिंग के साथ निर्माण करें",
+          "detail": "स्थानीय मॉडल को मेटाडेटा का प्रारूप बनाने दें; अतिरिक्त प्रसंस्करण समय की अपेक्षा रखें।"
+        },
+        {
+          "label": "दिखने वाले दावों की जाँच करें",
+          "detail": "हर संज्ञा, गुण और संदर्भ-दावे का एसेट से मिलान करें।"
+        },
+        {
+          "label": "जाँचे हुए फ़ील्ड निर्यात करें",
+          "detail": "केवल संपादित अंतिम मेटाडेटा को गंतव्य कार्यप्रवाह में भेजें।"
+        }
+      ]
+    }
+  }
+}

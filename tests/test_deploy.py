@@ -1,5 +1,7 @@
 import importlib.util
 import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -29,6 +31,9 @@ class DeploymentSafety(unittest.TestCase):
             self.assertFalse((output / 'server/node_modules').exists())
             for value in module.read_headers(ROOT).values():
                 self.assertIn(value, config)
+            # The remote verifier imports its dependencies from the packaged source snapshot.
+            result = subprocess.run([sys.executable, str(output / 'deploy/verify_production.py'), '--help'], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_unsafe_release_names_are_rejected_before_writing(self):
         with tempfile.TemporaryDirectory() as folder:

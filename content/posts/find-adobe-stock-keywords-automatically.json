@@ -1,0 +1,459 @@
+{
+  "slug": "find-adobe-stock-keywords-automatically",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "adobe-upload"
+  ],
+  "en": {
+    "title": "How to Find Missing Adobe Stock Keywords Automatically",
+    "description": "A practical method for auditing Adobe Stock keywords with local AI, checking visual facts, and avoiding copied or unsupported terms.",
+    "intro": "Missing keywords are often not the result of having too few ideas. They usually come from skipping one part of the image: the subject, its visible details, or the composition. A close photograph of a wet leaf, for example, may need terms for moisture, texture, focus, and background as well as the obvious word “leaf.” Local AI can suggest those omissions, but it cannot turn an uncertain visual guess into a reliable fact. The useful workflow is an audit: generate candidates, test every term against the pixels, then place the strongest terms first in Adobe Stock metadata. This guide uses MetaStocker as a drafting aid and a macro photograph of a dew-covered leaf as a hypothetical example, not as a measured result or a real customer case.",
+    "sections": [
+      {
+        "heading": "Start with a three-part visual audit",
+        "paragraphs": [
+          "Before opening a generator, describe the file in three passes. First identify the primary subject: what occupies the frame and deserves the clearest wording. Second record subject details such as dew drops, veins, edges, texture, color, and visible condition. Third describe composition: macro or close-up view, shallow depth of field, selective focus, negative space, orientation, and background.",
+          "This separation prevents a common keyword mistake: treating every visible green shape as a separate subject. A background blur may be moss, soil, another leaf, or an unidentifiable plant. If the image does not prove which one it is, use a safe visual description such as “green textured background” rather than a guessed species or material."
+        ],
+        "bullets": [
+          "Subject: leaf",
+          "Details: dew drops, veins, wet surface, green color",
+          "Composition: macro, close-up, selective focus, blurred background"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Generate candidates without copying competitors",
+        "paragraphs": [
+          "Use a local generator to expand your own observation, not to imitate another contributor’s keyword list. MetaStocker is a static web app with local vision and thinking models that run in the visitor’s browser through WebGPU workers. In local mode, inference stays on the device; the first model download needs internet. The default local model is Gemma 4 E2B, and other listed choices include Gemma 4 E4B and Qwen3.5 2B.",
+          "Load one model first and give the batch description only facts that apply to the files. For a mixed batch, do not write a blanket instruction such as “beautiful nature images.” Extra tags can be added at selected positions, but each generated row still needs its own relevance review. Automatic tag counts are a formatting check, not evidence that the suggestions are accurate."
+        ],
+        "bullets": [
+          "Describe what is visible, not the intended mood or imagined context.",
+          "Use one local thread initially; test more only after checking memory and behavior.",
+          "Treat generated keywords as candidates, never as final metadata."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: audit a dew-covered leaf",
+        "paragraphs": [
+          "Example: suppose the frame shows one green leaf covered in round water droplets. The leaf veins are visible, the center is sharp, and the background is a soft green blur. A first candidate set might contain “leaf, dew, water droplets, macro, close up, plant, green, texture, veins, wet, nature, selective focus, shallow depth of field.”",
+          "Now inspect each term. “Leaf” and “water droplets” are directly visible. “Veins,” “texture,” “macro,” and “selective focus” describe observable structure or composition. “Shallow depth of field” is appropriate only if the blur is caused by the focus plane rather than movement or image processing; if uncertain, omit it. “Moss” should not be added merely because the background looks mossy. If a botanical species cannot be verified from the image or your records, do not name one. “Fresh,” “healthy,” or “spring” may be an interpretation rather than a visible fact.",
+          "A refined first group could be: “leaf, dew, water droplets, macro, close up, green, veins, wet, texture, plant, selective focus, blurred background, nature.” This is not a claim that the list is complete. It is a defensible starting point that leaves room for platform-specific review."
+        ],
+        "bullets": [
+          "Keep terms that describe visible subject, detail, or composition.",
+          "Remove guesses about species, season, location, or biological condition.",
+          "Do not use moss unless the image clearly supports that identification."
+        ],
+        "example": "Filename: dew-leaf-01.jpg\nTitle: Dew-covered green leaf in macro close-up\nCandidate keywords: leaf, dew, water droplets, macro, close up, green, veins, wet, texture, plant, selective focus, blurred background, nature\nRemoved after review: moss, fern, spring, healthy, forest floor"
+      },
+      {
+        "heading": "Order the strongest Adobe terms first",
+        "paragraphs": [
+          "Adobe’s guidance emphasizes relevant descriptive metadata and gives special attention to the first ten keywords. Put the clearest subject and defining details at the beginning rather than hiding them behind broad words such as “nature” or “background.” A practical order for this example is subject, distinctive detail, view, structure, then context: leaf, dew, water droplets, macro, close up, veins, wet, green, texture, selective focus.",
+          "The general Adobe keyword guide permits up to 49 keywords. Use a conservative maximum of 49 and check the current contributor interface before uploading, because related CSV documentation can differ. More terms are not automatically better: repeated, vague, or unsupported words increase review work and can make the record less precise. Metadata must match the language set for the contributor account, so prepare the final wording in that language even if your internal notes are in another language."
+        ],
+        "bullets": [
+          "Use the first ten positions for the strongest, most specific terms.",
+          "Prefer one accurate phrase over several weak variations.",
+          "Check current Adobe limits and contributor requirements before export."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Review local-AI and CSV boundaries",
+        "paragraphs": [
+          "MetaStocker’s local workflow lets you edit generated results and export Adobe CSV rows, but the exporter does not upload or submit them, guarantee acceptance, or embed metadata into the original file. If you use CSV, upload the assets to Adobe first, then import the CSV. The filename, including extension and case, must match the uploaded asset. Inspect the resulting metadata in the contributor portal and correct any row that changed unexpectedly.",
+          "If a model is loaded, unloading it can retain browser cache files while removing it from active memory; cache is not the same as loaded model memory and browser storage can be evicted. This distinction matters when a later run behaves differently. The local app has no automatic cloud fallback. An optional personal OpenAI API mode is separate and sends previews or context to OpenAI using your own key; do not expose that key in public client-side code."
+        ],
+        "bullets": [
+          "Export only rows you have reviewed and consider ready.",
+          "Check filenames exactly, including extension and capitalization.",
+          "Confirm current Adobe portal rules because policies and screens can change."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Keep the audit repeatable",
+        "paragraphs": [
+          "Save a short observation note beside the image or in your working sheet: confirmed subject, visible details, uncertain interpretations, and excluded guesses. This makes later edits faster and helps you explain why a tempting term was rejected. For a series of similar leaf images, reuse the audit categories, not a fixed keyword block. Each frame may differ in focus, visible droplets, background, or identifiable structure.",
+          "Finally, distinguish marketplace metadata from website SEO. Adobe keywords help describe an asset inside Adobe Stock; they do not guarantee sales or improve Google indexing. If you publish a portfolio page, write accurate surrounding text and alt text for that page separately. Check the contributor portal for the current Adobe requirements before the final submission step."
+        ],
+        "bullets": [
+          "Record exclusions as carefully as accepted terms.",
+          "Recheck each file in a visually similar batch.",
+          "Treat platform search and Google website indexing as separate systems."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Inspect the subject, its details, and its composition separately.",
+      "Generate candidate keywords from your own factual description.",
+      "Remove unsupported species, materials, locations, seasons, and interpretations.",
+      "Put the strongest relevant terms in the first ten positions.",
+      "Stay within the current Adobe limits and account language.",
+      "Match CSV filenames exactly after uploading the assets.",
+      "Inspect every imported row before submission."
+    ],
+    "illustration": {
+      "title": "Three-step Adobe keyword audit",
+      "steps": [
+        {
+          "label": "Observe the frame",
+          "detail": "Separate subject, visible details, and composition."
+        },
+        {
+          "label": "Challenge candidates",
+          "detail": "Remove guesses about moss, species, season, and location."
+        },
+        {
+          "label": "Order and verify",
+          "detail": "Place strong terms first, then inspect the Adobe CSV import."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как автоматически находить ключевые слова для Adobe Stock",
+    "description": "Практическая проверка ключевых слов Adobe Stock с локальным ИИ: как находить пропуски, проверять факты и не копировать чужие списки.",
+    "intro": "Пропущенные ключевые слова появляются не только из-за недостатка идей. Чаще автор просто не разбирает изображение по уровням: объект, его детали и композиция. На макроснимке листа, покрытого росой, важны не только слова «лист» и «растение», но также капли, прожилки, влажная поверхность, крупный план и зона резкости. Локальный ИИ помогает расширить такой список, однако не превращает предположение в доказанный факт. Надёжный подход — провести аудит: получить кандидатов, проверить каждый термин по пикселям и расставить самые важные слова в начале метаданных Adobe Stock. Ниже используется гипотетический пример с листом, а MetaStocker рассматривается только как инструмент черновой подготовки.",
+    "sections": [
+      {
+        "heading": "Сначала разберите изображение на три слоя",
+        "paragraphs": [
+          "До запуска генератора опишите файл в три прохода. Сначала назовите главный объект — то, что занимает кадр и должно быть описано наиболее ясно. Затем перечислите видимые детали: капли росы, прожилки, край, текстуру, цвет и состояние поверхности. В третьем проходе опишите композицию: макро или крупный план, малая глубина резкости, выборочный фокус, свободное пространство и размытый фон.",
+          "Такой порядок помогает не принять каждую зелёную область за отдельный объект. Размытый фон может быть мхом, почвой, другим листом или неопределимым растением. Если изображение не доказывает, что именно там находится, используйте безопасное описание вроде «зелёный текстурный фон», а не догадку о материале или виде."
+        ],
+        "bullets": [
+          "Объект: лист.",
+          "Детали: капли росы, прожилки, влажная поверхность, зелёный цвет.",
+          "Композиция: макро, крупный план, выборочный фокус, размытый фон."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Получайте кандидатов, не копируя конкурентов",
+        "paragraphs": [
+          "Локальный генератор должен расширять ваше наблюдение, а не воспроизводить список другого автора. MetaStocker — статическое веб-приложение с локальными моделями зрения и рассуждения, которые работают в браузере посетителя через WebGPU-воркеры. В локальном режиме вывод модели остаётся на устройстве; первая загрузка модели требует интернета. По умолчанию используется Gemma 4 E2B, также доступны Gemma 4 E4B и Qwen3.5 2B.",
+          "Сначала загрузите одну модель и передайте в описание партии только факты, общие для всех файлов. Для смешанной партии не используйте шаблон вроде «красивые природные изображения». Дополнительные теги можно вставлять в начало, конец или случайные позиции, но релевантность всё равно проверяется для каждого файла. Проверка количества тегов подтверждает формат, а не точность содержания."
+        ],
+        "bullets": [
+          "Описывайте видимое, а не предполагаемое настроение или замысел.",
+          "Начните с одного локального потока и лишь затем проверяйте работу двух.",
+          "Считайте результат генерации списком кандидатов, а не готовыми метаданными."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Рабочий пример: лист с каплями росы",
+        "paragraphs": [
+          "Пример: в кадре один зелёный лист с круглыми каплями воды. Прожилки заметны, центр резкий, а фон выглядит мягким зелёным размытием. Первичный список может быть таким: «лист, роса, капли воды, макро, крупный план, растение, зелёный, текстура, прожилки, влажный, природа, выборочный фокус, малая глубина резкости».",
+          "Теперь проверьте каждый термин. «Лист» и «капли воды» видны непосредственно. «Прожилки», «текстура», «макро» и «выборочный фокус» описывают наблюдаемую структуру или композицию. «Малая глубина резкости» подходит, только если размытие действительно связано с плоскостью фокуса, а не с движением или обработкой; при сомнении удалите термин. «Мох» нельзя добавлять только потому, что фон кажется похожим на мох. Вид растения не следует указывать, если его нельзя подтвердить по изображению или вашим записям. Слова «свежий», «здоровый» и «весенний» могут быть интерпретацией, а не видимым фактом.",
+          "После проверки разумный первый блок может выглядеть так: «лист, роса, капли воды, макро, крупный план, зелёный, прожилки, влажный, текстура, растение, выборочный фокус, размытый фон, природа». Это не утверждение, что список окончательный. Это проверяемая основа, которую можно дополнить только подтверждёнными особенностями."
+        ],
+        "bullets": [
+          "Оставляйте термины, описывающие видимый объект, деталь или композицию.",
+          "Удаляйте догадки о виде, сезоне, месте и биологическом состоянии.",
+          "Не используйте «мох», если изображение явно его не подтверждает."
+        ],
+        "example": "Имя файла: dew-leaf-01.jpg\nЗаголовок: Dew-covered green leaf in macro close-up\nКандидаты: leaf, dew, water droplets, macro, close up, green, veins, wet, texture, plant, selective focus, blurred background, nature\nУдалено после проверки: moss, fern, spring, healthy, forest floor"
+      },
+      {
+        "heading": "Расставьте сильные термины в начале",
+        "paragraphs": [
+          "Рекомендации Adobe подчёркивают важность релевантных описательных метаданных и первых десяти ключевых слов. Поэтому сначала ставьте главный объект и отличительные детали, а не прячьте их после общих слов «природа» или «фон». Для этого примера практичный порядок такой: объект, особенность, ракурс, структура, затем контекст — leaf, dew, water droplets, macro, close up, veins, wet, green, texture, selective focus.",
+          "Общее руководство Adobe допускает до 49 ключевых слов. Используйте консервативный предел в 49 и перед загрузкой проверьте текущий интерфейс Contributor, поскольку документы о CSV могут содержать отличающиеся ограничения. Больший список не становится автоматически лучше: повторы, расплывчатые и неподтверждённые слова усложняют проверку. Язык метаданных должен соответствовать языку аккаунта автора, поэтому финальный вариант готовьте на требуемом языке, даже если рабочие заметки написаны по-русски."
+        ],
+        "bullets": [
+          "Отдайте первые десять позиций самым точным и важным словам.",
+          "Выбирайте одно точное словосочетание вместо набора слабых вариантов.",
+          "Перед экспортом проверьте действующие ограничения Adobe."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Знайте границы локального ИИ и CSV",
+        "paragraphs": [
+          "MetaStocker позволяет редактировать результат и экспортировать строки Adobe CSV, но экспортёр не загружает и не отправляет файлы, не гарантирует принятие и не встраивает метаданные в оригиналы. При работе с CSV сначала загрузите изображения в Adobe, затем импортируйте таблицу. Имя файла, включая расширение и регистр букв, должно точно совпадать с загруженным объектом. После импорта осмотрите метаданные в портале Contributor и исправьте строки, которые требуют ручной правки.",
+          "Если модель выгружена из памяти, файлы могут остаться в кэше браузера. Кэш — не то же самое, что активная память модели, а браузер может удалить сохранённые данные. Это объясняет, почему последующий запуск может вести себя иначе. Автоматического облачного перехода у локального режима нет. Отдельный платный режим с личным ключом OpenAI отправляет превью или контекст в OpenAI; сам ключ нельзя встраивать в открытый клиентский код."
+        ],
+        "bullets": [
+          "Экспортируйте только проверенные и готовые строки.",
+          "Сверяйте имена файлов, расширения и регистр символов.",
+          "Перед отправкой откройте текущие правила в портале Adobe."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Сделайте проверку повторяемой",
+        "paragraphs": [
+          "Храните рядом с файлом или в рабочей таблице короткую заметку: подтверждённый объект, видимые детали, сомнительные трактовки и исключённые догадки. В следующий раз это ускорит редактуру и объяснит, почему заманчивое слово было удалено. Для серии похожих листьев переиспользуйте категории аудита, но не копируйте неизменный блок ключевых слов. В каждом кадре могут отличаться фокус, количество капель, фон и видимые признаки растения.",
+          "Также разделяйте метаданные маркетплейса и SEO сайта. Ключевые слова Adobe описывают файл во внутреннем поиске Adobe Stock; они не гарантируют продажи и не обеспечивают индексацию в Google. Если вы создаёте страницу портфолио, отдельно подготовьте точный окружающий текст и alt-текст для этой страницы. Перед финальным действием снова проверьте актуальные требования Contributor."
+        ],
+        "bullets": [
+          "Записывайте причины исключения так же внимательно, как принятые термины.",
+          "Повторно проверяйте каждый файл даже в похожей серии.",
+          "Считайте поиск Adobe Stock и индексацию сайта Google разными системами."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Разберите объект, детали и композицию отдельно.",
+      "Получите кандидатов из собственного фактического описания.",
+      "Удалите неподтверждённые виды, материалы, места, сезоны и трактовки.",
+      "Поставьте самые сильные термины в первые десять позиций.",
+      "Соблюдайте текущий лимит Adobe и язык аккаунта.",
+      "После загрузки файлов точно сопоставьте имена CSV.",
+      "Проверьте каждую импортированную строку до отправки."
+    ],
+    "illustration": {
+      "title": "Аудит ключевых слов Adobe за три шага",
+      "steps": [
+        {
+          "label": "Осмотрите кадр",
+          "detail": "Отделите объект, видимые детали и композицию."
+        },
+        {
+          "label": "Проверьте кандидатов",
+          "detail": "Удалите догадки о мхе, виде, сезоне и местоположении."
+        },
+        {
+          "label": "Упорядочьте и сверяйте",
+          "detail": "Поставьте сильные слова первыми и проверьте импорт CSV."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "Adobe Stock-এর অনুপস্থিত কীওয়ার্ড স্বয়ংক্রিয়ভাবে খুঁজে বের করার উপায়",
+    "description": "স্থানীয় কৃত্রিম বুদ্ধিমত্তা দিয়ে Adobe Stock-এর কীওয়ার্ড যাচাই, দৃশ্যমান তথ্য পরীক্ষা এবং অনুলিপি বা অসমর্থিত শব্দ এড়ানোর ব্যবহারিক পদ্ধতি।",
+    "intro": "অনুপস্থিত কীওয়ার্ডের কারণ প্রায়ই ধারণার অভাব নয়। সাধারণত ছবির কোনো একটি অংশ—বিষয়, তার দৃশ্যমান বিবরণ বা বিন্যাস—বাদ পড়ে যায়। যেমন, ভেজা পাতার একটি ক্লোজ-আপ ছবিতে স্পষ্ট দৃশ্যমান “leaf” শব্দটির পাশাপাশি আর্দ্রতা, টেক্সচার, ফোকাস এবং পটভূমির শব্দও প্রয়োজন হতে পারে। স্থানীয় কৃত্রিম বুদ্ধিমত্তা এসব বাদ পড়া শব্দের প্রস্তাব দিতে পারে, কিন্তু অনিশ্চিত দৃশ্যগত অনুমানকে নির্ভরযোগ্য তথ্যে পরিণত করতে পারে না। কার্যকর কর্মপ্রবাহ হলো নিরীক্ষা: সম্ভাব্য শব্দ তৈরি করুন, প্রতিটি শব্দ পিক্সেলের সঙ্গে মিলিয়ে দেখুন, তারপর Adobe Stock-এর মেটাডেটায় সবচেয়ে শক্তিশালী শব্দগুলো আগে বসান। এই নির্দেশিকায় MetaStocker-কে খসড়া তৈরির সহায়ক এবং শিশিরে ঢাকা পাতার একটি ম্যাক্রো ছবিকে কাল্পনিক উদাহরণ হিসেবে ব্যবহার করা হয়েছে; এটি কোনো পরিমাপ করা ফল বা প্রকৃত গ্রাহক-ঘটনা নয়।",
+    "sections": [
+      {
+        "heading": "তিন অংশে দৃশ্যগত নিরীক্ষা দিয়ে শুরু করুন",
+        "paragraphs": [
+          "কোনো জেনারেটর খোলার আগে ফাইলটিকে তিন ধাপে বর্ণনা করুন। প্রথমে প্রধান বিষয় শনাক্ত করুন: ফ্রেমের কোন অংশটি সবচেয়ে বেশি জায়গা দখল করেছে এবং সবচেয়ে স্পষ্ট ভাষায় বর্ণনা করা উচিত। দ্বিতীয়ত, শিশিরবিন্দু, শিরা, প্রান্ত, টেক্সচার, রং এবং দৃশ্যমান অবস্থার মতো বিষয়ের বিবরণ লিখুন। তৃতীয়ত, বিন্যাস বর্ণনা করুন: ম্যাক্রো বা ক্লোজ-আপ দৃশ্য, অগভীর গভীরতা, নির্বাচিত ফোকাস, খালি স্থান, অভিমুখ এবং পটভূমি।",
+          "এই বিভাজন একটি সাধারণ কীওয়ার্ডের ভুল রোধ করে: দৃশ্যমান প্রতিটি সবুজ আকৃতিকে আলাদা বিষয় হিসেবে ধরা। ঝাপসা পটভূমি শ্যাওলা, মাটি, আরেকটি পাতা বা শনাক্ত করা যায় না এমন উদ্ভিদ হতে পারে। ছবি যদি কোনটি তা প্রমাণ না করে, অনুমান করা প্রজাতি বা উপাদানের বদলে “green textured background”-এর মতো নিরাপদ দৃশ্যগত বর্ণনা ব্যবহার করুন।"
+        ],
+        "bullets": [
+          "বিষয়: leaf",
+          "বিবরণ: dew drops, veins, wet surface, green color",
+          "বিন্যাস: macro, close-up, selective focus, blurred background"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "প্রতিযোগীদের অনুলিপি না করে সম্ভাব্য শব্দ তৈরি করুন",
+        "paragraphs": [
+          "অন্য অবদানকারীর কীওয়ার্ড তালিকা অনুকরণ না করে নিজের পর্যবেক্ষণ প্রসারিত করতে স্থানীয় জেনারেটর ব্যবহার করুন। MetaStocker একটি স্থির ওয়েব অ্যাপ; এর স্থানীয় দৃষ্টি ও চিন্তন মডেল WebGPU কর্মীদের মাধ্যমে দর্শকের ব্রাউজারে চলে। স্থানীয় মোডে অনুমান ডিভাইসেই থাকে; প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট প্রয়োজন। ডিফল্ট স্থানীয় মডেল হলো Gemma 4 E2B; তালিকায় Gemma 4 E4B এবং Qwen3.5 2B-ও রয়েছে।",
+          "প্রথমে একটি মডেল লোড করুন এবং ব্যাচের বর্ণনায় শুধু ফাইলগুলোর ক্ষেত্রে প্রযোজ্য তথ্য দিন। মিশ্র ব্যাচের জন্য “beautiful nature images”-এর মতো সার্বিক নির্দেশনা লিখবেন না। নির্বাচিত অবস্থানে অতিরিক্ত ট্যাগ যোগ করা যায়, কিন্তু তৈরি হওয়া প্রতিটি সারির নিজস্ব প্রাসঙ্গিকতা যাচাই দরকার। স্বয়ংক্রিয় ট্যাগের সংখ্যা হলো বিন্যাস যাচাই, প্রস্তাবগুলোর যথার্থতার প্রমাণ নয়।"
+        ],
+        "bullets": [
+          "যা দেখা যাচ্ছে তা বর্ণনা করুন; উদ্দেশ্যপ্রণোদিত আবহ বা কল্পিত প্রেক্ষাপট নয়।",
+          "শুরুতে একটি স্থানীয় থ্রেড ব্যবহার করুন; মেমরি ও আচরণ যাচাইয়ের পরেই আরও পরীক্ষা করুন।",
+          "তৈরি হওয়া কীওয়ার্ডকে সম্ভাব্য শব্দ হিসেবে ধরুন, চূড়ান্ত মেটাডেটা হিসেবে নয়।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: শিশিরে ঢাকা পাতা যাচাই",
+        "paragraphs": [
+          "উদাহরণ: ধরুন, ফ্রেমে গোল জলবিন্দুতে ঢাকা একটি সবুজ পাতা দেখা যাচ্ছে। পাতার শিরাগুলো দৃশ্যমান, মাঝখানটি তীক্ষ্ণ এবং পটভূমি নরম সবুজ ঝাপসা। প্রথম সম্ভাব্য তালিকায় “leaf, dew, water droplets, macro, close up, plant, green, texture, veins, wet, nature, selective focus, shallow depth of field” থাকতে পারে।",
+          "এখন প্রতিটি শব্দ পরীক্ষা করুন। “Leaf” এবং “water droplets” সরাসরি দেখা যাচ্ছে। “Veins,” “texture,” “macro” এবং “selective focus” দৃশ্যমান গঠন বা বিন্যাস বর্ণনা করে। “Shallow depth of field” কেবল তখনই উপযুক্ত, যখন ঝাপসাভাব ফোকাস সমতলের কারণে হয়েছে, নড়াচড়া বা ছবি প্রক্রিয়াকরণের কারণে নয়; অনিশ্চিত হলে এটি বাদ দিন। পটভূমি শ্যাওলার মতো দেখালেই “moss” যোগ করবেন না। ছবি বা নিজের নথি থেকে উদ্ভিদের প্রজাতি যাচাই করা না গেলে কোনো প্রজাতির নাম দেবেন না। “Fresh,” “healthy” বা “spring” দৃশ্যমান তথ্যের বদলে ব্যাখ্যা হতে পারে।",
+          "পরিশোধিত প্রথম দলটি হতে পারে: “leaf, dew, water droplets, macro, close up, green, veins, wet, texture, plant, selective focus, blurred background, nature।” এটি তালিকাটি সম্পূর্ণ—এমন দাবি নয়। এটি একটি সমর্থনযোগ্য সূচনা, যা প্ল্যাটফর্মভিত্তিক পর্যালোচনার জন্য জায়গা রাখে।"
+        ],
+        "bullets": [
+          "দৃশ্যমান বিষয়, বিবরণ বা বিন্যাস বর্ণনা করা শব্দ রাখুন।",
+          "প্রজাতি, ঋতু, স্থান বা জৈবিক অবস্থা সম্পর্কে অনুমান বাদ দিন।",
+          "ছবি স্পষ্টভাবে সমর্থন না করলে moss ব্যবহার করবেন না।"
+        ],
+        "example": "ফাইলের নাম: dew-leaf-01.jpg\nশিরোনাম: Dew-covered green leaf in macro close-up\nসম্ভাব্য কীওয়ার্ড: leaf, dew, water droplets, macro, close up, green, veins, wet, texture, plant, selective focus, blurred background, nature\nপর্যালোচনার পর বাদ দেওয়া হয়েছে: moss, fern, spring, healthy, forest floor"
+      },
+      {
+        "heading": "শক্তিশালী Adobe শব্দগুলো আগে সাজান",
+        "paragraphs": [
+          "Adobe-এর নির্দেশিকায় প্রাসঙ্গিক বর্ণনামূলক মেটাডেটার ওপর জোর দেওয়া হয়েছে এবং প্রথম দশটি কীওয়ার্ডকে বিশেষ গুরুত্ব দেওয়া হয়েছে। “Nature” বা “background”-এর মতো বিস্তৃত শব্দের আড়ালে না রেখে সবচেয়ে স্পষ্ট বিষয় ও নির্ধারক বিবরণ শুরুতেই রাখুন। এই উদাহরণের ব্যবহারিক ক্রম হলো বিষয়, স্বতন্ত্র বিবরণ, দৃশ্য, গঠন, তারপর প্রেক্ষাপট: leaf, dew, water droplets, macro, close up, veins, wet, green, texture, selective focus।",
+          "সাধারণ Adobe কীওয়ার্ড নির্দেশিকা সর্বোচ্চ 49টি কীওয়ার্ডের অনুমতি দেয়। সর্বোচ্চ 49টি ধরে সতর্কভাবে কাজ করুন এবং আপলোডের আগে বর্তমান অবদানকারী ইন্টারফেস পরীক্ষা করুন, কারণ সংশ্লিষ্ট CSV নথিতে পার্থক্য থাকতে পারে। বেশি শব্দ স্বয়ংক্রিয়ভাবে ভালো নয়: পুনরাবৃত্ত, অস্পষ্ট বা অসমর্থিত শব্দ পর্যালোচনার কাজ বাড়ায় এবং রেকর্ডকে কম নির্ভুল করতে পারে। মেটাডেটা অবদানকারী অ্যাকাউন্টের ভাষা-সেটের সঙ্গে মিলতে হবে; তাই অভ্যন্তরীণ নোট অন্য ভাষায় হলেও চূড়ান্ত শব্দ সেই ভাষায় প্রস্তুত করুন।"
+        ],
+        "bullets": [
+          "প্রথম দশটি অবস্থানে সবচেয়ে শক্তিশালী ও নির্দিষ্ট শব্দ রাখুন।",
+          "বেশ কয়েকটি দুর্বল রূপের বদলে একটি নির্ভুল বাক্যাংশ পছন্দ করুন।",
+          "রপ্তানির আগে বর্তমান Adobe সীমা ও অবদানকারীর প্রয়োজনীয়তা পরীক্ষা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "স্থানীয় কৃত্রিম বুদ্ধিমত্তা ও CSV-এর সীমা যাচাই করুন",
+        "paragraphs": [
+          "MetaStocker-এর স্থানীয় কর্মপ্রবাহে তৈরি ফল সম্পাদনা করে Adobe CSV সারি রপ্তানি করা যায়, কিন্তু রপ্তানিকারক সেগুলো আপলোড বা জমা দেয় না, গ্রহণযোগ্যতার নিশ্চয়তা দেয় না এবং মূল ফাইলে মেটাডেটা বসায় না। CSV ব্যবহার করলে আগে Adobe-তে সম্পদ আপলোড করুন, তারপর CSV আমদানি করুন। এক্সটেনশন ও বড়-ছোট হাতের অক্ষরসহ ফাইলের নাম আপলোড করা সম্পদের সঙ্গে হুবহু মিলতে হবে। অবদানকারী পোর্টালে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন এবং অপ্রত্যাশিতভাবে বদলে যাওয়া সারি সংশোধন করুন।",
+          "কোনো মডেল লোড করা থাকলে সেটি আনলোড করার সময় সক্রিয় মেমরি থেকে সরানো হলেও ব্রাউজারের ক্যাশ ফাইল থেকে যেতে পারে; ক্যাশ এবং লোড করা মডেলের মেমরি এক নয়, আর ব্রাউজারের স্টোরেজ মুছে যেতে পারে। পরবর্তী চালনায় আচরণ বদলালে এই পার্থক্যটি গুরুত্বপূর্ণ। স্থানীয় অ্যাপে স্বয়ংক্রিয় ক্লাউড বিকল্প নেই। ঐচ্ছিক ব্যক্তিগত OpenAI API মোড আলাদা; এটি নিজের কী ব্যবহার করে প্রিভিউ বা প্রেক্ষাপট OpenAI-তে পাঠায়। সেই কী প্রকাশ্য ক্লায়েন্ট-সাইড কোডে প্রকাশ করবেন না।"
+        ],
+        "bullets": [
+          "শুধু পর্যালোচনা করা ও প্রস্তুত বলে বিবেচিত সারি রপ্তানি করুন।",
+          "এক্সটেনশন ও বড়-ছোট হাতের অক্ষরসহ ফাইলের নাম হুবহু পরীক্ষা করুন।",
+          "বর্তমান Adobe পোর্টালের নিয়ম নিশ্চিত করুন, কারণ নীতি ও পর্দা বদলাতে পারে।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "নিরীক্ষাকে পুনরাবৃত্তিযোগ্য রাখুন",
+        "paragraphs": [
+          "ছবির পাশে বা কাজের শিটে একটি সংক্ষিপ্ত পর্যবেক্ষণ নোট রাখুন: নিশ্চিত বিষয়, দৃশ্যমান বিবরণ, অনিশ্চিত ব্যাখ্যা এবং বাদ দেওয়া অনুমান। এতে পরবর্তী সম্পাদনা দ্রুত হয় এবং কোনো আকর্ষণীয় শব্দ কেন প্রত্যাখ্যাত হয়েছে তা ব্যাখ্যা করা সহজ হয়। একই ধরনের পাতার ছবির সিরিজে নির্দিষ্ট কীওয়ার্ড ব্লক নয়, নিরীক্ষার বিভাগগুলো পুনরায় ব্যবহার করুন। প্রতিটি ফ্রেমে ফোকাস, দৃশ্যমান জলবিন্দু, পটভূমি বা শনাক্তযোগ্য গঠন আলাদা হতে পারে।",
+          "শেষে, বাজারের মেটাডেটা ও ওয়েবসাইটের SEO আলাদা করে দেখুন। Adobe-এর কীওয়ার্ড Adobe Stock-এর ভেতরে কোনো সম্পদের বর্ণনা দিতে সাহায্য করে; এগুলো বিক্রির নিশ্চয়তা দেয় না বা Google-এর ইনডেক্সিং উন্নত করে না। পোর্টফোলিও পৃষ্ঠা প্রকাশ করলে সেই পৃষ্ঠার জন্য সঠিক পারিপার্শ্বিক লেখা ও অল্ট টেক্সট আলাদাভাবে লিখুন। চূড়ান্ত জমা দেওয়ার আগে বর্তমান Adobe প্রয়োজনীয়তার জন্য অবদানকারী পোর্টাল পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "গৃহীত শব্দের মতোই বাদ দেওয়া শব্দও যত্নসহকারে নথিবদ্ধ করুন।",
+          "দৃশ্যত একই ধরনের ব্যাচে প্রতিটি ফাইল আবার পরীক্ষা করুন।",
+          "প্ল্যাটফর্ম অনুসন্ধান ও Google ওয়েবসাইট ইনডেক্সিংকে পৃথক ব্যবস্থা হিসেবে দেখুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "বিষয়, তার বিবরণ এবং বিন্যাস আলাদাভাবে পরীক্ষা করুন।",
+      "নিজের তথ্যভিত্তিক বর্ণনা থেকে সম্ভাব্য কীওয়ার্ড তৈরি করুন।",
+      "অসমর্থিত প্রজাতি, উপাদান, স্থান, ঋতু ও ব্যাখ্যা বাদ দিন।",
+      "প্রথম দশটি অবস্থানে সবচেয়ে শক্তিশালী প্রাসঙ্গিক শব্দ রাখুন।",
+      "বর্তমান Adobe সীমা ও অ্যাকাউন্টের ভাষার মধ্যে থাকুন।",
+      "সম্পদ আপলোডের পর CSV ফাইলের নাম হুবহু মিলিয়ে দেখুন।",
+      "জমা দেওয়ার আগে আমদানি করা প্রতিটি সারি পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "Adobe কীওয়ার্ড নিরীক্ষার তিন ধাপ",
+      "steps": [
+        {
+          "label": "ফ্রেম পর্যবেক্ষণ করুন",
+          "detail": "বিষয়, দৃশ্যমান বিবরণ এবং বিন্যাস আলাদা করুন।"
+        },
+        {
+          "label": "সম্ভাব্য শব্দ যাচাই করুন",
+          "detail": "শ্যাওলা, প্রজাতি, ঋতু ও স্থান সম্পর্কে অনুমান বাদ দিন।"
+        },
+        {
+          "label": "সাজিয়ে যাচাই করুন",
+          "detail": "শক্তিশালী শব্দ আগে রাখুন, তারপর Adobe CSV আমদানি পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "Adobe Stock के छूटे हुए कीवर्ड अपने-आप खोजने का तरीका",
+    "description": "स्थानीय कृत्रिम बुद्धिमत्ता से Adobe Stock कीवर्ड की जाँच, दृश्य तथ्यों का परीक्षण और नकल किए या असमर्थित शब्दों से बचने की व्यावहारिक विधि।",
+    "intro": "छूटे हुए कीवर्ड अक्सर विचारों की कमी के कारण नहीं होते। वे आम तौर पर चित्र के किसी एक हिस्से—विषय, उसके दिखाई देने वाले विवरण या संरचना—को छोड़ देने से आते हैं। उदाहरण के लिए, गीली पत्ती के क्लोज़-अप चित्र में स्पष्ट “leaf” शब्द के साथ नमी, बनावट, फ़ोकस और पृष्ठभूमि से जुड़े शब्द भी चाहिए हो सकते हैं। स्थानीय कृत्रिम बुद्धिमत्ता इन छूटे हुए शब्दों का सुझाव दे सकती है, लेकिन अनिश्चित दृश्य अनुमान को विश्वसनीय तथ्य में नहीं बदल सकती। उपयोगी कार्यप्रवाह एक जाँच है: संभावित शब्द बनाएँ, हर शब्द को पिक्सेल से मिलाएँ, फिर Adobe Stock मेटाडेटा में सबसे मजबूत शब्द पहले रखें। यह मार्गदर्शिका MetaStocker को मसौदा-सहायक और ओस से ढकी पत्ती के मैक्रो चित्र को काल्पनिक उदाहरण के रूप में इस्तेमाल करती है; यह मापा हुआ परिणाम या वास्तविक ग्राहक-प्रकरण नहीं है।",
+    "sections": [
+      {
+        "heading": "तीन हिस्सों वाली दृश्य जाँच से शुरुआत करें",
+        "paragraphs": [
+          "किसी जनरेटर को खोलने से पहले फ़ाइल का तीन चरणों में वर्णन करें। पहले मुख्य विषय पहचानें: फ़्रेम में क्या सबसे अधिक जगह घेरता है और जिसे सबसे स्पष्ट शब्दों में बताना चाहिए। दूसरे, विषय के विवरण लिखें, जैसे ओस की बूँदें, शिराएँ, किनारे, बनावट, रंग और दिखाई देने वाली स्थिति। तीसरे, संरचना बताएँ: मैक्रो या क्लोज़-अप दृश्य, कम गहराई, चयनित फ़ोकस, खाली स्थान, दिशा और पृष्ठभूमि।",
+          "यह विभाजन एक आम कीवर्ड-गलती रोकता है: दिखाई देने वाली हर हरी आकृति को अलग विषय मानना। धुँधली पृष्ठभूमि काई, मिट्टी, दूसरी पत्ती या ऐसी वनस्पति हो सकती है जिसकी पहचान न हो सके। यदि चित्र यह सिद्ध नहीं करता कि वह कौन-सी है, तो अनुमानित प्रजाति या सामग्री के बजाय “green textured background” जैसा सुरक्षित दृश्य वर्णन इस्तेमाल करें।"
+        ],
+        "bullets": [
+          "विषय: leaf",
+          "विवरण: dew drops, veins, wet surface, green color",
+          "संरचना: macro, close-up, selective focus, blurred background"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "प्रतियोगियों की नकल किए बिना संभावित शब्द बनाएँ",
+        "paragraphs": [
+          "किसी दूसरे योगदानकर्ता की कीवर्ड सूची की नकल करने के बजाय अपने अवलोकन को विस्तार देने के लिए स्थानीय जनरेटर इस्तेमाल करें। MetaStocker एक स्थिर वेब ऐप है, जिसमें स्थानीय दृश्य और चिंतन मॉडल WebGPU वर्करों के ज़रिए उपयोगकर्ता के ब्राउज़र में चलते हैं। स्थानीय मोड में अनुमान डिवाइस पर ही रहता है; पहली मॉडल डाउनलोड के लिए इंटरनेट चाहिए। डिफ़ॉल्ट स्थानीय मॉडल Gemma 4 E2B है; सूची में Gemma 4 E4B और Qwen3.5 2B भी शामिल हैं।",
+          "पहले एक मॉडल लोड करें और बैच के वर्णन में केवल उन फ़ाइलों पर लागू होने वाले तथ्य दें। मिश्रित बैच के लिए “beautiful nature images” जैसा सामान्य निर्देश न लिखें। चुने हुए स्थानों पर अतिरिक्त टैग जोड़े जा सकते हैं, लेकिन बनी हुई हर पंक्ति की अपनी प्रासंगिकता जाँचनी होगी। स्वचालित टैग संख्या केवल फ़ॉर्मैट की जाँच है, सुझावों की शुद्धता का प्रमाण नहीं।"
+        ],
+        "bullets": [
+          "जो दिखाई दे रहा है उसका वर्णन करें, इच्छित भाव या कल्पित संदर्भ का नहीं।",
+          "शुरुआत में एक स्थानीय थ्रेड इस्तेमाल करें; मेमरी और व्यवहार जाँचने के बाद ही अधिक आज़माएँ।",
+          "बने हुए कीवर्ड को संभावित शब्द मानें, अंतिम मेटाडेटा नहीं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम का उदाहरण: ओस से ढकी पत्ती की जाँच",
+        "paragraphs": [
+          "उदाहरण: मान लें कि फ़्रेम में गोल पानी की बूँदों से ढकी एक हरी पत्ती दिखाई देती है। पत्ती की शिराएँ स्पष्ट हैं, बीच का हिस्सा तीखा है और पृष्ठभूमि हल्की हरी धुँधली है। संभावित शब्दों के पहले समूह में “leaf, dew, water droplets, macro, close up, plant, green, texture, veins, wet, nature, selective focus, shallow depth of field” हो सकते हैं।",
+          "अब हर शब्द जाँचें। “Leaf” और “water droplets” सीधे दिखाई देते हैं। “Veins,” “texture,” “macro” और “selective focus” दिखाई देने वाली संरचना या संयोजन बताते हैं। “Shallow depth of field” तभी उचित है जब धुँधलापन फ़ोकस तल के कारण हो, गति या चित्र-प्रसंस्करण के कारण नहीं; अनिश्चित होने पर इसे हटा दें। केवल पृष्ठभूमि काई जैसी दिखने पर “moss” न जोड़ें। यदि चित्र या आपके रिकॉर्ड से वनस्पति की प्रजाति सत्यापित न हो सके, तो उसका नाम न दें। “Fresh,” “healthy” या “spring” दिखाई देने वाले तथ्य के बजाय व्याख्या हो सकते हैं।",
+          "परिष्कृत पहला समूह यह हो सकता है: “leaf, dew, water droplets, macro, close up, green, veins, wet, texture, plant, selective focus, blurred background, nature।” इसका अर्थ यह दावा नहीं है कि सूची पूरी है। यह एक बचाव योग्य शुरुआत है, जिसमें प्लेटफ़ॉर्म-विशिष्ट जाँच के लिए जगह रहती है।"
+        ],
+        "bullets": [
+          "ऐसे शब्द रखें जो दिखाई देने वाले विषय, विवरण या संरचना बताते हों।",
+          "प्रजाति, मौसम, स्थान या जैविक स्थिति के अनुमान हटाएँ।",
+          "जब तक चित्र स्पष्ट रूप से समर्थन न करे, moss का उपयोग न करें।"
+        ],
+        "example": "फ़ाइल का नाम: dew-leaf-01.jpg\nशीर्षक: Dew-covered green leaf in macro close-up\nसंभावित कीवर्ड: leaf, dew, water droplets, macro, close up, green, veins, wet, texture, plant, selective focus, blurred background, nature\nसमीक्षा के बाद हटाए गए: moss, fern, spring, healthy, forest floor"
+      },
+      {
+        "heading": "सबसे मजबूत Adobe शब्द पहले रखें",
+        "paragraphs": [
+          "Adobe के मार्गदर्शन में प्रासंगिक वर्णनात्मक मेटाडेटा पर ज़ोर दिया गया है और पहले दस कीवर्ड को विशेष महत्व दिया गया है। सबसे स्पष्ट विषय और निर्णायक विवरण शुरुआत में रखें, उन्हें “nature” या “background” जैसे व्यापक शब्दों के पीछे न छिपाएँ। इस उदाहरण का व्यावहारिक क्रम है: विषय, विशिष्ट विवरण, दृश्य, संरचना, फिर संदर्भ: leaf, dew, water droplets, macro, close up, veins, wet, green, texture, selective focus।",
+          "सामान्य Adobe कीवर्ड मार्गदर्शिका अधिकतम 49 कीवर्ड की अनुमति देती है। 49 की सावधान अधिकतम सीमा अपनाएँ और अपलोड से पहले वर्तमान योगदानकर्ता इंटरफ़ेस जाँचें, क्योंकि संबंधित CSV दस्तावेज़ अलग हो सकते हैं। अधिक शब्द अपने-आप बेहतर नहीं होते: दोहराए गए, अस्पष्ट या असमर्थित शब्द जाँच का काम बढ़ाते हैं और रिकॉर्ड को कम सटीक बना सकते हैं। मेटाडेटा योगदानकर्ता खाते की भाषा-सेट से मेल खाना चाहिए, इसलिए आंतरिक नोट किसी दूसरी भाषा में हों तब भी अंतिम शब्द उसी भाषा में तैयार करें।"
+        ],
+        "bullets": [
+          "पहले दस स्थानों पर सबसे मजबूत और विशिष्ट शब्द रखें।",
+          "कई कमजोर रूपों के बजाय एक सटीक वाक्यांश चुनें।",
+          "निर्यात से पहले वर्तमान Adobe सीमाएँ और योगदानकर्ता आवश्यकताएँ जाँचें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "स्थानीय कृत्रिम बुद्धिमत्ता और CSV की सीमाएँ जाँचें",
+        "paragraphs": [
+          "MetaStocker का स्थानीय कार्यप्रवाह आपको बने हुए परिणाम संपादित करने और Adobe CSV पंक्तियाँ निर्यात करने देता है, लेकिन निर्यातक उन्हें अपलोड या जमा नहीं करता, स्वीकृति की गारंटी नहीं देता और मूल फ़ाइल में मेटाडेटा नहीं जोड़ता। CSV इस्तेमाल करने पर पहले Adobe में संपत्तियाँ अपलोड करें, फिर CSV आयात करें। एक्सटेंशन और बड़े-छोटे अक्षरों सहित फ़ाइल का नाम अपलोड की गई संपत्ति से हूबहू मेल खाना चाहिए। योगदानकर्ता पोर्टल में बने हुए मेटाडेटा की जाँच करें और अनपेक्षित रूप से बदली हुई किसी भी पंक्ति को ठीक करें।",
+          "यदि कोई मॉडल लोड है, तो उसे अनलोड करने पर सक्रिय मेमरी से हटाया जा सकता है, जबकि ब्राउज़र कैश फ़ाइलें बनी रह सकती हैं; कैश, लोड किए गए मॉडल की मेमरी जैसा नहीं होता और ब्राउज़र स्टोरेज हटाया जा सकता है। बाद की प्रक्रिया अलग व्यवहार करे तो यह अंतर महत्वपूर्ण है। स्थानीय ऐप में अपने-आप क्लाउड विकल्प नहीं है। वैकल्पिक निजी OpenAI API मोड अलग है और आपकी अपनी कुंजी का उपयोग करके प्रीव्यू या संदर्भ OpenAI को भेजता है; उस कुंजी को सार्वजनिक क्लाइंट-साइड कोड में उजागर न करें।"
+        ],
+        "bullets": [
+          "केवल उन्हीं पंक्तियों को निर्यात करें जिनकी जाँच हो चुकी हो और जिन्हें तैयार मानते हों।",
+          "एक्सटेंशन और बड़े-छोटे अक्षरों सहित फ़ाइल नाम ठीक-ठीक जाँचें।",
+          "वर्तमान Adobe पोर्टल नियमों की पुष्टि करें, क्योंकि नीतियाँ और स्क्रीन बदल सकती हैं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "जाँच को दोहराने योग्य बनाए रखें",
+        "paragraphs": [
+          "चित्र के पास या अपनी कार्य-पत्रिका में एक छोटा अवलोकन नोट रखें: निश्चित विषय, दिखाई देने वाले विवरण, अनिश्चित व्याख्याएँ और हटाए गए अनुमान। इससे बाद के संपादन तेज़ होते हैं और यह समझाना आसान होता है कि आकर्षक लगने वाला कोई शब्द क्यों हटाया गया। एक जैसी पत्तियों वाली तस्वीरों की श्रृंखला में तय कीवर्ड ब्लॉक नहीं, बल्कि जाँच की श्रेणियाँ दोबारा इस्तेमाल करें। हर फ़्रेम में फ़ोकस, दिखाई देने वाली बूँदें, पृष्ठभूमि या पहचानी जा सकने वाली संरचना अलग हो सकती है।",
+          "अंत में, मार्केटप्लेस मेटाडेटा और वेबसाइट SEO को अलग समझें। Adobe कीवर्ड Adobe Stock के भीतर किसी संपत्ति का वर्णन करने में मदद करते हैं; वे बिक्री की गारंटी नहीं देते और Google इंडेक्सिंग बेहतर नहीं करते। यदि आप पोर्टफोलियो पृष्ठ प्रकाशित करते हैं, तो उस पृष्ठ के लिए आसपास का सटीक पाठ और ऑल्ट टेक्स्ट अलग से लिखें। अंतिम जमा चरण से पहले वर्तमान Adobe आवश्यकताओं के लिए योगदानकर्ता पोर्टल जाँचें।"
+        ],
+        "bullets": [
+          "स्वीकृत शब्दों की तरह हटाए गए शब्दों का भी सावधानी से रिकॉर्ड रखें।",
+          "दृश्य रूप से मिलते-जुलते बैच में हर फ़ाइल फिर जाँचें।",
+          "प्लेटफ़ॉर्म खोज और Google वेबसाइट इंडेक्सिंग को अलग-अलग प्रणालियाँ मानें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "विषय, उसके विवरण और संरचना को अलग-अलग जाँचें।",
+      "अपने तथ्यात्मक वर्णन से संभावित कीवर्ड बनाएँ।",
+      "असमर्थित प्रजातियाँ, सामग्री, स्थान, मौसम और व्याख्याएँ हटाएँ।",
+      "सबसे मजबूत प्रासंगिक शब्द पहले दस स्थानों पर रखें।",
+      "वर्तमान Adobe सीमाओं और खाते की भाषा के भीतर रहें।",
+      "संपत्तियाँ अपलोड करने के बाद CSV फ़ाइल नाम हूबहू मिलाएँ।",
+      "जमा करने से पहले हर आयातित पंक्ति जाँचें।"
+    ],
+    "illustration": {
+      "title": "Adobe कीवर्ड जाँच के तीन चरण",
+      "steps": [
+        {
+          "label": "फ़्रेम का अवलोकन करें",
+          "detail": "विषय, दिखाई देने वाले विवरण और संरचना अलग करें।"
+        },
+        {
+          "label": "संभावित शब्दों को परखें",
+          "detail": "काई, प्रजाति, मौसम और स्थान के अनुमान हटाएँ।"
+        },
+        {
+          "label": "क्रम दें और सत्यापित करें",
+          "detail": "मजबूत शब्द पहले रखें, फिर Adobe CSV आयात जाँचें।"
+        }
+      ]
+    }
+  }
+}

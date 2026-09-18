@@ -1,0 +1,455 @@
+{
+  "slug": "envato-freepik-metadata-generator",
+  "category": "exports",
+  "source_ids": [
+    "metastocker",
+    "envato-metadata",
+    "envato-upload"
+  ],
+  "en": {
+    "title": "How to Prepare Separate Envato and Freepik Metadata Exports",
+    "description": "A practical workflow for creating separate Envato and Freepik metadata exports, checking platform fields, and avoiding unsafe assumptions about CSV compatibility.",
+    "intro": "Preparing one metadata sheet for several stock platforms is tempting, especially when the same image set is being submitted everywhere. The safer approach is to treat each export as a platform-specific package. Envato and Freepik may require different fields, naming conventions, limits, or upload steps, and a CSV produced for one destination should not be assumed to work unchanged in the other. MetaStocker can generate separate Envato and Freepik CSV choices, but it does not upload or submit them, and an export is not proof that a marketplace will accept every row. This guide uses one hypothetical gardening image set to show a practical review workflow. The example is editorial, not a measured result or a real customer submission.",
+    "sections": [
+      {
+        "heading": "Start with one factual content brief",
+        "paragraphs": [
+          "Before generating anything, write a short brief describing what is visibly present in the set. For this example, the set contains a person’s gloved hands planting basil seedlings in a raised garden bed, a metal trowel, dark soil, and a small wooden plant label. The images are commercial-style garden content, not documentary coverage.",
+          "Keep the brief factual and narrow. Do not add a location, season, ownership claim, plant variety, or demographic description unless the image and your records support it. A batch description is context for generation, not a license to apply every word to every file. If one image shows only the trowel and soil, its metadata should be edited separately."
+        ],
+        "bullets": [
+          "List visible subjects, actions, setting, orientation, and useful concepts.",
+          "Mark uncertain details for removal rather than turning them into keywords.",
+          "Separate shared batch facts from details that belong to individual files."
+        ],
+        "example": "Shared brief: hands planting basil seedlings in raised garden bed; trowel; soil; wooden label.\nFile-specific note: close-up of seedling, no hands visible."
+      },
+      {
+        "heading": "Create a clean filename map",
+        "paragraphs": [
+          "Export accuracy starts with identity. Use stable filenames such as basil-bed-01.jpg and basil-bed-02.jpg, then keep those exact names, including extensions and letter case, in your working folder. Envato’s stock video CSV guidance specifically relies on exact filenames, and the same discipline makes any platform review easier.",
+          "Do not rename files after creating the metadata unless you update the mapping. A CSV can look perfectly formatted while pointing to the wrong asset. Before exporting, compare the rows with the actual files and remove any row for an image you will not submit."
+        ],
+        "bullets": [
+          "Keep one row per actual asset.",
+          "Check spelling, extension, and capitalization.",
+          "Use a separate copy of the CSV for each destination."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Choose Envato as its own export",
+        "paragraphs": [
+          "Select the Envato output when the destination is Envato. Its requirements vary by content type, so first identify whether the submission is a photo, video, or another item type. Photos and video allow up to 50 tags according to the current item information guidance, while other item types can have different limits. Relevant established compound terms may be appropriate, but every tag still needs to describe the file.",
+          "A generated CSV is a starting point. Review the title or description, tags, filename mapping, and any platform-specific columns against the current item upload instructions. For stock video, CSV metadata support exists, but a description and other platform fields may still need attention. Do not assume that an Envato stock-video schema applies to every Envato category."
+        ],
+        "bullets": [
+          "Confirm the current requirements for the exact Envato content type.",
+          "Keep tags relevant and remove repeated or speculative terms.",
+          "Check whether the portal asks for fields beyond the generated CSV."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Choose Freepik as a separate export",
+        "paragraphs": [
+          "Use the Freepik output as a distinct working file rather than editing the Envato CSV into a universal template. MetaStocker can produce a Freepik CSV choice, but the app’s export option does not establish Freepik’s current submission rules. Check the contributor portal for the required columns, language, tag limits, description format, and filename rules before importing or copying anything.",
+          "This matters when both platforms use familiar labels such as title, description, and keywords. Similar column names do not mean identical validation. If Freepik requires a field that Envato does not, add or correct it in the Freepik-specific workflow. If the portal has changed since your last submission, follow its current instructions and inspect the imported values."
+        ],
+        "bullets": [
+          "Treat the Freepik file as a destination-specific deliverable.",
+          "Verify current portal requirements before relying on column names.",
+          "Do not promise that one CSV can be uploaded to both platforms unchanged."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: review before export",
+        "paragraphs": [
+          "Here is a hypothetical review of three files from the gardening set. The first image clearly shows hands planting basil seedlings. The second is a wider view with a raised bed and tools. The third is a close-up of soil and a seedling, with no visible hands. I would generate context from the shared brief, then edit each row so its wording matches the individual frame.",
+          "For Envato, I would check the current photo requirements and keep a concise descriptive title with relevant tags, staying within the applicable limit. For Freepik, I would open the current contributor guidance and map the same facts into the fields that Freepik currently requests. The third row would not retain “gloved hands” merely because the batch contains hands in other images. If the portal rejects a column or requires another field, I would correct only that platform’s file.",
+          "The tradeoff is a little more review time in exchange for clearer platform separation and fewer misleading rows. The generator can validate a requested tag count, but that does not validate accuracy, rights, or marketplace acceptance."
+        ],
+        "bullets": [
+          "File 01: planting basil seedlings; hands, gloves, soil, trowel.",
+          "File 02: raised garden bed; seedlings, gardening tools, outdoor planting.",
+          "File 03: seedling emerging from soil; close-up; no hands visible."
+        ],
+        "example": "Envato row concept:\nFilename: basil-bed-01.jpg\nTitle: Gloved hands planting basil seedlings in a raised garden bed\nTags: basil, seedlings, planting, gardening, raised bed, soil, trowel, gloves\n\nFreepik row concept:\nFilename: basil-bed-01.jpg\nDescription: Gloved hands plant basil seedlings in a raised garden bed with soil and a trowel.\nPlatform fields: complete according to the current Freepik contributor portal."
+      },
+      {
+        "heading": "Inspect, export, and keep control of submission",
+        "paragraphs": [
+          "Review the editable results before exporting. Only export rows that are ready, and open the CSV as text or in a spreadsheet to confirm that commas, quotes, line breaks, filenames, and empty fields are handled correctly. Then keep Envato and Freepik files in clearly named folders so a later upload cannot use the wrong destination.",
+          "MetaStocker exports metadata; it does not upload, submit, guarantee acceptance, embed metadata into original files, or preserve unfinished work after a tab closes. In local mode, generation runs in the visitor’s browser after the model is downloaded, rather than on an AI server. If using the optional personal OpenAI API mode, treat the key as secret and understand that previews and context are sent to OpenAI. Finally, check the contributor portals immediately before submission because policies and field requirements can change."
+        ],
+        "bullets": [
+          "Open and inspect each destination CSV before use.",
+          "Upload or submit manually through the relevant contributor portal.",
+          "Keep original files unchanged and retain a reviewed metadata copy."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Write a factual brief and remove unsupported assumptions.",
+      "Verify every filename, extension, and case.",
+      "Generate separate Envato and Freepik exports.",
+      "Check each platform’s current contributor requirements.",
+      "Review titles, descriptions, tags, and platform-specific fields per file.",
+      "Inspect the final CSVs and submit manually through the correct portal."
+    ],
+    "illustration": {
+      "title": "One gardening set, two reviewed exports",
+      "steps": [
+        {
+          "label": "Map visible facts",
+          "detail": "Record shared garden context and edit details for each image."
+        },
+        {
+          "label": "Split by destination",
+          "detail": "Generate distinct Envato and Freepik metadata files."
+        },
+        {
+          "label": "Check portals, then export",
+          "detail": "Validate current fields and inspect rows before manual submission."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как подготовить отдельные экспорты для Envato и Freepik",
+    "description": "Практическая схема для отдельных экспортов метаданных Envato и Freepik: проверка полей, имён файлов и ограничений без обещаний универсального CSV.",
+    "intro": "Когда один набор изображений отправляют на несколько стоков, естественно захотеть использовать одну таблицу. Но надёжнее считать каждый экспорт отдельным пакетом для конкретной площадки. У Envato и Freepik могут различаться обязательные поля, ограничения, правила имён и порядок загрузки, поэтому CSV для одной платформы нельзя автоматически считать подходящим для другой. MetaStocker предлагает отдельные варианты экспорта Envato и Freepik, но сам не загружает и не отправляет файлы, а готовый CSV не гарантирует принятие строк площадкой. Ниже разобран гипотетический набор садовых изображений. Это рабочий пример, а не измеренный результат и не история реального клиента.",
+    "sections": [
+      {
+        "heading": "Начните с точного описания набора",
+        "paragraphs": [
+          "Сначала составьте короткий бриф только из того, что действительно видно. В нашем примере на фотографиях руки в садовых перчатках высаживают рассаду базилика в приподнятую грядку; рядом находятся металлический совок, тёмная почва и небольшая деревянная табличка. Это коммерческий садовый сюжет, а не документальная съёмка.",
+          "Бриф должен оставаться узким и фактическим. Не добавляйте местность, время года, владельца участка, сорт растения или сведения о человеке, если изображение и ваши записи этого не подтверждают. Общий текст даёт контекст генерации, но не превращает все слова в обязательные теги для каждого файла. Если на одном кадре видны только совок и земля, его метаданные нужно отредактировать отдельно."
+        ],
+        "bullets": [
+          "Запишите видимые предметы, действие, обстановку и ракурс.",
+          "Сомнительные детали пометьте для удаления, а не превращайте в ключевые слова.",
+          "Отделите общие факты набора от особенностей каждого файла."
+        ],
+        "example": "Общий бриф: руки высаживают базилик в приподнятую грядку; совок; почва; деревянная табличка.\nОсобенность файла: крупный план рассады, рук нет в кадре."
+      },
+      {
+        "heading": "Сначала выстройте карту имён файлов",
+        "paragraphs": [
+          "Надёжность экспорта начинается с правильного сопоставления. Используйте стабильные имена вроде basil-bed-01.jpg и basil-bed-02.jpg и сохраняйте их точно, включая расширение и регистр букв. В инструкции Envato для CSV стокового видео прямо важны точные имена файлов; такая же аккуратность облегчает проверку любого экспорта.",
+          "Не переименовывайте изображения после подготовки метаданных без обновления таблицы. CSV может выглядеть правильным, но указывать не на тот файл. Перед экспортом сравните строки с реальными файлами и удалите изображения, которые не планируете отправлять."
+        ],
+        "bullets": [
+          "Оставьте одну строку на каждый фактический файл.",
+          "Проверьте написание, расширение и регистр.",
+          "Сделайте отдельную копию CSV для каждой площадки."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Подготовьте Envato как отдельный пакет",
+        "paragraphs": [
+          "Выбирайте экспорт Envato только для отправки в Envato. Сначала определите тип контента: фотография, видео или другой вид материала. В текущих требованиях Envato для фотографий и видео допускается до 50 тегов, тогда как у других типов контента могут быть свои лимиты. Уместны распространённые составные термины, но каждый тег всё равно должен описывать конкретный файл.",
+          "CSV остаётся исходной заготовкой. Проверьте заголовок или описание, теги, соответствие имени файла и дополнительные колонки по актуальной инструкции для выбранного типа материала. Для стокового видео поддерживается CSV-метадата, однако описание и другие поля платформы всё ещё могут потребовать отдельного внимания. Нельзя переносить схему видео на все категории Envato."
+        ],
+        "bullets": [
+          "Уточните актуальные требования именно для выбранного типа Envato.",
+          "Удалите повторяющиеся, нерелевантные и предположительные теги.",
+          "Проверьте, не требует ли портал дополнительных полей."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Подготовьте Freepik отдельным экспортом",
+        "paragraphs": [
+          "Freepik следует оформлять как отдельный рабочий файл, а не превращать CSV Envato в универсальный шаблон. MetaStocker умеет создать вариант CSV для Freepik, но сам факт наличия этого варианта не подтверждает текущие правила отправки Freepik. Перед импортом или переносом данных откройте портал авторов и проверьте обязательные колонки, язык, лимиты тегов, формат описания и правила имён.",
+          "Одинаковые названия вроде «заголовок», «описание» и «ключевые слова» ещё не означают одинаковую проверку. Если Freepik требует поле, которого нет у Envato, заполните его в файле Freepik. Если требования изменились со времени прошлой отправки, ориентируйтесь на текущую инструкцию портала и проверьте результат импорта."
+        ],
+        "bullets": [
+          "Считайте Freepik самостоятельным результатом для конкретной площадки.",
+          "Проверяйте актуальные требования портала до работы с колонками.",
+          "Не обещайте, что один CSV без изменений загрузится на обе платформы."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Рабочий пример: проверка трёх изображений",
+        "paragraphs": [
+          "Рассмотрим гипотетическую проверку трёх файлов из садового набора. На первом кадре явно видны руки, высаживающие рассаду базилика. На втором показана более широкая сцена с грядкой и инструментами. На третьем — крупный план почвы и рассады без рук. Я бы использовал общий бриф для генерации, а затем отредактировал каждую строку под фактический кадр.",
+          "Для Envato я проверю актуальные требования к фотографиям и оставлю краткий описательный заголовок с релевантными тегами в допустимом количестве. Для Freepik открою текущую инструкцию авторского портала и перенесу те же факты в поля, которые сейчас требуются Freepik. В третьей строке не должно остаться «руки в перчатках» только потому, что они есть в других кадрах. Если портал отвергает колонку или требует новую, исправляется именно файл этой площадки.",
+          "Компромисс прост: дополнительная проверка занимает время, зато уменьшает риск перепутать платформы и приписать файлу неподходящие детали. Проверка количества тегов в генераторе подтверждает только количество, а не точность, права или принятие метаданных."
+        ],
+        "bullets": [
+          "Файл 01: посадка базилика; руки, перчатки, почва, совок.",
+          "Файл 02: приподнятая грядка; рассада, садовые инструменты, посадка.",
+          "Файл 03: росток в почве; крупный план; рук в кадре нет."
+        ],
+        "example": "Идея строки Envato:\nFilename: basil-bed-01.jpg\nTitle: Gloved hands planting basil seedlings in a raised garden bed\nTags: basil, seedlings, planting, gardening, raised bed, soil, trowel, gloves\n\nИдея строки Freepik:\nFilename: basil-bed-01.jpg\nDescription: Gloved hands plant basil seedlings in a raised garden bed with soil and a trowel.\nПоля площадки: заполнить по текущему порталу авторов Freepik."
+      },
+      {
+        "heading": "Проверьте, экспортируйте и отправьте вручную",
+        "paragraphs": [
+          "Перед экспортом просмотрите редактируемые результаты. Экспортируйте только готовые строки, затем откройте CSV в текстовом редакторе или таблице и проверьте кавычки, запятые, переносы строк, имена файлов и пустые поля. Храните файлы Envato и Freepik в папках с понятными названиями, чтобы при загрузке не выбрать не тот документ.",
+          "MetaStocker экспортирует метаданные, но не загружает и не отправляет их, не гарантирует принятие, не встраивает данные в оригиналы и не сохраняет незавершённую работу после закрытия вкладки. В локальном режиме генерация выполняется в браузере посетителя после загрузки модели, а не на AI-сервере. При использовании личного OpenAI API-режима храните ключ в секрете и учитывайте, что предварительные изображения и контекст отправляются в OpenAI. Перед отправкой снова проверьте порталы авторов: их поля и правила могут измениться."
+        ],
+        "bullets": [
+          "Откройте и проверьте каждый CSV отдельно.",
+          "Загружайте и отправляйте файлы вручную через нужный портал.",
+          "Сохраните оригиналы без изменений и копию проверенных метаданных."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Составьте фактический бриф и удалите неподтверждённые предположения.",
+      "Проверьте каждое имя, расширение и регистр файла.",
+      "Создайте отдельные экспорты Envato и Freepik.",
+      "Сверьтесь с актуальными требованиями каждой площадки.",
+      "Проверьте заголовки, описания, теги и специальные поля для каждого файла.",
+      "Просмотрите итоговые CSV и отправьте их вручную через правильный портал."
+    ],
+    "illustration": {
+      "title": "Один садовый набор, два проверенных экспорта",
+      "steps": [
+        {
+          "label": "Соберите видимые факты",
+          "detail": "Запишите общий контекст и уточните детали для каждого кадра."
+        },
+        {
+          "label": "Разделите площадки",
+          "detail": "Создайте отдельные файлы метаданных Envato и Freepik."
+        },
+        {
+          "label": "Проверьте портал и экспорт",
+          "detail": "Сверьте поля и строки перед ручной отправкой."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "Envato ও Freepik-এর জন্য আলাদা মেটাডেটা এক্সপোর্ট প্রস্তুত করা",
+    "description": "Envato ও Freepik-এর জন্য আলাদা মেটাডেটা এক্সপোর্ট তৈরি, প্ল্যাটফর্মের ফিল্ড যাচাই এবং CSV সামঞ্জস্য নিয়ে ঝুঁকিপূর্ণ অনুমান এড়ানোর ব্যবহারিক কর্মপ্রবাহ।",
+    "intro": "একই ছবি-সেট একাধিক স্টক প্ল্যাটফর্মে জমা দেওয়ার সময় একটি মেটাডেটা শিট সবার জন্য ব্যবহার করা আকর্ষণীয় মনে হতে পারে। নিরাপদ পদ্ধতি হলো প্রতিটি এক্সপোর্টকে নির্দিষ্ট প্ল্যাটফর্মের প্যাকেজ হিসেবে বিবেচনা করা। Envato ও Freepik-এর প্রয়োজনীয় ফিল্ড, নামকরণের রীতি, সীমা বা আপলোডের ধাপ আলাদা হতে পারে; তাই এক গন্তব্যের জন্য তৈরি CSV অন্য গন্তব্যে অপরিবর্তিতভাবে কাজ করবে ধরে নেওয়া উচিত নয়। MetaStocker আলাদা Envato ও Freepik CSV বিকল্প তৈরি করতে পারে, কিন্তু এগুলো আপলোড বা জমা দেয় না; কোনো এক্সপোর্ট marketplace প্রতিটি সারি গ্রহণ করবে—এমন প্রমাণও নয়। এই নির্দেশিকায় একটি কাল্পনিক বাগানবিষয়ক ছবি-সেট ব্যবহার করে ব্যবহারিক পর্যালোচনা কর্মপ্রবাহ দেখানো হয়েছে। উদাহরণটি সম্পাদকীয়, পরিমাপ করা ফলাফল বা বাস্তব গ্রাহকের জমা নয়।",
+    "sections": [
+      {
+        "heading": "একটি তথ্যভিত্তিক কনটেন্ট ব্রিফ দিয়ে শুরু করুন",
+        "paragraphs": [
+          "কিছু তৈরি করার আগে সেটে দৃশ্যমান বিষয়গুলোর সংক্ষিপ্ত বিবরণ লিখুন। এই উদাহরণে সেটটিতে উঁচু বাগান-বিছানায় তুলসির চারা লাগানো একজন ব্যক্তির দস্তানা-পরা হাত, একটি ধাতব হাত-কোদাল, গাঢ় মাটি এবং একটি ছোট কাঠের গাছের লেবেল আছে। ছবিগুলো বাণিজ্যিকধাঁচের বাগানবিষয়ক কনটেন্ট, তথ্যচিত্রধর্মী কভারেজ নয়।",
+          "ব্রিফটি তথ্যভিত্তিক ও সীমিত রাখুন। ছবি ও আপনার নথি সমর্থন না করলে স্থান, ঋতু, মালিকানার দাবি, গাছের জাত বা জনমিতিক বিবরণ যোগ করবেন না। ব্যাচের বিবরণ তৈরির প্রেক্ষাপট, প্রতিটি ফাইলে প্রয়োগ করার অনুমতি নয়। কোনো ছবিতে যদি শুধু হাত-কোদাল ও মাটি দেখা যায়, তার মেটাডেটা আলাদাভাবে সম্পাদনা করা উচিত।"
+        ],
+        "bullets": [
+          "দৃশ্যমান বিষয়, কাজ, পরিবেশ, দিকনির্দেশ এবং কার্যকর ধারণাগুলো লিখুন।",
+          "অনিশ্চিত বিবরণ কীওয়ার্ডে পরিণত না করে বাদ দেওয়ার জন্য চিহ্নিত করুন।",
+          "সব ফাইলে প্রযোজ্য ব্যাচের তথ্য এবং নির্দিষ্ট ফাইলের তথ্য আলাদা রাখুন।"
+        ],
+        "example": "সবার জন্য প্রযোজ্য ব্রিফ: উঁচু বাগান-বিছানায় তুলসির চারা লাগানো হাত; হাত-কোদাল; মাটি; কাঠের লেবেল।\nফাইল-নির্দিষ্ট নোট: চারার ক্লোজ-আপ, কোনো হাত দৃশ্যমান নয়।"
+      },
+      {
+        "heading": "পরিষ্কার ফাইলনামের মানচিত্র তৈরি করুন",
+        "paragraphs": [
+          "এক্সপোর্টের নির্ভুলতা শুরু হয় পরিচয় থেকে। basil-bed-01.jpg এবং basil-bed-02.jpg-এর মতো স্থিতিশীল ফাইলনাম ব্যবহার করুন। এরপর এক্সটেনশন ও বড়-ছোট হাতের অক্ষরসহ কাজের ফোল্ডারে ঠিক সেই নাম রাখুন। Envato-এর স্টক ভিডিও CSV নির্দেশিকায় সঠিক ফাইলনামের ওপর বিশেষভাবে নির্ভর করা হয়, এবং একই শৃঙ্খলা যেকোনো প্ল্যাটফর্ম পর্যালোচনাকে সহজ করে।",
+          "মেটাডেটা তৈরি করার পর ফাইলের নাম বদলাবেন না, যদি না মানচিত্রটিও হালনাগাদ করেন। একটি CSV নিখুঁতভাবে ফরম্যাট করা দেখালেও ভুল সম্পদের দিকে নির্দেশ করতে পারে। এক্সপোর্টের আগে সারিগুলো প্রকৃত ফাইলের সঙ্গে মিলিয়ে দেখুন এবং যে ছবি জমা দেবেন না, তার সারি সরিয়ে দিন।"
+        ],
+        "bullets": [
+          "প্রকৃত প্রতিটি সম্পদের জন্য একটি সারি রাখুন।",
+          "বানান, এক্সটেনশন এবং বড়-ছোট হাতের অক্ষর যাচাই করুন।",
+          "প্রতিটি গন্তব্যের জন্য CSV-এর আলাদা কপি ব্যবহার করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Envato-কে আলাদা এক্সপোর্ট হিসেবে বেছে নিন",
+        "paragraphs": [
+          "গন্তব্য Envato হলে Envato আউটপুট নির্বাচন করুন। কনটেন্টের ধরন অনুযায়ী এর প্রয়োজনীয়তা বদলায়, তাই আগে নির্ধারণ করুন জমাটি ছবি, ভিডিও নাকি অন্য কোনো ধরনের আইটেম। বর্তমান আইটেম-সংক্রান্ত নির্দেশনা অনুযায়ী ছবি ও ভিডিওতে সর্বোচ্চ ৫০টি ট্যাগ দেওয়া যায়, তবে অন্য আইটেমের সীমা আলাদা হতে পারে। প্রাসঙ্গিক প্রতিষ্ঠিত যৌগিক শব্দ উপযুক্ত হতে পারে, কিন্তু প্রতিটি ট্যাগকেই ফাইলটি বর্ণনা করতে হবে।",
+          "তৈরি করা CSV হলো শুরুর উপকরণ। বর্তমান আইটেম আপলোড নির্দেশনার সঙ্গে শিরোনাম বা বর্ণনা, ট্যাগ, ফাইলনামের মিল এবং প্ল্যাটফর্ম-নির্দিষ্ট কলাম যাচাই করুন। স্টক ভিডিওর জন্য CSV মেটাডেটা সমর্থিত হলেও বর্ণনা ও অন্যান্য প্ল্যাটফর্ম ফিল্ডে এখনও মনোযোগ দিতে হতে পারে। Envato-এর একটি স্টক-ভিডিও স্কিমা Envato-এর প্রতিটি বিভাগে প্রযোজ্য—এমন ধরে নেবেন না।"
+        ],
+        "bullets": [
+          "Envato-এর নির্দিষ্ট কনটেন্ট ধরনের বর্তমান প্রয়োজনীয়তা নিশ্চিত করুন।",
+          "ট্যাগ প্রাসঙ্গিক রাখুন এবং পুনরাবৃত্ত বা অনুমানভিত্তিক শব্দ বাদ দিন।",
+          "পোর্টালে তৈরি CSV-এর বাইরেও কোনো ফিল্ড চাওয়া হয়েছে কি না দেখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Freepik-কে আলাদা এক্সপোর্ট হিসেবে বেছে নিন",
+        "paragraphs": [
+          "Freepik-এর আউটপুটকে আলাদা কাজের ফাইল হিসেবে ব্যবহার করুন; Envato CSV সম্পাদনা করে সর্বজনীন টেমপ্লেট বানাবেন না। MetaStocker Freepik CSV বিকল্প তৈরি করতে পারে, কিন্তু অ্যাপের এক্সপোর্ট বিকল্প Freepik-এর বর্তমান জমাদানের নিয়ম নির্ধারণ করে না। কোনো কিছু আমদানি বা কপি করার আগে প্রয়োজনীয় কলাম, ভাষা, ট্যাগের সীমা, বর্ণনার ধরন এবং ফাইলনামের নিয়ম জানতে কনট্রিবিউটর পোর্টাল দেখুন।",
+          "দুই প্ল্যাটফর্মেই title, description এবং keywords-এর মতো পরিচিত লেবেল থাকলে বিষয়টি গুরুত্বপূর্ণ। কলামের নাম একই রকম হলেই যাচাইয়ের নিয়মও এক হবে না। Envato-তে নেই এমন কোনো ফিল্ড Freepik চাইলে Freepik-নির্দিষ্ট কর্মপ্রবাহে সেটি যোগ বা সংশোধন করুন। শেষবার জমা দেওয়ার পর পোর্টালে পরিবর্তন হয়ে থাকলে বর্তমান নির্দেশনা অনুসরণ করুন এবং আমদানি করা মানগুলো পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "Freepik ফাইলকে নির্দিষ্ট গন্তব্যের ডেলিভারেবল হিসেবে বিবেচনা করুন।",
+          "কলামের নামের ওপর নির্ভর করার আগে বর্তমান পোর্টালের প্রয়োজনীয়তা যাচাই করুন।",
+          "একটি CSV অপরিবর্তিতভাবে দুই প্ল্যাটফর্মে আপলোড করা যাবে—এমন প্রতিশ্রুতি দেবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: এক্সপোর্টের আগে পর্যালোচনা",
+        "paragraphs": [
+          "এখানে বাগানবিষয়ক সেটের তিনটি ফাইলের একটি কাল্পনিক পর্যালোচনা দেওয়া হলো। প্রথম ছবিতে তুলসির চারা লাগানো হাত স্পষ্ট দেখা যায়। দ্বিতীয়টি উঁচু বাগান-বিছানা ও সরঞ্জামসহ তুলনামূলক প্রশস্ত দৃশ্য। তৃতীয়টি মাটি ও চারার ক্লোজ-আপ, যেখানে কোনো হাত দৃশ্যমান নয়। আমি সবার জন্য প্রযোজ্য ব্রিফ থেকে প্রেক্ষাপট তৈরি করব, তারপর প্রতিটি সারি সম্পাদনা করব যাতে তার ভাষা সংশ্লিষ্ট ফ্রেমের সঙ্গে মেলে।",
+          "Envato-এর জন্য আমি বর্তমান ছবির প্রয়োজনীয়তা যাচাই করব এবং প্রযোজ্য সীমার মধ্যে প্রাসঙ্গিক ট্যাগসহ সংক্ষিপ্ত বর্ণনামূলক শিরোনাম রাখব। Freepik-এর জন্য বর্তমান কনট্রিবিউটর নির্দেশনা খুলে একই তথ্য Freepik বর্তমানে চাওয়া ফিল্ডে সাজাব। ব্যাচের অন্য ছবিতে হাত আছে বলে তৃতীয় সারিতে “gloved hands” রেখে দেব না। পোর্টাল কোনো কলাম প্রত্যাখ্যান করলে বা অন্য কোনো ফিল্ড চাইলে শুধু সেই প্ল্যাটফর্মের ফাইল সংশোধন করব।",
+          "বিনিময়টি হলো একটু বেশি পর্যালোচনার সময়ের বিনিময়ে পরিষ্কার প্ল্যাটফর্ম-বিভাজন এবং কম বিভ্রান্তিকর সারি পাওয়া। জেনারেটর চাওয়া ট্যাগের সংখ্যা যাচাই করতে পারে, কিন্তু নির্ভুলতা, অধিকার বা marketplace-এর গ্রহণযোগ্যতা যাচাই করে না।"
+        ],
+        "bullets": [
+          "ফাইল ০১: তুলসির চারা লাগানো; হাত, দস্তানা, মাটি, হাত-কোদাল।",
+          "ফাইল ০২: উঁচু বাগান-বিছানা; চারা, বাগানের সরঞ্জাম, বাইরের রোপণ।",
+          "ফাইল ০৩: মাটি থেকে বের হওয়া চারা; ক্লোজ-আপ; কোনো হাত দৃশ্যমান নয়।"
+        ],
+        "example": "Envato row concept:\nFilename: basil-bed-01.jpg\nTitle: Gloved hands planting basil seedlings in a raised garden bed\nTags: basil, seedlings, planting, gardening, raised bed, soil, trowel, gloves\n\nFreepik row concept:\nFilename: basil-bed-01.jpg\nDescription: Gloved hands plant basil seedlings in a raised garden bed with soil and a trowel.\nPlatform fields: complete according to the current Freepik contributor portal."
+      },
+      {
+        "heading": "পরীক্ষা করুন, এক্সপোর্ট করুন এবং জমাদানের নিয়ন্ত্রণ রাখুন",
+        "paragraphs": [
+          "এক্সপোর্টের আগে সম্পাদনাযোগ্য ফলাফল পর্যালোচনা করুন। শুধু প্রস্তুত সারিগুলো এক্সপোর্ট করুন এবং CSV-টি টেক্সট হিসেবে বা স্প্রেডশিটে খুলে কমা, উদ্ধৃতি, লাইনব্রেক, ফাইলনাম ও খালি ফিল্ড সঠিকভাবে সামলানো হয়েছে কি না নিশ্চিত করুন। এরপর Envato ও Freepik ফাইল পরিষ্কারভাবে নাম দেওয়া আলাদা ফোল্ডারে রাখুন, যাতে পরে ভুল গন্তব্যে আপলোড না হয়।",
+          "MetaStocker মেটাডেটা এক্সপোর্ট করে; এটি আপলোড, জমা, গ্রহণযোগ্যতার নিশ্চয়তা বা মূল ফাইলে মেটাডেটা সংযোজন করে না এবং কোনো ট্যাব বন্ধ হলে অসমাপ্ত কাজও সংরক্ষণ করে না। স্থানীয় মোডে মডেল ডাউনলোড হওয়ার পর জেনারেশন দর্শকের ব্রাউজারেই চলে, কোনো কৃত্রিম বুদ্ধিমত্তার সার্ভারে নয়। ঐচ্ছিক ব্যক্তিগত OpenAI API মোড ব্যবহার করলে কী-টি গোপন রাখুন এবং বুঝে নিন যে প্রিভিউ ও প্রেক্ষাপট OpenAI-তে পাঠানো হয়। সবশেষে জমা দেওয়ার ঠিক আগে কনট্রিবিউটর পোর্টাল পরীক্ষা করুন, কারণ নীতি ও ফিল্ডের প্রয়োজনীয়তা বদলাতে পারে।"
+        ],
+        "bullets": [
+          "ব্যবহারের আগে প্রতিটি গন্তব্যের CSV খুলে পরীক্ষা করুন।",
+          "সংশ্লিষ্ট কনট্রিবিউটর পোর্টালের মাধ্যমে নিজে আপলোড বা জমা দিন।",
+          "মূল ফাইল অপরিবর্তিত রাখুন এবং পর্যালোচিত মেটাডেটার একটি কপি সংরক্ষণ করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "তথ্যভিত্তিক ব্রিফ লিখুন এবং অসমর্থিত অনুমান বাদ দিন।",
+      "প্রতিটি ফাইলনাম, এক্সটেনশন এবং বড়-ছোট হাতের অক্ষর যাচাই করুন।",
+      "আলাদা Envato ও Freepik এক্সপোর্ট তৈরি করুন।",
+      "প্রতিটি প্ল্যাটফর্মের বর্তমান কনট্রিবিউটর প্রয়োজনীয়তা পরীক্ষা করুন।",
+      "প্রতিটি ফাইলের শিরোনাম, বর্ণনা, ট্যাগ এবং প্ল্যাটফর্ম-নির্দিষ্ট ফিল্ড পর্যালোচনা করুন।",
+      "চূড়ান্ত CSV পরীক্ষা করে সঠিক পোর্টালে নিজে জমা দিন।"
+    ],
+    "illustration": {
+      "title": "একটি বাগান-সেট, দুটি পর্যালোচিত এক্সপোর্ট",
+      "steps": [
+        {
+          "label": "দৃশ্যমান তথ্য মানচিত্রে তুলুন",
+          "detail": "সবার জন্য প্রযোজ্য বাগানের প্রেক্ষাপট লিখুন এবং প্রতিটি ছবির বিবরণ সম্পাদনা করুন।"
+        },
+        {
+          "label": "গন্তব্য অনুযায়ী ভাগ করুন",
+          "detail": "আলাদা Envato ও Freepik মেটাডেটা ফাইল তৈরি করুন।"
+        },
+        {
+          "label": "পোর্টাল দেখে এক্সপোর্ট করুন",
+          "detail": "বর্তমান ফিল্ড যাচাই করুন এবং নিজে জমা দেওয়ার আগে সারিগুলো পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "Envato और Freepik के लिए अलग मेटाडेटा एक्सपोर्ट तैयार करना",
+    "description": "Envato और Freepik के लिए अलग मेटाडेटा एक्सपोर्ट बनाने, प्लेटफ़ॉर्म फ़ील्ड जाँचने और CSV संगतता से जुड़े असुरक्षित अनुमान से बचने का व्यावहारिक कार्यप्रवाह।",
+    "intro": "एक ही मेटाडेटा शीट को कई स्टॉक प्लेटफ़ॉर्म पर इस्तेमाल करना आकर्षक लग सकता है, खासकर जब वही चित्र-सेट हर जगह जमा किया जा रहा हो। अधिक सुरक्षित तरीका यह है कि हर एक्सपोर्ट को संबंधित प्लेटफ़ॉर्म का अलग पैकेज माना जाए। Envato और Freepik में अलग फ़ील्ड, नामकरण-नियम, सीमाएँ या अपलोड चरण हो सकते हैं, इसलिए एक गंतव्य के लिए बनाया गया CSV दूसरे गंतव्य पर बिना बदलाव के चलेगा—ऐसा नहीं मानना चाहिए। MetaStocker अलग Envato और Freepik CSV विकल्प बना सकता है, लेकिन उन्हें अपलोड या जमा नहीं करता; कोई एक्सपोर्ट marketplace द्वारा हर पंक्ति की स्वीकृति का प्रमाण भी नहीं है। यह मार्गदर्शिका एक काल्पनिक बागवानी चित्र-सेट से व्यावहारिक समीक्षा कार्यप्रवाह दिखाती है। उदाहरण संपादकीय है, मापा हुआ परिणाम या वास्तविक ग्राहक का सबमिशन नहीं।",
+    "sections": [
+      {
+        "heading": "एक तथ्यात्मक कंटेंट ब्रीफ़ से शुरुआत करें",
+        "paragraphs": [
+          "कुछ भी बनाने से पहले सेट में दिखाई देने वाली चीज़ों का संक्षिप्त ब्रीफ़ लिखें। इस उदाहरण में सेट में उठी हुई क्यारी में तुलसी के पौधे रोपते व्यक्ति के दस्ताने-पहने हाथ, धातु की छोटी खुरपी, गहरी मिट्टी और लकड़ी का छोटा पौधा-लेबल दिखाई देता है। चित्र व्यावसायिक शैली की बागवानी सामग्री हैं, डॉक्यूमेंटरी कवरेज नहीं।",
+          "ब्रीफ़ को तथ्यात्मक और सीमित रखें। जब तक चित्र और आपके रिकॉर्ड समर्थन न करें, स्थान, मौसम, स्वामित्व का दावा, पौधे की किस्म या जनसांख्यिकीय विवरण न जोड़ें। बैच का विवरण जनरेशन के लिए संदर्भ है, हर फ़ाइल पर हर शब्द लगाने का लाइसेंस नहीं। यदि किसी चित्र में केवल खुरपी और मिट्टी दिखती है, तो उसका मेटाडेटा अलग से संपादित किया जाना चाहिए।"
+        ],
+        "bullets": [
+          "दिखाई देने वाले विषय, क्रियाएँ, परिवेश, अभिविन्यास और उपयोगी अवधारणाएँ लिखें।",
+          "अनिश्चित विवरणों को कीवर्ड बनाने के बजाय हटाने के लिए चिह्नित करें।",
+          "साझा बैच तथ्यों को व्यक्तिगत फ़ाइलों से संबंधित विवरणों से अलग रखें।"
+        ],
+        "example": "साझा ब्रीफ़: उठी हुई बागवानी क्यारी में तुलसी के पौधे लगाते हाथ; खुरपी; मिट्टी; लकड़ी का लेबल।\nफ़ाइल-विशिष्ट नोट: पौधे का क्लोज़-अप, हाथ दिखाई नहीं दे रहे।"
+      },
+      {
+        "heading": "साफ़ फ़ाइलनाम मानचित्र बनाएँ",
+        "paragraphs": [
+          "एक्सपोर्ट की शुद्धता पहचान से शुरू होती है। basil-bed-01.jpg और basil-bed-02.jpg जैसे स्थिर फ़ाइलनाम इस्तेमाल करें, फिर एक्सटेंशन और बड़े-छोटे अक्षरों समेत वही नाम अपने कार्य-फ़ोल्डर में रखें। Envato के स्टॉक वीडियो CSV निर्देश विशेष रूप से सटीक फ़ाइलनाम पर निर्भर करते हैं, और यही अनुशासन किसी भी प्लेटफ़ॉर्म की समीक्षा आसान बनाता है।",
+          "मेटाडेटा बनाने के बाद फ़ाइलों के नाम न बदलें, जब तक आप मानचित्र भी अपडेट न करें। CSV पूरी तरह सही फ़ॉर्मैट में दिख सकता है, फिर भी गलत संपत्ति की ओर संकेत कर सकता है। एक्सपोर्ट से पहले पंक्तियों की वास्तविक फ़ाइलों से तुलना करें और जिस चित्र को जमा नहीं करना है, उसकी पंक्ति हटा दें।"
+        ],
+        "bullets": [
+          "हर वास्तविक संपत्ति के लिए एक पंक्ति रखें।",
+          "वर्तनी, एक्सटेंशन और बड़े-छोटे अक्षर जाँचें।",
+          "हर गंतव्य के लिए CSV की अलग कॉपी इस्तेमाल करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Envato को अपना अलग एक्सपोर्ट चुनें",
+        "paragraphs": [
+          "गंतव्य Envato होने पर Envato आउटपुट चुनें। इसकी आवश्यकताएँ सामग्री के प्रकार के अनुसार बदलती हैं, इसलिए पहले तय करें कि सबमिशन फ़ोटो, वीडियो या किसी अन्य प्रकार की वस्तु है। वर्तमान आइटम जानकारी के अनुसार फ़ोटो और वीडियो में अधिकतम ५० टैग हो सकते हैं, जबकि अन्य प्रकारों की सीमाएँ अलग हो सकती हैं। प्रासंगिक स्थापित संयुक्त शब्द उपयुक्त हो सकते हैं, लेकिन हर टैग को फ़ाइल का वर्णन करना चाहिए।",
+          "बनाया गया CSV शुरुआती सामग्री है। वर्तमान आइटम अपलोड निर्देशों के आधार पर शीर्षक या विवरण, टैग, फ़ाइलनाम मानचित्र और प्लेटफ़ॉर्म-विशिष्ट कॉलम जाँचें। स्टॉक वीडियो के लिए CSV मेटाडेटा समर्थन मौजूद है, फिर भी विवरण और अन्य प्लेटफ़ॉर्म फ़ील्ड पर ध्यान देना पड़ सकता है। यह न मानें कि Envato का स्टॉक-वीडियो स्कीमा हर Envato श्रेणी पर लागू होता है।"
+        ],
+        "bullets": [
+          "ठीक Envato सामग्री-प्रकार की वर्तमान आवश्यकताएँ सुनिश्चित करें।",
+          "टैग प्रासंगिक रखें और दोहराए गए या अनुमानित शब्द हटाएँ।",
+          "जाँचें कि पोर्टल बनाए गए CSV से आगे कोई अतिरिक्त फ़ील्ड तो नहीं माँगता।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Freepik को अलग एक्सपोर्ट के रूप में चुनें",
+        "paragraphs": [
+          "Freepik आउटपुट को अलग कार्य-फ़ाइल के रूप में इस्तेमाल करें; Envato CSV को संपादित करके सार्वभौमिक टेम्पलेट न बनाएँ। MetaStocker Freepik CSV विकल्प बना सकता है, लेकिन ऐप का एक्सपोर्ट विकल्प Freepik के वर्तमान सबमिशन नियम निर्धारित नहीं करता। कुछ भी आयात या कॉपी करने से पहले आवश्यक कॉलम, भाषा, टैग सीमा, विवरण का प्रारूप और फ़ाइलनाम नियम जानने के लिए योगदानकर्ता पोर्टल देखें।",
+          "जब दोनों प्लेटफ़ॉर्म title, description और keywords जैसे परिचित लेबल इस्तेमाल करते हों, तब यह विशेष रूप से महत्वपूर्ण है। समान कॉलम नामों का अर्थ समान सत्यापन नहीं होता। यदि Freepik ऐसा फ़ील्ड माँगता है जो Envato नहीं माँगता, तो उसे Freepik-विशिष्ट कार्यप्रवाह में जोड़ें या सुधारें। यदि आपके पिछले सबमिशन के बाद पोर्टल बदल गया है, तो उसके वर्तमान निर्देशों का पालन करें और आयात किए गए मानों की जाँच करें।"
+        ],
+        "bullets": [
+          "Freepik फ़ाइल को गंतव्य-विशिष्ट डिलिवरेबल मानें।",
+          "कॉलम नामों पर निर्भर करने से पहले वर्तमान पोर्टल आवश्यकताएँ जाँचें।",
+          "यह वादा न करें कि एक CSV को बिना बदलाव दोनों प्लेटफ़ॉर्म पर अपलोड किया जा सकता है।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण: एक्सपोर्ट से पहले समीक्षा",
+        "paragraphs": [
+          "यहाँ बागवानी सेट की तीन फ़ाइलों की एक काल्पनिक समीक्षा है। पहली छवि में तुलसी के पौधे लगाते हाथ साफ़ दिखाई देते हैं। दूसरी में उठी हुई क्यारी और औज़ारों का विस्तृत दृश्य है। तीसरी मिट्टी और पौधे का क्लोज़-अप है, जिसमें हाथ दिखाई नहीं देते। मैं साझा ब्रीफ़ से संदर्भ बनाऊँगा, फिर हर पंक्ति संपादित करूँगा ताकि उसका शब्दांकन संबंधित फ़्रेम से मेल खाए।",
+          "Envato के लिए मैं वर्तमान फ़ोटो आवश्यकताएँ जाँचूँगा और लागू सीमा के भीतर प्रासंगिक टैग वाला संक्षिप्त वर्णनात्मक शीर्षक रखूँगा। Freepik के लिए मैं वर्तमान योगदानकर्ता निर्देश खोलूँगा और उन्हीं तथ्यों को Freepik द्वारा वर्तमान में माँगे गए फ़ील्ड में व्यवस्थित करूँगा। बैच की अन्य छवियों में हाथ होने के कारण तीसरी पंक्ति में “gloved hands” नहीं रखूँगा। यदि पोर्टल किसी कॉलम को अस्वीकार करता है या कोई दूसरा फ़ील्ड माँगता है, तो केवल उसी प्लेटफ़ॉर्म की फ़ाइल सुधारूँगा।",
+          "इसका लाभ यह है कि थोड़े अधिक समीक्षा समय के बदले प्लेटफ़ॉर्मों का स्पष्ट विभाजन और कम भ्रामक पंक्तियाँ मिलती हैं। जनरेटर माँगी गई टैग संख्या की पुष्टि कर सकता है, लेकिन शुद्धता, अधिकार या marketplace की स्वीकृति की पुष्टि नहीं करता।"
+        ],
+        "bullets": [
+          "फ़ाइल ०१: तुलसी के पौधे लगाना; हाथ, दस्ताने, मिट्टी, खुरपी।",
+          "फ़ाइल ०२: उठी हुई बागवानी क्यारी; पौधे, बागवानी औज़ार, बाहरी रोपण।",
+          "फ़ाइल ०३: मिट्टी से निकलता पौधा; क्लोज़-अप; हाथ दिखाई नहीं देते।"
+        ],
+        "example": "Envato row concept:\nFilename: basil-bed-01.jpg\nTitle: Gloved hands planting basil seedlings in a raised garden bed\nTags: basil, seedlings, planting, gardening, raised bed, soil, trowel, gloves\n\nFreepik row concept:\nFilename: basil-bed-01.jpg\nDescription: Gloved hands plant basil seedlings in a raised garden bed with soil and a trowel.\nPlatform fields: complete according to the current Freepik contributor portal."
+      },
+      {
+        "heading": "जाँचें, एक्सपोर्ट करें और सबमिशन का नियंत्रण रखें",
+        "paragraphs": [
+          "एक्सपोर्ट से पहले संपादित किए जा सकने वाले परिणामों की समीक्षा करें। केवल तैयार पंक्तियाँ एक्सपोर्ट करें और CSV को टेक्स्ट के रूप में या स्प्रेडशीट में खोलकर सुनिश्चित करें कि कॉमा, उद्धरण, लाइन ब्रेक, फ़ाइलनाम और खाली फ़ील्ड सही ढंग से संभाले गए हैं। फिर Envato और Freepik फ़ाइलों को स्पष्ट नाम वाले अलग फ़ोल्डरों में रखें, ताकि बाद में गलत गंतव्य पर अपलोड न हो।",
+          "MetaStocker मेटाडेटा एक्सपोर्ट करता है; यह अपलोड, सबमिशन, स्वीकृति की गारंटी या मूल फ़ाइलों में मेटाडेटा एम्बेड नहीं करता, और टैब बंद होने के बाद अधूरा काम सुरक्षित नहीं रखता। स्थानीय मोड में मॉडल डाउनलोड होने के बाद जनरेशन आगंतुक के ब्राउज़र में चलती है, किसी कृत्रिम बुद्धिमत्ता सर्वर पर नहीं। वैकल्पिक व्यक्तिगत OpenAI API मोड इस्तेमाल करते समय कुंजी को गुप्त रखें और समझें कि प्रीव्यू और संदर्भ OpenAI को भेजे जाते हैं। अंत में, सबमिशन से ठीक पहले योगदानकर्ता पोर्टलों की जाँच करें, क्योंकि नीतियाँ और फ़ील्ड आवश्यकताएँ बदल सकती हैं।"
+        ],
+        "bullets": [
+          "इस्तेमाल से पहले हर गंतव्य CSV खोलकर जाँचें।",
+          "संबंधित योगदानकर्ता पोर्टल से स्वयं अपलोड या सबमिट करें।",
+          "मूल फ़ाइलें अपरिवर्तित रखें और समीक्षा की हुई मेटाडेटा कॉपी सुरक्षित रखें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "तथ्यात्मक ब्रीफ़ लिखें और असमर्थित अनुमान हटाएँ।",
+      "हर फ़ाइलनाम, एक्सटेंशन और बड़े-छोटे अक्षर की पुष्टि करें।",
+      "अलग Envato और Freepik एक्सपोर्ट बनाएँ।",
+      "हर प्लेटफ़ॉर्म की वर्तमान योगदानकर्ता आवश्यकताएँ जाँचें।",
+      "हर फ़ाइल के शीर्षक, विवरण, टैग और प्लेटफ़ॉर्म-विशिष्ट फ़ील्ड की समीक्षा करें।",
+      "अंतिम CSV फ़ाइलें जाँचें और सही पोर्टल से स्वयं सबमिट करें।"
+    ],
+    "illustration": {
+      "title": "एक बागवानी सेट, दो समीक्षा किए हुए एक्सपोर्ट",
+      "steps": [
+        {
+          "label": "दिखाई देने वाले तथ्य दर्ज करें",
+          "detail": "साझा बागवानी संदर्भ लिखें और हर चित्र के विवरण संपादित करें।"
+        },
+        {
+          "label": "गंतव्य के अनुसार बाँटें",
+          "detail": "अलग Envato और Freepik मेटाडेटा फ़ाइलें बनाएँ।"
+        },
+        {
+          "label": "पोर्टल जाँचकर एक्सपोर्ट करें",
+          "detail": "वर्तमान फ़ील्ड मान्य करें और स्वयं सबमिशन से पहले पंक्तियाँ जाँचें।"
+        }
+      ]
+    }
+  }
+}

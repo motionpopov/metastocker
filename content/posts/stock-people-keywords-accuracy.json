@@ -1,0 +1,455 @@
+{
+  "slug": "stock-people-keywords-accuracy",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-metadata"
+  ],
+  "en": {
+    "title": "How to Describe People in Stock Photos Without Guessing",
+    "description": "Write accurate stock titles, descriptions, and keywords for people-focused images without inventing identity, age, ethnicity, location, or other sensitive details.",
+    "intro": "People can make a stock image immediately useful, but they also create a metadata risk: a photograph may show an activity clearly while revealing almost nothing reliable about who is pictured. The safest workflow is to describe visible action, setting, objects, composition, and intended use, while treating identity and demographic details as unknown unless you have dependable information from the model or production records.\n\nThis guide uses one practical question throughout: what can a buyer understand from the image, and what would require a guess? That distinction matters on marketplaces with English metadata requirements, and it also matters when preparing batches with a local generator such as MetaStocker. A generated row can contain the requested number of tags and still be inaccurate, so every person-related term needs a human review.",
+    "sections": [
+      {
+        "heading": "Separate observation from assumption",
+        "paragraphs": [
+          "Begin with an evidence pass. Write down what the camera actually shows: hands chopping vegetables, a person wearing an apron, two people carrying boxes, or a group standing in the background. Then create a second, separate list of things you know from reliable production information, such as a model’s self-description as an adult or a supplied release record.",
+          "Do not turn visual impressions into identity claims. Skin tone, hairstyle, clothing, facial features, body shape, apparent age, accent, or location in the frame cannot by themselves establish ethnicity, nationality, gender identity, religion, health, profession, or exact age. The same caution applies to an indistinct group: if faces and context are unclear, “group of people” is safer than a detailed demographic label."
+        ],
+        "bullets": [
+          "Use visible verbs: preparing, cutting, pouring, carrying, discussing.",
+          "Use documented facts only when they are genuinely available.",
+          "Treat uncertainty as a reason to omit a term, not a reason to soften it with “probably.”"
+        ],
+        "example": "Observation: adult hands kneading dough on a kitchen counter.\nReliable supplied fact: the person is a self-described adult model.\nAvoid: “young woman,” “Italian chef,” or “mother cooking.”"
+      },
+      {
+        "heading": "Build the title around the main action",
+        "paragraphs": [
+          "A title should help a buyer recognize the image quickly. Put the central subject and action first, then add the setting or purpose if it is visible and useful. A natural phrase is more helpful than a string of disconnected keywords, and the title should not claim more than the frame supports.",
+          "For a close-up with no face, identify the body part only when composition makes that useful. “Hands preparing a vegetable meal in a home kitchen” is concrete. It does not need a guessed identity, family role, cuisine, or nationality. If a platform imposes a title limit, keep the wording concise and check the current contributor requirements before upload."
+        ],
+        "bullets": [
+          "Lead with the action buyers would search for.",
+          "Mention visible objects and context, not an invented backstory.",
+          "Keep title wording natural rather than repeating tags."
+        ],
+        "example": "Example title: Hands preparing a healthy meal in a home kitchen"
+      },
+      {
+        "heading": "Choose keywords by evidence and buyer intent",
+        "paragraphs": [
+          "After the title, add terms that describe the actual image and its likely commercial concepts. Useful keywords might include cooking, meal preparation, chopping, vegetables, kitchen, food preparation, hands, domestic life, nutrition, and lifestyle, provided each matches the frame. “Healthy” should be used only when the food or supplied context supports that concept; it should not become a blanket claim about the person.",
+          "Order the strongest terms first where the marketplace gives early keywords extra weight. Stay within the platform’s current limits. Adobe’s general guide permits up to 49 keywords, while Shutterstock’s guidance describes 7 to 50 relevant keywords and requires at least one category. Those limits do not make a long list automatically good. Remove repetitions, vague demographic guesses, and terms that describe a different image."
+        ],
+        "bullets": [
+          "Ask of every tag: can I point to evidence for this word?",
+          "Prefer specific actions and objects over generic people labels.",
+          "Do not add a demographic term merely because it might attract a search."
+        ],
+        "example": "Possible keywords: meal preparation, cooking, chopping, vegetables, kitchen, food, hands, home, lifestyle, nutrition, domestic life, recipe, healthy eating"
+      },
+      {
+        "heading": "Handle reliable model information carefully",
+        "paragraphs": [
+          "Some information can be used because it comes from a dependable source rather than from pixels. In this assignment’s scenario, a model is self-described as an adult. That can support “adult” when the platform and licensing context make the term relevant. It still does not establish a precise age, gender, ethnicity, nationality, occupation, or relationship to anyone else in the image.",
+          "For a release-based workflow, keep the record of what was supplied separate from your visual description. Do not use a release to invent a location, profession, or family connection that it does not document. If you cannot verify a claim, leave it out. A shorter accurate keyword set is more defensible than a fuller set built on assumptions."
+        ],
+        "bullets": [
+          "Record the source of nonvisual facts in your production notes.",
+          "Use “adult” only when it is supported and materially relevant.",
+          "Never infer identity or sensitive attributes from appearance alone."
+        ],
+        "example": "Supported: “adult model preparing food,” when the model supplied that description.\nUnsupported: “professional chef,” unless that role is separately documented."
+      },
+      {
+        "heading": "Worked example: close-up, portrait, and distant group",
+        "paragraphs": [
+          "Imagine three related files from one cooking shoot. File A is a close-up of hands slicing peppers; the face is outside the frame. File B shows a self-described adult model pouring soup, with a visible face but no supplied nationality or occupation. File C shows a distant group near a table, with faces too small to identify and no verified event details.",
+          "Create separate metadata for each file instead of applying one batch description to all three. File A can focus on hands and food preparation. File B can mention an adult person preparing or serving food, but not “chef,” “mother,” or a guessed ethnicity. File C should stay broad: people, group, gathering, table, and social activity if those elements are visible. Do not reuse “portrait” for the distant group or “hands” for a frame where hands are not a meaningful feature.",
+          "If you use MetaStocker’s local generator, put only shared, factual context in the batch description. Generate or draft rows, then inspect each result individually. Extra tags and an exact tag count are not evidence that every term is appropriate."
+        ],
+        "bullets": [
+          "Create one evidence list per file before accepting generated metadata.",
+          "Delete tags that belong to a neighboring image in the batch.",
+          "Review the complete frame, especially for video sampled from previews."
+        ],
+        "example": "File B title: Adult person serving soup at a kitchen table\nFile B keywords: adult, serving, soup, meal, kitchen, food, cooking, table, home, lifestyle\nExcluded: nationality, ethnicity, exact age, chef, parent, customer"
+      },
+      {
+        "heading": "Review before export and platform upload",
+        "paragraphs": [
+          "Read the title as a factual sentence. Then scan every keyword and ask whether it is visible, reliably documented, or a clearly supported concept. Check that the metadata language matches the contributor account where required; for platforms requiring English, Russian editorial notes do not replace English marketplace metadata.",
+          "If you export a CSV, treat it as a preparation file, not a submission. For Adobe, assets must be uploaded before importing the CSV, and filenames including extension and case must match. Inspect the resulting fields in the contributor portal. Requirements can change, so check the current portal and item-specific policy before using a saved template. MetaStocker exports files for supported platforms but does not upload them, embed metadata in originals, or guarantee acceptance."
+        ],
+        "bullets": [
+          "Check filenames, title limits, keyword limits, and categories.",
+          "Inspect imported rows in the current contributor portal.",
+          "Keep the original files unchanged and retain an editable metadata copy."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Describe actions, objects, setting, and composition before people’s identity.",
+      "Use demographic or identity terms only when supported by reliable model information or records.",
+      "Do not infer age, ethnicity, nationality, gender, profession, family role, health, or location from pixels.",
+      "Write separate metadata for visually different files in the same batch.",
+      "Keep marketplace metadata in the platform’s required language.",
+      "Review every generated row and verify current portal requirements before upload."
+    ],
+    "illustration": {
+      "title": "Evidence-first people metadata",
+      "steps": [
+        {
+          "label": "List visible evidence",
+          "detail": "Record actions, objects, setting, and what the frame does not show."
+        },
+        {
+          "label": "Add verified context",
+          "detail": "Use model-supplied facts only when they are relevant and documented."
+        },
+        {
+          "label": "Review each file",
+          "detail": "Remove guesses, check platform limits, and inspect every exported row."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как точно описывать людей в стоковых фото без догадок",
+    "description": "Практическое руководство по заголовкам и ключевым словам для фото с людьми: описывайте действие и контекст, не выдумывая личность и демографию.",
+    "intro": "Люди делают стоковую фотографию понятнее, но одновременно повышают риск неточного описания. На снимке может быть ясно видно действие, однако по нему нельзя надежно определить, кто именно изображен. Безопасная схема проста: сначала описывайте наблюдаемые действия, предметы, обстановку и композицию, а сведения о личности и демографии добавляйте только при наличии надежного источника, например информации от модели или производственных записей.\n\nНиже используется один практический вопрос: что покупатель действительно может понять из кадра, а что потребовало бы догадки? Это особенно важно при подготовке английских метаданных для стоковой площадки и при работе с локальным генератором MetaStocker. Точное количество созданных тегов не означает, что каждый тег правдив, поэтому итоговая проверка остается обязательной.",
+    "sections": [
+      {
+        "heading": "Отделяйте наблюдение от предположения",
+        "paragraphs": [
+          "Начните с описания того, что показывает камера: руки режут овощи, человек стоит у плиты, двое несут коробки, вдали находится группа. Затем отдельно запишите сведения, полученные из надежных материалов. Например, в этой задаче модель сама описывает себя как совершеннолетнюю — это информация, отличная от визуального впечатления.",
+          "Не превращайте внешность в утверждение о личности. Цвет кожи, прическа, одежда, черты лица, телосложение или положение человека в кадре сами по себе не доказывают этничность, национальность, гендерную идентичность, религию, здоровье, профессию или точный возраст. Если лица удаленной группы неразличимы, используйте “группа людей”, а не подробную демографическую характеристику."
+        ],
+        "bullets": [
+          "Используйте видимые глаголы: готовит, режет, наливает, несет, разговаривает.",
+          "Добавляйте документированные факты только при наличии надежного источника.",
+          "Если факт неизвестен, уберите термин, а не маскируйте догадку словом “возможно”."
+        ],
+        "example": "Наблюдение: руки замешивают тесто на кухонной столешнице.\nНадежный факт: человек описал себя как совершеннолетнюю модель.\nНе следует писать: “молодая женщина”, “итальянский повар” или “мать готовит”."
+      },
+      {
+        "heading": "Стройте заголовок вокруг главного действия",
+        "paragraphs": [
+          "Хороший заголовок помогает быстро узнать изображение. Сначала поставьте основной объект и действие, затем добавьте видимую обстановку или назначение. Естественная фраза полезнее набора разрозненных ключевых слов, а формулировка не должна рассказывать историю, которой нет в кадре.",
+          "Если лицо отсутствует, можно указать руки, когда это действительно важная часть композиции. Например, “Руки готовят овощное блюдо на домашней кухне” достаточно конкретно. Не нужно добавлять предполагаемую национальность блюда, семейную роль или профессию. При ограничении длины заголовка проверяйте актуальные требования площадки перед загрузкой."
+        ],
+        "bullets": [
+          "Начинайте с действия, которое покупатель ищет в первую очередь.",
+          "Указывайте видимые предметы и контекст, а не выдуманную биографию.",
+          "Пишите естественное предложение, не повторяя список тегов."
+        ],
+        "example": "Пример заголовка: Hands preparing a healthy meal in a home kitchen"
+      },
+      {
+        "heading": "Подбирайте ключевые слова по доказательствам",
+        "paragraphs": [
+          "После заголовка добавляйте термины, описывающие именно этот кадр и его понятные коммерческие идеи. Подходящими могут быть cooking, meal preparation, chopping, vegetables, kitchen, food preparation, hands, domestic life и lifestyle, если каждый термин соответствует изображению. Слово healthy уместно только при поддержке содержанием блюда или проверенным контекстом; оно не должно автоматически описывать человека.",
+          "Если площадка учитывает порядок, ставьте самые важные слова в начало. Соблюдайте текущие ограничения конкретного сервиса. В общем руководстве Adobe указано до 49 ключевых слов, а рекомендации Shutterstock — от 7 до 50 релевантных слов и минимум одну категорию. Лимит не делает длинный список качественным: удаляйте повторы, неуместные демографические догадки и теги от другой фотографии."
+        ],
+        "bullets": [
+          "Для каждого тега спросите: могу ли я показать доказательство этому слову?",
+          "Предпочитайте конкретные действия и предметы общим обозначениям людей.",
+          "Не добавляйте демографический термин только ради предполагаемого поискового запроса."
+        ],
+        "example": "Возможные ключевые слова: meal preparation, cooking, chopping, vegetables, kitchen, food, hands, home, lifestyle, nutrition, domestic life, recipe, healthy eating"
+      },
+      {
+        "heading": "Осторожно используйте сведения от модели",
+        "paragraphs": [
+          "Некоторые сведения допустимы, потому что получены из надежного источника, а не из пикселей. В нашем сценарии модель сама указывает, что она совершеннолетняя. Это может поддержать слово adult, если оно релевантно изображению и правилам лицензирования. Но такая информация не доказывает точный возраст, профессию, национальность, этничность или отношения между людьми в кадре.",
+          "Ведите записи о предоставленных фактах отдельно от визуального описания. Релиз или анкета модели не дают права придумывать профессию, место съемки или семейную связь, если они там не указаны. При отсутствии подтверждения пропустите термин. Короткий точный набор лучше длинного списка, основанного на предположениях."
+        ],
+        "bullets": [
+          "Записывайте источник невизуальных фактов в рабочих материалах.",
+          "Используйте adult только при подтверждении и реальной релевантности.",
+          "Никогда не определяйте чувствительные характеристики по внешности."
+        ],
+        "example": "Поддержано: “adult model preparing food”, если модель предоставила такое описание.\nНе поддержано: “professional chef”, если профессия отдельно не подтверждена."
+      },
+      {
+        "heading": "Разбор примера: руки, портрет и дальняя группа",
+        "paragraphs": [
+          "Представьте три файла с одной кулинарной съемки. В файле A крупно видны руки, нарезающие перец; лица нет. В файле B совершеннолетняя модель наливает суп, лицо видно, но национальность и профессия не подтверждены. В файле C вдали стоит группа возле стола; лица слишком малы, а сведения о мероприятии отсутствуют.",
+          "Для каждого файла создайте отдельные метаданные. В A сосредоточьтесь на руках и приготовлении еды. В B можно указать совершеннолетнего человека, который готовит или подает еду, но нельзя писать “повар”, “мать” или угадывать этничность. В C оставьте описание широким: people, group, gathering, table и social activity, если это действительно видно. Не переносите portrait на дальнюю группу и hands на кадр, где руки не являются значимой деталью.",
+          "При использовании локального генератора MetaStocker введите в общее описание только факты, общие для партии. Затем проверьте каждый результат отдельно. Нужное количество тегов и наличие дополнительных тегов не доказывают их уместность."
+        ],
+        "bullets": [
+          "Перед генерацией составьте отдельный список доказательств для каждого файла.",
+          "Удаляйте теги, принадлежащие соседнему изображению в партии.",
+          "Для видео проверяйте полный материал, а не только выборочные превью."
+        ],
+        "example": "Заголовок файла B: Adult person serving soup at a kitchen table\nКлючевые слова файла B: adult, serving, soup, meal, kitchen, food, cooking, table, home, lifestyle\nИсключить: nationality, ethnicity, exact age, chef, parent, customer"
+      },
+      {
+        "heading": "Проверьте данные перед экспортом и загрузкой",
+        "paragraphs": [
+          "Прочитайте заголовок как фактическое предложение. Затем просмотрите каждый ключевой термин и определите, виден ли он в кадре, надежно ли подтвержден или является очевидной поддержанной концепцией. Если площадка требует английский язык, русские рабочие заметки не заменяют английские метаданные для маркетплейса.",
+          "CSV следует воспринимать как файл подготовки, а не как отправку. Для Adobe сначала загружают сами материалы, затем импортируют CSV; имя файла вместе с расширением и регистром должно совпадать. После импорта проверьте поля в кабинете автора. Правила меняются, поэтому перед использованием шаблона сверяйтесь с текущим порталом и требованиями конкретного типа контента. MetaStocker экспортирует файлы для поддерживаемых площадок, но не загружает их, не встраивает метаданные в оригиналы и не гарантирует принятие."
+        ],
+        "bullets": [
+          "Проверьте имена файлов, лимиты заголовка, ключевых слов и категорий.",
+          "Просмотрите импортированные строки в актуальном кабинете автора.",
+          "Храните оригиналы без изменений и оставляйте редактируемую копию метаданных."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Сначала описывайте действия, предметы, обстановку и композицию.",
+      "Используйте демографические и идентификационные термины только при надежном подтверждении.",
+      "Не угадывайте возраст, этничность, национальность, гендер, профессию, родство, здоровье или место съемки по пикселям.",
+      "Создавайте отдельные метаданные для визуально разных файлов одной партии.",
+      "Храните метаданные на языке, который требует выбранная площадка.",
+      "Проверяйте каждую строку генератора и актуальные требования портала перед загрузкой."
+    ],
+    "illustration": {
+      "title": "Метаданные на основе доказательств",
+      "steps": [
+        {
+          "label": "Составьте список видимого",
+          "detail": "Запишите действия, предметы, обстановку и то, чего кадр не показывает."
+        },
+        {
+          "label": "Добавьте проверенный контекст",
+          "detail": "Используйте данные модели только при наличии источника и релевантности."
+        },
+        {
+          "label": "Проверьте каждый файл",
+          "detail": "Удалите догадки, сверьте лимиты и осмотрите каждую строку экспорта."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "অনুমান না করে স্টক ছবির মানুষদের কীভাবে বর্ণনা করবেন",
+    "description": "মানুষ-কেন্দ্রিক ছবির জন্য পরিচয়, বয়স, জাতিসত্তা, স্থান বা সংবেদনশীল তথ্য না বানিয়ে নির্ভুল শিরোনাম, বর্ণনা ও কীওয়ার্ড লিখুন।",
+    "intro": "মানুষ একটি স্টক ছবিকে সঙ্গে সঙ্গে ব্যবহারযোগ্য করে তুলতে পারে, কিন্তু তারা মেটাডেটার ঝুঁকিও তৈরি করে: একটি ছবিতে কোনো কাজ স্পষ্ট দেখা গেলেও ছবিতে থাকা ব্যক্তিদের সম্পর্কে নির্ভরযোগ্য তথ্য প্রায় কিছুই নাও জানা যেতে পারে। সবচেয়ে নিরাপদ কর্মপ্রবাহ হলো দৃশ্যমান কাজ, পরিবেশ, বস্তু, বিন্যাস এবং সম্ভাব্য ব্যবহার বর্ণনা করা; আর মডেল বা নির্মাণ-নথি থেকে নির্ভরযোগ্য তথ্য না পাওয়া পর্যন্ত পরিচয় ও জনমিতিক বিবরণকে অজানা হিসেবে বিবেচনা করা।\n\nএই নির্দেশিকায় একটি ব্যবহারিক প্রশ্ন বারবার ব্যবহার করা হয়েছে: ছবিটি দেখে একজন ক্রেতা কী বুঝতে পারবেন, আর কোন বিষয় জানতে হলে অনুমান করতে হবে? ইংরেজি মেটাডেটা প্রয়োজন এমন মার্কেটপ্লেসে এই পার্থক্য গুরুত্বপূর্ণ; MetaStocker-এর মতো স্থানীয় জেনারেটর দিয়ে ব্যাচ প্রস্তুত করার সময়ও এটি গুরুত্বপূর্ণ। তৈরি করা সারিতে অনুরোধ করা সংখ্যক ট্যাগ থাকতে পারে, তবু তা ভুল হতে পারে—তাই মানুষ-সম্পর্কিত প্রতিটি শব্দ মানুষের হাতে পর্যালোচনা করা দরকার।",
+    "sections": [
+      {
+        "heading": "পর্যবেক্ষণ ও অনুমান আলাদা করুন",
+        "paragraphs": [
+          "প্রমাণ যাচাই দিয়ে শুরু করুন। ক্যামেরায় আসলে যা দেখা যাচ্ছে তা লিখুন: হাতে সবজি কাটা, অ্যাপ্রন পরা একজন ব্যক্তি, বাক্স বহন করা দুজন ব্যক্তি, অথবা পেছনে দাঁড়িয়ে থাকা একটি দল। এরপর নির্ভরযোগ্য নির্মাণ-তথ্য থেকে জানা বিষয়গুলোর জন্য আলাদা একটি তালিকা তৈরি করুন—যেমন, কোনো মডেল নিজেকে প্রাপ্তবয়স্ক হিসেবে বর্ণনা করেছেন, অথবা একটি সরবরাহ করা রিলিজ নথি আছে।",
+          "দৃশ্যমান ধারণাকে পরিচয়-সংক্রান্ত দাবিতে পরিণত করবেন না। ত্বকের রং, চুলের ধরন, পোশাক, মুখের বৈশিষ্ট্য, শরীরের গঠন, অনুমিত বয়স, উচ্চারণ বা ফ্রেমে অবস্থান একা কোনো ব্যক্তির জাতিসত্তা, জাতীয়তা, লিঙ্গপরিচয়, ধর্ম, স্বাস্থ্য, পেশা বা সঠিক বয়স প্রতিষ্ঠা করতে পারে না। অস্পষ্ট কোনো দলের ক্ষেত্রেও একই সতর্কতা প্রযোজ্য: মুখ ও প্রেক্ষাপট পরিষ্কার না হলে বিস্তারিত জনমিতিক পরিচয়ের চেয়ে “group of people” বেশি নিরাপদ।"
+        ],
+        "bullets": [
+          "দৃশ্যমান ক্রিয়া ব্যবহার করুন: প্রস্তুত করা, কাটা, ঢালা, বহন করা, আলোচনা করা।",
+          "নথিভুক্ত তথ্য কেবল তখনই ব্যবহার করুন, যখন তা সত্যিই পাওয়া যায়।",
+          "অনিশ্চয়তা কোনো শব্দ বাদ দেওয়ার কারণ; “সম্ভবত” দিয়ে তাকে নরম করার কারণ নয়।"
+        ],
+        "example": "পর্যবেক্ষণ: রান্নাঘরের কাউন্টারে প্রাপ্তবয়স্কের হাত দিয়ে ময়দা মাখানো হচ্ছে।\nনির্ভরযোগ্য সরবরাহ করা তথ্য: ব্যক্তিটি নিজেকে প্রাপ্তবয়স্ক মডেল হিসেবে বর্ণনা করেছেন।\nএড়িয়ে চলুন: “young woman,” “Italian chef,” অথবা “mother cooking।”"
+      },
+      {
+        "heading": "মূল কাজকে কেন্দ্র করে শিরোনাম তৈরি করুন",
+        "paragraphs": [
+          "একটি শিরোনাম ক্রেতাকে দ্রুত ছবিটি চিনতে সাহায্য করবে। প্রথমে মূল বিষয় ও কাজ লিখুন, তারপর দৃশ্যমান ও উপযোগী হলে পরিবেশ বা উদ্দেশ্য যোগ করুন। বিচ্ছিন্ন কীওয়ার্ডের সারির চেয়ে স্বাভাবিক বাক্যাংশ বেশি সহায়ক, এবং ফ্রেম যতটুকু সমর্থন করে শিরোনাম তার বেশি দাবি করা উচিত নয়।",
+          "মুখ দেখা যায় না এমন ক্লোজ-আপে বিন্যাসের জন্য উপযোগী হলে তবেই শরীরের অংশ উল্লেখ করুন। “Hands preparing a vegetable meal in a home kitchen” একটি নির্দিষ্ট বর্ণনা। এতে অনুমিত পরিচয়, পারিবারিক ভূমিকা, রান্নার ধরন বা জাতীয়তার প্রয়োজন নেই। কোনো প্ল্যাটফর্মে শিরোনামের সীমা থাকলে ভাষা সংক্ষিপ্ত রাখুন এবং আপলোডের আগে বর্তমান কনট্রিবিউটর-সংক্রান্ত প্রয়োজনীয়তা যাচাই করুন।"
+        ],
+        "bullets": [
+          "ক্রেতারা যে কাজটি খুঁজবেন, তা দিয়ে শুরু করুন।",
+          "বানানো পটভূমির গল্প নয়, দৃশ্যমান বস্তু ও প্রেক্ষাপট উল্লেখ করুন।",
+          "ট্যাগের পুনরাবৃত্তি না করে স্বাভাবিক শিরোনাম লিখুন।"
+        ],
+        "example": "উদাহরণ শিরোনাম: Hands preparing a healthy meal in a home kitchen"
+      },
+      {
+        "heading": "প্রমাণ ও ক্রেতার অভিপ্রায় অনুযায়ী কীওয়ার্ড বাছুন",
+        "paragraphs": [
+          "শিরোনামের পর এমন শব্দ যোগ করুন, যা প্রকৃত ছবির এবং এর সম্ভাব্য বাণিজ্যিক ধারণাগুলোর বর্ণনা দেয়। প্রতিটি শব্দ ফ্রেমের সঙ্গে মিললে cooking, meal preparation, chopping, vegetables, kitchen, food preparation, hands, domestic life, nutrition এবং lifestyle-এর মতো কীওয়ার্ড কার্যকর হতে পারে। “Healthy” কেবল তখনই ব্যবহার করুন, যখন খাবার বা সরবরাহ করা প্রেক্ষাপট এই ধারণাকে সমর্থন করে; এটি ব্যক্তির সম্পর্কে সাধারণ দাবি হওয়া উচিত নয়।",
+          "মার্কেটপ্লেসে শুরুর কীওয়ার্ডকে বাড়তি গুরুত্ব দেওয়া হলে সবচেয়ে শক্তিশালী শব্দগুলো আগে রাখুন। প্ল্যাটফর্মের বর্তমান সীমার মধ্যে থাকুন। Adobe-এর সাধারণ নির্দেশিকায় সর্বোচ্চ 49টি কীওয়ার্ড অনুমোদিত, আর Shutterstock-এর নির্দেশিকায় 7 থেকে 50টি প্রাসঙ্গিক কীওয়ার্ড এবং অন্তত একটি বিভাগ প্রয়োজন বলা হয়েছে। এই সীমাগুলো দীর্ঘ তালিকাকে স্বয়ংক্রিয়ভাবে ভালো করে না। পুনরাবৃত্তি, অস্পষ্ট জনমিতিক অনুমান এবং ভিন্ন ছবিকে বর্ণনা করা শব্দ বাদ দিন।"
+        ],
+        "bullets": [
+          "প্রতিটি ট্যাগের ক্ষেত্রে জিজ্ঞেস করুন: এই শব্দটির প্রমাণ কি আমি দেখাতে পারি?",
+          "সাধারণ মানুষ-লেবেলের চেয়ে নির্দিষ্ট কাজ ও বস্তু পছন্দ করুন।",
+          "শুধু কোনো অনুসন্ধান আকর্ষণ করতে পারে বলে জনমিতিক শব্দ যোগ করবেন না।"
+        ],
+        "example": "সম্ভাব্য কীওয়ার্ড: meal preparation, cooking, chopping, vegetables, kitchen, food, hands, home, lifestyle, nutrition, domestic life, recipe, healthy eating"
+      },
+      {
+        "heading": "নির্ভরযোগ্য মডেল-তথ্য সতর্কতার সঙ্গে ব্যবহার করুন",
+        "paragraphs": [
+          "কিছু তথ্য ব্যবহার করা যায়, কারণ তা পিক্সেল থেকে নয়, নির্ভরযোগ্য উৎস থেকে এসেছে। এই কাজের পরিস্থিতিতে একজন মডেল নিজেকে প্রাপ্তবয়স্ক হিসেবে বর্ণনা করেছেন। প্ল্যাটফর্ম ও লাইসেন্সিং প্রেক্ষাপটে শব্দটি প্রাসঙ্গিক হলে এটি “adult” ব্যবহারের পক্ষে যথেষ্ট হতে পারে। তবু এটি সঠিক বয়স, লিঙ্গ, জাতিসত্তা, জাতীয়তা, পেশা বা ছবির অন্য কারও সঙ্গে সম্পর্ক প্রতিষ্ঠা করে না।",
+          "রিলিজ-ভিত্তিক কর্মপ্রবাহে সরবরাহ করা তথ্যের নথি আপনার দৃশ্যমান বর্ণনা থেকে আলাদা রাখুন। কোনো রিলিজে নথিভুক্ত না থাকা স্থান, পেশা বা পারিবারিক সম্পর্ক বানাতে রিলিজ ব্যবহার করবেন না। কোনো দাবি যাচাই করতে না পারলে তা বাদ দিন। অনুমানের ওপর তৈরি দীর্ঘ তালিকার চেয়ে ছোট কিন্তু নির্ভুল কীওয়ার্ড সেট বেশি সমর্থনযোগ্য।"
+        ],
+        "bullets": [
+          "দৃশ্যমান নয় এমন তথ্যের উৎস আপনার নির্মাণ-নোটে লিখে রাখুন।",
+          "“adult” কেবল তখনই ব্যবহার করুন, যখন তা সমর্থিত এবং বাস্তবেই প্রাসঙ্গিক।",
+          "শুধু চেহারা দেখে কখনো পরিচয় বা সংবেদনশীল বৈশিষ্ট্য অনুমান করবেন না।"
+        ],
+        "example": "সমর্থিত: “adult model preparing food,” যখন মডেল নিজে এই বর্ণনা দিয়েছেন।\nঅসমর্থিত: “professional chef,” যদি সেই ভূমিকা আলাদাভাবে নথিভুক্ত না থাকে।"
+      },
+      {
+        "heading": "কাজের উদাহরণ: ক্লোজ-আপ, পোর্ট্রেট ও দূরের দল",
+        "paragraphs": [
+          "একটি রান্নার শুট থেকে পাওয়া সম্পর্কিত তিনটি ফাইল কল্পনা করুন। ফাইল A-তে মরিচ কাটার হাতের ক্লোজ-আপ আছে; মুখ ফ্রেমের বাইরে। ফাইল B-তে নিজেকে প্রাপ্তবয়স্ক হিসেবে বর্ণনা করা একজন মডেল স্যুপ ঢালছেন; মুখ দেখা যাচ্ছে, কিন্তু জাতীয়তা বা পেশা সম্পর্কে কোনো সরবরাহ করা তথ্য নেই। ফাইল C-তে টেবিলের কাছে দূরে একটি দল দেখা যাচ্ছে; মুখগুলো শনাক্ত করার জন্য খুব ছোট এবং অনুষ্ঠানের কোনো যাচাই করা তথ্য নেই।",
+          "তিনটি ফাইলের জন্য এক ব্যাচের একই বর্ণনা প্রয়োগ না করে আলাদা মেটাডেটা তৈরি করুন। ফাইল A-তে হাত ও খাবার প্রস্তুতির ওপর জোর দেওয়া যায়। ফাইল B-তে একজন প্রাপ্তবয়স্ক ব্যক্তি খাবার প্রস্তুত বা পরিবেশন করছেন বলা যায়, কিন্তু “chef,” “mother” বা অনুমিত জাতিসত্তা বলা যাবে না। ফাইল C-র বর্ণনা সাধারণ রাখুন: মানুষ, দল, সমাবেশ, টেবিল এবং সামাজিক কার্যকলাপ—যদি এসব উপাদান দৃশ্যমান হয়। দূরের দলের জন্য “portrait” বা যে ফ্রেমে হাত গুরুত্বপূর্ণ বৈশিষ্ট্য নয় সেখানে “hands” পুনর্ব্যবহার করবেন না।",
+          "আপনি MetaStocker-এর স্থানীয় জেনারেটর ব্যবহার করলে ব্যাচের বর্ণনায় কেবল অভিন্ন ও তথ্যনির্ভর প্রেক্ষাপট রাখুন। সারি তৈরি বা খসড়া করার পর প্রতিটি ফল আলাদাভাবে পরীক্ষা করুন। অতিরিক্ত ট্যাগ বা সঠিক ট্যাগ-সংখ্যা কোনো শব্দ উপযুক্ত হওয়ার প্রমাণ নয়।"
+        ],
+        "bullets": [
+          "তৈরি করা মেটাডেটা গ্রহণের আগে প্রতিটি ফাইলের জন্য একটি প্রমাণ-তালিকা তৈরি করুন।",
+          "ব্যাচের পাশের অন্য ছবির অন্তর্ভুক্ত ট্যাগ মুছে দিন।",
+          "সম্পূর্ণ ফ্রেম পর্যালোচনা করুন, বিশেষ করে প্রিভিউ থেকে নেওয়া ভিডিওর ক্ষেত্রে।"
+        ],
+        "example": "ফাইল B-এর শিরোনাম: Adult person serving soup at a kitchen table\nফাইল B-এর কীওয়ার্ড: adult, serving, soup, meal, kitchen, food, cooking, table, home, lifestyle\nবাদ: nationality, ethnicity, exact age, chef, parent, customer"
+      },
+      {
+        "heading": "রপ্তানি ও প্ল্যাটফর্মে আপলোডের আগে পর্যালোচনা করুন",
+        "paragraphs": [
+          "শিরোনামটি একটি তথ্যনির্ভর বাক্য হিসেবে পড়ুন। এরপর প্রতিটি কীওয়ার্ড পরীক্ষা করে দেখুন, সেটি দৃশ্যমান কি না, নির্ভরযোগ্যভাবে নথিভুক্ত কি না, অথবা স্পষ্টভাবে সমর্থিত কোনো ধারণা কি না। যেখানে প্রয়োজন, মেটাডেটার ভাষা কনট্রিবিউটর অ্যাকাউন্টের সঙ্গে মিলছে কি না যাচাই করুন; ইংরেজি প্রয়োজন এমন প্ল্যাটফর্মে রুশ সম্পাদকীয় নোট ইংরেজি মার্কেটপ্লেস মেটাডেটার বিকল্প নয়।",
+          "আপনি CSV রপ্তানি করলে সেটিকে জমা দেওয়ার ফাইল নয়, প্রস্তুতি-ফাইল হিসেবে বিবেচনা করুন। Adobe-এর ক্ষেত্রে CSV আমদানি করার আগে সম্পদ আপলোড করতে হবে, এবং এক্সটেনশন ও অক্ষরের বড়-ছোট ধরনসহ ফাইলের নাম মিলতে হবে। কনট্রিবিউটর পোর্টালে তৈরি হওয়া ক্ষেত্রগুলো পরীক্ষা করুন। প্রয়োজনীয়তা বদলাতে পারে, তাই সংরক্ষিত টেমপ্লেট ব্যবহারের আগে বর্তমান পোর্টাল ও আইটেম-নির্দিষ্ট নীতি যাচাই করুন। MetaStocker সমর্থিত প্ল্যাটফর্মের জন্য ফাইল রপ্তানি করে, কিন্তু সেগুলো আপলোড করে না, মূল ফাইলে মেটাডেটা বসায় না এবং গ্রহণযোগ্যতার নিশ্চয়তা দেয় না।"
+        ],
+        "bullets": [
+          "ফাইলের নাম, শিরোনামের সীমা, কীওয়ার্ডের সীমা এবং বিভাগ পরীক্ষা করুন।",
+          "বর্তমান কনট্রিবিউটর পোর্টালে আমদানি করা সারিগুলো পরীক্ষা করুন।",
+          "মূল ফাইল অপরিবর্তিত রাখুন এবং সম্পাদনাযোগ্য মেটাডেটার একটি কপি সংরক্ষণ করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "মানুষের পরিচয়ের আগে কাজ, বস্তু, পরিবেশ ও বিন্যাস বর্ণনা করুন।",
+      "নির্ভরযোগ্য মডেল-তথ্য বা নথি সমর্থন করলে তবেই জনমিতিক বা পরিচয়-সংক্রান্ত শব্দ ব্যবহার করুন।",
+      "পিক্সেল দেখে বয়স, জাতিসত্তা, জাতীয়তা, লিঙ্গ, পেশা, পারিবারিক ভূমিকা, স্বাস্থ্য বা স্থান অনুমান করবেন না।",
+      "একই ব্যাচের দৃশ্যত ভিন্ন ফাইলের জন্য আলাদা মেটাডেটা লিখুন।",
+      "মার্কেটপ্লেসের মেটাডেটা প্ল্যাটফর্মের প্রয়োজনীয় ভাষায় রাখুন।",
+      "প্রতিটি তৈরি করা সারি পর্যালোচনা করুন এবং আপলোডের আগে বর্তমান পোর্টালের প্রয়োজনীয়তা যাচাই করুন।"
+    ],
+    "illustration": {
+      "title": "প্রমাণ-প্রথম মানুষ-সংক্রান্ত মেটাডেটা",
+      "steps": [
+        {
+          "label": "দৃশ্যমান প্রমাণ লিখুন",
+          "detail": "কাজ, বস্তু, পরিবেশ এবং ফ্রেমে যা দেখা যায় না তা নথিভুক্ত করুন।"
+        },
+        {
+          "label": "যাচাই করা প্রেক্ষাপট যোগ করুন",
+          "detail": "মডেল-সরবরাহ করা তথ্য কেবল প্রাসঙ্গিক ও নথিভুক্ত হলে ব্যবহার করুন।"
+        },
+        {
+          "label": "প্রতিটি ফাইল পর্যালোচনা করুন",
+          "detail": "অনুমান বাদ দিন, প্ল্যাটফর্মের সীমা যাচাই করুন এবং প্রতিটি রপ্তানি করা সারি পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "अनुमान लगाए बिना स्टॉक फ़ोटो में लोगों का वर्णन कैसे करें",
+    "description": "लोगों वाली तस्वीरों के लिए पहचान, उम्र, जातीयता, स्थान या संवेदनशील जानकारी गढ़े बिना सटीक शीर्षक, विवरण और कीवर्ड लिखें।",
+    "intro": "लोग किसी स्टॉक तस्वीर को तुरंत उपयोगी बना सकते हैं, लेकिन वे मेटाडेटा का जोखिम भी पैदा करते हैं: तस्वीर में कोई गतिविधि स्पष्ट दिख सकती है, जबकि उसमें मौजूद व्यक्ति के बारे में भरोसेमंद जानकारी लगभग कुछ भी न हो। सबसे सुरक्षित कार्यप्रवाह है दिखाई देने वाली गतिविधि, परिवेश, वस्तुओं, संरचना और संभावित उपयोग का वर्णन करना, और मॉडल या निर्माण-अभिलेख से भरोसेमंद जानकारी न मिलने तक पहचान तथा जनसांख्यिकीय विवरण को अज्ञात मानना।\n\nइस मार्गदर्शिका में एक व्यावहारिक प्रश्न बार-बार पूछा गया है: तस्वीर से खरीदार क्या समझ सकता है, और किस बात के लिए अनुमान लगाना पड़ेगा? अंग्रेज़ी मेटाडेटा आवश्यक करने वाले मार्केटप्लेस पर यह अंतर महत्वपूर्ण है, और MetaStocker जैसे स्थानीय जनरेटर से बैच तैयार करते समय भी। बनाई गई पंक्ति में माँगी गई संख्या में टैग हो सकते हैं और फिर भी वह गलत हो सकती है, इसलिए लोगों से जुड़े हर शब्द की मानवीय समीक्षा ज़रूरी है।",
+    "sections": [
+      {
+        "heading": "अवलोकन और अनुमान को अलग रखें",
+        "paragraphs": [
+          "सबूत की जाँच से शुरुआत करें। कैमरा वास्तव में क्या दिखा रहा है, यह लिखें: हाथों से सब्ज़ियाँ काटना, एप्रन पहने व्यक्ति, डिब्बे उठाते दो लोग, या पृष्ठभूमि में खड़ा समूह। फिर भरोसेमंद निर्माण-सूचना से ज्ञात बातों की अलग सूची बनाएँ, जैसे किसी मॉडल का स्वयं को वयस्क बताना या उपलब्ध कराया गया रिलीज़ रिकॉर्ड।",
+          "दृश्य प्रभावों को पहचान-संबंधी दावों में न बदलें। त्वचा का रंग, हेयरस्टाइल, कपड़े, चेहरे की विशेषताएँ, शरीर का आकार, अनुमानित उम्र, लहजा या फ़्रेम में स्थान अकेले जातीयता, राष्ट्रीयता, लैंगिक पहचान, धर्म, स्वास्थ्य, पेशा या सटीक उम्र सिद्ध नहीं कर सकते। अस्पष्ट समूह पर भी यही सावधानी लागू होती है: चेहरे और संदर्भ स्पष्ट न हों तो विस्तृत जनसांख्यिकीय लेबल की तुलना में “group of people” अधिक सुरक्षित है।"
+        ],
+        "bullets": [
+          "दिखाई देने वाली क्रियाएँ इस्तेमाल करें: तैयार करना, काटना, डालना, उठाना, चर्चा करना।",
+          "दस्तावेज़ित तथ्य तभी इस्तेमाल करें, जब वे सचमुच उपलब्ध हों।",
+          "अनिश्चितता किसी शब्द को हटाने का कारण है, उसे “शायद” लगाकर नरम करने का नहीं।"
+        ],
+        "example": "अवलोकन: रसोई के काउंटर पर वयस्क के हाथों से आटा गूँथा जा रहा है।\nभरोसेमंद उपलब्ध तथ्य: व्यक्ति ने स्वयं को वयस्क मॉडल बताया है।\nबचें: “young woman,” “Italian chef,” या “mother cooking।”"
+      },
+      {
+        "heading": "मुख्य गतिविधि के आधार पर शीर्षक बनाएँ",
+        "paragraphs": [
+          "शीर्षक से खरीदार को तस्वीर जल्दी पहचानने में मदद मिलनी चाहिए। पहले मुख्य विषय और गतिविधि रखें, फिर यदि परिवेश या उद्देश्य दिखाई देता हो और उपयोगी हो तो उसे जोड़ें। अलग-अलग कीवर्ड की श्रृंखला से प्राकृतिक वाक्यांश अधिक उपयोगी होता है, और शीर्षक को फ़्रेम से समर्थित जानकारी से अधिक दावा नहीं करना चाहिए।",
+          "चेहरा न दिखने वाले क्लोज़-अप में शरीर के किसी हिस्से का उल्लेख तभी करें, जब संरचना के लिए वह उपयोगी हो। “Hands preparing a vegetable meal in a home kitchen” ठोस है। इसमें अनुमानित पहचान, पारिवारिक भूमिका, भोजन-शैली या राष्ट्रीयता गढ़ने की ज़रूरत नहीं। किसी प्लेटफ़ॉर्म की शीर्षक-सीमा हो तो भाषा संक्षिप्त रखें और अपलोड से पहले वर्तमान योगदानकर्ता आवश्यकताएँ जाँचें।"
+        ],
+        "bullets": [
+          "उस गतिविधि से शुरुआत करें जिसे खरीदार खोजेंगे।",
+          "गढ़ी हुई पृष्ठभूमि नहीं, दिखाई देने वाली वस्तुएँ और संदर्भ बताएँ।",
+          "टैग दोहराने के बजाय शीर्षक को स्वाभाविक रखें।"
+        ],
+        "example": "उदाहरण शीर्षक: Hands preparing a healthy meal in a home kitchen"
+      },
+      {
+        "heading": "सबूत और खरीदार के उद्देश्य के आधार पर कीवर्ड चुनें",
+        "paragraphs": [
+          "शीर्षक के बाद ऐसे शब्द जोड़ें जो वास्तविक तस्वीर और उसके संभावित व्यावसायिक विचारों का वर्णन करें। यदि हर शब्द फ़्रेम से मेल खाता हो तो cooking, meal preparation, chopping, vegetables, kitchen, food preparation, hands, domestic life, nutrition और lifestyle जैसे कीवर्ड उपयोगी हो सकते हैं। “Healthy” तभी इस्तेमाल करें जब भोजन या उपलब्ध संदर्भ इस विचार का समर्थन करता हो; इसे व्यक्ति के बारे में व्यापक दावा न बनाएँ।",
+          "जहाँ मार्केटप्लेस शुरुआती कीवर्ड को अतिरिक्त महत्व देता हो, वहाँ सबसे मजबूत शब्द पहले रखें। प्लेटफ़ॉर्म की वर्तमान सीमाओं के भीतर रहें। Adobe की सामान्य मार्गदर्शिका में अधिकतम 49 कीवर्ड की अनुमति है, जबकि Shutterstock की मार्गदर्शिका 7 से 50 प्रासंगिक कीवर्ड और कम-से-कम एक श्रेणी की आवश्यकता बताती है। ये सीमाएँ लंबी सूची को अपने-आप अच्छा नहीं बनातीं। दोहराव, अस्पष्ट जनसांख्यिकीय अनुमान और किसी दूसरी तस्वीर का वर्णन करने वाले शब्द हटाएँ।"
+        ],
+        "bullets": [
+          "हर टैग के लिए पूछें: क्या मैं इस शब्द का सबूत दिखा सकता हूँ?",
+          "सामान्य लोगों के लेबल से बेहतर विशिष्ट गतिविधियाँ और वस्तुएँ चुनें।",
+          "सिर्फ इसलिए जनसांख्यिकीय शब्द न जोड़ें कि उससे कोई खोज आकर्षित हो सकती है।"
+        ],
+        "example": "संभावित कीवर्ड: meal preparation, cooking, chopping, vegetables, kitchen, food, hands, home, lifestyle, nutrition, domestic life, recipe, healthy eating"
+      },
+      {
+        "heading": "भरोसेमंद मॉडल जानकारी सावधानी से इस्तेमाल करें",
+        "paragraphs": [
+          "कुछ जानकारी इस्तेमाल की जा सकती है क्योंकि वह पिक्सेल से नहीं, बल्कि भरोसेमंद स्रोत से आती है। इस कार्य-परिस्थिति में मॉडल ने स्वयं को वयस्क बताया है। जब प्लेटफ़ॉर्म और लाइसेंसिंग संदर्भ में यह शब्द प्रासंगिक हो, तब इससे “adult” इस्तेमाल करने का समर्थन मिल सकता है। फिर भी इससे सटीक उम्र, लिंग, जातीयता, राष्ट्रीयता, पेशा या तस्वीर में किसी और व्यक्ति से संबंध सिद्ध नहीं होता।",
+          "रिलीज़-आधारित कार्यप्रवाह में उपलब्ध कराई गई जानकारी का रिकॉर्ड अपने दृश्य वर्णन से अलग रखें। जिस स्थान, पेशे या पारिवारिक संबंध का दस्तावेज़ रिलीज़ में नहीं है, उसे गढ़ने के लिए रिलीज़ का इस्तेमाल न करें। किसी दावे की पुष्टि न कर सकें तो उसे छोड़ दें। अनुमानों पर आधारित लंबी सूची की तुलना में छोटी और सटीक कीवर्ड सूची अधिक बचाव योग्य है।"
+        ],
+        "bullets": [
+          "गैर-दृश्य तथ्यों का स्रोत अपने निर्माण-नोट्स में दर्ज करें।",
+          "“adult” तभी इस्तेमाल करें जब वह समर्थित और वास्तव में प्रासंगिक हो।",
+          "केवल रूप-रंग के आधार पर पहचान या संवेदनशील विशेषताएँ कभी न मानें।"
+        ],
+        "example": "समर्थित: “adult model preparing food,” जब मॉडल ने यह विवरण उपलब्ध कराया हो।\nअसमर्थित: “professional chef,” जब तक वह भूमिका अलग से दस्तावेज़ित न हो।"
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण: क्लोज़-अप, पोर्ट्रेट और दूर का समूह",
+        "paragraphs": [
+          "एक ही कुकिंग शूट की तीन संबंधित फ़ाइलों की कल्पना करें। फ़ाइल A में शिमला मिर्च काटते हाथों का क्लोज़-अप है; चेहरा फ़्रेम से बाहर है। फ़ाइल B में स्वयं को वयस्क बताने वाला मॉडल सूप डाल रहा है; चेहरा दिखाई देता है, लेकिन राष्ट्रीयता या पेशे की कोई उपलब्ध जानकारी नहीं है। फ़ाइल C में मेज़ के पास दूर एक समूह दिखाई देता है; चेहरे पहचानने के लिए बहुत छोटे हैं और कार्यक्रम का कोई सत्यापित विवरण नहीं है।",
+          "तीनों फ़ाइलों पर एक ही बैच विवरण लगाने के बजाय प्रत्येक के लिए अलग मेटाडेटा बनाएँ। फ़ाइल A में हाथों और भोजन तैयार करने पर ध्यान दिया जा सकता है। फ़ाइल B में वयस्क व्यक्ति के भोजन तैयार करने या परोसने का उल्लेख हो सकता है, लेकिन “chef,” “mother” या अनुमानित जातीयता का नहीं। फ़ाइल C को व्यापक रखें: people, group, gathering, table और social activity, यदि ये तत्व दिखाई देते हों। दूर के समूह के लिए “portrait” या ऐसी तस्वीर में “hands” दोबारा इस्तेमाल न करें जहाँ हाथ महत्वपूर्ण विशेषता नहीं हैं।",
+          "यदि आप MetaStocker का स्थानीय जनरेटर इस्तेमाल करते हैं, तो बैच विवरण में केवल साझा और तथ्यात्मक संदर्भ रखें। पंक्तियाँ बनाएँ या प्रारूप तैयार करें, फिर हर परिणाम को अलग-अलग जाँचें। अतिरिक्त टैग और टैग की सटीक संख्या इस बात का सबूत नहीं हैं कि हर शब्द उपयुक्त है।"
+        ],
+        "bullets": [
+          "बनाए गए मेटाडेटा को स्वीकार करने से पहले हर फ़ाइल के लिए एक सबूत-सूची बनाएँ।",
+          "बैच की दूसरी तस्वीर से संबंधित टैग हटा दें।",
+          "पूरे फ़्रेम की समीक्षा करें, खासकर प्रीव्यू से लिए गए वीडियो के मामले में।"
+        ],
+        "example": "फ़ाइल B का शीर्षक: Adult person serving soup at a kitchen table\nफ़ाइल B के कीवर्ड: adult, serving, soup, meal, kitchen, food, cooking, table, home, lifestyle\nहटाएँ: nationality, ethnicity, exact age, chef, parent, customer"
+      },
+      {
+        "heading": "निर्यात और प्लेटफ़ॉर्म अपलोड से पहले समीक्षा करें",
+        "paragraphs": [
+          "शीर्षक को तथ्यात्मक वाक्य की तरह पढ़ें। फिर हर कीवर्ड को जाँचें और पूछें कि क्या वह दिखाई देता है, भरोसेमंद रूप से दस्तावेज़ित है, या स्पष्ट रूप से समर्थित अवधारणा है। जहाँ आवश्यक हो, जाँचें कि मेटाडेटा की भाषा योगदानकर्ता खाते से मेल खाती है; अंग्रेज़ी आवश्यक करने वाले प्लेटफ़ॉर्म पर रूसी संपादकीय नोट अंग्रेज़ी मार्केटप्लेस मेटाडेटा का विकल्प नहीं हैं।",
+          "यदि आप CSV निर्यात करते हैं, तो उसे जमा करने वाली फ़ाइल नहीं बल्कि तैयारी की फ़ाइल मानें। Adobe के लिए CSV आयात करने से पहले संपत्तियाँ अपलोड करनी होती हैं, और एक्सटेंशन तथा अक्षरों के बड़े-छोटे रूप सहित फ़ाइलनाम मेल खाने चाहिए। योगदानकर्ता पोर्टल में बने हुए फ़ील्ड जाँचें। आवश्यकताएँ बदल सकती हैं, इसलिए सहेजे गए टेम्पलेट का उपयोग करने से पहले वर्तमान पोर्टल और आइटम-विशिष्ट नीति जाँचें। MetaStocker समर्थित प्लेटफ़ॉर्म के लिए फ़ाइलें निर्यात करता है, लेकिन उन्हें अपलोड नहीं करता, मूल फ़ाइलों में मेटाडेटा एम्बेड नहीं करता और स्वीकृति की गारंटी नहीं देता।"
+        ],
+        "bullets": [
+          "फ़ाइलनाम, शीर्षक-सीमा, कीवर्ड-सीमा और श्रेणियाँ जाँचें।",
+          "वर्तमान योगदानकर्ता पोर्टल में आयात की गई पंक्तियों की समीक्षा करें।",
+          "मूल फ़ाइलों को अपरिवर्तित रखें और संपादन योग्य मेटाडेटा की प्रति सुरक्षित रखें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "लोगों की पहचान से पहले गतिविधियों, वस्तुओं, परिवेश और संरचना का वर्णन करें।",
+      "जनसांख्यिकीय या पहचान-संबंधी शब्द तभी इस्तेमाल करें जब भरोसेमंद मॉडल जानकारी या रिकॉर्ड उनका समर्थन करते हों।",
+      "पिक्सेल से उम्र, जातीयता, राष्ट्रीयता, लिंग, पेशा, पारिवारिक भूमिका, स्वास्थ्य या स्थान का अनुमान न लगाएँ।",
+      "एक ही बैच की दृष्टिगत रूप से अलग फ़ाइलों के लिए अलग मेटाडेटा लिखें।",
+      "मार्केटप्लेस मेटाडेटा को प्लेटफ़ॉर्म की आवश्यक भाषा में रखें।",
+      "हर बनाई गई पंक्ति की समीक्षा करें और अपलोड से पहले वर्तमान पोर्टल की आवश्यकताएँ सत्यापित करें।"
+    ],
+    "illustration": {
+      "title": "सबूत-प्रथम लोगों का मेटाडेटा",
+      "steps": [
+        {
+          "label": "दिखाई देने वाले सबूत लिखें",
+          "detail": "गतिविधियाँ, वस्तुएँ, परिवेश और फ़्रेम में जो नहीं दिखता, उसे दर्ज करें।"
+        },
+        {
+          "label": "सत्यापित संदर्भ जोड़ें",
+          "detail": "मॉडल द्वारा दी गई जानकारी तभी इस्तेमाल करें जब वह प्रासंगिक और दस्तावेज़ित हो।"
+        },
+        {
+          "label": "हर फ़ाइल की समीक्षा करें",
+          "detail": "अनुमान हटाएँ, प्लेटफ़ॉर्म सीमाएँ जाँचें और हर निर्यात की गई पंक्ति देखें।"
+        }
+      ]
+    }
+  }
+}

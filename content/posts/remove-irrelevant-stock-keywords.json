@@ -1,0 +1,459 @@
+{
+  "slug": "remove-irrelevant-stock-keywords",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-quality"
+  ],
+  "en": {
+    "title": "How to Remove Irrelevant AI Stock Keywords",
+    "description": "A practical workflow for cleaning AI-generated stock keywords, using a blue glass bottle on sand to separate visible facts from unsupported guesses.",
+    "intro": "AI keyword generators can produce a plausible-looking list that quietly changes what an image appears to represent. A blue glass bottle on sand may receive words such as ocean, perfume, recycling, luxury, or a brand name even when none of those claims is supported. The solution is not to keep every word and hope a marketplace search system interprets it correctly. Review each suggestion against the image, remove unsupported associations, and keep only metadata that helps a buyer understand the actual asset. This guide shows a repeatable review method for contributors using MetaStocker or any other generator. The example is hypothetical and is not a measured result or a real customer submission.",
+    "sections": [
+      {
+        "heading": "Start with what the image proves",
+        "paragraphs": [
+          "Describe the asset before reading the generated list. Separate visible elements from reasonable but unverified interpretations. For the example, the image visibly contains a blue glass bottle, a sandy surface, daylight, and a simple still-life arrangement. The bottle appears closed, but its contents, purpose, maker, and setting are not established by pixels alone.",
+          "This distinction matters because stock metadata should be relevant and descriptive. A keyword can be visually plausible yet still misleading. Do not infer a perfume product, an ocean location, a recycling message, a luxury market, a company, or a specific brand unless the image or supplied project facts support it."
+        ],
+        "bullets": [
+          "Visible: blue bottle, glass material, sand, outdoor-looking light, still life.",
+          "Known from the assignment: the subject is a bottle placed on sand.",
+          "Unsupported: ocean, perfume, recycling, luxury, brand names, exact location, product contents."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Use a visible, known, unsupported table",
+        "paragraphs": [
+          "A small decision table makes review faster and more consistent. “Visible” means the feature can be checked in the frame. “Known” means it comes from the brief or production context. “Unsupported” means the term adds a story that has not been established. Keep a keyword only when it belongs in the first two groups and accurately describes the asset."
+        ],
+        "bullets": [
+          "Visible: blue, glass, bottle, sand, texture, still life.",
+          "Known: product-style composition, if that is genuinely the intended use.",
+          "Unsupported: ocean, perfume, recycling, luxury, brand, cosmetic, beverage, beach vacation."
+        ],
+        "example": "Term | Decision | Reason\nblue | Keep | Clearly visible color\nbottle | Keep | Clearly visible object\nsand | Keep | Clearly visible surface\nperfume | Remove | Contents and purpose are unknown\nocean | Remove | Sand does not prove an ocean setting\nrecycling | Remove | No recycling action or symbol is shown\nluxury | Remove | Subjective market positioning\nbrand name | Remove | No verified identity is supplied"
+      },
+      {
+        "heading": "Clean the generated list in MetaStocker",
+        "paragraphs": [
+          "MetaStocker is a static web app that can run local vision and thinking models in the visitor’s browser. In local mode, model inference stays on the device; the first model download needs internet. The app supports editable generated results and extra tags, but a requested tag count is not evidence that every tag is accurate. Treat the output as a draft for review.",
+          "Load one image or a small coherent batch, then read the generated tags one by one. A batch description should contain facts about that batch, not broad terms that apply only to some files. Remove a term when it describes an unseen story, a guessed commercial use, or an identity that cannot be verified. Review every file individually before exporting. If you use an optional OpenAI API mode, its key is your own secret and previews or context are sent to OpenAI; local mode does not require an account or API key."
+        ],
+        "bullets": [
+          "Use one image first to establish your review standard.",
+          "Edit or delete questionable terms rather than filling a quota.",
+          "Inspect video metadata against the full motion; sampled previews can miss details.",
+          "Export only rows that are ready for the target marketplace."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Prefer specific facts over persuasive language",
+        "paragraphs": [
+          "Useful metadata answers what is shown, not why someone might want it. “Blue glass bottle on sand” is concrete. “Luxury perfume product” combines several unsupported claims and may attract the wrong search intent. Similarly, “ocean” is not a safe substitute for sand, and “recycling” is not a synonym for glass.",
+          "Keep important terms near the beginning when a platform’s guidance gives special weight to early keywords. Do not repeat the same word in several forms merely to increase volume. For platforms with English metadata requirements, write the cleaned metadata in English even when your working notes or article language is Russian. Always check the current contributor rules before submission."
+        ],
+        "bullets": [
+          "Describe object, material, color, surface, composition, and confirmed use.",
+          "Avoid emotional positioning such as luxury unless the brief establishes it.",
+          "Avoid brand, location, species, identity, or product-purpose guesses.",
+          "Use the platform’s current limits; Adobe’s general keyword guide permits up to 49, while other fields and platforms can differ."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: make a ready-to-review set",
+        "paragraphs": [
+          "Suppose the generated list contains 24 terms for the blue bottle scene. First, remove direct guesses: ocean, perfume, fragrance, cosmetic, recycling, luxury, premium, beach vacation, and a proposed brand name. Next, remove duplicates and terms that merely repeat the same unsupported idea. Then retain a compact set that describes the frame without promising a use case.",
+          "A possible cleaned draft is: blue, glass, bottle, sand, sandy surface, still life, product composition, minimal, texture, container, daylight, blue object. “Product composition” should remain only if the image was intentionally arranged as a product-style still life; it is a composition description, not a claim about a real commercial product. Before export, inspect the image and the destination’s rules again. This example is a workflow illustration, not a claim about acceptance, ranking, or sales."
+        ],
+        "bullets": [
+          "Ask: Can I point to this term in the frame or verify it from the brief?",
+          "Ask: Could a buyer reasonably expect a different subject because of this term?",
+          "If yes, remove it or replace it with a narrower visible description."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Check the exported metadata before submission",
+        "paragraphs": [
+          "If you export a marketplace CSV, treat it as a transfer format, not a quality check. MetaStocker can create CSV outputs for supported marketplace formats, but it does not upload or submit files, guarantee acceptance, or embed metadata into the original image. Open the destination contributor portal and inspect the resulting metadata before submitting.",
+          "For Adobe CSV workflows, assets must be uploaded before the CSV is imported, and filenames including extension and case must match. Keep the conservative 49-keyword ceiling unless current platform instructions tell you otherwise, and observe the current title limit and language requirement. Shutterstock requires relevant English keywords and an appropriate category. Requirements can change, so the current contributor portal remains the final authority."
+        ],
+        "bullets": [
+          "Match each row to the exact uploaded filename.",
+          "Inspect titles, keywords, categories, and any required fields in the portal.",
+          "Correct a row at the source if the exported result is not ready.",
+          "Do not interpret portal acceptance as proof that every keyword is editorially ideal."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Describe the image from visible or verified facts first.",
+      "Mark ocean, perfume, recycling, luxury, and brand guesses as unsupported for the bottle example.",
+      "Remove irrelevant, repeated, subjective, and identity-based terms.",
+      "Review each file separately, including full video motion where applicable.",
+      "Keep important accurate terms early and respect the current platform limits.",
+      "Inspect the exported metadata in the contributor portal before submission."
+    ],
+    "illustration": {
+      "title": "Three-step keyword cleanup",
+      "steps": [
+        {
+          "label": "List visible facts",
+          "detail": "Record objects, materials, colors, surfaces, and confirmed context."
+        },
+        {
+          "label": "Challenge every guess",
+          "detail": "Remove ocean, perfume, recycling, luxury, and brand assumptions."
+        },
+        {
+          "label": "Inspect before export",
+          "detail": "Review each row, then check the portal’s current requirements."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как удалить лишние AI-ключевые слова в стоке",
+    "description": "Практический способ очистить AI-метаданные: разберите пример синей стеклянной бутылки на песке и отделите факты от догадок.",
+    "intro": "Генератор ключевых слов может выдать убедительный список, который незаметно меняет смысл изображения. На снимке синей стеклянной бутылки на песке могут появиться ocean, perfume, recycling, luxury или название бренда, хотя ни одно из этих утверждений не подтверждено. Не стоит оставлять все слова «на всякий случай». Проверьте каждое предложение по изображению, удалите неподтвержденные ассоциации и сохраните только те метаданные, которые точно описывают файл. Ниже приведен практический процесс для автора, использующего MetaStocker или другой генератор. Пример гипотетический: это не измеренный результат и не история реального клиента.",
+    "sections": [
+      {
+        "heading": "Сначала зафиксируйте доказуемое",
+        "paragraphs": [
+          "Опишите изображение до того, как посмотрите на список AI. Отделите видимые признаки от возможных, но непроверенных толкований. В нашем примере видны синяя стеклянная бутылка, песчаная поверхность, дневной свет и простая композиция натюрморта. По пикселям нельзя надежно определить содержимое бутылки, ее назначение, производителя или точное место съемки.",
+          "Это различие важно: релевантное слово все равно может вводить в заблуждение, если оно превращает предмет в другую историю. Не приписывайте духи, океан, экологическую кампанию, премиальный статус, компанию или бренд, если это не подтверждено изображением либо исходным брифом."
+        ],
+        "bullets": [
+          "Видимое: blue, glass, bottle, sand, texture, still life.",
+          "Известное из задания: бутылка размещена на песке.",
+          "Не подтверждено: ocean, perfume, recycling, luxury, бренд, содержимое и точная локация."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Составьте таблицу «видно, известно, не подтверждено»",
+        "paragraphs": [
+          "Такая таблица превращает субъективную чистку в понятное решение. «Видно» можно проверить в кадре. «Известно» следует из задания или достоверного производственного контекста. «Не подтверждено» добавляет историю, которой у автора нет. Оставляйте слово только тогда, когда оно относится к первым двум группам и действительно описывает файл."
+        ],
+        "bullets": [
+          "Видно: blue, glass, bottle, sand, texture, still life.",
+          "Известно: product-style composition, если это действительно задуманный предметный натюрморт.",
+          "Не подтверждено: ocean, perfume, recycling, luxury, brand, cosmetic, beverage, beach vacation."
+        ],
+        "example": "Термин | Решение | Причина\nblue | Оставить | Цвет виден в кадре\nbottle | Оставить | Объект виден в кадре\nsand | Оставить | Поверхность видна\nperfume | Удалить | Назначение и содержимое неизвестны\nocean | Удалить | Песок не доказывает океанское побережье\nrecycling | Удалить | Нет действия или символа переработки\nluxury | Удалить | Субъективное позиционирование\nbrand name | Удалить | Проверенное имя не указано"
+      },
+      {
+        "heading": "Очистите черновик в MetaStocker",
+        "paragraphs": [
+          "MetaStocker — статическое веб-приложение, в котором локальные модели зрения и рассуждения работают в браузере пользователя. В локальном режиме вывод модели остается на устройстве; для первой загрузки модели нужен интернет. Приложение позволяет редактировать результат и добавлять теги, но точное число сгенерированных тегов не доказывает их точность. Считайте список черновиком, а не готовым решением.",
+          "Загрузите один файл или небольшую однородную группу и прочитайте каждый тег отдельно. Описание batch должно содержать факты именно этой группы, а не универсальные ярлыки для разных изображений. Удаляйте слово, если оно описывает невидимую историю, предполагаемое коммерческое применение или непроверенную идентичность. Каждый файл проверяйте отдельно. В дополнительном режиме OpenAI собственный API-ключ является секретом, а превью и контекст отправляются в OpenAI; для локального режима аккаунт и ключ не нужны."
+        ],
+        "bullets": [
+          "Начните с одного изображения и выработайте единый стандарт проверки.",
+          "Удаляйте сомнительные слова, а не заполняйте ими условную квоту.",
+          "Для видео сверяйте метаданные с полным движением: превью могут пропустить детали.",
+          "Экспортируйте только строки, которые уже готовы к проверке площадкой."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Оставляйте факты, а не рекламные обещания",
+        "paragraphs": [
+          "Хорошие метаданные отвечают на вопрос «что показано», а не «как это можно продать». Blue glass bottle on sand — конкретное описание. Luxury perfume product сразу добавляет несколько неподтвержденных утверждений и может привести нерелевантного покупателя. Ocean не является безопасной заменой слову sand, а recycling не является синонимом glass.",
+          "Ставьте важные точные термины ближе к началу, если правила площадки уделяют первым ключевым словам особое внимание. Не повторяйте одно и то же понятие в разных формах только ради объема. Если целевая площадка требует английские метаданные, пишите их на английском, даже если рабочие заметки или эта статья на русском. Перед загрузкой проверяйте актуальные правила конкретного портала."
+        ],
+        "bullets": [
+          "Описывайте объект, материал, цвет, поверхность, композицию и подтвержденное применение.",
+          "Не используйте luxury и похожие оценки, если их нет в брифе.",
+          "Не угадывайте бренд, место, вид, личность или назначение предмета.",
+          "Соблюдайте текущие лимиты: общий справочник Adobe допускает до 49 ключевых слов, но требования площадок и полей могут отличаться."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Практический пример: соберите чистый набор",
+        "paragraphs": [
+          "Предположим, генератор выдал 24 термина для сцены с бутылкой. Сначала удалите прямые догадки: ocean, perfume, fragrance, cosmetic, recycling, luxury, premium, beach vacation и предложенное название бренда. Затем уберите повторы и слова, которые лишь повторяют ту же неподтвержденную идею. После этого оставьте компактный набор, описывающий кадр без обещания конкретного товара.",
+          "Возможный очищенный черновик: blue, glass, bottle, sand, sandy surface, still life, product composition, minimal, texture, container, daylight, blue object. Product composition стоит оставлять лишь тогда, когда кадр действительно поставлен как предметный натюрморт; это описание композиции, а не утверждение о реальном коммерческом продукте. Перед экспортом снова сравните список с изображением и правилами назначения. Это иллюстрация процесса, а не обещание принятия, позиций в поиске или продаж."
+        ],
+        "bullets": [
+          "Могу ли я указать на этот признак в кадре или подтвердить его брифом?",
+          "Не заставит ли слово покупателя ожидать другой объект или сюжет?",
+          "Если заставит, удалите его или замените более узким видимым описанием."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Проверьте метаданные после экспорта",
+        "paragraphs": [
+          "CSV — это формат передачи, а не проверка качества. MetaStocker создает CSV для поддерживаемых форматов площадок, но не загружает и не отправляет файлы, не гарантирует принятие и не встраивает метаданные в оригинал. Откройте портал автора нужной площадки и проверьте получившиеся поля перед отправкой.",
+          "В сценарии Adobe сначала загружают сами файлы, затем импортируют CSV; имя с расширением и регистром должно совпасть. Используйте консервативный предел в 49 ключевых слов, если действующие инструкции не требуют иного, и учитывайте текущий лимит заголовка и язык аккаунта. Shutterstock требует релевантные английские ключевые слова и подходящую категорию. Правила меняются, поэтому окончательным источником остается текущий портал автора."
+        ],
+        "bullets": [
+          "Сопоставьте каждую строку с точным именем загруженного файла.",
+          "Проверьте в портале заголовок, ключевые слова, категорию и обязательные поля.",
+          "Исправьте исходную строку, если экспортированный результат еще не готов.",
+          "Принятие порталом не означает, что каждое слово редакционно удачно."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Сначала запишите только видимые и подтвержденные факты.",
+      "Для примера с бутылкой пометьте ocean, perfume, recycling, luxury и brand как неподтвержденные.",
+      "Удалите нерелевантные, повторяющиеся, субъективные и идентифицирующие догадки.",
+      "Проверяйте каждый файл отдельно, а видео — по полному движению.",
+      "Поставьте точные важные термины в начало и соблюдайте текущие лимиты.",
+      "После экспорта проверьте метаданные в портале автора перед отправкой."
+    ],
+    "illustration": {
+      "title": "Три шага очистки ключевых слов",
+      "steps": [
+        {
+          "label": "Запишите видимые факты",
+          "detail": "Отметьте объекты, материалы, цвета, поверхности и подтвержденный контекст."
+        },
+        {
+          "label": "Проверьте каждую догадку",
+          "detail": "Удалите ocean, perfume, recycling, luxury и предположения о бренде."
+        },
+        {
+          "label": "Проверьте перед экспортом",
+          "detail": "Просмотрите строки и сверяйтесь с актуальными правилами портала."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "অপ্রাসঙ্গিক AI স্টক কীওয়ার্ড কীভাবে সরাবেন",
+    "description": "AI-তৈরি স্টক কীওয়ার্ড পরিষ্কার করার ব্যবহারিক পদ্ধতি—বালুর ওপর নীল কাচের বোতল দেখে দৃশ্যমান তথ্য ও অনুমান আলাদা করুন।",
+    "intro": "AI কীওয়ার্ড জেনারেটর এমন একটি বিশ্বাসযোগ্য তালিকা তৈরি করতে পারে, যা নিঃশব্দে ছবিটি কী উপস্থাপন করে তা বদলে দেয়। বালুর ওপর নীল কাচের বোতলের জন্য ocean, perfume, recycling, luxury বা কোনো ব্র্যান্ডের নাম আসতে পারে, যদিও এসব দাবির কোনোটি সমর্থিত নয়। প্রতিটি শব্দ রেখে দিয়ে মার্কেটপ্লেসের অনুসন্ধানব্যবস্থা তা ঠিকভাবে বুঝবে—এমন আশা করা সমাধান নয়। প্রতিটি প্রস্তাব ছবির সঙ্গে মিলিয়ে দেখুন, সমর্থনহীন সম্পর্ক সরান এবং ক্রেতাকে প্রকৃত সম্পদটি বুঝতে সাহায্য করে এমন মেটাডেটাই রাখুন। MetaStocker বা অন্য কোনো জেনারেটর ব্যবহারকারী অবদানকারীদের জন্য এই নির্দেশিকায় একটি পুনরাবৃত্তিযোগ্য পর্যালোচনা পদ্ধতি দেখানো হয়েছে। উদাহরণটি কাল্পনিক; এটি পরিমাপ করা ফলাফল বা বাস্তব গ্রাহকের জমা নয়।",
+    "sections": [
+      {
+        "heading": "ছবিটি যা প্রমাণ করে, তা দিয়ে শুরু করুন",
+        "paragraphs": [
+          "তৈরি তালিকা পড়ার আগে সম্পদটির বর্ণনা দিন। দৃশ্যমান উপাদানকে যুক্তিসঙ্গত কিন্তু যাচাই না-করা ব্যাখ্যা থেকে আলাদা করুন। উদাহরণে ছবিতে স্পষ্টভাবে একটি নীল কাচের বোতল, বালুময় পৃষ্ঠ, দিনের আলো এবং একটি সরল স্থিরচিত্র বিন্যাস দেখা যায়। বোতলটি বন্ধ মনে হলেও শুধু পিক্সেল দেখে এর ভেতরের বস্তু, উদ্দেশ্য, নির্মাতা বা স্থান নির্ধারণ করা যায় না।",
+          "এই পার্থক্য গুরুত্বপূর্ণ, কারণ স্টক মেটাডেটা প্রাসঙ্গিক ও বর্ণনামূলক হওয়া উচিত। কোনো কীওয়ার্ড দৃশ্যত সম্ভব মনে হলেও তা বিভ্রান্তিকর হতে পারে। ছবি বা সরবরাহ করা প্রকল্প-তথ্য সমর্থন না করলে perfume পণ্য, সমুদ্রের স্থান, recycling বার্তা, luxury বাজার, কোনো কোম্পানি বা নির্দিষ্ট ব্র্যান্ড অনুমান করবেন না।"
+        ],
+        "bullets": [
+          "দৃশ্যমান: নীল বোতল, কাচের উপাদান, বালি, বাইরের মতো দিনের আলো, স্থিরচিত্র।",
+          "অ্যাসাইনমেন্ট থেকে জানা: বালুর ওপর রাখা একটি বোতল বিষয়বস্তু।",
+          "সমর্থনহীন: ocean, perfume, recycling, luxury, ব্র্যান্ডের নাম, নির্দিষ্ট স্থান, পণ্যের ভেতরের বস্তু।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "দৃশ্যমান, জানা ও সমর্থনহীন—এই তিন ভাগের সারণি ব্যবহার করুন",
+        "paragraphs": [
+          "একটি ছোট সিদ্ধান্ত-সারণি পর্যালোচনাকে দ্রুত ও একরকম করে। “দৃশ্যমান” মানে ফ্রেমে বৈশিষ্ট্যটি যাচাই করা যায়। “জানা” মানে তা সংক্ষিপ্ত বিবরণ বা নির্মাণ-প্রেক্ষাপট থেকে এসেছে। “সমর্থনহীন” মানে শব্দটি এমন একটি গল্প যোগ করছে, যা প্রতিষ্ঠিত নয়। কোনো কীওয়ার্ড রাখুন কেবল তখনই, যখন তা প্রথম দুই ভাগের একটিতে পড়ে এবং সম্পদটির সঠিক বর্ণনা দেয়।"
+        ],
+        "bullets": [
+          "দৃশ্যমান: blue, glass, bottle, sand, texture, still life।",
+          "জানা: product-style composition, যদি এটিই সত্যিই নির্ধারিত ব্যবহার হয়।",
+          "সমর্থনহীন: ocean, perfume, recycling, luxury, brand, cosmetic, beverage, beach vacation।"
+        ],
+        "example": "শব্দ | সিদ্ধান্ত | কারণ\nblue | রাখুন | স্পষ্টভাবে দৃশ্যমান রং\nbottle | রাখুন | স্পষ্টভাবে দৃশ্যমান বস্তু\nsand | রাখুন | স্পষ্টভাবে দৃশ্যমান পৃষ্ঠ\nperfume | সরান | ভেতরের বস্তু ও উদ্দেশ্য অজানা\nocean | সরান | বালি সমুদ্রের স্থান প্রমাণ করে না\nrecycling | সরান | পুনর্ব্যবহার বা কোনো প্রতীক দেখা যাচ্ছে না\nluxury | সরান | বিষয়ভিত্তিক বাজার-অবস্থান\nbrand name | সরান | যাচাই করা পরিচয় দেওয়া হয়নি"
+      },
+      {
+        "heading": "MetaStocker-এ তৈরি তালিকা পরিষ্কার করুন",
+        "paragraphs": [
+          "MetaStocker একটি স্থির ওয়েব অ্যাপ, যা দর্শকের ব্রাউজারে স্থানীয় ছবি বোঝার ও যুক্তি করার মডেল চালাতে পারে। স্থানীয় মোডে মডেলের গণনা ডিভাইসেই থাকে; প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট দরকার। অ্যাপটিতে তৈরি ফলাফল ও অতিরিক্ত ট্যাগ সম্পাদনা করা যায়, কিন্তু চাওয়া ট্যাগের সংখ্যা প্রতিটি ট্যাগের নির্ভুলতার প্রমাণ নয়। ফলাফলকে পর্যালোচনার খসড়া হিসেবে দেখুন।",
+          "একটি ছবি বা অল্প কয়েকটি সামঞ্জস্যপূর্ণ ফাইলের ব্যাচ লোড করুন, তারপর তৈরি ট্যাগগুলো একে একে পড়ুন। একটি ব্যাচ-এর বর্ণনায় সেই ব্যাচ-এর তথ্য থাকা উচিত, এমন বিস্তৃত শব্দ নয় যা কেবল কিছু ফাইলে প্রযোজ্য। অদেখা কোনো গল্প, অনুমান করা বাণিজ্যিক ব্যবহার বা যাচাই করা যায় না এমন পরিচয় বর্ণনা করলে শব্দটি সরান। রপ্তানির আগে প্রতিটি ফাইল আলাদাভাবে পর্যালোচনা করুন। ঐচ্ছিক OpenAI API মোড ব্যবহার করলে এর কী আপনার নিজস্ব গোপন তথ্য এবং প্রিভিউ বা প্রাসঙ্গিক তথ্য OpenAI-তে পাঠানো হয়; স্থানীয় মোডে অ্যাকাউন্ট বা API কী দরকার নেই।"
+        ],
+        "bullets": [
+          "পর্যালোচনার মানদণ্ড স্থির করতে প্রথমে একটি ছবি ব্যবহার করুন।",
+          "কোটা পূরণের বদলে সন্দেহজনক শব্দ সম্পাদনা বা মুছে ফেলুন।",
+          "ভিডিওর পূর্ণ গতির সঙ্গে মেটাডেটা মিলিয়ে দেখুন; নমুনাভিত্তিক প্রিভিউ-তে বিস্তারিত বাদ পড়তে পারে।",
+          "লক্ষ্য মার্কেটপ্লেসের জন্য প্রস্তুত সারিগুলোই রপ্তানি করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "প্ররোচনামূলক ভাষার বদলে নির্দিষ্ট তথ্যকে অগ্রাধিকার দিন",
+        "paragraphs": [
+          "উপযোগী মেটাডেটা কী দেখানো হয়েছে তার উত্তর দেয়, কেউ কেন তা চাইতে পারে তার নয়। “Blue glass bottle on sand” নির্দিষ্ট। “Luxury perfume product” একাধিক সমর্থনহীন দাবি মিশিয়ে দেয় এবং ভুল অনুসন্ধান-উদ্দেশ্য আনতে পারে। একইভাবে, sand-এর নিরাপদ বিকল্প ocean নয়, আর glass-এর সমার্থক recycling নয়।",
+          "কোনো প্ল্যাটফর্মের নির্দেশিকায় শুরুর কীওয়ার্ডকে বিশেষ গুরুত্ব দেওয়া হলে গুরুত্বপূর্ণ শব্দগুলো শুরুতে রাখুন। শুধু সংখ্যা বাড়ানোর জন্য একই শব্দের বিভিন্ন রূপ বারবার লিখবেন না। ইংরেজি মেটাডেটা আবশ্যক এমন প্ল্যাটফর্মে, আপনার কাজের নোট বা নিবন্ধের ভাষা বাংলা হলেও পরিষ্কার করা মেটাডেটা ইংরেজিতে লিখুন। জমা দেওয়ার আগে বর্তমান অবদানকারী-নিয়ম সবসময় যাচাই করুন।"
+        ],
+        "bullets": [
+          "বস্তু, উপাদান, রং, পৃষ্ঠ, বিন্যাস ও নিশ্চিত ব্যবহার বর্ণনা করুন।",
+          "সংক্ষিপ্ত বিবরণে প্রতিষ্ঠিত না থাকলে luxury-এর মতো আবেগনির্ভর অবস্থান এড়িয়ে চলুন।",
+          "ব্র্যান্ড, স্থান, প্রজাতি, পরিচয় বা পণ্যের উদ্দেশ্য অনুমান করবেন না।",
+          "প্ল্যাটফর্মের বর্তমান সীমা মানুন; Adobe-এর সাধারণ কীওয়ার্ড নির্দেশিকায় সর্বোচ্চ 49টি অনুমোদিত, তবে অন্যান্য ক্ষেত্র ও প্ল্যাটফর্ম আলাদা হতে পারে।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: পর্যালোচনার জন্য প্রস্তুত সেট তৈরি করুন",
+        "paragraphs": [
+          "ধরা যাক, নীল বোতলের দৃশ্যের জন্য তৈরি তালিকায় 24টি শব্দ আছে। প্রথমে সরাসরি অনুমানগুলো সরান: ocean, perfume, fragrance, cosmetic, recycling, luxury, premium, beach vacation এবং প্রস্তাবিত কোনো ব্র্যান্ডের নাম। এরপর একই সমর্থনহীন ধারণা কেবল পুনরাবৃত্তি করে এমন ডুপ্লিকেট ও শব্দ সরান। তারপর এমন একটি সংক্ষিপ্ত সেট রাখুন, যা কোনো ব্যবহার-প্রতিশ্রুতি ছাড়াই ফ্রেমটির বর্ণনা দেয়।",
+          "একটি সম্ভাব্য পরিষ্কার খসড়া হলো: blue, glass, bottle, sand, sandy surface, still life, product composition, minimal, texture, container, daylight, blue object। ছবি যদি ইচ্ছাকৃতভাবে product-style still life হিসেবে সাজানো হয়ে থাকে, তবেই “Product composition” রাখুন; এটি বিন্যাসের বর্ণনা, বাস্তব বাণিজ্যিক পণ্যের দাবি নয়। রপ্তানির আগে ছবিটি ও গন্তব্যের নিয়ম আবার পর্যালোচনা করুন। এই উদাহরণটি একটি কাজের ধাপ-এর ব্যাখ্যা, গ্রহণযোগ্যতা, র‌্যাঙ্কিং বা বিক্রয় সম্পর্কে দাবি নয়।"
+        ],
+        "bullets": [
+          "জিজ্ঞেস করুন: ফ্রেমে কি এই শব্দটির দিকে ইঙ্গিত করতে পারি, অথবা সংক্ষিপ্ত বিবরণ থেকে এটি যাচাই করতে পারি?",
+          "জিজ্ঞেস করুন: এই শব্দের কারণে কি কোনো ক্রেতা যুক্তিসঙ্গতভাবে ভিন্ন বিষয় আশা করতে পারেন?",
+          "উত্তর হ্যাঁ হলে এটি সরান অথবা আরও সংকীর্ণ দৃশ্যমান বর্ণনা দিয়ে বদলান।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "জমা দেওয়ার আগে রপ্তানি করা মেটাডেটা পরীক্ষা করুন",
+        "paragraphs": [
+          "আপনি যদি মার্কেটপ্লেস CSV রপ্তানি করেন, সেটিকে মান যাচাই নয়, স্থানান্তর-ফরম্যাট হিসেবে দেখুন। MetaStocker সমর্থিত মার্কেটপ্লেস ফরম্যাটের জন্য CSV তৈরি করতে পারে, কিন্তু এটি ফাইল আপলোড বা জমা দেয় না, গ্রহণযোগ্যতার নিশ্চয়তা দেয় না এবং মূল ছবিতে মেটাডেটা বসায় না। জমা দেওয়ার আগে গন্তব্য অবদানকারী পোর্টাল খুলে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন।",
+          "Adobe CSV কাজের ধাপ-এ CSV আমদানি করার আগে সম্পদ আপলোড করতে হয়, এবং এক্সটেনশন-সহ ফাইলের নাম ও তার বড়-ছোট অক্ষর মিলতে হয়। বর্তমান প্ল্যাটফর্মের নির্দেশনা অন্য কিছু না বলা পর্যন্ত রক্ষণশীল 49-কীওয়ার্ড সীমা রাখুন এবং বর্তমান শিরোনামের সীমা ও ভাষার প্রয়োজনীয়তা মানুন। Shutterstock প্রাসঙ্গিক ইংরেজি কীওয়ার্ড ও উপযুক্ত বিভাগ চায়। নিয়ম বদলাতে পারে, তাই বর্তমান অবদানকারী পোর্টালই চূড়ান্ত কর্তৃপক্ষ।"
+        ],
+        "bullets": [
+          "প্রতিটি সারি সঠিক আপলোড করা ফাইলের নাম-এর সঙ্গে মিলিয়ে নিন।",
+          "পোর্টালে title, keyword, বিভাগ ও প্রয়োজনীয় ক্ষেত্রগুলো পরীক্ষা করুন।",
+          "রপ্তানি করা ফলাফল প্রস্তুত না হলে উৎসেই সারিটি সংশোধন করুন।",
+          "পোর্টালের গ্রহণযোগ্যতাকে প্রতিটি কীওয়ার্ড সম্পাদনাগতভাবে আদর্শ—এমন প্রমাণ হিসেবে দেখবেন না।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "প্রথমে দৃশ্যমান বা যাচাই করা তথ্য দিয়ে ছবিটি বর্ণনা করুন।",
+      "বোতলের উদাহরণে ocean, perfume, recycling, luxury ও brand-সংক্রান্ত অনুমানকে সমর্থনহীন হিসেবে চিহ্নিত করুন।",
+      "অপ্রাসঙ্গিক, পুনরাবৃত্ত, বিষয়ভিত্তিক ও পরিচয়নির্ভর শব্দ সরান।",
+      "প্রযোজ্য ক্ষেত্রে পূর্ণ ভিডিও গতি-সহ প্রতিটি ফাইল আলাদাভাবে পর্যালোচনা করুন।",
+      "গুরুত্বপূর্ণ সঠিক শব্দ শুরুতে রাখুন এবং বর্তমান প্ল্যাটফর্মের সীমা মানুন।",
+      "জমা দেওয়ার আগে অবদানকারী পোর্টালে রপ্তানি করা মেটাডেটা পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "কীওয়ার্ড পরিষ্কারের তিন ধাপ",
+      "steps": [
+        {
+          "label": "দৃশ্যমান তথ্য লিখুন",
+          "detail": "বস্তু, উপাদান, রং, পৃষ্ঠ ও নিশ্চিত প্রেক্ষাপট নথিভুক্ত করুন।"
+        },
+        {
+          "label": "প্রতিটি অনুমান যাচাই করুন",
+          "detail": "সমুদ্র, perfume, recycling, luxury ও ব্র্যান্ডের অনুমান সরান।"
+        },
+        {
+          "label": "রপ্তানির আগে পরীক্ষা করুন",
+          "detail": "প্রতিটি সারি পর্যালোচনা করে পোর্টালের বর্তমান প্রয়োজনীয়তা দেখুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "अप्रासंगिक AI स्टॉक कीवर्ड कैसे हटाएँ",
+    "description": "AI-निर्मित स्टॉक कीवर्ड साफ़ करने की व्यावहारिक प्रक्रिया—रेत पर नीली काँच की बोतल से दृश्य तथ्यों और असमर्थित अनुमानों को अलग करें।",
+    "intro": "AI कीवर्ड जनरेटर ऐसी विश्वसनीय दिखने वाली सूची बना सकते हैं, जो चुपचाप यह बदल देती है कि कोई चित्र किस चीज़ का प्रतिनिधित्व करता है। रेत पर रखी नीली काँच की बोतल के लिए ocean, perfume, recycling, luxury या किसी ब्रांड का नाम आ सकता है, जबकि इनमें से किसी दावे का समर्थन नहीं है। हर शब्द बनाए रखकर मार्केटप्लेस की खोज-व्यवस्था उसे सही समझ लेगी—यह समाधान नहीं है। हर सुझाव को चित्र से मिलाएँ, असमर्थित संबंध हटाएँ और वही मेटाडेटा रखें जो खरीदार को वास्तविक एसेट समझने में मदद करे। यह मार्गदर्शिका MetaStocker या किसी अन्य जनरेटर का उपयोग करने वाले योगदानकर्ताओं के लिए दोहराई जा सकने वाली समीक्षा-पद्धति दिखाती है। उदाहरण काल्पनिक है और न तो मापा गया परिणाम है, न वास्तविक ग्राहक का सबमिशन।",
+    "sections": [
+      {
+        "heading": "चित्र जो साबित करता है, उससे शुरू करें",
+        "paragraphs": [
+          "जनरेट की गई सूची पढ़ने से पहले एसेट का वर्णन करें। दिखाई देने वाले तत्वों को उचित लेकिन अप्रमाणित व्याख्याओं से अलग करें। उदाहरण में चित्र में स्पष्ट रूप से नीली काँच की बोतल, रेतीली सतह, दिन का प्रकाश और सरल स्थिर-चित्र संयोजन दिखाई देता है। बोतल बंद लगती है, लेकिन केवल पिक्सेल के आधार पर उसकी सामग्री, उद्देश्य, निर्माता या स्थान निर्धारित नहीं किया जा सकता।",
+          "यह अंतर महत्वपूर्ण है, क्योंकि स्टॉक मेटाडेटा प्रासंगिक और वर्णनात्मक होना चाहिए। कोई कीवर्ड दृश्य रूप से संभव लग सकता है, फिर भी भ्रामक हो सकता है। जब तक चित्र या दिए गए प्रोजेक्ट तथ्य समर्थन न करें, perfume उत्पाद, समुद्री स्थान, recycling संदेश, luxury बाज़ार, कंपनी या किसी विशेष ब्रांड का अनुमान न लगाएँ।"
+        ],
+        "bullets": [
+          "दृश्य: नीली बोतल, काँच की सामग्री, रेत, बाहर के प्रकाश जैसा दिन का उजाला, स्थिर-चित्र।",
+          "असाइनमेंट से ज्ञात: रेत पर रखी हुई बोतल विषय है।",
+          "असमर्थित: ocean, perfume, recycling, luxury, ब्रांड नाम, सटीक स्थान, उत्पाद की सामग्री।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "दृश्य, ज्ञात और असमर्थित—तीन-भाग वाली सारणी अपनाएँ",
+        "paragraphs": [
+          "एक छोटी निर्णय-सारणी समीक्षा को तेज़ और सुसंगत बनाती है। “दृश्य” का अर्थ है कि फ़्रेम में उस विशेषता की जाँच की जा सकती है। “ज्ञात” का अर्थ है कि वह संक्षिप्त विवरण या निर्माण-प्रसंग से आती है। “असमर्थित” का अर्थ है कि वह शब्द ऐसी कहानी जोड़ता है जो स्थापित नहीं हुई है। किसी कीवर्ड को तभी रखें जब वह पहले दो समूहों में आता हो और एसेट का सही वर्णन करता हो।"
+        ],
+        "bullets": [
+          "दृश्य: blue, glass, bottle, sand, texture, still life।",
+          "ज्ञात: product-style composition, यदि यही वास्तव में इच्छित उपयोग है।",
+          "असमर्थित: ocean, perfume, recycling, luxury, brand, cosmetic, beverage, beach vacation।"
+        ],
+        "example": "शब्द | निर्णय | कारण\nblue | रखें | रंग स्पष्ट रूप से दिखाई देता है\nbottle | रखें | वस्तु स्पष्ट रूप से दिखाई देती है\nsand | रखें | सतह स्पष्ट रूप से दिखाई देती है\nperfume | हटाएँ | सामग्री और उद्देश्य अज्ञात हैं\nocean | हटाएँ | रेत समुद्री स्थान सिद्ध नहीं करती\nrecycling | हटाएँ | पुनर्चक्रण की कोई क्रिया या प्रतीक नहीं दिखता\nluxury | हटाएँ | व्यक्तिपरक बाज़ार-स्थिति\nbrand name | हटाएँ | सत्यापित पहचान उपलब्ध नहीं है"
+      },
+      {
+        "heading": "MetaStocker में जनरेट की गई सूची साफ़ करें",
+        "paragraphs": [
+          "MetaStocker एक स्थिर वेब ऐप है, जो आगंतुक के ब्राउज़र में स्थानीय दृश्य समझने वाले और तर्क करने वाले मॉडल चला सकता है। स्थानीय मोड में मॉडल गणना डिवाइस पर ही रहता है; पहली बार मॉडल डाउनलोड करने के लिए इंटरनेट चाहिए। ऐप में जनरेट किए गए परिणाम और अतिरिक्त टैग संपादित किए जा सकते हैं, लेकिन माँगी गई टैग संख्या इस बात का प्रमाण नहीं है कि हर टैग सही है। आउटपुट को समीक्षा के लिए मसौदा मानें।",
+          "एक चित्र या छोटी, सुसंगत बैच लोड करें, फिर जनरेट किए गए टैग एक-एक करके पढ़ें। किसी बैच के वर्णन में उसी बैच के तथ्य होने चाहिए, ऐसे व्यापक शब्द नहीं जो केवल कुछ फ़ाइलों पर लागू हों। जब कोई शब्द न दिखाई देने वाली कहानी, अनुमानित व्यावसायिक उपयोग या ऐसी पहचान बताता हो जिसे सत्यापित नहीं किया जा सकता, तो उसे हटाएँ। निर्यात से पहले हर फ़ाइल की अलग समीक्षा करें। यदि आप वैकल्पिक OpenAI API मोड इस्तेमाल करते हैं, तो उसकी कुंजी आपका अपना गुप्त डेटा है और प्रीव्यू या संदर्भ OpenAI को भेजे जाते हैं; स्थानीय मोड में खाते या API कुंजी की आवश्यकता नहीं होती।"
+        ],
+        "bullets": [
+          "अपना समीक्षा मानक तय करने के लिए पहले एक चित्र इस्तेमाल करें।",
+          "कोटा भरने के बजाय संदिग्ध शब्दों को संपादित या हटाएँ।",
+          "वीडियो मेटाडेटा को पूरे गतिविधि से मिलाएँ; sampled प्रीव्यू में विवरण छूट सकते हैं।",
+          "केवल वे पंक्तियाँ निर्यात करें जो लक्षित मार्केटप्लेस के लिए तैयार हों।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "प्रभावशाली भाषा के बजाय विशिष्ट तथ्यों को प्राथमिकता दें",
+        "paragraphs": [
+          "उपयोगी मेटाडेटा यह बताता है कि क्या दिख रहा है, न कि कोई इसे क्यों चाह सकता है। “Blue glass bottle on sand” ठोस वर्णन है। “Luxury perfume product” कई असमर्थित दावों को जोड़ता है और गलत खोज-उद्देश्य आकर्षित कर सकता है। इसी तरह, sand का सुरक्षित विकल्प ocean नहीं है, और glass recycling का पर्याय नहीं है।",
+          "जब किसी प्लेटफ़ॉर्म की मार्गदर्शिका शुरुआती कीवर्ड को विशेष महत्व देती हो, तो महत्वपूर्ण शब्दों को शुरुआत में रखें। केवल संख्या बढ़ाने के लिए एक ही शब्द के कई रूप दोहराएँ नहीं। जिन प्लेटफ़ॉर्मों पर अंग्रेज़ी मेटाडेटा आवश्यक है, वहाँ अपने कार्य-नोट या लेख की भाषा हिंदी होने पर भी साफ़ किया हुआ मेटाडेटा अंग्रेज़ी में लिखें। सबमिशन से पहले वर्तमान योगदानकर्ता नियम हमेशा जाँचें।"
+        ],
+        "bullets": [
+          "वस्तु, सामग्री, रंग, सतह, संयोजन और पुष्ट उपयोग का वर्णन करें।",
+          "जब तक संक्षिप्त विवरण इसे स्थापित न करे, luxury जैसी भावनात्मक बाज़ार-स्थिति से बचें।",
+          "ब्रांड, स्थान, प्रजाति, पहचान या उत्पाद-उद्देश्य का अनुमान न लगाएँ।",
+          "प्लेटफ़ॉर्म की वर्तमान सीमाएँ अपनाएँ; Adobe की सामान्य कीवर्ड मार्गदर्शिका अधिकतम 49 की अनुमति देती है, जबकि अन्य फ़ील्ड और प्लेटफ़ॉर्म अलग हो सकते हैं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम का उदाहरण: समीक्षा के लिए तैयार सेट बनाएँ",
+        "paragraphs": [
+          "मान लें कि नीली बोतल वाले दृश्य के लिए जनरेट की गई सूची में 24 शब्द हैं। पहले सीधे अनुमानों को हटाएँ: ocean, perfume, fragrance, cosmetic, recycling, luxury, premium, beach vacation और प्रस्तावित ब्रांड का नाम। फिर ऐसे डुप्लिकेट और शब्द हटाएँ जो केवल उसी असमर्थित विचार को दोहराते हैं। इसके बाद ऐसा संक्षिप्त सेट रखें जो उपयोग का वादा किए बिना फ़्रेम का वर्णन करे।",
+          "एक संभावित साफ़ मसौदा है: blue, glass, bottle, sand, sandy surface, still life, product composition, minimal, texture, container, daylight, blue object। “Product composition” तभी रखें जब चित्र को जानबूझकर product-style still life के रूप में व्यवस्थित किया गया हो; यह संयोजन का वर्णन है, वास्तविक व्यावसायिक उत्पाद का दावा नहीं। निर्यात से पहले चित्र और गंतव्य के नियम फिर जाँचें। यह उदाहरण कार्यप्रवाह का चित्रण है, स्वीकृति, रैंकिंग या बिक्री का दावा नहीं।"
+        ],
+        "bullets": [
+          "पूछें: क्या मैं फ़्रेम में इस शब्द की ओर संकेत कर सकता हूँ या संक्षिप्त विवरण से इसे सत्यापित कर सकता हूँ?",
+          "पूछें: क्या इस शब्द के कारण कोई खरीदार उचित रूप से अलग विषय की अपेक्षा कर सकता है?",
+          "यदि हाँ, तो उसे हटाएँ या अधिक संकीर्ण दृश्य वर्णन से बदलें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "सबमिशन से पहले निर्यात किए गए मेटाडेटा की जाँच करें",
+        "paragraphs": [
+          "यदि आप मार्केटप्लेस CSV निर्यात करते हैं, तो उसे गुणवत्ता-जाँच नहीं, बल्कि स्थानांतरण-फ़ॉर्मैट मानें। MetaStocker समर्थित मार्केटप्लेस फ़ॉर्मैट के लिए CSV आउटपुट बना सकता है, लेकिन यह फ़ाइलें अपलोड या सबमिट नहीं करता, स्वीकृति की गारंटी नहीं देता और मूल चित्र में मेटाडेटा एम्बेड नहीं करता। सबमिट करने से पहले गंतव्य योगदानकर्ता पोर्टल खोलें और तैयार मेटाडेटा की जाँच करें।",
+          "Adobe CSV कार्यप्रवाह में CSV आयात करने से पहले एसेट अपलोड करने होते हैं, और एक्सटेंशन सहित फ़ाइल का नाम तथा उसके बड़े-छोटे अक्षर समान होने चाहिए। जब तक वर्तमान प्लेटफ़ॉर्म निर्देश कुछ और न कहें, 49-कीवर्ड की सावधान सीमा रखें और वर्तमान शीर्षक की सीमा तथा भाषा संबंधी आवश्यकता का पालन करें। Shutterstock प्रासंगिक अंग्रेज़ी कीवर्ड और उपयुक्त श्रेणी की माँग करता है। आवश्यकताएँ बदल सकती हैं, इसलिए वर्तमान योगदानकर्ता पोर्टल ही अंतिम प्राधिकरण है।"
+        ],
+        "bullets": [
+          "हर row को ठीक उसी अपलोड किए गए फ़ाइल का नाम से मिलाएँ।",
+          "पोर्टल में titles, keywords, categories और आवश्यक फ़ील्ड जाँचें।",
+          "यदि निर्यात किया गया परिणाम तैयार नहीं है, तो स्रोत पर ही row सुधारें।",
+          "पोर्टल की स्वीकृति को इस बात का प्रमाण न मानें कि हर कीवर्ड संपादकीय रूप से आदर्श है।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "पहले दृश्य या सत्यापित तथ्यों के आधार पर चित्र का वर्णन करें।",
+      "बोतल वाले उदाहरण में ocean, perfume, recycling, luxury और brand संबंधी अनुमानों को असमर्थित चिह्नित करें।",
+      "अप्रासंगिक, दोहराए गए, व्यक्तिपरक और पहचान-आधारित शब्द हटाएँ।",
+      "जहाँ लागू हो, पूरे वीडियो गतिविधि सहित हर फ़ाइल की अलग समीक्षा करें।",
+      "महत्वपूर्ण सही शब्दों को शुरुआत में रखें और वर्तमान प्लेटफ़ॉर्म सीमाओं का पालन करें।",
+      "सबमिशन से पहले योगदानकर्ता पोर्टल में निर्यात किए गए मेटाडेटा की जाँच करें।"
+    ],
+    "illustration": {
+      "title": "कीवर्ड साफ़ करने के तीन चरण",
+      "steps": [
+        {
+          "label": "दृश्य तथ्य लिखें",
+          "detail": "वस्तुएँ, सामग्री, रंग, सतह और पुष्ट संदर्भ दर्ज करें।"
+        },
+        {
+          "label": "हर अनुमान को चुनौती दें",
+          "detail": "समुद्र, perfume, recycling, luxury और ब्रांड संबंधी अनुमान हटाएँ।"
+        },
+        {
+          "label": "निर्यात से पहले जाँचें",
+          "detail": "हर row की समीक्षा करें, फिर पोर्टल की वर्तमान आवश्यकताएँ देखें।"
+        }
+      ]
+    }
+  }
+}

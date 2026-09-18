@@ -1,0 +1,458 @@
+{
+  "slug": "how-to-get-openai-api-key",
+  "category": "local-ai",
+  "source_ids": [
+    "openai-key",
+    "metastocker"
+  ],
+  "en": {
+    "title": "How to Use an OpenAI API Key in MetaStocker",
+    "description": "Learn when MetaStocker needs an OpenAI API key, how to create one safely, and how to choose personal API mode without exposing your secret.",
+    "intro": "MetaStocker can generate metadata locally without an OpenAI API key. Its local mode runs supported vision and thinking models in your browser, so a key is optional rather than a prerequisite. You may still choose personal OpenAI API mode when you prefer to use your own developer account for generation. This guide explains the decision, the account boundary, safe key handling, and a practical workflow for preparing one image batch.\n\nAn API key is a secret credential for developer services. It is different from your ChatGPT conversation access, and developer API billing is handled separately from ChatGPT. The exact account screens, limits, and pricing can change, so check the current OpenAI developer account pages before creating or using a key. MetaStocker’s optional API mode sends previews and context to OpenAI; local mode does not use AI server inference.",
+    "sections": [
+      {
+        "heading": "Decide whether you need a key",
+        "paragraphs": [
+          "Start with local mode if your priority is keeping photos, prompts, and generated results on your device. MetaStocker provides local models including Gemma 4 E2B, Gemma 4 E4B, and Qwen3.5 2B, with Gemma E2B as the default. The first model download needs internet, and the browser uses WebGPU-compatible hardware and drivers.",
+          "Choose personal API mode only when the tradeoff is worthwhile for your workflow. The request can use your own OpenAI API access, but previews and context leave the browser and are sent to OpenAI. This is a data-handling decision, not merely a button preference."
+        ],
+        "bullets": [
+          "No key is needed for local generation.",
+          "Local mode and API mode are separate choices.",
+          "A browser model download is not the same thing as an API request."
+        ],
+        "example": "Example decision: You are labeling non-sensitive product photos and want to avoid sending previews to a service. Begin with local mode. If the local model cannot produce the style of descriptions you need, compare that result with a small API batch only after reviewing your privacy and account settings."
+      },
+      {
+        "heading": "Understand the account boundary",
+        "paragraphs": [
+          "An OpenAI API key belongs to developer API access. Having ChatGPT access does not automatically mean that API use is included, and API billing is separate from ChatGPT. Before creating a key, confirm that you are in the intended developer account or project and read the current billing and usage information there.",
+          "Avoid relying on an old tutorial that names a particular menu, balance, or price. Interfaces and policies can change. The useful constant is the separation: MetaStocker uses your key to request the optional API service, while your developer account controls that API activity."
+        ],
+        "bullets": [
+          "Check the current developer account documentation first.",
+          "Treat API usage as separate from a ChatGPT subscription.",
+          "Review the selected project or account before creating credentials."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Create the key with a safety plan",
+        "paragraphs": [
+          "Use the current OpenAI developer console to create an API key, following the account’s present instructions. Copy it only into the intended private input in MetaStocker. Do not paste it into a blog post, spreadsheet shared with clients, public repository, screen recording, or browser extension.",
+          "A key is not a harmless configuration value. Anyone who obtains it may be able to make API requests against the associated account. Keep access limited, use the smallest practical scope if the current console offers such controls, and remove or rotate a compromised key through the developer account. Never ask a contributor or client to send you their key."
+        ],
+        "bullets": [
+          "Keep the key private from people and public files.",
+          "Do not embed a personal key in public client-side code.",
+          "Rotate or revoke it if you think it was exposed."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Use the key in MetaStocker carefully",
+        "paragraphs": [
+          "Open MetaStocker and select its optional personal OpenAI API mode. Enter the key only where the app requests it, then test with one non-sensitive image and a narrowly written context. Because the app sends previews and context in this mode, remove unnecessary private information from the image and prompt.",
+          "A batch description is context for generation, not permission to invent facts. State what is visibly and deliberately present: for example, “studio photograph of a blue ceramic mug on a pale table; commercial image; no people.” Avoid blanket tags for a mixed batch. Extra tags should still be checked for each file."
+        ],
+        "bullets": [
+          "Test one harmless file before a larger batch.",
+          "Describe visible, relevant facts only.",
+          "Review every generated title, description, and tag."
+        ],
+        "example": "Example test context: “Commercial product photo of a matte green reusable bottle on a neutral background. Mention the bottle and studio setting; do not infer brand, location, owner, material certification, or sustainability claims.”"
+      },
+      {
+        "heading": "Review output before exporting",
+        "paragraphs": [
+          "An API key does not make metadata accurate or platform-compliant. MetaStocker lets you edit results and export formats for services such as Adobe, Envato, Shutterstock, and Freepik, but the exporter does not upload or submit files and cannot guarantee acceptance. Export only rows you have checked.",
+          "For video, generation relies on sampled previews, so inspect the full motion yourself. For .ai files, provide a readable preview; not every file will work. Check that titles and keywords describe the actual asset, remove repeated or irrelevant terms, and confirm the current contributor portal requirements before uploading."
+        ],
+        "bullets": [
+          "Inspect visual content and generated text together.",
+          "Check filename matching and platform-specific limits yourself.",
+          "Treat exported CSV as a working file, not proof of acceptance."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Handle the key after the session",
+        "paragraphs": [
+          "Do not assume closing the tab is a complete security strategy. Follow the current OpenAI account controls for reviewing, rotating, or deleting keys, especially if the browser was shared or the key was copied to a temporary note. Keep usage records and account alerts enabled when those controls are available.",
+          "If you return to local mode, remove the key from the app input and continue without it. Local model files may remain in browser storage until you explicitly delete them; that storage is separate from active model memory and is not evidence that an API key is stored there."
+        ],
+        "bullets": [
+          "Remove temporary copies of the secret.",
+          "Rotate a key after suspected exposure.",
+          "Use local mode again when API access is unnecessary."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Confirm that local mode does not meet your needs before using an API key.",
+      "Check the current OpenAI developer account and billing information.",
+      "Create and paste the key only in the intended private field.",
+      "Send a single non-sensitive test image first.",
+      "Review previews, context, and generated metadata for factual accuracy.",
+      "Edit and inspect every row before exporting.",
+      "Verify current marketplace requirements before any manual upload.",
+      "Rotate or revoke the key if it may have been exposed."
+    ],
+    "illustration": {
+      "title": "Choosing and using API mode",
+      "steps": [
+        {
+          "label": "Choose the mode",
+          "detail": "Start local; use personal API mode only for a clear need."
+        },
+        {
+          "label": "Test one safe file",
+          "detail": "Send a non-sensitive preview with factual, narrow context."
+        },
+        {
+          "label": "Review before export",
+          "detail": "Edit each row and verify current marketplace requirements."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как использовать ключ OpenAI API в MetaStocker",
+    "description": "Разберитесь, нужен ли ключ OpenAI API в MetaStocker, как получить его безопасно и когда выбрать личный API-режим вместо локальной обработки.",
+    "intro": "Для генерации метаданных в MetaStocker ключ OpenAI API не обязателен. Локальный режим запускает поддерживаемые модели в браузере, поэтому фотографии, промпты и результаты остаются на устройстве в рамках этого режима. Личный API-режим нужен только тогда, когда вы сознательно хотите использовать собственный доступ к API OpenAI. Ниже — практический порядок действий: принять решение, подготовить ключ, провести безопасный тест и проверить результат.\n\nКлюч API — секретный учетный идентификатор для сервисов разработчика. Он не равен доступу к ChatGPT, а расходы на API учитываются отдельно от ChatGPT. Названия экранов, лимиты и условия могут измениться, поэтому перед созданием ключа проверьте актуальные сведения в кабинете разработчика OpenAI. В API-режиме MetaStocker отправляет в OpenAI превью и контекст; локальный режим не использует серверную AI-инференцию.",
+    "sections": [
+      {
+        "heading": "Сначала выберите подходящий режим",
+        "paragraphs": [
+          "Если важнее всего не отправлять изображения внешнему сервису, начните с локального режима. MetaStocker включает локальные модели Gemma 4 E2B, Gemma 4 E4B и Qwen3.5 2B; по умолчанию используется Gemma E2B. Первая загрузка модели требует интернета, а работа зависит от совместимых браузера, GPU и драйверов.",
+          "Личный API-режим имеет смысл, если его особенности подходят вашей задаче. В этом случае превью и контекст отправляются в OpenAI. Поэтому выбор API — это решение о передаче данных и настройках аккаунта, а не просто способ открыть дополнительную кнопку."
+        ],
+        "bullets": [
+          "Для локальной генерации ключ не нужен.",
+          "Локальный и API-режимы — разные варианты обработки.",
+          "Загрузка модели в браузер не является API-запросом."
+        ],
+        "example": "Пример решения: вы описываете обычные фотографии товаров и не хотите передавать превью. Начните с локального режима. Если его результат не подходит по стилю, протестируйте небольшой API-пакет после проверки политики работы с данными."
+      },
+      {
+        "heading": "Разделяйте ChatGPT и API",
+        "paragraphs": [
+          "Ключ создается для доступа к API разработчика. Подписка или доступ к ChatGPT не означают автоматически, что API включен или оплачивается тем же способом. Перед созданием ключа убедитесь, что открыли нужный аккаунт или проект разработчика, и прочитайте текущие условия использования и оплаты.",
+          "Не переносите в сегодняшнюю работу старые инструкции с конкретными ценами, балансами или названиями пунктов меню. Они могут устареть. Важный принцип остается прежним: API-активность относится к аккаунту разработчика, а MetaStocker использует ваш ключ для выбранного API-режима."
+        ],
+        "bullets": [
+          "Сначала проверьте актуальные сведения в кабинете разработчика.",
+          "Считайте API и ChatGPT раздельными сервисами учета.",
+          "Перед созданием ключа проверьте выбранный проект или аккаунт."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Получите ключ и защитите его",
+        "paragraphs": [
+          "Создайте ключ в текущем интерфейсе OpenAI для разработчиков, следуя его актуальным инструкциям. Скопируйте секрет только в предназначенное для него приватное поле MetaStocker. Не вставляйте его в статью, общую таблицу, открытый репозиторий, видеозапись экрана или публичный клиентский код.",
+          "Ключ нельзя считать обычной настройкой. Если его получит другой человек, он может отправлять запросы от имени связанного аккаунта. Ограничьте доступ настолько, насколько позволяют текущие настройки, и отзовите или замените ключ, если он раскрыт. Не просите коллегу или клиента прислать вам свой ключ."
+        ],
+        "bullets": [
+          "Не храните ключ в общедоступных материалах.",
+          "Не встраивайте личный ключ в публичный код.",
+          "При подозрении на утечку отзовите или замените ключ."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Проведите небольшой тест в MetaStocker",
+        "paragraphs": [
+          "Откройте MetaStocker и выберите личный OpenAI API-режим. Введите ключ только в поле, предназначенное для него, затем протестируйте один неактуальный для приватности файл с коротким контекстом. Поскольку превью и контекст отправляются в OpenAI, заранее уберите из изображения и описания лишние личные сведения.",
+          "Контекст должен сообщать факты, а не разрешать модели додумывать. Для смешанной пачки не используйте один набор общих тегов. Дополнительные теги тоже проверяйте для каждого файла отдельно."
+        ],
+        "bullets": [
+          "Начните с одного безопасного файла.",
+          "Пишите только наблюдаемые и относящиеся к работе факты.",
+          "Проверяйте каждый заголовок, текст и тег."
+        ],
+        "example": "Пример контекста: «Коммерческая фотография матовой зеленой многоразовой бутылки на нейтральном фоне. Упомянуть бутылку и студийную сцену; не предполагать бренд, владельца, место, сертификацию материала или экологические свойства»."
+      },
+      {
+        "heading": "Проверьте метаданные перед экспортом",
+        "paragraphs": [
+          "Наличие API-ключа не делает результат точным и не заменяет редакторскую проверку. MetaStocker позволяет редактировать данные и экспортировать форматы для Adobe, Envato, Shutterstock и Freepik, но экспортёр не загружает и не отправляет файлы и не гарантирует их принятие. Экспортируйте только проверенные строки.",
+          "Для видео описание строится по выборочным превью, поэтому просмотрите всё движение самостоятельно. Для .ai нужен читаемый предпросмотр, а некоторые файлы могут не подойти. Удалите нерелевантные и повторяющиеся слова, проверьте соответствие изображения и перед загрузкой сверяйтесь с актуальными правилами конкретной площадки."
+        ],
+        "bullets": [
+          "Сопоставляйте сгенерированный текст с самим изображением.",
+          "Проверяйте имена файлов и ограничения нужной площадки.",
+          "Считайте CSV рабочим файлом, а не подтверждением принятия."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Что делать с ключом после работы",
+        "paragraphs": [
+          "Не полагайтесь только на закрытие вкладки. Используйте актуальные настройки аккаунта OpenAI, чтобы просматривать, заменять или удалять ключи, особенно если браузер был общим или секрет временно копировался в заметки. Если доступны уведомления и контроль использования, настройте их по необходимости.",
+          "Когда API-режим больше не нужен, вернитесь к локальному режиму и удалите ключ из поля приложения. Файлы локальной модели могут оставаться в хранилище браузера до явного удаления; это отдельное понятие от модели, загруженной в память, и оно не доказывает, что ключ где-либо сохранен."
+        ],
+        "bullets": [
+          "Удалите временные копии секрета.",
+          "Замените ключ после возможного раскрытия.",
+          "Для последующих задач снова используйте локальный режим, если он подходит."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Убедитесь, что локальный режим действительно не подходит.",
+      "Проверьте актуальные условия API и отдельный учет оплаты.",
+      "Создайте ключ и вставьте его только в предназначенное приватное поле.",
+      "Сначала протестируйте один не чувствительный к приватности файл.",
+      "Проверьте, какие превью и контекст отправляются.",
+      "Отредактируйте и просмотрите каждую строку перед экспортом.",
+      "Перед ручной загрузкой проверьте текущие правила площадки.",
+      "При возможной утечке отзовите или замените ключ."
+    ],
+    "illustration": {
+      "title": "Выбор и проверка API-режима",
+      "steps": [
+        {
+          "label": "Выберите режим",
+          "detail": "Начните локально; API выбирайте только при ясной необходимости."
+        },
+        {
+          "label": "Проверьте один файл",
+          "detail": "Отправьте безопасное превью с точным коротким контекстом."
+        },
+        {
+          "label": "Проверьте экспорт",
+          "detail": "Отредактируйте строки и сверьтесь с правилами площадки."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "MetaStocker-এ OpenAI API কী ব্যবহার করবেন",
+    "description": "MetaStocker কখন OpenAI API কী চায়, কীভাবে নিরাপদে তৈরি করবেন এবং গোপন তথ্য প্রকাশ না করে ব্যক্তিগত API মোড বেছে নেবেন তা জানুন।",
+    "intro": "MetaStocker OpenAI API কী ছাড়াই স্থানীয়ভাবে মেটাডেটা তৈরি করতে পারে। এর স্থানীয় মোড আপনার ব্রাউজারে সমর্থিত ভিশন ও চিন্তন মডেল চালায়, তাই কী ঐচ্ছিক—পূর্বশর্ত নয়। চাইলে নিজের ডেভেলপার অ্যাকাউন্ট ব্যবহার করে তৈরি করার জন্য ব্যক্তিগত OpenAI API মোড বেছে নিতে পারেন। এই নির্দেশিকায় সিদ্ধান্ত নেওয়া, অ্যাকাউন্টের সীমা, নিরাপদে কী ব্যবস্থাপনা এবং একটি ছবি ব্যাচ প্রস্তুতের বাস্তব কর্মপ্রবাহ ব্যাখ্যা করা হয়েছে।\n\nAPI কী হলো ডেভেলপার পরিষেবার জন্য একটি গোপন পরিচয়পত্র। এটি আপনার ChatGPT কথোপকথনের প্রবেশাধিকারের থেকে আলাদা, এবং ডেভেলপার API বিলিং ChatGPT থেকে পৃথকভাবে পরিচালিত হয়। নির্দিষ্ট অ্যাকাউন্ট পৃষ্ঠা, সীমা ও মূল্য বদলাতে পারে, তাই কী তৈরি বা ব্যবহারের আগে বর্তমান OpenAI ডেভেলপার অ্যাকাউন্টের পৃষ্ঠা দেখুন। MetaStocker-এর ঐচ্ছিক API মোড প্রিভিউ ও প্রসঙ্গ OpenAI-তে পাঠায়; স্থানীয় মোডে AI সার্ভার ইনফারেন্স ব্যবহার হয় না।",
+    "sections": [
+      {
+        "heading": "আপনার কী প্রয়োজন কি না সিদ্ধান্ত নিন",
+        "paragraphs": [
+          "ছবি, প্রম্পট এবং তৈরি ফলাফল নিজের ডিভাইসে রাখাই যদি অগ্রাধিকার হয়, তাহলে স্থানীয় মোড দিয়ে শুরু করুন। MetaStocker-এ Gemma 4 E2B, Gemma 4 E4B এবং Qwen3.5 2B-সহ স্থানীয় মডেল রয়েছে; ডিফল্ট হলো Gemma E2B। প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট দরকার, এবং ব্রাউজার WebGPU-সামঞ্জস্যপূর্ণ হার্ডওয়্যার ও ড্রাইভার ব্যবহার করে।",
+          "আপনার কর্মপ্রবাহে সুবিধাটি যথেষ্ট গুরুত্বপূর্ণ হলেই ব্যক্তিগত API মোড বেছে নিন। অনুরোধটি আপনার নিজের OpenAI API প্রবেশাধিকার ব্যবহার করতে পারে, কিন্তু প্রিভিউ ও প্রসঙ্গ ব্রাউজার ছেড়ে OpenAI-তে পাঠানো হবে। এটি শুধু বোতাম বাছাই নয়, তথ্য ব্যবস্থাপনার সিদ্ধান্ত।"
+        ],
+        "bullets": [
+          "স্থানীয়ভাবে তৈরি করতে কোনো কী দরকার নেই।",
+          "স্থানীয় মোড ও API মোড আলাদা পছন্দ।",
+          "ব্রাউজারে মডেল ডাউনলোড করা API অনুরোধের সমান নয়।"
+        ],
+        "example": "সিদ্ধান্তের উদাহরণ: আপনি সংবেদনশীল নয় এমন পণ্যের ছবি লেবেল করছেন এবং প্রিভিউ কোনো পরিষেবায় পাঠাতে চান না। স্থানীয় মোড দিয়ে শুরু করুন। স্থানীয় মডেল আপনার প্রয়োজনীয় বর্ণনার ধরন তৈরি করতে না পারলে, গোপনীয়তা ও অ্যাকাউন্ট সেটিংস পর্যালোচনা করে তবেই ছোট API ব্যাচের ফলাফলের সঙ্গে তুলনা করুন।"
+      },
+      {
+        "heading": "অ্যাকাউন্টের সীমা বুঝুন",
+        "paragraphs": [
+          "OpenAI API কী ডেভেলপার API প্রবেশাধিকারের অন্তর্ভুক্ত। ChatGPT-তে প্রবেশাধিকার থাকলেই API ব্যবহার অন্তর্ভুক্ত থাকে না, এবং API বিলিং ChatGPT থেকে আলাদা। কী তৈরি করার আগে নিশ্চিত করুন যে আপনি নির্দিষ্ট ডেভেলপার অ্যাকাউন্ট বা প্রকল্পে আছেন, এবং সেখানকার বর্তমান বিলিং ও ব্যবহারের তথ্য পড়ুন।",
+          "কোনো নির্দিষ্ট মেনু, ব্যালান্স বা দামের উল্লেখ করা পুরোনো নির্দেশিকার ওপর নির্ভর করবেন না। ইন্টারফেস ও নীতি বদলাতে পারে। স্থায়ী বিষয়টি হলো এই পৃথকতা: MetaStocker আপনার কী ব্যবহার করে ঐচ্ছিক API পরিষেবায় অনুরোধ পাঠায়, আর আপনার ডেভেলপার অ্যাকাউন্ট সেই API কার্যকলাপ নিয়ন্ত্রণ করে।"
+        ],
+        "bullets": [
+          "প্রথমে বর্তমান ডেভেলপার অ্যাকাউন্টের নথি দেখুন।",
+          "API ব্যবহারকে ChatGPT সাবস্ক্রিপশন থেকে আলাদা হিসেবে বিবেচনা করুন।",
+          "পরিচয়পত্র তৈরি করার আগে নির্বাচিত প্রকল্প বা অ্যাকাউন্ট পর্যালোচনা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "নিরাপত্তা পরিকল্পনা নিয়ে কী তৈরি করুন",
+        "paragraphs": [
+          "বর্তমান OpenAI ডেভেলপার কনসোল ব্যবহার করে অ্যাকাউন্টের বর্তমান নির্দেশনা অনুসরণ করে একটি API কী তৈরি করুন। এটি শুধু MetaStocker-এর নির্দিষ্ট ব্যক্তিগত ইনপুটে কপি করুন। ব্লগ পোস্ট, ক্লায়েন্টদের সঙ্গে ভাগ করা স্প্রেডশিট, সর্বজনীন রিপোজিটরি, স্ক্রিন রেকর্ডিং বা ব্রাউজার এক্সটেনশনে এটি পেস্ট করবেন না।",
+          "কী কোনো নিরীহ কনফিগারেশন মান নয়। যে কেউ এটি পেলে সংশ্লিষ্ট অ্যাকাউন্টের বিরুদ্ধে API অনুরোধ করতে সক্ষম হতে পারে। প্রবেশাধিকার সীমিত রাখুন, বর্তমান কনসোলে এমন নিয়ন্ত্রণ থাকলে বাস্তবসম্মত সর্বনিম্ন পরিসর ব্যবহার করুন, এবং কী ফাঁস হলে ডেভেলপার অ্যাকাউন্টের মাধ্যমে তা সরিয়ে ফেলুন বা নতুন কী তৈরি করুন। কোনো অবদানকারী বা ক্লায়েন্টকে তাদের কী পাঠাতে বলবেন না।"
+        ],
+        "bullets": [
+          "মানুষ ও সর্বজনীন ফাইল—উভয়ের কাছ থেকেই কী গোপন রাখুন।",
+          "সর্বজনীন ক্লায়েন্ট-সাইড কোডে ব্যক্তিগত কী বসাবেন না।",
+          "কী প্রকাশ পেয়ে থাকতে পারে মনে হলে নতুন কী তৈরি করুন বা বাতিল করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "MetaStocker-এ সতর্কতার সঙ্গে কী ব্যবহার করুন",
+        "paragraphs": [
+          "MetaStocker খুলে এর ঐচ্ছিক ব্যক্তিগত OpenAI API মোড নির্বাচন করুন। অ্যাপ যেখানে কী চায়, শুধু সেখানেই কী লিখুন; এরপর একটি সংবেদনশীল নয় এমন ছবি এবং সংক্ষিপ্ত, নির্দিষ্ট প্রসঙ্গ দিয়ে পরীক্ষা করুন। এই মোডে অ্যাপ প্রিভিউ ও প্রসঙ্গ পাঠায়, তাই ছবি ও প্রম্পট থেকে অপ্রয়োজনীয় ব্যক্তিগত তথ্য সরিয়ে দিন।",
+          "ব্যাচের বর্ণনা তৈরির প্রসঙ্গ, তথ্য বানিয়ে নেওয়ার অনুমতি নয়। দৃশ্যমান ও ইচ্ছাকৃতভাবে উপস্থিত বিষয়গুলো স্পষ্ট করে লিখুন—যেমন, “ফ্যাকাশে টেবিলের ওপর নীল সিরামিক মগের স্টুডিও ছবি; বাণিজ্যিক ছবি; কোনো মানুষ নেই।” মিশ্র ব্যাচে নির্বিচারে ট্যাগ দেবেন না। অতিরিক্ত ট্যাগও প্রতিটি ফাইলের জন্য যাচাই করতে হবে।"
+        ],
+        "bullets": [
+          "বড় ব্যাচের আগে একটি নিরাপদ ফাইল দিয়ে পরীক্ষা করুন।",
+          "শুধু দৃশ্যমান ও প্রাসঙ্গিক তথ্য বর্ণনা করুন।",
+          "প্রতিটি তৈরি শিরোনাম, বর্ণনা ও ট্যাগ পর্যালোচনা করুন।"
+        ],
+        "example": "পরীক্ষার প্রসঙ্গের উদাহরণ: “নিরপেক্ষ পটভূমিতে ম্যাট সবুজ পুনর্ব্যবহারযোগ্য বোতলের বাণিজ্যিক পণ্যের ছবি। বোতল ও স্টুডিওর পরিবেশ উল্লেখ করুন; ব্র্যান্ড, স্থান, মালিক, উপাদানের প্রত্যয়ন বা স্থায়িত্ব-সংক্রান্ত দাবি অনুমান করবেন না।”"
+      },
+      {
+        "heading": "রপ্তানির আগে ফলাফল পর্যালোচনা করুন",
+        "paragraphs": [
+          "API কী মেটাডেটাকে নির্ভুল বা প্ল্যাটফর্ম-সম্মত করে না। MetaStocker আপনাকে Adobe, Envato, Shutterstock এবং Freepik-এর মতো পরিষেবার জন্য ফলাফল সম্পাদনা ও রপ্তানি করতে দেয়, কিন্তু রপ্তানিকারক ফাইল আপলোড বা জমা দেয় না এবং গ্রহণযোগ্যতার নিশ্চয়তাও দিতে পারে না। আপনি যাচাই করেছেন এমন সারিগুলোই রপ্তানি করুন।",
+          "ভিডিওর ক্ষেত্রে তৈরি প্রিভিউ নমুনাভিত্তিক, তাই সম্পূর্ণ গতিচিত্র নিজে পরীক্ষা করুন। .ai ফাইলের জন্য পাঠযোগ্য প্রিভিউ দিন; প্রতিটি ফাইল কাজ নাও করতে পারে। শিরোনাম ও কীওয়ার্ড যেন প্রকৃত সম্পদকে বর্ণনা করে তা যাচাই করুন, পুনরাবৃত্ত বা অপ্রাসঙ্গিক শব্দ সরান, এবং আপলোডের আগে অবদানকারী পোর্টালের বর্তমান প্রয়োজনীয়তা নিশ্চিত করুন।"
+        ],
+        "bullets": [
+          "দৃশ্যমান বিষয়বস্তু ও তৈরি লেখা একসঙ্গে পরীক্ষা করুন।",
+          "ফাইলের নামের মিল ও প্ল্যাটফর্ম-নির্দিষ্ট সীমা নিজে যাচাই করুন।",
+          "রপ্তানি করা CSV-কে কাজের ফাইল হিসেবে দেখুন, গ্রহণযোগ্যতার প্রমাণ হিসেবে নয়।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "সেশনের পরে কী সামলান",
+        "paragraphs": [
+          "ট্যাব বন্ধ করলেই সম্পূর্ণ নিরাপত্তা নিশ্চিত হয়—এমন ধরে নেবেন না। বর্তমান OpenAI অ্যাকাউন্ট নিয়ন্ত্রণ অনুসরণ করে কী পর্যালোচনা, নতুন করে তৈরি বা মুছে ফেলুন, বিশেষ করে ব্রাউজার ভাগাভাগি করা হলে বা কী কোনো অস্থায়ী নোটে কপি করা হলে। এসব নিয়ন্ত্রণ থাকলে ব্যবহারের রেকর্ড রাখুন এবং অ্যাকাউন্ট সতর্কতা চালু রাখুন।",
+          "আবার স্থানীয় মোডে ফিরলে অ্যাপের ইনপুট থেকে কী সরিয়ে নিয়ে এটি ছাড়াই চালিয়ে যান। স্থানীয় মডেলের ফাইল আপনি স্পষ্টভাবে মুছে না দেওয়া পর্যন্ত ব্রাউজার স্টোরেজে থাকতে পারে; এই স্টোরেজ সক্রিয় মডেল মেমরি থেকে আলাদা এবং সেখানে API কী সংরক্ষিত আছে—এমন প্রমাণ নয়।"
+        ],
+        "bullets": [
+          "গোপন তথ্যের অস্থায়ী কপিগুলো সরিয়ে ফেলুন।",
+          "ফাঁসের সন্দেহ হলে কী নতুন করে তৈরি করুন।",
+          "API প্রবেশাধিকার অপ্রয়োজনীয় হলে আবার স্থানীয় মোড ব্যবহার করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "API কী ব্যবহারের আগে নিশ্চিত করুন যে স্থানীয় মোড আপনার প্রয়োজন মেটাচ্ছে না।",
+      "বর্তমান OpenAI ডেভেলপার অ্যাকাউন্ট ও বিলিংয়ের তথ্য দেখুন।",
+      "শুধু নির্দিষ্ট ব্যক্তিগত ঘরেই কী তৈরি ও পেস্ট করুন।",
+      "প্রথমে একটি সংবেদনশীল নয় এমন পরীক্ষা-ছবি পাঠান।",
+      "প্রিভিউ, প্রসঙ্গ ও তৈরি মেটাডেটার তথ্যগত নির্ভুলতা পর্যালোচনা করুন।",
+      "রপ্তানির আগে প্রতিটি সারি সম্পাদনা ও পরীক্ষা করুন।",
+      "কোনো ম্যানুয়াল আপলোডের আগে বর্তমান মার্কেটপ্লেসের প্রয়োজনীয়তা যাচাই করুন।",
+      "কী প্রকাশ পেয়ে থাকতে পারে হলে নতুন করে তৈরি করুন বা বাতিল করুন।"
+    ],
+    "illustration": {
+      "title": "API মোড বেছে নেওয়া ও ব্যবহার",
+      "steps": [
+        {
+          "label": "মোড বেছে নিন",
+          "detail": "স্থানীয় মোড দিয়ে শুরু করুন; স্পষ্ট প্রয়োজন থাকলেই ব্যক্তিগত API মোড ব্যবহার করুন।"
+        },
+        {
+          "label": "একটি নিরাপদ ফাইল পরীক্ষা করুন",
+          "detail": "তথ্যসমৃদ্ধ, সংক্ষিপ্ত প্রসঙ্গসহ সংবেদনশীল নয় এমন প্রিভিউ পাঠান।"
+        },
+        {
+          "label": "রপ্তানির আগে পর্যালোচনা করুন",
+          "detail": "প্রতিটি সারি সম্পাদনা করুন এবং বর্তমান মার্কেটপ্লেসের প্রয়োজনীয়তা যাচাই করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "MetaStocker में OpenAI API कुंजी का उपयोग कैसे करें",
+    "description": "जानें कि MetaStocker को OpenAI API कुंजी कब चाहिए, इसे सुरक्षित रूप से कैसे बनाएँ और अपना रहस्य उजागर किए बिना निजी API मोड कैसे चुनें।",
+    "intro": "MetaStocker OpenAI API कुंजी के बिना स्थानीय रूप से मेटाडेटा बना सकता है। इसका स्थानीय मोड आपके ब्राउज़र में समर्थित विज़न और सोचने वाले मॉडल चलाता है, इसलिए कुंजी वैकल्पिक है, अनिवार्य नहीं। आप निर्माण के लिए अपने डेवलपर खाते का उपयोग करना चाहें तो निजी OpenAI API मोड चुन सकते हैं। यह मार्गदर्शिका निर्णय, खाते की सीमा, कुंजी को सुरक्षित रखने और एक इमेज बैच तैयार करने की व्यावहारिक कार्यप्रणाली समझाती है।\n\nAPI कुंजी डेवलपर सेवाओं के लिए एक गुप्त प्रमाण-पत्र है। यह आपके ChatGPT वार्तालाप प्रवेश से अलग है, और डेवलपर API बिलिंग ChatGPT से अलग संभाली जाती है। खाते के पृष्ठ, सीमाएँ और मूल्य बदल सकते हैं, इसलिए कुंजी बनाने या उपयोग करने से पहले वर्तमान OpenAI डेवलपर खाते के पृष्ठ देखें। MetaStocker का वैकल्पिक API मोड प्रीव्यू और संदर्भ OpenAI को भेजता है; स्थानीय मोड AI सर्वर इन्फरेंस का उपयोग नहीं करता।",
+    "sections": [
+      {
+        "heading": "तय करें कि आपको कुंजी चाहिए या नहीं",
+        "paragraphs": [
+          "यदि फ़ोटो, प्रॉम्प्ट और बनाए गए परिणाम अपने डिवाइस पर रखना आपकी प्राथमिकता है, तो स्थानीय मोड से शुरू करें। MetaStocker में Gemma 4 E2B, Gemma 4 E4B और Qwen3.5 2B सहित स्थानीय मॉडल हैं; डिफ़ॉल्ट Gemma E2B है। पहला मॉडल डाउनलोड करने के लिए इंटरनेट चाहिए, और ब्राउज़र WebGPU-संगत हार्डवेयर व ड्राइवर का उपयोग करता है।",
+          "अपने कार्यप्रवाह के लिए लाभ उचित हो तभी निजी API मोड चुनें। अनुरोध आपके अपने OpenAI API प्रवेश का उपयोग कर सकता है, लेकिन प्रीव्यू और संदर्भ ब्राउज़र से बाहर जाकर OpenAI को भेजे जाएँगे। यह केवल बटन चुनने की बात नहीं, बल्कि डेटा संभालने का निर्णय है।"
+        ],
+        "bullets": [
+          "स्थानीय निर्माण के लिए किसी कुंजी की आवश्यकता नहीं है।",
+          "स्थानीय मोड और API मोड अलग-अलग विकल्प हैं।",
+          "ब्राउज़र में मॉडल डाउनलोड करना API अनुरोध के समान नहीं है।"
+        ],
+        "example": "निर्णय का उदाहरण: आप गैर-संवेदनशील उत्पाद फ़ोटो को लेबल कर रहे हैं और प्रीव्यू किसी सेवा को नहीं भेजना चाहते। स्थानीय मोड से शुरू करें। यदि स्थानीय मॉडल आपके लिए आवश्यक विवरण शैली नहीं बना पाता, तो गोपनीयता और खाते की सेटिंग्स देखने के बाद ही छोटे API बैच से उसके परिणाम की तुलना करें।"
+      },
+      {
+        "heading": "खाते की सीमा समझें",
+        "paragraphs": [
+          "OpenAI API कुंजी डेवलपर API प्रवेश से संबंधित होती है। ChatGPT का प्रवेश मिलना अपने-आप API उपयोग शामिल नहीं करता, और API बिलिंग ChatGPT से अलग है। कुंजी बनाने से पहले पुष्टि करें कि आप सही डेवलपर खाते या परियोजना में हैं, और वहीं वर्तमान बिलिंग व उपयोग की जानकारी पढ़ें।",
+          "किसी पुराने ट्यूटोरियल पर निर्भर न रहें जिसमें कोई खास मेनू, शेष राशि या मूल्य दिया गया हो। इंटरफ़ेस और नीतियाँ बदल सकती हैं। स्थायी बात यह है कि MetaStocker आपकी कुंजी से वैकल्पिक API सेवा को अनुरोध भेजता है, जबकि आपका डेवलपर खाता उस API गतिविधि को नियंत्रित करता है।"
+        ],
+        "bullets": [
+          "पहले वर्तमान डेवलपर खाते का दस्तावेज़ देखें।",
+          "API उपयोग को ChatGPT सदस्यता से अलग मानें।",
+          "प्रमाण-पत्र बनाने से पहले चुनी हुई परियोजना या खाते की समीक्षा करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "सुरक्षा योजना के साथ कुंजी बनाएँ",
+        "paragraphs": [
+          "वर्तमान OpenAI डेवलपर कंसोल का उपयोग करके खाते के मौजूदा निर्देशों का पालन करते हुए API कुंजी बनाएँ। इसे केवल MetaStocker के निर्धारित निजी इनपुट में कॉपी करें। इसे ब्लॉग पोस्ट, ग्राहकों के साथ साझा की गई स्प्रेडशीट, सार्वजनिक रिपॉज़िटरी, स्क्रीन रिकॉर्डिंग या ब्राउज़र एक्सटेंशन में पेस्ट न करें।",
+          "कुंजी कोई साधारण कॉन्फ़िगरेशन मान नहीं है। जिसे भी यह मिल जाए, वह संबंधित खाते के विरुद्ध API अनुरोध कर सकता है। पहुँच सीमित रखें, वर्तमान कंसोल में ऐसा नियंत्रण उपलब्ध हो तो व्यावहारिक न्यूनतम दायरा चुनें, और कुंजी के उजागर होने पर डेवलपर खाते से उसे हटाएँ या नई कुंजी बनाएँ। किसी योगदानकर्ता या ग्राहक से उनकी कुंजी भेजने को कभी न कहें।"
+        ],
+        "bullets": [
+          "कुंजी को लोगों और सार्वजनिक फ़ाइलों से गुप्त रखें।",
+          "व्यक्तिगत कुंजी को सार्वजनिक क्लाइंट-साइड कोड में न डालें।",
+          "उजागर होने का संदेह हो तो कुंजी बदलें या रद्द करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "MetaStocker में कुंजी का सावधानी से उपयोग करें",
+        "paragraphs": [
+          "MetaStocker खोलें और उसका वैकल्पिक निजी OpenAI API मोड चुनें। कुंजी केवल वहीं दर्ज करें जहाँ ऐप माँगे, फिर एक गैर-संवेदनशील इमेज और संक्षिप्त, सीमित संदर्भ के साथ परीक्षण करें। इस मोड में ऐप प्रीव्यू और संदर्भ भेजता है, इसलिए इमेज और प्रॉम्प्ट से अनावश्यक निजी जानकारी हटा दें।",
+          "बैच का विवरण निर्माण के लिए संदर्भ है, तथ्य गढ़ने की अनुमति नहीं। जो बातें स्पष्ट रूप से दिखाई देती हैं और जानबूझकर मौजूद हैं, उन्हें बताएँ—जैसे, “हल्की मेज़ पर नीले सिरेमिक मग की स्टूडियो फ़ोटो; व्यावसायिक इमेज; कोई व्यक्ति नहीं।” मिश्रित बैच के लिए एक जैसे टैग न लगाएँ। अतिरिक्त टैग भी हर फ़ाइल के लिए जाँचे जाने चाहिए।"
+        ],
+        "bullets": [
+          "बड़े बैच से पहले एक सुरक्षित फ़ाइल का परीक्षण करें।",
+          "केवल दिखाई देने वाले, प्रासंगिक तथ्यों का वर्णन करें।",
+          "हर बनाए गए शीर्षक, विवरण और टैग की समीक्षा करें।"
+        ],
+        "example": "परीक्षण संदर्भ का उदाहरण: “तटस्थ पृष्ठभूमि पर मैट हरी पुन:प्रयोग योग्य बोतल की व्यावसायिक उत्पाद फ़ोटो। बोतल और स्टूडियो वातावरण का उल्लेख करें; ब्रांड, स्थान, मालिक, सामग्री प्रमाणन या टिकाऊपन संबंधी दावे का अनुमान न लगाएँ।”"
+      },
+      {
+        "heading": "निर्यात से पहले परिणामों की समीक्षा करें",
+        "paragraphs": [
+          "API कुंजी मेटाडेटा को सटीक या प्लेटफ़ॉर्म-अनुरूप नहीं बनाती। MetaStocker आपको Adobe, Envato, Shutterstock और Freepik जैसी सेवाओं के लिए परिणाम संपादित और निर्यात करने देता है, लेकिन निर्यातक फ़ाइलें अपलोड या जमा नहीं करता और स्वीकृति की गारंटी नहीं दे सकता। केवल वही पंक्तियाँ निर्यात करें जिन्हें आपने जाँचा हो।",
+          "वीडियो में निर्माण नमूना प्रीव्यू पर निर्भर करता है, इसलिए पूरी गति को स्वयं देखें। .ai फ़ाइलों के लिए पढ़ने योग्य प्रीव्यू दें; हर फ़ाइल काम नहीं करेगी। जाँचें कि शीर्षक और कीवर्ड वास्तविक संपत्ति का वर्णन करते हैं, दोहराए गए या अप्रासंगिक शब्द हटाएँ, और अपलोड से पहले वर्तमान योगदानकर्ता पोर्टल की आवश्यकताओं की पुष्टि करें।"
+        ],
+        "bullets": [
+          "दृश्य सामग्री और बनाए गए पाठ की साथ-साथ जाँच करें।",
+          "फ़ाइल नाम के मेल और प्लेटफ़ॉर्म-विशिष्ट सीमाओं की स्वयं जाँच करें।",
+          "निर्यात किए गए CSV को कार्यशील फ़ाइल मानें, स्वीकृति का प्रमाण नहीं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "सत्र के बाद कुंजी संभालें",
+        "paragraphs": [
+          "यह न मानें कि टैब बंद करना ही पूरी सुरक्षा व्यवस्था है। वर्तमान OpenAI खाता नियंत्रणों के अनुसार कुंजियों की समीक्षा, उन्हें बदलने या हटाने की प्रक्रिया अपनाएँ, खासकर यदि ब्राउज़र साझा किया गया हो या कुंजी किसी अस्थायी नोट में कॉपी की गई हो। जहाँ ये नियंत्रण उपलब्ध हों, वहाँ उपयोग का रिकॉर्ड रखें और खाता सूचनाएँ चालू रखें।",
+          "यदि आप स्थानीय मोड पर लौटते हैं, तो ऐप के इनपुट से कुंजी हटा दें और उसके बिना काम जारी रखें। स्थानीय मॉडल फ़ाइलें तब तक ब्राउज़र स्टोरेज में रह सकती हैं जब तक आप उन्हें स्पष्ट रूप से हटा न दें; यह स्टोरेज सक्रिय मॉडल मेमरी से अलग है और इससे यह साबित नहीं होता कि API कुंजी वहाँ रखी गई है।"
+        ],
+        "bullets": [
+          "गुप्त जानकारी की अस्थायी प्रतियाँ हटा दें।",
+          "उजागर होने के संदेह पर कुंजी बदलें।",
+          "API प्रवेश की आवश्यकता न हो तो फिर स्थानीय मोड उपयोग करें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "API कुंजी उपयोग करने से पहले पुष्टि करें कि स्थानीय मोड आपकी ज़रूरत पूरी नहीं करता।",
+      "वर्तमान OpenAI डेवलपर खाते और बिलिंग की जानकारी जाँचें।",
+      "कुंजी केवल निर्धारित निजी फ़ील्ड में बनाएँ और पेस्ट करें।",
+      "पहले एक गैर-संवेदनशील परीक्षण इमेज भेजें।",
+      "प्रीव्यू, संदर्भ और बनाए गए मेटाडेटा की तथ्यात्मक सटीकता जाँचें।",
+      "निर्यात से पहले हर पंक्ति संपादित और जाँचें।",
+      "किसी भी मैनुअल अपलोड से पहले वर्तमान मार्केटप्लेस आवश्यकताएँ सत्यापित करें।",
+      "कुंजी उजागर होने की आशंका हो तो उसे बदलें या रद्द करें।"
+    ],
+    "illustration": {
+      "title": "API मोड चुनना और उपयोग करना",
+      "steps": [
+        {
+          "label": "मोड चुनें",
+          "detail": "स्थानीय मोड से शुरू करें; स्पष्ट आवश्यकता होने पर ही निजी API मोड लें।"
+        },
+        {
+          "label": "एक सुरक्षित फ़ाइल जाँचें",
+          "detail": "तथ्यात्मक, सीमित संदर्भ के साथ गैर-संवेदनशील प्रीव्यू भेजें।"
+        },
+        {
+          "label": "निर्यात से पहले समीक्षा करें",
+          "detail": "हर पंक्ति संपादित करें और वर्तमान मार्केटप्लेस आवश्यकताएँ जाँचें।"
+        }
+      ]
+    }
+  }
+}

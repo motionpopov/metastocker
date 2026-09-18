@@ -1,0 +1,487 @@
+{
+  "slug": "photographer-portfolio-image-seo",
+  "category": "seo",
+  "source_ids": [
+    "google-images",
+    "google-sitemap",
+    "google-language"
+  ],
+  "en": {
+    "title": "Image SEO for a Photographer’s Portfolio Website",
+    "description": "Improve portfolio image SEO with useful captions, concise alt text, crawlable URLs, responsive dimensions, and a practical ceramics page example.",
+    "intro": "A portfolio image should help two audiences at once: visitors deciding whether your work is relevant, and search engines trying to understand the page. Image SEO is not a contest to add as many words as possible. It is a matter of making the photograph accessible, technically discoverable, and clearly connected to the surrounding page. This guide uses a hypothetical portfolio page about handmade ceramics and shows how to improve it without inventing details that the photograph cannot prove.\n\nThe goal is not a guaranteed ranking or a promise of more enquiries. Instead, you will create a page whose subject, image URL, caption, dimensions, and alternative text agree with one another. That gives people a clearer experience and gives crawlers useful context.",
+    "sections": [
+      {
+        "heading": "Start with the page’s actual subject",
+        "paragraphs": [
+          "Before editing the image, write one plain sentence describing what the page is for. A photographer’s portfolio page might be a case study, a gallery entry, or a service example. Those are different intents, even when they use similar photographs.",
+          "For this assignment, the page is about a handmade ceramic mug photographed for a craft portfolio. The image can show a mug, its glaze, a table, and lighting, but it cannot establish the maker’s identity, the firing temperature, the exact clay type, or the mug’s location unless the page supplies those facts. Keep unsupported assumptions out of the metadata."
+        ],
+        "bullets": [
+          "Use the page title and visible text to state the project or object clearly.",
+          "Describe only visible or editorially verified facts.",
+          "Keep portfolio SEO separate from stock-marketplace keyword fields."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Write a useful caption and nearby text",
+        "paragraphs": [
+          "A caption is visible page content, so it can explain why the photograph matters. It should sound like a sentence for a potential client or reader, not like a hidden keyword list. Surrounding copy can add information that alt text should not carry, such as the project’s process, commission context, or the photographer’s lighting approach.",
+          "A useful caption for the hypothetical page might say: “Handmade stoneware mug photographed against a warm neutral backdrop to show the speckled glaze and rounded handle.” This identifies the subject and the photographic purpose without claiming facts that are not supplied.",
+          "Place the caption close to the image and make the main heading and introductory paragraph consistent with it. If the page has multiple photographs, give each one a distinct role instead of repeating the same sentence."
+        ],
+        "bullets": [
+          "Mention the object and relevant visual feature.",
+          "Explain the image’s role when that helps the reader.",
+          "Avoid captions that are only strings of search terms."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Make alt text concise and specific",
+        "paragraphs": [
+          "Alt text is a text alternative for someone who cannot see the image. It should communicate the essential subject and meaningful visual information, not reproduce every detail. For the ceramics example, “Handmade stoneware mug with speckled glaze and rounded handle” is more useful than “ceramics handmade mug pottery art craft studio neutral background brown beautiful.”",
+          "Do not begin with “image of” unless the distinction matters. Do not add tags for colors, locations, species, people, ownership, or releases when the photograph does not establish them. If an image is purely decorative and adds no information, an empty alt value may be appropriate; decide this according to the page’s accessibility implementation.",
+          "Alt text is not a substitute for a caption or a page description. Keep the wording natural, and check it while viewing the page without relying on the image itself."
+        ],
+        "bullets": [
+          "Describe the subject first.",
+          "Include one or two meaningful visible attributes.",
+          "Remove repeated, promotional, or speculative terms."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Give the image a crawlable, stable URL",
+        "paragraphs": [
+          "Use an image URL that a normal visitor and a search crawler can request. A descriptive filename can help with organization, but it is not a replacement for visible context or alt text. For example, a path such as /portfolio/ceramics/speckled-stoneware-mug.jpg is easier to understand than /uploads/IMG_8472-final-final.jpg.",
+          "Avoid hiding the only important image behind an interaction that requires a search crawler or visitor to trigger an unusual script. Keep the portfolio page linked from ordinary site navigation or another crawlable page. If your site uses a sitemap, include the canonical page URLs and keep them absolute; a sitemap can help discovery but cannot guarantee crawling or indexing.",
+          "Check that redirects, access rules, and image delivery do not block the intended public page. Website indexing is separate from how a stock marketplace searches contributor metadata."
+        ],
+        "bullets": [
+          "Use a stable public path and the correct file extension.",
+          "Link the page through normal site navigation.",
+          "Use canonical absolute URLs in a sitemap when applicable."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Set dimensions, responsive delivery, and useful loading",
+        "paragraphs": [
+          "Reserve the image’s layout space by declaring width and height, or by using an equivalent aspect-ratio rule. This helps the browser calculate the layout before the file arrives. Serve an appropriately sized version rather than forcing a small portfolio viewport to download an unnecessarily huge original.",
+          "Responsive image markup can offer alternate sizes for different screens. Preserve enough detail for the portfolio’s purpose, but inspect the result on a phone and a large display. Lazy loading may suit images below the opening view; the main image a visitor needs immediately should be tested carefully rather than deferred automatically.",
+          "Keep the original safely stored elsewhere if your workflow allows it, and treat the web derivative as a presentation asset. Test the actual page after changing compression, dimensions, or delivery settings so that visual quality remains part of the decision."
+        ],
+        "bullets": [
+          "Declare intrinsic dimensions or an aspect ratio.",
+          "Offer sizes appropriate to the visitor’s viewport.",
+          "Check both visual quality and loading behavior on real page layouts."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: one ceramics portfolio page",
+        "paragraphs": [
+          "Suppose the page title is “Handmade Ceramics Photography: Speckled Stoneware Mug.” The photographer has one front three-quarter photograph. The visible subject is a single mug on a neutral surface; the project notes confirm that it is handmade stoneware and that the image was made for a ceramics portfolio. No maker name, location, or exact glaze ingredients are confirmed.",
+          "A sensible implementation keeps each field focused. The title explains the page, the caption explains the photographic purpose, and the alt text gives a short text alternative. The filename and URL are descriptive but do not attempt to hold every possible query. The image is delivered in a suitable derivative with dimensions declared in the page markup."
+        ],
+        "bullets": [
+          "Page heading: Handmade Ceramics Photography: Speckled Stoneware Mug.",
+          "Caption: Handmade stoneware mug photographed against a warm neutral backdrop to show the speckled glaze and rounded handle.",
+          "Alt text: Handmade stoneware mug with speckled glaze and rounded handle.",
+          "Image path: /portfolio/ceramics/speckled-stoneware-mug.jpg.",
+          "Verification action: open the published page, inspect the rendered image, and request the public URL in a normal browser session."
+        ],
+        "example": "A practical field plan\nPage purpose: ceramics portfolio case study\nImage filename: speckled-stoneware-mug.jpg\nCaption: Handmade stoneware mug photographed against a warm neutral backdrop to show the speckled glaze and rounded handle.\nAlt text: Handmade stoneware mug with speckled glaze and rounded handle.\nURL pattern: https://example.com/portfolio/ceramics/speckled-stoneware-mug.jpg\nDimensions: use the actual web derivative’s width and height, not guessed values."
+      }
+    ],
+    "checklist": [
+      "The page has one clear subject and useful visible text.",
+      "The caption explains the photograph without becoming a keyword list.",
+      "The alt text is concise, natural, and based on supported facts.",
+      "The image URL is stable, public, and linked from a crawlable page.",
+      "Width and height or an equivalent aspect ratio reserve layout space.",
+      "The delivered image is tested at mobile and desktop sizes.",
+      "The page uses canonical URLs consistently; a sitemap is treated as discovery help, not an indexing guarantee.",
+      "If translated versions exist, each language page has its own canonical URL and appropriate reciprocal language annotations.",
+      "The result is reviewed as a visitor would experience it, without guessing identity, ownership, location, or other hidden facts."
+    ],
+    "illustration": {
+      "title": "Three checks for a portfolio image",
+      "steps": [
+        {
+          "label": "Define the visible subject",
+          "detail": "Match the page, caption, and alt text to confirmed facts."
+        },
+        {
+          "label": "Prepare the image delivery",
+          "detail": "Use a stable URL, responsive size, and declared dimensions."
+        },
+        {
+          "label": "Review the published page",
+          "detail": "Check accessibility, layout, loading, and crawlable placement."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "SEO изображений для портфолио фотографа",
+    "description": "Улучшите SEO изображений в портфолио: полезная подпись, краткий alt-текст, доступный URL, размеры и практический пример с керамикой.",
+    "intro": "Изображение в портфолио должно быть понятным сразу для двух аудиторий: для посетителя, который оценивает работу, и для поисковой системы, определяющей содержание страницы. SEO изображения — это не добавление максимального числа слов. Важнее сделать фотографию доступной, технически обнаруживаемой и логично связанной с текстом страницы. Ниже разобран условный материал о ручной керамике: он показывает, как улучшить страницу, не приписывая снимку того, чего на нём нельзя достоверно увидеть.\n\nЦель такой настройки — не гарантированный рост позиций или заказов. Вы создаёте страницу, где тема, URL, подпись, размеры и альтернативный текст не противоречат друг другу. Это помогает посетителю разобраться в работе и даёт поисковому роботу полезный контекст.",
+    "sections": [
+      {
+        "heading": "Сначала определите настоящую тему страницы",
+        "paragraphs": [
+          "До работы с файлом сформулируйте одним простым предложением, зачем существует страница. Это может быть карточка проекта, галерея или пример услуги фотографа. У этих форматов разное намерение, даже если фотографии похожи.",
+          "В нашем условном примере страница посвящена фотосъёмке керамической кружки ручной работы. На снимке могут быть видны кружка, глазурь, стол и свет, но фотография сама по себе не подтверждает имя мастера, температуру обжига, точный состав глины или место съёмки. Такие сведения добавляйте только при наличии подтверждённого текста."
+        ],
+        "bullets": [
+          "Согласуйте заголовок и видимый текст с реальной темой проекта.",
+          "Описывайте только видимые или редакционно подтверждённые факты.",
+          "Не смешивайте SEO сайта с полями ключевых слов фотостоков."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Напишите полезную подпись и соседний текст",
+        "paragraphs": [
+          "Подпись — это видимый контент страницы. Она может объяснить, почему фотография важна, и должна звучать как фраза для читателя или потенциального клиента, а не как скрытый перечень запросов. В основном тексте можно рассказать о процессе, задаче съёмки или выбранном свете — того, что не стоит перегружать в alt-тексте.",
+          "Для условной страницы подойдёт подпись: «Керамическая кружка из каменной массы снята на тёплом нейтральном фоне, чтобы показать крапчатую глазурь и округлую ручку». Здесь названы предмет, заметные особенности и цель кадра, но не придуманы сведения о происхождении изделия.",
+          "Размещайте подпись рядом с изображением. Если на странице несколько кадров, назначьте каждому собственную функцию, вместо того чтобы повторять одну и ту же формулировку."
+        ],
+        "bullets": [
+          "Назовите предмет и важную визуальную особенность.",
+          "Объясните роль фотографии, если это помогает читателю.",
+          "Не превращайте подпись в набор поисковых фраз."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Сделайте alt-текст коротким и точным",
+        "paragraphs": [
+          "Alt-текст — текстовая альтернатива для человека, который не видит изображение. Он должен передать главное, а не перечислить каждую деталь. Для примера с керамикой лучше написать «Керамическая кружка из каменной массы с крапчатой глазурью и округлой ручкой», чем «керамика handmade кружка pottery art craft studio brown beautiful».",
+          "Фраза «изображение» в начале обычно не нужна. Не добавляйте в alt-текст теги о цветах, местах, людях, владельцах, видах или релизах, если фотография этого не доказывает. Если картинка декоративная и не несёт информации, в реализации доступности может подойти пустое значение alt — решение зависит от её роли на странице.",
+          "Alt-текст не заменяет подпись и описание проекта. Проверьте формулировку, временно не опираясь на само изображение: она должна оставаться понятной и естественной."
+        ],
+        "bullets": [
+          "Начинайте с главного предмета.",
+          "Добавьте одну-две действительно значимые особенности.",
+          "Уберите повторы, рекламу и предположения."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Обеспечьте доступный для обхода стабильный URL",
+        "paragraphs": [
+          "URL изображения должен открываться обычным посетителем и поисковым роботом. Понятное имя файла удобно для структуры сайта, но не заменяет подпись, alt-текст и окружающий текст. Путь /portfolio/ceramics/speckled-stoneware-mug.jpg информативнее, чем /uploads/IMG_8472-final-final.jpg.",
+          "Не прячьте единственное важное изображение за действием, которое требует необычного скрипта или специального взаимодействия. Свяжите страницу с обычной навигацией сайта или другой доступной для обхода страницей. Если используется sitemap, помещайте туда канонические абсолютные URL: карта помогает обнаружению, но не гарантирует обход или индексацию.",
+          "Проверьте редиректы, правила доступа и публичную выдачу файла. Индексация сайта — это отдельная задача и не то же самое, что поиск по метаданным на фотостоке."
+        ],
+        "bullets": [
+          "Используйте стабильный публичный путь и правильное расширение.",
+          "Свяжите страницу с обычной навигацией.",
+          "В sitemap применяйте канонические абсолютные URL, если карта используется."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Укажите размеры и настройте адаптивную загрузку",
+        "paragraphs": [
+          "Задайте ширину и высоту изображения либо эквивалентное соотношение сторон. Тогда браузер сможет заранее зарезервировать место и уменьшить неожиданные сдвиги макета. Для небольшого экрана отдавайте подходящую производную, а не заставляйте его загружать огромный исходник.",
+          "Адаптивная разметка может предлагать разные размеры для разных экранов. Проверьте результат на телефоне и большом мониторе: сжатие не должно уничтожать фактуру, ради которой показывается работа. Отложенная загрузка может быть уместна ниже первого экрана, но главное изображение следует тестировать в реальном макете, а не откладывать автоматически.",
+          "Храните исходный файл отдельно, если ваш рабочий процесс это позволяет, а веб-версию рассматривайте как вариант для показа. После изменения сжатия, размеров или доставки снова откройте опубликованную страницу."
+        ],
+        "bullets": [
+          "Укажите фактические размеры или соотношение сторон.",
+          "Подготовьте варианты под разные ширины экрана.",
+          "Проверяйте одновременно качество, расположение и загрузку."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Практический пример: страница о керамической кружке",
+        "paragraphs": [
+          "Представим заголовок страницы: «Фотосъёмка ручной керамики: кружка из крапчатой каменной массы». Фотограф показывает один кадр в ракурсе три четверти. Видны кружка на нейтральной поверхности и её фактура; заметки к проекту подтверждают, что это изделие ручной работы из каменной массы и что снимок сделан для портфолио. Имя мастера, город и точный состав глазури не подтверждены.",
+          "Разделите задачи между полями. Заголовок объясняет тему страницы, подпись — назначение кадра, а alt-текст даёт короткую альтернативу. Имя файла и URL остаются описательными, но не пытаются вместить все возможные запросы. В разметке у веб-версии укажите её настоящие размеры, а затем проверьте опубликованный результат."
+        ],
+        "bullets": [
+          "Заголовок: Фотосъёмка ручной керамики: кружка из крапчатой каменной массы.",
+          "Подпись: Керамическая кружка из каменной массы снята на тёплом нейтральном фоне, чтобы показать крапчатую глазурь и округлую ручку.",
+          "Alt-текст: Керамическая кружка из каменной массы с крапчатой глазурью и округлой ручкой.",
+          "Путь: /portfolio/ceramics/speckled-stoneware-mug.jpg.",
+          "Проверка: откройте опубликованную страницу и запросите публичный URL обычным браузером."
+        ],
+        "example": "Практический план полей\nНазначение страницы: кейс в портфолио керамической съёмки\nИмя файла: speckled-stoneware-mug.jpg\nПодпись: Керамическая кружка из каменной массы снята на тёплом нейтральном фоне, чтобы показать крапчатую глазурь и округлую ручку.\nAlt-текст: Керамическая кружка из каменной массы с крапчатой глазурью и округлой ручкой.\nШаблон URL: https://example.com/portfolio/ceramics/speckled-stoneware-mug.jpg\nРазмеры: укажите ширину и высоту настоящей веб-версии, а не приблизительные значения."
+      }
+    ],
+    "checklist": [
+      "У страницы одна ясная тема и полезный видимый текст.",
+      "Подпись объясняет фотографию, но не превращается в список ключевых слов.",
+      "Alt-текст краткий, естественный и основан на подтверждённых фактах.",
+      "URL изображения стабилен, публичен и связан со страницей, доступной для обхода.",
+      "Размеры или соотношение сторон резервируют место в макете.",
+      "Веб-версия проверена на мобильном и широком экране.",
+      "Канонические URL согласованы; sitemap рассматривается как помощь обнаружению, а не гарантия индексации.",
+      "Если есть переводы, у каждой языковой страницы свой канонический URL и корректные взаимные языковые указания.",
+      "В тексте не угадываются личность, владелец, место, вид или другие факты, которых снимок не подтверждает."
+    ],
+    "illustration": {
+      "title": "Три проверки изображения в портфолио",
+      "steps": [
+        {
+          "label": "Определите предмет кадра",
+          "detail": "Сверьте страницу, подпись и alt-текст с подтверждёнными фактами."
+        },
+        {
+          "label": "Подготовьте выдачу файла",
+          "detail": "Используйте стабильный URL, адаптивный размер и заданные габариты."
+        },
+        {
+          "label": "Проверьте опубликованную страницу",
+          "detail": "Оцените доступность, макет, загрузку и доступность для обхода."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "ফটোগ্রাফারের পোর্টফোলিও ওয়েবসাইটের ছবির SEO",
+    "description": "কার্যকর ক্যাপশন, সংক্ষিপ্ত অল্ট টেক্সট, ক্রলযোগ্য URL, প্রতিক্রিয়াশীল মাপ এবং সিরামিক পৃষ্ঠার বাস্তব উদাহরণ দিয়ে ছবির SEO উন্নত করুন।",
+    "intro": "একটি পোর্টফোলিওর ছবি একই সঙ্গে দুটি শ্রোতাকে সাহায্য করা উচিত: আপনার কাজটি প্রাসঙ্গিক কি না তা নির্ধারণ করা দর্শক এবং পৃষ্ঠাটি বোঝার চেষ্টা করা সার্চ ইঞ্জিন। ছবির SEO যত বেশি সম্ভব শব্দ যোগ করার প্রতিযোগিতা নয়। এর উদ্দেশ্য হলো ছবিটিকে সহজে ব্যবহারযোগ্য, প্রযুক্তিগতভাবে আবিষ্কারযোগ্য এবং আশপাশের পৃষ্ঠার সঙ্গে স্পষ্টভাবে সংযুক্ত করা। এই নির্দেশিকায় হাতে তৈরি সিরামিক নিয়ে একটি কাল্পনিক পোর্টফোলিও পৃষ্ঠা ব্যবহার করে দেখানো হয়েছে, কীভাবে ছবিটি এমনভাবে উন্নত করা যায় যাতে ছবিটি যা প্রমাণ করতে পারে না, তা বানিয়ে বলা না হয়।\n\nলক্ষ্য নিশ্চিত র‍্যাঙ্কিং বা বেশি অনুসন্ধানের প্রতিশ্রুতি দেওয়া নয়। বরং এমন একটি পৃষ্ঠা তৈরি করা, যেখানে বিষয়, ছবির URL, ক্যাপশন, মাপ এবং বিকল্প টেক্সট পরস্পরের সঙ্গে সামঞ্জস্যপূর্ণ। এতে মানুষ আরও পরিষ্কার অভিজ্ঞতা পায় এবং ক্রলাররা কার্যকর প্রেক্ষাপট পায়।",
+    "sections": [
+      {
+        "heading": "পৃষ্ঠার প্রকৃত বিষয় দিয়ে শুরু করুন",
+        "paragraphs": [
+          "ছবি সম্পাদনার আগে পৃষ্ঠাটি কী উদ্দেশ্যে তৈরি, তা এক বাক্যে সহজভাবে লিখুন। ফটোগ্রাফারের পোর্টফোলিও পৃষ্ঠা কোনো কাজের বিবরণ, গ্যালারির এন্ট্রি বা পরিষেবার উদাহরণ হতে পারে। একই ধরনের ছবি ব্যবহার করলেও এগুলোর উদ্দেশ্য আলাদা।",
+          "এই কাজের জন্য পৃষ্ঠাটি কারুশিল্পের পোর্টফোলিওর জন্য তোলা হাতে তৈরি একটি সিরামিক মগ নিয়ে। ছবিতে মগ, তার গ্লেজ, একটি টেবিল এবং আলো দেখা যেতে পারে; কিন্তু পৃষ্ঠায় তথ্য না থাকলে এটি নির্মাতার পরিচয়, পোড়ানোর তাপমাত্রা, নির্দিষ্ট মাটির ধরন বা মগটির অবস্থান নিশ্চিত করতে পারে না। মেটাডেটা থেকে সমর্থনহীন অনুমান বাদ দিন।"
+        ],
+        "bullets": [
+          "পৃষ্ঠার শিরোনাম ও দৃশ্যমান টেক্সটে প্রকল্প বা বস্তুটি স্পষ্টভাবে উল্লেখ করুন।",
+          "শুধু দৃশ্যমান বা সম্পাদকীয়ভাবে যাচাই করা তথ্য বর্ণনা করুন।",
+          "পোর্টফোলিও SEO-কে স্টক মার্কেটপ্লেসের কীওয়ার্ড ক্ষেত্র থেকে আলাদা রাখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কার্যকর ক্যাপশন ও কাছের টেক্সট লিখুন",
+        "paragraphs": [
+          "ক্যাপশন দৃশ্যমান পৃষ্ঠার কনটেন্ট, তাই এটি ছবিটি কেন গুরুত্বপূর্ণ তা ব্যাখ্যা করতে পারে। এটি সম্ভাব্য ক্লায়েন্ট বা পাঠকের জন্য লেখা বাক্যের মতো শোনানো উচিত, লুকানো কীওয়ার্ডের তালিকার মতো নয়। আশপাশের লেখা এমন তথ্য যোগ করতে পারে যা অল্ট টেক্সটে থাকা উচিত নয়, যেমন প্রকল্পের প্রক্রিয়া, কাজ পাওয়ার প্রেক্ষাপট বা ফটোগ্রাফারের আলোকসজ্জার পদ্ধতি।",
+          "কাল্পনিক পৃষ্ঠার জন্য একটি কার্যকর ক্যাপশন হতে পারে: “Handmade stoneware mug photographed against a warm neutral backdrop to show the speckled glaze and rounded handle.” এতে বিষয় ও ছবির উদ্দেশ্য চিহ্নিত হয়, কিন্তু সরবরাহ না করা কোনো তথ্য দাবি করা হয় না।",
+          "ক্যাপশনটি ছবির কাছাকাছি রাখুন এবং প্রধান শিরোনাম ও ভূমিকা অনুচ্ছেদটি তার সঙ্গে সামঞ্জস্যপূর্ণ রাখুন। পৃষ্ঠায় একাধিক ছবি থাকলে একই বাক্য বারবার না লিখে প্রতিটির আলাদা ভূমিকা নির্ধারণ করুন।"
+        ],
+        "bullets": [
+          "বস্তু ও প্রাসঙ্গিক দৃশ্যমান বৈশিষ্ট্য উল্লেখ করুন।",
+          "পাঠকের জন্য সহায়ক হলে ছবিটির ভূমিকা ব্যাখ্যা করুন।",
+          "শুধু সার্চ টার্মের ধারাবাহিকতা হিসেবে লেখা ক্যাপশন এড়িয়ে চলুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "অল্ট টেক্সট সংক্ষিপ্ত ও নির্দিষ্ট রাখুন",
+        "paragraphs": [
+          "অল্ট টেক্সট এমন ব্যক্তির জন্য একটি টেক্সট বিকল্প, যিনি ছবিটি দেখতে পারেন না। এতে প্রয়োজনীয় বিষয় ও অর্থপূর্ণ দৃশ্যমান তথ্য জানানো উচিত, প্রতিটি খুঁটিনাটি পুনরাবৃত্তি করা নয়। সিরামিকের উদাহরণে “Handmade stoneware mug with speckled glaze and rounded handle” লেখা “ceramics handmade mug pottery art craft studio neutral background brown beautiful”-এর চেয়ে বেশি কার্যকর।",
+          "পার্থক্যটি গুরুত্বপূর্ণ না হলে “image of” দিয়ে শুরু করবেন না। ছবি যেখানে তা প্রতিষ্ঠা করে না, সেখানে রং, অবস্থান, প্রজাতি, মানুষ, মালিকানা বা রিলিজের ট্যাগ যোগ করবেন না। কোনো ছবি যদি সম্পূর্ণ অলংকারধর্মী হয় এবং কোনো তথ্য যোগ না করে, তাহলে খালি অল্ট মান উপযুক্ত হতে পারে; পৃষ্ঠার অ্যাক্সেসিবিলিটি বাস্তবায়ন অনুযায়ী সিদ্ধান্ত নিন।",
+          "অল্ট টেক্সট ক্যাপশন বা পৃষ্ঠার বিবরণের বিকল্প নয়। স্বাভাবিক ভাষা ব্যবহার করুন এবং ছবিটির ওপর নির্ভর না করে পৃষ্ঠাটি দেখার সময় এটি পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "প্রথমে বিষয়টি বর্ণনা করুন।",
+          "এক বা দুটি অর্থপূর্ণ দৃশ্যমান বৈশিষ্ট্য যোগ করুন।",
+          "পুনরাবৃত্ত, প্রচারণামূলক বা অনুমাননির্ভর শব্দ বাদ দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ছবির জন্য ক্রলযোগ্য ও স্থিতিশীল URL দিন",
+        "paragraphs": [
+          "এমন ছবির URL ব্যবহার করুন, যা সাধারণ দর্শক ও সার্চ ক্রলার অনুরোধ করতে পারে। বর্ণনামূলক ফাইলের নাম সংগঠনে সহায়তা করতে পারে, তবে এটি দৃশ্যমান প্রেক্ষাপট বা অল্ট টেক্সটের বিকল্প নয়। উদাহরণস্বরূপ, /portfolio/ceramics/speckled-stoneware-mug.jpg পথটি /uploads/IMG_8472-final-final.jpg-এর চেয়ে বোঝা সহজ।",
+          "একমাত্র গুরুত্বপূর্ণ ছবিটিকে এমন কোনো ইন্টারঅ্যাকশনের আড়ালে রাখবেন না, যার জন্য সার্চ ক্রলার বা দর্শককে অস্বাভাবিক স্ক্রিপ্ট চালাতে হয়। পোর্টফোলিও পৃষ্ঠাটিকে সাধারণ সাইট নেভিগেশন বা অন্য কোনো ক্রলযোগ্য পৃষ্ঠার মাধ্যমে সংযুক্ত রাখুন। সাইটে সাইটম্যাপ থাকলে ক্যানোনিকাল পৃষ্ঠার URL অন্তর্ভুক্ত করুন এবং সেগুলো পূর্ণ URL রাখুন; সাইটম্যাপ আবিষ্কারে সহায়তা করতে পারে, কিন্তু ক্রলিং বা ইনডেক্সিং নিশ্চিত করতে পারে না।",
+          "রিডাইরেক্ট, অ্যাক্সেস নিয়ম এবং ছবি সরবরাহের ব্যবস্থা যেন নির্ধারিত পাবলিক পৃষ্ঠাকে বাধা না দেয়, তা পরীক্ষা করুন। ওয়েবসাইট ইনডেক্সিং কীভাবে স্টক মার্কেটপ্লেস অবদানকারীর মেটাডেটা খোঁজে, তার থেকে আলাদা।"
+        ],
+        "bullets": [
+          "স্থিতিশীল পাবলিক পথ ও সঠিক ফাইল এক্সটেনশন ব্যবহার করুন।",
+          "সাধারণ সাইট নেভিগেশনের মাধ্যমে পৃষ্ঠাটিতে লিংক দিন।",
+          "প্রযোজ্য হলে সাইটম্যাপে ক্যানোনিকাল পূর্ণ URL ব্যবহার করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "মাপ, প্রতিক্রিয়াশীল সরবরাহ ও কার্যকর লোডিং নির্ধারণ করুন",
+        "paragraphs": [
+          "প্রস্থ ও উচ্চতা ঘোষণা করে, অথবা সমতুল্য অ্যাসপেক্ট-রেশিও নিয়ম ব্যবহার করে ছবির লেআউটের জায়গা আগে থেকেই নির্ধারণ করুন। এতে ফাইল আসার আগেই ব্রাউজার লেআউট হিসাব করতে পারে। ছোট পোর্টফোলিও ভিউপোর্টকে অপ্রয়োজনীয়ভাবে বিশাল মূল ফাইল ডাউনলোড করানোর বদলে উপযুক্ত মাপের সংস্করণ সরবরাহ করুন।",
+          "প্রতিক্রিয়াশীল ছবি মার্কআপ বিভিন্ন পর্দার জন্য বিকল্প মাপ দিতে পারে। পোর্টফোলিওর উদ্দেশ্যের জন্য যথেষ্ট বিবরণ রাখুন, তবে ফোন ও বড় ডিসপ্লেতে ফলাফল পরীক্ষা করুন। খোলার দৃশ্যের নিচের ছবির জন্য অলস লোডিং উপযুক্ত হতে পারে; দর্শকের অবিলম্বে প্রয়োজনীয় প্রধান ছবিটি স্বয়ংক্রিয়ভাবে বিলম্বিত না করে সতর্কভাবে পরীক্ষা করা উচিত।",
+          "আপনার কাজের ধারা অনুমতি দিলে মূল ফাইল নিরাপদে অন্যত্র সংরক্ষণ করুন এবং ওয়েব ডেরিভেটিভকে উপস্থাপনার সম্পদ হিসেবে বিবেচনা করুন। কমপ্রেশন, মাপ বা সরবরাহের সেটিং বদলানোর পর প্রকৃত পৃষ্ঠা পরীক্ষা করুন, যাতে দৃশ্যমান মান সিদ্ধান্তের অংশ থাকে।"
+        ],
+        "bullets": [
+          "মূল মাপ বা অ্যাসপেক্ট রেশিও ঘোষণা করুন।",
+          "দর্শকের ভিউপোর্ট অনুযায়ী উপযুক্ত মাপ দিন।",
+          "বাস্তব পৃষ্ঠা বিন্যাসে দৃশ্যমান মান ও লোডিং আচরণ দুটিই পরীক্ষা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "বাস্তব উদাহরণ: একটি সিরামিক পোর্টফোলিও পৃষ্ঠা",
+        "paragraphs": [
+          "ধরা যাক পৃষ্ঠার শিরোনাম হলো “Handmade Ceramics Photography: Speckled Stoneware Mug.” ফটোগ্রাফারের কাছে সামনের দিক থেকে তোলা তিন-চতুর্থাংশ ভিউয়ের একটি ছবি আছে। দৃশ্যমান বিষয় হলো নিরপেক্ষ পৃষ্ঠের ওপর একটি মগ; প্রকল্পের নোটে নিশ্চিত করা হয়েছে যে এটি হাতে তৈরি স্টোনওয়্যার এবং ছবিটি সিরামিক পোর্টফোলিওর জন্য তৈরি। কোনো নির্মাতার নাম, অবস্থান বা গ্লেজের নির্দিষ্ট উপাদান নিশ্চিত নয়।",
+          "বিচক্ষণ বাস্তবায়নে প্রতিটি ক্ষেত্রের আলাদা উদ্দেশ্য থাকে। শিরোনাম পৃষ্ঠাটি ব্যাখ্যা করে, ক্যাপশন ছবির উদ্দেশ্য ব্যাখ্যা করে এবং অল্ট টেক্সট সংক্ষিপ্ত টেক্সট বিকল্প দেয়। ফাইলের নাম ও URL বর্ণনামূলক, কিন্তু সম্ভাব্য প্রতিটি অনুসন্ধান ধারণ করার চেষ্টা করে না। ছবিটি উপযুক্ত ডেরিভেটিভ হিসেবে সরবরাহ করা হয় এবং পৃষ্ঠার মার্কআপে মাপ ঘোষণা করা থাকে।"
+        ],
+        "bullets": [
+          "পৃষ্ঠার শিরোনাম: Handmade Ceramics Photography: Speckled Stoneware Mug.",
+          "ক্যাপশন: Handmade stoneware mug photographed against a warm neutral backdrop to show the speckled glaze and rounded handle.",
+          "বিকল্প পাঠ: Handmade stoneware mug with speckled glaze and rounded handle.",
+          "ছবির পথ: /portfolio/ceramics/speckled-stoneware-mug.jpg.",
+          "যাচাইয়ের কাজ: প্রকাশিত পৃষ্ঠাটি খুলুন, প্রদর্শিত ছবিটি পরীক্ষা করুন এবং সাধারণ ব্রাউজার সেশনে সর্বসাধারণের URL খুলে দেখুন।"
+        ],
+        "example": "ক্ষেত্রগুলোর ব্যবহারিক পরিকল্পনা\nপৃষ্ঠার উদ্দেশ্য: সিরামিকের পোর্টফোলিও উদাহরণ\nছবির ফাইলের নাম: speckled-stoneware-mug.jpg\nক্যাপশন: Handmade stoneware mug photographed against a warm neutral backdrop to show the speckled glaze and rounded handle.\nবিকল্প পাঠ: Handmade stoneware mug with speckled glaze and rounded handle.\nURL-এর ধরন: https://example.com/portfolio/ceramics/speckled-stoneware-mug.jpg\nমাত্রা: ওয়েবের জন্য তৈরি ছবির প্রকৃত প্রস্থ ও উচ্চতা ব্যবহার করুন, অনুমানভিত্তিক মান নয়।"
+      }
+    ],
+    "checklist": [
+      "পৃষ্ঠায় একটি স্পষ্ট বিষয় ও কার্যকর দৃশ্যমান টেক্সট আছে।",
+      "ক্যাপশন কীওয়ার্ডের তালিকায় পরিণত না হয়ে ছবিটি ব্যাখ্যা করে।",
+      "অল্ট টেক্সট সংক্ষিপ্ত, স্বাভাবিক এবং সমর্থিত তথ্যের ভিত্তিতে লেখা।",
+      "ছবির URL স্থিতিশীল, পাবলিক এবং একটি ক্রলযোগ্য পৃষ্ঠা থেকে সংযুক্ত।",
+      "প্রস্থ ও উচ্চতা বা সমতুল্য অ্যাসপেক্ট রেশিও লেআউটের জায়গা সংরক্ষণ করে।",
+      "মোবাইল ও ডেস্কটপের মাপে সরবরাহ করা ছবি পরীক্ষা করা হয়েছে।",
+      "পৃষ্ঠায় ধারাবাহিকভাবে ক্যানোনিকাল URL ব্যবহার করা হয়েছে; সাইটম্যাপকে ইনডেক্সিংয়ের নিশ্চয়তা নয়, আবিষ্কারে সহায়তা হিসেবে বিবেচনা করা হয়েছে।",
+      "অনূদিত সংস্করণ থাকলে প্রতিটি ভাষার পৃষ্ঠার নিজস্ব ক্যানোনিকাল URL এবং উপযুক্ত পারস্পরিক ভাষা-নির্দেশ থাকে।",
+      "পরিচয়, মালিকানা, অবস্থান বা অন্য কোনো অদৃশ্য তথ্য অনুমান না করে দর্শকের অভিজ্ঞতা অনুযায়ী ফলাফল পর্যালোচনা করা হয়েছে।"
+    ],
+    "illustration": {
+      "title": "পোর্টফোলিও ছবির তিনটি পরীক্ষা",
+      "steps": [
+        {
+          "label": "দৃশ্যমান বিষয় নির্ধারণ করুন",
+          "detail": "পৃষ্ঠা, ক্যাপশন ও অল্ট টেক্সটকে নিশ্চিত তথ্যের সঙ্গে মিলিয়ে নিন।"
+        },
+        {
+          "label": "ছবির সরবরাহ প্রস্তুত করুন",
+          "detail": "স্থিতিশীল URL, প্রতিক্রিয়াশীল মাপ ও ঘোষিত মাত্রা ব্যবহার করুন।"
+        },
+        {
+          "label": "প্রকাশিত পৃষ্ঠা পর্যালোচনা করুন",
+          "detail": "অ্যাক্সেসিবিলিটি, লেআউট, লোডিং ও ক্রলযোগ্য অবস্থান পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "फ़ोटोग्राफ़र की पोर्टफ़ोलियो वेबसाइट के लिए इमेज SEO",
+    "description": "उपयोगी कैप्शन, संक्षिप्त ऑल्ट टेक्स्ट, क्रॉल योग्य URL, प्रतिक्रियाशील आयाम और सिरेमिक पृष्ठ के व्यावहारिक उदाहरण से इमेज SEO सुधारें।",
+    "intro": "पोर्टफ़ोलियो की एक तस्वीर को एक साथ दो दर्शकों की मदद करनी चाहिए: वे लोग जो तय कर रहे हैं कि आपका काम उनके लिए प्रासंगिक है या नहीं, और वे सर्च इंजन जो पृष्ठ को समझने की कोशिश कर रहे हैं। इमेज SEO अधिक से अधिक शब्द जोड़ने की प्रतियोगिता नहीं है। इसका उद्देश्य तस्वीर को सुलभ, तकनीकी रूप से खोज योग्य और आसपास के पृष्ठ से स्पष्ट रूप से जुड़ा बनाना है। यह मार्गदर्शिका हाथ से बने सिरेमिक पर एक काल्पनिक पोर्टफ़ोलियो पृष्ठ का उपयोग करके दिखाती है कि ऐसी जानकारी गढ़े बिना इसे कैसे बेहतर बनाया जाए जिसे तस्वीर साबित नहीं कर सकती।\n\nलक्ष्य निश्चित रैंकिंग या अधिक पूछताछ का वादा करना नहीं है। इसके बजाय, आप ऐसा पृष्ठ बनाएँगे जिसमें विषय, इमेज URL, कैप्शन, आयाम और वैकल्पिक टेक्स्ट एक-दूसरे से मेल खाते हों। इससे लोगों को अधिक स्पष्ट अनुभव मिलता है और क्रॉलर को उपयोगी संदर्भ।",
+    "sections": [
+      {
+        "heading": "पृष्ठ के वास्तविक विषय से शुरुआत करें",
+        "paragraphs": [
+          "तस्वीर में बदलाव करने से पहले एक सरल वाक्य लिखें कि पृष्ठ किस उद्देश्य के लिए है। फ़ोटोग्राफ़र का पोर्टफ़ोलियो पृष्ठ किसी केस स्टडी, गैलरी प्रविष्टि या सेवा के उदाहरण के रूप में हो सकता है। समान तस्वीरें होने पर भी इनके उद्देश्य अलग होते हैं।",
+          "इस काम के लिए पृष्ठ शिल्प-पोर्टफ़ोलियो के लिए खींचे गए हाथ से बने सिरेमिक मग के बारे में है। तस्वीर में मग, उसका ग्लेज़, एक मेज़ और प्रकाश दिखाई दे सकते हैं, लेकिन जब तक पृष्ठ ये तथ्य न दे, तब तक वह निर्माता की पहचान, पकाने का तापमान, मिट्टी का सटीक प्रकार या मग का स्थान स्थापित नहीं कर सकती। मेटाडेटा में असमर्थित अनुमान न रखें।"
+        ],
+        "bullets": [
+          "पृष्ठ के शीर्षक और दिखाई देने वाले टेक्स्ट से परियोजना या वस्तु को स्पष्ट रूप से बताएँ।",
+          "केवल दिखाई देने वाले या संपादकीय रूप से सत्यापित तथ्यों का वर्णन करें।",
+          "पोर्टफ़ोलियो SEO को स्टॉक मार्केटप्लेस के कीवर्ड क्षेत्रों से अलग रखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "उपयोगी कैप्शन और आसपास का टेक्स्ट लिखें",
+        "paragraphs": [
+          "कैप्शन दिखाई देने वाली पृष्ठ सामग्री है, इसलिए यह समझा सकता है कि तस्वीर क्यों महत्वपूर्ण है। इसे संभावित ग्राहक या पाठक के लिए लिखे गए वाक्य जैसा लगना चाहिए, छिपी हुई कीवर्ड सूची जैसा नहीं। आसपास का टेक्स्ट ऐसी जानकारी जोड़ सकता है जिसे ऑल्ट टेक्स्ट में नहीं रखना चाहिए, जैसे परियोजना की प्रक्रिया, कमीशन का संदर्भ या फ़ोटोग्राफ़र का प्रकाश-व्यवस्था संबंधी तरीका।",
+          "काल्पनिक पृष्ठ के लिए उपयोगी कैप्शन ऐसा हो सकता है: “Handmade stoneware mug photographed against a warm neutral backdrop to show the speckled glaze and rounded handle.” यह विषय और फ़ोटोग्राफ़ी का उद्देश्य बताता है, बिना ऐसी जानकारी का दावा किए जो उपलब्ध नहीं है।",
+          "कैप्शन को तस्वीर के पास रखें और मुख्य शीर्षक तथा शुरुआती अनुच्छेद को उससे सुसंगत रखें। यदि पृष्ठ पर कई तस्वीरें हैं, तो एक ही वाक्य दोहराने के बजाय प्रत्येक को अलग भूमिका दें।"
+        ],
+        "bullets": [
+          "वस्तु और प्रासंगिक दृश्य विशेषता का उल्लेख करें।",
+          "जहाँ पाठक के लिए उपयोगी हो, वहाँ तस्वीर की भूमिका समझाएँ।",
+          "ऐसे कैप्शन से बचें जो केवल खोज-शब्दों की श्रृंखला हों।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ऑल्ट टेक्स्ट संक्षिप्त और विशिष्ट रखें",
+        "paragraphs": [
+          "ऑल्ट टेक्स्ट उस व्यक्ति के लिए टेक्स्ट विकल्प है जो तस्वीर नहीं देख सकता। इसमें आवश्यक विषय और अर्थपूर्ण दृश्य जानकारी होनी चाहिए, हर विवरण की पुनरावृत्ति नहीं। सिरेमिक उदाहरण में “Handmade stoneware mug with speckled glaze and rounded handle” लिखना “ceramics handmade mug pottery art craft studio neutral background brown beautiful” से अधिक उपयोगी है।",
+          "जब तक अंतर बताना ज़रूरी न हो, “image of” से शुरुआत न करें। जब तस्वीर किसी बात को स्थापित नहीं करती, तब रंग, स्थान, प्रजाति, लोगों, स्वामित्व या रिलीज़ के टैग न जोड़ें। यदि तस्वीर पूरी तरह सजावटी है और कोई जानकारी नहीं देती, तो खाली ऑल्ट मान उचित हो सकता है; यह निर्णय पृष्ठ के एक्सेसिबिलिटी कार्यान्वयन के अनुसार लें।",
+          "ऑल्ट टेक्स्ट कैप्शन या पृष्ठ-विवरण का विकल्प नहीं है। भाषा स्वाभाविक रखें और तस्वीर पर निर्भर हुए बिना पृष्ठ देखते समय इसे जाँचें।"
+        ],
+        "bullets": [
+          "सबसे पहले विषय का वर्णन करें।",
+          "एक या दो अर्थपूर्ण दृश्य विशेषताएँ शामिल करें।",
+          "दोहराए गए, प्रचारात्मक या अनुमान-आधारित शब्द हटाएँ।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "तस्वीर को क्रॉल योग्य और स्थिर URL दें",
+        "paragraphs": [
+          "ऐसा इमेज URL इस्तेमाल करें जिसे सामान्य आगंतुक और सर्च क्रॉलर अनुरोध कर सकें। वर्णनात्मक फ़ाइल नाम संगठन में मदद कर सकता है, लेकिन यह दिखाई देने वाले संदर्भ या ऑल्ट टेक्स्ट का विकल्प नहीं है। उदाहरण के लिए, /portfolio/ceramics/speckled-stoneware-mug.jpg जैसा पथ /uploads/IMG_8472-final-final.jpg से समझना आसान है।",
+          "एकमात्र महत्वपूर्ण तस्वीर को ऐसी इंटरैक्शन के पीछे न छिपाएँ जिसके लिए सर्च क्रॉलर या आगंतुक को कोई असामान्य स्क्रिप्ट चलानी पड़े। पोर्टफ़ोलियो पृष्ठ को सामान्य साइट नेविगेशन या किसी अन्य क्रॉल योग्य पृष्ठ से जोड़े रखें। यदि आपकी साइट साइटमैप इस्तेमाल करती है, तो उसमें कैनोनिकल पृष्ठ URL शामिल करें और उन्हें पूर्ण रखें; साइटमैप खोज में मदद कर सकता है, लेकिन क्रॉलिंग या इंडेक्सिंग की गारंटी नहीं दे सकता।",
+          "जाँचें कि रीडायरेक्ट, पहुँच नियम और तस्वीर पहुँचाने की व्यवस्था इच्छित सार्वजनिक पृष्ठ को अवरुद्ध न करे। वेबसाइट इंडेक्सिंग, स्टॉक मार्केटप्लेस द्वारा योगदानकर्ता के मेटाडेटा की खोज से अलग है।"
+        ],
+        "bullets": [
+          "स्थिर सार्वजनिक पथ और सही फ़ाइल एक्सटेंशन इस्तेमाल करें।",
+          "सामान्य साइट नेविगेशन के माध्यम से पृष्ठ से लिंक करें।",
+          "जहाँ लागू हो, साइटमैप में कैनोनिकल पूर्ण URL इस्तेमाल करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "आयाम, प्रतिक्रियाशील डिलीवरी और उपयोगी लोडिंग तय करें",
+        "paragraphs": [
+          "चौड़ाई और ऊँचाई घोषित करके, या समकक्ष आस्पेक्ट-रेशियो नियम इस्तेमाल करके तस्वीर के लेआउट की जगह पहले से सुरक्षित करें। इससे फ़ाइल आने से पहले ब्राउज़र लेआउट की गणना कर सकता है। छोटे पोर्टफ़ोलियो व्यूपोर्ट से अनावश्यक रूप से बड़ी मूल फ़ाइल डाउनलोड कराने के बजाय उचित आकार का संस्करण दें।",
+          "रिस्पॉन्सिव इमेज मार्कअप अलग-अलग स्क्रीन के लिए वैकल्पिक आकार दे सकता है। पोर्टफ़ोलियो के उद्देश्य के लिए पर्याप्त विवरण रखें, लेकिन परिणाम को फ़ोन और बड़े डिस्प्ले पर जाँचें। शुरुआती दृश्य के नीचे की तस्वीरों के लिए लेज़ी लोडिंग उपयुक्त हो सकती है; आगंतुक को तुरंत चाहिए ऐसी मुख्य तस्वीर को अपने-आप देर से लोड करने के बजाय सावधानी से जाँचना चाहिए।",
+          "यदि आपका कार्यप्रवाह अनुमति देता है, तो मूल फ़ाइल को किसी सुरक्षित स्थान पर रखें और वेब डेरिवेटिव को प्रस्तुति-संपत्ति मानें। कंप्रेशन, आयाम या डिलीवरी सेटिंग बदलने के बाद वास्तविक पृष्ठ की जाँच करें, ताकि दृश्य गुणवत्ता निर्णय का हिस्सा बनी रहे।"
+        ],
+        "bullets": [
+          "मूल आयाम या आस्पेक्ट रेशियो घोषित करें।",
+          "आगंतुक के व्यूपोर्ट के अनुसार उपयुक्त आकार दें।",
+          "वास्तविक पृष्ठ लेआउट में दृश्य गुणवत्ता और लोडिंग व्यवहार दोनों जाँचें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "व्यावहारिक उदाहरण: एक सिरेमिक पोर्टफ़ोलियो पृष्ठ",
+        "paragraphs": [
+          "मान लें कि पृष्ठ का शीर्षक है “Handmade Ceramics Photography: Speckled Stoneware Mug.” फ़ोटोग्राफ़र के पास सामने से लिया गया एक फ़्रंट थ्री-क्वार्टर फ़ोटोग्राफ़ है। दिखाई देने वाला विषय एक तटस्थ सतह पर रखा एक मग है; परियोजना के नोट पुष्टि करते हैं कि यह हाथ से बना स्टोनवेयर है और तस्वीर सिरेमिक पोर्टफ़ोलियो के लिए बनाई गई थी। निर्माता का नाम, स्थान या ग्लेज़ की सटीक सामग्री की पुष्टि नहीं हुई है।",
+          "समझदार कार्यान्वयन में प्रत्येक फ़ील्ड का अपना उद्देश्य होता है। शीर्षक पृष्ठ समझाता है, कैप्शन फ़ोटोग्राफ़ी का उद्देश्य बताता है और ऑल्ट टेक्स्ट छोटा टेक्स्ट विकल्प देता है। फ़ाइल नाम और URL वर्णनात्मक हैं, लेकिन हर संभावित खोज को समेटने का प्रयास नहीं करते। तस्वीर उचित डेरिवेटिव में दी जाती है और पृष्ठ मार्कअप में आयाम घोषित किए जाते हैं।"
+        ],
+        "bullets": [
+          "पृष्ठ का शीर्षक: Handmade Ceramics Photography: Speckled Stoneware Mug.",
+          "कैप्शन: Handmade stoneware mug photographed against a warm neutral backdrop to show the speckled glaze and rounded handle.",
+          "वैकल्पिक पाठ: Handmade stoneware mug with speckled glaze and rounded handle.",
+          "चित्र का पथ: /portfolio/ceramics/speckled-stoneware-mug.jpg.",
+          "सत्यापन का काम: प्रकाशित पृष्ठ खोलें, दिखाई दे रही तस्वीर जाँचें और सामान्य ब्राउज़र सत्र में सार्वजनिक URL खोलकर देखें।"
+        ],
+        "example": "फ़ील्ड की व्यावहारिक योजना\nपृष्ठ का उद्देश्य: सिरेमिक पोर्टफोलियो का उदाहरण\nचित्र की फ़ाइल का नाम: speckled-stoneware-mug.jpg\nकैप्शन: Handmade stoneware mug photographed against a warm neutral backdrop to show the speckled glaze and rounded handle.\nवैकल्पिक पाठ: Handmade stoneware mug with speckled glaze and rounded handle.\nURL का प्रारूप: https://example.com/portfolio/ceramics/speckled-stoneware-mug.jpg\nआयाम: वेब के लिए तैयार चित्र की वास्तविक चौड़ाई और ऊँचाई इस्तेमाल करें, अनुमानित मान नहीं।"
+      }
+    ],
+    "checklist": [
+      "पृष्ठ का एक स्पष्ट विषय और उपयोगी दिखाई देने वाला टेक्स्ट है।",
+      "कैप्शन कीवर्ड सूची बने बिना तस्वीर को समझाता है।",
+      "ऑल्ट टेक्स्ट संक्षिप्त, स्वाभाविक और समर्थित तथ्यों पर आधारित है।",
+      "इमेज URL स्थिर, सार्वजनिक और क्रॉल योग्य पृष्ठ से जुड़ा है।",
+      "चौड़ाई और ऊँचाई या समकक्ष आस्पेक्ट रेशियो लेआउट की जगह सुरक्षित रखते हैं।",
+      "मोबाइल और डेस्कटॉप आकारों पर दी गई तस्वीर की जाँच की गई है।",
+      "पृष्ठ लगातार कैनोनिकल URL इस्तेमाल करता है; साइटमैप को इंडेक्सिंग की गारंटी नहीं, बल्कि खोज में सहायता माना गया है।",
+      "यदि अनूदित संस्करण मौजूद हैं, तो प्रत्येक भाषा के पृष्ठ का अपना कैनोनिकल URL और उचित पारस्परिक भाषा एनोटेशन है।",
+      "पहचान, स्वामित्व, स्थान या अन्य छिपे तथ्यों का अनुमान लगाए बिना परिणाम की समीक्षा उसी तरह की गई है जैसे कोई आगंतुक उसे अनुभव करेगा।"
+    ],
+    "illustration": {
+      "title": "पोर्टफ़ोलियो तस्वीर की तीन जाँचें",
+      "steps": [
+        {
+          "label": "दिखाई देने वाला विषय तय करें",
+          "detail": "पृष्ठ, कैप्शन और ऑल्ट टेक्स्ट को पुष्ट तथ्यों से मिलाएँ।"
+        },
+        {
+          "label": "तस्वीर की डिलीवरी तैयार करें",
+          "detail": "स्थिर URL, प्रतिक्रियाशील आकार और घोषित आयाम इस्तेमाल करें।"
+        },
+        {
+          "label": "प्रकाशित पृष्ठ की समीक्षा करें",
+          "detail": "एक्सेसिबिलिटी, लेआउट, लोडिंग और क्रॉल योग्य स्थान जाँचें।"
+        }
+      ]
+    }
+  }
+}

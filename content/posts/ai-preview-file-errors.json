@@ -1,0 +1,459 @@
+{
+  "slug": "ai-preview-file-errors",
+  "category": "workflow",
+  "source_ids": [
+    "metastocker",
+    "adobe-upload",
+    "google-images"
+  ],
+  "en": {
+    "title": "Fix Unreadable Image, Video, and Illustrator Previews",
+    "description": "A practical workflow for repairing preview problems in MOV, AI, and JPEG files while preserving the original assets for stock submission.",
+    "intro": "A preview error does not always mean that the underlying asset is unusable. A MOV may play correctly in a desktop player but use a codec your browser cannot display. An Illustrator file may contain good vector artwork while lacking a PDF-compatible preview. A JPEG may open in one application and fail in another because its file structure is damaged. The safe response is to create a supported preview copy for inspection and metadata work, while keeping the original asset untouched. This guide shows how to diagnose each case, produce a reviewable preview, and avoid confusing a readable preview with a technically accepted stock file.",
+    "sections": [
+      {
+        "heading": "Separate the original from the preview",
+        "paragraphs": [
+          "Create a working folder with separate locations for originals, preview copies, and final metadata. Keep the original filename, extension, and file bytes unchanged. Add a clear suffix such as _preview or _review to generated copies so that a preview cannot be mistaken for the submission asset.",
+          "A preview is an aid for viewing, metadata generation, and quality inspection. It is not automatically a replacement asset, a repair of the source file, or proof that a marketplace will accept the original. Check the current contributor requirements before uploading any converted file."
+        ],
+        "bullets": [
+          "Never overwrite the source .mov, .ai, or .jpg.",
+          "Record which file produced each preview.",
+          "Inspect the final asset separately from its preview."
+        ],
+        "example": "Originals/\n  city-night-07.mov\n  poster-lines.ai\n  ceramic-cup.jpg\nPreviews/\n  city-night-07_preview.mp4\n  poster-lines_preview.pdf\n  ceramic-cup_preview.jpg"
+      },
+      {
+        "heading": "Diagnose the failure before converting",
+        "paragraphs": [
+          "First try the file in a second capable desktop application. If the MOV plays there but not in the browser, suspect a browser codec or container compatibility issue rather than missing frames. If the AI opens in Illustrator but shows a blank thumbnail elsewhere, check whether PDF compatibility was enabled when it was saved. If the JPEG shows blocky corruption, partial rendering, or an error in several applications, treat it as potentially damaged rather than merely unsupported.",
+          "Do not infer that a video is technically clean because one sampled frame looks fine. A preview workflow is useful for locating obvious problems, but the complete motion, sound requirements where relevant, dimensions, and frame behavior still need human inspection."
+        ],
+        "bullets": [
+          "Compare at least two viewers when practical.",
+          "Check the entire video, not only generated stills.",
+          "Treat repeated JPEG errors as possible corruption."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Make a browser-friendly video preview",
+        "paragraphs": [
+          "For a playable MOV that uses an unsupported browser codec, make a separate preview in a broadly supported web format using a trusted desktop video tool. Keep the same frame size and duration where practical, and choose settings that preserve enough detail for checking focus, artifacts, transitions, and framing. Do not replace the original MOV merely because the preview plays.",
+          "Open the converted copy in the target browser and scrub through the whole timeline. Compare several frames against the source player. If the preview drops frames, changes colors, loses transparency, or alters timing, it is unsuitable for judging that property. Keep notes about any limitation instead of assuming the conversion is neutral."
+        ],
+        "bullets": [
+          "Use a new filename and output folder.",
+          "Check start, middle, end, and fast motion.",
+          "Retain the original for any later submission decision."
+        ],
+        "example": "Example decision: A file named city-night-07.mov plays in a desktop player but not in the browser. Create city-night-07_preview.mp4 for browser review, then compare the first traffic-light change, the midpoint pan, and the final frame with the MOV. If timing differs, use the original in the technical review and treat the MP4 only as a convenience preview."
+      },
+      {
+        "heading": "Create an Illustrator preview safely",
+        "paragraphs": [
+          "An AI file may need a readable embedded preview for another application to display it. If you have the source application, open the original and save a copy with PDF-compatible content enabled, when that option is available in the current application. Use a new filename and preserve the original AI file. Then open the copy in a PDF-capable viewer and inspect artboards, clipping masks, text, transparency, and linked elements.",
+          "A PDF-compatible preview does not prove that fonts, linked files, color settings, or marketplace requirements are correct. It only makes the artwork more accessible for viewing and downstream inspection. If the source depends on missing links or fonts, note that limitation rather than silently substituting assets."
+        ],
+        "bullets": [
+          "Save a copy before changing compatibility settings.",
+          "Check every artboard and important transparent area.",
+          "Do not claim the preview repairs missing source dependencies."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Recover or replace a damaged JPEG",
+        "paragraphs": [
+          "If a JPEG is corrupted, first duplicate it and work only on the duplicate. Try opening the copy in another reputable image editor and export a new JPEG only if the complete image displays correctly. Compare dimensions, cropping, color, and fine detail with the original viewer. A successful export from a partially decoded image may preserve the visible damage, so inspect edges, faces, text, and repeating patterns at 100 percent.",
+          "If no application can recover the full image, return to the camera, editing project, or backup and export a fresh copy. Do not use a preview generator to invent missing pixels. Keep the damaged file for diagnosis, but do not treat it as ready for submission."
+        ],
+        "bullets": [
+          "Preserve the damaged original for reference.",
+          "Verify the whole frame after recovery.",
+          "Prefer a clean re-export from the source when available."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Generate metadata only after review",
+        "paragraphs": [
+          "Once each preview is readable, you can use MetaStocker as a local metadata aid. Its browser-based local mode can load supported vision models and accept images, videos, and AI files when the AI has a readable preview. Local inference stays on the visitor’s device; downloading a model is a separate event from loading model memory, and browser cache can later be evicted. Start with one parallel local thread and review the generated rows file by file.",
+          "For video, treat generated descriptions as suggestions based on sampled previews, not a substitute for watching the complete clip. Correct unsupported assumptions, remove invented locations or identities, and keep only observable content. Export only reviewed rows. If you create a CSV, filenames must match the assets exactly, including extensions, and the contributor portal should be checked after import. Uploading or submission is not performed automatically."
+        ],
+        "bullets": [
+          "Review every title, keyword, and description.",
+          "Do not transfer preview filenames into final metadata by accident.",
+          "Check current marketplace limits and language rules before import."
+        ],
+        "example": "Example review note: “city-night-07.mov: night street, wet pavement, traffic lights; no location claimed.” The preview filename is used only for internal matching, while the final CSV keeps the exact submission filename."
+      }
+    ],
+    "checklist": [
+      "Keep untouched originals in a separate folder.",
+      "Create preview copies with explicit suffixes.",
+      "Test MOV previews across the intended browser workflow.",
+      "Check every AI artboard and linked element.",
+      "Recover JPEGs only when the complete image is intact.",
+      "Watch full videos before approving descriptions.",
+      "Review metadata and exact filenames before export or portal import.",
+      "Check current contributor policies before submission."
+    ],
+    "illustration": {
+      "title": "A safe preview-repair workflow",
+      "steps": [
+        {
+          "label": "Preserve the source",
+          "detail": "Duplicate the asset and label the working preview clearly."
+        },
+        {
+          "label": "Build and inspect",
+          "detail": "Convert only the copy, then compare the full asset manually."
+        },
+        {
+          "label": "Export reviewed data",
+          "detail": "Use exact filenames and verify metadata in the portal."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как исправить превью изображений, видео и Illustrator",
+    "description": "Практическая схема для MOV, AI и JPEG: создавайте читаемые копии для проверки, не изменяя исходные файлы перед стоковой загрузкой.",
+    "intro": "Ошибка предпросмотра не всегда означает, что исходный материал непригоден. MOV может нормально воспроизводиться в настольном плеере, но использовать кодек, который браузер не поддерживает. В Illustrator-файле может быть корректная векторная графика, но отсутствовать PDF-совместимое превью. JPEG иногда открывается в одной программе и повреждённо отображается в другой из-за нарушенной структуры файла. Безопасная схема состоит в том, чтобы создать отдельную читаемую копию для просмотра и работы с метаданными, оставив оригинал без изменений. Ниже описан порядок диагностики, подготовки превью и проверки результата.",
+    "sections": [
+      {
+        "heading": "Разделите оригиналы и копии",
+        "paragraphs": [
+          "Создайте отдельные папки для оригиналов, превью и готовых метаданных. Не меняйте исходное имя, расширение и содержимое файла. Для копий используйте понятный суффикс, например _preview или _review, чтобы рабочее превью нельзя было принять за файл для отправки.",
+          "Превью помогает открыть материал, проверить качество и подготовить описание. Оно не является автоматически исправленным оригиналом и не доказывает, что площадка примет исходный или конвертированный файл. Перед загрузкой сверяйтесь с актуальными правилами конкретного стока."
+        ],
+        "bullets": [
+          "Не перезаписывайте исходные .mov, .ai и .jpg.",
+          "Фиксируйте связь между оригиналом и его превью.",
+          "Проверяйте финальный файл отдельно от копии."
+        ],
+        "example": "Оригиналы/\n  city-night-07.mov\n  poster-lines.ai\n  ceramic-cup.jpg\nПревью/\n  city-night-07_preview.mp4\n  poster-lines_preview.pdf\n  ceramic-cup_preview.jpg"
+      },
+      {
+        "heading": "Сначала найдите тип ошибки",
+        "paragraphs": [
+          "Откройте файл во второй подходящей настольной программе. Если MOV воспроизводится там, но не в браузере, вероятнее всего проблема в совместимости контейнера или кодека, а не в отсутствии кадров. Если AI открывается в Illustrator, но отображается пустым в другой программе, проверьте, было ли при сохранении включено PDF-совместимое содержимое. Если JPEG даёт полосы, частичное изображение или ошибку в нескольких приложениях, рассматривайте его как повреждённый файл.",
+          "Один удачный кадр не подтверждает качество видео целиком. Превью помогает заметить очевидные проблемы, но всю последовательность, резкость, артефакты, размеры и особенности движения нужно проверять вручную."
+        ],
+        "bullets": [
+          "По возможности сравните два средства просмотра.",
+          "Просмотрите весь ролик, а не только отдельные кадры.",
+          "Не путайте повреждение JPEG с проблемой совместимости."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Сделайте браузерное превью MOV",
+        "paragraphs": [
+          "Если MOV воспроизводится на компьютере, но не в браузере из-за неподдерживаемого кодека, создайте отдельную копию в широко поддерживаемом веб-формате с помощью надёжного настольного инструмента. По возможности сохраните исходные размер кадра и длительность. Настройки должны оставлять достаточно деталей для проверки фокуса, артефактов, переходов и композиции. Исходный MOV не заменяйте.",
+          "Откройте конвертированную копию в целевом браузере и просмотрите всю шкалу времени. Сравните начало, середину и конец с исходником в настольном плеере. Если изменились цвет, прозрачность, синхронизация или скорость, такое превью нельзя считать нейтральным для оценки этих свойств."
+        ],
+        "bullets": [
+          "Сохраняйте копию в отдельной папке.",
+          "Проверьте начало, середину, конец и быстрые движения.",
+          "Оставьте оригинал для технического решения о загрузке."
+        ],
+        "example": "Пример решения: city-night-07.mov воспроизводится в настольном плеере, но не в браузере. Создайте city-night-07_preview.mp4, затем сравните смену светофора, панораму в середине и последний кадр. Если тайминг отличается, используйте MP4 только для удобного просмотра, а техническую проверку проводите по MOV."
+      },
+      {
+        "heading": "Подготовьте превью Illustrator",
+        "paragraphs": [
+          "AI-файлу может требоваться читаемое встроенное превью, чтобы его могли показать другие программы. Откройте оригинал в исходном приложении и сохраните копию с включённым PDF-совместимым содержимым, если такая настройка доступна в текущей версии. Используйте новое имя, а оригинальный AI сохраните отдельно. Затем откройте копию в просмотрщике PDF и проверьте монтажные области, маски, текст, прозрачность и связанные элементы.",
+          "PDF-совместимость облегчает просмотр, но не исправляет отсутствующие шрифты, ссылки, цветовые настройки или требования площадки. Если изображение зависит от внешних ресурсов, отметьте это явно и не подменяйте их незаметно."
+        ],
+        "bullets": [
+          "Меняйте настройку только в копии.",
+          "Проверьте все монтажные области.",
+          "Не объявляйте превью исправлением отсутствующих зависимостей."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Восстановите или заново экспортируйте JPEG",
+        "paragraphs": [
+          "Сначала сделайте копию повреждённого JPEG и работайте только с ней. Попробуйте открыть копию в другом надёжном редакторе и экспортировать новый JPEG только в том случае, если изображение полностью отображается. Сравните размеры, кадрирование, цвета и мелкие детали. Успешный экспорт частично декодированного файла может сохранить повреждение, поэтому осмотрите края, лица, текст и повторяющиеся узоры при масштабе 100 процентов.",
+          "Если ни одна программа не показывает полный кадр, вернитесь к исходному проекту, камере или резервной копии и экспортируйте файл заново. Генератор превью не должен дорисовывать отсутствующие пиксели. Повреждённый оригинал можно сохранить для диагностики, но его нельзя считать готовым к отправке."
+        ],
+        "bullets": [
+          "Сохраняйте повреждённый файл как справочный.",
+          "Проверяйте весь кадр после восстановления.",
+          "При наличии источника предпочитайте чистый повторный экспорт."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Создайте метаданные после проверки",
+        "paragraphs": [
+          "Когда превью читаются, MetaStocker можно использовать как локальный помощник для метаданных. В локальном режиме приложение в браузере принимает изображения, видео и AI-файлы, если у AI есть читаемое превью. Локальный вывод модели выполняется на устройстве посетителя. Загрузка модели и её нахождение в памяти — разные процессы: браузерный кэш может быть очищен. Начните с одного локального параллельного потока и проверяйте строки по отдельности.",
+          "Для видео описания основаны на выбранных кадрах и не заменяют просмотр полного ролика. Исправляйте неподтверждённые выводы, удаляйте выдуманные места и личности и оставляйте только наблюдаемое. Перед экспортом проверьте каждую строку. Для CSV имена должны точно совпадать с именами файлов, включая расширения; после импорта осмотрите результат в кабинете. Автоматическая отправка не выполняется."
+        ],
+        "bullets": [
+          "Проверяйте каждый заголовок, ключевое слово и описание.",
+          "Не переносите имя превью в финальные метаданные случайно.",
+          "Перед импортом сверяйтесь с текущими лимитами и языком площадки."
+        ],
+        "example": "Пример заметки: «city-night-07.mov: ночная улица, мокрый асфальт, светофоры; место не указано». Имя превью используется только для внутреннего сопоставления, а в CSV сохраняется точное имя отправляемого файла."
+      }
+    ],
+    "checklist": [
+      "Храните оригиналы отдельно и без изменений.",
+      "Создавайте копии с понятным суффиксом.",
+      "Проверяйте MOV в целевом браузере.",
+      "Осматривайте все монтажные области AI.",
+      "Восстанавливайте JPEG только при сохранности полного кадра.",
+      "Просматривайте видео целиком перед утверждением описания.",
+      "Проверяйте точные имена файлов и метаданные.",
+      "Перед отправкой изучайте актуальные правила площадки."
+    ],
+    "illustration": {
+      "title": "Безопасная схема подготовки превью",
+      "steps": [
+        {
+          "label": "Сохраните оригинал",
+          "detail": "Сделайте копию и явно назовите рабочее превью."
+        },
+        {
+          "label": "Создайте и проверьте",
+          "detail": "Конвертируйте копию и вручную сравните весь материал."
+        },
+        {
+          "label": "Экспортируйте данные",
+          "detail": "Используйте точные имена и проверьте CSV в кабинете."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "অপাঠ্য ছবি, ভিডিও ও Illustrator প্রিভিউ ঠিক করার উপায়",
+    "description": "মূল অ্যাসেট অক্ষত রেখে MOV, AI ও JPEG ফাইলের প্রিভিউ সমস্যা শনাক্ত, পর্যালোচনা ও ঠিক করার ব্যবহারিক কর্মপদ্ধতি।",
+    "intro": "প্রিভিউতে ত্রুটি দেখা দিলেই মূল অ্যাসেট ব্যবহার-অযোগ্য—এমন নয়। MOV ফাইল ডেস্কটপ প্লেয়ারে ঠিকমতো চলতে পারে, কিন্তু এমন কোডেক ব্যবহার করতে পারে যা আপনার ব্রাউজার দেখাতে পারে না। Illustrator ফাইলে ভালো ভেক্টর artwork থাকতে পারে, কিন্তু PDF-সামঞ্জস্যপূর্ণ প্রিভিউ নাও থাকতে পারে। JPEG একটি অ্যাপ্লিকেশনে খুললেও অন্যটিতে ব্যর্থ হতে পারে, কারণ এর ফাইল-গঠন ক্ষতিগ্রস্ত। নিরাপদ পদ্ধতি হলো পর্যালোচনা ও মেটাডেটা কাজের জন্য সমর্থিত একটি প্রিভিউ কপি তৈরি করা এবং মূল অ্যাসেটটি অপরিবর্তিত রাখা। এই নির্দেশিকায় প্রতিটি পরিস্থিতি শনাক্ত করা, পর্যালোচনাযোগ্য প্রিভিউ তৈরি করা এবং পাঠযোগ্য প্রিভিউকে প্রযুক্তিগতভাবে গ্রহণযোগ্য স্টক ফাইল ভেবে ভুল না করার পদ্ধতি দেখানো হয়েছে।",
+    "sections": [
+      {
+        "heading": "মূল ফাইল ও প্রিভিউ আলাদা রাখুন",
+        "paragraphs": [
+          "মূল ফাইল, প্রিভিউ কপি এবং চূড়ান্ত মেটাডেটার জন্য আলাদা অবস্থানসহ একটি কাজের ফোল্ডার তৈরি করুন। মূল ফাইলের নাম, এক্সটেনশন এবং ফাইলের বাইট অপরিবর্তিত রাখুন। তৈরি করা কপিতে _preview বা _review-এর মতো স্পষ্ট প্রত্যয় যোগ করুন, যাতে প্রিভিউকে জমা দেওয়ার অ্যাসেট ভেবে ভুল না হয়।",
+          "প্রিভিউ হলো দেখা, মেটাডেটা তৈরি এবং মান যাচাইয়ের সহায়ক। এটি স্বয়ংক্রিয়ভাবে বিকল্প অ্যাসেট, উৎস ফাইলের মেরামত, বা কোনো মার্কেটপ্লেস মূল ফাইলটি গ্রহণ করবে—এর প্রমাণ নয়। রূপান্তরিত কোনো ফাইল আপলোডের আগে বর্তমান কনট্রিবিউটর-সংক্রান্ত শর্ত যাচাই করুন।"
+        ],
+        "bullets": [
+          "কখনো উৎস .mov, .ai বা .jpg-এর ওপর লিখবেন না।",
+          "কোন ফাইল থেকে প্রতিটি প্রিভিউ তৈরি হয়েছে, তা লিখে রাখুন।",
+          "চূড়ান্ত অ্যাসেটটি প্রিভিউ থেকে আলাদাভাবে পরীক্ষা করুন।"
+        ],
+        "example": "Originals/\n  city-night-07.mov\n  poster-lines.ai\n  ceramic-cup.jpg\nPreviews/\n  city-night-07_preview.mp4\n  poster-lines_preview.pdf\n  ceramic-cup_preview.jpg"
+      },
+      {
+        "heading": "রূপান্তরের আগে ত্রুটির কারণ শনাক্ত করুন",
+        "paragraphs": [
+          "প্রথমে ফাইলটি সক্ষম অন্য একটি ডেস্কটপ অ্যাপ্লিকেশনে খোলার চেষ্টা করুন। MOV সেখানে চললেও ব্রাউজারে না চললে, ফ্রেম অনুপস্থিত না ধরে ব্রাউজারের কোডেক বা কনটেইনার-সামঞ্জস্যের সমস্যা সন্দেহ করুন। AI ফাইল Illustrator-এ খুললেও অন্যত্র ফাঁকা থাম্বনেইল দেখালে, সংরক্ষণের সময় PDF-সামঞ্জস্য চালু ছিল কি না দেখুন। JPEG-তে চৌকো বিকৃতি, আংশিক রেন্ডারিং বা একাধিক অ্যাপ্লিকেশনে ত্রুটি দেখা দিলে, সেটিকে শুধু অসমর্থিত না ধরে সম্ভাব্য ক্ষতিগ্রস্ত ফাইল হিসেবে বিবেচনা করুন।",
+          "একটি নমুনা ফ্রেম ঠিক দেখালেই ভিডিও প্রযুক্তিগতভাবে পরিষ্কার—এমন সিদ্ধান্ত নেবেন না। প্রিভিউ কর্মপদ্ধতি স্পষ্ট সমস্যা খুঁজে পেতে সহায়ক, কিন্তু সম্পূর্ণ গতি, প্রাসঙ্গিক শব্দের শর্ত, মাত্রা এবং ফ্রেমের আচরণ মানুষকে এখনও পরীক্ষা করতে হবে।"
+        ],
+        "bullets": [
+          "সম্ভব হলে অন্তত দুটি ভিউয়ারে তুলনা করুন।",
+          "শুধু তৈরি করা স্থিরচিত্র নয়, পুরো ভিডিও পরীক্ষা করুন।",
+          "বারবার JPEG ত্রুটি হলে সম্ভাব্য ক্ষতি হিসেবে বিবেচনা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ব্রাউজার-উপযোগী ভিডিও প্রিভিউ তৈরি করুন",
+        "paragraphs": [
+          "অসমর্থিত ব্রাউজার কোডেক ব্যবহার করা চলনযোগ্য MOV-এর জন্য বিশ্বস্ত ডেস্কটপ ভিডিও টুল ব্যবহার করে বহুল সমর্থিত ওয়েব ফরম্যাটে আলাদা একটি প্রিভিউ তৈরি করুন। সম্ভব হলে একই ফ্রেমের আকার ও দৈর্ঘ্য রাখুন এবং ফোকাস, ত্রুটি, রূপান্তর ও ফ্রেমিং যাচাইয়ের জন্য যথেষ্ট সূক্ষ্মতা বজায় রাখে—এমন সেটিং বেছে নিন। প্রিভিউ চলল বলেই মূল MOV-কে প্রতিস্থাপন করবেন না।",
+          "রূপান্তরিত কপিটি লক্ষ্য ব্রাউজারে খুলে পুরো টাইমলাইনে এগিয়ে-পিছিয়ে দেখুন। উৎস প্লেয়ারের সঙ্গে কয়েকটি ফ্রেম তুলনা করুন। প্রিভিউ ফ্রেম বাদ দিলে, রং বদলালে, স্বচ্ছতা হারালে বা সময়ের বিন্যাস পরিবর্তন করলে সেই বৈশিষ্ট্য বিচার করার জন্য এটি উপযুক্ত নয়। রূপান্তরটি নিরপেক্ষ ধরে না নিয়ে সীমাবদ্ধতাগুলো লিখে রাখুন।"
+        ],
+        "bullets": [
+          "নতুন ফাইলের নাম ও আউটপুট ফোল্ডার ব্যবহার করুন।",
+          "শুরু, মাঝ, শেষ এবং দ্রুত গতি পরীক্ষা করুন।",
+          "পরবর্তী জমা দেওয়ার সিদ্ধান্তের জন্য মূল ফাইলটি রেখে দিন।"
+        ],
+        "example": "উদাহরণস্বরূপ সিদ্ধান্ত: city-night-07.mov নামের একটি ফাইল ডেস্কটপ প্লেয়ারে চলে, কিন্তু ব্রাউজারে চলে না। ব্রাউজারে পর্যালোচনার জন্য city-night-07_preview.mp4 তৈরি করুন। এরপর MOV-এর সঙ্গে প্রথম ট্রাফিক-লাইট পরিবর্তন, মাঝের প্যান এবং শেষ ফ্রেম তুলনা করুন। সময়ের পার্থক্য থাকলে প্রযুক্তিগত পর্যালোচনায় মূল ফাইল ব্যবহার করুন এবং MP4-কে শুধু সুবিধাজনক প্রিভিউ হিসেবে বিবেচনা করুন।"
+      },
+      {
+        "heading": "নিরাপদভাবে Illustrator প্রিভিউ তৈরি করুন",
+        "paragraphs": [
+          "অন্য কোনো অ্যাপ্লিকেশনে দেখানোর জন্য AI ফাইলে পাঠযোগ্য এমবেডেড প্রিভিউ দরকার হতে পারে। উৎস অ্যাপ্লিকেশন থাকলে মূল ফাইলটি খুলে, বর্তমান অ্যাপ্লিকেশনে বিকল্পটি পাওয়া গেলে PDF-সামঞ্জস্যপূর্ণ বিষয়বস্তু চালু করে একটি কপি সংরক্ষণ করুন। নতুন ফাইলের নাম ব্যবহার করুন এবং মূল AI ফাইলটি রেখে দিন। এরপর PDF-সক্ষম ভিউয়ারে কপিটি খুলে আর্টবোর্ড, ক্লিপিং মাস্ক, লেখা, স্বচ্ছতা এবং সংযুক্ত উপাদান পরীক্ষা করুন।",
+          "PDF-সামঞ্জস্যপূর্ণ প্রিভিউ থাকলেই ফন্ট, সংযুক্ত ফাইল, রঙের সেটিং বা মার্কেটপ্লেসের শর্ত সঠিক—এমন প্রমাণ হয় না। এটি শুধু artwork-কে দেখা ও পরবর্তী পরীক্ষার জন্য আরও সহজলভ্য করে। উৎস ফাইল অনুপস্থিত লিংক বা ফন্টের ওপর নির্ভর করলে, নীরবে অ্যাসেট বদলে না দিয়ে সেই সীমাবদ্ধতা লিখে রাখুন।"
+        ],
+        "bullets": [
+          "সামঞ্জস্যের সেটিং বদলানোর আগে একটি কপি সংরক্ষণ করুন।",
+          "প্রতিটি আর্টবোর্ড এবং গুরুত্বপূর্ণ স্বচ্ছ অংশ পরীক্ষা করুন।",
+          "অনুপস্থিত উৎস-নির্ভরতা প্রিভিউ মেরামত করেছে—এমন দাবি করবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ক্ষতিগ্রস্ত JPEG উদ্ধার বা প্রতিস্থাপন করুন",
+        "paragraphs": [
+          "JPEG ক্ষতিগ্রস্ত হলে প্রথমে সেটির একটি অনুলিপি তৈরি করুন এবং শুধু সেই অনুলিপিতে কাজ করুন। অন্য কোনো নির্ভরযোগ্য ছবি-সম্পাদনা অ্যাপ্লিকেশনে কপিটি খোলার চেষ্টা করুন এবং সম্পূর্ণ ছবি ঠিকমতো দেখা গেলেই নতুন JPEG রপ্তানি করুন। মূল ভিউয়ারের সঙ্গে মাত্রা, ক্রপ, রং এবং সূক্ষ্ম বিবরণ তুলনা করুন। আংশিক ডিকোড হওয়া ছবি থেকে সফলভাবে রপ্তানি করলেও দৃশ্যমান ক্ষতি থেকে যেতে পারে, তাই 100 percent-এ প্রান্ত, মুখ, লেখা এবং পুনরাবৃত্ত নকশা পরীক্ষা করুন।",
+          "কোনো অ্যাপ্লিকেশন পুরো ছবি উদ্ধার করতে না পারলে ক্যামেরা, সম্পাদনা প্রকল্প বা ব্যাকআপে ফিরে গিয়ে নতুন কপি রপ্তানি করুন। অনুপস্থিত পিক্সেল বানিয়ে তুলতে প্রিভিউ জেনারেটর ব্যবহার করবেন না। ক্ষতিগ্রস্ত ফাইলটি শনাক্তকরণের জন্য রেখে দিন, কিন্তু জমা দেওয়ার জন্য প্রস্তুত ধরে নেবেন না।"
+        ],
+        "bullets": [
+          "ক্ষতিগ্রস্ত মূল ফাইলটি রেফারেন্সের জন্য রেখে দিন।",
+          "উদ্ধারের পর পুরো ফ্রেম যাচাই করুন।",
+          "উৎস পাওয়া গেলে পরিষ্কারভাবে নতুন করে রপ্তানি করাকে অগ্রাধিকার দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "পর্যালোচনার পরেই মেটাডেটা তৈরি করুন",
+        "paragraphs": [
+          "প্রতিটি প্রিভিউ পাঠযোগ্য হয়ে গেলে MetaStocker-কে স্থানীয় মেটাডেটা সহায়ক হিসেবে ব্যবহার করতে পারেন। এর ব্রাউজার-ভিত্তিক স্থানীয় মোড সমর্থিত ভিশন মডেল লোড করতে পারে এবং ছবি, ভিডিও ও AI ফাইল গ্রহণ করতে পারে, যদি AI ফাইলটিতে পাঠযোগ্য প্রিভিউ থাকে। স্থানীয় inference ব্যবহারকারীর ডিভাইসেই থাকে; একটি মডেল ডাউনলোড করা মডেলের মেমরি লোড করার থেকে আলাদা ঘটনা, এবং পরে ব্রাউজারের cache সরিয়ে দেওয়া হতে পারে। একটি সমান্তরাল স্থানীয় thread দিয়ে শুরু করুন এবং তৈরি হওয়া সারিগুলো ফাইল ধরে পর্যালোচনা করুন।",
+          "ভিডিওর ক্ষেত্রে তৈরি করা বর্ণনাকে sampled প্রিভিউ-ভিত্তিক পরামর্শ হিসেবে দেখুন, সম্পূর্ণ ক্লিপ দেখার বিকল্প হিসেবে নয়। সমর্থনহীন অনুমান সংশোধন করুন, বানানো স্থান বা পরিচয় বাদ দিন এবং শুধু পর্যবেক্ষণযোগ্য বিষয় রাখুন। শুধু পর্যালোচিত সারি রপ্তানি করুন। CSV তৈরি করলে এক্সটেনশনসহ ফাইলের নামগুলোকে অ্যাসেটের সঙ্গে হুবহু মিলতে হবে, এবং import-এর পরে কনট্রিবিউটর পোর্টাল পরীক্ষা করা উচিত। আপলোড বা জমা দেওয়া স্বয়ংক্রিয়ভাবে হয় না।"
+        ],
+        "bullets": [
+          "প্রতিটি title, keyword এবং description পর্যালোচনা করুন।",
+          "ভুল করে প্রিভিউয়ের ফাইলের নাম চূড়ান্ত মেটাডেটায় স্থানান্তর করবেন না।",
+          "import-এর আগে বর্তমান মার্কেটপ্লেসের সীমা ও ভাষার নিয়ম যাচাই করুন।"
+        ],
+        "example": "পর্যালোচনার উদাহরণ নোট: “city-night-07.mov: night street, wet pavement, traffic lights; no location claimed.” প্রিভিউয়ের ফাইলের নাম শুধু অভ্যন্তরীণ মিল খোঁজার জন্য ব্যবহৃত হয়, আর চূড়ান্ত CSV-তে জমা দেওয়ার সঠিক ফাইলের নামই রাখা হয়।"
+      }
+    ],
+    "checklist": [
+      "অপরিবর্তিত মূল ফাইল আলাদা ফোল্ডারে রাখুন।",
+      "স্পষ্ট প্রত্যয়সহ প্রিভিউ কপি তৈরি করুন।",
+      "নির্ধারিত ব্রাউজার কর্মপদ্ধতিতে MOV প্রিভিউ পরীক্ষা করুন।",
+      "প্রতিটি AI আর্টবোর্ড ও সংযুক্ত উপাদান পরীক্ষা করুন।",
+      "সম্পূর্ণ ছবি অক্ষত থাকলেই JPEG উদ্ধার করুন।",
+      "বর্ণনা অনুমোদনের আগে পুরো ভিডিও দেখুন।",
+      "রপ্তানি বা পোর্টালে import-এর আগে মেটাডেটা ও সঠিক ফাইলের নাম পর্যালোচনা করুন।",
+      "জমা দেওয়ার আগে বর্তমান কনট্রিবিউটর নীতিমালা যাচাই করুন।"
+    ],
+    "illustration": {
+      "title": "নিরাপদ প্রিভিউ-মেরামতের কর্মপদ্ধতি",
+      "steps": [
+        {
+          "label": "উৎস সংরক্ষণ করুন",
+          "detail": "অ্যাসেটের অনুলিপি তৈরি করে কাজের প্রিভিউটি স্পষ্টভাবে চিহ্নিত করুন।"
+        },
+        {
+          "label": "তৈরি ও পরীক্ষা করুন",
+          "detail": "শুধু কপিটি রূপান্তর করুন, তারপর পুরো অ্যাসেট হাতে ধরে তুলনা করুন।"
+        },
+        {
+          "label": "পর্যালোচিত তথ্য রপ্তানি করুন",
+          "detail": "সঠিক ফাইলের নাম ব্যবহার করে পোর্টালে মেটাডেটা যাচাই করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "अपठनीय इमेज, वीडियो और Illustrator प्रीव्यू ठीक करें",
+    "description": "मूल एसेट सुरक्षित रखते हुए MOV, AI और JPEG फ़ाइलों की प्रीव्यू समस्याओं को ठीक करने की व्यावहारिक कार्यपद्धति।",
+    "intro": "प्रीव्यू में त्रुटि होने का अर्थ हमेशा यह नहीं होता कि मूल एसेट अनुपयोगी है। MOV डेस्कटॉप प्लेयर में सही चल सकता है, लेकिन ऐसा कोडेक इस्तेमाल कर सकता है जिसे आपका ब्राउज़र प्रदर्शित नहीं कर पाता। Illustrator फ़ाइल में अच्छा वेक्टर artwork हो सकता है, लेकिन उसमें PDF-संगत प्रीव्यू न हो। JPEG एक ऐप्लिकेशन में खुल सकता है और दूसरे में विफल हो सकता है, क्योंकि उसकी फ़ाइल-संरचना क्षतिग्रस्त है। सुरक्षित तरीका यह है कि जाँच और मेटाडेटा कार्य के लिए समर्थित प्रीव्यू कपी बनाई जाए और मूल एसेट को बिना बदले रखा जाए। यह मार्गदर्शिका हर मामले का निदान करने, जाँच योग्य प्रीव्यू बनाने और पठनीय प्रीव्यू को तकनीकी रूप से स्वीकृत स्टॉक फ़ाइल समझने की भूल से बचने का तरीका बताती है।",
+    "sections": [
+      {
+        "heading": "मूल फ़ाइल और प्रीव्यू अलग रखें",
+        "paragraphs": [
+          "मूल फ़ाइलों, प्रीव्यू कपियों और अंतिम मेटाडेटा के लिए अलग स्थानों वाला कार्य-फ़ोल्डर बनाएँ। मूल फ़ाइल का नाम, एक्सटेंशन और फ़ाइल बाइट्स अपरिवर्तित रखें। बनाई गई कपी में _preview या _review जैसा स्पष्ट प्रत्यय जोड़ें, ताकि प्रीव्यू को जमा करने वाली एसेट न समझ लिया जाए।",
+          "प्रीव्यू देखने, मेटाडेटा बनाने और गुणवत्ता जाँचने का साधन है। यह अपने-आप वैकल्पिक एसेट, स्रोत फ़ाइल की मरम्मत या किसी मार्केटप्लेस द्वारा मूल फ़ाइल स्वीकार किए जाने का प्रमाण नहीं है। किसी परिवर्तित फ़ाइल को अपलोड करने से पहले वर्तमान योगदानकर्ता आवश्यकताएँ जाँचें।"
+        ],
+        "bullets": [
+          "स्रोत .mov, .ai या .jpg पर कभी भी ओवरराइट न करें।",
+          "कौन-सी फ़ाइल से हर प्रीव्यू बना, उसका रिकॉर्ड रखें।",
+          "अंतिम एसेट की जाँच उसके प्रीव्यू से अलग करें।"
+        ],
+        "example": "Originals/\n  city-night-07.mov\n  poster-lines.ai\n  ceramic-cup.jpg\nPreviews/\n  city-night-07_preview.mp4\n  poster-lines_preview.pdf\n  ceramic-cup_preview.jpg"
+      },
+      {
+        "heading": "परिवर्तित करने से पहले विफलता का निदान करें",
+        "paragraphs": [
+          "पहले फ़ाइल को किसी दूसरे सक्षम डेस्कटॉप ऐप्लिकेशन में चलाकर देखें। यदि MOV वहाँ चलता है लेकिन ब्राउज़र में नहीं, तो फ़्रेम गायब होने के बजाय ब्राउज़र कोडेक या कंटेनर-संगतता की समस्या मानें। यदि AI Illustrator में खुलता है लेकिन कहीं और खाली थंबनेल दिखाता है, तो देखें कि सेव करते समय PDF-संगतता सक्षम थी या नहीं। यदि JPEG में चौकोर विकृति, अधूरा रेंडरिंग या कई ऐप्लिकेशन में त्रुटि दिखे, तो उसे केवल असमर्थित न मानकर संभावित रूप से क्षतिग्रस्त समझें।",
+          "वीडियो तकनीकी रूप से साफ़ है—ऐसा केवल इसलिए न मानें कि एक नमूना फ़्रेम सही दिखता है। प्रीव्यू कार्यपद्धति स्पष्ट समस्याएँ खोजने में उपयोगी है, लेकिन पूरी गति, जहाँ प्रासंगिक हो वहाँ ध्वनि की आवश्यकताएँ, आयाम और फ़्रेम का व्यवहार अब भी मनुष्य को जाँचना होगा।"
+        ],
+        "bullets": [
+          "व्यावहारिक होने पर कम-से-कम दो व्यूअर में तुलना करें।",
+          "केवल बनाए गए स्थिर चित्र नहीं, पूरा वीडियो जाँचें।",
+          "बार-बार JPEG त्रुटि को संभावित क्षति मानें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ब्राउज़र-अनुकूल वीडियो प्रीव्यू बनाएँ",
+        "paragraphs": [
+          "ऐसे चलने योग्य MOV के लिए, जो असमर्थित ब्राउज़र कोडेक इस्तेमाल करता है, विश्वसनीय डेस्कटॉप वीडियो टूल से व्यापक रूप से समर्थित वेब फ़ॉर्मैट में अलग प्रीव्यू बनाएँ। जहाँ व्यावहारिक हो, वही फ़्रेम आकार और अवधि रखें तथा ऐसी सेटिंग चुनें जो फ़ोकस, गड़बड़ियों, ट्रांज़िशन और फ़्रेमिंग की जाँच के लिए पर्याप्त विवरण बचाए। केवल प्रीव्यू चलने के कारण मूल MOV को न बदलें।",
+          "परिवर्तित कपी को लक्षित ब्राउज़र में खोलें और पूरी टाइमलाइन में आगे-पीछे चलाकर देखें। स्रोत प्लेयर के साथ कई फ़्रेमों की तुलना करें। यदि प्रीव्यू फ़्रेम छोड़ता है, रंग बदलता है, पारदर्शिता खोता है या समय बदलता है, तो उस गुण का मूल्यांकन करने के लिए यह उपयुक्त नहीं है। रूपांतरण को तटस्थ मानने के बजाय उसकी सीमाएँ लिखें।"
+        ],
+        "bullets": [
+          "नया फ़ाइल नाम और आउटपुट फ़ोल्डर इस्तेमाल करें।",
+          "शुरुआत, मध्य, अंत और तेज़ गति जाँचें।",
+          "बाद के जमा करने संबंधी निर्णय के लिए मूल फ़ाइल रखें।"
+        ],
+        "example": "निर्णय का उदाहरण: city-night-07.mov नाम की फ़ाइल डेस्कटॉप प्लेयर में चलती है, लेकिन ब्राउज़र में नहीं। ब्राउज़र जाँच के लिए city-night-07_preview.mp4 बनाएँ, फिर MOV के साथ पहली ट्रैफ़िक-लाइट बदलने की घटना, मध्य का पैन और अंतिम फ़्रेम की तुलना करें। यदि समय में अंतर हो, तो तकनीकी जाँच में मूल फ़ाइल इस्तेमाल करें और MP4 को केवल सुविधाजनक प्रीव्यू मानें।"
+      },
+      {
+        "heading": "Illustrator प्रीव्यू सुरक्षित ढंग से बनाएँ",
+        "paragraphs": [
+          "किसी दूसरे ऐप्लिकेशन में दिखाने के लिए AI फ़ाइल में पठनीय एम्बेडेड प्रीव्यू आवश्यक हो सकता है। यदि आपके पास स्रोत ऐप्लिकेशन है, तो मूल फ़ाइल खोलें और वर्तमान ऐप्लिकेशन में विकल्प उपलब्ध होने पर PDF-संगत सामग्री सक्षम करके एक कपी सेव करें। नया फ़ाइल नाम इस्तेमाल करें और मूल AI फ़ाइल सुरक्षित रखें। फिर कपी को PDF-सक्षम व्यूअर में खोलकर आर्टबोर्ड, क्लिपिंग मास्क, टेक्स्ट, पारदर्शिता और लिंक किए गए तत्वों की जाँच करें।",
+          "PDF-संगत प्रीव्यू होने से यह सिद्ध नहीं होता कि फ़ॉन्ट, लिंक की गई फ़ाइलें, रंग सेटिंग या मार्केटप्लेस आवश्यकताएँ सही हैं। इससे artwork केवल देखने और आगे की जाँच के लिए अधिक सुलभ बनता है। यदि स्रोत अनुपलब्ध लिंक या फ़ॉन्ट पर निर्भर है, तो एसेट चुपचाप बदलने के बजाय उस सीमा को दर्ज करें।"
+        ],
+        "bullets": [
+          "संगतता सेटिंग बदलने से पहले एक कपी सेव करें।",
+          "हर आर्टबोर्ड और महत्वपूर्ण पारदर्शी क्षेत्र जाँचें।",
+          "यह दावा न करें कि प्रीव्यू ने अनुपलब्ध स्रोत निर्भरताएँ ठीक कर दी हैं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "क्षतिग्रस्त JPEG को पुनर्प्राप्त या बदलें",
+        "paragraphs": [
+          "यदि JPEG क्षतिग्रस्त है, तो पहले उसकी एक कपी बनाएँ और केवल उसी कपी पर काम करें। कपी को किसी अन्य विश्वसनीय इमेज-एडिटर में खोलने का प्रयास करें और तभी नया JPEG एक्सपोर्ट करें जब पूरी इमेज सही दिखाई दे। मूल व्यूअर के साथ आयाम, क्रॉप, रंग और सूक्ष्म विवरणों की तुलना करें। आंशिक रूप से डिकोड हुई इमेज से सफल एक्सपोर्ट करने पर भी दिखाई देने वाली क्षति बनी रह सकती है, इसलिए 100 percent पर किनारों, चेहरों, टेक्स्ट और दोहराए जाने वाले पैटर्न की जाँच करें।",
+          "यदि कोई ऐप्लिकेशन पूरी इमेज पुनर्प्राप्त नहीं कर पाता, तो कैमरा, संपादन प्रोजेक्ट या बैकअप पर लौटकर नई कपी एक्सपोर्ट करें। गायब पिक्सेल गढ़ने के लिए प्रीव्यू जनरेटर का उपयोग न करें। क्षतिग्रस्त फ़ाइल को निदान के लिए रखें, लेकिन उसे जमा करने के लिए तैयार न मानें।"
+        ],
+        "bullets": [
+          "क्षतिग्रस्त मूल फ़ाइल को संदर्भ के लिए सुरक्षित रखें।",
+          "पुनर्प्राप्ति के बाद पूरे फ़्रेम की जाँच करें।",
+          "स्रोत उपलब्ध होने पर साफ़ पुनः-एक्सपोर्ट को प्राथमिकता दें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "जाँच के बाद ही मेटाडेटा बनाएँ",
+        "paragraphs": [
+          "जब हर प्रीव्यू पठनीय हो जाए, तब MetaStocker को स्थानीय मेटाडेटा सहायक के रूप में इस्तेमाल कर सकते हैं। इसका ब्राउज़र-आधारित स्थानीय मोड समर्थित विज़न मॉडल लोड कर सकता है और इमेज, वीडियो तथा AI फ़ाइलें स्वीकार कर सकता है, जब AI में पठनीय प्रीव्यू हो। स्थानीय inference उपयोगकर्ता के डिवाइस पर ही रहता है; मॉडल डाउनलोड करना मॉडल मेमोरी लोड करने से अलग घटना है, और बाद में ब्राउज़र cache हटाया जा सकता है। एक समानांतर स्थानीय thread से शुरू करें और बनाई गई पंक्तियों की फ़ाइल-दर-फ़ाइल समीक्षा करें।",
+          "वीडियो के लिए बनाई गई descriptions को sampled प्रीव्यू पर आधारित सुझाव मानें, पूरी क्लिप देखने का विकल्प नहीं। असमर्थित धारणाएँ सुधारें, गढ़े गए स्थान या पहचान हटाएँ और केवल देखी जा सकने वाली सामग्री रखें। केवल जाँची हुई पंक्तियाँ एक्सपोर्ट करें। यदि CSV बनाएँ, तो एक्सटेंशन सहित फ़ाइल नाम एसेट से बिल्कुल मेल खाने चाहिए और import के बाद योगदानकर्ता पोर्टल जाँचना चाहिए। अपलोड या सबमिशन अपने-आप नहीं होता।"
+        ],
+        "bullets": [
+          "हर title, keyword और description की समीक्षा करें।",
+          "गलती से प्रीव्यू फ़ाइल नाम को अंतिम मेटाडेटा में न ले जाएँ।",
+          "import से पहले वर्तमान मार्केटप्लेस सीमाएँ और भाषा नियम जाँचें।"
+        ],
+        "example": "समीक्षा-नोट का उदाहरण: “city-night-07.mov: night street, wet pavement, traffic lights; no location claimed.” प्रीव्यू फ़ाइल नाम केवल आंतरिक मिलान के लिए इस्तेमाल होता है, जबकि अंतिम CSV में जमा की जाने वाली सही फ़ाइल का नाम ही रखा जाता है।"
+      }
+    ],
+    "checklist": [
+      "अपरिवर्तित मूल फ़ाइलों को अलग फ़ोल्डर में रखें।",
+      "स्पष्ट प्रत्यय वाली प्रीव्यू कपियाँ बनाएँ।",
+      "लक्षित ब्राउज़र कार्यपद्धति में MOV प्रीव्यू जाँचें।",
+      "हर AI आर्टबोर्ड और लिंक किए गए तत्व की जाँच करें।",
+      "JPEG को तभी पुनर्प्राप्त करें जब पूरी इमेज सही हो।",
+      "Descriptions को मंज़ूरी देने से पहले पूरे वीडियो देखें।",
+      "एक्सपोर्ट या पोर्टल import से पहले मेटाडेटा और सही फ़ाइल नामों की समीक्षा करें।",
+      "सबमिशन से पहले वर्तमान योगदानकर्ता नीतियाँ जाँचें।"
+    ],
+    "illustration": {
+      "title": "सुरक्षित प्रीव्यू-मरम्मत कार्यपद्धति",
+      "steps": [
+        {
+          "label": "स्रोत सुरक्षित रखें",
+          "detail": "एसेट की कपी बनाएँ और कार्यरत प्रीव्यू को स्पष्ट रूप से चिह्नित करें।"
+        },
+        {
+          "label": "बनाएँ और जाँचें",
+          "detail": "केवल कपी को बदलें, फिर पूरे एसेट की मैन्युअल तुलना करें।"
+        },
+        {
+          "label": "जाँचा हुआ डेटा एक्सपोर्ट करें",
+          "detail": "सही फ़ाइल नाम इस्तेमाल करें और पोर्टल में मेटाडेटा सत्यापित करें।"
+        }
+      ]
+    }
+  }
+}

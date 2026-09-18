@@ -1,0 +1,451 @@
+{
+  "slug": "stock-photo-keywords-guide",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-quality"
+  ],
+  "en": {
+    "title": "How to Build Accurate Stock Photo Keywords from an Image",
+    "description": "Learn to turn visible objects, setting, and supported concepts into a relevant stock keyword list without guessing or adding irrelevant tags.",
+    "intro": "A useful stock keyword list begins with what the image actually shows. For a ceramic mug beside an open notebook at a kitchen table, the safest metadata describes the objects, the setting, and a few concepts that the composition supports. It does not invent a remote-work scene, a person, a location, or a purpose that cannot be verified from the pixels.\n\nThis workflow helps you build a focused list for a marketplace while keeping the first terms especially useful. You can inspect the image yourself, use MetaStocker’s local generator as a drafting aid, and then edit every result before export. Marketplace rules change, so check the current contributor portal for the platform you plan to use.",
+    "sections": [
+      {
+        "heading": "1. Start with a visual inventory",
+        "paragraphs": [
+          "Write down only directly visible elements before thinking about search terms. Separate the inventory into objects, environment, composition, and possible concepts. This prevents an attractive but unsupported story from taking over the metadata.",
+          "For this image, visible objects include a ceramic mug and an open notebook. The setting is a kitchen table, with a tabletop and an indoor environment. The composition may support terms such as still life, close up, and copy space only if those qualities are genuinely visible. Do not add coffee, handwriting, a laptop, an office, or remote work unless the image clearly shows them."
+        ],
+        "bullets": [
+          "Objects: ceramic mug, open notebook, table",
+          "Setting: kitchen table, indoor scene, home interior only if supported",
+          "Concepts: writing, planning, notes, or routine only when visually justified"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Separate objects from concepts",
+        "paragraphs": [
+          "Object keywords identify what is present. Concept keywords describe a use or idea suggested by the image. Objects are usually easier to defend; concepts require a higher standard of evidence.",
+          "A notebook can support writing, study, planning, or journaling when its arrangement gives that context. However, the image does not prove who will use it or why. Treat concepts as optional, lower-priority additions rather than replacements for concrete nouns. Avoid stacking near-synonyms simply to make the list longer."
+        ],
+        "bullets": [
+          "Prefer concrete terms before abstract ideas.",
+          "Use a concept only when the composition makes it plausible.",
+          "Remove terms that depend on an unseen person, profession, event, or location."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "3. Put the strongest terms first",
+        "paragraphs": [
+          "Adobe’s guidance gives particular importance to the first ten keywords. For an Adobe upload, build that opening group from the clearest subject and setting terms, then add composition and supported concepts. For other marketplaces, follow their current documented ordering rules.",
+          "A concise title should describe the image as a sentence or natural phrase, not as a keyword pile. For Adobe, the current CSV guidance gives a 70-character title limit; still, verify the current portal before upload. A conservative keyword ceiling of 49 is useful when preparing Adobe metadata, while other platforms can have different limits."
+        ],
+        "bullets": [
+          "Lead with ceramic mug, open notebook, and kitchen table.",
+          "Follow with indoor, tabletop, still life, or close up when visible.",
+          "Check the target marketplace’s current language, count, and category rules."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. Worked example: build and trim the list",
+        "paragraphs": [
+          "Example, not a measured result or customer case: suppose the photo shows a white ceramic mug on the left, an open blank notebook on the right, and both items on a wooden kitchen table. No laptop, hands, text, food, or identifiable location is visible.",
+          "Start with a broad draft, then remove unsupported or repetitive terms. “Coffee” is tempting because mugs often contain coffee, but it is not safe unless the drink is visible. “Remote work” is also unsupported because the image contains no work device or person. “Wooden” belongs only if the table material is clear."
+        ],
+        "bullets": [
+          "Keep: ceramic mug, open notebook, kitchen table, tabletop, indoor, still life.",
+          "Consider: writing, planning, journaling, copy space, close up, if the composition supports them.",
+          "Remove: coffee, remote work, office, employee, breakfast, specific city, and any guessed identity."
+        ],
+        "example": "Title: Ceramic mug and open notebook on a kitchen table\n\nPriority keywords:\nceramic mug, open notebook, kitchen table, tabletop, indoor, still life, notebook, mug, writing, planning, journaling, home interior, close up, copy space\n\nThe exact final list should match what is visible and the destination platform’s rules."
+      },
+      {
+        "heading": "5. Use a local generator as a draft assistant",
+        "paragraphs": [
+          "MetaStocker is a static web app with local vision and thinking models that run in WebGPU workers in your browser. In local mode, inference stays on your device; the first model download needs internet. The default local model is Gemma 4 E2B, and the app also offers Gemma 4 E4B and Qwen3.5 2B.",
+          "Load a model, provide the image, and use the generated metadata as a starting draft. A batch description should contain factual context only. For this example, say “Ceramic mug beside an open notebook on a kitchen table.” Do not use a blanket list of tags for a mixed batch. Review each file individually, especially extra tags inserted at different positions."
+        ],
+        "bullets": [
+          "Begin with one local parallel thread; test two only if your device handles it comfortably.",
+          "Loading a model into memory is different from retaining downloaded browser cache.",
+          "Edit generated results and export only rows you consider ready."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Check the list for marketplace fit",
+        "paragraphs": [
+          "Before exporting, compare the metadata with the target contributor portal. Adobe’s general keyword guidance allows up to 49 keywords and requires metadata language to match the contributor account. Shutterstock’s guidance calls for English descriptive metadata, 7 to 50 relevant keywords, and at least one category. These are platform-specific rules, not universal guarantees.",
+          "If you use CSV, exact filenames matter for the relevant workflow, including extensions and case. Upload assets before importing an Adobe CSV, then inspect the resulting metadata in the contributor portal. An exporter can format a file, but it cannot prove that the keywords are accurate or that the marketplace will accept the submission. Google website indexing is a separate concern from internal marketplace search."
+        ],
+        "bullets": [
+          "Confirm the current portal requirements before submission.",
+          "Check spelling, duplicates, language, category, title length, and relevance.",
+          "Never treat keyword count as evidence of quality or a guarantee of sales or ranking."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Describe visible objects before adding concepts.",
+      "Keep guessed people, places, professions, events, and uses out of the list.",
+      "Place the clearest subject and setting terms first.",
+      "Review every generated keyword against the actual image.",
+      "Match the destination marketplace’s current language and limits.",
+      "Inspect exported metadata in the contributor portal before submission."
+    ],
+    "illustration": {
+      "title": "From image to reviewed keyword list",
+      "steps": [
+        {
+          "label": "Inventory what is visible",
+          "detail": "Separate mug, notebook, table, setting, and supported composition terms."
+        },
+        {
+          "label": "Draft and trim metadata",
+          "detail": "Generate a factual draft, then remove guesses and repeated near-synonyms."
+        },
+        {
+          "label": "Check the target portal",
+          "detail": "Verify language, limits, filenames, categories, and each final row."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как составить точные ключевые слова для стокового фото",
+    "description": "Практический способ превратить видимые предметы, обстановку и обоснованные понятия в релевантные ключевые слова без догадок.",
+    "intro": "Хороший список ключевых слов начинается с того, что действительно видно на изображении. Для керамической кружки рядом с раскрытым блокнотом на кухонном столе безопаснее описать предметы, обстановку и несколько поддержанных композицией идей. Не стоит придумывать удалённую работу, профессию, местоположение или назначение сцены, если этого нельзя подтвердить по пикселям.\n\nНиже — рабочий процесс для подготовки метаданных к стоковой площадке. MetaStocker может помочь создать черновик локально, но каждое слово нужно проверить вручную. Требования площадок меняются, поэтому перед отправкой сверяйтесь с актуальным кабинетом автора выбранного стока.",
+    "sections": [
+      {
+        "heading": "1. Сначала составьте визуальный список",
+        "paragraphs": [
+          "До поиска синонимов запишите только непосредственно видимые элементы. Разделите их на предметы, обстановку, композицию и возможные понятия. Такая последовательность не позволяет красивой, но неподтверждённой истории вытеснить факты.",
+          "В нашем изображении видны керамическая кружка и раскрытый блокнот. Обстановка — кухонный стол и интерьер помещения. Слова «натюрморт», «крупный план» или «свободное место для текста» допустимы лишь тогда, когда эти свойства действительно заметны. Не добавляйте кофе, почерк, ноутбук, офис или удалённую работу, если их нет в кадре."
+        ],
+        "bullets": [
+          "Предметы: керамическая кружка, раскрытый блокнот, стол.",
+          "Обстановка: кухонный стол, интерьер, помещение — если это видно.",
+          "Понятия: письмо, планирование, заметки или повседневность — только при визуальной опоре."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Отделяйте предметы от понятий",
+        "paragraphs": [
+          "Ключевые слова-предметы называют то, что находится в кадре. Понятия описывают возможное применение или идею, которую создаёт композиция. Первые обычно легче проверить, а вторые требуют осторожности.",
+          "Блокнот может поддерживать слова «письмо», «учёба», «планирование» или «ведение дневника», если его положение и видимая сцена действительно это подсказывают. Но фотография не доказывает, кто им пользуется и с какой целью. Поэтому ставьте конкретные существительные в основу, а концептуальные слова добавляйте умеренно."
+        ],
+        "bullets": [
+          "Ставьте конкретные предметы раньше абстрактных идей.",
+          "Добавляйте понятие только при очевидной визуальной поддержке.",
+          "Удаляйте слова, зависящие от невидимого человека, профессии, события или места."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "3. Расположите самые сильные слова в начале",
+        "paragraphs": [
+          "В рекомендациях Adobe особое значение имеют первые десять ключевых слов. При подготовке к загрузке на Adobe начните с главных объектов и обстановки, затем добавьте композицию и подтвержденные понятия. Для других площадок следуйте их актуальным правилам порядка ключевых слов.",
+          "Название должно быть естественным описанием, а не цепочкой тегов. Для CSV Adobe сейчас указывает ограничение в 70 символов для названия, но перед загрузкой проверьте актуальное поле в кабинете. Для подготовки списка Adobe разумно держаться консервативного предела в 49 ключевых слов, тогда как у других площадок могут быть свои ограничения."
+        ],
+        "bullets": [
+          "Начните с «керамическая кружка», «раскрытый блокнот», «кухонный стол».",
+          "Затем добавляйте «интерьер», «столешница», «натюрморт», если они соответствуют кадру.",
+          "Проверяйте актуальные требования конкретного стока к языку, количеству и категориям."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. Практический пример: соберите и сократите список",
+        "paragraphs": [
+          "Пример, а не измеренный результат и не история реального клиента: представим белую керамическую кружку слева, раскрытый чистый блокнот справа и оба предмета на деревянном кухонном столе. Ноутбука, рук, текста, еды и распознаваемого места в кадре нет.",
+          "Сначала можно сделать широкий черновик, а затем удалить неподтверждённые и повторяющиеся слова. «Кофе» кажется естественным рядом с кружкой, но использовать его нельзя, если напиток не виден. «Удалённая работа» также не подтверждается: в сцене нет ни рабочего устройства, ни человека. «Деревянный» оставляйте только при уверенно различимом материале стола."
+        ],
+        "bullets": [
+          "Оставьте: керамическая кружка, раскрытый блокнот, кухонный стол, столешница, интерьер, натюрморт.",
+          "Рассмотрите: письмо, планирование, дневник, свободное место, крупный план — если композиция это поддерживает.",
+          "Удалите: кофе, удалённая работа, офис, сотрудник, завтрак, конкретный город и любые догадки о личности."
+        ],
+        "example": "Название: Керамическая кружка и раскрытый блокнот на кухонном столе\n\nПриоритетные ключевые слова:\nкерамическая кружка, раскрытый блокнот, кухонный стол, столешница, интерьер, натюрморт, блокнот, кружка, письмо, планирование, дневник, домашний интерьер, крупный план, свободное место\n\nИтоговый список всё равно должен соответствовать изображению и правилам выбранной площадки."
+      },
+      {
+        "heading": "5. Используйте локальный генератор как черновик",
+        "paragraphs": [
+          "MetaStocker — статическое веб-приложение с локальными моделями зрения и рассуждения, которые работают в WebGPU-воркерах браузера. В локальном режиме вывод модели выполняется на устройстве посетителя; первая загрузка модели требует интернета. По умолчанию используется Gemma 4 E2B, также доступны Gemma 4 E4B и Qwen3.5 2B.",
+          "Загрузите модель, передайте изображение и воспринимайте результат как исходный черновик. Для этого задания достаточно фактического описания: «Керамическая кружка рядом с раскрытым блокнотом на кухонном столе». Не задавайте смешанной подборке общий набор тегов. Дополнительные теги проверяйте для каждого файла отдельно."
+        ],
+        "bullets": [
+          "Начните с одного параллельного потока; два тестируйте только при нормальной работе устройства.",
+          "Загрузка модели в память не равна сохранению файлов в кэше браузера.",
+          "Отредактируйте результат и экспортируйте только строки, которые готовы к проверке."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Проверьте соответствие стоку",
+        "paragraphs": [
+          "Перед экспортом сопоставьте список с кабинетом выбранной площадки. Общие рекомендации Adobe допускают до 49 ключевых слов и требуют, чтобы язык метаданных совпадал с языком аккаунта автора. Shutterstock указывает английские описательные метаданные, от 7 до 50 релевантных ключевых слов и как минимум одну категорию. Это правила отдельных площадок, а не универсальные обещания.",
+          "При работе с CSV точно сверяйте имена файлов, включая расширение и регистр. Для соответствующего процесса Adobe сначала загружают сами материалы, затем импортируют CSV и проверяют получившиеся данные в кабинете автора. Форматирование файла не доказывает точность слов и не гарантирует принятие. Индексация сайта Google — отдельная задача и не равна поиску внутри стоковой площадки."
+        ],
+        "bullets": [
+          "Проверьте актуальные требования кабинета перед отправкой.",
+          "Исправьте опечатки, дубли, язык, категорию, длину названия и нерелевантные слова.",
+          "Не принимайте большое количество тегов за гарантию продаж или лучшей позиции."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Сначала опишите видимые предметы.",
+      "Не приписывайте людям, местам, профессиям и событиям то, чего нет в кадре.",
+      "Поставьте главные объекты и обстановку в начало списка.",
+      "Проверяйте каждое сгенерированное слово по изображению.",
+      "Согласуйте язык и ограничения с конкретной площадкой.",
+      "Перед отправкой осмотрите экспортированные метаданные в кабинете автора."
+    ],
+    "illustration": {
+      "title": "От изображения к проверенному списку",
+      "steps": [
+        {
+          "label": "Опишите видимое",
+          "detail": "Отделите кружку, блокнот, стол, обстановку и свойства композиции."
+        },
+        {
+          "label": "Составьте и сократите",
+          "detail": "Создайте фактический черновик, удалите догадки и повторы."
+        },
+        {
+          "label": "Проверьте кабинет стока",
+          "detail": "Сверьте язык, лимиты, имена файлов, категории и каждую строку."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "একটি ছবি থেকে নির্ভুল স্টক ছবির কীওয়ার্ড তৈরি করার উপায়",
+    "description": "ছবিতে দৃশ্যমান বস্তু, পরিবেশ ও সমর্থিত ধারণাকে প্রাসঙ্গিক স্টক কীওয়ার্ড তালিকায় রূপ দেওয়া শিখুন—অনুমান বা অপ্রাসঙ্গিক ট্যাগ ছাড়াই।",
+    "intro": "একটি কার্যকর স্টক কীওয়ার্ড তালিকা শুরু হয় ছবিতে সত্যিই যা দেখা যায়, তা দিয়ে। রান্নাঘরের টেবিলে খোলা নোটবুকের পাশে একটি সিরামিক মগ থাকলে, সবচেয়ে নিরাপদ মেটাডেটায় বস্তু, পরিবেশ এবং ছবির বিন্যাসে সমর্থিত কয়েকটি ধারণা বর্ণনা করা হয়। পিক্সেল দেখে যাচাই করা যায় না—এমন দূরবর্তী কাজের দৃশ্য, ব্যক্তি, স্থান বা উদ্দেশ্য এতে বানিয়ে যোগ করা হয় না।\n\nএই কর্মপদ্ধতি আপনাকে মার্কেটপ্লেসের জন্য একটি কেন্দ্রীভূত তালিকা তৈরি করতে সাহায্য করবে, যেখানে প্রথম দিকের শব্দগুলো বিশেষভাবে কার্যকর থাকবে। আপনি নিজে ছবিটি পরীক্ষা করতে পারেন, খসড়া সহায়তা হিসেবে MetaStocker-এর স্থানীয় জেনারেটর ব্যবহার করতে পারেন, তারপর রপ্তানির আগে প্রতিটি ফল সম্পাদনা করতে পারেন। মার্কেটপ্লেসের নিয়ম বদলাতে পারে, তাই যে প্ল্যাটফর্ম ব্যবহার করবেন তার বর্তমান অবদানকারী পোর্টাল দেখে নিন।",
+    "sections": [
+      {
+        "heading": "১. দৃশ্যমান উপাদানের তালিকা দিয়ে শুরু করুন",
+        "paragraphs": [
+          "অনুসন্ধানের শব্দ ভাবার আগে কেবল সরাসরি দৃশ্যমান উপাদানগুলো লিখে নিন। তালিকাটি বস্তু, পরিবেশ, বিন্যাস এবং সম্ভাব্য ধারণায় ভাগ করুন। এতে আকর্ষণীয় হলেও প্রমাণহীন কোনো গল্প মেটাডেটার ওপর প্রভাব বিস্তার করতে পারে না।",
+          "এই ছবিতে দৃশ্যমান বস্তু হলো একটি সিরামিক মগ এবং একটি খোলা নোটবুক। পরিবেশ হলো রান্নাঘরের টেবিল, যেখানে টেবিলের পৃষ্ঠ এবং ঘরের ভেতরের পরিবেশ রয়েছে। বিন্যাসে যদি সত্যিই তা দেখা যায়, তবেই স্থিরচিত্র, ক্লোজ-আপ এবং লেখার খালি জায়গার মতো শব্দ সমর্থিত হতে পারে। ছবি স্পষ্টভাবে না দেখালে কফি, হাতের লেখা, ল্যাপটপ, অফিস বা দূরবর্তী কাজ যোগ করবেন না।"
+        ],
+        "bullets": [
+          "বস্তু: সিরামিক মগ, খোলা নোটবুক, টেবিল",
+          "পরিবেশ: রান্নাঘরের টেবিল, ঘরের ভেতরের দৃশ্য, সমর্থিত হলে কেবল বাড়ির অভ্যন্তর",
+          "ধারণা: দৃশ্যত যুক্তিযুক্ত হলেই লেখা, পরিকল্পনা, নোট বা দৈনন্দিন রুটিন"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "২. বস্তু ও ধারণাকে আলাদা করুন",
+        "paragraphs": [
+          "বস্তুর কীওয়ার্ড জানায় কী উপস্থিত আছে। ধারণার কীওয়ার্ড ছবিটি যে ব্যবহার বা ভাবনার ইঙ্গিত দেয়, তা বর্ণনা করে। বস্তু সাধারণত সহজে প্রমাণ করা যায়; ধারণার ক্ষেত্রে প্রমাণের মানদণ্ড বেশি কঠোর।",
+          "একটি নোটবুকের বিন্যাসে সেই প্রেক্ষাপট থাকলে লেখা, পড়াশোনা, পরিকল্পনা বা ডায়েরি লেখার ধারণা সমর্থিত হতে পারে। তবে ছবিটি কে এটি ব্যবহার করবে বা কেন করবে, তা প্রমাণ করে না। ধারণাকে ঐচ্ছিক ও কম অগ্রাধিকারের সংযোজন হিসেবে দেখুন; সুনির্দিষ্ট বিশেষ্যের বিকল্প হিসেবে নয়। তালিকা বড় করার জন্য কাছাকাছি অর্থের শব্দ স্তূপ করবেন না।"
+        ],
+        "bullets": [
+          "বিমূর্ত ধারণার আগে সুনির্দিষ্ট শব্দ ব্যবহার করুন।",
+          "বিন্যাসে তা সম্ভবপর মনে হলেই কোনো ধারণা ব্যবহার করুন।",
+          "অদৃশ্য ব্যক্তি, পেশা, ঘটনা বা স্থানের ওপর নির্ভরশীল শব্দ বাদ দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৩. সবচেয়ে শক্তিশালী শব্দগুলো আগে রাখুন",
+        "paragraphs": [
+          "Adobe-এর নির্দেশনায় প্রথম দশটি কীওয়ার্ডকে বিশেষ গুরুত্ব দেওয়া হয়েছে। Adobe-তে আপলোডের জন্য এই শুরুর দলটি স্পষ্ট বিষয় ও পরিবেশের শব্দ দিয়ে তৈরি করুন, তারপর বিন্যাস এবং সমর্থিত ধারণা যোগ করুন। অন্যান্য মার্কেটপ্লেসের ক্ষেত্রে তাদের বর্তমান নথিভুক্ত ক্রমের নিয়ম অনুসরণ করুন।",
+          "সংক্ষিপ্ত শিরোনাম ছবিটিকে একটি বাক্য বা স্বাভাবিক বাক্যাংশ হিসেবে বর্ণনা করবে, কীওয়ার্ডের স্তূপ হিসেবে নয়। Adobe-এর বর্তমান CSV নির্দেশনায় শিরোনামের সীমা 70 অক্ষর; তবু আপলোডের আগে বর্তমান পোর্টাল যাচাই করুন। Adobe মেটাডেটা প্রস্তুত করার সময় সর্বোচ্চ 49টি কীওয়ার্ডের সংযত সীমা কার্যকর, তবে অন্যান্য প্ল্যাটফর্মে ভিন্ন সীমা থাকতে পারে।"
+        ],
+        "bullets": [
+          "ceramic mug, open notebook এবং kitchen table দিয়ে শুরু করুন।",
+          "দৃশ্যমান হলে indoor, tabletop, still life বা close up-এর মতো শব্দ পরে রাখুন।",
+          "লক্ষ্য মার্কেটপ্লেসের বর্তমান ভাষা, সংখ্যা ও শ্রেণির নিয়ম যাচাই করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৪. কাজের উদাহরণ: তালিকা তৈরি ও ছাঁটাই করুন",
+        "paragraphs": [
+          "এটি মাপা ফল বা গ্রাহকের ঘটনা নয়—একটি উদাহরণ: ধরা যাক, ছবির বাঁ দিকে একটি সাদা সিরামিক মগ, ডান দিকে একটি খালি পাতার খোলা নোটবুক এবং দুটিই কাঠের রান্নাঘরের টেবিলের ওপর রয়েছে। কোনো ল্যাপটপ, হাত, লেখা, খাবার বা শনাক্তযোগ্য স্থান দেখা যাচ্ছে না।",
+          "একটি বিস্তৃত খসড়া দিয়ে শুরু করুন, তারপর অসমর্থিত বা পুনরাবৃত্ত শব্দ বাদ দিন। মগে প্রায়ই কফি থাকে বলে “Coffee” যোগ করতে ইচ্ছে হতে পারে, কিন্তু পানীয়টি দেখা না গেলে তা নিরাপদ নয়। ছবিতে কোনো কাজের যন্ত্র বা ব্যক্তি নেই বলে “Remote work”ও অসমর্থিত। টেবিলের উপাদান স্পষ্ট হলেই কেবল “Wooden” ব্যবহার করা যায়।"
+        ],
+        "bullets": [
+          "রাখুন: ceramic mug, open notebook, kitchen table, tabletop, indoor, still life।",
+          "বিবেচনা করুন: বিন্যাস সমর্থন করলে writing, planning, journaling, copy space, close up।",
+          "বাদ দিন: coffee, remote work, office, employee, breakfast, নির্দিষ্ট শহর এবং অনুমান করা যেকোনো পরিচয়।"
+        ],
+        "example": "শিরোনাম: Ceramic mug and open notebook on a kitchen table\n\nঅগ্রাধিকারের কীওয়ার্ড:\nceramic mug, open notebook, kitchen table, tabletop, indoor, still life, notebook, mug, writing, planning, journaling, home interior, close up, copy space\n\nচূড়ান্ত তালিকাটি দৃশ্যমান বিষয় এবং গন্তব্য প্ল্যাটফর্মের নিয়মের সঙ্গে মিলতে হবে।"
+      },
+      {
+        "heading": "৫. স্থানীয় জেনারেটরকে খসড়া সহায়ক হিসেবে ব্যবহার করুন",
+        "paragraphs": [
+          "MetaStocker একটি স্থির ওয়েব অ্যাপ, যেখানে স্থানীয় দৃষ্টি ও চিন্তন মডেল আপনার ব্রাউজারে WebGPU কর্মীর মাধ্যমে চলে। স্থানীয় মোডে অনুমান আপনার ডিভাইসেই থাকে; প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট দরকার। ডিফল্ট স্থানীয় মডেল হলো Gemma 4 E2B; অ্যাপে Gemma 4 E4B এবং Qwen3.5 2B-ও রয়েছে।",
+          "একটি মডেল লোড করুন, ছবি দিন এবং তৈরি হওয়া মেটাডেটাকে প্রাথমিক খসড়া হিসেবে ব্যবহার করুন। ব্যাচের বিবরণে কেবল তথ্যভিত্তিক প্রেক্ষাপট থাকা উচিত। এই উদাহরণের জন্য বলুন, “Ceramic mug beside an open notebook on a kitchen table.” মিশ্র ব্যাচের জন্য একসঙ্গে প্রযোজ্য ট্যাগের তালিকা ব্যবহার করবেন না। প্রতিটি ফাইল আলাদাভাবে পর্যালোচনা করুন, বিশেষ করে ভিন্ন অবস্থানে ঢোকানো অতিরিক্ত ট্যাগগুলো।"
+        ],
+        "bullets": [
+          "একটি স্থানীয় সমান্তরাল থ্রেড দিয়ে শুরু করুন; আপনার ডিভাইস স্বচ্ছন্দে সামলালে তবেই দুটি পরীক্ষা করুন।",
+          "মডেলকে মেমরিতে লোড করা এবং ডাউনলোড করা ব্রাউজার ক্যাশ ধরে রাখা এক বিষয় নয়।",
+          "তৈরি ফল সম্পাদনা করুন এবং প্রস্তুত মনে হওয়া সারিগুলোই কেবল রপ্তানি করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৬. মার্কেটপ্লেসের উপযোগিতা যাচাই করুন",
+        "paragraphs": [
+          "রপ্তানির আগে মেটাডেটা লক্ষ্য অবদানকারী পোর্টালের সঙ্গে মিলিয়ে নিন। Adobe-এর সাধারণ কীওয়ার্ড নির্দেশনায় সর্বোচ্চ 49টি কীওয়ার্ড অনুমোদিত এবং মেটাডেটার ভাষা অবদানকারী অ্যাকাউন্টের ভাষার সঙ্গে মিলতে হয়। Shutterstock-এর নির্দেশনায় ইংরেজি বর্ণনামূলক মেটাডেটা, 7 থেকে 50টি প্রাসঙ্গিক কীওয়ার্ড এবং অন্তত একটি শ্রেণি চাওয়া হয়েছে। এগুলো প্ল্যাটফর্মভিত্তিক নিয়ম, সর্বজনীন নিশ্চয়তা নয়।",
+          "CSV ব্যবহার করলে সংশ্লিষ্ট কর্মপদ্ধতির জন্য সঠিক ফাইলের নাম গুরুত্বপূর্ণ—এক্সটেনশন ও বড়-ছোট হাতের অক্ষরসহ। Adobe CSV আমদানি করার আগে সম্পদ আপলোড করুন, তারপর অবদানকারী পোর্টালে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন। রপ্তানিকারক একটি ফাইল সাজাতে পারে, কিন্তু কীওয়ার্ড সঠিক কি না বা মার্কেটপ্লেস জমা গ্রহণ করবে কি না, তা প্রমাণ করতে পারে না। Google-এর ওয়েবসাইট সূচিভুক্তি অভ্যন্তরীণ মার্কেটপ্লেস অনুসন্ধান থেকে আলাদা বিষয়।"
+        ],
+        "bullets": [
+          "জমা দেওয়ার আগে বর্তমান পোর্টালের প্রয়োজনীয়তা নিশ্চিত করুন।",
+          "বানান, পুনরাবৃত্তি, ভাষা, শ্রেণি, শিরোনামের দৈর্ঘ্য এবং প্রাসঙ্গিকতা পরীক্ষা করুন।",
+          "কীওয়ার্ডের সংখ্যা কখনও গুণমানের প্রমাণ বা বিক্রি কিংবা র‌্যাঙ্কিংয়ের নিশ্চয়তা হিসেবে দেখবেন না।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "ধারণা যোগ করার আগে দৃশ্যমান বস্তু বর্ণনা করুন।",
+      "অনুমান করা ব্যক্তি, স্থান, পেশা, ঘটনা ও ব্যবহার তালিকা থেকে বাদ রাখুন।",
+      "সবচেয়ে স্পষ্ট বিষয় ও পরিবেশের শব্দ আগে রাখুন।",
+      "তৈরি প্রতিটি কীওয়ার্ড প্রকৃত ছবির সঙ্গে মিলিয়ে দেখুন।",
+      "লক্ষ্য মার্কেটপ্লেসের বর্তমান ভাষা ও সীমার সঙ্গে মিল রাখুন।",
+      "জমা দেওয়ার আগে অবদানকারী পোর্টালে রপ্তানি করা মেটাডেটা পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "ছবি থেকে পর্যালোচিত কীওয়ার্ড তালিকা",
+      "steps": [
+        {
+          "label": "দৃশ্যমান বিষয়ের তালিকা করুন",
+          "detail": "মগ, নোটবুক, টেবিল, পরিবেশ ও সমর্থিত বিন্যাসের শব্দ আলাদা করুন।"
+        },
+        {
+          "label": "মেটাডেটা খসড়া ও ছাঁটাই করুন",
+          "detail": "তথ্যভিত্তিক খসড়া তৈরি করুন, তারপর অনুমান ও পুনরাবৃত্ত কাছাকাছি শব্দ বাদ দিন।"
+        },
+        {
+          "label": "লক্ষ্য পোর্টাল যাচাই করুন",
+          "detail": "ভাষা, সীমা, ফাইলের নাম, শ্রেণি এবং প্রতিটি চূড়ান্ত সারি যাচাই করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "एक तस्वीर से सटीक स्टॉक फ़ोटो कीवर्ड बनाने का तरीका",
+    "description": "दिखाई देने वाली वस्तुओं, परिवेश और समर्थित अवधारणाओं को प्रासंगिक स्टॉक कीवर्ड सूची में बदलना सीखें—अनुमान या अप्रासंगिक टैग के बिना।",
+    "intro": "एक उपयोगी स्टॉक कीवर्ड सूची की शुरुआत उसी से होती है जो तस्वीर वास्तव में दिखाती है। रसोई की मेज़ पर खुली नोटबुक के पास रखे सिरेमिक मग के लिए सबसे सुरक्षित मेटाडेटा वस्तुओं, परिवेश और संरचना द्वारा समर्थित कुछ अवधारणाओं का वर्णन करता है। इसमें दूर से काम करने का दृश्य, व्यक्ति, स्थान या ऐसा उद्देश्य नहीं गढ़ा जाता जिसे पिक्सेल से सत्यापित न किया जा सके।\n\nयह कार्यप्रवाह आपको किसी मार्केटप्लेस के लिए केंद्रित सूची बनाने में मदद करता है, जिसमें शुरुआती शब्द विशेष रूप से उपयोगी हों। आप तस्वीर की स्वयं जाँच कर सकते हैं, मसौदा सहायता के रूप में MetaStocker के स्थानीय जनरेटर का उपयोग कर सकते हैं और निर्यात से पहले हर परिणाम संपादित कर सकते हैं। मार्केटप्लेस के नियम बदलते रहते हैं, इसलिए जिस प्लेटफ़ॉर्म का उपयोग करना है उसके वर्तमान योगदानकर्ता पोर्टल की जाँच करें।",
+    "sections": [
+      {
+        "heading": "१. दृश्य सूची से शुरुआत करें",
+        "paragraphs": [
+          "खोज शब्दों के बारे में सोचने से पहले केवल सीधे दिखाई देने वाले तत्व लिखें। सूची को वस्तुओं, परिवेश, संरचना और संभावित अवधारणाओं में बाँटें। इससे कोई आकर्षक लेकिन असमर्थित कहानी मेटाडेटा पर हावी नहीं होगी।",
+          "इस तस्वीर में दिखाई देने वाली वस्तुओं में सिरेमिक मग और खुली नोटबुक शामिल हैं। परिवेश रसोई की मेज़ है, जिसमें मेज़ की सतह और घर के भीतर का वातावरण है। संरचना में still life, close up और copy space जैसे शब्द तभी समर्थित हो सकते हैं जब ये गुण सचमुच दिखाई दें। तस्वीर में स्पष्ट रूप से न दिखने पर coffee, handwriting, laptop, office या remote work न जोड़ें।"
+        ],
+        "bullets": [
+          "वस्तुएँ: ceramic mug, open notebook, table",
+          "परिवेश: kitchen table, indoor scene, और समर्थन होने पर ही home interior",
+          "अवधारणाएँ: दृश्य रूप से उचित होने पर writing, planning, notes या routine"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "२. वस्तुओं और अवधारणाओं को अलग करें",
+        "paragraphs": [
+          "वस्तु वाले कीवर्ड बताते हैं कि क्या मौजूद है। अवधारणा वाले कीवर्ड तस्वीर से सुझाए गए उपयोग या विचार का वर्णन करते हैं। वस्तुओं को प्रमाणित करना आम तौर पर आसान होता है; अवधारणाओं के लिए प्रमाण का स्तर अधिक ऊँचा होना चाहिए।",
+          "जब नोटबुक की व्यवस्था ऐसा संदर्भ देती हो, तब वह writing, study, planning या journaling का समर्थन कर सकती है। लेकिन तस्वीर यह साबित नहीं करती कि इसका उपयोग कौन करेगा या क्यों करेगा। अवधारणाओं को ठोस संज्ञाओं के विकल्प के बजाय वैकल्पिक, कम प्राथमिकता वाले जोड़ मानें। सूची लंबी करने के लिए लगभग समानार्थी शब्दों का ढेर न लगाएँ।"
+        ],
+        "bullets": [
+          "अमूर्त विचारों से पहले ठोस शब्दों को प्राथमिकता दें।",
+          "किसी अवधारणा का उपयोग तभी करें जब संरचना उसे संभव बनाती हो।",
+          "ऐसे शब्द हटाएँ जो किसी अनदेखे व्यक्ति, पेशे, घटना या स्थान पर निर्भर हों।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "३. सबसे मज़बूत शब्द पहले रखें",
+        "paragraphs": [
+          "Adobe के दिशानिर्देशों में पहले दस कीवर्ड को विशेष महत्व दिया गया है। Adobe पर अपलोड के लिए शुरुआती समूह को सबसे स्पष्ट विषय और परिवेश वाले शब्दों से बनाएँ, फिर संरचना और समर्थित अवधारणाएँ जोड़ें। अन्य मार्केटप्लेस के लिए उनके वर्तमान दस्तावेज़ीकृत क्रम नियमों का पालन करें।",
+          "संक्षिप्त शीर्षक को तस्वीर का वर्णन वाक्य या स्वाभाविक वाक्यांश की तरह करना चाहिए, कीवर्ड के ढेर की तरह नहीं। Adobe के वर्तमान CSV दिशानिर्देशों में शीर्षक की सीमा 70 वर्ण है; फिर भी अपलोड से पहले वर्तमान पोर्टल की जाँच करें। Adobe मेटाडेटा तैयार करते समय 49 कीवर्ड की सावधान अधिकतम सीमा उपयोगी है, जबकि अन्य प्लेटफ़ॉर्म की सीमाएँ अलग हो सकती हैं।"
+        ],
+        "bullets": [
+          "ceramic mug, open notebook और kitchen table से शुरुआत करें।",
+          "दिखाई देने पर indoor, tabletop, still life या close up बाद में जोड़ें।",
+          "लक्ष्य मार्केटप्लेस की वर्तमान भाषा, संख्या और श्रेणी संबंधी नियम जाँचें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "४. काम का उदाहरण: सूची बनाएँ और छाँटें",
+        "paragraphs": [
+          "यह मापा हुआ परिणाम या ग्राहक का मामला नहीं, केवल एक उदाहरण है: मान लें कि तस्वीर में बाईं ओर एक सफेद सिरेमिक मग, दाईं ओर एक खुली कोरी नोटबुक और दोनों लकड़ी की रसोई की मेज़ पर रखे हैं। कोई लैपटॉप, हाथ, पाठ, भोजन या पहचान योग्य स्थान दिखाई नहीं देता।",
+          "एक व्यापक मसौदे से शुरू करें, फिर असमर्थित या दोहराए गए शब्द हटाएँ। मग में अक्सर कॉफी होती है, इसलिए “Coffee” जोड़ने का मन हो सकता है, लेकिन पेय दिखाई न दे तो यह सुरक्षित नहीं है। तस्वीर में काम का उपकरण या व्यक्ति नहीं है, इसलिए “Remote work” भी असमर्थित है। “Wooden” तभी रखें जब मेज़ की सामग्री स्पष्ट हो।"
+        ],
+        "bullets": [
+          "रखें: ceramic mug, open notebook, kitchen table, tabletop, indoor, still life।",
+          "विचार करें: यदि संरचना समर्थन करती हो तो writing, planning, journaling, copy space, close up।",
+          "हटाएँ: coffee, remote work, office, employee, breakfast, कोई विशिष्ट शहर और अनुमानित कोई भी पहचान।"
+        ],
+        "example": "शीर्षक: Ceramic mug and open notebook on a kitchen table\n\nप्राथमिकता वाले कीवर्ड:\nceramic mug, open notebook, kitchen table, tabletop, indoor, still life, notebook, mug, writing, planning, journaling, home interior, close up, copy space\n\nअंतिम सूची दिखाई देने वाली सामग्री और गंतव्य प्लेटफ़ॉर्म के नियमों के अनुरूप होनी चाहिए।"
+      },
+      {
+        "heading": "५. स्थानीय जनरेटर को मसौदा सहायक की तरह उपयोग करें",
+        "paragraphs": [
+          "MetaStocker एक स्थिर वेब ऐप है, जिसमें स्थानीय विज़न और थिंकिंग मॉडल आपके ब्राउज़र में WebGPU वर्कर थ्रेड के माध्यम से चलते हैं। स्थानीय मोड में मॉडल की गणना आपके डिवाइस पर ही रहता है; पहले मॉडल डाउनलोड के लिए इंटरनेट आवश्यक है। डिफ़ॉल्ट स्थानीय मॉडल Gemma 4 E2B है और ऐप Gemma 4 E4B तथा Qwen3.5 2B भी उपलब्ध कराता है।",
+          "मॉडल लोड करें, तस्वीर दें और तैयार हुए मेटाडेटा को शुरुआती मसौदे के रूप में उपयोग करें। बैच विवरण में केवल तथ्यात्मक संदर्भ होना चाहिए। इस उदाहरण के लिए कहें, “Ceramic mug beside an open notebook on a kitchen table.” मिश्रित बैच के लिए सभी फ़ाइलों पर लागू होने वाली टैग सूची का उपयोग न करें। हर फ़ाइल की अलग जाँच करें, विशेषकर अलग-अलग स्थानों पर जोड़े गए अतिरिक्त टैगों की।"
+        ],
+        "bullets": [
+          "एक स्थानीय समानांतर थ्रेड से शुरू करें; आपका डिवाइस आराम से संभाल सके तभी दो का परीक्षण करें।",
+          "मॉडल को मेमोरी में लोड करना और डाउनलोड किया हुआ ब्राउज़र कैश बनाए रखना अलग बातें हैं।",
+          "तैयार परिणामों को संपादित करें और केवल तैयार मानी गई पंक्तियाँ निर्यात करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "६. मार्केटप्लेस के अनुरूपता की जाँच करें",
+        "paragraphs": [
+          "निर्यात से पहले मेटाडेटा की तुलना लक्ष्य योगदानकर्ता पोर्टल से करें। Adobe के सामान्य कीवर्ड दिशानिर्देश अधिकतम 49 कीवर्ड की अनुमति देते हैं और मेटाडेटा की भाषा का योगदानकर्ता खाते की भाषा से मेल खाना आवश्यक है। Shutterstock के दिशानिर्देश अंग्रेज़ी वर्णनात्मक मेटाडेटा, 7 से 50 प्रासंगिक कीवर्ड और कम से कम एक श्रेणी माँगते हैं। ये प्लेटफ़ॉर्म-विशिष्ट नियम हैं, सार्वभौमिक गारंटी नहीं।",
+          "यदि आप CSV का उपयोग करते हैं, तो संबंधित कार्यप्रवाह के लिए सही फ़ाइल नाम महत्वपूर्ण है, जिसमें एक्सटेंशन और बड़े-छोटे अक्षर भी शामिल हैं। Adobe CSV आयात करने से पहले फ़ाइलें अपलोड करें, फिर योगदानकर्ता पोर्टल में बने मेटाडेटा की जाँच करें। निर्यातक फ़ाइल को व्यवस्थित कर सकता है, लेकिन यह साबित नहीं कर सकता कि कीवर्ड सही हैं या मार्केटप्लेस सबमिशन स्वीकार करेगा। Google वेबसाइट इंडेक्सिंग, आंतरिक मार्केटप्लेस खोज से अलग विषय है।"
+        ],
+        "bullets": [
+          "सबमिट करने से पहले वर्तमान पोर्टल की आवश्यकताओं की पुष्टि करें।",
+          "वर्तनी, डुप्लिकेट, भाषा, श्रेणी, शीर्षक की लंबाई और प्रासंगिकता जाँचें।",
+          "कीवर्ड की संख्या को कभी गुणवत्ता का प्रमाण या बिक्री अथवा रैंकिंग की गारंटी न मानें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "अवधारणाएँ जोड़ने से पहले दिखाई देने वाली वस्तुओं का वर्णन करें।",
+      "अनुमानित लोगों, स्थानों, पेशों, घटनाओं और उपयोगों को सूची से बाहर रखें।",
+      "सबसे स्पष्ट विषय और परिवेश वाले शब्द पहले रखें।",
+      "हर तैयार कीवर्ड की वास्तविक तस्वीर से जाँच करें।",
+      "लक्ष्य मार्केटप्लेस की वर्तमान भाषा और सीमाओं से मेल रखें।",
+      "सबमिशन से पहले योगदानकर्ता पोर्टल में निर्यात किए गए मेटाडेटा की जाँच करें।"
+    ],
+    "illustration": {
+      "title": "तस्वीर से जाँची हुई कीवर्ड सूची तक",
+      "steps": [
+        {
+          "label": "दिखाई देने वाली चीज़ों की सूची बनाएँ",
+          "detail": "मग, नोटबुक, मेज़, परिवेश और समर्थित संरचना वाले शब्द अलग करें।"
+        },
+        {
+          "label": "मेटाडेटा का मसौदा छाँटें",
+          "detail": "तथ्यात्मक मसौदा बनाएँ, फिर अनुमान और दोहराए गए लगभग समानार्थी शब्द हटाएँ।"
+        },
+        {
+          "label": "लक्ष्य पोर्टल जाँचें",
+          "detail": "भाषा, सीमाएँ, फ़ाइल नाम, श्रेणियाँ और हर अंतिम पंक्ति सत्यापित करें।"
+        }
+      ]
+    }
+  }
+}

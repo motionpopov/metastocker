@@ -1,0 +1,443 @@
+{
+  "slug": "stock-seo-vs-google-seo",
+  "category": "seo",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "google-images"
+  ],
+  "en": {
+    "title": "Stock Marketplace SEO vs Google SEO: A Practical Guide",
+    "description": "Learn how stock marketplace metadata differs from Google SEO, then build accurate keywords for listings and useful portfolio pages without mixing the two.",
+    "intro": "A stock listing and a page on your own photography website may show the same image, but they are discovered through different systems. A marketplace mainly uses the asset’s title, keywords, categories and other contributor metadata for its internal search. Google evaluates a web page: its surrounding text, image context, technical accessibility and overall usefulness. Treating these as one SEO task creates predictable mistakes, such as stuffing a CSV with phrases meant for HTML or copying marketplace tags into a portfolio page. This guide shows how to separate the workflows and connect them sensibly.",
+    "sections": [
+      {
+        "heading": "Start with two discovery goals",
+        "paragraphs": [
+          "First decide where you want a person to find the image. A stock buyer usually searches inside a contributor marketplace using a short concept, subject, use case or visual attribute. A portfolio visitor may arrive from Google after searching for a topic, service, project or location, then reading a page around the image.",
+          "The distinction matters because a marketplace keyword is a metadata field, while a web keyword should be supported by useful page content. Neither system promises a ranking, sale or traffic. Your job is to make the asset accurately understandable in the place where it appears."
+        ],
+        "bullets": [
+          "Marketplace goal: describe the individual file for internal stock search.",
+          "Google goal: create a useful, indexable page with clear image context.",
+          "Do not treat a CSV keyword column as an HTML meta-keywords field."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Build marketplace metadata around the file",
+        "paragraphs": [
+          "For a stock submission, begin with what the image visibly and reliably communicates: subject, action, setting, mood, composition and plausible commercial use. Put the most important terms first when the platform gives them special weight. Avoid guesses about identity, ownership, release status, exact location or species when pixels do not establish those facts.",
+          "Each platform has its own rules. For example, Adobe’s guidance allows up to 49 keywords and emphasizes the first ten; its CSV documentation currently states a 70-character title limit. Other marketplaces use different fields and limits, so check the contributor portal before export or upload. Relevant English metadata may be required even when your working language is different."
+        ],
+        "bullets": [
+          "Use one accurate descriptive sentence or phrase as the title.",
+          "Choose only relevant keywords; remove repetitions and blanket tags.",
+          "Treat category and release fields as platform-specific requirements."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: one image, two discovery paths",
+        "paragraphs": [
+          "Example: imagine a horizontal photograph showing a reusable stainless-steel bottle beside a folded map on a sunlit wooden table. The image does not prove where the table is, who owns the bottle or that the trip occurred in a particular country. It can support a practical stock description, but a portfolio page needs a reason for the page to exist beyond a tag list.",
+          "A marketplace title could be: “Reusable stainless steel water bottle beside folded map on wooden table.” Suitable keywords might include reusable water bottle, stainless steel, travel planning, map, hydration, sustainable lifestyle, outdoor preparation, still life and wooden table. Remove terms such as hiking trail, mountain and specific destination unless they are actually visible.",
+          "On a portfolio site, create a page or gallery entry with a descriptive heading, a short paragraph explaining the image’s subject and intended visual context, and appropriate alt text such as “Reusable stainless steel bottle beside a folded map on a wooden table.” The page could also explain the photographer’s still-life approach or licensing context, if true. The same facts inform both systems, but the website provides fuller context instead of exporting the entire keyword list as prose."
+        ],
+        "bullets": [],
+        "example": "Marketplace title: Reusable stainless steel water bottle beside folded map on wooden table\nMarketplace keywords: reusable water bottle, stainless steel, travel planning, map, hydration, sustainable lifestyle, outdoor preparation, still life, wooden table\nPortfolio alt text: Reusable stainless steel bottle beside a folded map on a wooden table"
+      },
+      {
+        "heading": "Use CSV as an operations format, not a Google trick",
+        "paragraphs": [
+          "A CSV can map filenames to titles, keywords and, depending on the destination, categories or release filenames. It does not add HTML metadata to your website and it does not make a page rank. It also does not guarantee acceptance. Before using it, confirm the platform’s current requirements and make sure every filename, including extension and case, matches the uploaded asset.",
+          "For Adobe, upload the assets before importing the CSV, then inspect the resulting metadata in the contributor portal. Keep an untouched working sheet so you can correct a row without losing the original editorial decisions. Export only rows you have reviewed. A generator can help format output, but the contributor remains responsible for relevance and compliance."
+        ],
+        "bullets": [
+          "Match filenames exactly, including capitalization and extensions.",
+          "Validate current limits and required columns for each marketplace.",
+          "Inspect imported fields rather than assuming the file was interpreted correctly."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Turn the same subject into a useful Google page",
+        "paragraphs": [
+          "Google image discovery depends on the page around the image as well as the image itself. Use a clear page title, descriptive surrounding text, useful alt text and an appropriate canonical URL. If you publish language versions, give each version its own URL and configure the relevant localized signals. A sitemap can help discovery, but it cannot guarantee crawling or indexing.",
+          "Do not create thin pages consisting of a photo followed by dozens of near-duplicate tags. Instead, answer a visitor’s likely question: what is shown, why does it matter, and what can the visitor do next? Keep claims factual. If the image is part of a commercial portfolio, explain licensing or contact options only when those details are genuinely available."
+        ],
+        "bullets": [
+          "Write for the visitor who lands on the page, not only for a crawler.",
+          "Use descriptive text that adds context rather than repeating tags.",
+          "Keep marketplace metadata and website copy as separate editorial deliverables."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Review before publishing or exporting",
+        "paragraphs": [
+          "A final review catches the most expensive confusion: metadata that describes an imagined scene rather than the submitted file. Check every keyword against the pixels, remove unsupported precision and confirm that the title sounds like a description rather than a search query. For website pages, open the page as a visitor would and ask whether the text is useful without seeing the keyword list.",
+          "If you use MetaStocker’s local generator, local inference runs in the browser on your device. The model must first be downloaded, and loading it into active memory is different from retaining downloaded files in browser cache. Generated results remain editable and should be checked per file; exports do not upload or submit assets, embed metadata into originals or guarantee acceptance. For video, inspect the full motion because sampled previews cannot represent every frame."
+        ],
+        "bullets": [
+          "Review factual accuracy before accepting generated suggestions.",
+          "Use one local parallel thread initially, then test higher concurrency cautiously.",
+          "Export only rows that are ready for the specific destination."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Identify whether the discovery target is a marketplace search or a Google page.",
+      "Describe only visible, supportable facts about the asset.",
+      "Keep CSV fields separate from HTML page SEO.",
+      "Check current marketplace limits, language rules and upload instructions.",
+      "Match filenames exactly and inspect imported metadata.",
+      "Write useful surrounding website text and accurate alt text.",
+      "Review every generated title and keyword before publishing."
+    ],
+    "illustration": {
+      "title": "One subject, two SEO workflows",
+      "steps": [
+        {
+          "label": "Describe the visible file",
+          "detail": "Record factual subject, action, setting and useful commercial context."
+        },
+        {
+          "label": "Prepare marketplace fields",
+          "detail": "Order relevant title and keywords, then validate the platform CSV."
+        },
+        {
+          "label": "Build the web page",
+          "detail": "Add useful surrounding text, alt text and a canonical page URL."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "SEO стоков и Google: практическое сравнение",
+    "description": "Разберитесь, чем поиск на фотостоках отличается от Google SEO, и подготовьте точные метаданные для стока и полезную страницу портфолио.",
+    "intro": "Одна и та же фотография может находиться через поиск фотостока и через Google, но эти сценарии работают по-разному. Сток в основном использует заголовок, ключевые слова, категорию и другие поля метаданных для внутреннего поиска по материалам. Google оценивает веб-страницу: текст вокруг изображения, его контекст, доступность для обхода и пользу для посетителя. Если смешать задачи, получится CSV с фразами для HTML или портфолио, состоящее из списка тегов. Ниже — практический способ разделить эти процессы и использовать общие факты об изображении без путаницы.",
+    "sections": [
+      {
+        "heading": "Сначала определите цель поиска",
+        "paragraphs": [
+          "Подумайте, где должна обнаружиться работа. Покупатель на фотостоке обычно ищет конкретный файл по теме, предмету, действию, визуальному признаку или предполагаемому применению. Посетитель портфолио может прийти из Google по запросу о теме, услуге или проекте, а затем прочитать страницу вокруг изображения.",
+          "Это не означает, что одна система важнее другой. Просто ключевое слово стока — поле метаданных, а поисковая фраза для сайта должна быть подтверждена полезным содержанием страницы. Ни сток, ни Google не гарантируют позицию, продажу или трафик: задача автора — сделать материал понятным в нужном месте."
+        ],
+        "bullets": [
+          "Цель стока: точно описать отдельный файл для внутреннего поиска.",
+          "Цель Google: создать полезную страницу с понятным контекстом изображения.",
+          "Колонка keywords в CSV не является HTML meta keywords."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Соберите метаданные вокруг конкретного файла",
+        "paragraphs": [
+          "Для стока начните с того, что действительно видно и обоснованно следует из изображения: предмет, действие, обстановка, настроение, композиция и возможное коммерческое использование. Если площадка придаёт особое значение началу списка, разместите самые важные термины первыми. Не угадывайте личность, владельца, наличие релиза, точное место или вид животного, если пиксели этого не подтверждают.",
+          "У каждой площадки свои правила. Например, руководство Adobe допускает до 49 ключевых слов и отдельно подчёркивает важность первых десяти; в документации Adobe для CSV сейчас указан предел заголовка 70 символов. У другой площадки могут быть иные поля и ограничения, поэтому перед экспортом проверяйте текущие требования портала. Язык метаданных также может зависеть от настроек аккаунта или правил конкретного сервиса."
+        ],
+        "bullets": [
+          "Пишите заголовок как точное описание, а не как набор запросов.",
+          "Удаляйте повторы и нерелевантные универсальные теги.",
+          "Проверяйте категории и сведения о релизах по правилам конкретной площадки."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Рабочий пример: один кадр, два пути поиска",
+        "paragraphs": [
+          "Пример: представим горизонтальную фотографию, где многоразовая стальная бутылка стоит рядом со сложенной картой на освещённом солнцем деревянном столе. Кадр не доказывает, где находится стол, кому принадлежит бутылка и была ли поездка в конкретную страну. Для стока достаточно точного описания видимого, а странице портфолио понадобится дополнительная причина быть полезной посетителю.",
+          "Заголовок для стока может выглядеть так: «Многоразовая стальная бутылка рядом со сложенной картой на деревянном столе». Подходящие ключевые слова: reusable water bottle, stainless steel, travel planning, map, hydration, sustainable lifestyle, outdoor preparation, still life, wooden table. Не добавляйте hiking trail, mountain или название места, если этого нет в кадре.",
+          "На сайте можно создать страницу проекта с ясным заголовком, коротким абзацем о предмете и визуальном замысле, а также понятным alt-текстом: «Многоразовая стальная бутылка рядом со сложенной картой на деревянном столе». Если это правда, добавьте сведения о подходе к предметной съёмке или лицензировании. Факты совпадают, но сайт раскрывает контекст, а не превращает весь список тегов в неестественный текст."
+        ],
+        "bullets": [],
+        "example": "Заголовок стока: Reusable stainless steel water bottle beside folded map on wooden table\nКлючевые слова стока: reusable water bottle, stainless steel, travel planning, map, hydration, sustainable lifestyle, outdoor preparation, still life, wooden table\nAlt-текст портфолио: Reusable stainless steel bottle beside a folded map on a wooden table"
+      },
+      {
+        "heading": "Используйте CSV как рабочий формат",
+        "paragraphs": [
+          "CSV может сопоставлять имена файлов с заголовками, ключевыми словами, категориями и, в зависимости от назначения, именами файлов релизов. Он не добавляет метаданные на HTML-страницу и не улучшает её позицию в Google. CSV также не гарантирует принятие. Перед экспортом проверьте актуальные требования площадки и убедитесь, что имя каждого файла, включая расширение и регистр, совпадает с загруженным материалом.",
+          "Для Adobe сначала загрузите материалы, затем импортируйте CSV и осмотрите получившиеся поля в кабинете автора. Храните рабочую таблицу отдельно, чтобы можно было исправить одну строку без потери редакторских решений. Генератор может помочь оформить данные, но ответственность за уместность и соблюдение правил остаётся у автора."
+        ],
+        "bullets": [
+          "Сверяйте имена файлов, расширения и заглавные буквы.",
+          "Проверяйте текущие лимиты, обязательные колонки и язык метаданных.",
+          "После импорта осматривайте поля в кабинете, а не доверяйте одному факту загрузки."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Превратите тему в полезную страницу Google",
+        "paragraphs": [
+          "Для поиска изображений Google учитывает не только сам файл, но и страницу вокруг него. Используйте ясный заголовок страницы, описательный текст, подходящий alt-текст и корректный канонический URL. Если есть версии на разных языках, каждой нужен собственный URL и соответствующие сигналы локализации. Sitemap может помочь обнаружению страниц, но не гарантирует обход или индексацию.",
+          "Не создавайте тонкую страницу, где после фотографии идёт несколько десятков почти одинаковых тегов. Ответьте на ожидаемый вопрос посетителя: что изображено, почему это важно и какое действие доступно дальше? Все утверждения должны быть фактическими. Информацию о лицензии или контактах добавляйте только тогда, когда она действительно предоставляется."
+        ],
+        "bullets": [
+          "Пишите для человека, который открыл страницу, а не только для робота.",
+          "Добавляйте контекст, а не механически повторяйте ключевые слова.",
+          "Считайте метаданные стока и текст сайта отдельными редакторскими задачами."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Проверьте результат перед публикацией",
+        "paragraphs": [
+          "Финальная проверка помогает убрать главную ошибку: описание воображаемой сцены вместо настоящего файла. Сверьте каждое ключевое слово с изображением, удалите неподтверждённую точность и убедитесь, что заголовок звучит как описание. Для сайта откройте страницу глазами посетителя и проверьте, остаётся ли текст полезным без просмотра списка тегов.",
+          "Если вы используете локальный генератор MetaStocker, локальный вывод выполняется в браузере на вашем устройстве. Модель сначала скачивается, а её загрузка в активную память — не то же самое, что сохранение скачанных файлов в кэше браузера. Результаты можно редактировать; проверяйте их для каждого файла. Экспорт не загружает и не отправляет материалы, не встраивает метаданные в оригиналы и не гарантирует принятие. Для видео просматривайте весь ролик: выборочные превью не описывают каждое движение."
+        ],
+        "bullets": [
+          "Проверяйте фактическую точность каждого предложенного поля.",
+          "Начните с одного локального потока и осторожно тестируйте большее число.",
+          "Экспортируйте только строки, готовые для выбранной площадки."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Определите: нужен поиск на стоке или страница для Google.",
+      "Описывайте только видимые и подтверждаемые факты.",
+      "Не смешивайте CSV-поля с SEO HTML-страницы.",
+      "Проверьте актуальные лимиты, язык и инструкции площадки.",
+      "Сверьте имена файлов и осмотрите импортированные поля.",
+      "Добавьте полезный текст вокруг изображения и точный alt-текст.",
+      "Проверьте каждый заголовок и тег перед публикацией."
+    ],
+    "illustration": {
+      "title": "Один сюжет, два SEO-процесса",
+      "steps": [
+        {
+          "label": "Опишите видимый файл",
+          "detail": "Зафиксируйте предмет, действие, обстановку и обоснованный контекст."
+        },
+        {
+          "label": "Подготовьте поля стока",
+          "detail": "Упорядочьте термины и проверьте CSV по правилам площадки."
+        },
+        {
+          "label": "Соберите веб-страницу",
+          "detail": "Добавьте полезный текст, alt-текст и канонический URL."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "স্টক মার্কেটপ্লেস SEO বনাম Google SEO: ব্যবহারিক নির্দেশিকা",
+    "description": "স্টক মার্কেটপ্লেসের মেটাডেটা কীভাবে Google SEO থেকে আলাদা, তা শিখুন এবং তালিকা ও পোর্টফোলিও পেজের জন্য নির্ভুল কীওয়ার্ড তৈরি করুন।",
+    "intro": "আপনার নিজস্ব ফটোগ্রাফি ওয়েবসাইটের একটি পেজ এবং স্টক তালিকায় একই ছবি থাকতে পারে, কিন্তু সেগুলো ভিন্ন ব্যবস্থার মাধ্যমে খুঁজে পাওয়া যায়। মার্কেটপ্লেস মূলত অভ্যন্তরীণ অনুসন্ধানের জন্য সম্পদের শিরোনাম, কীওয়ার্ড, বিভাগ এবং অন্যান্য অবদানকারী-মেটাডেটা ব্যবহার করে। Google একটি ওয়েবপেজ মূল্যায়ন করে—তার আশপাশের লেখা, ছবির প্রসঙ্গ, প্রযুক্তিগতভাবে সহজে ব্যবহারের সুবিধা এবং সামগ্রিক উপযোগিতা। এই দুটিকে একই SEO কাজ হিসেবে দেখলে অনুমানযোগ্য ভুল হয়, যেমন HTML-এর জন্য লেখা বাক্যাংশ দিয়ে CSV ভরে ফেলা বা মার্কেটপ্লেসের ট্যাগ কপি করে পোর্টফোলিও পেজে বসানো। এই নির্দেশিকায় কীভাবে কাজের ধারা আলাদা রেখে যুক্তিসংগতভাবে সংযুক্ত করবেন, তা দেখানো হয়েছে।",
+    "sections": [
+      {
+        "heading": "দুটি আবিষ্কার-লক্ষ্য দিয়ে শুরু করুন",
+        "paragraphs": [
+          "প্রথমে ঠিক করুন, আপনি চান একজন মানুষ ছবিটি কোথায় খুঁজে পাক। একজন স্টক ক্রেতা সাধারণত সংক্ষিপ্ত ধারণা, বিষয়, ব্যবহারক্ষেত্র বা দৃশ্যমান বৈশিষ্ট্য দিয়ে অবদানকারী-মার্কেটপ্লেসের ভেতরে অনুসন্ধান করেন। একজন পোর্টফোলিও দর্শক কোনো বিষয়, পরিষেবা, প্রকল্প বা স্থান খুঁজে Google থেকে আসতে পারেন, তারপর ছবির আশপাশের পেজটি পড়তে পারেন।",
+          "এই পার্থক্য গুরুত্বপূর্ণ, কারণ মার্কেটপ্লেসের কীওয়ার্ড একটি মেটাডেটা ক্ষেত্র, আর ওয়েবের কীওয়ার্ডকে উপযোগী পেজের বিষয়বস্তু দিয়ে সমর্থন করতে হয়। কোনো ব্যবস্থাই র‌্যাঙ্কিং, বিক্রি বা ট্রাফিকের নিশ্চয়তা দেয় না। ছবিটি যেখানে প্রদর্শিত হচ্ছে, সেখানে সেটিকে নির্ভুলভাবে বোঝানোই আপনার কাজ।"
+        ],
+        "bullets": [
+          "মার্কেটপ্লেসের লক্ষ্য: অভ্যন্তরীণ স্টক অনুসন্ধানের জন্য পৃথক ফাইলটি বর্ণনা করা।",
+          "Google-এর লক্ষ্য: স্পষ্ট ছবির প্রসঙ্গসহ একটি উপযোগী, সূচিবদ্ধযোগ্য পেজ তৈরি করা।",
+          "CSV-এর কীওয়ার্ড কলামকে HTML-এর মেটা-কীওয়ার্ড ক্ষেত্র হিসেবে ব্যবহার করবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ফাইলকে কেন্দ্র করে মার্কেটপ্লেসের মেটাডেটা তৈরি করুন",
+        "paragraphs": [
+          "স্টক জমা দেওয়ার সময় ছবিটি দৃশ্যত এবং নির্ভরযোগ্যভাবে যা জানায়, তা দিয়ে শুরু করুন: বিষয়, কাজ, পরিবেশ, আবহ, বিন্যাস এবং সম্ভাব্য বাণিজ্যিক ব্যবহার। প্ল্যাটফর্ম কোনো শব্দকে বিশেষ গুরুত্ব দিলে সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো শুরুতে রাখুন। পিক্সেল থেকে পরিচয়, মালিকানা, রিলিজের অবস্থা, সঠিক স্থান বা প্রজাতি নিশ্চিত না হলে সেগুলো অনুমান করবেন না।",
+          "প্রতিটি প্ল্যাটফর্মের নিজস্ব নিয়ম আছে। উদাহরণস্বরূপ, Adobe-এর নির্দেশিকায় সর্বোচ্চ 49টি কীওয়ার্ড ব্যবহারের অনুমতি রয়েছে এবং প্রথম দশটিতে গুরুত্ব দেওয়া হয়; তাদের CSV নথিতে বর্তমানে 70 অক্ষরের শিরোনাম-সীমা বলা আছে। অন্যান্য মার্কেটপ্লেসে ভিন্ন ক্ষেত্র ও সীমা থাকতে পারে, তাই রপ্তানি বা আপলোডের আগে অবদানকারী পোর্টাল দেখে নিন। আপনার কাজের ভাষা ভিন্ন হলেও প্রাসঙ্গিক ইংরেজি মেটাডেটা প্রয়োজন হতে পারে।"
+        ],
+        "bullets": [
+          "শিরোনাম হিসেবে একটি নির্ভুল বর্ণনামূলক বাক্য বা বাক্যাংশ ব্যবহার করুন।",
+          "শুধু প্রাসঙ্গিক কীওয়ার্ড বেছে নিন; পুনরাবৃত্তি ও নির্বিচার ট্যাগ বাদ দিন।",
+          "বিভাগ ও রিলিজের ক্ষেত্রকে প্ল্যাটফর্ম-নির্দিষ্ট প্রয়োজন হিসেবে বিবেচনা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: একটি ছবি, দুটি আবিষ্কারের পথ",
+        "paragraphs": [
+          "উদাহরণ হিসেবে ভাবুন, একটি অনুভূমিক ছবিতে রোদে আলোকিত কাঠের টেবিলের ওপর ভাঁজ করা মানচিত্রের পাশে একটি পুনর্ব্যবহারযোগ্য স্টেইনলেস-স্টিলের বোতল দেখা যাচ্ছে। টেবিলটি কোথায়, বোতলটির মালিক কে, বা ভ্রমণটি কোনো নির্দিষ্ট দেশে হয়েছিল কি না—ছবিটি তা প্রমাণ করে না। এটি ব্যবহারিক স্টক-বর্ণনাকে সমর্থন করতে পারে, কিন্তু একটি পোর্টফোলিও পেজের অস্তিত্বের কারণ শুধু ট্যাগের তালিকার চেয়ে বেশি হওয়া দরকার।",
+          "একটি মার্কেটপ্লেসের শিরোনাম হতে পারে: “Reusable stainless steel water bottle beside folded map on wooden table.” উপযুক্ত কীওয়ার্ডের মধ্যে থাকতে পারে reusable water bottle, stainless steel, travel planning, map, hydration, sustainable lifestyle, outdoor preparation, still life এবং wooden table। hiking trail, mountain ও নির্দিষ্ট গন্তব্যের মতো শব্দ সত্যিই দৃশ্যমান না হলে বাদ দিন।",
+          "একটি পোর্টফোলিও সাইটে বর্ণনামূলক শিরোনাম, ছবির বিষয় ও কাঙ্ক্ষিত দৃশ্যগত প্রসঙ্গ ব্যাখ্যা করা ছোট অনুচ্ছেদ এবং “Reusable stainless steel bottle beside a folded map on a wooden table.”-এর মতো উপযুক্ত অল্ট টেক্সটসহ একটি পেজ বা গ্যালারি-এন্ট্রি তৈরি করুন। সত্য হলে ফটোগ্রাফারের স্থিরচিত্র ধারণা বা লাইসেন্সিংয়ের প্রসঙ্গও ব্যাখ্যা করা যেতে পারে। একই তথ্য দুই ব্যবস্থাকেই জানায়, কিন্তু ওয়েবসাইট পুরো কীওয়ার্ড তালিকাটি গদ্য হিসেবে রপ্তানি না করে আরও পূর্ণ প্রসঙ্গ দেয়।"
+        ],
+        "bullets": [],
+        "example": "Marketplace title: Reusable stainless steel water bottle beside folded map on wooden table\nMarketplace keywords: reusable water bottle, stainless steel, travel planning, map, hydration, sustainable lifestyle, outdoor preparation, still life, wooden table\nPortfolio alt text: Reusable stainless steel bottle beside a folded map on a wooden table"
+      },
+      {
+        "heading": "CSV-কে পরিচালনাগত বিন্যাস হিসেবে ব্যবহার করুন, Google-এর কৌশল হিসেবে নয়",
+        "paragraphs": [
+          "একটি CSV ফাইলনামকে শিরোনাম, কীওয়ার্ড এবং গন্তব্যের ওপর নির্ভর করে বিভাগ বা রিলিজের ফাইলনামের সঙ্গে মিলিয়ে দিতে পারে। এটি আপনার ওয়েবসাইটে HTML মেটাডেটা যোগ করে না এবং কোনো পেজকে র‌্যাঙ্ক করায় না। এটি গ্রহণযোগ্যতার নিশ্চয়তাও দেয় না। ব্যবহারের আগে প্ল্যাটফর্মের বর্তমান প্রয়োজনীয়তা নিশ্চিত করুন এবং এক্সটেনশন ও বড়-ছোট অক্ষরসহ প্রতিটি ফাইলনাম আপলোড করা সম্পদের সঙ্গে মেলে কি না দেখুন।",
+          "Adobe-এর ক্ষেত্রে CSV আমদানি করার আগে সম্পদগুলো আপলোড করুন, তারপর অবদানকারী পোর্টালে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন। একটি অপরিবর্তিত কাজের শিট রাখুন, যাতে মূল সম্পাদকীয় সিদ্ধান্ত না হারিয়ে কোনো সারি সংশোধন করতে পারেন। শুধু পর্যালোচনা করা সারিগুলো রপ্তানি করুন। একটি জেনারেটর আউটপুটের বিন্যাসে সাহায্য করতে পারে, কিন্তু প্রাসঙ্গিকতা ও নিয়ম মেনে চলার দায়িত্ব অবদানকারীরই।"
+        ],
+        "bullets": [
+          "বড়-ছোট অক্ষর ও এক্সটেনশনসহ ফাইলনাম হুবহু মিলিয়ে নিন।",
+          "প্রতিটি মার্কেটপ্লেসের বর্তমান সীমা ও প্রয়োজনীয় কলাম যাচাই করুন।",
+          "ফাইলটি সঠিকভাবে ব্যাখ্যা হয়েছে ধরে না নিয়ে আমদানি করা ক্ষেত্রগুলো পরীক্ষা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "একই বিষয়কে একটি উপযোগী Google পেজে রূপ দিন",
+        "paragraphs": [
+          "Google-এ ছবি খুঁজে পাওয়া ছবিটির পাশাপাশি তার চারপাশের পেজের ওপরও নির্ভর করে। স্পষ্ট পেজের শিরোনাম, বর্ণনামূলক আশপাশের লেখা, উপযোগী অল্ট টেক্সট এবং উপযুক্ত ক্যানোনিক্যাল URL ব্যবহার করুন। ভাষাভিত্তিক সংস্করণ প্রকাশ করলে প্রতিটি সংস্করণের নিজস্ব URL দিন এবং প্রাসঙ্গিক স্থানীয়করণ-সংকেত কনফিগার করুন। একটি সাইটম্যাপ আবিষ্কারে সাহায্য করতে পারে, কিন্তু ক্রল বা সূচিবদ্ধ হওয়ার নিশ্চয়তা দিতে পারে না।",
+          "শুধু একটি ছবির পরে কয়েক ডজন প্রায়-একই ট্যাগ দিয়ে পাতলা পেজ তৈরি করবেন না। বরং দর্শকের সম্ভাব্য প্রশ্নের উত্তর দিন: কী দেখানো হয়েছে, এটি কেন গুরুত্বপূর্ণ এবং দর্শক এরপর কী করতে পারেন? দাবিগুলো তথ্যনিষ্ঠ রাখুন। ছবিটি বাণিজ্যিক পোর্টফোলিওর অংশ হলে লাইসেন্সিং বা যোগাযোগের বিকল্প কেবল তখনই ব্যাখ্যা করুন, যখন সেই তথ্য সত্যিই পাওয়া যায়।"
+        ],
+        "bullets": [
+          "শুধু ক্রলার নয়, পেজে আসা দর্শকের জন্য লিখুন।",
+          "ট্যাগের পুনরাবৃত্তি না করে প্রসঙ্গ যোগ করে এমন বর্ণনামূলক লেখা ব্যবহার করুন।",
+          "মার্কেটপ্লেসের মেটাডেটা ও ওয়েবসাইটের লেখা আলাদা সম্পাদকীয় কাজ হিসেবে রাখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "প্রকাশ বা রপ্তানির আগে পর্যালোচনা করুন",
+        "paragraphs": [
+          "চূড়ান্ত পর্যালোচনায় সবচেয়ে ব্যয়বহুল বিভ্রান্তি ধরা পড়ে: জমা দেওয়া ফাইলের বদলে কল্পিত দৃশ্য বর্ণনা করা মেটাডেটা। প্রতিটি কীওয়ার্ড পিক্সেলের সঙ্গে মিলিয়ে দেখুন, সমর্থনহীন অতিরিক্ত নির্দিষ্টতা বাদ দিন এবং শিরোনামটি অনুসন্ধান-প্রশ্নের বদলে বর্ণনার মতো শোনাচ্ছে কি না নিশ্চিত করুন। ওয়েবসাইটের পেজের ক্ষেত্রে দর্শকের মতো করে পেজটি খুলুন এবং নিজেকে জিজ্ঞেস করুন, কীওয়ার্ডের তালিকা না দেখেও লেখাটি উপযোগী কি না।",
+          "আপনি যদি MetaStocker-এর স্থানীয় জেনারেটর ব্যবহার করেন, স্থানীয় অনুমান আপনার ডিভাইসের ব্রাউজারে চলে। মডেলটি প্রথমে ডাউনলোড করতে হয়, আর সক্রিয় মেমরিতে সেটি লোড করা ব্রাউজার ক্যাশে ডাউনলোড করা ফাইল রেখে দেওয়ার থেকে আলাদা। তৈরি ফলাফল সম্পাদনা করা যায় এবং প্রতিটি ফাইল অনুযায়ী পরীক্ষা করা উচিত; রপ্তানি সম্পদ আপলোড বা জমা দেয় না, মূল ফাইলে মেটাডেটা বসায় না এবং গ্রহণযোগ্যতার নিশ্চয়তা দেয় না। ভিডিওর ক্ষেত্রে সম্পূর্ণ চলন পরীক্ষা করুন, কারণ নমুনাভিত্তিক প্রিভিউ প্রতিটি ফ্রেম দেখাতে পারে না।"
+        ],
+        "bullets": [
+          "তৈরি করা পরামর্শ গ্রহণের আগে তথ্যগত নির্ভুলতা পর্যালোচনা করুন।",
+          "শুরুতে একটি স্থানীয় সমান্তরাল থ্রেড ব্যবহার করুন, তারপর সতর্কতার সঙ্গে বেশি একসঙ্গে কাজ পরীক্ষা করুন।",
+          "নির্দিষ্ট গন্তব্যের জন্য প্রস্তুত সারিগুলোই কেবল রপ্তানি করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "লক্ষ্যটি মার্কেটপ্লেস অনুসন্ধান নাকি Google পেজ, তা নির্ধারণ করুন।",
+      "সম্পদ সম্পর্কে শুধু দৃশ্যমান ও সমর্থনযোগ্য তথ্য বর্ণনা করুন।",
+      "CSV-এর ক্ষেত্রগুলো HTML পেজের SEO থেকে আলাদা রাখুন।",
+      "বর্তমান মার্কেটপ্লেসের সীমা, ভাষার নিয়ম ও আপলোডের নির্দেশনা পরীক্ষা করুন।",
+      "ফাইলনাম হুবহু মিলিয়ে নিন এবং আমদানি করা মেটাডেটা পরীক্ষা করুন।",
+      "উপযোগী আশপাশের ওয়েবসাইটের লেখা এবং নির্ভুল অল্ট টেক্সট লিখুন।",
+      "প্রকাশের আগে তৈরি প্রতিটি শিরোনাম ও কীওয়ার্ড পর্যালোচনা করুন।"
+    ],
+    "illustration": {
+      "title": "একটি বিষয়, দুটি SEO কাজের ধারা",
+      "steps": [
+        {
+          "label": "দৃশ্যমান ফাইলটি বর্ণনা করুন",
+          "detail": "তথ্যনিষ্ঠ বিষয়, কাজ, পরিবেশ এবং উপযোগী বাণিজ্যিক প্রসঙ্গ নথিবদ্ধ করুন।"
+        },
+        {
+          "label": "মার্কেটপ্লেসের ক্ষেত্র প্রস্তুত করুন",
+          "detail": "প্রাসঙ্গিক শিরোনাম ও কীওয়ার্ড সাজিয়ে প্ল্যাটফর্মের CSV যাচাই করুন।"
+        },
+        {
+          "label": "ওয়েবপেজ তৈরি করুন",
+          "detail": "উপযোগী আশপাশের লেখা, অল্ট টেক্সট এবং ক্যানোনিক্যাল পেজ URL যোগ করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "स्टॉक मार्केटप्लेस SEO बनाम Google SEO: व्यावहारिक मार्गदर्शिका",
+    "description": "जानें कि स्टॉक मार्केटप्लेस मेटाडेटा Google SEO से कैसे अलग है और लिस्टिंग व पोर्टफोलियो पेज के लिए सटीक कीवर्ड कैसे बनाएँ।",
+    "intro": "आपकी अपनी फ़ोटोग्राफ़ी वेबसाइट के एक पेज और स्टॉक लिस्टिंग में एक ही तस्वीर हो सकती है, लेकिन उन्हें अलग-अलग प्रणालियों के ज़रिए खोजा जाता है। मार्केटप्लेस मुख्य रूप से आंतरिक खोज के लिए एसेट के शीर्षक, कीवर्ड, श्रेणियों और अन्य योगदानकर्ता-मेटाडेटा का उपयोग करता है। Google एक वेबपेज का मूल्यांकन करता है—उसके आसपास का पाठ, चित्र का संदर्भ, तकनीकी पहुँच और समग्र उपयोगिता। इन दोनों को एक ही SEO काम मानने से अनुमानित गलतियाँ होती हैं, जैसे HTML के लिए बनाए गए वाक्यांशों से CSV भरना या मार्केटप्लेस टैग को पोर्टफोलियो पेज पर कॉपी करना। यह मार्गदर्शिका बताती है कि इन कार्यप्रवाहों को कैसे अलग रखें और समझदारी से जोड़ें।",
+    "sections": [
+      {
+        "heading": "दो खोज लक्ष्यों से शुरुआत करें",
+        "paragraphs": [
+          "पहले तय करें कि आप चाहते हैं कि कोई व्यक्ति तस्वीर को कहाँ खोजे। स्टॉक खरीदार आम तौर पर किसी छोटे विचार, विषय, उपयोग के मामले या दृश्य गुण के ज़रिए योगदानकर्ता मार्केटप्लेस के भीतर खोज करता है। पोर्टफोलियो का दर्शक किसी विषय, सेवा, परियोजना या स्थान की खोज के बाद Google से आ सकता है और फिर तस्वीर के आसपास का पेज पढ़ सकता है।",
+          "यह अंतर महत्वपूर्ण है, क्योंकि मार्केटप्लेस का कीवर्ड एक मेटाडेटा फ़ील्ड है, जबकि वेब कीवर्ड को उपयोगी पेज सामग्री का समर्थन मिलना चाहिए। कोई भी प्रणाली रैंकिंग, बिक्री या ट्रैफ़िक का वादा नहीं करती। जिस स्थान पर एसेट दिखाई देता है, वहाँ उसे सटीक रूप से समझने योग्य बनाना आपका काम है।"
+        ],
+        "bullets": [
+          "मार्केटप्लेस का लक्ष्य: आंतरिक स्टॉक खोज के लिए अलग फ़ाइल का वर्णन करना।",
+          "Google का लक्ष्य: स्पष्ट चित्र-संदर्भ वाला उपयोगी, इंडेक्स किया जा सकने वाला पेज बनाना।",
+          "CSV के कीवर्ड कॉलम को HTML के मेटा-कीवर्ड फ़ील्ड की तरह न मानें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "फ़ाइल के इर्द-गिर्द मार्केटप्लेस मेटाडेटा बनाएँ",
+        "paragraphs": [
+          "स्टॉक सबमिशन के लिए उस बात से शुरुआत करें जो तस्वीर दृश्य रूप से और विश्वसनीय ढंग से बताती है: विषय, क्रिया, परिवेश, मनोदशा, संयोजन और संभावित व्यावसायिक उपयोग। जब प्लेटफ़ॉर्म कुछ शब्दों को विशेष महत्व देता हो, तो सबसे महत्वपूर्ण शब्द पहले रखें। यदि पिक्सेल पहचान, स्वामित्व, रिलीज़ की स्थिति, सटीक स्थान या प्रजाति सिद्ध नहीं करते, तो इनके बारे में अनुमान न लगाएँ।",
+          "हर प्लेटफ़ॉर्म के अपने नियम होते हैं। उदाहरण के लिए, Adobe के मार्गदर्शन में अधिकतम 49 कीवर्ड की अनुमति है और पहले दस पर ज़ोर दिया गया है; उसके CSV दस्तावेज़ में वर्तमान में 70 अक्षरों की शीर्षक सीमा बताई गई है। दूसरे मार्केटप्लेस में अलग फ़ील्ड और सीमाएँ हो सकती हैं, इसलिए निर्यात या अपलोड से पहले योगदानकर्ता पोर्टल जाँचें। आपकी कार्य-भाषा अलग होने पर भी प्रासंगिक अंग्रेज़ी मेटाडेटा आवश्यक हो सकता है।"
+        ],
+        "bullets": [
+          "शीर्षक के रूप में एक सटीक वर्णनात्मक वाक्य या वाक्यांश इस्तेमाल करें।",
+          "केवल प्रासंगिक कीवर्ड चुनें; दोहराव और हर जगह लगाए जाने वाले टैग हटाएँ।",
+          "श्रेणी और रिलीज़ फ़ील्ड को प्लेटफ़ॉर्म-विशिष्ट आवश्यकताएँ मानें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण: एक तस्वीर, खोज के दो रास्ते",
+        "paragraphs": [
+          "उदाहरण के लिए एक क्षैतिज तस्वीर की कल्पना करें, जिसमें धूप से रोशन लकड़ी की मेज़ पर मुड़े हुए नक्शे के पास दोबारा इस्तेमाल की जा सकने वाली स्टेनलेस-स्टील की बोतल रखी है। तस्वीर यह सिद्ध नहीं करती कि मेज़ कहाँ है, बोतल का मालिक कौन है या यात्रा किसी खास देश में हुई थी। यह व्यावहारिक स्टॉक-विवरण के लिए उपयोगी हो सकती है, लेकिन पोर्टफोलियो पेज के अस्तित्व का कारण केवल टैगों की सूची से आगे होना चाहिए।",
+          "मार्केटप्लेस का शीर्षक हो सकता है: “Reusable stainless steel water bottle beside folded map on wooden table.” उपयुक्त कीवर्ड में reusable water bottle, stainless steel, travel planning, map, hydration, sustainable lifestyle, outdoor preparation, still life और wooden table शामिल हो सकते हैं। hiking trail, mountain और किसी विशेष गंतव्य जैसे शब्द तब तक हटाएँ, जब तक वे वास्तव में दिखाई न दें।",
+          "पोर्टफोलियो साइट पर वर्णनात्मक शीर्षक, तस्वीर के विषय और इच्छित दृश्य-संदर्भ की व्याख्या करने वाला छोटा अनुच्छेद तथा “Reusable stainless steel bottle beside a folded map on a wooden table.” जैसा उपयुक्त वैकल्पिक पाठ वाला पेज या गैलरी प्रविष्टि बनाएँ। यदि सही हो, तो फ़ोटोग्राफ़र के स्थिर-चित्र दृष्टिकोण या लाइसेंसिंग संदर्भ की भी व्याख्या की जा सकती है। वही तथ्य दोनों प्रणालियों को जानकारी देते हैं, लेकिन वेबसाइट पूरी कीवर्ड सूची को गद्य के रूप में निर्यात करने के बजाय अधिक विस्तृत संदर्भ देती है।"
+        ],
+        "bullets": [],
+        "example": "Marketplace title: Reusable stainless steel water bottle beside folded map on wooden table\nMarketplace keywords: reusable water bottle, stainless steel, travel planning, map, hydration, sustainable lifestyle, outdoor preparation, still life, wooden table\nPortfolio alt text: Reusable stainless steel bottle beside a folded map on a wooden table"
+      },
+      {
+        "heading": "CSV को संचालन प्रारूप मानें, Google की तरकीब नहीं",
+        "paragraphs": [
+          "CSV फ़ाइलनामों को शीर्षकों, कीवर्डों और गंतव्य के अनुसार श्रेणियों या रिलीज़ फ़ाइलनामों से जोड़ सकता है। यह आपकी वेबसाइट में HTML मेटाडेटा नहीं जोड़ता और किसी पेज को रैंक नहीं कराता। यह स्वीकृति की गारंटी भी नहीं देता। इसका उपयोग करने से पहले प्लेटफ़ॉर्म की वर्तमान आवश्यकताएँ पक्की करें और सुनिश्चित करें कि एक्सटेंशन व बड़े-छोटे अक्षरों सहित हर फ़ाइलनाम अपलोड किए गए एसेट से मेल खाता हो।",
+          "Adobe के लिए CSV आयात करने से पहले एसेट अपलोड करें, फिर योगदानकर्ता पोर्टल में बने मेटाडेटा की जाँच करें। एक अपरिवर्तित कार्य-पत्र रखें, ताकि मूल संपादकीय निर्णय खोए बिना किसी पंक्ति को ठीक कर सकें। केवल जाँची हुई पंक्तियाँ निर्यात करें। कोई जनरेटर आउटपुट को प्रारूपित करने में मदद कर सकता है, लेकिन प्रासंगिकता और अनुपालन की ज़िम्मेदारी योगदानकर्ता की रहती है।"
+        ],
+        "bullets": [
+          "बड़े-छोटे अक्षरों और एक्सटेंशन सहित फ़ाइलनामों का हूबहू मिलान करें।",
+          "हर मार्केटप्लेस की वर्तमान सीमाओं और आवश्यक कॉलमों को मान्य करें।",
+          "फ़ाइल की व्याख्या सही हुई है, यह मानने के बजाय आयात किए गए फ़ील्ड जाँचें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "उसी विषय को उपयोगी Google पेज में बदलें",
+        "paragraphs": [
+          "Google पर चित्र की खोज उसके आसपास के पेज और चित्र—दोनों पर निर्भर करती है। स्पष्ट पेज शीर्षक, वर्णनात्मक आसपास का पाठ, उपयोगी वैकल्पिक पाठ और उपयुक्त कैनॉनिकल URL का उपयोग करें। यदि आप भाषा संस्करण प्रकाशित करते हैं, तो हर संस्करण को अपना URL दें और संबंधित स्थानीयकृत संकेतों को कॉन्फ़िगर करें। साइटमैप खोज में मदद कर सकता है, लेकिन क्रॉल या इंडेक्स होने की गारंटी नहीं दे सकता।",
+          "ऐसे कमज़ोर पेज न बनाएँ जिनमें तस्वीर के बाद दर्जनों लगभग एक जैसे टैग हों। इसके बजाय दर्शक के संभावित प्रश्न का उत्तर दें: क्या दिखाया गया है, यह क्यों महत्वपूर्ण है और दर्शक आगे क्या कर सकता है? दावे तथ्यपरक रखें। यदि तस्वीर किसी व्यावसायिक पोर्टफोलियो का हिस्सा है, तो लाइसेंसिंग या संपर्क विकल्पों की जानकारी तभी दें जब वे विवरण वास्तव में उपलब्ध हों।"
+        ],
+        "bullets": [
+          "केवल क्रॉलर के लिए नहीं, पेज पर आने वाले दर्शक के लिए लिखें।",
+          "टैग दोहराने के बजाय संदर्भ जोड़ने वाला वर्णनात्मक पाठ इस्तेमाल करें।",
+          "मार्केटप्लेस मेटाडेटा और वेबसाइट कॉपी को अलग संपादकीय कार्यों के रूप में रखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "प्रकाशित या निर्यात करने से पहले समीक्षा करें",
+        "paragraphs": [
+          "अंतिम समीक्षा सबसे महँगी उलझन पकड़ लेती है: जमा की गई फ़ाइल के बजाय किसी कल्पित दृश्य का वर्णन करने वाला मेटाडेटा। हर कीवर्ड को पिक्सेल से मिलाएँ, बिना आधार की अतिरिक्त सटीकता हटाएँ और सुनिश्चित करें कि शीर्षक खोज-प्रश्न के बजाय वर्णन जैसा लगे। वेबसाइट पेजों के लिए पेज को दर्शक की तरह खोलें और पूछें कि कीवर्ड सूची देखे बिना भी पाठ उपयोगी है या नहीं।",
+          "यदि आप MetaStocker का स्थानीय जनरेटर इस्तेमाल करते हैं, तो स्थानीय अनुमान आपके डिवाइस के ब्राउज़र में चलता है। मॉडल को पहले डाउनलोड करना पड़ता है, और उसे सक्रिय मेमोरी में लोड करना ब्राउज़र कैश में डाउनलोड की गई फ़ाइलें सुरक्षित रखने से अलग है। बनाए गए परिणाम संपादित किए जा सकते हैं और हर फ़ाइल के अनुसार जाँचे जाने चाहिए; निर्यात एसेट अपलोड या सबमिट नहीं करता, मूल फ़ाइलों में मेटाडेटा एम्बेड नहीं करता और स्वीकृति की गारंटी नहीं देता। वीडियो के लिए पूरी गति जाँचें, क्योंकि नमूना-आधारित प्रीव्यू हर फ़्रेम को नहीं दिखा सकते।"
+        ],
+        "bullets": [
+          "बनाए गए सुझाव स्वीकार करने से पहले तथ्यात्मक सटीकता की समीक्षा करें।",
+          "शुरुआत में एक स्थानीय समानांतर थ्रेड इस्तेमाल करें, फिर अधिक समवर्ती कार्य को सावधानी से जाँचें।",
+          "केवल वे पंक्तियाँ निर्यात करें जो निर्धारित गंतव्य के लिए तैयार हों।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "निर्धारित करें कि खोज का लक्ष्य मार्केटप्लेस खोज है या Google पेज।",
+      "एसेट के बारे में केवल दिखाई देने वाले और समर्थनीय तथ्यों का वर्णन करें।",
+      "CSV फ़ील्ड को HTML पेज SEO से अलग रखें।",
+      "वर्तमान मार्केटप्लेस सीमाएँ, भाषा नियम और अपलोड निर्देश जाँचें।",
+      "फ़ाइलनामों का हूबहू मिलान करें और आयात किए गए मेटाडेटा की जाँच करें।",
+      "वेबसाइट के आसपास उपयोगी पाठ और सटीक वैकल्पिक पाठ लिखें।",
+      "प्रकाशित करने से पहले हर बनाए गए शीर्षक और कीवर्ड की समीक्षा करें।"
+    ],
+    "illustration": {
+      "title": "एक विषय, SEO के दो कार्यप्रवाह",
+      "steps": [
+        {
+          "label": "दिखाई देने वाली फ़ाइल का वर्णन करें",
+          "detail": "तथ्यपरक विषय, क्रिया, परिवेश और उपयोगी व्यावसायिक संदर्भ दर्ज करें।"
+        },
+        {
+          "label": "मार्केटप्लेस फ़ील्ड तैयार करें",
+          "detail": "प्रासंगिक शीर्षक और कीवर्ड क्रमित करें, फिर प्लेटफ़ॉर्म CSV मान्य करें।"
+        },
+        {
+          "label": "वेबपेज बनाएँ",
+          "detail": "उपयोगी आसपास का पाठ, वैकल्पिक पाठ और कैनॉनिकल पेज URL जोड़ें।"
+        }
+      ]
+    }
+  }
+}

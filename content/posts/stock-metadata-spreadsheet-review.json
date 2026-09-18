@@ -1,0 +1,443 @@
+{
+  "slug": "stock-metadata-spreadsheet-review",
+  "category": "exports",
+  "source_ids": [
+    "metastocker",
+    "adobe-csv",
+    "adobe-upload"
+  ],
+  "en": {
+    "title": "How to Review Stock Metadata Safely in a Spreadsheet",
+    "description": "A practical workflow for checking filenames, titles, keywords, and notes without exposing originals to spreadsheet formatting or formula risks.",
+    "intro": "A metadata spreadsheet is a review surface, not a place to trust every cell automatically. Generated titles and keywords can contain commas, quotation marks, leading symbols, or text that a spreadsheet interprets as a formula. A filename can also be changed by trimming spaces, removing an extension, or converting a value into a date. These small changes can break a later CSV import or attach metadata to the wrong asset.\n\nUse a copy of the exported file and keep the original export unchanged. Your goal is to confirm four things for every row: the filename identifies the intended asset, the title describes it accurately, the keywords are relevant, and the reviewer note records any remaining action. This workflow is useful whether the rows came from MetaStocker or another generator.",
+    "sections": [
+      {
+        "heading": "Set up a safe review copy",
+        "paragraphs": [
+          "Make a working copy before opening the export in a spreadsheet program. Give it a clear name such as metadata-review-2026-09-18-copy.csv, and keep the untouched export in a separate folder. If the spreadsheet program offers import settings, treat every column as text first, especially filename, title, keywords, and reviewer note.",
+          "Avoid automatic type detection where possible. It can turn filenames into dates, remove leading zeroes, or convert long strings. Do not enable formula execution for untrusted imported values. A cell beginning with characters such as =, +, -, or @ may be interpreted as a formula rather than ordinary metadata. If such text is legitimate, preserve it as text and flag it for manual review."
+        ],
+        "bullets": [
+          "Review a copy, never the original export.",
+          "Import filename, title, keywords, and notes as text.",
+          "Keep formulas disabled for imported content."
+        ],
+        "example": "Working files:\nmetadata-export-original.csv\nmetadata-review-2026-09-18-copy.csv\nmetadata-review-2026-09-18-final.csv"
+      },
+      {
+        "heading": "Confirm the row-to-file match",
+        "paragraphs": [
+          "Start with the filename column, including the extension and letter case. Compare each value with the actual asset name in your upload folder. Do not rely on a shortened display name. A title can be excellent and still be attached to the wrong image if one filename was altered.",
+          "For a video, inspect the complete motion rather than only the sampled preview used during generation. Check the opening, middle, and ending for details that affect the description. If a filename is missing, duplicated, or inconsistent, stop that row instead of guessing which asset it represents."
+        ],
+        "bullets": [
+          "Check the full filename and extension.",
+          "Look for duplicate or missing filenames.",
+          "Inspect full video motion when applicable."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Evaluate titles and keywords",
+        "paragraphs": [
+          "Read the title as a useful description, not as a keyword pile. Remove claims that cannot be supported by the asset. Do not infer a person’s identity, ownership, exact location, release status, or species from pixels alone. For mixed batches, reject blanket terms that apply only to some files.",
+          "For Adobe Stock, the current dossier describes a 70-character CSV title limit and recommends the most important terms early; it also gives a conservative maximum of 49 keywords. Platform rules differ, so check the current contributor portal before export or upload. Relevant terms should be tailored to each file, not repeated simply to fill a quota."
+        ],
+        "bullets": [
+          "Put the central subject and action first.",
+          "Delete irrelevant, repeated, or speculative terms.",
+          "Record uncertain cases instead of inventing facts."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Use reviewer notes as decisions",
+        "paragraphs": [
+          "A reviewer note should explain what must happen next, not merely say “check.” Use short, consistent labels such as “remove inferred species,” “verify filename,” or “ready after title edit.” This makes the sheet useful when you return to it later or hand it to another reviewer.",
+          "Keep notes separate from title and keyword values. Never hide a concern by silently changing a generated row. If you edit a title, keywords, or filename, make the change visible through the note or a simple versioned working file. The final file should contain only values intended for the destination platform, while your review copy can retain the decision trail."
+        ],
+        "bullets": [
+          "State the issue and the required action.",
+          "Keep notes out of export metadata fields.",
+          "Use versioned copies for meaningful revisions."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: one row from review to export",
+        "paragraphs": [
+          "Example, not a measured result: suppose the asset is named city-bike-014.mp4. Its sampled preview suggests a cyclist crossing a bridge, but the full video shows the cyclist only briefly and does not establish the city. The generated row says “Cyclist in London crossing a bridge” and includes “London, commuter, urban lifestyle, athlete.”",
+          "The reviewer should preserve the filename, remove the unsupported city reference, and decide whether “athlete” is warranted. A safer title is “Cyclist crossing a bridge in an urban setting.” Keywords could include “cyclist, bicycle, bridge, urban, commute, transport,” only if each term fits the complete clip. The note might say “Removed unverified city; inspect full motion; ready after title review.” Before export, compare the final filename with the asset again and check the destination platform’s current CSV requirements."
+        ],
+        "bullets": [],
+        "example": "filename: city-bike-014.mp4\ntitle: Cyclist crossing a bridge in an urban setting\nkeywords: cyclist, bicycle, bridge, urban, commute, transport\nreviewer note: Removed unverified city; inspect full motion; ready after title review"
+      },
+      {
+        "heading": "Final validation before handoff",
+        "paragraphs": [
+          "Filter for blank filenames, duplicate filenames, unusually short titles, and notes that still contain unresolved actions. Check separators and quotation handling in the CSV without re-saving it through a tool that may rewrite values unexpectedly. If the target is Adobe Stock, assets must be uploaded before the CSV is imported, and the filenames must match exactly; inspect the resulting metadata in the contributor portal.",
+          "Export only rows marked ready. A valid-looking spreadsheet is not proof that a platform will accept the file, and the exporter does not submit it for you. Recheck current portal rules because limits and field requirements can change."
+        ],
+        "bullets": [
+          "Resolve every non-ready note.",
+          "Verify exact names before platform import.",
+          "Inspect metadata after import."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Work from a copy and preserve the untouched export.",
+      "Treat all imported metadata as text.",
+      "Keep formulas from executing on untrusted values.",
+      "Match filenames, extensions, and case to the real assets.",
+      "Review titles and keywords for relevance and unsupported claims.",
+      "Check current platform requirements before export.",
+      "Export only rows that are explicitly ready.",
+      "Inspect the metadata in the contributor portal after import."
+    ],
+    "illustration": {
+      "title": "Three-step safe spreadsheet review",
+      "steps": [
+        {
+          "label": "Open a review copy",
+          "detail": "Import metadata as text and keep formulas from executing."
+        },
+        {
+          "label": "Check every row",
+          "detail": "Match files, edit unsupported claims, and record decisions."
+        },
+        {
+          "label": "Export and inspect",
+          "detail": "Verify current rules, import carefully, and inspect the result."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как безопасно проверять метаданные стоков в таблице",
+    "description": "Практический порядок проверки имён файлов, заголовков, ключевых слов и заметок без риска автоформатирования и выполнения формул.",
+    "intro": "Таблица метаданных предназначена для проверки, а не для бездумного доверия каждой ячейке. Сгенерированный заголовок или набор ключевых слов может содержать запятую, кавычки, начальный символ или текст, который табличная программа примет за формулу. Имя файла тоже может измениться: программа обрежет пробелы, удалит расширение или превратит значение в дату. Такие незаметные изменения способны нарушить последующий импорт CSV или связать метаданные не с тем файлом.\n\nРаботайте с копией экспорта и оставляйте исходный файл без изменений. Для каждой строки нужно подтвердить четыре вещи: имя указывает на нужный материал, заголовок точно его описывает, ключевые слова относятся именно к нему, а заметка рецензента фиксирует оставшееся действие. Такой порядок подходит для результатов MetaStocker и для экспорта из другого генератора.",
+    "sections": [
+      {
+        "heading": "Создайте безопасную копию",
+        "paragraphs": [
+          "Перед открытием экспорта в табличной программе сделайте рабочую копию. Например, назовите её metadata-review-2026-09-18-copy.csv, а исходный экспорт храните отдельно. Если программа предлагает настройки импорта, сначала задайте для всех столбцов текстовый тип, особенно для filename, title, keywords и reviewer note.",
+          "По возможности отключите автоматическое определение типов. Оно может превратить имя в дату, удалить начальные нули или изменить длинную строку. Не разрешайте выполнять формулы в импортированных непроверенных значениях. Ячейка, начинающаяся с =, +, - или @, может стать формулой вместо обычного текста. Если такой символ действительно нужен, сохраните значение как текст и отметьте строку для ручной проверки."
+        ],
+        "bullets": [
+          "Проверяйте копию, а не исходный экспорт.",
+          "Импортируйте имена, заголовки и заметки как текст.",
+          "Не разрешайте выполнение формул в непроверенных данных."
+        ],
+        "example": "Рабочие файлы:\nmetadata-export-original.csv\nmetadata-review-2026-09-18-copy.csv\nmetadata-review-2026-09-18-final.csv"
+      },
+      {
+        "heading": "Сверьте строку с файлом",
+        "paragraphs": [
+          "Начните со столбца filename, включая расширение и регистр букв. Сравните каждое значение с фактическим именем материала в папке загрузки. Не полагайтесь на сокращённое отображаемое имя. Даже идеальный заголовок окажется бесполезен, если из-за изменения имени он прикреплён к другой фотографии или видеозаписи.",
+          "Для видео просмотрите весь ролик, а не только фрагменты, использованные при генерации. Проверьте начало, середину и конец: важная деталь может появляться только там. Если имя отсутствует, повторяется или не совпадает, остановите строку и не угадывайте, какой файл имелся в виду."
+        ],
+        "bullets": [
+          "Проверяйте полное имя и расширение.",
+          "Ищите пропущенные и повторяющиеся имена.",
+          "Для видео проверяйте весь хронометраж."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Проверьте заголовок и ключевые слова",
+        "paragraphs": [
+          "Читайте заголовок как точное описание, а не как список ключевых слов. Удаляйте утверждения, которые нельзя подтвердить материалом. Нельзя по пикселям устанавливать личность человека, владельца, точное место, наличие релиза или вид животного. В смешанной серии отклоняйте общие слова, подходящие лишь к отдельным файлам.",
+          "Для Adobe Stock в текущих справочных данных указано ограничение CSV-заголовка в 70 символов и рекомендация ставить наиболее важные термины в начале; консервативный максимум составляет 49 ключевых слов. У разных площадок правила различаются, поэтому перед экспортом или загрузкой проверьте актуальный портал автора. Термины должны соответствовать конкретному файлу, а не добавляться только ради заполнения лимита."
+        ],
+        "bullets": [
+          "Ставьте главный объект и действие в начало.",
+          "Удаляйте нерелевантные, повторяющиеся и предположительные слова.",
+          "Сомнение фиксируйте заметкой, а не компенсируйте догадкой."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Превратите заметку в решение",
+        "paragraphs": [
+          "Заметка рецензента должна объяснять следующий шаг, а не просто говорить «проверить». Используйте короткие единообразные формулировки: «удалить предположительный вид», «сверить имя файла», «готово после правки заголовка». Так к таблице будет легко вернуться позже или передать её другому проверяющему.",
+          "Храните заметки отдельно от title и keywords. Не скрывайте проблему, молча меняя сгенерированную строку. Если вы исправили заголовок, ключевые слова или имя файла, отразите это в заметке либо сохраните новую версию рабочей копии. В итоговом файле должны остаться только значения для целевой площадки, а копия проверки может хранить ход принятия решения."
+        ],
+        "bullets": [
+          "Указывайте проблему и требуемое действие.",
+          "Не помещайте заметки в поля метаданных.",
+          "Для существенных правок создавайте версии копии."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Рабочий пример одной строки",
+        "paragraphs": [
+          "Пример, а не измеренный результат: предположим, файл называется city-bike-014.mp4. В предварительном просмотре виден велосипедист на мосту, но полный ролик показывает велосипедиста лишь короткое время и не подтверждает город. Сгенерированная строка содержит заголовок «Cyclist in London crossing a bridge» и слова «London, commuter, urban lifestyle, athlete».",
+          "Рецензент должен сохранить имя файла, убрать неподтверждённый город и решить, оправдано ли слово «athlete». Более безопасный заголовок: «Cyclist crossing a bridge in an urban setting». Ключевые слова могут быть такими: «cyclist, bicycle, bridge, urban, commute, transport», только если каждое относится ко всему ролику. Заметка: «Removed unverified city; inspect full motion; ready after title review». Перед экспортом снова сравните имя с материалом и проверьте актуальные требования площадки к CSV."
+        ],
+        "bullets": [],
+        "example": "filename: city-bike-014.mp4\ntitle: Cyclist crossing a bridge in an urban setting\nkeywords: cyclist, bicycle, bridge, urban, commute, transport\nreviewer note: Removed unverified city; inspect full motion; ready after title review"
+      },
+      {
+        "heading": "Проведите итоговую проверку",
+        "paragraphs": [
+          "Отфильтруйте пустые и повторяющиеся имена, слишком короткие заголовки и заметки с нерешёнными действиями. Проверьте разделители и кавычки в CSV, но не пересохраняйте файл через инструмент, который может сам переписать значения. Для Adobe Stock сначала загружают материалы, затем импортируют CSV; имена, расширения и регистр должны совпадать. После импорта осмотрите получившиеся метаданные в портале автора.",
+          "Экспортируйте только строки со статусом «готово». Внешне корректная таблица не доказывает, что площадка примет файл, а экспортёр не выполняет загрузку за вас. Требования порталов меняются, поэтому проверяйте их непосредственно перед передачей файла."
+        ],
+        "bullets": [
+          "Закройте каждую незавершённую заметку.",
+          "Перед импортом проверьте точные имена.",
+          "После импорта осмотрите метаданные в портале."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Работайте с копией и сохраняйте исходный экспорт.",
+      "Импортируйте все значения как текст.",
+      "Не допускайте выполнения формул в непроверенных данных.",
+      "Сверяйте имена, расширения и регистр с реальными файлами.",
+      "Проверяйте релевантность и подтверждаемость заголовков и ключевых слов.",
+      "Перед экспортом смотрите актуальные правила площадки.",
+      "Экспортируйте только строки со статусом «готово».",
+      "После импорта проверьте метаданные в портале автора."
+    ],
+    "illustration": {
+      "title": "Безопасная проверка таблицы за три шага",
+      "steps": [
+        {
+          "label": "Откройте копию",
+          "detail": "Импортируйте метаданные как текст и отключите выполнение формул."
+        },
+        {
+          "label": "Проверьте строки",
+          "detail": "Сверьте файлы, уберите догадки и зафиксируйте решения."
+        },
+        {
+          "label": "Экспортируйте и осмотрите",
+          "detail": "Проверьте правила, импортируйте и осмотрите результат."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "স্প্রেডশিটে নিরাপদে স্টক মেটাডেটা পর্যালোচনা করার পদ্ধতি",
+    "description": "স্প্রেডশিটের কপিতে ফাইলনাম, শিরোনাম, কীওয়ার্ড ও পর্যালোচকের নোট যাচাই করুন। মূল এক্সপোর্ট অক্ষত রেখে ফরম্যাট ও ফর্মুলার ঝুঁকি কমানোর নির্দেশিকা।",
+    "intro": "মেটাডেটা স্প্রেডশিট হলো পর্যালোচনার স্থান, প্রতিটি ঘরকে স্বয়ংক্রিয়ভাবে বিশ্বাস করার জায়গা নয়। তৈরি করা শিরোনাম ও কীওয়ার্ডে কমা, উদ্ধৃতি চিহ্ন, শুরুর বিশেষ চিহ্ন বা এমন লেখা থাকতে পারে যাকে স্প্রেডশিট ফর্মুলা হিসেবে ধরে নেয়। স্প্রেডশিট ফাঁকা স্থান ছেঁটে ফেললে, এক্সটেনশন সরিয়ে দিলে বা কোনো মানকে তারিখে রূপান্তর করলে ফাইলের নামও বদলে যেতে পারে। এই ছোট পরিবর্তনগুলো পরের CSV আমদানি নষ্ট করতে পারে বা ভুল সম্পদের সঙ্গে মেটাডেটা যুক্ত করতে পারে।\n\nরপ্তানি করা ফাইলের একটি কপি ব্যবহার করুন এবং মূল রপ্তানিটি অপরিবর্তিত রাখুন। প্রতিটি সারির জন্য চারটি বিষয় নিশ্চিত করাই আপনার লক্ষ্য: ফাইলের নামটি নির্দিষ্ট সম্পদটিকে শনাক্ত করছে, শিরোনামটি সেটিকে সঠিকভাবে বর্ণনা করছে, কীওয়ার্ডগুলো প্রাসঙ্গিক, এবং পর্যালোচকের নোটে বাকি কাজের কথা লেখা আছে। সারিগুলো MetaStocker বা অন্য কোনো জেনারেটর থেকে এলেও এই কর্মপ্রবাহ কার্যকর।",
+    "sections": [
+      {
+        "heading": "নিরাপদ পর্যালোচনা-কপি প্রস্তুত করুন",
+        "paragraphs": [
+          "রপ্তানিটি স্প্রেডশিট প্রোগ্রামে খোলার আগে একটি কাজের কপি তৈরি করুন। metadata-review-2026-09-18-copy.csv-এর মতো স্পষ্ট নাম দিন এবং অপরিবর্তিত রপ্তানিটি আলাদা ফোল্ডারে রাখুন। স্প্রেডশিট প্রোগ্রামে আমদানির সেটিংস থাকলে প্রথমে প্রতিটি কলামকে টেক্সট হিসেবে ধরুন—বিশেষ করে ফাইলের নাম, শিরোনাম, কীওয়ার্ড এবং পর্যালোচকের নোট।",
+          "সম্ভব হলে স্বয়ংক্রিয় ধরনের শনাক্তকরণ এড়িয়ে চলুন। এটি ফাইলের নামকে তারিখে পরিণত করতে, শুরুর শূন্য সরিয়ে ফেলতে বা দীর্ঘ স্ট্রিং বদলে দিতে পারে। অবিশ্বস্ত আমদানি করা মানের জন্য ফর্মুলা চালু করবেন না। =, +, - বা @-এর মতো চিহ্ন দিয়ে শুরু হওয়া ঘরকে সাধারণ মেটাডেটার বদলে ফর্মুলা হিসেবে ধরা হতে পারে। এমন লেখা বৈধ হলে সেটিকে টেক্সট হিসেবেই সংরক্ষণ করুন এবং হাতে পর্যালোচনার জন্য চিহ্নিত করুন।"
+        ],
+        "bullets": [
+          "মূল রপ্তানি নয়, কেবল কপি পর্যালোচনা করুন।",
+          "ফাইলের নাম, শিরোনাম, কীওয়ার্ড ও নোট টেক্সট হিসেবে আমদানি করুন।",
+          "আমদানি করা বিষয়বস্তুর জন্য ফর্মুলা নিষ্ক্রিয় রাখুন।"
+        ],
+        "example": "কাজের ফাইল:\nmetadata-export-original.csv\nmetadata-review-2026-09-18-copy.csv\nmetadata-review-2026-09-18-final.csv"
+      },
+      {
+        "heading": "সারি ও ফাইলের মিল নিশ্চিত করুন",
+        "paragraphs": [
+          "এক্সটেনশন ও অক্ষরের বড়-ছোট রূপসহ ফাইলের নামের কলাম দিয়ে শুরু করুন। প্রতিটি মানকে আপলোড ফোল্ডারের প্রকৃত সম্পদের নামের সঙ্গে তুলনা করুন। ছোট করে দেখানো নামের ওপর নির্ভর করবেন না। একটি ফাইলের নাম বদলে গেলে শিরোনাম চমৎকার হলেও তা ভুল ছবির সঙ্গে যুক্ত হতে পারে।",
+          "ভিডিওর ক্ষেত্রে তৈরির সময় ব্যবহৃত নমুনা প্রিভিউ নয়, সম্পূর্ণ চলমান দৃশ্য দেখুন। বর্ণনায় প্রভাব ফেলতে পারে এমন বিষয়ের জন্য শুরু, মাঝখান ও শেষ পরীক্ষা করুন। কোনো ফাইলের নাম অনুপস্থিত, পুনরাবৃত্ত বা অসামঞ্জস্যপূর্ণ হলে অনুমান না করে সেই সারির কাজ থামান।"
+        ],
+        "bullets": [
+          "সম্পূর্ণ ফাইলের নাম ও এক্সটেনশন পরীক্ষা করুন।",
+          "পুনরাবৃত্ত বা অনুপস্থিত ফাইলের নাম খুঁজুন।",
+          "প্রযোজ্য হলে ভিডিওর সম্পূর্ণ চলমান দৃশ্য দেখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "শিরোনাম ও কীওয়ার্ড মূল্যায়ন করুন",
+        "paragraphs": [
+          "শিরোনামকে কীওয়ার্ডের স্তূপ নয়, একটি কার্যকর বর্ণনা হিসেবে পড়ুন। সম্পদ দিয়ে সমর্থন করা যায় না এমন দাবি বাদ দিন। শুধু পিক্সেল দেখে কোনো ব্যক্তির পরিচয়, মালিকানা, সঠিক স্থান, রিলিজের অবস্থা বা প্রজাতি অনুমান করবেন না। মিশ্র ব্যাচের ক্ষেত্রে এমন সাধারণ শব্দ বাদ দিন যা কেবল কিছু ফাইলের জন্য প্রযোজ্য।",
+          "Adobe Stock-এর জন্য বর্তমান ডসিয়েতে CSV শিরোনামের সীমা 70 অক্ষর বলা হয়েছে এবং সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো শুরুতে রাখার পরামর্শ দেওয়া হয়েছে; সেখানে 49টি কীওয়ার্ডকে সতর্কতামূলক সর্বোচ্চ সীমাও বলা হয়েছে। প্ল্যাটফর্মের নিয়ম আলাদা হতে পারে, তাই রপ্তানি বা আপলোডের আগে বর্তমান অবদানকারী পোর্টাল পরীক্ষা করুন। প্রাসঙ্গিক শব্দ প্রতিটি ফাইল অনুযায়ী ঠিক করুন, শুধু নির্দিষ্ট সংখ্যা পূরণের জন্য বারবার ব্যবহার করবেন না।"
+        ],
+        "bullets": [
+          "কেন্দ্রীয় বিষয় ও কাজের কথা শুরুতে রাখুন।",
+          "অপ্রাসঙ্গিক, পুনরাবৃত্ত বা অনুমাননির্ভর শব্দ মুছে দিন।",
+          "অনিশ্চিত ক্ষেত্রে তথ্য বানানোর বদলে তা নোট করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "পর্যালোচকের নোটকে সিদ্ধান্ত হিসেবে ব্যবহার করুন",
+        "paragraphs": [
+          "পর্যালোচকের নোটে পরের কাজটি কী, তা বোঝানো উচিত; শুধু “যাচাই করুন” লিখলেই হবে না। “অনুমান করা প্রজাতি বাদ দিন”, “ফাইলের নাম যাচাই করুন” বা “শিরোনাম সম্পাদনার পর প্রস্তুত”-এর মতো ছোট, একই ধরনের লেবেল ব্যবহার করুন। এতে পরে ফিরে এলে বা অন্য পর্যালোচকের কাছে দিলে শিটটি কার্যকর থাকে।",
+          "নোট শিরোনাম ও কীওয়ার্ডের মান থেকে আলাদা রাখুন। তৈরি করা কোনো সারি নীরবে বদলে উদ্বেগের বিষয় গোপন করবেন না। শিরোনাম, কীওয়ার্ড বা ফাইলের নাম সম্পাদনা করলে নোট বা সংস্করণযুক্ত সহজ কাজের ফাইলের মাধ্যমে পরিবর্তনটি দৃশ্যমান করুন। চূড়ান্ত ফাইলে গন্তব্য প্ল্যাটফর্মের জন্য নির্ধারিত মানগুলোই থাকা উচিত, আর পর্যালোচনা-কপিতে সিদ্ধান্তের ধারাটি রাখা যেতে পারে।"
+        ],
+        "bullets": [
+          "সমস্যা ও প্রয়োজনীয় কাজ স্পষ্টভাবে লিখুন।",
+          "নোট রপ্তানি মেটাডেটা ক্ষেত্রের বাইরে রাখুন।",
+          "গুরুত্বপূর্ণ সংশোধনের জন্য সংস্করণযুক্ত কপি ব্যবহার করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: একটি সারি থেকে রপ্তানি পর্যন্ত",
+        "paragraphs": [
+          "এটি পরিমাপ করা ফল নয়, একটি উদাহরণ: ধরুন সম্পদের নাম city-bike-014.mp4। এর নমুনা প্রিভিউতে একজন সাইকেল আরোহীকে সেতু পার হতে দেখা যায়, কিন্তু সম্পূর্ণ ভিডিওতে আরোহীকে অল্প সময়ের জন্য দেখা যায় এবং শহরটি নির্দিষ্ট করা যায় না। তৈরি করা সারিতে লেখা আছে “Cyclist in London crossing a bridge” এবং এতে “London, commuter, urban lifestyle, athlete” রয়েছে।",
+          "পর্যালোচকের উচিত ফাইলের নাম অপরিবর্তিত রাখা, সমর্থনহীন শহরের উল্লেখ বাদ দেওয়া এবং “athlete” শব্দটি যথাযথ কি না তা নির্ধারণ করা। নিরাপদতর শিরোনাম হলো “Cyclist crossing a bridge in an urban setting।” প্রতিটি শব্দ সম্পূর্ণ ক্লিপের সঙ্গে মিলে গেলেই কেবল কীওয়ার্ড হিসেবে “cyclist, bicycle, bridge, urban, commute, transport” রাখা যেতে পারে। নোটে লেখা যেতে পারে “Removed unverified city; inspect full motion; ready after title review।” রপ্তানির আগে আবার সম্পদের সঙ্গে চূড়ান্ত ফাইলের নাম মিলিয়ে নিন এবং গন্তব্য প্ল্যাটফর্মের বর্তমান CSV চাহিদা পরীক্ষা করুন।"
+        ],
+        "bullets": [],
+        "example": "filename: city-bike-014.mp4\ntitle: Cyclist crossing a bridge in an urban setting\nkeywords: cyclist, bicycle, bridge, urban, commute, transport\nreviewer note: Removed unverified city; inspect full motion; ready after title review"
+      },
+      {
+        "heading": "হস্তান্তরের আগে চূড়ান্ত যাচাই",
+        "paragraphs": [
+          "ফাঁকা ফাইলের নাম, পুনরাবৃত্ত ফাইলের নাম, অস্বাভাবিকভাবে ছোট শিরোনাম এবং এখনও অসম্পূর্ণ কাজের উল্লেখ থাকা নোটের জন্য ফিল্টার করুন। CSV-তে বিভাজক ও উদ্ধৃতি চিহ্নের ব্যবহার পরীক্ষা করুন, তবে এমন কোনো টুলে আবার সংরক্ষণ করবেন না যা অপ্রত্যাশিতভাবে মানগুলো পুনর্লিখতে পারে। লক্ষ্য Adobe Stock হলে CSV আমদানির আগে সম্পদ আপলোড করতে হবে এবং ফাইলের নাম হুবহু মিলতে হবে; অবদানকারী পোর্টালে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন।",
+          "শুধু প্রস্তুত হিসেবে চিহ্নিত সারিগুলো রপ্তানি করুন। দেখতে বৈধ স্প্রেডশিট হলেই প্ল্যাটফর্ম ফাইলটি গ্রহণ করবে—এমন নিশ্চয়তা নেই, এবং রপ্তানিকারক আপনার হয়ে জমা দেয় না। সীমা ও ক্ষেত্রের চাহিদা বদলাতে পারে, তাই বর্তমান পোর্টালের নিয়ম আবার পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "প্রস্তুত নয় এমন প্রতিটি নোটের সমাধান করুন।",
+          "প্ল্যাটফর্মে আমদানির আগে হুবহু নাম যাচাই করুন।",
+          "আমদানির পর মেটাডেটা পরীক্ষা করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "একটি কপি থেকে কাজ করুন এবং অপরিবর্তিত রপ্তানিটি সংরক্ষণ করুন।",
+      "আমদানি করা সব মেটাডেটাকে টেক্সট হিসেবে ধরুন।",
+      "অবিশ্বস্ত মানে ফর্মুলা চালু হওয়া বন্ধ রাখুন।",
+      "প্রকৃত সম্পদের সঙ্গে ফাইলের নাম, এক্সটেনশন ও অক্ষরের বড়-ছোট রূপ মিলিয়ে নিন।",
+      "প্রাসঙ্গিকতা ও সমর্থনহীন দাবির জন্য শিরোনাম ও কীওয়ার্ড পর্যালোচনা করুন।",
+      "রপ্তানির আগে বর্তমান প্ল্যাটফর্মের চাহিদা পরীক্ষা করুন।",
+      "স্পষ্টভাবে প্রস্তুত সারিগুলোই রপ্তানি করুন।",
+      "আমদানির পর অবদানকারী পোর্টালে মেটাডেটা পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "নিরাপদ স্প্রেডশিট পর্যালোচনার তিন ধাপ",
+      "steps": [
+        {
+          "label": "পর্যালোচনা-কপি খুলুন",
+          "detail": "মেটাডেটা টেক্সট হিসেবে আমদানি করুন এবং ফর্মুলা চালু হতে দেবেন না।"
+        },
+        {
+          "label": "প্রতিটি সারি পরীক্ষা করুন",
+          "detail": "ফাইল মিলিয়ে নিন, সমর্থনহীন দাবি সম্পাদনা করুন এবং সিদ্ধান্ত লিখুন।"
+        },
+        {
+          "label": "রপ্তানি ও পরীক্ষা করুন",
+          "detail": "বর্তমান নিয়ম যাচাই করুন, সতর্কভাবে আমদানি করুন এবং ফলাফল পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "स्प्रेडशीट में स्टॉक मेटाडेटा की सुरक्षित समीक्षा कैसे करें",
+    "description": "स्प्रेडशीट की कॉपी में फ़ाइलनाम, शीर्षक, कीवर्ड और समीक्षा नोट जाँचें। मूल निर्यात सुरक्षित रखते हुए फ़ॉर्मैटिंग और फ़ॉर्मूले की गलतियों का जोखिम कम करने का तरीका।",
+    "intro": "मेटाडेटा स्प्रेडशीट समीक्षा का माध्यम है, हर सेल पर अपने-आप भरोसा करने की जगह नहीं। बनाए गए शीर्षकों और कीवर्ड में कॉमा, उद्धरण चिह्न, शुरुआती प्रतीक या ऐसा पाठ हो सकता है जिसे स्प्रेडशीट फ़ॉर्मूला समझ ले। स्प्रेडशीट खाली स्थान हटाकर, एक्सटेंशन निकालकर या किसी मान को तारीख में बदलकर फ़ाइल नाम भी बदल सकती है। ये छोटे बदलाव बाद में होने वाले CSV आयात को बिगाड़ सकते हैं या गलत एसेट से मेटाडेटा जोड़ सकते हैं।\n\nनिर्यात की गई फ़ाइल की एक कॉपी इस्तेमाल करें और मूल निर्यात को अपरिवर्तित रखें। हर पंक्ति के लिए चार बातें सुनिश्चित करना आपका लक्ष्य है: फ़ाइल नाम सही एसेट की पहचान करता है, शीर्षक उसका सटीक वर्णन करता है, कीवर्ड प्रासंगिक हैं और समीक्षक का नोट बाकी कार्रवाई दर्ज करता है। पंक्तियाँ MetaStocker या किसी अन्य जनरेटर से आई हों, यह कार्यप्रवाह उपयोगी रहेगा।",
+    "sections": [
+      {
+        "heading": "सुरक्षित समीक्षा-कॉपी तैयार करें",
+        "paragraphs": [
+          "निर्यात को स्प्रेडशीट प्रोग्राम में खोलने से पहले उसकी कार्य-कॉपी बनाएँ। उसे metadata-review-2026-09-18-copy.csv जैसा स्पष्ट नाम दें और बिना छुई निर्यात फ़ाइल अलग फ़ोल्डर में रखें। यदि स्प्रेडशीट प्रोग्राम आयात सेटिंग देता है, तो हर कॉलम को पहले टेक्स्ट मानें—विशेषकर फ़ाइल नाम, शीर्षक, कीवर्ड और समीक्षक का नोट।",
+          "जहाँ संभव हो, स्वचालित प्रकार-पहचान से बचें। यह फ़ाइल नामों को तारीखों में बदल सकती है, शुरुआती शून्य हटा सकती है या लंबे स्ट्रिंग बदल सकती है। अविश्वसनीय आयातित मानों के लिए फ़ॉर्मूला चलाने की सुविधा न दें। =, +, - या @ जैसे चिह्नों से शुरू होने वाले सेल को साधारण मेटाडेटा के बजाय फ़ॉर्मूला समझा जा सकता है। ऐसा पाठ वैध हो तो उसे टेक्स्ट के रूप में सुरक्षित रखें और हाथ से समीक्षा के लिए चिह्नित करें।"
+        ],
+        "bullets": [
+          "मूल निर्यात नहीं, केवल उसकी कॉपी की समीक्षा करें।",
+          "फ़ाइल नाम, शीर्षक, कीवर्ड और नोट को टेक्स्ट के रूप में आयात करें।",
+          "आयातित सामग्री के लिए फ़ॉर्मूला निष्क्रिय रखें।"
+        ],
+        "example": "कार्य फ़ाइलें:\nmetadata-export-original.csv\nmetadata-review-2026-09-18-copy.csv\nmetadata-review-2026-09-18-final.csv"
+      },
+      {
+        "heading": "पंक्ति और फ़ाइल का मिलान सुनिश्चित करें",
+        "paragraphs": [
+          "एक्सटेंशन और अक्षरों के बड़े-छोटे रूप सहित फ़ाइल नाम वाले कॉलम से शुरुआत करें। हर मान की तुलना अपलोड फ़ोल्डर में मौजूद वास्तविक एसेट नाम से करें। छोटे किए गए प्रदर्शन-नाम पर निर्भर न रहें। फ़ाइल नाम बदल जाने पर शीर्षक बहुत अच्छा होने के बावजूद गलत चित्र से जुड़ सकता है।",
+          "वीडियो के लिए, निर्माण के दौरान इस्तेमाल किए गए नमूना प्रीव्यू तक सीमित न रहें; पूरी गति और दृश्य देखें। वर्णन को प्रभावित करने वाले विवरणों के लिए शुरुआत, मध्य और अंत जाँचें। फ़ाइल नाम गायब, दोहराया हुआ या असंगत हो तो अनुमान लगाने के बजाय उस पंक्ति को रोक दें।"
+        ],
+        "bullets": [
+          "पूरा फ़ाइल नाम और एक्सटेंशन जाँचें।",
+          "दोहराए गए या गायब फ़ाइल नाम खोजें।",
+          "जहाँ लागू हो, वीडियो की पूरी गति जाँचें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "शीर्षकों और कीवर्ड का मूल्यांकन करें",
+        "paragraphs": [
+          "शीर्षक को कीवर्डों के ढेर की तरह नहीं, उपयोगी वर्णन की तरह पढ़ें। ऐसे दावे हटाएँ जिन्हें एसेट से साबित नहीं किया जा सकता। केवल पिक्सेल देखकर किसी व्यक्ति की पहचान, स्वामित्व, सटीक स्थान, रिलीज़ स्थिति या प्रजाति का अनुमान न लगाएँ। मिश्रित बैच में उन सामान्य शब्दों को हटाएँ जो केवल कुछ फ़ाइलों पर लागू होते हैं।",
+          "Adobe Stock के लिए वर्तमान डॉसियर में CSV शीर्षक की 70-अक्षर सीमा बताई गई है और सबसे महत्वपूर्ण शब्द पहले रखने की सलाह दी गई है; इसमें 49 कीवर्ड की सावधानीपूर्ण अधिकतम सीमा भी दी गई है। प्लेटफ़ॉर्म के नियम अलग हो सकते हैं, इसलिए निर्यात या अपलोड से पहले वर्तमान योगदानकर्ता पोर्टल जाँचें। प्रासंगिक शब्द हर फ़ाइल के अनुसार चुनें, केवल संख्या पूरी करने के लिए उन्हें दोहराएँ नहीं।"
+        ],
+        "bullets": [
+          "मुख्य विषय और कार्रवाई पहले रखें।",
+          "अप्रासंगिक, दोहराए गए या अनुमान-आधारित शब्द हटाएँ।",
+          "अनिश्चित मामलों में तथ्य गढ़ने के बजाय उन्हें दर्ज करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "समीक्षक के नोट को निर्णय के रूप में इस्तेमाल करें",
+        "paragraphs": [
+          "समीक्षक के नोट में अगली कार्रवाई स्पष्ट होनी चाहिए, केवल “जाँचें” लिखना पर्याप्त नहीं है। “अनुमानित प्रजाति हटाएँ”, “फ़ाइल का नाम सत्यापित करें” या “शीर्षक संपादन के बाद तैयार” जैसे छोटे और एकरूप लेबल इस्तेमाल करें। इससे बाद में लौटने या किसी दूसरे समीक्षक को सौंपने पर शीट उपयोगी रहती है।",
+          "नोट को शीर्षक और कीवर्ड के मानों से अलग रखें। किसी चिंता को छिपाने के लिए बनाए गए रो को चुपचाप न बदलें। शीर्षक, कीवर्ड या फ़ाइल नाम संपादित करें तो नोट या सरल संस्करणयुक्त कार्य-कॉपी के माध्यम से बदलाव स्पष्ट करें। अंतिम फ़ाइल में गंतव्य प्लेटफ़ॉर्म के लिए निर्धारित मान ही होने चाहिए, जबकि समीक्षा-कॉपी में निर्णय का रिकॉर्ड रखा जा सकता है।"
+        ],
+        "bullets": [
+          "समस्या और आवश्यक कार्रवाई स्पष्ट लिखें।",
+          "नोट को निर्यात मेटाडेटा फ़ील्ड से बाहर रखें।",
+          "महत्वपूर्ण संशोधनों के लिए संस्करणयुक्त कॉपियाँ इस्तेमाल करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम का उदाहरण: एक पंक्ति से निर्यात तक",
+        "paragraphs": [
+          "यह मापा गया परिणाम नहीं, एक उदाहरण है: मान लें एसेट का नाम city-bike-014.mp4 है। इसके नमूना प्रीव्यू में एक साइकिल चालक पुल पार करता दिखता है, लेकिन पूरे वीडियो में चालक थोड़ी देर ही दिखता है और शहर की पुष्टि नहीं होती। बनाए गए रो में “Cyclist in London crossing a bridge” लिखा है और इसमें “London, commuter, urban lifestyle, athlete” शामिल हैं।",
+          "समीक्षक को फ़ाइल नाम सुरक्षित रखना चाहिए, असमर्थित शहर का उल्लेख हटाना चाहिए और तय करना चाहिए कि “athlete” उचित है या नहीं। अधिक सुरक्षित शीर्षक है “Cyclist crossing a bridge in an urban setting।” कीवर्ड में “cyclist, bicycle, bridge, urban, commute, transport” तभी शामिल करें जब हर शब्द पूरी क्लिप से मेल खाता हो। नोट में लिखा जा सकता है: “Removed unverified city; inspect full motion; ready after title review।” निर्यात से पहले अंतिम फ़ाइल नाम को फिर एसेट से मिलाएँ और गंतव्य प्लेटफ़ॉर्म की वर्तमान CSV आवश्यकताएँ जाँचें।"
+        ],
+        "bullets": [],
+        "example": "filename: city-bike-014.mp4\ntitle: Cyclist crossing a bridge in an urban setting\nkeywords: cyclist, bicycle, bridge, urban, commute, transport\nreviewer note: Removed unverified city; inspect full motion; ready after title review"
+      },
+      {
+        "heading": "हस्तांतरण से पहले अंतिम सत्यापन",
+        "paragraphs": [
+          "खाली फ़ाइल नाम, दोहराए गए फ़ाइल नाम, असामान्य रूप से छोटे शीर्षक और अभी भी अधूरी कार्रवाइयों वाले नोट खोजने के लिए फ़िल्टर करें। CSV में विभाजक और उद्धरण चिह्नों के उपयोग की जाँच करें, लेकिन उसे ऐसे टूल से दोबारा सेव न करें जो अनपेक्षित रूप से मानों को फिर लिख सकता है। यदि लक्ष्य Adobe Stock है, तो CSV आयात करने से पहले एसेट अपलोड होने चाहिए और फ़ाइल नाम बिल्कुल समान होने चाहिए; योगदानकर्ता पोर्टल में बना मेटाडेटा जाँचें।",
+          "केवल तैयार चिह्नित पंक्तियाँ निर्यात करें। देखने में सही स्प्रेडशीट इस बात का प्रमाण नहीं है कि प्लेटफ़ॉर्म फ़ाइल स्वीकार करेगा, और निर्यातक आपकी ओर से उसे जमा नहीं करता। सीमाएँ और फ़ील्ड आवश्यकताएँ बदल सकती हैं, इसलिए वर्तमान पोर्टल के नियम फिर जाँचें।"
+        ],
+        "bullets": [
+          "तैयार न होने वाले हर नोट का समाधान करें।",
+          "प्लेटफ़ॉर्म आयात से पहले सटीक नाम सत्यापित करें।",
+          "आयात के बाद मेटाडेटा जाँचें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "कॉपी से काम करें और बिना छुई निर्यात फ़ाइल सुरक्षित रखें।",
+      "सभी आयातित मेटाडेटा को टेक्स्ट मानें।",
+      "अविश्वसनीय मानों पर फ़ॉर्मूला चलने न दें।",
+      "वास्तविक एसेट से फ़ाइल नाम, एक्सटेंशन और अक्षरों के बड़े-छोटे रूप मिलाएँ।",
+      "प्रासंगिकता और असमर्थित दावों के लिए शीर्षक और कीवर्ड जाँचें।",
+      "निर्यात से पहले वर्तमान प्लेटफ़ॉर्म आवश्यकताएँ जाँचें।",
+      "केवल स्पष्ट रूप से तैयार पंक्तियाँ निर्यात करें।",
+      "आयात के बाद योगदानकर्ता पोर्टल में मेटाडेटा जाँचें।"
+    ],
+    "illustration": {
+      "title": "सुरक्षित स्प्रेडशीट समीक्षा के तीन चरण",
+      "steps": [
+        {
+          "label": "समीक्षा-कॉपी खोलें",
+          "detail": "मेटाडेटा को टेक्स्ट के रूप में आयात करें और फ़ॉर्मूला चलने न दें।"
+        },
+        {
+          "label": "हर पंक्ति जाँचें",
+          "detail": "फ़ाइलें मिलाएँ, असमर्थित दावे संपादित करें और निर्णय दर्ज करें।"
+        },
+        {
+          "label": "निर्यात और जाँच करें",
+          "detail": "वर्तमान नियम सत्यापित करें, सावधानी से आयात करें और परिणाम जाँचें।"
+        }
+      ]
+    }
+  }
+}

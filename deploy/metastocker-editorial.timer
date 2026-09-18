@@ -1,0 +1,11 @@
+[Unit]
+Description=Publish one MetaStocker topic in English, Russian, Bengali and Hindi each day
+
+[Timer]
+OnCalendar=*-*-* 09:15:00 Europe/Warsaw
+Persistent=true
+RandomizedDelaySec=120
+Unit=metastocker-editorial.service
+
+[Install]
+WantedBy=timers.target

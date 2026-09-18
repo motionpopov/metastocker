@@ -1,0 +1,213 @@
+{
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "en": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "intro": {
+          "type": "string"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": {
+                "type": "string"
+              },
+              "paragraphs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "bullets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "heading",
+              "paragraphs",
+              "bullets",
+              "example"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "checklist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "illustration": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "steps": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "detail": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "label",
+                  "detail"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "title",
+            "steps"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "intro",
+        "sections",
+        "checklist",
+        "illustration"
+      ],
+      "additionalProperties": false
+    },
+    "ru": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "intro": {
+          "type": "string"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": {
+                "type": "string"
+              },
+              "paragraphs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "bullets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "heading",
+              "paragraphs",
+              "bullets",
+              "example"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "checklist": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "illustration": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "steps": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "detail": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "label",
+                  "detail"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "title",
+            "steps"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "intro",
+        "sections",
+        "checklist",
+        "illustration"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "slug",
+    "category",
+    "source_ids",
+    "en",
+    "ru"
+  ],
+  "additionalProperties": false
+}

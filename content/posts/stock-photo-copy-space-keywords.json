@@ -1,0 +1,455 @@
+{
+  "slug": "stock-photo-copy-space-keywords",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-metadata"
+  ],
+  "en": {
+    "title": "How to Describe Copy Space in Stock Photo Keywords",
+    "description": "Learn how to describe negative space accurately when a subject sits at the edge, and how to avoid calling every clean background usable copy space.",
+    "intro": "A stock image with a potted plant at the right edge and an uncluttered wall on the left may offer copy space, but the description must say what is actually visible. Copy space is not simply any empty-looking background. It is a usable area where a designer could place a headline, logo or other text without covering an important subject or fighting distracting detail. This guide shows how to inspect the composition, decide whether the left side is genuinely useful, and turn that decision into precise marketplace metadata. The example is hypothetical and is not a measured result or a real customer submission.",
+    "sections": [
+      {
+        "heading": "Start with the composition, not the keyword",
+        "paragraphs": [
+          "Describe the visual relationship first: the plant is positioned on the right, while the left side contains a relatively open wall. Position and subject are concrete facts. They are safer than vague claims such as “perfect design” or “ideal advertising image.”",
+          "Before writing metadata, check whether the wall is truly open. Look for furniture edges, sockets, frames, wrinkles, strong shadows, stains, texture, gradients and bright patches. A background can be uncluttered while still being difficult to use for text."
+        ],
+        "bullets": [
+          "Record the subject and its position.",
+          "Inspect the proposed text area at normal display size.",
+          "Separate visible facts from possible buyer uses."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "When negative space is usable copy space",
+        "paragraphs": [
+          "Negative space becomes practical copy space when it gives a designer enough visually calm area for text and keeps that text legible. The space does not need to be perfectly white. A pale, even wall can work if its contrast, lighting and texture do not compete with ordinary typography.",
+          "Use careful wording when the area is only partly suitable. “Copy space on left” is stronger than “blank background” when the left area can reasonably carry a short message. If the wall is narrow, unevenly lit or interrupted, describe it as negative space or an uncluttered background instead of promising broad layout freedom."
+        ],
+        "bullets": [
+          "Use “copy space” when placement is visibly practical, not merely possible.",
+          "Add a side or direction when it matters: left, right, top or center.",
+          "Mention wall, interior or background only when the image supports it."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "What does not qualify as copy space",
+        "paragraphs": [
+          "A background does not automatically qualify because it has no obvious object in it. Heavy texture, visible damage, a strong cast shadow, a changing exposure, a patterned surface or an edge that cuts through the intended text area can make the space unsuitable. Small empty margins around a subject are also not necessarily copy space.",
+          "Avoid inferring that the photograph is ready for a particular campaign. You can describe room for text without claiming that every headline, logo or layout will work. Likewise, do not infer a room’s location, plant species or ownership from pixels unless those facts are supplied separately."
+        ],
+        "bullets": [
+          "Do not use “blank” if texture or marks are prominent.",
+          "Do not call a narrow gap “large copy space.”",
+          "Do not turn a possible design use into a guarantee."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: the right-edge plant",
+        "paragraphs": [
+          "Example: imagine a portrait-oriented photo of a small potted plant placed close to the right edge. The left two-thirds show a light gray wall with a soft tonal change and no furniture, frame or visible writing. The pot remains fully visible, and the plant does not extend into the likely text area.",
+          "The editorial decision is to describe the left side as copy space, but not to call the whole wall blank or claim that it suits every design. The metadata should lead with the central subject and composition, then add the practical layout attribute. If the tonal change were strong enough to reduce text contrast, “negative space” would be more accurate than “copy space.”"
+        ],
+        "bullets": [
+          "Core facts: potted plant, indoor scene, right side, light wall.",
+          "Useful composition term: copy space on left.",
+          "Possible use: text placement, but only as a contextual description."
+        ],
+        "example": "Title: Potted plant on right with copy space on left wall\nKeywords: potted plant, houseplant, indoor plant, plant pot, right side, copy space, left side, negative space, light wall, minimalist interior, home decor, calm background, text space, composition"
+      },
+      {
+        "heading": "Build metadata in a marketplace-aware order",
+        "paragraphs": [
+          "Put the most important concepts first, especially the subject and composition. A concise title should read like a description rather than a list of search terms. Keywords should remain relevant to this individual image; do not add “banner,” “office,” “real estate” or “wellness” unless the visible scene supports those ideas.",
+          "Different marketplaces apply different metadata rules. Adobe Stock’s guidance emphasizes relevant terms and gives attention to the first ten keywords, while its general guide permits up to 49 keywords. Shutterstock requires English descriptive metadata and relevant keywords, with its own limits and category requirements. Check the current contributor portal before exporting or submitting because policies can change."
+        ],
+        "bullets": [
+          "Prioritize subject, setting and composition.",
+          "Keep copy-space terms near other defining concepts.",
+          "Use English metadata when the target marketplace requires English, even if this article is read in another language."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Use a generator, then make the judgment yourself",
+        "paragraphs": [
+          "MetaStocker can generate editable metadata locally in the visitor’s browser using supported local models, including Gemma 4 E2B as the default. Local inference stays on the device; loading a model into memory is different from retaining downloaded model files in the browser cache. A first model download needs internet, and browser storage can be removed by the browser.",
+          "Give the batch description only facts that apply to every file. For mixed images, write per-file corrections rather than applying “copy space” to the entire batch. Review each generated title and keyword list, remove unsupported assumptions, and export only rows that are ready. The exporter creates files for supported marketplace formats; it does not upload, submit, embed metadata into the originals or guarantee acceptance."
+        ],
+        "bullets": [
+          "Review whether the left area is genuinely usable before keeping the term.",
+          "Check exact tag counts and then check accuracy separately.",
+          "Inspect the contributor portal after any CSV import."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Confirm the plant’s position and the direction of the open area.",
+      "Inspect texture, shadows, edges and contrast in the proposed text zone.",
+      "Use “copy space” only when text placement is visibly practical.",
+      "Keep “negative space” for open but less reliably usable areas.",
+      "Avoid unsupported claims about plant species, location, ownership or campaign suitability.",
+      "Place the strongest subject and composition terms early.",
+      "Review every generated result before exporting and check current marketplace rules."
+    ],
+    "illustration": {
+      "title": "From composition to accurate metadata",
+      "steps": [
+        {
+          "label": "Inspect the open wall",
+          "detail": "Check texture, shadows, edges and contrast beside the right-edge plant."
+        },
+        {
+          "label": "Choose the precise term",
+          "detail": "Use copy space only if text can sit clearly; otherwise use negative space."
+        },
+        {
+          "label": "Review and export",
+          "detail": "Edit title and keywords per file, then verify the marketplace portal."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как описывать свободное место на стоковой фотографии",
+    "description": "Разберитесь, когда чистая стена рядом с растением действительно является copy space, и как описать композицию без преувеличений.",
+    "intro": "На фотографии горшечное растение стоит у правого края, а слева видна относительно свободная стена. Это может быть copy space — место для заголовка или другого текста, — но само по себе отсутствие заметных предметов еще ничего не гарантирует. У стены могут быть фактура, тени, блики или градиент, мешающие верстке. В этом руководстве показано, как проверить композицию, выбрать точный термин и составить метаданные для стоковой площадки. Пример ниже гипотетический: это не результат реальной загрузки и не измерение эффективности.",
+    "sections": [
+      {
+        "heading": "Сначала опишите композицию",
+        "paragraphs": [
+          "Начните с проверяемых фактов: растение находится справа, слева расположена светлая стена без явных крупных объектов. Такое описание надежнее, чем слова вроде «идеальный фон» или «готово для рекламы».",
+          "Рассмотрите предполагаемую область текста в обычном размере изображения. Проверьте розетки, рамки, мебель, пятна, выраженную фактуру, резкие тени и места, где фон становится заметно светлее или темнее. Визуально пустая область не всегда удобна для дизайна."
+        ],
+        "bullets": [
+          "Зафиксируйте предмет, его положение и окружение.",
+          "Проверьте всю предполагаемую зону текста.",
+          "Отделяйте видимые факты от возможного применения."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Когда свободное место можно назвать copy space",
+        "paragraphs": [
+          "Термин copy space уместен, если спокойная область достаточно пригодна для размещения текста и сохраняет его читаемость. Она не обязана быть идеально белой: ровная светло-серая стена может подойти, если ее тон и фактура не конкурируют с надписью.",
+          "Если пригодность ограничена, выбирайте осторожную формулировку. «Copy space слева» точнее, чем «пустой фон», когда слева действительно можно разместить короткий текст. Если область узкая, неоднородная или плохо отделена по контрасту, лучше использовать «negative space» или «свободный фон», не обещая универсальную верстку."
+        ],
+        "bullets": [
+          "Используйте copy space только при практичной видимой зоне.",
+          "Указывайте сторону: слева, справа, сверху или по центру.",
+          "Называйте стену и интерьер лишь тогда, когда они видны."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Почему не каждый чистый фон подходит",
+        "paragraphs": [
+          "Фон не становится copy space только потому, что на нем нет предметов. Сильная текстура, заметный рисунок, резкая тень, повреждение поверхности, перепад экспозиции или край, проходящий через предполагаемую надпись, могут сделать его неудобным. Узкий промежуток вокруг растения тоже не равен полноценному месту для текста.",
+          "Не утверждайте, что фотография подходит для любой кампании или любого логотипа. Можно описать потенциальное место для текста, но нельзя гарантировать конкретный макет. Также не следует угадывать по пикселям вид растения, местоположение, владельца или назначение помещения."
+        ],
+        "bullets": [
+          "Не пишите «пустой», если фактура или отметины заметны.",
+          "Не называйте узкую полосу «большим copy space».",
+          "Не превращайте возможный сценарий использования в обещание."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Рабочий пример: растение у правого края",
+        "paragraphs": [
+          "Пример: представим вертикальную фотографию небольшого растения в горшке, расположенного у правого края. Левые две трети занимают светло-серая стена с мягким изменением тона; мебели, рамки и надписей нет. Горшок полностью виден, а листья не заходят в предполагаемую текстовую область.",
+          "Редакционное решение: назвать левую часть copy space, но не объявлять всю стену абсолютно пустой и не утверждать, что подойдет любой текст. Сначала в метаданных указываются предмет и композиция, затем — характеристика свободного места. Если перепад тона ухудшает контраст букв, термин negative space будет точнее."
+        ],
+        "bullets": [
+          "Факты: растение в горшке, интерьер, правая сторона, светлая стена.",
+          "Композиционный термин: copy space слева.",
+          "Сценарий: место для текста, но без гарантии конкретного дизайна."
+        ],
+        "example": "Title: Potted plant on right with copy space on left wall\nKeywords: potted plant, houseplant, indoor plant, plant pot, right side, copy space, left side, negative space, light wall, minimalist interior, home decor, calm background, text space, composition"
+      },
+      {
+        "heading": "Составляйте метаданные в понятном порядке",
+        "paragraphs": [
+          "Ставьте важнейшие понятия в начало: предмет, окружение и композицию. Заголовок должен быть нормальной описательной фразой, а не перечнем поисковых слов. Не добавляйте «баннер», «офис», «недвижимость» или «wellness», если изображение этого не подтверждает.",
+          "Правила площадок различаются. Adobe Stock рекомендует релевантные метаданные и уделяет особое внимание первым десяти ключевым словам; общий справочник допускает до 49 ключевых слов. Shutterstock требует английские описательные метаданные и релевантные ключевые слова в своих пределах. Перед экспортом и отправкой проверяйте актуальные требования портала автора: они могут измениться."
+        ],
+        "bullets": [
+          "Сначала ставьте предмет, обстановку и композицию.",
+          "Размещайте термины copy space рядом с основными признаками.",
+          "Если площадка требует английский, используйте английские метаданные независимо от языка статьи."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Генератор помогает, но решение остается за вами",
+        "paragraphs": [
+          "MetaStocker может подготовить редактируемые метаданные локально в браузере посетителя с поддерживаемыми моделями, включая Gemma 4 E2B по умолчанию. При локальном режиме вывод модели выполняется на устройстве. Загрузка модели в память — не то же самое, что сохранение скачанных файлов в кэше браузера. Первая загрузка модели требует интернета, а содержимое хранилища браузер может удалить.",
+          "В общее описание партии включайте только факты, общие для всех файлов. Для разных сцен исправляйте результаты по отдельности: нельзя автоматически присваивать copy space каждому изображению. Проверьте каждый заголовок и список слов, удалите догадки и экспортируйте только готовые строки. Экспортер создает файлы поддерживаемых форматов, но не загружает их на площадку, не отправляет на проверку, не встраивает метаданные в оригиналы и не гарантирует принятие."
+        ],
+        "bullets": [
+          "До генерации решите, пригодна ли левая область для текста.",
+          "Проверяйте точность отдельно от количества ключевых слов.",
+          "После импорта CSV осмотрите результат в кабинете автора."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Подтвердите положение растения и направление свободной области.",
+      "Проверьте фактуру, тени, края и контраст предполагаемой зоны текста.",
+      "Используйте copy space только при реально удобном размещении текста.",
+      "Для свободного, но неуверенно пригодного фона выбирайте negative space.",
+      "Не угадывайте вид растения, местоположение, владельца или рекламную пригодность.",
+      "Ставьте основные признаки в начале заголовка и ключевых слов.",
+      "Перед экспортом отредактируйте каждый результат и проверьте текущие правила площадки."
+    ],
+    "illustration": {
+      "title": "От композиции к точным метаданным",
+      "steps": [
+        {
+          "label": "Проверьте свободную стену",
+          "detail": "Оцените фактуру, тени, края и контраст рядом с растением справа."
+        },
+        {
+          "label": "Выберите точный термин",
+          "detail": "Используйте copy space при ясной зоне текста, иначе negative space."
+        },
+        {
+          "label": "Проверьте и экспортируйте",
+          "detail": "Отредактируйте данные по файлам и проверьте кабинет площадки."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "স্টক ছবির কীওয়ার্ডে কপি স্পেস কীভাবে বর্ণনা করবেন",
+    "description": "বিষয়বস্তু প্রান্তে থাকলে নেগেটিভ স্পেস সঠিকভাবে বর্ণনা করুন এবং প্রতিটি পরিষ্কার পটভূমিকে ব্যবহারযোগ্য কপি স্পেস বলা এড়িয়ে চলুন।",
+    "intro": "ডান প্রান্তে টবে লাগানো গাছ এবং বাম পাশে অগোছালোহীন দেয়াল থাকা কোনো স্টক ছবিতে কপি স্পেস থাকতে পারে, তবে বর্ণনায় বাস্তবে যা দেখা যায় তা-ই বলতে হবে। কপি স্পেস মানে শুধু খালি মনে হওয়া কোনো পটভূমি নয়। এটি এমন ব্যবহারযোগ্য এলাকা, যেখানে গুরুত্বপূর্ণ বিষয় ঢেকে না দিয়ে বা বিরক্তিকর খুঁটিনাটির সঙ্গে প্রতিযোগিতা না করে ডিজাইনার শিরোনাম, লোগো বা অন্য লেখা বসাতে পারেন। এই নির্দেশিকায় দেখানো হয়েছে কীভাবে কম্পোজিশন পরীক্ষা করবেন, বাম দিকটি সত্যিই উপযোগী কি না ঠিক করবেন এবং সেই সিদ্ধান্তকে নির্ভুল মার্কেটপ্লেস মেটাডেটায় রূপ দেবেন। উদাহরণটি কাল্পনিক; এটি কোনো পরিমাপ করা ফল বা প্রকৃত গ্রাহক-জমা নয়।",
+    "sections": [
+      {
+        "heading": "কীওয়ার্ড দিয়ে নয়, কম্পোজিশন দিয়ে শুরু করুন",
+        "paragraphs": [
+          "প্রথমে দৃশ্যমান সম্পর্কটি বর্ণনা করুন: গাছটি ডান দিকে রয়েছে, আর বাম পাশে তুলনামূলক খোলা দেয়াল আছে। অবস্থান ও বিষয়বস্তু দৃঢ় তথ্য। এগুলো “নিখুঁত ডিজাইন” বা “আদর্শ বিজ্ঞাপনের ছবি”-র মতো অস্পষ্ট দাবির চেয়ে নিরাপদ।",
+          "মেটাডেটা লেখার আগে দেখুন দেয়ালটি সত্যিই খোলা কি না। আসবাবের প্রান্ত, সকেট, ফ্রেম, ভাঁজ, তীব্র ছায়া, দাগ, টেক্সচার, গ্রেডিয়েন্ট এবং উজ্জ্বল অংশ খুঁজুন। পটভূমি অগোছালোহীন হলেও তাতে লেখা বসানো কঠিন হতে পারে।"
+        ],
+        "bullets": [
+          "বিষয়বস্তু এবং তার অবস্থান নথিবদ্ধ করুন।",
+          "স্বাভাবিক প্রদর্শন আকারে প্রস্তাবিত লেখার এলাকা পরীক্ষা করুন।",
+          "দৃশ্যমান তথ্যকে সম্ভাব্য ক্রেতার ব্যবহার থেকে আলাদা রাখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "নেগেটিভ স্পেস কখন ব্যবহারযোগ্য কপি স্পেস হয়",
+        "paragraphs": [
+          "নেগেটিভ স্পেস ব্যবহারিক কপি স্পেসে পরিণত হয় যখন সেখানে লেখার জন্য যথেষ্ট শান্ত দৃশ্যমান এলাকা থাকে এবং লেখাটি সহজে পড়া যায়। জায়গাটি পুরোপুরি সাদা হওয়ার দরকার নেই। ফ্যাকাশে, সমান দেয়ালও কার্যকর হতে পারে, যদি তার কনট্রাস্ট, আলো এবং টেক্সচার সাধারণ টাইপোগ্রাফির সঙ্গে প্রতিযোগিতা না করে।",
+          "এলাকাটি আংশিকভাবে উপযোগী হলে সতর্ক শব্দচয়ন করুন। বাম দিকের এলাকা যুক্তিসঙ্গতভাবে ছোট কোনো বার্তা ধারণ করতে পারলে “বামে কপি স্পেস” বলা “খালি পটভূমি”-র চেয়ে নির্ভুল। দেয়ালটি সরু, অসম আলোযুক্ত বা কোনো কিছুর কারণে বাধাগ্রস্ত হলে বিস্তৃত লেআউটের স্বাধীনতার প্রতিশ্রুতি না দিয়ে সেটিকে নেগেটিভ স্পেস বা অগোছালোহীন পটভূমি হিসেবে বর্ণনা করুন।"
+        ],
+        "bullets": [
+          "স্থান নির্দিষ্টভাবে ব্যবহারযোগ্য দেখা গেলে “কপি স্পেস” ব্যবহার করুন, শুধু সম্ভাবনা থাকলেই নয়।",
+          "প্রয়োজন হলে দিক যোগ করুন: বাম, ডান, ওপর বা কেন্দ্র।",
+          "ছবিটি সমর্থন করলে তবেই দেয়াল, অভ্যন্তর বা পটভূমির উল্লেখ করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কোনটি কপি স্পেস হিসেবে গণ্য হয় না",
+        "paragraphs": [
+          "কোনো পটভূমিতে স্পষ্ট বস্তু না থাকলেই সেটি স্বয়ংক্রিয়ভাবে কপি স্পেস হয় না। ঘন টেক্সচার, দৃশ্যমান ক্ষতি, তীব্র পড়া ছায়া, বদলে যাওয়া এক্সপোজার, নকশাযুক্ত পৃষ্ঠ বা কাঙ্ক্ষিত লেখার এলাকা কেটে যাওয়া কোনো প্রান্ত সেই জায়গাকে অনুপযোগী করে তুলতে পারে। বিষয়বস্তুর চারপাশের ছোট খালি মার্জিনও অগত্যা কপি স্পেস নয়।",
+          "ছবিটি নির্দিষ্ট কোনো প্রচারের জন্য প্রস্তুত—এমন অনুমান এড়িয়ে চলুন। আপনি লেখার জন্য জায়গা আছে বলতে পারেন, কিন্তু প্রতিটি শিরোনাম, লোগো বা লেআউট কাজ করবে—এমন দাবি করবেন না। একইভাবে, আলাদা করে তথ্য না দেওয়া থাকলে শুধু পিক্সেল দেখে ঘরের অবস্থান, গাছের প্রজাতি বা মালিকানা অনুমান করবেন না।"
+        ],
+        "bullets": [
+          "টেক্সচার বা দাগ স্পষ্ট হলে “খালি” ব্যবহার করবেন না।",
+          "সরু ফাঁককে “বড় কপি স্পেস” বলবেন না।",
+          "সম্ভাব্য ডিজাইন-ব্যবহারকে নিশ্চয়তায় পরিণত করবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: ডান প্রান্তের গাছ",
+        "paragraphs": [
+          "উদাহরণ: কল্পনা করুন, প্রতিকৃতি-অভিমুখী একটি ছবিতে ডান প্রান্তের কাছাকাছি ছোট টবে লাগানো একটি গাছ রয়েছে। বাম দিকের দুই-তৃতীয়াংশে হালকা ধূসর দেয়াল দেখা যাচ্ছে; সেখানে কোনো আসবাব, ফ্রেম বা দৃশ্যমান লেখা নেই, তবে হালকা টোনের পরিবর্তন আছে। টবটি পুরোপুরি দৃশ্যমান এবং গাছটি সম্ভাব্য লেখার এলাকায় ঢুকে পড়েনি।",
+          "সম্পাদকীয় সিদ্ধান্ত হবে বাম দিকটিকে কপি স্পেস হিসেবে বর্ণনা করা, কিন্তু পুরো দেয়ালকে খালি বলা বা প্রতিটি ডিজাইনের উপযোগী দাবি না করা। মেটাডেটায় প্রথমে মূল বিষয়বস্তু ও কম্পোজিশন, তারপর ব্যবহারিক লেআউট বৈশিষ্ট্য দিতে হবে। টোনের পরিবর্তন লেখার কনট্রাস্ট কমানোর মতো তীব্র হলে “কপি স্পেস”-এর চেয়ে “নেগেটিভ স্পেস” বেশি নির্ভুল হবে।"
+        ],
+        "bullets": [
+          "মূল তথ্য: টবে লাগানো গাছ, ঘরের দৃশ্য, ডান দিক, হালকা দেয়াল।",
+          "উপযোগী কম্পোজিশন-শব্দ: বামে কপি স্পেস।",
+          "সম্ভাব্য ব্যবহার: লেখা বসানো, তবে শুধু প্রাসঙ্গিক বর্ণনা হিসেবে।"
+        ],
+        "example": "Title: Potted plant on right with copy space on left wall\nKeywords: potted plant, houseplant, indoor plant, plant pot, right side, copy space, left side, negative space, light wall, minimalist interior, home decor, calm background, text space, composition"
+      },
+      {
+        "heading": "মার্কেটপ্লেস-সচেতন ক্রমে মেটাডেটা তৈরি করুন",
+        "paragraphs": [
+          "সবচেয়ে গুরুত্বপূর্ণ ধারণাগুলো আগে রাখুন, বিশেষ করে বিষয়বস্তু ও কম্পোজিশন। সংক্ষিপ্ত শিরোনাম যেন সার্চ-শব্দের তালিকা নয়, বরং একটি বর্ণনার মতো পড়ে। কীওয়ার্ড এই নির্দিষ্ট ছবির জন্য প্রাসঙ্গিক রাখুন; দৃশ্যমান পরিবেশ সমর্থন না করলে “banner”, “office”, “real estate” বা “wellness” যোগ করবেন না।",
+          "বিভিন্ন মার্কেটপ্লেসে মেটাডেটার নিয়ম আলাদা। Adobe Stock-এর নির্দেশনায় প্রাসঙ্গিক শব্দের ওপর জোর দেওয়া হয় এবং প্রথম দশটি কীওয়ার্ডকে গুরুত্ব দেওয়া হয়; এর সাধারণ নির্দেশিকায় সর্বোচ্চ 49টি কীওয়ার্ডের অনুমতি আছে। Shutterstock ইংরেজি বর্ণনামূলক মেটাডেটা ও প্রাসঙ্গিক কীওয়ার্ড চায়, পাশাপাশি তাদের নিজস্ব সীমা ও শ্রেণিবিভাগের শর্ত রয়েছে। রপ্তানি বা জমা দেওয়ার আগে বর্তমান কনট্রিবিউটর পোর্টাল দেখুন, কারণ নীতি বদলাতে পারে।"
+        ],
+        "bullets": [
+          "বিষয়বস্তু, পরিবেশ ও কম্পোজিশনকে অগ্রাধিকার দিন।",
+          "কপি-স্পেসের শব্দগুলোকে অন্যান্য নির্ধারক ধারণার কাছাকাছি রাখুন।",
+          "লক্ষ্য মার্কেটপ্লেসে ইংরেজি প্রয়োজন হলে ইংরেজি মেটাডেটা ব্যবহার করুন, যদিও এই নিবন্ধটি অন্য ভাষায় পড়া হচ্ছে।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "জেনারেটর ব্যবহার করুন, তারপর সিদ্ধান্ত নিজেই নিন",
+        "paragraphs": [
+          "MetaStocker দর্শকের ব্রাউজারে সমর্থিত স্থানীয় মডেল ব্যবহার করে সম্পাদনাযোগ্য মেটাডেটা তৈরি করতে পারে; এর মধ্যে Gemma 4 E2B ডিফল্ট। স্থানীয় ইনফারেন্স ডিভাইসেই থাকে; কোনো মডেল মেমরিতে লোড হওয়া এবং ডাউনলোড করা মডেল-ফাইল ব্রাউজারের ক্যাশে থেকে যাওয়া এক বিষয় নয়। প্রথমবার মডেল ডাউনলোড করতে ইন্টারনেট দরকার, আর ব্রাউজার-স্টোরেজ ব্রাউজার সরিয়ে দিতে পারে।",
+          "ব্যাচের বর্ণনায় শুধু প্রতিটি ফাইলের ক্ষেত্রে প্রযোজ্য তথ্য দিন। মিশ্র ছবির ক্ষেত্রে পুরো ব্যাচে “কপি স্পেস” প্রয়োগ না করে প্রতি-ফাইল সংশোধন লিখুন। প্রতিটি তৈরি করা শিরোনাম ও কীওয়ার্ডের তালিকা পর্যালোচনা করুন, সমর্থনহীন অনুমান বাদ দিন এবং শুধু প্রস্তুত সারিগুলো রপ্তানি করুন। এক্সপোর্টার সমর্থিত মার্কেটপ্লেস ফরম্যাটের জন্য ফাইল তৈরি করে; এটি আপলোড, জমা, মূল ফাইলে মেটাডেটা সংযোজন বা গ্রহণযোগ্যতার নিশ্চয়তা দেয় না।"
+        ],
+        "bullets": [
+          "শব্দটি রাখার আগে বাম দিকটি সত্যিই ব্যবহারযোগ্য কি না পর্যালোচনা করুন।",
+          "সঠিক ট্যাগ-সংখ্যা যাচাই করুন, তারপর আলাদাভাবে নির্ভুলতা পরীক্ষা করুন।",
+          "CSV আমদানির পর কনট্রিবিউটর পোর্টাল পরীক্ষা করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "গাছের অবস্থান এবং খোলা এলাকার দিক নিশ্চিত করুন।",
+      "প্রস্তাবিত লেখার অঞ্চলে টেক্সচার, ছায়া, প্রান্ত ও কনট্রাস্ট পরীক্ষা করুন।",
+      "লেখা বসানো দৃশ্যত ব্যবহারিক হলেই “কপি স্পেস” ব্যবহার করুন।",
+      "খোলা কিন্তু কম নির্ভরযোগ্যভাবে ব্যবহারযোগ্য এলাকার জন্য “নেগেটিভ স্পেস” রাখুন।",
+      "গাছের প্রজাতি, অবস্থান, মালিকানা বা প্রচারের উপযোগিতা সম্পর্কে সমর্থনহীন দাবি এড়িয়ে চলুন।",
+      "সবচেয়ে শক্তিশালী বিষয়বস্তু ও কম্পোজিশনের শব্দগুলো শুরুতে রাখুন।",
+      "রপ্তানির আগে প্রতিটি তৈরি ফল পর্যালোচনা করুন এবং বর্তমান মার্কেটপ্লেসের নিয়ম পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "কম্পোজিশন থেকে নির্ভুল মেটাডেটা",
+      "steps": [
+        {
+          "label": "খোলা দেয়াল পরীক্ষা করুন",
+          "detail": "ডান প্রান্তের গাছের পাশে টেক্সচার, ছায়া, প্রান্ত ও কনট্রাস্ট দেখুন।"
+        },
+        {
+          "label": "নির্ভুল শব্দ বাছুন",
+          "detail": "লেখা স্পষ্টভাবে বসলে কপি স্পেস, নইলে নেগেটিভ স্পেস ব্যবহার করুন।"
+        },
+        {
+          "label": "পর্যালোচনা ও রপ্তানি",
+          "detail": "প্রতি ফাইলের শিরোনাম ও কীওয়ার্ড সম্পাদনা করে মার্কেটপ্লেস পোর্টাল যাচাই করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "स्टॉक फ़ोटो के कीवर्ड में कॉपी स्पेस का वर्णन कैसे करें",
+    "description": "विषय किनारे पर हो तो नेगेटिव स्पेस का सही वर्णन करना सीखें और हर साफ़ पृष्ठभूमि को उपयोगी कॉपी स्पेस कहने से बचें।",
+    "intro": "दाहिने किनारे पर गमले में रखा पौधा और बाईं ओर साफ़ दीवार वाली स्टॉक इमेज में कॉपी स्पेस हो सकता है, लेकिन वर्णन में वही कहना चाहिए जो वास्तव में दिखाई देता है। कॉपी स्पेस केवल ऐसी पृष्ठभूमि नहीं है जो खाली दिखती हो। यह ऐसा उपयोगी क्षेत्र है जहाँ डिज़ाइनर किसी महत्वपूर्ण विषय को ढके बिना या ध्यान भटकाने वाली बारीकियों से टकराए बिना शीर्षक, लोगो या अन्य पाठ रख सकता है। यह मार्गदर्शिका बताती है कि कंपोज़िशन का निरीक्षण कैसे करें, बाईं ओर का क्षेत्र सचमुच उपयोगी है या नहीं यह कैसे तय करें और उस निर्णय को सटीक मार्केटप्लेस मेटाडेटा में कैसे बदलें। उदाहरण काल्पनिक है; यह मापा हुआ परिणाम या किसी वास्तविक ग्राहक का सबमिशन नहीं है।",
+    "sections": [
+      {
+        "heading": "कीवर्ड से नहीं, कंपोज़िशन से शुरुआत करें",
+        "paragraphs": [
+          "पहले दृश्य संबंध का वर्णन करें: पौधा दाईं ओर है, जबकि बाईं ओर अपेक्षाकृत खुली दीवार है। स्थिति और विषय ठोस तथ्य हैं। ये “परफ़ेक्ट डिज़ाइन” या “आदर्श विज्ञापन इमेज” जैसे अस्पष्ट दावों से अधिक सुरक्षित हैं।",
+          "मेटाडेटा लिखने से पहले जाँचें कि दीवार सचमुच खुली है या नहीं। फ़र्नीचर के किनारे, सॉकेट, फ़्रेम, सिलवटें, गहरी छायाएँ, दाग, टेक्सचर, ग्रेडिएंट और चमकीले हिस्से देखें। पृष्ठभूमि साफ़-सुथरी होते हुए भी पाठ के लिए कठिन हो सकती है।"
+        ],
+        "bullets": [
+          "विषय और उसकी स्थिति दर्ज करें।",
+          "प्रस्तावित पाठ क्षेत्र को सामान्य प्रदर्शन आकार में देखें।",
+          "दिखाई देने वाले तथ्यों को खरीदार के संभावित उपयोग से अलग रखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "नेगेटिव स्पेस कब उपयोगी कॉपी स्पेस होता है",
+        "paragraphs": [
+          "नेगेटिव स्पेस व्यावहारिक कॉपी स्पेस तब बनता है जब उसमें पाठ के लिए पर्याप्त दृश्य रूप से शांत क्षेत्र हो और पाठ आसानी से पढ़ा जा सके। यह जगह बिल्कुल सफ़ेद होना आवश्यक नहीं है। हल्की और समतल दीवार भी काम कर सकती है, यदि उसका कंट्रास्ट, प्रकाश और टेक्सचर सामान्य टाइपोग्राफ़ी से प्रतिस्पर्धा न करें।",
+          "जब क्षेत्र केवल आंशिक रूप से उपयुक्त हो, तो सावधानी से शब्द चुनें। यदि बायाँ क्षेत्र उचित रूप से छोटा संदेश संभाल सकता है, तो “बाईं ओर कॉपी स्पेस” कहना “खाली पृष्ठभूमि” से अधिक सटीक है। दीवार संकरी, असमान रोशनी वाली या बीच में बाधित हो तो व्यापक लेआउट की स्वतंत्रता का वादा करने के बजाय उसे नेगेटिव स्पेस या साफ़-सुथरी पृष्ठभूमि के रूप में वर्णित करें।"
+        ],
+        "bullets": [
+          "जहाँ पाठ रखना स्पष्ट रूप से व्यावहारिक हो, वहीं “कॉपी स्पेस” इस्तेमाल करें; केवल संभव होने पर नहीं।",
+          "ज़रूरत हो तो दिशा जोड़ें: बायाँ, दायाँ, ऊपर या केंद्र।",
+          "चित्र इसका समर्थन करे तभी दीवार, अंदरूनी स्थान या पृष्ठभूमि का उल्लेख करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "किसे कॉपी स्पेस नहीं माना जाता",
+        "paragraphs": [
+          "किसी पृष्ठभूमि में कोई स्पष्ट वस्तु न होने से वह अपने-आप कॉपी स्पेस नहीं बन जाती। भारी टेक्सचर, दिखाई देने वाली क्षति, गहरी पड़ती छाया, बदलता एक्सपोज़र, पैटर्न वाली सतह या इच्छित पाठ क्षेत्र को काटता हुआ किनारा उस जगह को अनुपयुक्त बना सकता है। विषय के आसपास की छोटी खाली मार्जिन भी आवश्यक रूप से कॉपी स्पेस नहीं होती।",
+          "यह अनुमान लगाने से बचें कि फ़ोटो किसी विशेष कैंपेन के लिए तैयार है। आप पाठ के लिए जगह का वर्णन कर सकते हैं, लेकिन यह दावा न करें कि हर शीर्षक, लोगो या लेआउट काम करेगा। इसी तरह, यदि ये तथ्य अलग से उपलब्ध न हों, तो केवल पिक्सेल देखकर कमरे का स्थान, पौधे की प्रजाति या स्वामित्व का अनुमान न लगाएँ।"
+        ],
+        "bullets": [
+          "यदि टेक्सचर या निशान प्रमुख हों तो “खाली” न लिखें।",
+          "संकरी जगह को “बड़ा कॉपी स्पेस” न कहें।",
+          "संभावित डिज़ाइन उपयोग को गारंटी में न बदलें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण: दाहिने किनारे का पौधा",
+        "paragraphs": [
+          "उदाहरण: कल्पना करें कि पोर्ट्रेट-ओरिएंटेशन वाली फ़ोटो में दाहिने किनारे के पास एक छोटा गमले वाला पौधा रखा है। बाईं दो-तिहाई जगह पर हल्की धूसर दीवार है, जिसमें कोई फ़र्नीचर, फ़्रेम या दिखाई देने वाला लेखन नहीं है, लेकिन टोन में हल्का बदलाव है। गमला पूरी तरह दिखाई देता है और पौधा संभावित पाठ क्षेत्र में नहीं फैलता।",
+          "संपादकीय निर्णय यह है कि बाईं ओर को कॉपी स्पेस के रूप में वर्णित किया जाए, लेकिन पूरी दीवार को खाली न कहा जाए और न ही यह दावा किया जाए कि वह हर डिज़ाइन के लिए उपयुक्त है। मेटाडेटा में पहले मुख्य विषय और कंपोज़िशन आएँ, फिर व्यावहारिक लेआउट विशेषता। यदि टोन का बदलाव पाठ का कंट्रास्ट कम करने जितना तेज़ होता, तो “कॉपी स्पेस” की तुलना में “नेगेटिव स्पेस” अधिक सटीक होता।"
+        ],
+        "bullets": [
+          "मुख्य तथ्य: गमले वाला पौधा, अंदरूनी दृश्य, दाईं ओर, हल्की दीवार।",
+          "उपयोगी कंपोज़िशन शब्द: बाईं ओर कॉपी स्पेस।",
+          "संभावित उपयोग: पाठ रखना, लेकिन केवल संदर्भात्मक वर्णन के रूप में।"
+        ],
+        "example": "Title: Potted plant on right with copy space on left wall\nKeywords: potted plant, houseplant, indoor plant, plant pot, right side, copy space, left side, negative space, light wall, minimalist interior, home decor, calm background, text space, composition"
+      },
+      {
+        "heading": "मार्केटप्लेस को ध्यान में रखकर मेटाडेटा का क्रम बनाएँ",
+        "paragraphs": [
+          "सबसे महत्वपूर्ण अवधारणाएँ पहले रखें, विशेषकर विषय और कंपोज़िशन। संक्षिप्त शीर्षक खोज-शब्दों की सूची के बजाय वर्णन जैसा पढ़ा जाना चाहिए। कीवर्ड इसी व्यक्तिगत इमेज से संबंधित रहें; दिखाई देने वाला दृश्य समर्थन न करे तो “banner”, “office”, “real estate” या “wellness” न जोड़ें।",
+          "अलग-अलग मार्केटप्लेस में मेटाडेटा के नियम अलग होते हैं। Adobe Stock के मार्गदर्शन में प्रासंगिक शब्दों पर ज़ोर दिया गया है और पहले दस कीवर्ड पर ध्यान दिया जाता है, जबकि इसकी सामान्य मार्गदर्शिका अधिकतम 49 कीवर्ड की अनुमति देती है। Shutterstock को अंग्रेज़ी वर्णनात्मक मेटाडेटा और प्रासंगिक कीवर्ड चाहिए, साथ ही उसकी अपनी सीमाएँ और श्रेणी संबंधी आवश्यकताएँ हैं। निर्यात या सबमिट करने से पहले वर्तमान योगदानकर्ता पोर्टल देखें, क्योंकि नीतियाँ बदल सकती हैं।"
+        ],
+        "bullets": [
+          "विषय, परिवेश और कंपोज़िशन को प्राथमिकता दें।",
+          "कॉपी-स्पेस से जुड़े शब्दों को अन्य प्रमुख अवधारणाओं के पास रखें।",
+          "लक्ष्य मार्केटप्लेस में अंग्रेज़ी आवश्यक हो तो अंग्रेज़ी मेटाडेटा इस्तेमाल करें, भले ही यह लेख किसी दूसरी भाषा में पढ़ा जा रहा हो।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "जनरेटर का उपयोग करें, फिर निर्णय स्वयं लें",
+        "paragraphs": [
+          "MetaStocker विज़िटर के ब्राउज़र में समर्थित स्थानीय मॉडल का उपयोग करके संपादन योग्य मेटाडेटा बना सकता है; इनमें डिफ़ॉल्ट के रूप में Gemma 4 E2B शामिल है। स्थानीय इनफ़रेंस डिवाइस पर ही रहता है; किसी मॉडल को मेमोरी में लोड करना और डाउनलोड की गई मॉडल फ़ाइलों का ब्राउज़र कैश में रहना अलग बातें हैं। पहली बार मॉडल डाउनलोड करने के लिए इंटरनेट चाहिए, और ब्राउज़र स्टोरेज को ब्राउज़र हटा सकता है।",
+          "बैच के वर्णन में केवल वे तथ्य दें जो हर फ़ाइल पर लागू होते हों। मिश्रित इमेज के लिए पूरे बैच पर “कॉपी स्पेस” लागू करने के बजाय हर फ़ाइल के सुधार लिखें। हर बनाए गए शीर्षक और कीवर्ड सूची की समीक्षा करें, असमर्थित अनुमान हटाएँ और केवल तैयार पंक्तियाँ निर्यात करें। एक्सपोर्टर समर्थित मार्केटप्लेस फ़ॉर्मैट के लिए फ़ाइलें बनाता है; यह अपलोड, सबमिट, मूल फ़ाइलों में मेटाडेटा एम्बेड या स्वीकृति की गारंटी नहीं देता।"
+        ],
+        "bullets": [
+          "शब्द रखने से पहले जाँचें कि बायाँ क्षेत्र सचमुच उपयोगी है।",
+          "सटीक टैग संख्या जाँचें और फिर सटीकता अलग से जाँचें।",
+          "CSV इंपोर्ट के बाद योगदानकर्ता पोर्टल देखें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "पौधे की स्थिति और खुले क्षेत्र की दिशा की पुष्टि करें।",
+      "प्रस्तावित पाठ क्षेत्र में टेक्सचर, छाया, किनारे और कंट्रास्ट जाँचें।",
+      "पाठ रखना स्पष्ट रूप से व्यावहारिक हो तभी “कॉपी स्पेस” इस्तेमाल करें।",
+      "खुले लेकिन कम भरोसेमंद उपयोग वाले क्षेत्रों के लिए “नेगेटिव स्पेस” रखें।",
+      "पौधे की प्रजाति, स्थान, स्वामित्व या कैंपेन की उपयुक्तता के बारे में असमर्थित दावों से बचें।",
+      "सबसे मजबूत विषय और कंपोज़िशन वाले शब्द शुरुआत में रखें।",
+      "निर्यात से पहले हर बनाए गए परिणाम की समीक्षा करें और वर्तमान मार्केटप्लेस नियम जाँचें।"
+    ],
+    "illustration": {
+      "title": "कंपोज़िशन से सटीक मेटाडेटा तक",
+      "steps": [
+        {
+          "label": "खुली दीवार जाँचें",
+          "detail": "दाहिने किनारे के पौधे के पास टेक्सचर, छाया, किनारे और कंट्रास्ट देखें।"
+        },
+        {
+          "label": "सटीक शब्द चुनें",
+          "detail": "पाठ साफ़ बैठ सके तो कॉपी स्पेस, अन्यथा नेगेटिव स्पेस इस्तेमाल करें।"
+        },
+        {
+          "label": "समीक्षा और निर्यात",
+          "detail": "हर फ़ाइल का शीर्षक और कीवर्ड संपादित करें, फिर मार्केटप्लेस पोर्टल जाँचें।"
+        }
+      ]
+    }
+  }
+}

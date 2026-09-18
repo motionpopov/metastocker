@@ -1,0 +1,459 @@
+{
+  "slug": "compound-stock-keywords",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "envato-metadata"
+  ],
+  "en": {
+    "title": "How to Choose Compound Stock Keywords Without Keyword Spam",
+    "description": "Build accurate compound keywords for stock images using ice cream, copy space, coffee cup, and yellow flower examples without inventing awkward phrases.",
+    "intro": "Compound keywords are short, established combinations that name one recognizable concept: ice cream, coffee cup, copy space, or yellow flower. They can make stock metadata more precise, but only when the words describe something genuinely visible or clearly intended in the image. The mistake is turning every observation into a long keyword chain such as “summer dessert lifestyle food background.” That may sound search-friendly, yet it mixes several ideas and can become irrelevant or repetitive.\n\nThis guide shows how to decide when a compound term is useful, when separate words are better, and how to adapt the result to a stock platform’s rules. The goal is a small, defensible set of phrases that helps internal marketplace search understand the file. It is not a promise of higher ranking or sales. Website Google indexing is a separate subject with different signals and should not be confused with marketplace metadata.",
+    "sections": [
+      {
+        "heading": "What makes a compound keyword legitimate",
+        "paragraphs": [
+          "A compound keyword usually names a familiar object, subject, visual property, or use concept. “Ice cream” identifies a dessert; “coffee cup” identifies a type of object; “copy space” describes an intentional area suitable for text. “Yellow flower” combines a visible color and subject without pretending to identify a species.",
+          "The useful test is simple: could another contributor or buyer understand the phrase immediately, and can you point to the evidence in the file? If yes, keep it. If the phrase only exists because several nearby words were joined for search coverage, split it into accurate concepts or remove it."
+        ],
+        "bullets": [
+          "Keep established phrases that express one clear concept.",
+          "Use separate keywords for independent subjects, colors, settings, and actions.",
+          "Do not infer a flower species, person, location, ownership, or release from pixels."
+        ],
+        "example": "Strong: ice cream, dessert, cone.\nWeak: ice cream summer dessert lifestyle advertising background concept."
+      },
+      {
+        "heading": "Separate description from phrase invention",
+        "paragraphs": [
+          "A descriptive title or sentence should read naturally. Keyword fields can contain individual terms and established compounds, but they should not become a hidden sentence or a catalogue of every possible combination. “Coffee cup on a wooden table” can be a useful description; it does not mean that every pair of words—coffee wooden, cup table, wooden coffee—deserves a keyword.",
+          "Ask what a buyer would actually search for. A buyer may search for “copy space” because it is a recognized design need. They are less likely to search for an invented chain such as “copy space minimal clean empty room wall.” Keep “copy space,” then add only the visible context that matters, such as wall, table, or background."
+        ],
+        "bullets": [
+          "Write the title as a natural description.",
+          "Reserve keyword phrases for established or clearly meaningful combinations.",
+          "Delete repeated variants that add no new information."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: one image, four decisions",
+        "paragraphs": [
+          "Example: imagine a flat-lay photograph of a single scoop of ice cream in a small yellow bowl, placed on a pale blue surface with open space on the right for text. The image does not reveal a brand, exact location, or flavor beyond what is visually supportable.",
+          "Start with the subject: ice cream, dessert, scoop, bowl. Add visible attributes: yellow, blue, food. Add the functional concept: copy space, but only if the empty area is intentionally usable and visually clear. Do not add “summer vacation,” “children’s party,” or “premium restaurant” unless the image provides that context.",
+          "The tradeoff is coverage versus accuracy. “Yellow bowl” may be defensible if the bowl is clearly yellow, while “yellow flower” would be wrong even if a flower appears in another file from the same batch. A phrase is not reusable merely because it worked on a neighboring image."
+        ],
+        "bullets": [
+          "Confirm each compound against this file, not the batch in general.",
+          "Keep the strongest subject phrases near the front where the platform prioritizes them.",
+          "Treat functional terms such as copy space as visual claims requiring review."
+        ],
+        "example": "Possible metadata set:\nTitle: Ice cream in yellow bowl with copy space\nKeywords: ice cream, dessert, scoop, bowl, yellow bowl, food, blue background, copy space, flat lay"
+      },
+      {
+        "heading": "Adapt to platform limits and language",
+        "paragraphs": [
+          "Platform rules differ. Adobe’s keyword guidance allows up to 49 keywords and emphasizes the most important terms, especially early in the list. Its metadata language must match the contributor account. If the account is set to English, the example metadata can remain English even when this article is read in Russian. Check the current contributor requirements before exporting or uploading.",
+          "Envato allows relevant established compound terms for photos and video, but limits and requirements vary by content type. Do not assume a photo rule applies to another item type. A conservative list is easier to review than a maximum-length list filled with weak combinations.",
+          "Marketplace search is not the same as Google website search. A stock platform interprets the metadata attached to an item; Google may use page text, image context, alt text, and other website signals. Changing a marketplace keyword does not control how a website is indexed."
+        ],
+        "bullets": [
+          "Check the current item-specific portal rules before submission.",
+          "Match the required metadata language and keep filenames separate from keyword logic.",
+          "Use only the number of terms needed to describe the work accurately."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Use a generator as a draft, not a verdict",
+        "paragraphs": [
+          "MetaStocker can generate local metadata in the browser and export formats including Adobe and Envato CSV. In local mode, model inference stays on the visitor’s device; the first model download needs internet. The app can validate a requested tag count, but that confirms quantity rather than accuracy.",
+          "For a batch, use the description field only for facts shared by every file. Do not tell the generator that every image is food, yellow, or copy space when those details vary. Extra tags still need per-file review. Open each result, remove invented compounds, and keep only rows ready for export. The exporter does not upload or submit files, and the contributor portal remains the place to inspect imported metadata."
+        ],
+        "bullets": [
+          "Generate a draft with factual batch context.",
+          "Review compounds file by file.",
+          "Export only after checking relevance, language, and platform limits."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "A repeatable editing pass",
+        "paragraphs": [
+          "Use a three-pass workflow. First, mark the obvious subject and any established compound. Second, test every phrase against visible evidence and the intended use. Third, reorder the strongest terms and remove duplicates, speculative context, and awkward chains.",
+          "Read the final title aloud. Then read the keywords as if you were buying the file. If a phrase would mislead a buyer, it does not belong, even if it sounds commercially attractive. Contributor portals and policies can change, so verify the current rules at the point of upload."
+        ],
+        "bullets": [
+          "Circle the main subject and functional concept.",
+          "Challenge every adjective and inferred context.",
+          "Recheck the portal rules before final export."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Does every compound name one clear, established concept?",
+      "Can you support each term from this specific file?",
+      "Have you removed invented chains, repetition, and speculative context?",
+      "Are the strongest terms placed early where the platform prioritizes them?",
+      "Does the language and keyword count match the current platform rules?",
+      "Did you inspect the exported or imported metadata before submission?"
+    ],
+    "illustration": {
+      "title": "Three passes for compound keywords",
+      "steps": [
+        {
+          "label": "Identify visible concepts",
+          "detail": "Mark the subject, traits, and genuine functional ideas."
+        },
+        {
+          "label": "Test each phrase",
+          "detail": "Keep established compounds; remove invented or unsupported chains."
+        },
+        {
+          "label": "Review for the platform",
+          "detail": "Reorder, check language and limits, then inspect the final rows."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как выбирать составные ключевые слова для стоков",
+    "description": "Практический способ подбирать составные ключевые слова для стоковых фото: ice cream, copy space, coffee cup и yellow flower без спама.",
+    "intro": "Составное ключевое слово — это короткое устойчивое сочетание, которое называет один понятный концепт: ice cream, coffee cup, copy space или yellow flower. Оно делает описание точнее, если действительно соответствует изображению. Ошибка начинается тогда, когда автор соединяет все наблюдения в длинную цепочку вроде “summer dessert lifestyle food background”. Такая строка выглядит как попытка охватить поиск, но может оказаться неточной и повторяющейся.\n\nНиже — практический способ решить, когда полезна фраза из двух слов, а когда лучше оставить отдельные термины. Цель — небольшой набор ключевых слов, который можно защитить фактами изображения и правилами конкретной площадки. Это не обещает более высокого места или продаж. Внутренний поиск стока также не равен индексации сайта Google: у этих систем разные источники контекста.",
+    "sections": [
+      {
+        "heading": "Когда составная фраза оправдана",
+        "paragraphs": [
+          "Хорошая составная фраза называет знакомый предмет, визуальное свойство или понятное назначение. Ice cream обозначает десерт, coffee cup — конкретный предмет, copy space — свободную область, пригодную для размещения текста. Yellow flower объединяет видимый цвет и объект, не выдавая догадку о виде растения за факт.",
+          "Проверьте фразу вопросом: поймёт ли её покупатель сразу и можете ли вы показать доказательство прямо в файле? Если да, её можно оставить. Если сочетание появилось только потому, что несколько слов механически склеили ради охвата, разделите понятия или удалите их."
+        ],
+        "bullets": [
+          "Оставляйте устойчивые сочетания, выражающие один ясный концепт.",
+          "Для независимых объектов, цветов, действий и окружения используйте отдельные термины.",
+          "Не угадывайте по пикселям вид растения, личность, место, владельца или наличие релиза."
+        ],
+        "example": "Уместно: ice cream, dessert, cone.\nСомнительно: ice cream summer dessert lifestyle advertising background concept."
+      },
+      {
+        "heading": "Не превращайте описание в набор фраз",
+        "paragraphs": [
+          "Название или описание должны звучать естественно. Поле ключевых слов может содержать отдельные слова и устойчивые сочетания, но не должно превращаться в спрятанное предложение или перечень всех возможных пар. “Coffee cup on a wooden table” — нормальное описание; это не означает, что нужны отдельные искусственные фразы coffee wooden, cup table и wooden coffee.",
+          "Представьте реальный запрос покупателя. Copy space — известная потребность в дизайне, поэтому это самостоятельный полезный термин. А цепочка “copy space minimal clean empty room wall” смешивает назначение, стиль и контекст. Оставьте copy space и добавьте только то, что действительно видно: wall, table или background."
+        ],
+        "bullets": [
+          "Пишите заголовок как обычное описание.",
+          "Используйте фразы только для устойчивых или действительно значимых сочетаний.",
+          "Удаляйте варианты, которые не добавляют нового смысла."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Разбор примера: четыре решения для одного кадра",
+        "paragraphs": [
+          "Пример: представьте flat lay с одной порцией мороженого в небольшой жёлтой миске. Она стоит на светло-голубой поверхности, а справа оставлено свободное место для текста. В кадре нет надёжных сведений о бренде, точном месте или событии.",
+          "Сначала фиксируем предмет: ice cream, dessert, scoop, bowl. Затем видимые признаки: yellow, blue, food. После этого добавляем функциональную идею copy space — но только если свободная область действительно чистая и пригодна для текста. Summer vacation, children’s party и premium restaurant сюда не подходят без дополнительных визуальных оснований.",
+          "Главный компромисс — полнота против точности. Yellow bowl допустимо, если миска явно жёлтая. Yellow flower будет ошибкой, даже если цветок есть в другом файле той же серии. Фразу нельзя переносить на соседний кадр только потому, что она там подошла."
+        ],
+        "bullets": [
+          "Проверяйте каждое сочетание по конкретному файлу, а не по всей серии.",
+          "Ставьте главные предметы ближе к началу списка, если площадка учитывает порядок.",
+          "Считайте copy space визуальным утверждением, которое требует проверки."
+        ],
+        "example": "Возможный набор:\nTitle: Ice cream in yellow bowl with copy space\nKeywords: ice cream, dessert, scoop, bowl, yellow bowl, food, blue background, copy space, flat lay"
+      },
+      {
+        "heading": "Учитывайте правила площадки и язык",
+        "paragraphs": [
+          "Правила стоков различаются. В руководстве Adobe разрешено до 49 ключевых слов; самые важные рекомендуется ставить в начале, особенно в первых десяти. Язык метаданных должен соответствовать языку аккаунта автора. Поэтому даже в русскоязычной статье пример может оставаться на английском, если этого требует настройка аккаунта или целевая площадка.",
+          "У Envato составные устойчивые термины допустимы для релевантных фото и видео, но лимиты и требования зависят от типа контента. Нельзя автоматически переносить правила фотографий на другой тип объекта. Перед экспортом проверьте текущие требования именно той формы загрузки, которой пользуетесь.",
+          "Поиск внутри маркетплейса — не то же самое, что Google Search. Сток анализирует метаданные файла, а Google может учитывать текст страницы, alt text, окружение изображения и другие сигналы сайта. Изменение ключевого слова стока не управляет индексацией сайта."
+        ],
+        "bullets": [
+          "Перед загрузкой проверяйте актуальные правила конкретного типа контента.",
+          "Соблюдайте требуемый язык и не смешивайте логику имени файла с логикой ключевых слов.",
+          "Не заполняйте лимит слабыми фразами только ради количества."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Генератор помогает начать, но не заменяет проверку",
+        "paragraphs": [
+          "MetaStocker может подготовить локальный черновик метаданных в браузере и экспортировать форматы, включая CSV для Adobe и Envato. В локальном режиме вывод модели выполняется на устройстве посетителя; первая загрузка модели требует интернета. Проверка количества тегов подтверждает число, но не точность смысла.",
+          "Для серии указывайте в общем описании только факты, которые относятся ко всем файлам. Не сообщайте генератору, что вся пачка состоит из food, yellow или copy space, если эти признаки меняются от кадра к кадру. Дополнительные теги также нужно проверять отдельно для каждого файла. Экспортёр не загружает и не отправляет работы автоматически; итоговую проверку выполняйте в кабинете площадки."
+        ],
+        "bullets": [
+          "Задайте генератору только фактический общий контекст.",
+          "Проверьте составные фразы для каждого файла.",
+          "Экспортируйте строки после проверки релевантности, языка и лимитов."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Редакторская проверка в три прохода",
+        "paragraphs": [
+          "Сначала отметьте главный предмет и настоящие устойчивые сочетания. Затем проверьте каждую фразу по видимым доказательствам и предполагаемому использованию. Наконец переставьте сильнейшие термины в начало и удалите дубли, догадки и неестественные цепочки.",
+          "Прочитайте заголовок вслух, а список ключевых слов — глазами покупателя. Если фраза создаёт ошибочное ожидание, её нельзя оставлять, даже если она звучит коммерчески привлекательно. Правила порталов меняются, поэтому перед отправкой всегда открывайте актуальную страницу требований."
+        ],
+        "bullets": [
+          "Отметьте предмет, признаки и функциональную идею.",
+          "Поставьте под сомнение каждое прилагательное и догадку о контексте.",
+          "Перед экспортом ещё раз проверьте требования площадки."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Каждая ли составная фраза обозначает один ясный устойчивый концепт?",
+      "Можно ли подтвердить каждый термин именно этим файлом?",
+      "Удалены ли придуманные цепочки, повторы и неподтверждённый контекст?",
+      "Поставлены ли главные термины в начало списка?",
+      "Соответствуют ли язык и количество ключевых слов текущим правилам?",
+      "Проверили ли вы экспортированные или импортированные метаданные перед отправкой?"
+    ],
+    "illustration": {
+      "title": "Три прохода для составных ключевых слов",
+      "steps": [
+        {
+          "label": "Найдите видимые концепты",
+          "detail": "Отметьте предмет, признаки и настоящие идеи использования."
+        },
+        {
+          "label": "Проверьте каждую фразу",
+          "detail": "Оставьте устойчивые сочетания, удалите придуманные цепочки."
+        },
+        {
+          "label": "Сверьте с площадкой",
+          "detail": "Переставьте термины, проверьте язык и лимиты, осмотрите строки."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "কীওয়ার্ড স্প্যাম ছাড়া যৌগিক স্টক কীওয়ার্ড কীভাবে বাছবেন",
+    "description": "আইসক্রিম, কপি স্পেস, কফি কাপ ও হলুদ ফুলের উদাহরণে অস্বাভাবিক বাক্য না বানিয়ে স্টক ছবির জন্য নির্ভুল যৌগিক কীওয়ার্ড তৈরি করুন।",
+    "intro": "যৌগিক কীওয়ার্ড হলো ছোট, প্রচলিত সমন্বয়, যা একটি চেনা ধারণার নাম দেয়: ice cream, coffee cup, copy space বা yellow flower। এগুলো স্টক মেটাডেটাকে আরও নির্ভুল করতে পারে, তবে কেবল তখনই, যখন শব্দগুলো ছবিতে সত্যিই দৃশ্যমান বা স্পষ্টভাবে অভিপ্রেত কোনো বিষয় বর্ণনা করে। ভুলটি হলো প্রতিটি পর্যবেক্ষণকে “summer dessert lifestyle food background”-এর মতো দীর্ঘ কীওয়ার্ড-শৃঙ্খলে পরিণত করা। এটি সার্চ-উপযোগী মনে হতে পারে, কিন্তু এতে একাধিক ধারণা মিশে যায় এবং তা অপ্রাসঙ্গিক বা পুনরাবৃত্ত হতে পারে।\n\nএই নির্দেশিকায় দেখানো হয়েছে কখন কোনো যৌগিক শব্দ ব্যবহারযোগ্য, কখন আলাদা শব্দ ভালো, এবং কীভাবে ফলাফলকে স্টক প্ল্যাটফর্মের নিয়মের সঙ্গে মানিয়ে নিতে হয়। লক্ষ্য হলো অল্পসংখ্যক, যুক্তিসংগতভাবে সমর্থনযোগ্য বাক্যাংশ তৈরি করা, যাতে অভ্যন্তরীণ মার্কেটপ্লেস সার্চ ফাইলটি বুঝতে পারে। এটি উচ্চতর র‌্যাঙ্ক বা বিক্রয়ের প্রতিশ্রুতি নয়। ওয়েবসাইটের Google ইনডেক্সিং আলাদা বিষয়; এর সংকেত ভিন্ন এবং এটিকে মার্কেটপ্লেস মেটাডেটার সঙ্গে গুলিয়ে ফেলা উচিত নয়।",
+    "sections": [
+      {
+        "heading": "কোন যৌগিক কীওয়ার্ড বৈধ",
+        "paragraphs": [
+          "একটি যৌগিক কীওয়ার্ড সাধারণত পরিচিত বস্তু, বিষয়, দৃশ্যমান বৈশিষ্ট্য বা ব্যবহারের ধারণার নাম দেয়। “Ice cream” একটি ডেজার্টকে চিহ্নিত করে; “coffee cup” এক ধরনের বস্তুকে চিহ্নিত করে; “copy space” লেখার উপযোগী একটি ইচ্ছাকৃত স্থানকে বোঝায়। “Yellow flower” দৃশ্যমান রং ও বিষয়কে একত্র করে, কোনো প্রজাতি শনাক্ত করার ভান না করেই।",
+          "সহজ পরীক্ষা হলো: অন্য কোনো অবদানকারী বা ক্রেতা কি বাক্যাংশটি সঙ্গে সঙ্গে বুঝতে পারবেন, এবং ফাইলের প্রমাণ দেখিয়ে কি আপনি সেটিকে সমর্থন করতে পারবেন? পারলে রাখুন। যদি শুধু সার্চ কভারেজ বাড়ানোর জন্য কাছাকাছি কয়েকটি শব্দ জুড়ে বাক্যাংশটি তৈরি হয়, তাহলে সেটিকে নির্ভুল ধারণায় ভাগ করুন অথবা বাদ দিন।"
+        ],
+        "bullets": [
+          "একটি স্পষ্ট ধারণা প্রকাশ করে এমন প্রচলিত বাক্যাংশ রাখুন।",
+          "স্বাধীন বিষয়, রং, পরিবেশ ও কাজের জন্য আলাদা কীওয়ার্ড ব্যবহার করুন।",
+          "পিক্সেল দেখে ফুলের প্রজাতি, ব্যক্তি, স্থান, মালিকানা বা রিলিজ অনুমান করবেন না।"
+        ],
+        "example": "শক্তিশালী: ice cream, dessert, cone.\nদুর্বল: ice cream summer dessert lifestyle advertising background concept."
+      },
+      {
+        "heading": "বর্ণনা ও বাক্যাংশ বানানো আলাদা রাখুন",
+        "paragraphs": [
+          "বর্ণনামূলক শিরোনাম বা বাক্য স্বাভাবিকভাবে পড়া উচিত। কীওয়ার্ড ঘরে পৃথক শব্দ ও প্রচলিত যৌগিক শব্দ থাকতে পারে, কিন্তু সেটি গোপন বাক্য বা সম্ভাব্য সব সমন্বয়ের তালিকায় পরিণত হওয়া উচিত নয়। “Coffee cup on a wooden table” একটি কার্যকর বর্ণনা হতে পারে; এর অর্থ এই নয় যে প্রতিটি শব্দ-জোড়া—coffee wooden, cup table, wooden coffee—কীওয়ার্ড পাওয়ার যোগ্য।",
+          "ক্রেতা আসলে কী সার্চ করবেন, তা ভাবুন। কোনো ক্রেতা “copy space” খুঁজতে পারেন, কারণ এটি একটি স্বীকৃত নকশাগত প্রয়োজন। “copy space minimal clean empty room wall”-এর মতো বানানো শৃঙ্খল খোঁজার সম্ভাবনা কম। “copy space” রাখুন, তারপর wall, table বা background-এর মতো কেবল প্রাসঙ্গিক দৃশ্যমান প্রসঙ্গ যোগ করুন।"
+        ],
+        "bullets": [
+          "শিরোনামকে স্বাভাবিক বর্ণনা হিসেবে লিখুন।",
+          "প্রচলিত বা স্পষ্টভাবে অর্থবহ সমন্বয়ের জন্যই কীওয়ার্ড বাক্যাংশ রাখুন।",
+          "নতুন তথ্য যোগ করে না এমন পুনরাবৃত্ত রূপ বাদ দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: একটি ছবি, চারটি সিদ্ধান্ত",
+        "paragraphs": [
+          "উদাহরণ: একটি সমতল বিন্যাসের ছবি কল্পনা করুন—একটি ছোট হলুদ বাটিতে এক স্কুপ আইসক্রিম, ফ্যাকাশে নীল পৃষ্ঠের ওপর রাখা, এবং ডানদিকে লেখার জন্য খোলা জায়গা। ছবিটি কোনো ব্র্যান্ড, নির্দিষ্ট স্থান বা দৃশ্যত সমর্থনযোগ্যতার বাইরে কোনো স্বাদ প্রকাশ করে না।",
+          "বিষয় দিয়ে শুরু করুন: ice cream, dessert, scoop, bowl। দৃশ্যমান বৈশিষ্ট্য যোগ করুন: yellow, blue, food। কার্যকর ধারণাটি যোগ করুন: copy space, তবে কেবল তখনই, যখন খালি স্থানটি ইচ্ছাকৃতভাবে ব্যবহারযোগ্য এবং দৃশ্যত পরিষ্কার। ছবি সেই প্রসঙ্গ না দিলে “summer vacation”, “children’s party” বা “premium restaurant” যোগ করবেন না।",
+          "এখানে সমঝোতাটি হলো কভারেজ বনাম নির্ভুলতা। বাটিটি স্পষ্টভাবে হলুদ হলে “yellow bowl” সমর্থনযোগ্য হতে পারে, কিন্তু একই ব্যাচের অন্য ফাইলে ফুল দেখা গেলেও “yellow flower” ভুল হবে। পাশের ছবিতে কাজ করেছে বলে কোনো বাক্যাংশ পুনর্ব্যবহারযোগ্য হয়ে যায় না।"
+        ],
+        "bullets": [
+          "সাধারণভাবে ব্যাচের ওপর নয়, এই নির্দিষ্ট ফাইলের ভিত্তিতে প্রতিটি যৌগিক শব্দ যাচাই করুন।",
+          "প্ল্যাটফর্ম যেখানে শুরুতে থাকা শব্দকে অগ্রাধিকার দেয়, সেখানে শক্তিশালী বিষয়-ভিত্তিক বাক্যাংশগুলো সামনে রাখুন।",
+          "copy space-এর মতো কার্যকর শব্দকে পর্যালোচনাযোগ্য দৃশ্যগত দাবি হিসেবে বিবেচনা করুন।"
+        ],
+        "example": "সম্ভাব্য মেটাডেটা সেট:\nশিরোনাম: Ice cream in yellow bowl with copy space\nকীওয়ার্ড: ice cream, dessert, scoop, bowl, yellow bowl, food, blue background, copy space, flat lay"
+      },
+      {
+        "heading": "প্ল্যাটফর্মের সীমা ও ভাষার সঙ্গে মানিয়ে নিন",
+        "paragraphs": [
+          "প্ল্যাটফর্মভেদে নিয়ম আলাদা। Adobe-এর কীওয়ার্ড নির্দেশিকায় সর্বোচ্চ 49টি কীওয়ার্ড রাখা যায় এবং সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো, বিশেষ করে তালিকার শুরুর দিকের শব্দগুলো, গুরুত্ব পায়। এর মেটাডেটার ভাষা অবদানকারী অ্যাকাউন্টের ভাষার সঙ্গে মিলতে হবে। অ্যাকাউন্ট English-এ সেট করা থাকলে, এই নিবন্ধটি বাংলা ভাষায় পড়া হলেও উদাহরণের মেটাডেটা English-এ থাকতে পারে। রপ্তানি বা আপলোডের আগে বর্তমান অবদানকারী-সংক্রান্ত শর্ত যাচাই করুন।",
+          "Envato ছবি ও ভিডিওর জন্য প্রাসঙ্গিক প্রচলিত যৌগিক শব্দ অনুমোদন করে, তবে বিষয়বস্তুর ধরন অনুযায়ী সীমা ও শর্ত বদলে যায়। একটি আইটেমের ছবির নিয়ম অন্য ধরনের আইটেমে প্রযোজ্য ধরে নেবেন না। দুর্বল সমন্বয়ে ভরা সর্বাধিক দৈর্ঘ্যের তালিকার চেয়ে সংযত তালিকা পর্যালোচনা করা সহজ।",
+          "মার্কেটপ্লেস সার্চ ও Google ওয়েবসাইট সার্চ এক নয়। স্টক প্ল্যাটফর্ম কোনো আইটেমের সঙ্গে যুক্ত মেটাডেটা ব্যাখ্যা করে; Google পৃষ্ঠার লেখা, ছবির প্রসঙ্গ, alt text এবং ওয়েবসাইটের অন্যান্য সংকেত ব্যবহার করতে পারে। মার্কেটপ্লেসের একটি কীওয়ার্ড বদলালে ওয়েবসাইট কীভাবে ইনডেক্স হবে তা নিয়ন্ত্রণ করা যায় না।"
+        ],
+        "bullets": [
+          "জমা দেওয়ার আগে বর্তমান, আইটেম-নির্দিষ্ট পোর্টাল নিয়ম যাচাই করুন।",
+          "প্রয়োজনীয় মেটাডেটার ভাষার সঙ্গে মিল রাখুন এবং ফাইলের নামকে কীওয়ার্ডের যুক্তি থেকে আলাদা রাখুন।",
+          "কাজটি নির্ভুলভাবে বর্ণনা করতে যতগুলো শব্দ প্রয়োজন, শুধু ততগুলোই ব্যবহার করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "জেনারেটরকে খসড়া হিসেবে ব্যবহার করুন, চূড়ান্ত সিদ্ধান্ত হিসেবে নয়",
+        "paragraphs": [
+          "MetaStocker ব্রাউজারে স্থানীয় মেটাডেটা তৈরি করতে পারে এবং Adobe ও Envato CSV-সহ বিভিন্ন ফরম্যাটে রপ্তানি করতে পারে। স্থানীয় মোডে মডেলের অনুমান দর্শকের ডিভাইসেই থাকে; প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট দরকার। অ্যাপটি চাওয়া ট্যাগের সংখ্যা যাচাই করতে পারে, কিন্তু এতে নির্ভুলতা নয়, কেবল পরিমাণ নিশ্চিত হয়।",
+          "ব্যাচের ক্ষেত্রে বর্ণনা ঘরে কেবল এমন তথ্য ব্যবহার করুন যা প্রতিটি ফাইলের জন্য প্রযোজ্য। সব ছবিই food, yellow বা copy space—এমন তথ্য জেনারেটরকে দেবেন না, যদি সেগুলো ছবিভেদে বদলে যায়। অতিরিক্ত ট্যাগেরও প্রতিটি ফাইল অনুযায়ী পর্যালোচনা দরকার। প্রতিটি ফল খুলে বানানো যৌগিক শব্দ বাদ দিন এবং কেবল রপ্তানির জন্য প্রস্তুত সারিগুলো রাখুন। এক্সপোর্টার ফাইল আপলোড বা জমা দেয় না; আমদানি করা মেটাডেটা পরীক্ষা করার স্থান হলো অবদানকারী পোর্টাল।"
+        ],
+        "bullets": [
+          "ব্যাচ-সংক্রান্ত তথ্যের ভিত্তিতে একটি খসড়া তৈরি করুন।",
+          "প্রতিটি ফাইল ধরে যৌগিক শব্দ পর্যালোচনা করুন।",
+          "প্রাসঙ্গিকতা, ভাষা ও প্ল্যাটফর্মের সীমা যাচাই করার পরই রপ্তানি করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "বারবার অনুসরণযোগ্য সম্পাদনা ধাপ",
+        "paragraphs": [
+          "তিন ধাপে কাজ করুন। প্রথমে স্পষ্ট বিষয় ও প্রচলিত যৌগিক শব্দ চিহ্নিত করুন। দ্বিতীয়ত, দৃশ্যমান প্রমাণ ও অভিপ্রেত ব্যবহারের ভিত্তিতে প্রতিটি বাক্যাংশ পরীক্ষা করুন। তৃতীয়ত, শক্তিশালী শব্দগুলো পুনর্বিন্যাস করুন এবং পুনরাবৃত্তি, অনুমানভিত্তিক প্রসঙ্গ ও অস্বাভাবিক শৃঙ্খল বাদ দিন।",
+          "চূড়ান্ত শিরোনামটি জোরে পড়ুন। তারপর ভাবুন, আপনি ফাইলটি কিনতে চাইলে কীওয়ার্ডগুলো কীভাবে পড়তেন। কোনো বাক্যাংশ ক্রেতাকে বিভ্রান্ত করতে পারে হলে, বাণিজ্যিকভাবে আকর্ষণীয় শোনালেও সেটি রাখবেন না। অবদানকারী পোর্টাল ও নীতি বদলাতে পারে, তাই আপলোডের সময় বর্তমান নিয়ম যাচাই করুন।"
+        ],
+        "bullets": [
+          "মূল বিষয় ও কার্যকর ধারণাটি চিহ্নিত করুন।",
+          "প্রতিটি বিশেষণ ও অনুমিত প্রসঙ্গকে প্রশ্ন করুন।",
+          "চূড়ান্ত রপ্তানির আগে পোর্টালের নিয়ম আবার যাচাই করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "প্রতিটি যৌগিক শব্দ কি একটি স্পষ্ট, প্রচলিত ধারণার নাম দেয়?",
+      "এই নির্দিষ্ট ফাইল থেকে কি প্রতিটি শব্দের সমর্থন দেখাতে পারবেন?",
+      "বানানো শৃঙ্খল, পুনরাবৃত্তি ও অনুমানভিত্তিক প্রসঙ্গ কি বাদ দিয়েছেন?",
+      "প্ল্যাটফর্ম যেখানে অগ্রাধিকার দেয়, সেখানে কি শক্তিশালী শব্দগুলো শুরুতে রাখা হয়েছে?",
+      "ভাষা ও কীওয়ার্ডের সংখ্যা কি বর্তমান প্ল্যাটফর্মের নিয়মের সঙ্গে মেলে?",
+      "জমা দেওয়ার আগে রপ্তানি বা আমদানি করা মেটাডেটা কি পরীক্ষা করেছেন?"
+    ],
+    "illustration": {
+      "title": "যৌগিক কীওয়ার্ডের জন্য তিন ধাপ",
+      "steps": [
+        {
+          "label": "দৃশ্যমান ধারণা চিহ্নিত করুন",
+          "detail": "বিষয়, বৈশিষ্ট্য ও সত্যিকারের কার্যকর ধারণাগুলো চিহ্নিত করুন।"
+        },
+        {
+          "label": "প্রতিটি বাক্যাংশ পরীক্ষা করুন",
+          "detail": "প্রচলিত যৌগিক শব্দ রাখুন; বানানো বা অসমর্থিত শৃঙ্খল বাদ দিন।"
+        },
+        {
+          "label": "প্ল্যাটফর্ম অনুযায়ী পর্যালোচনা করুন",
+          "detail": "পুনর্বিন্যাস করুন, ভাষা ও সীমা যাচাই করুন, তারপর চূড়ান্ত সারিগুলো দেখুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "कीवर्ड स्पैम के बिना संयुक्त स्टॉक कीवर्ड कैसे चुनें",
+    "description": "आइसक्रीम, कॉपी स्पेस, कॉफी कप और पीले फूल के उदाहरणों से अटपटे वाक्य बनाए बिना स्टॉक तस्वीरों के लिए सटीक संयुक्त कीवर्ड बनाएं।",
+    "intro": "संयुक्त कीवर्ड छोटे, प्रचलित संयोजन होते हैं जो एक पहचानने योग्य अवधारणा का नाम बताते हैं: ice cream, coffee cup, copy space या yellow flower। ये स्टॉक मेटाडेटा को अधिक सटीक बना सकते हैं, लेकिन तभी जब शब्द तस्वीर में सचमुच दिखाई देने वाली या स्पष्ट रूप से अभिप्रेत चीज़ का वर्णन करें। गलती यह है कि हर अवलोकन को “summer dessert lifestyle food background” जैसी लंबी कीवर्ड शृंखला में बदल दिया जाए। यह खोज-अनुकूल लग सकती है, फिर भी इसमें कई विचार मिल जाते हैं और यह अप्रासंगिक या दोहरावपूर्ण हो सकती है।\n\nयह मार्गदर्शिका बताती है कि संयुक्त शब्द कब उपयोगी है, अलग शब्द कब बेहतर हैं, और परिणाम को स्टॉक प्लेटफ़ॉर्म के नियमों के अनुसार कैसे ढालना है। लक्ष्य ऐसे कम और बचाव योग्य वाक्यांशों का समूह है जो आंतरिक मार्केटप्लेस खोज को फ़ाइल समझने में मदद करे। यह ऊँची रैंक या बिक्री का वादा नहीं है। वेबसाइट Google इंडेक्सिंग अलग विषय है, जिसके संकेत अलग होते हैं; इसे मार्केटप्लेस मेटाडेटा से भ्रमित नहीं करना चाहिए।",
+    "sections": [
+      {
+        "heading": "किसी संयुक्त कीवर्ड को वैध क्या बनाता है",
+        "paragraphs": [
+          "संयुक्त कीवर्ड आम तौर पर किसी परिचित वस्तु, विषय, दृश्य गुण या उपयोग की अवधारणा का नाम बताता है। “Ice cream” एक मिठाई की पहचान करता है; “coffee cup” एक प्रकार की वस्तु बताता है; “copy space” पाठ के लिए उपयुक्त जानबूझकर छोड़े गए क्षेत्र का वर्णन करता है। “Yellow flower” दिखाई देने वाले रंग और विषय को जोड़ता है, बिना किसी प्रजाति की पहचान का दावा किए।",
+          "उपयोगी परीक्षा सरल है: क्या कोई दूसरा योगदानकर्ता या खरीदार इस वाक्यांश को तुरंत समझ सकता है, और क्या आप फ़ाइल में उसका प्रमाण दिखा सकते हैं? हाँ, तो इसे रखें। यदि यह वाक्यांश केवल खोज-कवरेज के लिए आसपास के कई शब्द जोड़ने से बना है, तो इसे सटीक अवधारणाओं में बाँट दें या हटा दें।"
+        ],
+        "bullets": [
+          "ऐसे प्रचलित वाक्यांश रखें जो एक स्पष्ट अवधारणा व्यक्त करते हों।",
+          "स्वतंत्र विषयों, रंगों, परिवेशों और क्रियाओं के लिए अलग कीवर्ड इस्तेमाल करें।",
+          "पिक्सेल के आधार पर फूल की प्रजाति, व्यक्ति, स्थान, स्वामित्व या रिलीज़ का अनुमान न लगाएँ।"
+        ],
+        "example": "मज़बूत: ice cream, dessert, cone.\nकमज़ोर: ice cream summer dessert lifestyle advertising background concept."
+      },
+      {
+        "heading": "वर्णन और वाक्यांश-निर्माण को अलग रखें",
+        "paragraphs": [
+          "वर्णनात्मक शीर्षक या वाक्य स्वाभाविक रूप से पढ़ा जाना चाहिए। कीवर्ड फ़ील्ड में अलग-अलग शब्द और प्रचलित संयुक्त शब्द हो सकते हैं, लेकिन उन्हें छिपे हुए वाक्य या हर संभव संयोजन की सूची नहीं बनना चाहिए। “Coffee cup on a wooden table” उपयोगी वर्णन हो सकता है; इसका अर्थ यह नहीं कि हर शब्द-युग्म—coffee wooden, cup table, wooden coffee—कीवर्ड बनने योग्य है।",
+          "सोचें कि खरीदार वास्तव में क्या खोजेगा। कोई खरीदार “copy space” खोज सकता है, क्योंकि यह डिज़ाइन की एक पहचानी हुई ज़रूरत है। “copy space minimal clean empty room wall” जैसी बनाई हुई शृंखला खोजने की संभावना कम है। “copy space” रखें, फिर केवल उतना ही दिखाई देने वाला संदर्भ जोड़ें जो मायने रखता हो, जैसे wall, table या background।"
+        ],
+        "bullets": [
+          "शीर्षक को स्वाभाविक वर्णन की तरह लिखें।",
+          "कीवर्ड वाक्यांश केवल प्रचलित या स्पष्ट रूप से अर्थपूर्ण संयोजनों के लिए रखें।",
+          "ऐसे दोहराए गए रूप हटाएँ जो कोई नई जानकारी नहीं जोड़ते।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण: एक तस्वीर, चार निर्णय",
+        "paragraphs": [
+          "उदाहरण: एक फ्लैट-ले तस्वीर की कल्पना करें—एक छोटे पीले कटोरे में आइसक्रीम का एक स्कूप, हल्की नीली सतह पर रखा हुआ, और दाईं ओर पाठ के लिए खाली स्थान। तस्वीर में ब्रांड, सटीक स्थान या दृश्य रूप से समर्थित जानकारी से आगे का स्वाद दिखाई नहीं देता।",
+          "विषय से शुरू करें: ice cream, dessert, scoop, bowl। दिखाई देने वाले गुण जोड़ें: yellow, blue, food। उपयोग की अवधारणा जोड़ें: copy space, लेकिन तभी जब खाली क्षेत्र जानबूझकर उपयोग करने योग्य और दृश्य रूप से स्पष्ट हो। जब तक तस्वीर संदर्भ न दे, “summer vacation”, “children’s party” या “premium restaurant” न जोड़ें।",
+          "यहाँ समझौता कवरेज और सटीकता के बीच है। यदि कटोरा स्पष्ट रूप से पीला है, तो “yellow bowl” उचित हो सकता है, जबकि उसी बैच की किसी दूसरी फ़ाइल में फूल दिखने पर भी “yellow flower” गलत होगा। पड़ोसी तस्वीर में काम कर चुका वाक्यांश केवल इसी कारण दोबारा इस्तेमाल योग्य नहीं हो जाता।"
+        ],
+        "bullets": [
+          "हर संयुक्त शब्द को सामान्य बैच के आधार पर नहीं, इसी फ़ाइल के आधार पर जाँचें।",
+          "जहाँ प्लेटफ़ॉर्म शुरुआत के शब्दों को प्राथमिकता देता है, वहाँ सबसे मजबूत विषय-वाले वाक्यांश आगे रखें।",
+          "copy space जैसे उपयोग-संबंधी शब्दों को समीक्षा योग्य दृश्य दावे मानें।"
+        ],
+        "example": "संभावित मेटाडेटा सेट:\nशीर्षक: Ice cream in yellow bowl with copy space\nकीवर्ड: ice cream, dessert, scoop, bowl, yellow bowl, food, blue background, copy space, flat lay"
+      },
+      {
+        "heading": "प्लेटफ़ॉर्म की सीमाओं और भाषा के अनुसार ढालें",
+        "paragraphs": [
+          "प्लेटफ़ॉर्म के नियम अलग-अलग होते हैं। Adobe के कीवर्ड निर्देशों में अधिकतम 49 कीवर्ड की अनुमति है और सबसे महत्वपूर्ण शब्दों, खासकर सूची की शुरुआत में मौजूद शब्दों, पर ज़ोर दिया गया है। इसकी मेटाडेटा भाषा योगदानकर्ता खाते की भाषा से मेल खानी चाहिए। यदि खाता English पर सेट है, तो यह लेख हिन्दी में पढ़े जाने पर भी उदाहरण का मेटाडेटा English में रह सकता है। निर्यात या अपलोड से पहले वर्तमान योगदानकर्ता आवश्यकताओं की जाँच करें।",
+          "Envato फ़ोटो और वीडियो के लिए प्रासंगिक प्रचलित संयुक्त शब्दों की अनुमति देता है, लेकिन सीमाएँ और आवश्यकताएँ सामग्री के प्रकार के अनुसार बदलती हैं। यह न मानें कि फ़ोटो का नियम किसी दूसरे आइटम प्रकार पर भी लागू होता है। कमज़ोर संयोजनों से भरी अधिकतम लंबाई की सूची की तुलना में संयमित सूची की समीक्षा करना आसान है।",
+          "मार्केटप्लेस खोज और Google वेबसाइट खोज एक जैसी नहीं हैं। स्टॉक प्लेटफ़ॉर्म किसी आइटम से जुड़े मेटाडेटा की व्याख्या करता है; Google पृष्ठ का पाठ, तस्वीर का संदर्भ, alt text और वेबसाइट के अन्य संकेत इस्तेमाल कर सकता है। मार्केटप्लेस का कीवर्ड बदलने से वेबसाइट की इंडेक्सिंग नियंत्रित नहीं होती।"
+        ],
+        "bullets": [
+          "सबमिशन से पहले वर्तमान, आइटम-विशिष्ट पोर्टल नियम जाँचें।",
+          "आवश्यक मेटाडेटा भाषा से मेल रखें और फ़ाइलनामों को कीवर्ड तर्क से अलग रखें।",
+          "काम का सटीक वर्णन करने के लिए जितने शब्द आवश्यक हों, केवल उतने ही इस्तेमाल करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "जनरेटर को मसौदे की तरह इस्तेमाल करें, अंतिम निर्णय की तरह नहीं",
+        "paragraphs": [
+          "MetaStocker ब्राउज़र में स्थानीय मेटाडेटा बना सकता है और Adobe तथा Envato CSV सहित कई फ़ॉर्मैट में निर्यात कर सकता है। स्थानीय मोड में मॉडल का अनुमान दर्शक के डिवाइस पर ही रहता है; पहला मॉडल डाउनलोड करने के लिए इंटरनेट चाहिए। ऐप माँगी गई टैग संख्या को मान्य कर सकता है, लेकिन इससे सटीकता नहीं, केवल मात्रा की पुष्टि होती है।",
+          "बैच के लिए विवरण फ़ील्ड में केवल वे तथ्य रखें जो हर फ़ाइल पर लागू होते हों। यदि ये विवरण बदलते हैं, तो जनरेटर को यह न बताएँ कि हर तस्वीर food, yellow या copy space है। अतिरिक्त टैगों की भी हर फ़ाइल के अनुसार समीक्षा आवश्यक है। हर परिणाम खोलें, बनाए हुए संयुक्त शब्द हटाएँ और केवल निर्यात के लिए तैयार पंक्तियाँ रखें। एक्सपोर्टर फ़ाइलें अपलोड या सबमिट नहीं करता; आयात किए गए मेटाडेटा की जाँच करने का स्थान योगदानकर्ता पोर्टल ही है।"
+        ],
+        "bullets": [
+          "तथ्यात्मक बैच संदर्भ के साथ एक मसौदा बनाएँ।",
+          "फ़ाइल-दर-फ़ाइल संयुक्त शब्दों की समीक्षा करें।",
+          "प्रासंगिकता, भाषा और प्लेटफ़ॉर्म सीमाएँ जाँचने के बाद ही निर्यात करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "बार-बार अपनाई जा सकने वाली संपादन प्रक्रिया",
+        "paragraphs": [
+          "तीन चरणों वाली प्रक्रिया अपनाएँ। पहले स्पष्ट विषय और किसी भी प्रचलित संयुक्त शब्द को चिन्हित करें। दूसरे, हर वाक्यांश को दिखाई देने वाले प्रमाण और इच्छित उपयोग के आधार पर जाँचें। तीसरे, सबसे मजबूत शब्दों का क्रम बदलें और दोहराव, अनुमानित संदर्भ तथा अटपटी शृंखलाएँ हटाएँ।",
+          "अंतिम शीर्षक ज़ोर से पढ़ें। फिर कीवर्ड ऐसे पढ़ें जैसे आप फ़ाइल खरीद रहे हों। यदि कोई वाक्यांश खरीदार को गुमराह कर सकता है, तो वह नहीं होना चाहिए, भले ही वह व्यावसायिक रूप से आकर्षक लगे। योगदानकर्ता पोर्टल और नीतियाँ बदल सकती हैं, इसलिए अपलोड के समय वर्तमान नियमों की पुष्टि करें।"
+        ],
+        "bullets": [
+          "मुख्य विषय और उपयोग की अवधारणा को चिन्हित करें।",
+          "हर विशेषण और अनुमानित संदर्भ पर सवाल उठाएँ।",
+          "अंतिम निर्यात से पहले पोर्टल नियम फिर से जाँचें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "क्या हर संयुक्त शब्द एक स्पष्ट, प्रचलित अवधारणा का नाम बताता है?",
+      "क्या आप इसी विशिष्ट फ़ाइल से हर शब्द का समर्थन कर सकते हैं?",
+      "क्या आपने बनाई हुई शृंखलाएँ, दोहराव और अनुमानित संदर्भ हटा दिए हैं?",
+      "क्या प्लेटफ़ॉर्म जिन शब्दों को प्राथमिकता देता है, सबसे मजबूत शब्द वहाँ शुरुआत में रखे गए हैं?",
+      "क्या भाषा और कीवर्ड संख्या वर्तमान प्लेटफ़ॉर्म नियमों से मेल खाती है?",
+      "क्या सबमिशन से पहले आपने निर्यात या आयात किए गए मेटाडेटा की जाँच की?"
+    ],
+    "illustration": {
+      "title": "संयुक्त कीवर्ड के लिए तीन चरण",
+      "steps": [
+        {
+          "label": "दिखाई देने वाली अवधारणाएँ पहचानें",
+          "detail": "विषय, गुण और वास्तविक उपयोग-संबंधी विचारों को चिन्हित करें।"
+        },
+        {
+          "label": "हर वाक्यांश जाँचें",
+          "detail": "प्रचलित संयुक्त शब्द रखें; बनाए हुए या असमर्थित शृंखलाएँ हटाएँ।"
+        },
+        {
+          "label": "प्लेटफ़ॉर्म के लिए समीक्षा करें",
+          "detail": "क्रम बदलें, भाषा और सीमाएँ जाँचें, फिर अंतिम पंक्तियाँ देखें।"
+        }
+      ]
+    }
+  }
+}

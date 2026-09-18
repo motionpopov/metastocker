@@ -1,0 +1,467 @@
+{
+  "slug": "stock-metadata-quality-checklist",
+  "category": "workflow",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "adobe-upload"
+  ],
+  "en": {
+    "title": "Stock Metadata Quality Checklist Before Upload",
+    "description": "Run a practical two-pass metadata review for stock files: verify image facts first, then check language, filenames, keywords, and portal readback.",
+    "intro": "A metadata check should answer two different questions in order: “Does this text describe what is actually visible?” and “Will this text fit the destination platform?” Mixing these questions makes errors easy to miss. A polished title can still contain an invented location, while accurate keywords can still fail because the filename does not match or the account language is wrong.\n\nUse this guide as a repeatable final pass before upload. It works for manually written metadata and for rows prepared with MetaStocker. The app can generate editable results and export platform-specific CSV files, but it does not upload or submit them, guarantee acceptance, or embed metadata into original files. The contributor remains responsible for checking every row.",
+    "sections": [
+      {
+        "heading": "1. Freeze the file list first",
+        "paragraphs": [
+          "Start with the exact assets you intend to submit. Give each file a temporary review status: ready for review, needs correction, or remove from batch. Do not review a generic keyword list separately from its image; metadata must stay attached to the correct file.",
+          "Check the filename, extension, and spelling before editing text. For CSV workflows, the filename must match the uploaded asset, including extension and case. A renamed file after export can break that connection. Keep a simple working folder with the final asset names and the matching metadata file."
+        ],
+        "bullets": [
+          "Open the actual preview, not only a thumbnail.",
+          "Confirm that every metadata row has one intended asset.",
+          "Avoid mixing unrelated images under one batch description."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Pass one: check image-to-text facts",
+        "paragraphs": [
+          "Read the title and keywords while looking at the image or full video. Mark every term as visible, strongly supported by context, or speculative. Keep visible subjects, actions, setting, composition, color, and usable concepts. Remove claims that require guessing.",
+          "Do not infer a person’s identity, occupation, ethnicity, age, ownership, precise location, release status, species, or event from pixels alone. For editorial captions, dates and locations need verification. Video deserves extra care: a sampled preview may miss an object, action, or visual defect, so inspect the full motion yourself.",
+          "A useful test is deletion: if removing a word makes the description less precise, keep it; if the image remains equally understandable, question whether the word is necessary. Repeated synonyms and broad tags that do not fit the individual file add noise."
+        ],
+        "bullets": [
+          "Circle uncertain facts and replace them with observable wording.",
+          "Check singular and plural forms against what is shown.",
+          "Review extra tags individually, even when they were added to a batch."
+        ],
+        "example": "Example: A photo shows a ceramic mug with a blue geometric pattern on a wooden desk beside a closed notebook. Keep “ceramic mug,” “blue,” “geometric pattern,” “wooden desk,” “notebook,” and “workspace.” Avoid “coffee,” “office employee,” “handmade,” or “morning routine” unless the image provides evidence."
+      },
+      {
+        "heading": "3. Pass two: check platform format",
+        "paragraphs": [
+          "Now stop judging the picture and inspect the destination rules. Platform limits and requirements differ, so one metadata set should not be assumed to fit every marketplace. Check the current contributor portal before exporting or importing because policies and upload screens can change.",
+          "For an Adobe Stock workflow, use the account’s required metadata language, put the most important terms first, and stay within a conservative maximum of 49 keywords. The current CSV guidance gives a 70-character title limit; validate the upload screen as well. Other platforms may require English metadata, different keyword ranges, categories, tags, or descriptions. Shutterstock, for example, currently describes English metadata and 7–50 relevant keywords, while Envato requirements vary by content type.",
+          "Inspect rejected or suspicious words rather than replacing them automatically. A platform warning is a prompt to verify relevance, not proof that the image is unsuitable. Remove irrelevant brand names, duplicated tags, unsupported claims, and keyword-list titles. For a website, descriptive surrounding text and alt text serve Google image discovery; they are separate from internal marketplace search metadata."
+        ],
+        "bullets": [
+          "Confirm language for the contributor account and target platform.",
+          "Count keywords after removing duplicates and punctuation problems.",
+          "Check title length, category fields, and any platform-specific columns.",
+          "Use the current portal instructions for the final decision."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. Worked example: repair one row",
+        "paragraphs": [
+          "Example: You are preparing an English Adobe Stock row for the mug image above. The first draft says: “Morning coffee in a cozy office” and uses these keywords: coffee, morning, office, mug, cup, blue, geometric, desk, notebook, business, employee, productivity.",
+          "The image does not prove coffee, morning, an office, a business setting, an employee, or productivity. Rewrite the title as “Blue geometric ceramic mug beside notebook on wooden desk.” The revised keywords focus on supported details: ceramic mug, blue, geometric pattern, cup, wooden desk, notebook, workspace, still life, drinkware, tabletop, copy space. Put the most important concepts first and remove the rest.",
+          "This tradeoff is intentional: the revised row is narrower but more defensible. A broad imagined story may feel attractive, yet it can mislead buyers and create platform review problems. If the target marketplace requires English, keep these metadata fields in English even when your editorial notes or article are in Russian."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "5. Check filenames, CSV, and readback",
+        "paragraphs": [
+          "Before export, compare every row with the actual asset name character by character. In a CSV workflow, include the extension and preserve case exactly where required. Open the exported file as plain text or in a spreadsheet and inspect delimiters, quotation marks, line breaks, empty fields, and commas inside descriptions.",
+          "Importing a CSV is not the end of the review. Upload the assets first when the platform requires that order, then inspect the resulting metadata in the contributor portal. Compare the portal’s readback with your approved title, keywords, category, and release-related fields. Correct anything altered, truncated, rejected, or mapped to the wrong file.",
+          "Do not assume that a successful import means acceptance. Keep the approved working copy until the portal displays the expected values and the submission is ready for the platform’s own review."
+        ],
+        "bullets": [
+          "Verify asset-to-row matching after export and after import.",
+          "Read the portal fields, not only the local CSV.",
+          "Check the current portal guidance for changed limits or fields."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Use a final stop rule",
+        "paragraphs": [
+          "Export only rows that pass both reviews. If a fact is uncertain, pause and rewrite it in observable language or remove it. If a format rule is unclear, consult the current platform instructions before sending the file. A smaller, accurate metadata set is easier to audit than a crowded row built from guesses.",
+          "If MetaStocker helped prepare the draft, review its editable results per file. Local processing runs in the visitor’s browser, but model loading and browser cache are different things, and local generation does not remove the need for human inspection. The exporter prepares files; it does not submit them or preserve unsaved work after a tab closes."
+        ],
+        "bullets": [
+          "Pass one: every term is supported by the asset.",
+          "Pass two: every field fits the current destination.",
+          "Readback: the portal shows the intended values."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "I reviewed the final asset, including full video motion where applicable.",
+      "Every title and keyword describes observable or verified information.",
+      "I removed guessed identities, locations, releases, species, brands, and events.",
+      "The metadata language matches the target account or platform.",
+      "The title, keyword count, category, and fields meet current portal rules.",
+      "Filenames match exactly, including extensions and case where required.",
+      "I inspected the CSV structure and exported only ready rows.",
+      "I checked the portal readback after import.",
+      "I understand that import or export does not guarantee acceptance."
+    ],
+    "illustration": {
+      "title": "Two-pass metadata review",
+      "steps": [
+        {
+          "label": "Inspect the asset",
+          "detail": "Record only visible or independently verified facts."
+        },
+        {
+          "label": "Validate the row",
+          "detail": "Check language, limits, rejected words, and filename matching."
+        },
+        {
+          "label": "Read the portal",
+          "detail": "Compare imported fields before the final submission decision."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Проверка метаданных стокового файла перед загрузкой",
+    "description": "Практический двухэтапный чек-лист: сначала сверяйте текст с изображением, затем проверяйте язык, имена файлов, ключевые слова и данные в кабинете.",
+    "intro": "Финальная проверка метаданных должна идти в два этапа. Сначала выясните, действительно ли текст описывает то, что видно на изображении или видео. Затем проверьте, соответствует ли этот текст правилам выбранной площадки. Если смешать эти задачи, легко пропустить ошибку: точное описание может быть записано не для того файла, а хорошие ключевые слова — не пройти из-за имени файла или языка аккаунта.\n\nНиже — повторяемый процесс перед загрузкой. Он подходит для ручной работы и для черновиков, подготовленных в MetaStocker. Приложение формирует редактируемые результаты и экспортирует CSV для нескольких площадок, но не загружает и не отправляет файлы, не гарантирует принятие и не записывает метаданные в оригиналы. Последняя проверка всегда остаётся за автором.",
+    "sections": [
+      {
+        "heading": "1. Зафиксируйте список файлов",
+        "paragraphs": [
+          "Сначала определите точный набор материалов для отправки. Удобно присвоить каждой строке статус: проверяется, требует исправления или исключена. Не проверяйте общий список ключевых слов отдельно от изображения: описание должно быть привязано к конкретному файлу.",
+          "Сверьте имя и расширение файла до редактирования текста. При работе с CSV имя должно совпадать с загруженным материалом, включая расширение и регистр, если этого требует площадка. После экспорта не переименовывайте файлы без повторной проверки соответствия."
+        ],
+        "bullets": [
+          "Открывайте полноценный предпросмотр, а не только миниатюру.",
+          "Проверьте, что каждой строке соответствует один нужный файл.",
+          "Не объединяйте несвязанные изображения под одним описанием партии."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Первый проход: от изображения к фактам",
+        "paragraphs": [
+          "Читайте заголовок и ключевые слова, одновременно смотря на файл. Разделите формулировки на видимые, подтверждённые контекстом и предположительные. Оставляйте предметы, действия, обстановку, композицию и цвета, которые действительно можно обосновать.",
+          "Не угадывайте личность, профессию, национальность, возраст, владельца, точное место, наличие релиза, вид животного или событие по одним пикселям. Для редакционных подписей дату и место нужно подтвердить отдельно. Видео проверяйте полностью: выборочные кадры могут не показать действие или дефект.",
+          "Примените тест удаления. Если без слова описание становится менее точным, слово полезно. Если смысл почти не меняется, его стоит поставить под сомнение. Повторы, слишком общие синонимы и одинаковые теги для всей партии часто ухудшают конкретную строку."
+        ],
+        "bullets": [
+          "Сомнительный факт замените наблюдаемым описанием.",
+          "Проверьте единственное и множественное число.",
+          "Дополнительные теги проверяйте для каждого файла отдельно."
+        ],
+        "example": "Пример: на фото керамическая кружка с синим геометрическим узором стоит на деревянном столе рядом с закрытым блокнотом. Подходят «ceramic mug», «blue», «geometric pattern», «wooden desk», «notebook», «workspace». Не добавляйте «coffee», «office employee», «handmade» или «morning routine», если этого нельзя подтвердить."
+      },
+      {
+        "heading": "3. Второй проход: от текста к правилам площадки",
+        "paragraphs": [
+          "Теперь перестаньте оценивать сюжет и проверьте требования назначения. Ограничения различаются, поэтому один набор метаданных нельзя автоматически считать подходящим для всех маркетплейсов. Перед экспортом откройте актуальные требования кабинета: правила и экран загрузки могут меняться.",
+          "Для Adobe Stock используйте язык метаданных, заданный аккаунтом, ставьте самые важные термины в начало и придерживайтесь консервативного предела в 49 ключевых слов. В текущих требованиях к CSV указан предел заголовка 70 символов; его также нужно сверить с формой загрузки. Другие площадки могут требовать английский язык, иное количество тегов, категории или отдельные описания. В Shutterstock сейчас указаны английские метаданные и 7–50 релевантных ключевых слов, а требования Envato зависят от типа контента.",
+          "Отклонённые или подозрительные слова не заменяйте вслепую. Предупреждение — повод проверить релевантность. Удалите неподходящие бренды, повторы, неподтверждённые утверждения и заголовки, составленные просто из ключевых слов. SEO изображения на собственном сайте — отдельная задача: окружающий текст и alt-текст для Google не равны метаданным внутреннего поиска стока."
+        ],
+        "bullets": [
+          "Сверьте язык с аккаунтом и целевой площадкой.",
+          "Посчитайте ключевые слова после удаления дублей.",
+          "Проверьте длину заголовка, категорию и специальные столбцы.",
+          "При спорной ситуации руководствуйтесь текущими правилами кабинета."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. Рабочий пример: исправьте одну строку",
+        "paragraphs": [
+          "Пример: вы готовите англоязычную строку Adobe Stock для описанной кружки. Черновой заголовок — «Morning coffee in a cozy office», а ключевые слова — coffee, morning, office, mug, cup, blue, geometric, desk, notebook, business, employee, productivity.",
+          "Изображение не доказывает наличие кофе, утро, офис, бизнес-среду, сотрудника или продуктивность. Исправьте заголовок на «Blue geometric ceramic mug beside notebook on wooden desk». В ключевых словах оставьте подтверждённые детали: ceramic mug, blue, geometric pattern, cup, wooden desk, notebook, workspace, still life, drinkware, tabletop, copy space. Самые важные понятия поставьте первыми.",
+          "Это осознанный компромисс: новая строка уже, зато её легче защитить. Придуманная история может казаться привлекательной, но она вводит покупателя в заблуждение и создаёт риск для проверки площадкой. Русский язык статьи не означает, что поля нужно переводить: если целевая площадка требует английские метаданные, пример оставляют на английском."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "5. Проверьте имя файла, CSV и результат в кабинете",
+        "paragraphs": [
+          "Перед экспортом посимвольно сравните каждую строку с фактическим именем файла. Откройте CSV в таблице или как обычный текст и проверьте разделители, кавычки, переносы строк, пустые поля и запятые внутри описаний.",
+          "Импорт не завершает проверку. Если площадка требует сначала загрузить материалы, соблюдайте этот порядок, затем откройте карточки в кабинете. Сравните отображаемые заголовок, ключевые слова, категорию и поля релиза с утверждённой локальной версией. Исправьте всё, что обрезалось, отклонилось или оказалось прикреплено не к тому файлу.",
+          "Успешное чтение CSV не означает принятие работы. Сохраните проверенную копию, пока кабинет не покажет ожидаемые значения и вы не будете готовы к следующему этапу площадки."
+        ],
+        "bullets": [
+          "Сверьте пару «файл — строка» после экспорта и импорта.",
+          "Проверяйте отображение в кабинете, а не только локальный CSV.",
+          "Уточните актуальные лимиты перед каждой новой схемой загрузки."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Введите правило остановки",
+        "paragraphs": [
+          "Экспортируйте только строки, прошедшие оба этапа. Если факт сомнителен, перепишите его как наблюдаемую характеристику или удалите. Если правило неясно, сначала откройте текущую справку площадки. Небольшой точный набор метаданных проще проверить, чем длинную строку, собранную из догадок.",
+          "Если черновик помог подготовить MetaStocker, просмотрите редактируемый результат для каждого файла. Локальная обработка выполняется в браузере посетителя, но память загруженной модели и браузерный кэш — разные вещи; это не отменяет ручную проверку. Экспортёр подготавливает файлы, но не отправляет их и не сохраняет несохранённую работу после закрытия вкладки."
+        ],
+        "bullets": [
+          "Первый проход: каждый термин подтверждён материалом.",
+          "Второй проход: каждое поле подходит текущей площадке.",
+          "Readback: кабинет показывает именно утверждённые значения."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Я просмотрел финальный файл, включая всё движение в видео.",
+      "Каждый заголовок и тег описывает видимое или подтверждённое.",
+      "Я удалил догадки о личностях, местах, релизах, видах, брендах и событиях.",
+      "Язык метаданных соответствует аккаунту или площадке.",
+      "Заголовок, количество ключевых слов, категория и поля соответствуют текущим правилам.",
+      "Имена файлов совпадают, включая расширения и регистр, если это требуется.",
+      "Я проверил структуру CSV и экспортировал только готовые строки.",
+      "Я сверил данные в кабинете после импорта.",
+      "Я понимаю, что экспорт или импорт не гарантирует принятие."
+    ],
+    "illustration": {
+      "title": "Двухэтапная проверка метаданных",
+      "steps": [
+        {
+          "label": "Осмотрите материал",
+          "detail": "Запишите только видимые или отдельно подтверждённые факты."
+        },
+        {
+          "label": "Проверьте строку",
+          "detail": "Сверьте язык, лимиты, слова и точное имя файла."
+        },
+        {
+          "label": "Сверьте кабинет",
+          "detail": "Сравните импортированные поля перед финальным решением."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "আপলোডের আগে স্টক মেটাডেটা মান যাচাইয়ের তালিকা",
+    "description": "স্টক ফাইলের মেটাডেটা দুই ধাপে যাচাই করুন: আগে ছবির তথ্য মিলিয়ে নিন, তারপর ভাষা, ফাইলের নাম, কীওয়ার্ড ও পোর্টালের প্রদর্শিত তথ্য পরীক্ষা করুন।",
+    "intro": "মেটাডেটা যাচাইয়ের ক্রমে দুটি আলাদা প্রশ্নের উত্তর পাওয়া উচিত: “এই লেখা কি সত্যিই দৃশ্যমান বিষয় বর্ণনা করছে?” এবং “এই লেখা কি নির্ধারিত প্ল্যাটফর্মে ঠিকভাবে ব্যবহার করা যাবে?” প্রশ্ন দুটি মিশিয়ে ফেললে ভুল সহজে চোখ এড়িয়ে যায়। একটি পরিপাটি শিরোনামেও বানানো স্থান থাকতে পারে, আবার নির্ভুল কীওয়ার্ডও ব্যর্থ হতে পারে যদি ফাইলের নাম না মেলে বা অ্যাকাউন্টের ভাষা ভুল হয়।\n\nআপলোডের আগে পুনরাবৃত্তিযোগ্য চূড়ান্ত যাচাই হিসেবে এই নির্দেশিকা ব্যবহার করুন। হাতে লেখা মেটাডেটা এবং MetaStocker দিয়ে প্রস্তুত সারি—উভয়ের ক্ষেত্রেই এটি কার্যকর। অ্যাপটি সম্পাদনাযোগ্য ফল তৈরি ও প্ল্যাটফর্ম-নির্দিষ্ট CSV ফাইল রপ্তানি করতে পারে, কিন্তু ফাইল আপলোড বা জমা দেয় না, গ্রহণযোগ্যতার নিশ্চয়তা দেয় না এবং মূল ফাইলে মেটাডেটা বসায় না। প্রতিটি সারি যাচাই করার দায়িত্ব অবদানকারীর।",
+    "sections": [
+      {
+        "heading": "১. আগে ফাইলের তালিকা স্থির করুন",
+        "paragraphs": [
+          "যে নির্দিষ্ট সম্পদগুলো জমা দিতে চান, সেগুলো দিয়েই শুরু করুন। প্রতিটি ফাইলের জন্য সাময়িক যাচাই-অবস্থা দিন: যাচাইয়ের জন্য প্রস্তুত, সংশোধন দরকার, অথবা ব্যাচ থেকে বাদ। ছবির চেয়ে আলাদা কোনো সাধারণ কীওয়ার্ড তালিকা যাচাই করবেন না; মেটাডেটা সঠিক ফাইলের সঙ্গে যুক্ত থাকতে হবে।",
+          "লেখা সম্পাদনার আগে ফাইলের নাম, এক্সটেনশন ও বানান পরীক্ষা করুন। CSV কর্মপ্রবাহে আপলোড করা সম্পদের সঙ্গে ফাইলের নাম, এক্সটেনশন ও বড়-ছোট হাতের অক্ষরসহ, মিলতে হবে। রপ্তানির পরে নাম বদলালে এই সংযোগ নষ্ট হতে পারে। চূড়ান্ত সম্পদের নাম এবং মিল থাকা মেটাডেটা ফাইল নিয়ে একটি সরল কাজের ফোল্ডার রাখুন।"
+        ],
+        "bullets": [
+          "শুধু থাম্বনেইল নয়, আসল প্রিভিউ খুলুন।",
+          "প্রতিটি মেটাডেটা সারির সঙ্গে একটি নির্ধারিত সম্পদ আছে কি না নিশ্চিত করুন।",
+          "একটি ব্যাচের বর্ণনার অধীনে সম্পর্কহীন ছবি মেশাবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "২. প্রথম ধাপ: ছবি ও লেখার তথ্য মিলিয়ে দেখুন",
+        "paragraphs": [
+          "ছবি বা পূর্ণ ভিডিও দেখার সময় শিরোনাম ও কীওয়ার্ড পড়ুন। প্রতিটি শব্দকে দৃশ্যমান, প্রসঙ্গ দ্বারা দৃঢ়ভাবে সমর্থিত, অথবা অনুমাননির্ভর হিসেবে চিহ্নিত করুন। দৃশ্যমান বিষয়, কাজ, পরিবেশ, বিন্যাস, রং ও ব্যবহারযোগ্য ধারণা রাখুন। অনুমান করতে হয় এমন দাবি বাদ দিন।",
+          "শুধু পিক্সেল দেখে কোনো ব্যক্তির পরিচয়, পেশা, জাতিগত পরিচয়, বয়স, মালিকানা, নির্দিষ্ট স্থান, রিলিজের অবস্থা, প্রজাতি বা ঘটনা অনুমান করবেন না। সম্পাদকীয় ক্যাপশনের ক্ষেত্রে তারিখ ও স্থান যাচাই করা দরকার। ভিডিওতে আরও সতর্কতা প্রয়োজন: নমুনা প্রিভিউতে কোনো বস্তু, কাজ বা দৃশ্যগত ত্রুটি বাদ পড়তে পারে, তাই পূর্ণ গতিচিত্র নিজে পরীক্ষা করুন।",
+          "একটি কার্যকর পরীক্ষা হলো মুছে দেখা: কোনো শব্দ বাদ দিলে বর্ণনা কম নির্দিষ্ট হয়ে গেলে সেটি রাখুন; ছবি একইভাবে বোঝা গেলে শব্দটি সত্যিই দরকার কি না ভাবুন। একই অর্থের পুনরাবৃত্তি এবং পৃথক ফাইলের সঙ্গে না-মেলা বিস্তৃত ট্যাগ শুধু অপ্রয়োজনীয়তা বাড়ায়।"
+        ],
+        "bullets": [
+          "অনিশ্চিত তথ্য চিহ্নিত করে দৃশ্যমান ভাষায় লিখুন।",
+          "যা দেখা যাচ্ছে তার সঙ্গে একবচন ও বহুবচন মিলিয়ে দেখুন।",
+          "ব্যাচে যোগ করা অতিরিক্ত ট্যাগও একে একে যাচাই করুন।"
+        ],
+        "example": "উদাহরণ: একটি ছবিতে কাঠের ডেস্কের ওপর বন্ধ নোটবুকের পাশে নীল জ্যামিতিক নকশার সিরামিক মগ দেখা যাচ্ছে। “ceramic mug”, “blue”, “geometric pattern”, “wooden desk”, “notebook” এবং “workspace” রাখুন। ছবি প্রমাণ না দিলে “coffee”, “office employee”, “handmade” বা “morning routine” এড়িয়ে চলুন।"
+      },
+      {
+        "heading": "৩. দ্বিতীয় ধাপ: প্ল্যাটফর্মের বিন্যাস পরীক্ষা করুন",
+        "paragraphs": [
+          "এবার ছবির বিচার থামিয়ে নির্ধারিত প্ল্যাটফর্মের নিয়ম দেখুন। প্ল্যাটফর্মভেদে সীমা ও প্রয়োজনীয়তা আলাদা, তাই একটি মেটাডেটা সেট প্রতিটি বাজারে মানানসই হবে—এমন ধরে নেবেন না। রপ্তানি বা আমদানির আগে বর্তমান অবদানকারী পোর্টাল পরীক্ষা করুন, কারণ নীতি ও আপলোডের পর্দা বদলাতে পারে।",
+          "Adobe Stock-এর কর্মপ্রবাহে অ্যাকাউন্টে নির্ধারিত মেটাডেটার ভাষা ব্যবহার করুন, সবচেয়ে গুরুত্বপূর্ণ শব্দ আগে রাখুন এবং সতর্কতামূলক সর্বোচ্চ ৪৯টি কীওয়ার্ডের মধ্যে থাকুন। বর্তমান CSV নির্দেশিকায় শিরোনামের সীমা ৭০ অক্ষর; আপলোডের পর্দাতেও তা যাচাই করুন। অন্য প্ল্যাটফর্মে ইংরেজি মেটাডেটা, ভিন্ন কীওয়ার্ড-সীমা, বিভাগ, ট্যাগ বা বর্ণনা প্রয়োজন হতে পারে। উদাহরণস্বরূপ, Shutterstock বর্তমানে ইংরেজি মেটাডেটা ও ৭–৫০টি প্রাসঙ্গিক কীওয়ার্ডের কথা জানায়, আর Envato-র প্রয়োজনীয়তা বিষয়বস্তুর ধরন অনুযায়ী বদলায়।",
+          "প্রত্যাখ্যাত বা সন্দেহজনক শব্দ স্বয়ংক্রিয়ভাবে বদলানোর বদলে পরীক্ষা করুন। প্ল্যাটফর্মের সতর্কতা প্রাসঙ্গিকতা যাচাই করার সংকেত, ছবিটি অনুপযুক্ত—এর প্রমাণ নয়। অপ্রাসঙ্গিক ব্র্যান্ডের নাম, পুনরাবৃত্ত ট্যাগ, অসমর্থিত দাবি এবং কীওয়ার্ড-তালিকার মতো শিরোনাম বাদ দিন। কোনো ওয়েবসাইটে বর্ণনামূলক পারিপার্শ্বিক লেখা ও অল্ট টেক্সট Google-এর ছবি খোঁজায় সাহায্য করে; এগুলো অভ্যন্তরীণ বাজার অনুসন্ধানের মেটাডেটা থেকে আলাদা।"
+        ],
+        "bullets": [
+          "অবদানকারী অ্যাকাউন্ট ও নির্দিষ্ট প্ল্যাটফর্মের ভাষা নিশ্চিত করুন।",
+          "পুনরাবৃত্তি ও যতিচিহ্নের সমস্যা বাদ দেওয়ার পর কীওয়ার্ড গুনুন।",
+          "শিরোনামের দৈর্ঘ্য, বিভাগ এবং প্ল্যাটফর্ম-নির্দিষ্ট কলাম পরীক্ষা করুন।",
+          "চূড়ান্ত সিদ্ধান্তে বর্তমান পোর্টালের নির্দেশনা ব্যবহার করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৪. কাজের উদাহরণ: একটি সারি সংশোধন করুন",
+        "paragraphs": [
+          "উদাহরণ: ওপরের মগের ছবির জন্য একটি ইংরেজি Adobe Stock সারি প্রস্তুত করছেন। প্রথম খসড়ায় লেখা: “Morning coffee in a cozy office” এবং কীওয়ার্ড: coffee, morning, office, mug, cup, blue, geometric, desk, notebook, business, employee, productivity।",
+          "ছবিটি coffee, morning, office, business setting, employee বা productivity প্রমাণ করে না। শিরোনামটি সংশোধন করে লিখুন: “Blue geometric ceramic mug beside notebook on wooden desk.” সংশোধিত কীওয়ার্ডগুলো সমর্থিত বিবরণে সীমিত রাখুন: ceramic mug, blue, geometric pattern, cup, wooden desk, notebook, workspace, still life, drinkware, tabletop, copy space। সবচেয়ে গুরুত্বপূর্ণ ধারণাগুলো আগে রাখুন এবং বাকিগুলো বাদ দিন।",
+          "এই সমঝোতাটি ইচ্ছাকৃত: সংশোধিত সারিটি সংকীর্ণ, কিন্তু বেশি সমর্থনযোগ্য। কল্পিত বিস্তৃত গল্প আকর্ষণীয় মনে হতে পারে, তবু তা ক্রেতাদের বিভ্রান্ত করতে এবং প্ল্যাটফর্মের যাচাইয়ে সমস্যা তৈরি করতে পারে। নির্ধারিত বাজারে ইংরেজি প্রয়োজন হলে, আপনার সম্পাদকীয় নোট বা নিবন্ধ রুশ ভাষায় হলেও এই মেটাডেটা ক্ষেত্রগুলো ইংরেজিতেই রাখুন।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "৫. ফাইলের নাম, CSV ও পোর্টালের প্রদর্শিত তথ্য পরীক্ষা করুন",
+        "paragraphs": [
+          "রপ্তানির আগে প্রতিটি সারি আসল সম্পদের নামের সঙ্গে অক্ষর ধরে মিলিয়ে দেখুন। CSV কর্মপ্রবাহে এক্সটেনশন অন্তর্ভুক্ত করুন এবং যেখানে প্রয়োজন, বড়-ছোট হাতের অক্ষর হুবহু বজায় রাখুন। রপ্তানি করা ফাইলটি সাধারণ লেখা হিসেবে বা স্প্রেডশিটে খুলে বিভাজক, উদ্ধৃতি চিহ্ন, লাইন-বিরতি, খালি ক্ষেত্র এবং বর্ণনার ভেতরের কমা পরীক্ষা করুন।",
+          "CSV আমদানি করাই যাচাইয়ের শেষ নয়। প্ল্যাটফর্মে যে ক্রম প্রয়োজন, সে অনুযায়ী আগে সম্পদ আপলোড করুন; তারপর অবদানকারী পোর্টালে তৈরি হওয়া মেটাডেটা দেখুন। পোর্টালে প্রদর্শিত তথ্যকে অনুমোদিত শিরোনাম, কীওয়ার্ড, বিভাগ ও রিলিজ-সম্পর্কিত ক্ষেত্রের সঙ্গে মিলিয়ে দেখুন। বদলে যাওয়া, কেটে যাওয়া, প্রত্যাখ্যাত বা ভুল ফাইলে যুক্ত হওয়া যেকোনো তথ্য সংশোধন করুন।",
+          "আমদানি সফল হলেই গ্রহণযোগ্যতা নিশ্চিত হয়েছে—এমন ধরে নেবেন না। পোর্টালে প্রত্যাশিত মান দেখা যাওয়া এবং প্ল্যাটফর্মের নিজস্ব যাচাইয়ের জন্য জমা প্রস্তুত হওয়া পর্যন্ত অনুমোদিত কাজের কপি রাখুন।"
+        ],
+        "bullets": [
+          "রপ্তানি ও আমদানির পর সম্পদ-সারি মিল আছে কি না যাচাই করুন।",
+          "শুধু স্থানীয় CSV নয়, পোর্টালের ক্ষেত্রগুলো পড়ুন।",
+          "সীমা বা ক্ষেত্র বদলেছে কি না জানতে বর্তমান পোর্টালের নির্দেশনা দেখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৬. চূড়ান্ত থামার নিয়ম ব্যবহার করুন",
+        "paragraphs": [
+          "দুই ধাপের যাচাই পাস করা সারিই কেবল রপ্তানি করুন। কোনো তথ্য অনিশ্চিত হলে থামুন এবং দৃশ্যমান ভাষায় পুনর্লিখুন অথবা বাদ দিন। কোনো বিন্যাসের নিয়ম অস্পষ্ট হলে ফাইল পাঠানোর আগে বর্তমান প্ল্যাটফর্মের নির্দেশনা দেখুন। অনুমানের ওপর তৈরি ভিড়ভাট্টা সারির চেয়ে ছোট ও নির্ভুল মেটাডেটা সেট যাচাই করা সহজ।",
+          "MetaStocker খসড়া তৈরিতে সাহায্য করলে প্রতিটি ফাইলের সম্পাদনাযোগ্য ফল পর্যালোচনা করুন। স্থানীয় প্রক্রিয়াকরণ দর্শকের ব্রাউজারে চলে, কিন্তু মডেল লোড হওয়া ও ব্রাউজারের ক্যাশ আলাদা বিষয়; স্থানীয়ভাবে তৈরি হওয়া মানুষের পর্যালোচনার প্রয়োজন দূর করে না। রপ্তানিকারক ফাইল প্রস্তুত করে; জমা দেয় না এবং ট্যাব বন্ধ হলে অসংরক্ষিত কাজও ধরে রাখে না।"
+        ],
+        "bullets": [
+          "প্রথম ধাপ: প্রতিটি শব্দ সম্পদ দ্বারা সমর্থিত।",
+          "দ্বিতীয় ধাপ: প্রতিটি ক্ষেত্র বর্তমান গন্তব্যের উপযোগী।",
+          "পোর্টাল-পুনঃপাঠ: পোর্টালে নির্ধারিত মান দেখা যাচ্ছে।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "প্রযোজ্য ক্ষেত্রে পূর্ণ ভিডিওর গতিসহ চূড়ান্ত সম্পদ পর্যালোচনা করেছি।",
+      "প্রতিটি শিরোনাম ও কীওয়ার্ড দৃশ্যমান বা যাচাইকৃত তথ্য বর্ণনা করে।",
+      "অনুমান করা পরিচয়, স্থান, রিলিজ, প্রজাতি, ব্র্যান্ড ও ঘটনা বাদ দিয়েছি।",
+      "মেটাডেটার ভাষা নির্ধারিত অ্যাকাউন্ট বা প্ল্যাটফর্মের সঙ্গে মেলে।",
+      "শিরোনাম, কীওয়ার্ডের সংখ্যা, বিভাগ ও ক্ষেত্র বর্তমান পোর্টালের নিয়ম পূরণ করে।",
+      "প্রয়োজন অনুযায়ী এক্সটেনশন ও বড়-ছোট হাতের অক্ষরসহ ফাইলের নাম হুবহু মেলে।",
+      "CSV-এর গঠন পরীক্ষা করেছি এবং শুধু প্রস্তুত সারি রপ্তানি করেছি।",
+      "আমদানির পর পোর্টালে প্রদর্শিত তথ্য পরীক্ষা করেছি।",
+      "বুঝেছি যে আমদানি বা রপ্তানি গ্রহণযোগ্যতার নিশ্চয়তা দেয় না।"
+    ],
+    "illustration": {
+      "title": "দুই ধাপে মেটাডেটা যাচাই",
+      "steps": [
+        {
+          "label": "সম্পদ পরীক্ষা করুন",
+          "detail": "শুধু দৃশ্যমান বা স্বতন্ত্রভাবে যাচাইকৃত তথ্য নথিভুক্ত করুন।"
+        },
+        {
+          "label": "সারি যাচাই করুন",
+          "detail": "ভাষা, সীমা, প্রত্যাখ্যাত শব্দ ও ফাইলের নামের মিল পরীক্ষা করুন।"
+        },
+        {
+          "label": "পোর্টাল পড়ুন",
+          "detail": "চূড়ান্ত জমার সিদ্ধান্তের আগে আমদানি করা ক্ষেত্র মিলিয়ে দেখুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "अपलोड से पहले स्टॉक मेटाडेटा गुणवत्ता जाँच सूची",
+    "description": "स्टॉक फ़ाइलों की मेटाडेटा जाँच दो चरणों में करें: पहले छवि के तथ्यों की पुष्टि करें, फिर भाषा, फ़ाइल नाम, कीवर्ड और पोर्टल में दिखे डेटा जाँचें।",
+    "intro": "मेटाडेटा जाँच को क्रम से दो अलग सवालों का जवाब देना चाहिए: “क्या यह पाठ वास्तव में दिखाई देने वाली चीज़ का वर्णन करता है?” और “क्या यह पाठ चुने गए प्लेटफ़ॉर्म पर सही ढंग से काम करेगा?” इन सवालों को मिला देने पर गलतियाँ आसानी से छूट जाती हैं। एक सधा हुआ शीर्षक भी गढ़ी हुई जगह का उल्लेख कर सकता है, जबकि सटीक कीवर्ड भी विफल हो सकते हैं यदि फ़ाइल नाम मेल न खाए या खाते की भाषा गलत हो।\n\nअपलोड से पहले इसे दोहराई जा सकने वाली अंतिम जाँच के रूप में इस्तेमाल करें। यह हाथ से लिखे मेटाडेटा और MetaStocker से तैयार की गई पंक्तियों—दोनों के लिए उपयोगी है। ऐप संपादन योग्य परिणाम बना सकता है और प्लेटफ़ॉर्म-विशिष्ट CSV फ़ाइलें निर्यात कर सकता है, लेकिन उन्हें अपलोड या सबमिट नहीं करता, स्वीकृति की गारंटी नहीं देता और मूल फ़ाइलों में मेटाडेटा एम्बेड नहीं करता। हर पंक्ति जाँचने की ज़िम्मेदारी योगदानकर्ता की है।",
+    "sections": [
+      {
+        "heading": "१. पहले फ़ाइलों की सूची स्थिर करें",
+        "paragraphs": [
+          "जिन सटीक संसाधनों को सबमिट करना है, उन्हीं से शुरू करें। हर फ़ाइल को अस्थायी जाँच स्थिति दें: जाँच के लिए तैयार, सुधार आवश्यक, या बैच से हटाएँ। किसी सामान्य कीवर्ड सूची को उसकी छवि से अलग जाँच न करें; मेटाडेटा सही फ़ाइल से जुड़ा रहना चाहिए।",
+          "पाठ संपादित करने से पहले फ़ाइल नाम, एक्सटेंशन और वर्तनी जाँचें। CSV कार्यप्रवाह में अपलोड किए गए संसाधन का फ़ाइल नाम, एक्सटेंशन और बड़े-छोटे अक्षरों सहित, मेल खाना चाहिए। निर्यात के बाद फ़ाइल का नाम बदलने से यह संबंध टूट सकता है। अंतिम संसाधन नामों और उनसे मेल खाती मेटाडेटा फ़ाइल वाला सरल कार्य फ़ोल्डर रखें।"
+        ],
+        "bullets": [
+          "केवल थंबनेल नहीं, वास्तविक प्रीव्यू खोलें।",
+          "पुष्टि करें कि हर मेटाडेटा पंक्ति के लिए एक निर्धारित संसाधन है।",
+          "एक ही बैच विवरण में असंबंधित छवियाँ न मिलाएँ।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "२. पहला चरण: छवि और पाठ के तथ्यों की जाँच करें",
+        "paragraphs": [
+          "छवि या पूरा वीडियो देखते हुए शीर्षक और कीवर्ड पढ़ें। हर शब्द को दिखाई देने वाला, संदर्भ से मज़बूती से समर्थित, या अनुमान पर आधारित चिह्नित करें। दिखाई देने वाले विषय, क्रिया, परिवेश, संरचना, रंग और उपयोगी अवधारणाएँ रखें। ऐसे दावे हटाएँ जिनके लिए अनुमान लगाना पड़े।",
+          "केवल पिक्सेल के आधार पर किसी व्यक्ति की पहचान, पेशा, जातीयता, उम्र, स्वामित्व, सटीक स्थान, रिलीज़ की स्थिति, प्रजाति या घटना का अनुमान न लगाएँ। संपादकीय कैप्शन में तारीख और स्थान का सत्यापन आवश्यक है। वीडियो में अतिरिक्त सावधानी रखें: नमूना प्रीव्यू में कोई वस्तु, क्रिया या दृश्य दोष छूट सकता है, इसलिए पूरी गति स्वयं जाँचें।",
+          "एक उपयोगी परीक्षण हटाने का है: कोई शब्द हटाने पर विवरण कम सटीक हो जाए तो उसे रखें; यदि छवि उतनी ही समझ में आती रहे तो सोचें कि वह शब्द आवश्यक है या नहीं। दोहराए गए समानार्थी शब्द और अलग-अलग फ़ाइल से मेल न खाने वाले व्यापक टैग केवल शोर बढ़ाते हैं।"
+        ],
+        "bullets": [
+          "अनिश्चित तथ्यों को चिह्नित करके उन्हें दिखाई देने वाली भाषा में बदलें।",
+          "दिखाई गई चीज़ के अनुसार एकवचन और बहुवचन जाँचें।",
+          "बैच में जोड़े गए अतिरिक्त टैग भी एक-एक करके जाँचें।"
+        ],
+        "example": "उदाहरण: एक तस्वीर में लकड़ी की मेज़ पर बंद नोटबुक के पास नीले ज्यामितीय पैटर्न वाला सिरेमिक मग दिखाई देता है। “ceramic mug”, “blue”, “geometric pattern”, “wooden desk”, “notebook” और “workspace” रखें। जब तक छवि प्रमाण न दे, “coffee”, “office employee”, “handmade” या “morning routine” से बचें।"
+      },
+      {
+        "heading": "३. दूसरा चरण: प्लेटफ़ॉर्म का प्रारूप जाँचें",
+        "paragraphs": [
+          "अब तस्वीर का मूल्यांकन रोककर गंतव्य प्लेटफ़ॉर्म के नियम देखें। प्लेटफ़ॉर्म की सीमाएँ और आवश्यकताएँ अलग होती हैं, इसलिए यह न मानें कि एक ही मेटाडेटा सेट हर बाज़ार के लिए उपयुक्त होगा। निर्यात या आयात से पहले वर्तमान योगदानकर्ता पोर्टल जाँचें, क्योंकि नीतियाँ और अपलोड स्क्रीन बदल सकती हैं।",
+          "Adobe Stock कार्यप्रवाह में खाते के लिए आवश्यक मेटाडेटा भाषा इस्तेमाल करें, सबसे महत्वपूर्ण शब्द पहले रखें और सावधानीपूर्ण अधिकतम ४९ कीवर्ड के भीतर रहें। वर्तमान CSV निर्देश में शीर्षक की सीमा ७० अक्षर दी गई है; अपलोड स्क्रीन पर भी इसे सत्यापित करें। अन्य प्लेटफ़ॉर्म पर अंग्रेज़ी मेटाडेटा, अलग कीवर्ड सीमाएँ, श्रेणियाँ, टैग या विवरण आवश्यक हो सकते हैं। उदाहरण के लिए, Shutterstock वर्तमान में अंग्रेज़ी मेटाडेटा और ७–५० प्रासंगिक कीवर्ड बताता है, जबकि Envato की आवश्यकताएँ सामग्री के प्रकार के अनुसार बदलती हैं।",
+          "अस्वीकृत या संदिग्ध शब्दों को अपने-आप बदलने के बजाय जाँचें। प्लेटफ़ॉर्म की चेतावनी प्रासंगिकता सत्यापित करने का संकेत है, यह प्रमाण नहीं कि छवि अनुपयुक्त है। अप्रासंगिक ब्रांड नाम, दोहराए गए टैग, असमर्थित दावे और कीवर्ड-सूची जैसे शीर्षक हटाएँ। वेबसाइट पर आसपास का वर्णनात्मक पाठ और alt text Google की छवि खोज में सहायक होते हैं; वे आंतरिक मार्केटप्लेस खोज मेटाडेटा से अलग हैं।"
+        ],
+        "bullets": [
+          "योगदानकर्ता खाते और लक्षित प्लेटफ़ॉर्म की भाषा की पुष्टि करें।",
+          "दोहराव और विराम-चिह्न की समस्याएँ हटाने के बाद कीवर्ड गिनें।",
+          "शीर्षक की लंबाई, श्रेणी फ़ील्ड और प्लेटफ़ॉर्म-विशिष्ट कॉलम जाँचें।",
+          "अंतिम निर्णय के लिए वर्तमान पोर्टल निर्देशों का उपयोग करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "४. काम किया हुआ उदाहरण: एक पंक्ति सुधारें",
+        "paragraphs": [
+          "उदाहरण: आप ऊपर दी गई मग की छवि के लिए अंग्रेज़ी Adobe Stock पंक्ति तैयार कर रहे हैं। पहला मसौदा है: “Morning coffee in a cozy office” और कीवर्ड हैं: coffee, morning, office, mug, cup, blue, geometric, desk, notebook, business, employee, productivity।",
+          "छवि coffee, morning, office, business setting, employee या productivity सिद्ध नहीं करती। शीर्षक को बदलकर लिखें: “Blue geometric ceramic mug beside notebook on wooden desk.” संशोधित कीवर्ड समर्थित विवरणों तक सीमित रखें: ceramic mug, blue, geometric pattern, cup, wooden desk, notebook, workspace, still life, drinkware, tabletop, copy space। सबसे महत्वपूर्ण अवधारणाएँ पहले रखें और बाकी हटा दें।",
+          "यह समझौता जानबूझकर किया गया है: संशोधित पंक्ति संकरी है, लेकिन अधिक बचाव योग्य है। कल्पित व्यापक कहानी आकर्षक लग सकती है, फिर भी वह खरीदारों को गुमराह कर सकती है और प्लेटफ़ॉर्म जाँच में समस्या पैदा कर सकती है। यदि लक्षित मार्केटप्लेस में अंग्रेज़ी आवश्यक है, तो आपके संपादकीय नोट या लेख रूसी में होने पर भी इन मेटाडेटा फ़ील्ड को अंग्रेज़ी में रखें।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "५. फ़ाइल नाम, CSV और पोर्टल में दिखे डेटा की जाँच करें",
+        "paragraphs": [
+          "निर्यात से पहले हर पंक्ति की वास्तविक संसाधन नाम से अक्षर-दर-अक्षर तुलना करें। CSV कार्यप्रवाह में एक्सटेंशन शामिल करें और जहाँ आवश्यक हो, बड़े-छोटे अक्षर बिल्कुल उसी तरह रखें। निर्यात की गई फ़ाइल को सादे पाठ के रूप में या स्प्रेडशीट में खोलकर विभाजक, उद्धरण चिह्न, पंक्ति-विराम, खाली फ़ील्ड और विवरणों के भीतर के अल्पविराम जाँचें।",
+          "CSV आयात करना जाँच का अंत नहीं है। जहाँ प्लेटफ़ॉर्म उस क्रम की माँग करे, वहाँ पहले संसाधन अपलोड करें; फिर योगदानकर्ता पोर्टल में बने मेटाडेटा का निरीक्षण करें। पोर्टल में वापस दिखे डेटा की तुलना स्वीकृत शीर्षक, कीवर्ड, श्रेणी और रिलीज़-संबंधी फ़ील्ड से करें। जो कुछ बदला, काटा, अस्वीकार हुआ या गलत फ़ाइल से जुड़ा हो, उसे सुधारें।",
+          "सफल आयात का अर्थ स्वीकृति नहीं है। जब तक पोर्टल अपेक्षित मान न दिखाए और सबमिशन प्लेटफ़ॉर्म की अपनी जाँच के लिए तैयार न हो जाए, तब तक स्वीकृत कार्य प्रति सुरक्षित रखें।"
+        ],
+        "bullets": [
+          "निर्यात और आयात के बाद संसाधन और पंक्ति का मिलान जाँचें।",
+          "केवल स्थानीय CSV नहीं, पोर्टल के फ़ील्ड पढ़ें।",
+          "बदली हुई सीमाओं या फ़ील्ड के लिए वर्तमान पोर्टल निर्देश जाँचें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "६. अंतिम रोक नियम अपनाएँ",
+        "paragraphs": [
+          "केवल वे पंक्तियाँ निर्यात करें जो दोनों जाँचों में सफल हों। यदि कोई तथ्य अनिश्चित है, तो रुकें और उसे दिखाई देने वाली भाषा में फिर लिखें या हटा दें। यदि प्रारूप का कोई नियम स्पष्ट न हो, तो फ़ाइल भेजने से पहले वर्तमान प्लेटफ़ॉर्म निर्देश देखें। अनुमानों से भरी पंक्ति की तुलना में छोटा और सटीक मेटाडेटा सेट जाँचना आसान है।",
+          "यदि MetaStocker ने मसौदा तैयार करने में सहायता की है, तो हर फ़ाइल के संपादन योग्य परिणाम की समीक्षा करें। स्थानीय प्रोसेसिंग विज़िटर के ब्राउज़र में चलती है, लेकिन मॉडल लोड होना और ब्राउज़र कैश अलग बातें हैं; स्थानीय निर्माण से मानवीय जाँच की आवश्यकता समाप्त नहीं होती। निर्यातक फ़ाइलें तैयार करता है; उन्हें सबमिट नहीं करता और टैब बंद होने के बाद बिना सहेजे काम को सुरक्षित नहीं रखता।"
+        ],
+        "bullets": [
+          "पहला चरण: हर शब्द संसाधन से समर्थित है।",
+          "दूसरा चरण: हर फ़ील्ड वर्तमान गंतव्य के अनुकूल है।",
+          "पोर्टल-पुनर्पाठ: पोर्टल इच्छित मान दिखाता है।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "जहाँ लागू हो, पूरे वीडियो की गति सहित अंतिम संसाधन की समीक्षा की।",
+      "हर शीर्षक और कीवर्ड दिखाई देने वाली या सत्यापित जानकारी का वर्णन करता है।",
+      "मैंने अनुमानित पहचान, स्थान, रिलीज़, प्रजाति, ब्रांड और घटनाएँ हटा दीं।",
+      "मेटाडेटा भाषा लक्षित खाते या प्लेटफ़ॉर्म से मेल खाती है।",
+      "शीर्षक, कीवर्ड संख्या, श्रेणी और फ़ील्ड वर्तमान पोर्टल नियमों के अनुरूप हैं।",
+      "जहाँ आवश्यक हो, एक्सटेंशन और बड़े-छोटे अक्षरों सहित फ़ाइल नाम बिल्कुल मेल खाते हैं।",
+      "मैंने CSV संरचना जाँची और केवल तैयार पंक्तियाँ निर्यात कीं।",
+      "मैंने आयात के बाद पोर्टल में वापस दिखे डेटा की जाँच की।",
+      "मैं समझता/समझती हूँ कि आयात या निर्यात स्वीकृति की गारंटी नहीं देता।"
+    ],
+    "illustration": {
+      "title": "दो चरणों वाली मेटाडेटा जाँच",
+      "steps": [
+        {
+          "label": "संसाधन का निरीक्षण करें",
+          "detail": "केवल दिखाई देने वाले या स्वतंत्र रूप से सत्यापित तथ्यों को दर्ज करें।"
+        },
+        {
+          "label": "पंक्ति सत्यापित करें",
+          "detail": "भाषा, सीमाएँ, अस्वीकृत शब्द और फ़ाइल नाम का मिलान जाँचें।"
+        },
+        {
+          "label": "पोर्टल पढ़ें",
+          "detail": "अंतिम सबमिशन निर्णय से पहले आयात किए गए फ़ील्ड की तुलना करें।"
+        }
+      ]
+    }
+  }
+}

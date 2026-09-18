@@ -1,0 +1,455 @@
+{
+  "slug": "stock-csv-filename-mismatch",
+  "category": "exports",
+  "source_ids": [
+    "metastocker",
+    "adobe-csv",
+    "adobe-upload"
+  ],
+  "en": {
+    "title": "Fix Stock Metadata CSV Filename Mismatches",
+    "description": "Diagnose case, extension, and duplicate-name errors before importing stock metadata, while protecting originals and keeping every CSV row one-to-one.",
+    "intro": "A metadata CSV can contain excellent titles and keywords yet fail to attach them to the right stock files. The usual cause is a filename mismatch: the CSV says img_042.jpg while the uploaded asset is IMG_042.JPG, or two folders contain different images that share the same name. Treat the filename as an identity key, not as decoration. This guide shows how to reconcile names safely, preserve original files, and create a one-to-one mapping you can inspect before import.\n\nThe exact rules depend on the marketplace and content type. Adobe Stock requires the filename, including extension and case, to match the uploaded asset when importing a CSV. Upload the assets first, then import the CSV and inspect the resulting metadata in the contributor portal. Requirements can change, so check the current contributor upload screen before preparing a final file.",
+    "sections": [
+      {
+        "heading": "1. Separate the three names involved",
+        "paragraphs": [
+          "Start by distinguishing the original filename, the upload filename, and the CSV filename. They may be identical, but they do not have to be if you intentionally create a controlled export copy. The important rule is that the CSV name must exactly identify the asset that the marketplace sees.",
+          "A filename comparison normally includes the full extension and letter case. IMG_042.JPG, img_042.jpg, and IMG_042.jpeg are different strings even if they refer to visually similar files. A basename comparison alone can hide a problem, so record both the basename and extension."
+        ],
+        "bullets": [
+          "Original: the untouched source file kept for safety.",
+          "Export copy: the file prepared for a marketplace upload.",
+          "CSV key: the exact filename written in the metadata row."
+        ],
+        "example": "Original file: IMG_042.JPG\nCSV key: img_042.jpg\nDiagnosis: basename differs in case, extension differs in case and spelling."
+      },
+      {
+        "heading": "2. Build an inventory before renaming",
+        "paragraphs": [
+          "Make a small inventory of every asset you intend to upload. Include its folder, original filename, extension, and a stable internal note such as a sequence number. Do not rely on a folder name to distinguish files: marketplaces and CSV formats commonly use the filename field, not your local folder path.",
+          "If two folders contain IMG_042.JPG, they are two separate candidates with the same visible key. Decide which image is which by opening the files and recording a meaningful description. If available in your workflow, a checksum or file-specific internal ID can help you verify that a renamed copy still corresponds to the intended original."
+        ],
+        "bullets": [
+          "List every duplicate basename across all source folders.",
+          "Open ambiguous files before assigning metadata.",
+          "Keep the inventory outside the CSV so it remains an audit record."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "3. Choose a collision-safe naming plan",
+        "paragraphs": [
+          "The safest plan is usually to leave originals untouched and create uniquely named export copies. Add a controlled distinguishing token when duplicate names occur, such as a project code or sequence: coastal-lighthouse-042-a.jpg and coastal-lighthouse-042-b.jpg. Keep names readable and consistent, but do not put keywords into a filename as a substitute for accurate metadata.",
+          "If the marketplace expects an existing filename and you do not need to rename anything, preserve the exact spelling and extension in the CSV. If you do rename export copies, rename or copy the files first, then generate the CSV from the final export inventory. Never manually change only the CSV name while leaving the asset unchanged."
+        ],
+        "bullets": [
+          "Use one export filename per physical asset.",
+          "Avoid spaces or punctuation only when your own workflow makes them risky; do not assume a universal naming rule.",
+          "Record old-to-new names before exporting."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. Worked example: two folders, one IMG_042",
+        "paragraphs": [
+          "Example: folder A contains a daylight lighthouse image named IMG_042.JPG. Folder B contains a dusk lighthouse image with the same filename. A draft CSV has one row called img_042.jpg, so it cannot safely represent both files. The first row is ambiguous, and its case and extension also fail an exact-match check.",
+          "I would keep both originals unchanged and create two upload copies with unique names. I would then attach each title and keyword set to the matching export copy, not to the original basename. The decision favors traceability over short names: the suffix identifies the source set, while the visual descriptions distinguish daylight from dusk. Before import, I would compare the export directory and CSV keys as two sets and investigate any missing, extra, or repeated key."
+        ],
+        "bullets": [
+          "Daylight source becomes lighthouse-coast-day-042-a.JPG.",
+          "Dusk source becomes lighthouse-coast-dusk-042-b.JPG.",
+          "CSV rows use those exact names, including .JPG and case."
+        ],
+        "example": "CSV sample\nfilename,title,keywords\nlighthouse-coast-day-042-a.JPG,Daylight lighthouse on a rocky coast,\"lighthouse, coast, daylight, rocks, navigation\"\nlighthouse-coast-dusk-042-b.JPG,Lighthouse by the coast at dusk,\"lighthouse, coast, dusk, sea, architecture\""
+      },
+      {
+        "heading": "5. Reconcile the CSV before upload",
+        "paragraphs": [
+          "Perform four checks: every intended export file appears once; every CSV filename matches one file exactly; no CSV key is repeated; and no row points to an old or missing extension. Sort both lists by exact filename to make visual comparison easier. Also check that titles and keywords belong to the correct image rather than merely to the correct name.",
+          "For Adobe Stock, upload the assets before importing the CSV, then inspect the metadata in the contributor portal. Keep the portal's current limits in view: the CSV documentation gives a 70-character title limit, while a conservative keyword maximum is 49. These limits do not make a filename valid, so validate identity separately."
+        ],
+        "bullets": [
+          "Match full filename strings, not basenames alone.",
+          "Check duplicate rows and duplicate export files.",
+          "Inspect imported fields before continuing with submission decisions."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Protect originals and correct failures",
+        "paragraphs": [
+          "Do not embed new metadata into the original files as part of this repair. Keep the untouched originals, the renamed export copies, the inventory, and the final CSV in clearly separate locations. If an import attaches a row incorrectly, stop and correct the mapping rather than trying to compensate with more keywords.",
+          "A local generator such as MetaStocker can produce marketplace-specific CSV outputs, but its exporter does not upload files or embed metadata into originals. Review editable results and export only ready rows. If you use its local mode, the model runs in your browser after the required model download; that model memory is different from downloaded browser cache. The filename audit remains your responsibility."
+        ],
+        "bullets": [
+          "Archive the original-to-export mapping with the project.",
+          "Regenerate the CSV after any export rename.",
+          "Check the marketplace portal and current contributor policy before final import."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Keep every original file unchanged.",
+      "Inventory folders, filenames, extensions, and duplicate names.",
+      "Create one unique export filename for each asset.",
+      "Use exact case and extension in every CSV row.",
+      "Verify that each CSV key maps to one and only one uploaded file.",
+      "Inspect imported metadata in the marketplace portal.",
+      "Check current marketplace CSV and contributor requirements before finalizing."
+    ],
+    "illustration": {
+      "title": "Three-step filename reconciliation",
+      "steps": [
+        {
+          "label": "Inventory exact identities",
+          "detail": "Record folder, original name, extension, and duplicate candidates."
+        },
+        {
+          "label": "Create unique export copies",
+          "detail": "Preserve originals and assign one collision-safe name per asset."
+        },
+        {
+          "label": "Audit the CSV mapping",
+          "detail": "Match exact keys once, then inspect imported metadata in the portal."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как исправить несовпадение имён в CSV для стоков",
+    "description": "Проверьте регистр, расширения и дубликаты имён перед импортом метаданных, сохранив оригиналы и связь каждой строки CSV с одним файлом.",
+    "intro": "CSV может содержать хорошие заголовки и ключевые слова, но не примениться к нужным стоковым файлам. Частая причина — несовпадение имени: в CSV указано img_042.jpg, а загружен файл IMG_042.JPG. Другая проблема возникает, когда в разных папках лежат два файла с одинаковым именем. Имя нужно рассматривать как ключ идентификации, а не как подпись. Ниже — практический способ сверить имена, сохранить оригиналы и получить однозначное соответствие один к одному.\n\nПравила зависят от площадки и типа контента. Для импорта CSV в Adobe Stock имя вместе с расширением и регистром должно совпадать с загруженным файлом. Сначала загружают файлы, затем импортируют CSV и проверяют результат в кабинете автора. Перед рабочим импортом откройте актуальные требования площадки: они могут измениться.",
+    "sections": [
+      {
+        "heading": "1. Разделите три типа имён",
+        "paragraphs": [
+          "Сначала различите имя оригинала, имя подготовленной копии и имя, записанное в CSV. Они могут совпадать, но при устранении дублей безопаснее создать отдельные экспортные копии. Главное — чтобы ключ CSV точно указывал на файл, который увидит площадка.",
+          "Сравнивайте полную строку имени: basename, расширение и регистр. IMG_042.JPG, img_042.jpg и IMG_042.jpeg — разные строки, даже если изображения похожи. Проверка только basename скрывает часть ошибок."
+        ],
+        "bullets": [
+          "Оригинал — нетронутый исходный файл.",
+          "Экспортная копия — файл для загрузки на площадку.",
+          "Ключ CSV — точное имя в строке метаданных."
+        ],
+        "example": "Оригинал: IMG_042.JPG\nКлюч CSV: img_042.jpg\nПроблема: отличается регистр и запись расширения."
+      },
+      {
+        "heading": "2. Составьте инвентаризацию",
+        "paragraphs": [
+          "Перед переименованием создайте список всех файлов для загрузки. Запишите папку, исходное имя, расширение и внутренний номер или заметку. Не рассчитывайте на путь к папке как на идентификатор: CSV обычно сопоставляет строку с именем файла, а не с вашей локальной структурой каталогов.",
+          "Если в двух папках есть IMG_042.JPG, перед вами два разных кандидата с одним ключом. Откройте оба изображения и опишите различие. Внутренний идентификатор или контрольная сумма, если они есть в вашем процессе, помогут убедиться, что копия соответствует нужному оригиналу."
+        ],
+        "bullets": [
+          "Найдите одинаковые имена во всех исходных папках.",
+          "Откройте неоднозначные файлы до назначения метаданных.",
+          "Храните инвентаризацию отдельно от CSV как журнал проверки."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "3. Выберите план без коллизий",
+        "paragraphs": [
+          "Обычно безопаснее оставить оригиналы без изменений и подготовить уникальные копии для экспорта. Добавьте короткий контролируемый признак: например, project-042-a.jpg и project-042-b.jpg. Имена должны быть последовательными и понятными, но не заменяйте ими точные ключевые слова.",
+          "Если переименование не требуется, сохраните исходное написание и расширение в CSV. Если вы переименовали экспортные копии, сначала сформируйте окончательную папку файлов, а уже затем CSV. Нельзя исправить имя только в таблице и ожидать, что площадка найдёт файл с другим именем."
+        ],
+        "bullets": [
+          "Одна физическая единица контента — одно экспортное имя.",
+          "В наборе для одного экспорта или загрузки имена должны быть уникальны. Оригиналы с одинаковыми именами в разных исходных папках можно оставить без изменений.",
+          "Зафиксируйте соответствие старого и нового имени."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. Практический пример с двумя папками",
+        "paragraphs": [
+          "Пример: в папке A находится дневной снимок маяка IMG_042.JPG. В папке B — вечерний снимок того же маяка с тем же именем. В черновике CSV есть строка img_042.jpg, поэтому она не может однозначно описывать оба файла. Здесь одновременно присутствуют дубль и несовпадение регистра с расширением.",
+          "Я бы оставил оба оригинала нетронутыми и создал две уникальные копии. Затем привязал бы описание и ключевые слова к конкретной копии, а не к старому basename. Такой вариант длиннее, зато показывает происхождение файла и различает содержание. Перед импортом я бы сравнил список экспортных файлов со списком ключей CSV и проверил отсутствующие, лишние и повторяющиеся строки."
+        ],
+        "bullets": [
+          "Дневная копия: lighthouse-coast-day-042-a.JPG.",
+          "Вечерняя копия: lighthouse-coast-dusk-042-b.JPG.",
+          "В CSV используются эти имена полностью, включая .JPG и регистр."
+        ],
+        "example": "Пример CSV\nfilename,title,keywords\nlighthouse-coast-day-042-a.JPG,Daylight lighthouse on a rocky coast,\"lighthouse, coast, daylight, rocks, navigation\"\nlighthouse-coast-dusk-042-b.JPG,Lighthouse by the coast at dusk,\"lighthouse, coast, dusk, sea, architecture\""
+      },
+      {
+        "heading": "5. Проверьте CSV до загрузки",
+        "paragraphs": [
+          "Выполните четыре проверки: каждый нужный экспортный файл встречается один раз; каждое имя CSV точно совпадает с одним файлом; повторяющихся ключей нет; старые расширения и имена не остались в строках. Отсортируйте оба списка по полному имени — так проще заметить расхождения. Заодно проверьте, что заголовок и ключевые слова относятся к правильному изображению.",
+          "Для Adobe Stock сначала загружают файлы, потом импортируют CSV, а после этого проверяют поля в кабинете автора. Учитывайте текущие ограничения: документация CSV указывает предел заголовка 70 символов, а консервативный максимум ключевых слов — 49. Эти ограничения не заменяют отдельную проверку имён."
+        ],
+        "bullets": [
+          "Сверяйте полные строки, а не только basename.",
+          "Ищите повторяющиеся строки и файлы.",
+          "После импорта проверьте, куда попали поля метаданных."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Сохраните оригиналы и исправляйте спокойно",
+        "paragraphs": [
+          "Не встраивайте исправленные метаданные в оригинальные файлы в рамках этой операции. Храните отдельно оригиналы, экспортные копии, таблицу соответствий и итоговый CSV. Если импорт применил строку не к тому изображению, остановитесь и исправьте связь, а не пытайтесь компенсировать ошибку дополнительными ключевыми словами.",
+          "MetaStocker может подготовить CSV для нескольких площадок, но его экспортёр не загружает файлы и не встраивает метаданные в оригиналы. Результаты нужно проверить и экспортировать только готовыми строками. В локальном режиме модель выполняется в браузере после необходимой загрузки модели; память загруженной модели — не то же самое, что кэш браузера. Проверка имён всё равно остаётся вашей задачей."
+        ],
+        "bullets": [
+          "Сохраните таблицу «оригинал — экспортная копия».",
+          "После каждого переименования создавайте CSV заново.",
+          "Перед импортом проверьте актуальные требования площадки."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Оставьте все оригиналы без изменений.",
+      "Составьте список папок, имён, расширений и дублей.",
+      "Создайте уникальное экспортное имя для каждого файла.",
+      "Сохраняйте точный регистр и расширение в каждой строке CSV.",
+      "Убедитесь, что один ключ CSV соответствует ровно одному файлу.",
+      "Проверьте импортированные метаданные в кабинете площадки.",
+      "Перед финальным импортом откройте актуальные правила CSV."
+    ],
+    "illustration": {
+      "title": "Три шага сверки имён",
+      "steps": [
+        {
+          "label": "Составьте точный список",
+          "detail": "Запишите папку, исходное имя, расширение и кандидатов-дублей."
+        },
+        {
+          "label": "Создайте уникальные копии",
+          "detail": "Сохраните оригиналы и дайте каждому файлу отдельное имя."
+        },
+        {
+          "label": "Проверьте связь с CSV",
+          "detail": "Сопоставьте каждый ключ один раз и проверьте импортированные поля."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "স্টক মেটাডেটা CSV-র ফাইলনাম না মেলার সমস্যা ঠিক করুন",
+    "description": "স্টক মেটাডেটা আমদানির আগে কেস, এক্সটেনশন ও একই নামের ত্রুটি শনাক্ত করুন, মূল ফাইল সুরক্ষিত রাখুন এবং প্রতিটি CSV সারির এক-একটি মিল নিশ্চিত করুন।",
+    "intro": "একটি মেটাডেটা CSV-তে চমৎকার শিরোনাম ও কীওয়ার্ড থাকলেও সেগুলো সঠিক স্টক ফাইলের সঙ্গে যুক্ত নাও হতে পারে। সাধারণ কারণ হলো ফাইলনাম না মেলা: CSV-তে img_042.jpg লেখা আছে, অথচ আপলোড করা সম্পদটি IMG_042.JPG; অথবা দুটি ফোল্ডারে একই নামের ভিন্ন ছবি আছে। ফাইলনামকে সাজসজ্জা নয়, পরিচয়-চাবি হিসেবে বিবেচনা করুন। এই নির্দেশিকায় নিরাপদে নাম মিলিয়ে নেওয়া, মূল ফাইল সংরক্ষণ করা এবং আমদানির আগে পরিদর্শনযোগ্য এক-একটি ম্যাপিং তৈরির পদ্ধতি দেখানো হয়েছে।\n\nসুনির্দিষ্ট নিয়ম মার্কেটপ্লেস ও কনটেন্টের ধরন অনুযায়ী বদলায়। CSV আমদানির সময় Adobe Stock-এ আপলোড করা সম্পদের সঙ্গে এক্সটেনশন ও কেসসহ ফাইলনাম মেলা আবশ্যক। প্রথমে সম্পদ আপলোড করুন, তারপর CSV আমদানি করে কনট্রিবিউটর পোর্টালে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন। প্রয়োজনীয়তা বদলাতে পারে, তাই চূড়ান্ত ফাইল প্রস্তুতের আগে বর্তমান কনট্রিবিউটর আপলোড স্ক্রিন দেখুন।",
+    "sections": [
+      {
+        "heading": "১. সংশ্লিষ্ট তিনটি নাম আলাদা করুন",
+        "paragraphs": [
+          "মূল ফাইলনাম, আপলোড ফাইলনাম এবং CSV ফাইলনাম আলাদা করে চিহ্নিত করে শুরু করুন। এগুলো একই হতে পারে, তবে নিয়ন্ত্রিত এক্সপোর্ট কপি ইচ্ছাকৃতভাবে তৈরি করলে একই হওয়া বাধ্যতামূলক নয়। গুরুত্বপূর্ণ নিয়ম হলো, CSV-র নামটি মার্কেটপ্লেসে দৃশ্যমান সম্পদটিকে নির্ভুলভাবে শনাক্ত করবে।",
+          "ফাইলনাম তুলনা করার সময় সাধারণত সম্পূর্ণ এক্সটেনশন ও অক্ষরের কেস অন্তর্ভুক্ত থাকে। IMG_042.JPG, img_042.jpg এবং IMG_042.jpeg আলাদা স্ট্রিং, যদিও এগুলো দেখতে একই রকম ফাইল নির্দেশ করতে পারে। শুধু বেসনেম তুলনা করলে সমস্যা লুকিয়ে যেতে পারে, তাই বেসনেম ও এক্সটেনশন দুটোই নথিবদ্ধ করুন।"
+        ],
+        "bullets": [
+          "মূল: নিরাপত্তার জন্য অপরিবর্তিত রাখা উৎস ফাইল।",
+          "এক্সপোর্ট কপি: মার্কেটপ্লেসে আপলোডের জন্য প্রস্তুত ফাইল।",
+          "CSV চাবি: মেটাডেটা সারিতে লেখা নির্ভুল ফাইলনাম।"
+        ],
+        "example": "মূল ফাইল: IMG_042.JPG\nCSV চাবি: img_042.jpg\nনির্ণয়: কেসের কারণে বেসনেম আলাদা; কেস ও বানানের কারণে এক্সটেনশনও আলাদা।"
+      },
+      {
+        "heading": "২. নাম পরিবর্তনের আগে তালিকা তৈরি করুন",
+        "paragraphs": [
+          "আপলোড করতে চান এমন প্রতিটি সম্পদের একটি ছোট তালিকা তৈরি করুন। এতে ফোল্ডার, মূল ফাইলনাম, এক্সটেনশন এবং ক্রমসংখ্যার মতো স্থিতিশীল অভ্যন্তরীণ নোট রাখুন। ফাইল আলাদা করতে শুধু ফোল্ডারের নামের ওপর নির্ভর করবেন না: মার্কেটপ্লেস ও CSV ফরম্যাট সাধারণত আপনার স্থানীয় ফোল্ডার-পথ নয়, ফাইলনাম ক্ষেত্র ব্যবহার করে।",
+          "যদি দুটি ফোল্ডারে IMG_042.JPG থাকে, তবে একই দৃশ্যমান চাবিসহ দুটি আলাদা প্রার্থী রয়েছে। ফাইল খুলে এবং অর্থপূর্ণ বর্ণনা লিখে কোনটি কোন ছবি তা নির্ধারণ করুন। আপনার কর্মপ্রবাহে সুযোগ থাকলে, চেকসাম বা ফাইল-নির্দিষ্ট অভ্যন্তরীণ আইডি নাম পরিবর্তন করা কপি এখনও নির্দিষ্ট মূল ফাইলটিরই অনুরূপ কি না যাচাই করতে সাহায্য করতে পারে।"
+        ],
+        "bullets": [
+          "সব উৎস ফোল্ডারে থাকা প্রতিটি ডুপ্লিকেট বেসনেম তালিকাভুক্ত করুন।",
+          "অস্পষ্ট ফাইলের জন্য মেটাডেটা বরাদ্দের আগে সেগুলো খুলুন।",
+          "তালিকাটি CSV-র বাইরে রাখুন, যাতে এটি নিরীক্ষার নথি হিসেবে থাকে।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৩. সংঘর্ষ-নিরাপদ নামকরণের পরিকল্পনা বেছে নিন",
+        "paragraphs": [
+          "সাধারণত সবচেয়ে নিরাপদ পরিকল্পনা হলো মূল ফাইল অপরিবর্তিত রেখে স্বতন্ত্র নামের এক্সপোর্ট কপি তৈরি করা। একই নাম দেখা দিলে প্রকল্প-কোড বা ক্রমের মতো নিয়ন্ত্রিত পার্থক্যসূচক অংশ যোগ করুন, যেমন coastal-lighthouse-042-a.jpg এবং coastal-lighthouse-042-b.jpg। নাম পাঠযোগ্য ও সামঞ্জস্যপূর্ণ রাখুন, তবে নির্ভুল মেটাডেটার বিকল্প হিসেবে ফাইলনামে কীওয়ার্ড লিখবেন না।",
+          "মার্কেটপ্লেস যদি বিদ্যমান ফাইলনাম প্রত্যাশা করে এবং নাম পরিবর্তনের দরকার না থাকে, CSV-তে বানান ও এক্সটেনশন হুবহু রাখুন। এক্সপোর্ট কপির নাম পরিবর্তন করলে আগে ফাইলের নাম বদলান বা কপি তৈরি করুন, তারপর চূড়ান্ত এক্সপোর্ট তালিকা থেকে CSV তৈরি করুন। সম্পদ অপরিবর্তিত রেখে শুধু CSV-র নাম কখনো হাতে বদলাবেন না।"
+        ],
+        "bullets": [
+          "প্রতিটি বাস্তব সম্পদের জন্য একটি একক এক্সপোর্ট ফাইলনাম ব্যবহার করুন।",
+          "শুধু নিজের কর্মপ্রবাহে ঝুঁকিপূর্ণ হলে স্পেস বা বিরামচিহ্ন এড়ান; সর্বজনীন নামকরণ নিয়ম ধরে নেবেন না।",
+          "এক্সপোর্টের আগে পুরোনো ও নতুন নামের সম্পর্ক নথিবদ্ধ করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৪. কাজের উদাহরণ: দুটি ফোল্ডার, একটি IMG_042",
+        "paragraphs": [
+          "উদাহরণ: ফোল্ডার A-তে IMG_042.JPG নামে দিনের আলোয় তোলা বাতিঘরের ছবি আছে। ফোল্ডার B-তে একই নামের গোধূলির বাতিঘরের ছবি আছে। একটি খসড়া CSV-তে img_042.jpg নামে এক সারি রয়েছে, তাই এটি নিরাপদে দুটো ফাইলকে নির্দেশ করতে পারে না। প্রথম সারিটি অস্পষ্ট, এবং এর কেস ও এক্সটেনশনও হুবহু মেলার পরীক্ষায় ব্যর্থ হয়।",
+          "আমি দুটি মূল ফাইলই অপরিবর্তিত রাখব এবং স্বতন্ত্র নামের দুটি আপলোড কপি তৈরি করব। তারপর প্রতিটি শিরোনাম ও কীওয়ার্ড সেট মূল বেসনেমের বদলে সংশ্লিষ্ট এক্সপোর্ট কপির সঙ্গে যুক্ত করব। সিদ্ধান্তটি ছোট নামের চেয়ে অনুসরণযোগ্যতাকে অগ্রাধিকার দেয়: প্রত্যয়টি উৎস-সেট শনাক্ত করে, আর দৃশ্যের বর্ণনা দিনের আলো ও গোধূলিকে আলাদা করে। আমদানির আগে এক্সপোর্ট ডিরেক্টরি ও CSV চাবিগুলোকে দুটি সেট হিসেবে তুলনা করব এবং অনুপস্থিত, অতিরিক্ত বা পুনরাবৃত্ত চাবি অনুসন্ধান করব।"
+        ],
+        "bullets": [
+          "দিনের আলোর উৎস হয়ে যাবে lighthouse-coast-day-042-a.JPG।",
+          "গোধূলির উৎস হয়ে যাবে lighthouse-coast-dusk-042-b.JPG।",
+          "CSV সারিতে .JPG ও কেসসহ ওই নির্ভুল নামগুলোই ব্যবহার হবে।"
+        ],
+        "example": "CSV নমুনা\nfilename,title,keywords\nlighthouse-coast-day-042-a.JPG,Daylight lighthouse on a rocky coast,\"lighthouse, coast, daylight, rocks, navigation\"\nlighthouse-coast-dusk-042-b.JPG,Lighthouse by the coast at dusk,\"lighthouse, coast, dusk, sea, architecture\""
+      },
+      {
+        "heading": "৫. আপলোডের আগে CSV মিলিয়ে নিন",
+        "paragraphs": [
+          "চারটি পরীক্ষা করুন: প্রতিটি নির্ধারিত এক্সপোর্ট ফাইল একবার করে আছে; প্রতিটি CSV ফাইলনাম ঠিক একটি ফাইলের সঙ্গে হুবহু মেলে; কোনো CSV চাবি পুনরাবৃত্ত নয়; এবং কোনো সারি পুরোনো বা অনুপস্থিত এক্সটেনশন নির্দেশ করছে না। সহজে চোখে তুলনা করার জন্য দুটি তালিকাই নির্ভুল ফাইলনাম অনুযায়ী সাজান। শিরোনাম ও কীওয়ার্ড শুধু সঠিক নামের নয়, সঠিক ছবিরও অন্তর্ভুক্ত কি না পরীক্ষা করুন।",
+          "Adobe Stock-এর ক্ষেত্রে CSV আমদানির আগে সম্পদ আপলোড করুন, তারপর কনট্রিবিউটর পোর্টালে মেটাডেটা পরীক্ষা করুন। পোর্টালের বর্তমান সীমা মনে রাখুন: CSV নথিতে শিরোনামের সীমা 70 অক্ষর, আর সতর্কতামূলকভাবে কীওয়ার্ডের সর্বোচ্চ সংখ্যা 49 ধরা হয়। এসব সীমা ফাইলনামকে বৈধ করে না, তাই পরিচয় আলাদাভাবে যাচাই করুন।"
+        ],
+        "bullets": [
+          "শুধু বেসনেম নয়, সম্পূর্ণ ফাইলনাম স্ট্রিং মিলিয়ে দেখুন।",
+          "পুনরাবৃত্ত সারি ও পুনরাবৃত্ত এক্সপোর্ট ফাইল পরীক্ষা করুন।",
+          "জমা দেওয়ার সিদ্ধান্তে এগোনোর আগে আমদানি করা ক্ষেত্রগুলো দেখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৬. মূল ফাইল সুরক্ষিত রাখুন এবং ব্যর্থতা সংশোধন করুন",
+        "paragraphs": [
+          "এই সংশোধনের অংশ হিসেবে মূল ফাইলের মধ্যে নতুন মেটাডেটা লিখবেন না। অপরিবর্তিত মূল ফাইল, নাম পরিবর্তিত এক্সপোর্ট কপি, তালিকা এবং চূড়ান্ত CSV স্পষ্টভাবে আলাদা স্থানে রাখুন। কোনো আমদানিতে সারি ভুলভাবে যুক্ত হলে থামুন এবং ম্যাপিং ঠিক করুন; আরও কীওয়ার্ড দিয়ে ভুল ঢাকার চেষ্টা করবেন না।",
+          "MetaStocker-এর মতো স্থানীয় জেনারেটর মার্কেটপ্লেস-নির্দিষ্ট CSV আউটপুট তৈরি করতে পারে, কিন্তু এর এক্সপোর্টার ফাইল আপলোড করে না বা মূল ফাইলে মেটাডেটা লিখে না। সম্পাদনাযোগ্য ফলাফল পর্যালোচনা করে শুধু প্রস্তুত সারি এক্সপোর্ট করুন। স্থানীয় মোড ব্যবহার করলে প্রয়োজনীয় মডেল ডাউনলোডের পর মডেলটি আপনার ব্রাউজারে চলে; সেই মডেল মেমরি ডাউনলোড করা ব্রাউজার ক্যাশের থেকে আলাদা। ফাইলনাম নিরীক্ষার দায়িত্ব আপনারই।"
+        ],
+        "bullets": [
+          "প্রকল্পের সঙ্গে মূল-থেকে-এক্সপোর্ট ম্যাপিং সংরক্ষণ করুন।",
+          "এক্সপোর্টের কোনো নাম বদলালে CSV আবার তৈরি করুন।",
+          "চূড়ান্ত আমদানির আগে মার্কেটপ্লেস পোর্টাল ও বর্তমান কনট্রিবিউটর নীতি পরীক্ষা করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "প্রতিটি মূল ফাইল অপরিবর্তিত রাখুন।",
+      "ফোল্ডার, ফাইলনাম, এক্সটেনশন ও ডুপ্লিকেট নামের তালিকা তৈরি করুন।",
+      "প্রতিটি সম্পদের জন্য একটি স্বতন্ত্র এক্সপোর্ট ফাইলনাম তৈরি করুন।",
+      "প্রতিটি CSV সারিতে হুবহু কেস ও এক্সটেনশন ব্যবহার করুন।",
+      "প্রতিটি CSV চাবি ঠিক একটি আপলোড করা ফাইলের সঙ্গে মেলে কি না যাচাই করুন।",
+      "মার্কেটপ্লেস পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।",
+      "চূড়ান্ত করার আগে বর্তমান মার্কেটপ্লেস CSV ও কনট্রিবিউটর প্রয়োজনীয়তা দেখুন।"
+    ],
+    "illustration": {
+      "title": "ফাইলনাম মিলিয়ে নেওয়ার তিন ধাপ",
+      "steps": [
+        {
+          "label": "নির্ভুল পরিচয়ের তালিকা করুন",
+          "detail": "ফোল্ডার, মূল নাম, এক্সটেনশন ও ডুপ্লিকেট প্রার্থী নথিবদ্ধ করুন।"
+        },
+        {
+          "label": "স্বতন্ত্র এক্সপোর্ট কপি তৈরি করুন",
+          "detail": "মূল ফাইল রাখুন এবং প্রতিটি সম্পদের জন্য সংঘর্ষ-নিরাপদ একটি নাম দিন।"
+        },
+        {
+          "label": "CSV ম্যাপিং নিরীক্ষা করুন",
+          "detail": "নির্ভুল চাবি একবার করে মিলিয়ে পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "स्टॉक मेटाडेटा CSV में फ़ाइलनाम न मिलने की समस्या ठीक करें",
+    "description": "स्टॉक मेटाडेटा आयात से पहले केस, एक्सटेंशन और डुप्लिकेट नाम की त्रुटियाँ पहचानें, मूल फ़ाइलें सुरक्षित रखें और हर CSV पंक्ति का एक-से-एक मिलान सुनिश्चित करें।",
+    "intro": "किसी मेटाडेटा CSV में अच्छे शीर्षक और कीवर्ड होने पर भी वे सही स्टॉक फ़ाइलों से जुड़ने में विफल हो सकते हैं। आम कारण फ़ाइलनाम का मेल न खाना है: CSV में img_042.jpg लिखा है, जबकि अपलोड की गई संपत्ति IMG_042.JPG है, या दो फ़ोल्डरों में अलग-अलग छवियों का नाम एक जैसा है। फ़ाइलनाम को सजावट नहीं, पहचान-कुंजी मानें। यह मार्गदर्शिका नामों का सुरक्षित मिलान करने, मूल फ़ाइलें सुरक्षित रखने और आयात से पहले जाँचा जा सकने वाला एक-से-एक मैपिंग बनाने का तरीका बताती है।\n\nसटीक नियम मार्केटप्लेस और सामग्री के प्रकार पर निर्भर करते हैं। CSV आयात करते समय Adobe Stock में अपलोड की गई संपत्ति के फ़ाइलनाम का एक्सटेंशन और केस सहित मेल खाना आवश्यक है। पहले संपत्तियाँ अपलोड करें, फिर CSV आयात करके योगदानकर्ता पोर्टल में बनी मेटाडेटा जाँचें। आवश्यकताएँ बदल सकती हैं, इसलिए अंतिम फ़ाइल तैयार करने से पहले वर्तमान योगदानकर्ता अपलोड स्क्रीन देखें।",
+    "sections": [
+      {
+        "heading": "१. शामिल तीन नाम अलग-अलग पहचानें",
+        "paragraphs": [
+          "मूल फ़ाइलनाम, अपलोड फ़ाइलनाम और CSV फ़ाइलनाम में अंतर करके शुरुआत करें। ये एक जैसे हो सकते हैं, लेकिन यदि आप नियंत्रित एक्सपोर्ट कॉपी बनाते हैं तो इनका एक जैसा होना आवश्यक नहीं है। महत्वपूर्ण नियम यह है कि CSV का नाम मार्केटप्लेस को दिखाई देने वाली संपत्ति की सटीक पहचान करे।",
+          "फ़ाइलनाम की तुलना में आम तौर पर पूरा एक्सटेंशन और अक्षरों का केस शामिल होता है। IMG_042.JPG, img_042.jpg और IMG_042.jpeg अलग-अलग स्ट्रिंग हैं, भले ही वे देखने में मिलती-जुलती फ़ाइलों को दर्शाएँ। केवल बेसनेम की तुलना करने से समस्या छिप सकती है, इसलिए बेसनेम और एक्सटेंशन दोनों दर्ज करें।"
+        ],
+        "bullets": [
+          "मूल: सुरक्षा के लिए बिना बदलाव रखी गई स्रोत फ़ाइल।",
+          "एक्सपोर्ट कॉपी: मार्केटप्लेस पर अपलोड के लिए तैयार फ़ाइल।",
+          "CSV कुंजी: मेटाडेटा पंक्ति में लिखा गया सटीक फ़ाइलनाम।"
+        ],
+        "example": "मूल फ़ाइल: IMG_042.JPG\nCSV कुंजी: img_042.jpg\nनिदान: केस के कारण बेसनेम अलग है; केस और वर्तनी के कारण एक्सटेंशन भी अलग है।"
+      },
+      {
+        "heading": "२. नाम बदलने से पहले सूची बनाएँ",
+        "paragraphs": [
+          "अपलोड की जाने वाली हर संपत्ति की एक छोटी सूची बनाएँ। इसमें उसका फ़ोल्डर, मूल फ़ाइलनाम, एक्सटेंशन और क्रम संख्या जैसी स्थिर आंतरिक टिप्पणी शामिल करें। फ़ाइलों को अलग पहचानने के लिए केवल फ़ोल्डर नाम पर निर्भर न रहें: मार्केटप्लेस और CSV प्रारूप आम तौर पर आपके स्थानीय फ़ोल्डर पथ के बजाय फ़ाइलनाम फ़ील्ड का उपयोग करते हैं।",
+          "यदि दो फ़ोल्डरों में IMG_042.JPG है, तो एक ही दिखाई देने वाली कुंजी वाले दो अलग उम्मीदवार हैं। फ़ाइलें खोलकर और अर्थपूर्ण विवरण दर्ज करके तय करें कि कौन-सी छवि कौन-सी है। यदि आपके कार्यप्रवाह में उपलब्ध हो, तो चेकसम या फ़ाइल-विशिष्ट आंतरिक आईडी यह जाँचने में मदद कर सकती है कि नाम बदली गई कॉपी अभी भी इच्छित मूल फ़ाइल से संबंधित है।"
+        ],
+        "bullets": [
+          "सभी स्रोत फ़ोल्डरों में मौजूद हर डुप्लिकेट बेसनेम की सूची बनाएँ।",
+          "मेटाडेटा देने से पहले अस्पष्ट फ़ाइलें खोलें।",
+          "सूची को CSV से बाहर रखें, ताकि वह ऑडिट रिकॉर्ड बनी रहे।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "३. टकराव-सुरक्षित नामकरण योजना चुनें",
+        "paragraphs": [
+          "आमतौर पर सबसे सुरक्षित योजना मूल फ़ाइलों को बिना बदलाव छोड़कर विशिष्ट नाम वाली एक्सपोर्ट कॉपियाँ बनाना है। डुप्लिकेट नाम होने पर प्रोजेक्ट कोड या क्रम जैसी नियंत्रित पहचान जोड़ें, जैसे coastal-lighthouse-042-a.jpg और coastal-lighthouse-042-b.jpg। नाम पढ़ने योग्य और एकसमान रखें, लेकिन सटीक मेटाडेटा के बदले फ़ाइलनाम में कीवर्ड न डालें।",
+          "यदि मार्केटप्लेस मौजूदा फ़ाइलनाम की अपेक्षा करता है और आपको कुछ भी नाम बदलने की आवश्यकता नहीं है, तो CSV में वर्तनी और एक्सटेंशन बिल्कुल वही रखें। यदि आप एक्सपोर्ट कॉपियों के नाम बदलते हैं, तो पहले फ़ाइलों का नाम बदलें या कॉपियाँ बनाएँ, फिर अंतिम एक्सपोर्ट सूची से CSV बनाएँ। संपत्ति को बदले बिना केवल CSV का नाम हाथ से कभी न बदलें।"
+        ],
+        "bullets": [
+          "हर भौतिक संपत्ति के लिए एक एक्सपोर्ट फ़ाइलनाम रखें।",
+          "स्पेस या विराम चिह्न तभी हटाएँ जब आपका अपना कार्यप्रवाह उन्हें जोखिमपूर्ण बनाता हो; कोई सार्वभौमिक नामकरण नियम न मानें।",
+          "एक्सपोर्ट से पहले पुराने और नए नामों का रिकॉर्ड रखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "४. काम किया हुआ उदाहरण: दो फ़ोल्डर, एक IMG_042",
+        "paragraphs": [
+          "उदाहरण: फ़ोल्डर A में IMG_042.JPG नाम की दिन के उजाले वाली प्रकाशस्तंभ की छवि है। फ़ोल्डर B में उसी फ़ाइलनाम वाली गोधूलि के प्रकाशस्तंभ की छवि है। एक प्रारूप CSV में img_042.jpg नाम की एक पंक्ति है, इसलिए वह दोनों फ़ाइलों को सुरक्षित रूप से दर्शा नहीं सकती। पहली पंक्ति अस्पष्ट है, और उसका केस व एक्सटेंशन भी सटीक-मिलान जाँच में विफल होते हैं।",
+          "मैं दोनों मूल फ़ाइलों को बिना बदलाव रखूँगा और विशिष्ट नाम वाली दो अपलोड कॉपियाँ बनाऊँगा। फिर हर शीर्षक और कीवर्ड सेट को मूल बेसनेम के बजाय संबंधित एक्सपोर्ट कॉपी से जोड़ूँगा। यह निर्णय छोटे नामों के बजाय अनुरेखण-योग्यता को प्राथमिकता देता है: प्रत्यय स्रोत-समूह की पहचान करता है, जबकि दृश्य विवरण दिन के उजाले और गोधूलि में अंतर बताते हैं। आयात से पहले मैं एक्सपोर्ट डायरेक्टरी और CSV कुंजियों की दो सेट के रूप में तुलना करूँगा और किसी भी अनुपस्थित, अतिरिक्त या दोहराई गई कुंजी की जाँच करूँगा।"
+        ],
+        "bullets": [
+          "दिन के उजाले का स्रोत lighthouse-coast-day-042-a.JPG बन जाएगा।",
+          "गोधूलि का स्रोत lighthouse-coast-dusk-042-b.JPG बन जाएगा।",
+          "CSV पंक्तियों में .JPG और केस सहित वही सटीक नाम होंगे।"
+        ],
+        "example": "CSV नमूना\nfilename,title,keywords\nlighthouse-coast-day-042-a.JPG,Daylight lighthouse on a rocky coast,\"lighthouse, coast, daylight, rocks, navigation\"\nlighthouse-coast-dusk-042-b.JPG,Lighthouse by the coast at dusk,\"lighthouse, coast, dusk, sea, architecture\""
+      },
+      {
+        "heading": "५. अपलोड से पहले CSV का मिलान करें",
+        "paragraphs": [
+          "चार जाँच करें: हर इच्छित एक्सपोर्ट फ़ाइल एक बार दिखाई दे; हर CSV फ़ाइलनाम ठीक एक फ़ाइल से सटीक रूप से मेल खाए; कोई CSV कुंजी दोहराई न गई हो; और कोई पंक्ति पुराने या अनुपस्थित एक्सटेंशन की ओर संकेत न करे। दृश्य तुलना आसान बनाने के लिए दोनों सूचियों को सटीक फ़ाइलनाम के अनुसार क्रमबद्ध करें। यह भी जाँचें कि शीर्षक और कीवर्ड केवल सही नाम के नहीं, बल्कि सही छवि के भी हैं।",
+          "Adobe Stock के लिए CSV आयात करने से पहले संपत्तियाँ अपलोड करें, फिर योगदानकर्ता पोर्टल में मेटाडेटा जाँचें। पोर्टल की वर्तमान सीमाएँ ध्यान में रखें: CSV दस्तावेज़ में शीर्षक की सीमा 70 अक्षर है, जबकि सावधानीपूर्ण कीवर्ड अधिकतम संख्या 49 है। ये सीमाएँ फ़ाइलनाम को मान्य नहीं बनातीं, इसलिए पहचान अलग से जाँचें।"
+        ],
+        "bullets": [
+          "केवल बेसनेम नहीं, पूरे फ़ाइलनाम स्ट्रिंग का मिलान करें।",
+          "डुप्लिकेट पंक्तियों और डुप्लिकेट एक्सपोर्ट फ़ाइलों की जाँच करें।",
+          "सबमिशन संबंधी निर्णयों पर आगे बढ़ने से पहले आयात किए गए फ़ील्ड देखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "६. मूल फ़ाइलों को सुरक्षित रखें और विफलताएँ सुधारें",
+        "paragraphs": [
+          "इस सुधार के हिस्से के रूप में मूल फ़ाइलों में नया मेटाडेटा न लिखें। बिना बदलाव वाली मूल फ़ाइलें, नाम बदली हुई एक्सपोर्ट कॉपियाँ, सूची और अंतिम CSV अलग-अलग स्पष्ट स्थानों पर रखें। यदि किसी आयात में पंक्ति गलत तरीके से जुड़ जाए, तो रुककर मैपिंग ठीक करें; अधिक कीवर्ड डालकर उसकी भरपाई करने की कोशिश न करें।",
+          "MetaStocker जैसा स्थानीय जनरेटर मार्केटप्लेस-विशिष्ट CSV आउटपुट बना सकता है, लेकिन उसका एक्सपोर्टर फ़ाइलें अपलोड नहीं करता और मूल फ़ाइलों में मेटाडेटा नहीं लिखता। संपादन योग्य परिणामों की समीक्षा करें और केवल तैयार पंक्तियाँ एक्सपोर्ट करें। यदि आप इसका स्थानीय मोड उपयोग करते हैं, तो आवश्यक मॉडल डाउनलोड के बाद मॉडल आपके ब्राउज़र में चलता है; उस मॉडल मेमोरी का डाउनलोड किए गए ब्राउज़र कैश से अलग होना समझें। फ़ाइलनाम ऑडिट की ज़िम्मेदारी आपकी है।"
+        ],
+        "bullets": [
+          "मूल से एक्सपोर्ट तक की मैपिंग को प्रोजेक्ट के साथ संग्रहित करें।",
+          "किसी एक्सपोर्ट नाम में बदलाव के बाद CSV फिर से बनाएँ।",
+          "अंतिम आयात से पहले मार्केटप्लेस पोर्टल और वर्तमान योगदानकर्ता नीति जाँचें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "हर मूल फ़ाइल को बिना बदलाव रखें।",
+      "फ़ोल्डर, फ़ाइलनाम, एक्सटेंशन और डुप्लिकेट नामों की सूची बनाएँ।",
+      "हर संपत्ति के लिए एक विशिष्ट एक्सपोर्ट फ़ाइलनाम बनाएँ।",
+      "हर CSV पंक्ति में सटीक केस और एक्सटेंशन उपयोग करें।",
+      "जाँचें कि हर CSV कुंजी केवल एक अपलोड की गई फ़ाइल से मैप होती है।",
+      "मार्केटप्लेस पोर्टल में आयात किया गया मेटाडेटा जाँचें।",
+      "अंतिम रूप देने से पहले वर्तमान मार्केटप्लेस CSV और योगदानकर्ता आवश्यकताएँ जाँचें।"
+    ],
+    "illustration": {
+      "title": "फ़ाइलनाम मिलान के तीन चरण",
+      "steps": [
+        {
+          "label": "सटीक पहचान की सूची बनाएँ",
+          "detail": "फ़ोल्डर, मूल नाम, एक्सटेंशन और डुप्लिकेट उम्मीदवार दर्ज करें।"
+        },
+        {
+          "label": "विशिष्ट एक्सपोर्ट कॉपियाँ बनाएँ",
+          "detail": "मूल फ़ाइलें सुरक्षित रखें और हर संपत्ति को एक टकराव-सुरक्षित नाम दें।"
+        },
+        {
+          "label": "CSV मैपिंग का ऑडिट करें",
+          "detail": "सटीक कुंजियों का एक-एक बार मिलान करें, फिर पोर्टल में आयात मेटाडेटा जाँचें।"
+        }
+      ]
+    }
+  }
+}

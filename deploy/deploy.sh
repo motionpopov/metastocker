@@ -15,7 +15,7 @@ node_bin=${METASTOCKER_NODE:-node}
 "$node_bin" --check local-ai-worker.mjs
 "$node_bin" --check analytics.js
 "$node_bin" --test tests/*.test.js tests/*.test.mjs
-python3 -m unittest discover -s tests -p 'test_deploy.py'
+python3 -m unittest discover -s tests -p 'test_*.py'
 git diff --check
 commit=$(git rev-parse HEAD)
 release_id="$(date -u +%Y%m%dT%H%M%SZ)-${commit:0:12}"
@@ -23,8 +23,13 @@ stage=$(mktemp -d "${TMPDIR:-/tmp}/metastocker-release.XXXXXX")
 trap 'rm -rf "$stage"' EXIT
 mkdir "$stage/source"
 git archive HEAD | tar -x -C "$stage/source"
+mkdir "$stage/published"
+# Daily posts are durable server content. Every code release must carry them forward.
+if ssh -o BatchMode=yes "$deploy_host" 'test -d /opt/metastocker/editorial/published'; then
+  rsync -az "$deploy_host:/opt/metastocker/editorial/published/" "$stage/published/"
+fi
 python3 deploy/build_release.py --source "$stage/source" --output "$stage/release" \
-  --release "$release_id" --commit "$commit" >"$stage/release-metadata.json"
+  --release "$release_id" --commit "$commit" --extra "$stage/published" >"$stage/release-metadata.json"
 ssh -o BatchMode=yes "$deploy_host" "test ! -e /opt/metastocker/releases/$release_id && mkdir -p /opt/metastocker/releases/$release_id"
 rsync -az "$stage/release/" "$deploy_host:/opt/metastocker/releases/$release_id/"
 ssh -o BatchMode=yes "$deploy_host" "bash /opt/metastocker/releases/$release_id/deploy/activate-release.sh $release_id"

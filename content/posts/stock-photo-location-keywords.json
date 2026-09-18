@@ -1,0 +1,476 @@
+{
+  "slug": "stock-photo-location-keywords",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-metadata"
+  ],
+  "en": {
+    "title": "Stock Photo Location Keywords: Add Only What You Verify",
+    "description": "Learn when to use city and place keywords, how to separate evidence from AI guesses, and how to review location metadata before export.",
+    "intro": "Location keywords can make a stock image easier to find, but an incorrect place name can make the metadata misleading. The practical rule is simple: add a location only when you can support it with reliable evidence. A recognizable architectural style, a road sign, or an AI suggestion may help you investigate, but none of these automatically proves where a photograph was made.\n\nThis guide covers three situations: a generic old European street with no confirmed city, a documented square in Krakow, and an AI-generated city whose exact location does not exist. The goal is not to remove useful context. It is to distinguish what the photographer knows from what a model merely infers, then create accurate marketplace metadata that can be reviewed file by file.",
+    "sections": [
+      {
+        "heading": "Start with the evidence, not the keyword list",
+        "paragraphs": [
+          "Before writing metadata, record the strongest available evidence for each image. Direct documentation may include the photographer’s notes, a verified assignment brief, a GPS record, or a clearly readable official sign. A place recognized from personal knowledge can be useful, but pause when the visual evidence is ambiguous or the memory is uncertain.",
+          "A model’s location suggestion belongs in an investigation note, not automatically in the final title or keyword list. Old façades, paving stones, balconies, and street lamps occur in many cities. Similar visual character is not proof of a municipality, district, landmark, or country."
+        ],
+        "bullets": [
+          "Verified fact: a documented capture location or unambiguous place reference.",
+          "Useful context: old street, historic architecture, European streetscape.",
+          "Unverified guess: a model’s suggestion that the image resembles a named city."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Case one: a generic European old street",
+        "paragraphs": [
+          "Imagine a hypothetical photograph showing a narrow cobbled street, worn plaster façades, shutters, and warm evening light. The photographer knows only that it was taken somewhere in Europe. There is no sign, GPS record, recognizable landmark, or travel note identifying the city.",
+          "The safe metadata describes the visible subject and the verified geographic level. For a platform requiring English metadata, suitable terms could include “old European street,” “historic architecture,” “cobblestone street,” “traditional façades,” “urban passage,” and “evening light.” Do not add “Prague,” “Krakow,” or another city simply because the scene feels characteristic of it.",
+          "A broad country keyword also needs evidence. If the country is not documented, leave it out. Location restraint does not make the image unusable; it prevents an attractive but unsupported interpretation from becoming a factual claim."
+        ],
+        "bullets": [
+          "Keep visual and architectural terms that are directly observable.",
+          "Use regional wording only when the region is documented.",
+          "Do not turn style recognition into a precise city claim."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Case two: a documented Krakow square",
+        "paragraphs": [
+          "Now consider a different hypothetical image. The photographer’s notes and capture record identify the location as a specific square in Krakow, Poland. The architecture and visible layout are consistent with that record, but the image does not show every landmark clearly.",
+          "Here, the verified location can be useful metadata. A title might be “City square in Krakow, Poland at evening.” Keywords could begin with “Krakow,” “Poland,” “city square,” “European architecture,” and then continue with visible subjects such as “cobblestone,” “city buildings,” or “urban travel.” Put the most important terms early, and keep the complete list relevant to this particular image.",
+          "Do not add a landmark name unless the photographer has verified that landmark. A documented city does not automatically verify every building, event, neighborhood, or historical association visible in the frame. If a marketplace’s current rules request English descriptive metadata, keep the metadata in English even when the article or contributor interface is in another language."
+        ],
+        "bullets": [
+          "Use the documented city and country at the appropriate confidence level.",
+          "Name a square or landmark only when that specific identification is verified.",
+          "Check current portal rules for keyword limits and required fields."
+        ],
+        "example": "Example metadata\nTitle: City square in Krakow, Poland at evening\nKeywords: Krakow, Poland, city square, European architecture, cobblestone, city buildings, travel, urban scene, evening light"
+      },
+      {
+        "heading": "Case three: an unknown generated city",
+        "paragraphs": [
+          "Suppose an image was generated by an AI system as an imaginary city scene. It contains a convincing old square, but there is no real-world capture location and no instruction establishing a named city. The image may support terms such as “fictitious city,” “imagined architecture,” “generated urban scene,” “fantasy streetscape,” or “conceptual city,” depending on the platform and the image’s actual content.",
+          "Do not assign Krakow, Paris, or another real location because the model produced familiar architectural signals. The correct distinction is between a real place represented in an image and a fictional place designed to look plausible. If the platform requires a particular disclosure or content classification, follow its current contributor guidance; those requirements can change."
+        ],
+        "bullets": [
+          "Describe the fictional nature when it is relevant to the asset.",
+          "Avoid real city names used only as visual comparisons.",
+          "Separate creation context from geographic location."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Use AI as a drafting assistant, not a location authority",
+        "paragraphs": [
+          "MetaStocker’s local mode can analyze images in the visitor’s browser using supported local models. A generated city suggestion is still an inference, not independent verification. Review every proposed location term and remove anything that cannot be supported. Local model memory and downloaded browser cache are different: loading a model uses it for inference, while cached files may remain after unloading. Neither changes the need for human review.",
+          "For batches, provide only shared facts that truly apply to every file. “Photographs from a documented Krakow square” may be valid for a carefully selected batch; “European city” may be too broad or still unsupported for a mixed set. Extra tags should also be checked per file. Exact tag-count validation confirms a requested count, not factual accuracy.",
+          "The app can export formats for marketplaces, but exporting is not submission and does not guarantee acceptance. Before export, edit the title and keywords, inspect the final rows, and check the current contributor portal requirements. For Adobe Stock, use a conservative keyword count and keep the most important terms near the beginning. For Shutterstock, use accurate English metadata and relevant keywords. Documentary editorial captions require verified date and location; that requirement does not apply generally to commercial work."
+        ],
+        "bullets": [
+          "Treat AI place names as suggestions requiring evidence.",
+          "Review batch context and extra tags for every file.",
+          "Inspect exported rows and the current marketplace portal before upload."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Do not confuse marketplace metadata with Google indexing",
+        "paragraphs": [
+          "Keywords entered for a stock marketplace help describe an asset inside that marketplace. They are not the same as making a photographer’s website appear in Google. Website image discovery depends on page context, image descriptions, and the site’s indexing setup; a marketplace keyword list does not guarantee crawling, indexing, traffic, or sales.",
+          "If the image is later displayed on your own website, write surrounding text and alternative text that accurately describe the image. For the generic street, that might mention an old European streetscape without naming a city. For the documented image, it may mention the verified Krakow square. For the generated scene, identify it as fictional when that matters to the reader."
+        ],
+        "bullets": [
+          "Keep marketplace keywords and website SEO tasks separate.",
+          "Use precise surrounding text and alt text on your own site.",
+          "Never promise rankings, downloads, or revenue from a location keyword."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Identify the strongest evidence for the image’s location.",
+      "Remove city, country, landmark, and district names that are only guesses.",
+      "Use observable architectural or scene descriptors for an unverified street.",
+      "Add Krakow or another place only when that specific location is documented.",
+      "Label an AI-generated city as fictional or imagined when appropriate.",
+      "Review AI suggestions, batch context, and extra tags per file.",
+      "Keep marketplace metadata in the platform’s required language.",
+      "Check current contributor rules before exporting or uploading.",
+      "Inspect the final metadata rows; export is not submission or acceptance."
+    ],
+    "illustration": {
+      "title": "Verify location before adding keywords",
+      "steps": [
+        {
+          "label": "Collect location evidence",
+          "detail": "Check notes, records, signs, and confirmed landmarks."
+        },
+        {
+          "label": "Separate fact from guess",
+          "detail": "Keep AI place suggestions out unless independently verified."
+        },
+        {
+          "label": "Review and export",
+          "detail": "Edit each row, then check current marketplace requirements."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Ключевые слова места для стоков: добавляйте только проверенное",
+    "description": "Разберитесь, когда указывать город и место, как отделять факты от догадок ИИ и как проверять географические метаданные перед экспортом.",
+    "intro": "Ключевое слово с названием города может помочь найти стоковое изображение, но ошибочное место делает описание недостоверным. Практическое правило простое: добавляйте географию только тогда, когда можете подтвердить её надежными источниками. Архитектурный стиль, дорожная табличка или подсказка ИИ могут направить проверку, но сами по себе не доказывают, где сделан кадр.\n\nНиже разобраны три ситуации: обычная старая европейская улица без подтвержденного города, документированная площадь в Кракове и сгенерированный город, которого в реальности нет. Задача не в том, чтобы убрать полезный контекст, а в том, чтобы отделить известное фотографу от того, что модель лишь предполагает, и затем проверить метаданные для каждого файла.",
+    "sections": [
+      {
+        "heading": "Начинайте с доказательств, а не со списка тегов",
+        "paragraphs": [
+          "Сначала определите, какие сведения действительно подтверждены. Это могут быть заметки фотографа, задание со съемки, запись GPS или четко читаемая официальная табличка. Личное знание места тоже может быть полезным, но при сомнениях его нужно дополнительно проверить.",
+          "Предположение модели о местоположении следует считать рабочей подсказкой, а не готовым ключевым словом. Старые фасады, брусчатка, балконы и фонари встречаются во многих городах. Сходство атмосферы не доказывает название города, района, достопримечательности или страны."
+        ],
+        "bullets": [
+          "Подтвержденный факт: зафиксированное место съемки или однозначная надпись.",
+          "Допустимый контекст: старая европейская улица, историческая архитектура.",
+          "Неподтвержденная догадка: город, который ИИ назвал по сходству сцены."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Случай первый: обычная старая улица Европы",
+        "paragraphs": [
+          "Представим гипотетический снимок: узкая мощеная улица, облупившиеся фасады, ставни и теплый вечерний свет. Фотограф знает только, что снимал где-то в Европе. Нет вывески, GPS, узнаваемого памятника или дорожных заметок с названием города.",
+          "Безопасные метаданные описывают видимое и подтвержденный уровень географии. Если площадка требует английские метаданные, подойдут, например, “old European street”, “historic architecture”, “cobblestone street”, “traditional façades”, “urban passage” и “evening light”. Не добавляйте “Prague”, “Krakow” или другой город только потому, что сцена кажется характерной для него.",
+          "Страна также требует подтверждения. Если она неизвестна, не указывайте её. Осторожное описание не делает изображение бесполезным: оно не превращает красивую, но неподтвержденную интерпретацию в фактическое утверждение."
+        ],
+        "bullets": [
+          "Оставляйте термины, которые прямо видны в кадре.",
+          "Указывайте регион только при наличии документального подтверждения.",
+          "Не превращайте распознавание стиля в точное название города."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Случай второй: документированная площадь в Кракове",
+        "paragraphs": [
+          "Теперь представим другой гипотетический кадр. В заметках фотографа и записи съемки указано конкретное место: площадь в Кракове, Польша. Архитектура и планировка согласуются с этой информацией, хотя отдельные здания могут быть видны не полностью.",
+          "В этом случае подтвержденное место можно использовать в метаданных. Например, заголовок на английском: “City square in Krakow, Poland at evening”. Ключевые слова могут начинаться с “Krakow”, “Poland”, “city square”, “European architecture”, а затем включать видимые признаки: “cobblestone”, “city buildings”, “urban travel”. Сначала ставьте важнейшие термины и сохраняйте только относящиеся к этому файлу слова.",
+          "Не называйте достопримечательность, если именно она не проверена. Подтвержденный город не подтверждает автоматически каждое здание, район, событие или историческую связь в кадре. Если площадка требует английский язык метаданных, используйте английские примеры даже в русскоязычном рабочем процессе."
+        ],
+        "bullets": [
+          "Указывайте подтвержденный город и страну на соответствующем уровне.",
+          "Добавляйте название площади или памятника только после отдельной проверки.",
+          "Перед экспортом проверьте актуальные лимиты и поля площадки."
+        ],
+        "example": "Пример метаданных\nTitle: City square in Krakow, Poland at evening\nKeywords: Krakow, Poland, city square, European architecture, cobblestone, city buildings, travel, urban scene, evening light"
+      },
+      {
+        "heading": "Случай третий: неизвестный сгенерированный город",
+        "paragraphs": [
+          "Предположим, изображение создано генеративной системой как сцена вымышленного города. На нем убедительная старая площадь, но нет реального места съемки и нет указания на существующий город. В зависимости от содержания подойдут слова вроде “fictitious city”, “imagined architecture”, “generated urban scene”, “fantasy streetscape” или “conceptual city”.",
+          "Не приписывайте изображению Краков, Париж или другой реальный город только потому, что модель воспроизвела знакомые архитектурные признаки. Важно отличать реальное место, показанное на изображении, от вымышленного места, созданного по правдоподобному образцу. Если площадка требует специальной маркировки или классификации, сверяйтесь с её текущими правилами: требования могут меняться."
+        ],
+        "bullets": [
+          "Описывайте вымышленный характер, если он важен для использования файла.",
+          "Не применяйте реальные города лишь как сравнение по стилю.",
+          "Отделяйте обстоятельства создания от географического местоположения."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Используйте ИИ для черновика, а не как источник географической истины",
+        "paragraphs": [
+          "Локальный режим MetaStocker может анализировать изображения в браузере пользователя с помощью поддерживаемых локальных моделей. Предложенный город всё равно остается выводом модели, а не независимым подтверждением. Проверяйте каждое географическое слово и удаляйте то, для чего нет основания. Загруженная в память модель и файлы в кэше браузера — разные вещи: первая нужна для текущего вывода, вторые могут сохраняться после выгрузки. Ни одно из них не заменяет редакторскую проверку.",
+          "Контекст пакетного описания должен содержать только факты, общие для всех файлов. Фраза “фотографии с документированной площади в Кракове” подходит для тщательно отобранного набора; “европейский город” может оказаться слишком общим или неподтвержденным для смешанной подборки. Дополнительные теги также нужно просматривать по отдельным файлам. Проверка точного количества тегов подтверждает количество, но не достоверность.",
+          "Приложение умеет экспортировать форматы для площадок, однако экспорт не является отправкой и не гарантирует принятие. Перед экспортом отредактируйте заголовок и ключевые слова, проверьте итоговые строки и откройте актуальные требования портала автора. Для Adobe Stock используйте консервативный лимит ключевых слов и ставьте важные термины в начало. Для Shutterstock используйте точные английские описания и подтвержденные сведения о месте и дате, когда они требуются для документального контента.",
+          "Для документальных редакционных подписей Shutterstock нужны проверенные дата и место. Это требование не распространяется в общем виде на коммерческие работы."
+        ],
+        "bullets": [
+          "Считайте название места от ИИ предложением, требующим проверки.",
+          "Проверяйте общий контекст и дополнительные теги для каждого файла.",
+          "Просматривайте экспортированные строки и актуальные правила портала."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Не смешивайте стоковые метаданные с индексацией Google",
+        "paragraphs": [
+          "Ключевые слова на стоковой площадке помогают описывать файл во внутреннем поиске этой площадки. Они не равны продвижению сайта фотографа в Google. Для поиска изображений на собственном сайте важны окружающий текст, корректный alt-текст и настройки индексации; набор стоковых тегов не гарантирует обход страниц, индексацию, посещаемость или продажи.",
+          "Если изображение появится на вашем сайте, напишите точное описание вокруг него и в alt-тексте. Для обычной улицы можно указать старый европейский городской пейзаж без названия города. Для подтвержденного снимка — документированную площадь в Кракове. Для сгенерированной сцены — вымышленный характер, если он важен читателю."
+        ],
+        "bullets": [
+          "Разделяйте внутренний поиск стока и SEO собственного сайта.",
+          "Используйте точный окружающий текст и alt-текст.",
+          "Не обещайте позиции, скачивания или доход благодаря географическому тегу."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Определите самые сильные доказательства местоположения.",
+      "Удалите названия городов, стран и достопримечательностей, основанные только на догадке.",
+      "Для неизвестной улицы используйте видимые архитектурные и сценические признаки.",
+      "Добавляйте Краков или другое место только при документальном подтверждении.",
+      "При необходимости обозначьте сгенерированный город как вымышленный.",
+      "Проверьте предложения ИИ, пакетный контекст и дополнительные теги пофайлово.",
+      "Соблюдайте язык метаданных, который требует площадка.",
+      "Перед экспортом сверяйтесь с актуальными правилами автора.",
+      "Проверьте готовые строки: экспорт не является отправкой и принятием."
+    ],
+    "illustration": {
+      "title": "Проверьте место перед добавлением тегов",
+      "steps": [
+        {
+          "label": "Соберите доказательства места",
+          "detail": "Проверьте заметки, записи, вывески и подтвержденные памятники."
+        },
+        {
+          "label": "Отделите факт от догадки",
+          "detail": "Не оставляйте подсказку ИИ без независимой проверки."
+        },
+        {
+          "label": "Проверьте и экспортируйте",
+          "detail": "Отредактируйте строки и сверьтесь с правилами площадки."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "স্টক ছবির অবস্থান-কীওয়ার্ড: যাচাই করা তথ্যই যোগ করুন",
+    "description": "শহর ও স্থানের কীওয়ার্ড কখন ব্যবহার করবেন, প্রমাণ ও AI অনুমান কীভাবে আলাদা করবেন এবং রপ্তানির আগে অবস্থান মেটাডেটা কীভাবে যাচাই করবেন তা জানুন।",
+    "intro": "অবস্থানের কীওয়ার্ড স্টক ছবিকে সহজে খুঁজে পেতে সাহায্য করতে পারে, কিন্তু ভুল স্থানের নাম মেটাডেটাকে বিভ্রান্তিকর করে তুলতে পারে। ব্যবহারিক নিয়মটি সহজ: নির্ভরযোগ্য প্রমাণ দিয়ে সমর্থন করতে পারলেই কেবল কোনো অবস্থান যোগ করুন। পরিচিত স্থাপত্যশৈলী, রাস্তার সাইন বা AI-এর পরামর্শ তদন্তে সহায়তা করতে পারে, কিন্তু এগুলোর কোনোটিই স্বয়ংক্রিয়ভাবে ছবিটি কোথায় তোলা হয়েছে তা প্রমাণ করে না।\n\nএই নির্দেশিকায় তিনটি পরিস্থিতি দেখানো হয়েছে: নিশ্চিত শহরবিহীন একটি সাধারণ পুরোনো ইউরোপীয় রাস্তা, ক্রাকোভের নথিভুক্ত একটি চত্বর এবং এমন একটি AI-উৎপাদিত শহর যার নির্দিষ্ট অবস্থান বাস্তবে নেই। লক্ষ্যটি উপযোগী প্রেক্ষাপট বাদ দেওয়া নয়। আলোকচিত্রী যা জানেন, মডেল যা কেবল অনুমান করে তার থেকে তা আলাদা করে দেখা, তারপর প্রতিটি ফাইল পর্যালোচনা করা যায় এমন সঠিক মার্কেটপ্লেস মেটাডেটা তৈরি করাই লক্ষ্য।",
+    "sections": [
+      {
+        "heading": "কীওয়ার্ড তালিকা নয়, প্রমাণ দিয়ে শুরু করুন",
+        "paragraphs": [
+          "মেটাডেটা লেখার আগে প্রতিটি ছবির জন্য পাওয়া সবচেয়ে শক্তিশালী প্রমাণ নথিবদ্ধ করুন। সরাসরি নথির মধ্যে থাকতে পারে আলোকচিত্রীর নোট, যাচাই করা কাজের বিবরণ, GPS রেকর্ড বা স্পষ্টভাবে পড়া যায় এমন সরকারি সাইন। ব্যক্তিগত জ্ঞান থেকে শনাক্ত করা কোনো স্থান উপযোগী হতে পারে, কিন্তু দৃশ্যমান প্রমাণ অস্পষ্ট বা স্মৃতি অনিশ্চিত হলে থামুন।",
+          "মডেলের অবস্থান-পরামর্শ তদন্তের নোটে থাকতে পারে, কিন্তু তা স্বয়ংক্রিয়ভাবে চূড়ান্ত শিরোনাম বা কীওয়ার্ড তালিকায় যোগ করা যাবে না। পুরোনো সম্মুখভাগ, পাথরের রাস্তা, বারান্দা ও রাস্তার বাতি বহু শহরেই দেখা যায়। একই রকম দৃশ্যমান বৈশিষ্ট্য কোনো পৌরসভা, জেলা, স্থাপনা বা দেশ প্রমাণ করে না।"
+        ],
+        "bullets": [
+          "যাচাই করা তথ্য: নথিভুক্ত ছবি তোলার স্থান বা দ্ব্যর্থহীন স্থানের উল্লেখ।",
+          "উপযোগী প্রেক্ষাপট: পুরোনো রাস্তা, ঐতিহাসিক স্থাপত্য, ইউরোপীয় রাস্তার দৃশ্য।",
+          "যাচাইহীন অনুমান: ছবিটি কোনো নামধারী শহরের মতো দেখতে—মডেলের এমন পরামর্শ।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "প্রথম পরিস্থিতি: একটি সাধারণ পুরোনো ইউরোপীয় রাস্তা",
+        "paragraphs": [
+          "একটি কাল্পনিক ছবি কল্পনা করুন, যেখানে সরু পাথর-বিছানো রাস্তা, ক্ষয়ধরা প্লাস্টারের সম্মুখভাগ, জানালার পাল্লা ও উষ্ণ সন্ধ্যার আলো দেখা যাচ্ছে। আলোকচিত্রী শুধু জানেন যে এটি ইউরোপের কোথাও তোলা। শহর শনাক্ত করার মতো কোনো সাইন, GPS রেকর্ড, পরিচিত স্থাপনা বা ভ্রমণ-নোট নেই।",
+          "নিরাপদ মেটাডেটায় দৃশ্যমান বিষয় এবং যাচাই করা ভৌগোলিক স্তর বর্ণনা করা হয়। ইংরেজি মেটাডেটা প্রয়োজন এমন প্ল্যাটফর্মে উপযুক্ত শব্দ হতে পারে “old European street,” “historic architecture,” “cobblestone street,” “traditional façades,” “urban passage,” এবং “evening light।” দৃশ্যটি কোনো শহরের বৈশিষ্ট্যপূর্ণ মনে হচ্ছে বলে “Prague,” “Krakow” বা অন্য কোনো শহরের নাম যোগ করবেন না।",
+          "দেশের বিস্তৃত কীওয়ার্ডেরও প্রমাণ দরকার। দেশটি নথিভুক্ত না থাকলে তা বাদ দিন। অবস্থান ব্যবহারে সংযম ছবিটিকে অপ্রয়োজনীয় করে না; এটি আকর্ষণীয় কিন্তু অসমর্থিত ব্যাখ্যাকে তথ্যভিত্তিক দাবিতে পরিণত হতে বাধা দেয়।"
+        ],
+        "bullets": [
+          "সরাসরি দেখা যায় এমন দৃশ্য ও স্থাপত্যের শব্দ রাখুন।",
+          "অঞ্চলটি নথিভুক্ত থাকলেই আঞ্চলিক শব্দ ব্যবহার করুন।",
+          "শৈলী শনাক্ত করাকে নির্দিষ্ট শহরের দাবি বানাবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "দ্বিতীয় পরিস্থিতি: ক্রাকোভের একটি নথিভুক্ত চত্বর",
+        "paragraphs": [
+          "এবার একটি ভিন্ন কাল্পনিক ছবি বিবেচনা করুন। আলোকচিত্রীর নোট ও ছবি তোলার রেকর্ডে অবস্থানটি পোল্যান্ডের ক্রাকোভের একটি নির্দিষ্ট চত্বর হিসেবে উল্লেখ আছে। স্থাপত্য ও দৃশ্যমান বিন্যাস সেই রেকর্ডের সঙ্গে সামঞ্জস্যপূর্ণ, কিন্তু ছবিতে প্রতিটি স্থাপনা স্পষ্ট দেখা যায় না।",
+          "এখানে যাচাই করা অবস্থান উপযোগী মেটাডেটা হতে পারে। শিরোনাম হতে পারে “City square in Krakow, Poland at evening।” কীওয়ার্ড “Krakow,” “Poland,” “city square,” “European architecture” দিয়ে শুরু হতে পারে, এরপর “cobblestone,” “city buildings” বা “urban travel”-এর মতো দৃশ্যমান বিষয় যোগ করা যায়। সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো শুরুতে রাখুন এবং সম্পূর্ণ তালিকাটি এই নির্দিষ্ট ছবির জন্য প্রাসঙ্গিক রাখুন।",
+          "আলোকচিত্রী সেই স্থাপনাটি যাচাই না করলে তার নাম যোগ করবেন না। একটি নথিভুক্ত শহর ফ্রেমে দেখা প্রতিটি ভবন, অনুষ্ঠান, পাড়া বা ঐতিহাসিক সম্পর্ককে স্বয়ংক্রিয়ভাবে যাচাই করে না। কোনো মার্কেটপ্লেসের বর্তমান নিয়ম ইংরেজি বর্ণনামূলক মেটাডেটা চাইলে, নিবন্ধ বা অবদানকারী ইন্টারফেস অন্য ভাষায় হলেও মেটাডেটা ইংরেজিতেই রাখুন।"
+        ],
+        "bullets": [
+          "উপযুক্ত আস্থার স্তরে নথিভুক্ত শহর ও দেশ ব্যবহার করুন।",
+          "নির্দিষ্ট শনাক্তকরণ যাচাই করা থাকলেই চত্বর বা স্থাপনার নাম দিন।",
+          "কীওয়ার্ডের সীমা ও প্রয়োজনীয় ক্ষেত্রের জন্য বর্তমান পোর্টালের নিয়ম দেখুন।"
+        ],
+        "example": "উদাহরণ মেটাডেটা\nTitle: City square in Krakow, Poland at evening\nKeywords: Krakow, Poland, city square, European architecture, cobblestone, city buildings, travel, urban scene, evening light"
+      },
+      {
+        "heading": "তৃতীয় পরিস্থিতি: একটি অজানা AI-উৎপাদিত শহর",
+        "paragraphs": [
+          "ধরা যাক, কোনো AI সিস্টেম কল্পিত শহরের দৃশ্য হিসেবে একটি ছবি তৈরি করেছে। এতে বিশ্বাসযোগ্য পুরোনো চত্বর আছে, কিন্তু বাস্তবে ছবি তোলার কোনো অবস্থান নেই এবং কোনো নামধারী শহর নির্ধারণের নির্দেশনাও নেই। প্ল্যাটফর্ম ও ছবির প্রকৃত বিষয়বস্তুর ওপর নির্ভর করে ছবিটি “fictitious city,” “imagined architecture,” “generated urban scene,” “fantasy streetscape” বা “conceptual city”-এর মতো শব্দ সমর্থন করতে পারে।",
+          "মডেল পরিচিত স্থাপত্যের সংকেত তৈরি করেছে বলে Krakow, Paris বা অন্য কোনো বাস্তব স্থানের নাম দেবেন না। সঠিক পার্থক্য হলো—ছবিতে উপস্থাপিত বাস্তব স্থান এবং বিশ্বাসযোগ্য দেখানোর জন্য নকশা করা কাল্পনিক স্থান এক নয়। প্ল্যাটফর্ম নির্দিষ্ট প্রকাশ বা বিষয়বস্তু শ্রেণিবিন্যাস চাইলে তার বর্তমান অবদানকারী নির্দেশনা অনুসরণ করুন; এসব প্রয়োজনীয়তা পরিবর্তিত হতে পারে।"
+        ],
+        "bullets": [
+          "সম্পদের জন্য প্রাসঙ্গিক হলে তার কাল্পনিক প্রকৃতি বর্ণনা করুন।",
+          "শুধু দৃশ্যগত তুলনা হিসেবে ব্যবহৃত বাস্তব শহরের নাম এড়িয়ে চলুন।",
+          "সৃষ্টির প্রেক্ষাপটকে ভৌগোলিক অবস্থান থেকে আলাদা রাখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "AI-কে খসড়া সহকারী হিসেবে ব্যবহার করুন, অবস্থানের কর্তৃপক্ষ হিসেবে নয়",
+        "paragraphs": [
+          "MetaStocker-এর স্থানীয় মোড দর্শকের ব্রাউজারে সমর্থিত স্থানীয় মডেল ব্যবহার করে ছবি বিশ্লেষণ করতে পারে। উৎপন্ন শহরের পরামর্শ এখনও একটি অনুমান, স্বাধীন যাচাই নয়। প্রস্তাবিত প্রতিটি অবস্থান-শব্দ পর্যালোচনা করুন এবং প্রমাণ দিয়ে সমর্থন করা যায় না এমন সবকিছু বাদ দিন। স্থানীয় মডেলের স্মৃতি ও ডাউনলোড করা ব্রাউজার ক্যাশ আলাদা বিষয়: মডেল লোড করলে তা অনুমানের কাজে ব্যবহৃত হয়, আর ক্যাশ করা ফাইল আনলোড করার পরও থেকে যেতে পারে। কোনোটিই মানুষের পর্যালোচনার প্রয়োজনীয়তা বদলায় না।",
+          "ব্যাচের ক্ষেত্রে কেবল এমন যৌথ তথ্য দিন যা সত্যিই প্রতিটি ফাইলে প্রযোজ্য। “Photographs from a documented Krakow square” সতর্কভাবে বাছাই করা ব্যাচের জন্য সঠিক হতে পারে; “European city” মিশ্র সেটের জন্য অতিরিক্ত বিস্তৃত বা এখনও অসমর্থিত হতে পারে। অতিরিক্ত ট্যাগও প্রতিটি ফাইল অনুযায়ী পরীক্ষা করতে হবে। সঠিক ট্যাগ-সংখ্যা যাচাই কেবল অনুরোধ করা সংখ্যা নিশ্চিত করে, তথ্যের সত্যতা নয়।",
+          "অ্যাপটি মার্কেটপ্লেসের জন্য ফরম্যাট রপ্তানি করতে পারে, কিন্তু রপ্তানি জমা দেওয়া নয় এবং গ্রহণযোগ্যতার নিশ্চয়তাও দেয় না। রপ্তানির আগে শিরোনাম ও কীওয়ার্ড সম্পাদনা করুন, চূড়ান্ত সারিগুলো পরীক্ষা করুন এবং বর্তমান অবদানকারী পোর্টালের প্রয়োজনীয়তা দেখুন। Adobe Stock-এর জন্য সংযত কীওয়ার্ড-সংখ্যা ব্যবহার করুন এবং সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো শুরুর দিকে রাখুন। Shutterstock-এর জন্য সঠিক ইংরেজি মেটাডেটা ও প্রাসঙ্গিক কীওয়ার্ড ব্যবহার করুন। তথ্যচিত্রধর্মী সম্পাদকীয় ক্যাপশনে যাচাই করা তারিখ ও অবস্থান দরকার; এই প্রয়োজনীয়তা সাধারণভাবে বাণিজ্যিক কাজে প্রযোজ্য নয়।"
+        ],
+        "bullets": [
+          "AI-এর স্থান-নামকে প্রমাণ-প্রয়োজন এমন পরামর্শ হিসেবে দেখুন।",
+          "প্রতিটি ফাইলের ব্যাচ-প্রেক্ষাপট ও অতিরিক্ত ট্যাগ পর্যালোচনা করুন।",
+          "আপলোডের আগে রপ্তানি করা সারি ও বর্তমান মার্কেটপ্লেস পোর্টাল পরীক্ষা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "মার্কেটপ্লেসের মেটাডেটাকে Google-এর ইনডেক্সিংয়ের সঙ্গে গুলিয়ে ফেলবেন না",
+        "paragraphs": [
+          "স্টক মার্কেটপ্লেসে দেওয়া কীওয়ার্ড সেই মার্কেটপ্লেসের ভেতরে কোনো সম্পদের বর্ণনা দিতে সাহায্য করে। এগুলো আলোকচিত্রীর ওয়েবসাইটকে Google-এ দৃশ্যমান করার সমান নয়। ওয়েবসাইটে ছবি খুঁজে পাওয়া পৃষ্ঠার প্রেক্ষাপট, ছবির বর্ণনা ও সাইটের ইনডেক্সিং ব্যবস্থা নির্ভর করে; মার্কেটপ্লেসের কীওয়ার্ড তালিকা ক্রলিং, ইনডেক্সিং, ট্রাফিক বা বিক্রির নিশ্চয়তা দেয় না।",
+          "ছবিটি পরে নিজের ওয়েবসাইটে দেখালে ছবিটির সঠিক বর্ণনা দেয় এমন আশপাশের লেখা ও বিকল্প পাঠ লিখুন। সাধারণ রাস্তার ক্ষেত্রে শহরের নাম না দিয়ে পুরোনো ইউরোপীয় রাস্তার দৃশ্য উল্লেখ করা যেতে পারে। নথিভুক্ত ছবির ক্ষেত্রে যাচাই করা ক্রাকোভের চত্বরের উল্লেখ করা যেতে পারে। উৎপন্ন দৃশ্যের ক্ষেত্রে পাঠকের জন্য গুরুত্বপূর্ণ হলে সেটিকে কাল্পনিক হিসেবে চিহ্নিত করুন।"
+        ],
+        "bullets": [
+          "মার্কেটপ্লেসের কীওয়ার্ড ও ওয়েবসাইটের SEO কাজ আলাদা রাখুন।",
+          "নিজের সাইটে নির্ভুল আশপাশের লেখা ও বিকল্প পাঠ ব্যবহার করুন।",
+          "কোনো অবস্থান-কীওয়ার্ড থেকে র‌্যাঙ্কিং, ডাউনলোড বা আয়ের প্রতিশ্রুতি দেবেন না।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "ছবিটির অবস্থান সম্পর্কে সবচেয়ে শক্তিশালী প্রমাণ শনাক্ত করুন।",
+      "শুধু অনুমানের ওপর ভিত্তি করা শহর, দেশ, স্থাপনা ও জেলার নাম বাদ দিন।",
+      "যাচাইহীন রাস্তার জন্য দৃশ্যমান স্থাপত্য বা দৃশ্যের বর্ণনা ব্যবহার করুন।",
+      "নির্দিষ্ট অবস্থান নথিভুক্ত থাকলেই Krakow বা অন্য কোনো স্থান যোগ করুন।",
+      "উপযুক্ত হলে AI-উৎপাদিত শহরকে কাল্পনিক বা কল্পিত হিসেবে চিহ্নিত করুন।",
+      "প্রতিটি ফাইল অনুযায়ী AI-এর পরামর্শ, ব্যাচের প্রেক্ষাপট ও অতিরিক্ত ট্যাগ পর্যালোচনা করুন।",
+      "প্ল্যাটফর্মের প্রয়োজনীয় ভাষায় মার্কেটপ্লেসের মেটাডেটা রাখুন।",
+      "রপ্তানি বা আপলোডের আগে বর্তমান অবদানকারী নিয়ম দেখুন।",
+      "চূড়ান্ত মেটাডেটা সারি পরীক্ষা করুন; রপ্তানি জমা দেওয়া বা গ্রহণযোগ্যতা নয়।"
+    ],
+    "illustration": {
+      "title": "কীওয়ার্ড যোগের আগে অবস্থান যাচাই করুন",
+      "steps": [
+        {
+          "label": "অবস্থানের প্রমাণ সংগ্রহ করুন",
+          "detail": "নোট, রেকর্ড, সাইন ও নিশ্চিত স্থাপনা পরীক্ষা করুন।"
+        },
+        {
+          "label": "তথ্য ও অনুমান আলাদা করুন",
+          "detail": "স্বাধীনভাবে যাচাই না হলে AI-এর স্থান-পরামর্শ বাদ দিন।"
+        },
+        {
+          "label": "পর্যালোচনা ও রপ্তানি করুন",
+          "detail": "প্রতিটি সারি সম্পাদনা করে বর্তমান মার্কেটপ্লেসের নিয়ম দেখুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "स्टॉक फ़ोटो के स्थान-कीवर्ड: केवल सत्यापित जानकारी जोड़ें",
+    "description": "जानें कि शहर और स्थान के कीवर्ड कब इस्तेमाल करें, प्रमाण को AI अनुमानों से कैसे अलग रखें और निर्यात से पहले स्थान-मेटाडेटा कैसे जाँचें।",
+    "intro": "स्थान के कीवर्ड स्टॉक छवि को आसानी से खोजे जाने में मदद कर सकते हैं, लेकिन गलत स्थान-नाम मेटाडेटा को भ्रामक बना सकता है। व्यावहारिक नियम सरल है: किसी स्थान को तभी जोड़ें जब विश्वसनीय प्रमाण से उसका समर्थन कर सकें। पहचानी जाने वाली स्थापत्य शैली, सड़क का संकेत या AI का सुझाव जाँच में मदद कर सकता है, लेकिन इनमें से कोई भी अपने-आप यह सिद्ध नहीं करता कि तस्वीर कहाँ बनाई गई थी।\n\nइस मार्गदर्शिका में तीन स्थितियाँ शामिल हैं: बिना पुष्ट शहर वाली एक सामान्य पुरानी यूरोपीय सड़क, क्राकोव का एक दस्तावेज़ित चौक और AI द्वारा बनाया गया ऐसा शहर जिसका सटीक स्थान वास्तविकता में मौजूद नहीं है। उद्देश्य उपयोगी संदर्भ हटाना नहीं है। लक्ष्य यह अलग करना है कि फ़ोटोग्राफ़र क्या जानता है और मॉडल केवल क्या अनुमान लगाता है, फिर ऐसी सटीक मार्केटप्लेस मेटाडेटा बनाना है जिसकी फ़ाइल-दर-फ़ाइल समीक्षा की जा सके।",
+    "sections": [
+      {
+        "heading": "कीवर्ड सूची से नहीं, प्रमाण से शुरुआत करें",
+        "paragraphs": [
+          "मेटाडेटा लिखने से पहले हर छवि के लिए उपलब्ध सबसे मजबूत प्रमाण दर्ज करें। प्रत्यक्ष दस्तावेज़ में फ़ोटोग्राफ़र के नोट्स, सत्यापित असाइनमेंट विवरण, GPS रिकॉर्ड या साफ़ पढ़ा जाने वाला आधिकारिक संकेत शामिल हो सकता है। प्रत्यक्ष अनुभव से पहचाना गया स्थान उपयोगी हो सकता है, लेकिन दृश्य प्रमाण अस्पष्ट हो या स्मृति अनिश्चित हो तो रुकें।",
+          "मॉडल का स्थान-सुझाव जाँच-नोट में रखें, उसे अपने-आप अंतिम शीर्षक या कीवर्ड सूची में न जोड़ें। पुराने अग्रभाग, पत्थर की सड़कें, बालकनियाँ और सड़क की बत्तियाँ अनेक शहरों में मिलती हैं। समान दृश्य चरित्र किसी नगरपालिका, ज़िले, स्थलचिह्न या देश का प्रमाण नहीं है।"
+        ],
+        "bullets": [
+          "सत्यापित तथ्य: दस्तावेज़ित तस्वीर-स्थान या स्पष्ट स्थान-संदर्भ।",
+          "उपयोगी संदर्भ: पुरानी सड़क, ऐतिहासिक स्थापत्य, यूरोपीय सड़क-दृश्य।",
+          "अपुष्ट अनुमान: मॉडल का यह सुझाव कि छवि किसी नामित शहर जैसी दिखती है।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "पहली स्थिति: एक सामान्य पुरानी यूरोपीय सड़क",
+        "paragraphs": [
+          "एक काल्पनिक तस्वीर की कल्पना करें जिसमें संकरी पत्थर-बिछी सड़क, घिसे हुए प्लास्टर के अग्रभाग, खिड़की के पट और शाम की गर्म रोशनी दिखाई देती है। फ़ोटोग्राफ़र केवल इतना जानता है कि तस्वीर यूरोप में कहीं बनाई गई थी। शहर की पहचान करने वाला कोई संकेत, GPS रिकॉर्ड, पहचाना जाने वाला स्थलचिह्न या यात्रा-नोट नहीं है।",
+          "सुरक्षित मेटाडेटा में दिखाई देने वाले विषय और सत्यापित भौगोलिक स्तर का वर्णन करें। अंग्रेज़ी मेटाडेटा माँगने वाले प्लेटफ़ॉर्म के लिए उपयुक्त शब्दों में “old European street,” “historic architecture,” “cobblestone street,” “traditional façades,” “urban passage” और “evening light” शामिल हो सकते हैं। दृश्य किसी शहर की विशेषता जैसा लगता है, इसलिए केवल “Prague,” “Krakow” या किसी अन्य शहर का नाम न जोड़ें।",
+          "व्यापक देश-कीवर्ड के लिए भी प्रमाण चाहिए। यदि देश दर्ज नहीं है, तो उसे छोड़ दें। स्थान के मामले में संयम छवि को अनुपयोगी नहीं बनाता; यह आकर्षक लेकिन असमर्थित व्याख्या को तथ्यात्मक दावे में बदलने से रोकता है।"
+        ],
+        "bullets": [
+          "सीधे दिखाई देने वाले दृश्य और स्थापत्य संबंधी शब्द रखें।",
+          "क्षेत्र दस्तावेज़ित हो तभी क्षेत्रीय शब्दावली इस्तेमाल करें।",
+          "शैली की पहचान को किसी खास शहर के दावे में न बदलें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "दूसरी स्थिति: क्राकोव का दस्तावेज़ित चौक",
+        "paragraphs": [
+          "अब एक अलग काल्पनिक छवि पर विचार करें। फ़ोटोग्राफ़र के नोट्स और तस्वीर लेने का रिकॉर्ड स्थान को पोलैंड के क्राकोव में एक विशिष्ट चौक के रूप में पहचानते हैं। स्थापत्य और दिखाई देने वाला विन्यास उस रिकॉर्ड से मेल खाते हैं, लेकिन छवि में हर स्थलचिह्न साफ़ दिखाई नहीं देता।",
+          "यहाँ सत्यापित स्थान उपयोगी मेटाडेटा हो सकता है। शीर्षक हो सकता है “City square in Krakow, Poland at evening।” कीवर्ड “Krakow,” “Poland,” “city square,” “European architecture” से शुरू हो सकते हैं और फिर “cobblestone,” “city buildings” या “urban travel” जैसे दिखाई देने वाले विषय जोड़े जा सकते हैं। सबसे महत्वपूर्ण शब्दों को शुरुआत में रखें और पूरी सूची को इसी विशेष छवि के लिए प्रासंगिक रखें।",
+          "फ़ोटोग्राफ़र ने उस स्थलचिह्न की पुष्टि न की हो तो उसका नाम न जोड़ें। दस्तावेज़ित शहर फ़्रेम में दिखाई देने वाली हर इमारत, आयोजन, पड़ोस या ऐतिहासिक संबंध की अपने-आप पुष्टि नहीं करता। यदि किसी मार्केटप्लेस के वर्तमान नियम अंग्रेज़ी वर्णनात्मक मेटाडेटा माँगते हैं, तो लेख या योगदानकर्ता इंटरफ़ेस दूसरी भाषा में होने पर भी मेटाडेटा अंग्रेज़ी में रखें।"
+        ],
+        "bullets": [
+          "उचित विश्वसनीयता-स्तर पर दस्तावेज़ित शहर और देश इस्तेमाल करें।",
+          "चौक या स्थलचिह्न का नाम तभी दें जब वही विशिष्ट पहचान सत्यापित हो।",
+          "कीवर्ड सीमा और आवश्यक फ़ील्ड के लिए वर्तमान पोर्टल नियम जाँचें।"
+        ],
+        "example": "उदाहरण मेटाडेटा\nTitle: City square in Krakow, Poland at evening\nKeywords: Krakow, Poland, city square, European architecture, cobblestone, city buildings, travel, urban scene, evening light"
+      },
+      {
+        "heading": "तीसरी स्थिति: एक अज्ञात AI-निर्मित शहर",
+        "paragraphs": [
+          "मान लें कि किसी AI प्रणाली ने एक काल्पनिक शहर-दृश्य के रूप में छवि बनाई है। इसमें विश्वसनीय पुराना चौक है, लेकिन वास्तविक दुनिया में तस्वीर लेने का कोई स्थान नहीं है और किसी नामित शहर को स्थापित करने वाला कोई निर्देश भी नहीं है। प्लेटफ़ॉर्म और छवि की वास्तविक सामग्री के आधार पर इसमें “fictitious city,” “imagined architecture,” “generated urban scene,” “fantasy streetscape” या “conceptual city” जैसे शब्द उपयुक्त हो सकते हैं।",
+          "मॉडल ने परिचित स्थापत्य संकेत बनाए हैं, इसलिए Krakow, Paris या किसी अन्य वास्तविक स्थान का नाम न दें। सही अंतर यह है कि छवि में प्रस्तुत वास्तविक स्थान और विश्वसनीय दिखने के लिए बनाया गया काल्पनिक स्थान अलग होते हैं। यदि प्लेटफ़ॉर्म किसी विशेष प्रकटीकरण या सामग्री-वर्गीकरण की माँग करता है, तो उसकी वर्तमान योगदानकर्ता मार्गदर्शिका का पालन करें; ये आवश्यकताएँ बदल सकती हैं।"
+        ],
+        "bullets": [
+          "जहाँ संपत्ति के लिए प्रासंगिक हो, उसकी काल्पनिक प्रकृति बताएँ।",
+          "केवल दृश्य तुलना के लिए इस्तेमाल किए गए वास्तविक शहरों के नाम से बचें।",
+          "निर्माण-संदर्भ को भौगोलिक स्थान से अलग रखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "AI को प्रारूप-सहायक मानें, स्थान-प्राधिकरण नहीं",
+        "paragraphs": [
+          "MetaStocker का स्थानीय मोड दर्शक के ब्राउज़र में समर्थित स्थानीय मॉडल का उपयोग करके छवियों का विश्लेषण कर सकता है। बनाया गया शहर-सुझाव अब भी अनुमान है, स्वतंत्र सत्यापन नहीं। हर प्रस्तावित स्थान-शब्द की समीक्षा करें और जिसे प्रमाण से समर्थित नहीं किया जा सकता उसे हटा दें। स्थानीय मॉडल की स्मृति और डाउनलोड किया हुआ ब्राउज़र कैश अलग चीज़ें हैं: मॉडल लोड करने पर वह अनुमान के लिए इस्तेमाल होता है, जबकि कैश की फ़ाइलें अनलोड करने के बाद भी रह सकती हैं। इनमें से कोई भी मानव समीक्षा की आवश्यकता नहीं बदलता।",
+          "बैच के लिए केवल ऐसे साझा तथ्य दें जो सचमुच हर फ़ाइल पर लागू होते हों। “Photographs from a documented Krakow square” सावधानी से चुने गए बैच के लिए सही हो सकता है; मिश्रित समूह के लिए “European city” बहुत व्यापक या अब भी असमर्थित हो सकता है। अतिरिक्त टैग भी हर फ़ाइल के अनुसार जाँचें। सटीक टैग-गणना सत्यापन केवल माँगी गई संख्या की पुष्टि करता है, तथ्यात्मक शुद्धता की नहीं।",
+          "ऐप मार्केटप्लेस के लिए फ़ॉर्मैट निर्यात कर सकता है, लेकिन निर्यात सबमिशन नहीं है और स्वीकृति की गारंटी भी नहीं देता। निर्यात से पहले शीर्षक और कीवर्ड संपादित करें, अंतिम पंक्तियों का निरीक्षण करें और वर्तमान योगदानकर्ता पोर्टल की आवश्यकताएँ जाँचें। Adobe Stock के लिए संयमित कीवर्ड संख्या रखें और सबसे महत्वपूर्ण शब्दों को शुरुआत के पास रखें। Shutterstock के लिए सटीक अंग्रेज़ी मेटाडेटा और प्रासंगिक कीवर्ड इस्तेमाल करें। दस्तावेज़ी संपादकीय कैप्शन में सत्यापित तारीख और स्थान आवश्यक हैं; यह आवश्यकता सामान्य रूप से वाणिज्यिक कार्य पर लागू नहीं होती।"
+        ],
+        "bullets": [
+          "AI के स्थान-नामों को प्रमाण-आवश्यक सुझाव मानें।",
+          "हर फ़ाइल के लिए बैच-संदर्भ और अतिरिक्त टैग की समीक्षा करें।",
+          "अपलोड से पहले निर्यात की गई पंक्तियों और वर्तमान मार्केटप्लेस पोर्टल का निरीक्षण करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "मार्केटप्लेस मेटाडेटा को Google इंडेक्सिंग से न मिलाएँ",
+        "paragraphs": [
+          "स्टॉक मार्केटप्लेस में डाले गए कीवर्ड उस मार्केटप्लेस के भीतर किसी संपत्ति का वर्णन करने में मदद करते हैं। वे फ़ोटोग्राफ़र की वेबसाइट को Google में दिखाने के समान नहीं हैं। वेबसाइट पर छवि की खोज पृष्ठ-संदर्भ, छवि-विवरण और साइट की इंडेक्सिंग व्यवस्था पर निर्भर करती है; मार्केटप्लेस की कीवर्ड सूची क्रॉलिंग, इंडेक्सिंग, ट्रैफ़िक या बिक्री की गारंटी नहीं देती।",
+          "यदि छवि बाद में आपकी अपनी वेबसाइट पर दिखाई जाए, तो उसके आसपास का पाठ और वैकल्पिक पाठ छवि का सटीक वर्णन करते हुए लिखें। सामान्य सड़क के लिए शहर का नाम दिए बिना पुराना यूरोपीय सड़क-दृश्य बताया जा सकता है। दस्तावेज़ित छवि के लिए सत्यापित क्राकोव चौक का उल्लेख किया जा सकता है। उत्पन्न दृश्य के लिए, पाठक के लिए महत्वपूर्ण होने पर उसे काल्पनिक बताएँ।"
+        ],
+        "bullets": [
+          "मार्केटप्लेस कीवर्ड और वेबसाइट SEO के काम अलग रखें।",
+          "अपनी साइट पर सटीक आसपास का पाठ और वैकल्पिक पाठ इस्तेमाल करें।",
+          "स्थान-कीवर्ड से रैंकिंग, डाउनलोड या आय का वादा कभी न करें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "छवि के स्थान के बारे में सबसे मजबूत प्रमाण पहचानें।",
+      "केवल अनुमान वाले शहर, देश, स्थलचिह्न और ज़िले के नाम हटाएँ।",
+      "अपुष्ट सड़क के लिए दिखाई देने वाले स्थापत्य या दृश्य-वर्णन इस्तेमाल करें।",
+      "Krakow या कोई अन्य स्थान तभी जोड़ें जब वही विशिष्ट स्थान दस्तावेज़ित हो।",
+      "उचित होने पर AI-निर्मित शहर को काल्पनिक या कल्पित बताएँ।",
+      "हर फ़ाइल के लिए AI सुझावों, बैच-संदर्भ और अतिरिक्त टैग की समीक्षा करें।",
+      "मार्केटप्लेस मेटाडेटा प्लेटफ़ॉर्म की आवश्यक भाषा में रखें।",
+      "निर्यात या अपलोड से पहले वर्तमान योगदानकर्ता नियम जाँचें।",
+      "अंतिम मेटाडेटा पंक्तियों का निरीक्षण करें; निर्यात सबमिशन या स्वीकृति नहीं है।"
+    ],
+    "illustration": {
+      "title": "कीवर्ड जोड़ने से पहले स्थान सत्यापित करें",
+      "steps": [
+        {
+          "label": "स्थान का प्रमाण जुटाएँ",
+          "detail": "नोट्स, रिकॉर्ड, संकेत और पुष्ट स्थलचिह्न जाँचें।"
+        },
+        {
+          "label": "तथ्य और अनुमान अलग करें",
+          "detail": "स्वतंत्र सत्यापन न होने पर AI के स्थान-सुझाव हटाएँ।"
+        },
+        {
+          "label": "समीक्षा और निर्यात करें",
+          "detail": "हर पंक्ति संपादित करें, फिर वर्तमान मार्केटप्लेस आवश्यकताएँ जाँचें।"
+        }
+      ]
+    }
+  }
+}

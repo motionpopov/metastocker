@@ -1,0 +1,475 @@
+{
+  "slug": "stock-keyword-taxonomy",
+  "category": "workflow",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-quality"
+  ],
+  "en": {
+    "title": "Build a Reusable Keyword Taxonomy for Cooking Stock Photos",
+    "description": "Create a practical subject-action-material-setting vocabulary for a small home-cooking portfolio without pasting the same tags onto every image.",
+    "intro": "A small home-cooking portfolio benefits from a keyword system, but it does not need a giant master list. The useful approach is to build a controlled vocabulary that helps you notice relevant terms, then select only the words supported by each asset. This keeps metadata specific while making future captioning faster.\n\nTreat the taxonomy as a suggestion library with four fields: subject, action, material, and setting. Subject identifies what the viewer sees; action describes what is happening; material names ingredients, tools, or surfaces; setting explains the visual context. These fields are for thinking and review. They are not four mandatory piles of keywords to paste onto every file.",
+    "sections": [
+      {
+        "heading": "Start with the portfolio’s real visual territory",
+        "paragraphs": [
+          "Review a manageable sample of your existing cooking images and write down recurring visual facts. Do not begin with imagined search terms or a list copied from another contributor. If your portfolio mostly shows hands preparing vegetables on a kitchen counter, that is the territory your vocabulary should represent.",
+          "Separate repeatable concepts from one-off details. “Chopping,” “mixing,” and “sautéing” may recur across many sessions. A particular herb, pan, or countertop belongs in the library only when it is genuinely visible and useful. This distinction prevents a broad taxonomy from becoming a collection of unsupported guesses."
+        ],
+        "bullets": [
+          "Use visible, describable concepts rather than assumed recipes or personal stories.",
+          "Record alternative wording only when the terms describe the same practical idea.",
+          "Keep a note of concepts you deliberately do not cover, such as unseen ingredients."
+        ],
+        "example": "Portfolio focus: hands preparing simple meals, close-up ingredients, cookware, and quiet kitchen worktops.\nUseful vocabulary areas: chopping, stirring, pouring, seasoning; tomato, onion, dough, oil; knife, bowl, skillet; countertop, home kitchen, overhead view."
+      },
+      {
+        "heading": "Define four complementary fields",
+        "paragraphs": [
+          "Subject is the main object, ingredient, dish component, or human-free activity focus. Action captures movement or process, such as kneading dough or whisking sauce. Material covers ingredients, utensils, cookware, and tactile surfaces. Setting describes the environment or composition, such as home kitchen, overhead view, countertop, or close up.",
+          "The fields can overlap, so use them as prompts rather than rigid database rules. A skillet could be material in one image and the central subject in another. “Baking” might describe an overall activity, while “pouring batter” is the more precise action for a particular frame. Choose the field that helps you make a clear decision."
+        ],
+        "bullets": [
+          "Subject: what deserves attention in the frame.",
+          "Action: what is visibly happening.",
+          "Material: what the food, tools, and surfaces are made of or include.",
+          "Setting: where and how the scene is presented."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Turn the library into selection rules",
+        "paragraphs": [
+          "For each new image, first write a plain-language description. Then select a small group of terms from each relevant field. Do not force every field to contribute equally. A finished bowl may need subject and material terms but no action term. A close-up of stirring may need action and setting terms while a specific ingredient remains secondary.",
+          "Add specificity only when the image supports it. “Vegetable” can be useful for a visible mixed preparation, but “chopped carrot” is stronger when the carrot and the cutting action are clear. Avoid inferred dietary claims, cultural identity, ownership, location, or unseen ingredients. Never use the taxonomy to turn uncertainty into metadata."
+        ],
+        "bullets": [
+          "Begin with the clearest nouns and verbs.",
+          "Add context only if it changes how the image can be understood.",
+          "Remove synonyms, repetitions, and attractive but irrelevant words.",
+          "Keep marketplace language requirements in view; some platforms require English metadata."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: one image, four decisions",
+        "paragraphs": [
+          "Example: imagine a horizontal image showing a hand pouring olive oil from a glass bottle into a black skillet containing sliced mushrooms. The background is a light kitchen countertop. The following selection is intentionally narrower than the full library. For this teaching example, the photographer’s shoot notes confirm olive oil and a home kitchen.",
+          "Subject terms identify the visible food and vessel. Action terms describe the pour. Material terms add the oil, mushrooms, bottle, and skillet. Setting terms explain the domestic preparation context. “Healthy,” “Italian,” “restaurant,” and “dinner” are excluded because the pixels do not prove those claims."
+        ],
+        "bullets": [
+          "Subject: mushrooms, skillet, olive oil",
+          "Action: pouring",
+          "Material: glass bottle, black skillet, oil",
+          "Setting: home kitchen, countertop, close up"
+        ],
+        "example": "Possible title: Pouring olive oil over mushrooms in a skillet\nPossible keyword order: mushrooms, olive oil, skillet, pouring, home kitchen, countertop, glass bottle, black skillet, food preparation\nExcluded: healthy, Italian, restaurant, dinner, family recipe"
+      },
+      {
+        "heading": "Order and adapt metadata for each platform",
+        "paragraphs": [
+          "When a marketplace gives special weight to early keywords, put the most important accurate concepts first. For Adobe Stock, the current guidance allows up to 49 keywords and emphasizes the first ten; use that as a conservative working ceiling while checking the current contributor interface. Other marketplaces have their own limits and rules, so a vocabulary should support adaptation rather than produce one universal upload string.",
+          "Descriptions should read like a concise account of the image, not a sentence assembled from repeated tags. Review current contributor requirements before uploading. If you use CSV, exact filenames and portal inspection still matter; an exported file is not proof that metadata was accepted."
+        ],
+        "bullets": [
+          "Maintain a master library separately from per-file keyword selections.",
+          "Keep platform-specific limits in a small reference note.",
+          "Inspect imported metadata in the relevant contributor portal.",
+          "Treat policies as changeable and check the current portal before submission."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Use local generation as a drafting assistant",
+        "paragraphs": [
+          "MetaStocker can help turn a visible image into editable metadata drafts in the browser. Its local mode runs supported vision and thinking models on the visitor’s device through WebGPU; the first model download requires internet. Loading a model into memory is different from keeping downloaded model files in browser cache, and browser storage can be evicted.",
+          "For a small portfolio, start with one local parallel thread and review the result against your taxonomy. Give batch description only facts shared by the batch; do not describe a mixed set with blanket tags. Extra tags are suggestions, not approvals. Check every file, keep only relevant rows, and export when ready. The app creates CSV files for supported destinations but does not upload, submit, embed metadata into originals, or guarantee acceptance."
+        ],
+        "bullets": [
+          "Use the four fields as review prompts for generated drafts.",
+          "Correct unsupported details before export.",
+          "Inspect full video motion when working with sampled video previews.",
+          "If using the optional personal API mode, protect your own API key and understand that previews or context are sent to OpenAI."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Define a realistic cooking focus from your existing images.",
+      "Build subject, action, material, and setting libraries from visible facts.",
+      "Write a plain-language description before choosing keywords.",
+      "Select terms per file; never paste the whole vocabulary.",
+      "Put the strongest accurate terms first where the marketplace recommends it.",
+      "Remove inferred claims, repetitions, and irrelevant synonyms.",
+      "Review editable metadata and current portal rules before export or upload."
+    ],
+    "illustration": {
+      "title": "From cooking image to focused metadata",
+      "steps": [
+        {
+          "label": "Map the visible scene",
+          "detail": "Note the subject, action, materials, and setting you can actually see."
+        },
+        {
+          "label": "Select file-specific terms",
+          "detail": "Choose accurate words from the library; remove guesses and blanket tags."
+        },
+        {
+          "label": "Review and export",
+          "detail": "Check order, limits, filenames, and portal requirements before submission."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как создать таксономию ключевых слов для кулинарного портфолио",
+    "description": "Соберите рабочую библиотеку слов для домашней кулинарной съёмки: предмет, действие, материал и место — без одинакового набора для каждого файла.",
+    "intro": "Небольшому портфолио домашних кулинарных снимков полезна система ключевых слов, но не огромный универсальный список. Практичный вариант — создать управляемую библиотеку терминов, которая помогает находить подходящие слова, а затем выбирать только подтверждённые конкретным файлом. Так разметка остаётся точной и со временем выполняется быстрее.\n\nИспользуйте четыре поля: предмет, действие, материал и место. Предмет показывает, что находится в центре внимания; действие описывает видимый процесс; материал включает продукты, инструменты и поверхности; место объясняет окружение и композицию. Это подсказки для анализа, а не четыре обязательные группы, которые нужно полностью вставлять в каждый файл.",
+    "sections": [
+      {
+        "heading": "Определите настоящую тему портфолио",
+        "paragraphs": [
+          "Просмотрите разумную выборку уже снятых кулинарных кадров и запишите повторяющиеся визуальные факты. Не начинайте с чужих списков или предполагаемых поисковых запросов. Если в портфолио преобладают руки, нарезающие овощи на кухонной столешнице, именно это должно стать основой словаря.",
+          "Отделите повторяемые идеи от единичных деталей. «Нарезание», «перемешивание» и «обжаривание» могут встречаться часто. Конкретная трава, кастрюля или поверхность заслуживают места в библиотеке только тогда, когда действительно видны и помогают описанию. Иначе библиотека быстро превратится в набор неподтверждённых слов."
+        ],
+        "bullets": [
+          "Описывайте видимое, а не предполагаемую историю кадра.",
+          "Добавляйте варианты формулировок только для одной и той же идеи.",
+          "Фиксируйте темы, которых портфолио фактически не показывает."
+        ],
+        "example": "Фокус портфолио: руки готовят простые блюда, продукты крупным планом, посуда и спокойные кухонные поверхности.\nОбласти словаря: нарезание, перемешивание, наливание, приправы; помидор, лук, тесто, масло; нож, миска, сковорода; домашняя кухня, столешница, вид сверху."
+      },
+      {
+        "heading": "Разложите словарь по четырём полям",
+        "paragraphs": [
+          "Предмет — главный объект, продукт, часть блюда или безличный процесс в кадре. Действие — видимое движение: замешивание теста или взбивание соуса. Материал — продукты, утварь, посуда и фактура поверхностей. Место — окружение и подача, например домашняя кухня, вид сверху, столешница или крупный план.",
+          "Границы между полями не всегда строгие, поэтому воспринимайте их как вопросы для проверки. Сковорода может быть материалом в одном кадре и главным предметом в другом. «Выпечка» описывает общую деятельность, а «наливание теста» точнее для отдельного изображения. Выбирайте поле, которое помогает принять ясное решение."
+        ],
+        "bullets": [
+          "Предмет: что зритель замечает прежде всего.",
+          "Действие: что происходит прямо в кадре.",
+          "Материал: из чего состоит еда, посуда или поверхность.",
+          "Место: где и каким образом показана сцена."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Превратите библиотеку в правила выбора",
+        "paragraphs": [
+          "Для каждого нового изображения сначала напишите обычное предложение о том, что на нём происходит. Затем выберите небольшую группу слов из подходящих полей. Не нужно заставлять все поля участвовать одинаково. Для готовой миски могут быть важны предмет и материал, но не действие. Для кадра с перемешиванием, наоборот, действие и место могут быть главными.",
+          "Уточняйте описание только при наличии визуального подтверждения. «Овощи» подходят для видимой смеси, а «нарезанная морковь» точнее, если морковь и процесс нарезания различимы. Не приписывайте диетические свойства, национальную принадлежность, владельца, точное место или невидимые ингредиенты. Таксономия не должна превращать сомнение в метаданные."
+        ],
+        "bullets": [
+          "Начинайте с самых ясных существительных и глаголов.",
+          "Добавляйте контекст, только если он меняет понимание изображения.",
+          "Удаляйте повторы и привлекательные, но нерелевантные слова.",
+          "Если площадка требует английские метаданные, составляйте итоговые поля на английском; язык этой статьи этого не меняет."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Рабочий пример: четыре решения для одного кадра",
+        "paragraphs": [
+          "Пример: горизонтальный кадр показывает руку, которая наливает оливковое масло из стеклянной бутылки в чёрную сковороду с нарезанными грибами. На заднем плане светлая кухонная столешница. Итоговый набор намеренно уже полной библиотеки. В этом учебном примере съемочные заметки фотографа подтверждают оливковое масло и домашнюю кухню.",
+          "Предметы называют видимую еду и посуду. Действия описывают наливание. Материалы добавляют масло, грибы, бутылку и сковороду. «Полезный», «итальянский», «ресторан» и «ужин» исключены: пиксели не доказывают эти утверждения."
+        ],
+        "bullets": [
+          "Subject: mushrooms, skillet, olive oil",
+          "Action: pouring",
+          "Material: glass bottle, black skillet, oil",
+          "Setting: home kitchen, countertop, close up"
+        ],
+        "example": "Возможный заголовок: Pouring olive oil over mushrooms in a skillet\nПорядок ключевых слов: mushrooms, olive oil, skillet, pouring, home kitchen, countertop, glass bottle, black skillet, food preparation\nИсключить: healthy, Italian, restaurant, dinner, family recipe"
+      },
+      {
+        "heading": "Адаптируйте порядок под площадку",
+        "paragraphs": [
+          "Если площадка придаёт особое значение началу списка, ставьте впереди самые важные и точные понятия. Для Adobe Stock текущая справка допускает до 49 ключевых слов и отдельно подчёркивает первые десять; используйте 49 как осторожный рабочий предел, одновременно проверяя актуальный интерфейс автора. У других площадок собственные ограничения, поэтому библиотека должна помогать адаптировать список, а не создавать одну универсальную строку.",
+          "Описание должно быть коротким точным рассказом об изображении, а не предложением из повторённых тегов. Перед загрузкой сверяйтесь с действующими правилами площадки. При работе с CSV важны точные имена файлов и проверка результата в портале; сам экспорт не доказывает, что метаданные приняты."
+        ],
+        "bullets": [
+          "Храните общую библиотеку отдельно от выбранных слов конкретного файла.",
+          "Запишите ограничения каждой площадки в небольшой справочник.",
+          "Проверяйте импортированные поля в соответствующем портале автора.",
+          "Считайте правила изменяемыми и открывайте актуальные требования перед отправкой."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Используйте локальную генерацию как черновик",
+        "paragraphs": [
+          "MetaStocker может помочь превратить видимое изображение в редактируемый черновик метаданных прямо в браузере. В локальном режиме поддерживаемые модели анализа и рассуждения работают на устройстве посетителя через WebGPU; первая загрузка модели требует интернета. Загрузка модели в память — не то же самое, что наличие файлов в кэше браузера, а браузер может удалить сохранённые данные.",
+          "Для небольшого портфолио начните с одного локального параллельного потока и сверяйте результат с четырьмя полями. Описание партии должно содержать только общие для всех файлов факты; для смешанной подборки не используйте универсальные теги. Дополнительные теги — предложения, а не подтверждение. Проверьте каждый файл, оставьте релевантные строки и только затем экспортируйте. Приложение создаёт CSV для поддерживаемых направлений, но не загружает и не отправляет его, не встраивает метаданные в оригиналы и не гарантирует принятие."
+        ],
+        "bullets": [
+          "Проверяйте черновик через предмет, действие, материал и место.",
+          "Исправляйте неподтверждённые детали до экспорта.",
+          "Для видео просматривайте полный материал: предварительные кадры могут быть выборочными.",
+          "В дополнительном режиме с личным API-ключом защищайте ключ и учитывайте, что предварительные изображения или контекст отправляются в OpenAI."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Определите реальную кулинарную специализацию по уже снятым кадрам.",
+      "Создайте библиотеки предметов, действий, материалов и мест из видимых фактов.",
+      "Перед ключевыми словами напишите обычное описание файла.",
+      "Выбирайте термины для каждого изображения, не вставляйте всю библиотеку.",
+      "Ставьте самые точные понятия первыми, если этого требует площадка.",
+      "Удаляйте догадки, повторы и нерелевантные синонимы.",
+      "Перед экспортом или загрузкой проверьте результат и актуальные правила портала."
+    ],
+    "illustration": {
+      "title": "От кулинарного кадра к точным метаданным",
+      "steps": [
+        {
+          "label": "Разберите видимую сцену",
+          "detail": "Отметьте предмет, действие, материалы и место, которые действительно видны."
+        },
+        {
+          "label": "Выберите слова файла",
+          "detail": "Возьмите точные термины из библиотеки и удалите догадки."
+        },
+        {
+          "label": "Проверьте и экспортируйте",
+          "detail": "Сверьте порядок, лимиты, имена файлов и правила портала."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "রান্নার স্টক ছবির জন্য পুনর্ব্যবহারযোগ্য কীওয়ার্ড শ্রেণিবিন্যাস",
+    "description": "ছোট ঘরোয়া রান্নার পোর্টফোলিওর জন্য বিষয়, কাজ, উপকরণ ও পরিবেশভিত্তিক শব্দভাণ্ডার তৈরি করুন, যাতে প্রতিটি ছবিতে একই ট্যাগ না বসে।",
+    "intro": "ছোট ঘরোয়া রান্নার পোর্টফোলিও একটি কীওয়ার্ড ব্যবস্থার সুবিধা পায়, তবে এর জন্য বিশাল কোনো মূল তালিকার দরকার নেই। কার্যকর পদ্ধতি হলো এমন একটি নিয়ন্ত্রিত শব্দভাণ্ডার তৈরি করা, যা প্রাসঙ্গিক শব্দ খুঁজে দেখতে সাহায্য করবে; এরপর প্রতিটি সম্পদে সমর্থিত শব্দগুলোই বেছে নিতে হবে। এতে মেটাডেটা নির্দিষ্ট থাকে এবং ভবিষ্যতে ক্যাপশন লেখা দ্রুত হয়।\n\nশ্রেণিবিন্যাসকে চারটি ক্ষেত্রের একটি পরামর্শ-গ্রন্থাগার হিসেবে দেখুন: বিষয়, কাজ, উপকরণ এবং পরিবেশ। বিষয় জানায় দর্শক কী দেখছেন; কাজ জানায় কী ঘটছে; উপকরণে উপাদান, সরঞ্জাম বা পৃষ্ঠের নাম থাকে; পরিবেশ দৃশ্যের প্রেক্ষাপট বোঝায়। এগুলো ভাবনা ও পর্যালোচনার ক্ষেত্র। প্রতিটি ফাইলে বসানোর জন্য এগুলো চারটি বাধ্যতামূলক কীওয়ার্ডের স্তূপ নয়।",
+    "sections": [
+      {
+        "heading": "পোর্টফোলিওর বাস্তব দৃশ্যগত পরিসর দিয়ে শুরু করুন",
+        "paragraphs": [
+          "আপনার বিদ্যমান রান্নার ছবিগুলোর একটি পরিচালনাযোগ্য নমুনা দেখুন এবং বারবার দেখা দৃশ্যগত তথ্য লিখে রাখুন। কল্পিত অনুসন্ধান-শব্দ বা অন্য অবদানকারীর তালিকা কপি করে শুরু করবেন না। আপনার পোর্টফোলিওতে যদি মূলত রান্নাঘরের কাউন্টারে সবজি প্রস্তুত করা হাত দেখা যায়, তবে আপনার শব্দভাণ্ডারে সেই পরিসরই প্রতিফলিত হওয়া উচিত।",
+          "বারবার ব্যবহারযোগ্য ধারণাগুলোকে একবারের বিশেষ তথ্য থেকে আলাদা করুন। “Chopping,” “mixing,” এবং “sautéing” বহু সেশনে ফিরে আসতে পারে। কোনো নির্দিষ্ট হার্ব, প্যান বা কাউন্টারটপ তখনই গ্রন্থাগারে রাখুন, যখন তা সত্যিই দৃশ্যমান ও কার্যকর। এই পার্থক্য বিস্তৃত শ্রেণিবিন্যাসকে ভিত্তিহীন অনুমানের সংগ্রহে পরিণত হতে বাধা দেয়।"
+        ],
+        "bullets": [
+          "অনুমান করা রেসিপি বা ব্যক্তিগত কাহিনির বদলে দৃশ্যমান ও বর্ণনাযোগ্য ধারণা ব্যবহার করুন।",
+          "শুধু একই ব্যবহারিক ধারণা বোঝালে বিকল্প শব্দ লিখে রাখুন।",
+          "ইচ্ছাকৃতভাবে যেসব ধারণা অন্তর্ভুক্ত করছেন না, যেমন অদৃশ্য উপাদান, সেগুলোর নোট রাখুন।"
+        ],
+        "example": "পোর্টফোলিওর কেন্দ্র: সহজ খাবার প্রস্তুত করা হাত, উপাদানের কাছাকাছি দৃশ্য, রান্নার পাত্র এবং শান্ত রান্নাঘরের কাজের পৃষ্ঠ।\nউপযোগী শব্দভাণ্ডারের ক্ষেত্র: chopping, stirring, pouring, seasoning; tomato, onion, dough, oil; knife, bowl, skillet; countertop, home kitchen, overhead view।"
+      },
+      {
+        "heading": "পরস্পর-সম্পূরক চারটি ক্ষেত্র নির্ধারণ করুন",
+        "paragraphs": [
+          "বিষয় হলো প্রধান বস্তু, উপাদান, খাবারের অংশ বা মানুষহীন কার্যকলাপের মূল কেন্দ্র। কাজ হলো নড়াচড়া বা প্রক্রিয়া, যেমন ময়দা মাখা বা সস ফেটানো। উপকরণে উপাদান, রান্নার সরঞ্জাম, পাত্র এবং স্পর্শযোগ্য পৃষ্ঠ অন্তর্ভুক্ত হয়। পরিবেশ জানায় দৃশ্যটি কোথায় বা কীভাবে উপস্থাপিত, যেমন home kitchen, overhead view, countertop বা close up।",
+          "ক্ষেত্রগুলো একে অন্যের সঙ্গে মিশতে পারে, তাই এগুলোকে কঠোর ডেটাবেস-নিয়ম নয়, নির্দেশক হিসেবে ব্যবহার করুন। একটি ছবিতে skillet উপকরণ হতে পারে, অন্য ছবিতে সেটিই কেন্দ্রীয় বিষয় হতে পারে। “Baking” সামগ্রিক কাজ বোঝাতে পারে, আর “pouring batter” নির্দিষ্ট ফ্রেমের আরও নিখুঁত কাজ হতে পারে। যে ক্ষেত্রটি আপনাকে পরিষ্কার সিদ্ধান্ত নিতে সাহায্য করে, সেটিই বেছে নিন।"
+        ],
+        "bullets": [
+          "বিষয়: ফ্রেমে কোন জিনিসটি মনোযোগ পাওয়ার যোগ্য।",
+          "কাজ: দৃশ্যমানভাবে কী ঘটছে।",
+          "উপকরণ: খাবার, সরঞ্জাম ও পৃষ্ঠ কী দিয়ে তৈরি বা কী কী অন্তর্ভুক্ত করছে।",
+          "পরিবেশ: দৃশ্যটি কোথায় এবং কীভাবে উপস্থাপিত।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "গ্রন্থাগারকে নির্বাচনের নিয়মে পরিণত করুন",
+        "paragraphs": [
+          "প্রতিটি নতুন ছবির জন্য আগে সহজ ভাষায় একটি বর্ণনা লিখুন। তারপর প্রতিটি প্রাসঙ্গিক ক্ষেত্র থেকে অল্প কিছু শব্দ বেছে নিন। সব ক্ষেত্রকে সমানভাবে অবদান রাখতে বাধ্য করবেন না। প্রস্তুত একটি বাটির জন্য বিষয় ও উপকরণের শব্দ দরকার হতে পারে, কিন্তু কাজের শব্দ নাও লাগতে পারে। নাড়ার কাছাকাছি দৃশ্যে কাজ ও পরিবেশের শব্দ দরকার হতে পারে, আর নির্দিষ্ট উপাদানটি গৌণ থাকতে পারে।",
+          "ছবিটি সমর্থন করলেই কেবল নির্দিষ্টতা বাড়ান। দৃশ্যমান মিশ্র প্রস্তুতির জন্য “Vegetable” কার্যকর হতে পারে, কিন্তু গাজর ও কাটার কাজ স্পষ্ট হলে “chopped carrot” আরও শক্তিশালী। অনুমানভিত্তিক খাদ্যসংক্রান্ত দাবি, সাংস্কৃতিক পরিচয়, মালিকানা, স্থান বা অদৃশ্য উপাদান এড়িয়ে চলুন। অনিশ্চয়তাকে মেটাডেটায় পরিণত করতে কখনো শ্রেণিবিন্যাস ব্যবহার করবেন না।"
+        ],
+        "bullets": [
+          "সবচেয়ে পরিষ্কার বিশেষ্য ও ক্রিয়া দিয়ে শুরু করুন।",
+          "প্রসঙ্গ তখনই যোগ করুন, যখন তা ছবিটি বোঝার ধরন বদলে দেয়।",
+          "সমার্থক শব্দ, পুনরাবৃত্তি এবং আকর্ষণীয় কিন্তু অপ্রাসঙ্গিক শব্দ বাদ দিন।",
+          "মার্কেটপ্লেসের ভাষাগত নিয়ম মনে রাখুন; কিছু প্ল্যাটফর্মে ইংরেজি মেটাডেটা প্রয়োজন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: একটি ছবি, চারটি সিদ্ধান্ত",
+        "paragraphs": [
+          "উদাহরণ: একটি অনুভূমিক ছবি কল্পনা করুন, যেখানে একটি হাত কাচের বোতল থেকে কালো ফ্রাইং প্যান-এ থাকা কাটা মাশরুমের ওপর জলপাই তেল ঢালছে। পটভূমিতে হালকা রঙের রান্নাঘরের কাউন্টারটপ। নিচের নির্বাচনটি পূর্ণ গ্রন্থাগারের তুলনায় ইচ্ছাকৃতভাবে সংক্ষিপ্ত। এই শিক্ষামূলক উদাহরণে ফটোগ্রাফারের নোটে জলপাই তেল ও বাড়ির রান্নাঘরের কথা নিশ্চিত করা হয়েছে।",
+          "বিষয়ের শব্দ দৃশ্যমান খাবার ও পাত্র শনাক্ত করে। কাজের শব্দ ঢালার প্রক্রিয়া বোঝায়। উপকরণের শব্দ oil, mushrooms, bottle এবং skillet যোগ করে। পরিবেশের শব্দ ঘরোয়া প্রস্তুতির প্রেক্ষাপট ব্যাখ্যা করে। “Healthy,” “Italian,” “restaurant,” এবং “dinner” বাদ দেওয়া হয়েছে, কারণ পিক্সেলগুলো এসব দাবি প্রমাণ করে না।"
+        ],
+        "bullets": [
+          "বিষয়: mushrooms, skillet, olive oil",
+          "কাজ: pouring",
+          "উপকরণ: glass bottle, black skillet, oil",
+          "পরিবেশ: home kitchen, countertop, close up"
+        ],
+        "example": "সম্ভাব্য শিরোনাম: Pouring olive oil over mushrooms in a skillet\nসম্ভাব্য কীওয়ার্ডের ক্রম: mushrooms, olive oil, skillet, pouring, home kitchen, countertop, glass bottle, black skillet, food preparation\nবাদ: healthy, Italian, restaurant, dinner, family recipe"
+      },
+      {
+        "heading": "প্রতিটি প্ল্যাটফর্মের জন্য মেটাডেটার ক্রম ও রূপ বদলান",
+        "paragraphs": [
+          "কোনো মার্কেটপ্লেস যদি শুরুর দিকের কীওয়ার্ডকে বেশি গুরুত্ব দেয়, তাহলে সবচেয়ে গুরুত্বপূর্ণ সঠিক ধারণাগুলো আগে রাখুন। Adobe Stock-এর বর্তমান নির্দেশনায় সর্বোচ্চ 49টি কীওয়ার্ডের অনুমতি আছে এবং প্রথম দশটির ওপর জোর দেওয়া হয়; বর্তমান অবদানকারী ইন্টারফেস পরীক্ষা করার সময় এটিকে সতর্কতামূলক কার্যসীমা হিসেবে ব্যবহার করুন। অন্য মার্কেটপ্লেসের নিজস্ব সীমা ও নিয়ম আছে, তাই শব্দভাণ্ডারকে একটি সার্বজনীন আপলোড-স্ট্রিং তৈরির বদলে অভিযোজন সহায়তা করা উচিত।",
+          "বর্ণনা যেন পুনরাবৃত্ত ট্যাগ জুড়ে বানানো বাক্য না হয়ে ছবির সংক্ষিপ্ত বিবরণ হয়। আপলোডের আগে বর্তমান অবদানকারী-নিয়ম পর্যালোচনা করুন। CSV ব্যবহার করলে সঠিক ফাইলনাম ও পোর্টাল পরীক্ষা এখনও গুরুত্বপূর্ণ; রপ্তানি করা ফাইল মেটাডেটা গৃহীত হয়েছে—এর প্রমাণ নয়।"
+        ],
+        "bullets": [
+          "প্রতি-ফাইলের কীওয়ার্ড নির্বাচন থেকে মূল গ্রন্থাগার আলাদা রাখুন।",
+          "প্ল্যাটফর্মভিত্তিক সীমা একটি ছোট তথ্য-নোটে রাখুন।",
+          "সংশ্লিষ্ট অবদানকারী পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।",
+          "নীতিমালা পরিবর্তনশীল ধরে নিয়ে জমা দেওয়ার আগে বর্তমান পোর্টাল পরীক্ষা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "স্থানীয় তৈরি-ব্যবস্থাকে খসড়া সহায়ক হিসেবে ব্যবহার করুন",
+        "paragraphs": [
+          "MetaStocker ব্রাউজারে দৃশ্যমান ছবিকে সম্পাদনাযোগ্য মেটাডেটার খসড়ায় রূপান্তর করতে সাহায্য করতে পারে। এর স্থানীয় মোড WebGPU-এর মাধ্যমে দর্শকের ডিভাইসে সমর্থিত ভিশন ও চিন্তন মডেল চালায়; প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট প্রয়োজন। মডেল মেমরিতে লোড করা আর ডাউনলোড করা মডেল-ফাইল ব্রাউজার ক্যাশে রেখে দেওয়া এক বিষয় নয়, এবং ব্রাউজারের স্টোরেজ মুছে যেতে পারে।",
+          "ছোট পোর্টফোলিওর জন্য একটি স্থানীয় সমান্তরাল থ্রেড দিয়ে শুরু করুন এবং শ্রেণিবিন্যাসের সঙ্গে ফল মিলিয়ে দেখুন। ব্যাচের বর্ণনায় শুধু পুরো ব্যাচের অভিন্ন তথ্য দিন; মিশ্র সেটকে একগুচ্ছ নির্বিচার ট্যাগ দিয়ে বর্ণনা করবেন না। অতিরিক্ত ট্যাগ পরামর্শ, অনুমোদন নয়। প্রতিটি ফাইল পরীক্ষা করুন, শুধু প্রাসঙ্গিক সারি রাখুন এবং প্রস্তুত হলে রপ্তানি করুন। অ্যাপটি সমর্থিত গন্তব্যের জন্য CSV ফাইল তৈরি করে, কিন্তু আপলোড, জমা, মূল ফাইলে মেটাডেটা সংযোজন বা গ্রহণযোগ্যতার নিশ্চয়তা দেয় না।"
+        ],
+        "bullets": [
+          "তৈরি হওয়া খসড়া পর্যালোচনার নির্দেশক হিসেবে চারটি ক্ষেত্র ব্যবহার করুন।",
+          "রপ্তানির আগে অসমর্থিত তথ্য সংশোধন করুন।",
+          "নমুনা ভিডিও প্রিভিউ নিয়ে কাজ করলে ভিডিওর সম্পূর্ণ নড়াচড়া পরীক্ষা করুন।",
+          "ঐচ্ছিক ব্যক্তিগত API মোড ব্যবহার করলে নিজের API key সুরক্ষিত রাখুন এবং বুঝে নিন যে প্রিভিউ বা প্রসঙ্গ OpenAI-তে পাঠানো হয়।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "বিদ্যমান ছবির ভিত্তিতে বাস্তবসম্মত রান্নার কেন্দ্র নির্ধারণ করুন।",
+      "দৃশ্যমান তথ্য থেকে বিষয়, কাজ, উপকরণ ও পরিবেশের গ্রন্থাগার তৈরি করুন।",
+      "কীওয়ার্ড বেছে নেওয়ার আগে সহজ ভাষায় বর্ণনা লিখুন।",
+      "প্রতি ফাইলের জন্য শব্দ বাছুন; কখনো পুরো শব্দভাণ্ডার বসাবেন না।",
+      "মার্কেটপ্লেস যেখানে পরামর্শ দেয়, সেখানে সবচেয়ে শক্তিশালী সঠিক শব্দগুলো আগে রাখুন।",
+      "অনুমানভিত্তিক দাবি, পুনরাবৃত্তি ও অপ্রাসঙ্গিক সমার্থক শব্দ বাদ দিন।",
+      "রপ্তানি বা আপলোডের আগে সম্পাদনাযোগ্য মেটাডেটা ও বর্তমান পোর্টাল-নিয়ম পর্যালোচনা করুন।"
+    ],
+    "illustration": {
+      "title": "রান্নার ছবি থেকে কেন্দ্রীভূত মেটাডেটা",
+      "steps": [
+        {
+          "label": "দৃশ্যমান দৃশ্যের মানচিত্র করুন",
+          "detail": "বাস্তবে দেখা বিষয়, কাজ, উপকরণ ও পরিবেশ লিখে রাখুন।"
+        },
+        {
+          "label": "ফাইলভিত্তিক শব্দ বাছুন",
+          "detail": "গ্রন্থাগার থেকে সঠিক শব্দ নিন; অনুমান ও নির্বিচার ট্যাগ বাদ দিন।"
+        },
+        {
+          "label": "পর্যালোচনা ও রপ্তানি করুন",
+          "detail": "জমা দেওয়ার আগে ক্রম, সীমা, ফাইলনাম ও পোর্টালের নিয়ম পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "कुकिंग स्टॉक फ़ोटो के लिए पुन: उपयोग योग्य कीवर्ड वर्गीकरण",
+    "description": "छोटे घरेलू-कुकिंग पोर्टफोलियो के लिए विषय, क्रिया, सामग्री और परिवेश का शब्द-संग्रह बनाएं, ताकि हर चित्र पर वही टैग न लगें।",
+    "intro": "छोटे घरेलू-कुकिंग पोर्टफोलियो को कीवर्ड व्यवस्था से लाभ मिलता है, लेकिन इसके लिए बहुत बड़ी मास्टर सूची की आवश्यकता नहीं होती। उपयोगी तरीका है ऐसा नियंत्रित शब्द-संग्रह बनाना, जो प्रासंगिक शब्दों पर ध्यान देने में मदद करे; फिर हर संपत्ति के लिए केवल समर्थित शब्द चुनें। इससे मेटाडेटा विशिष्ट रहता है और आगे कैप्शन लिखना तेज़ हो जाता है।\n\nवर्गीकरण को चार क्षेत्रों वाली सुझाव-पुस्तक मानें: विषय, क्रिया, सामग्री और परिवेश। विषय बताता है कि दर्शक क्या देखता है; क्रिया बताती है कि क्या हो रहा है; सामग्री में सामग्री, औज़ार या सतहों के नाम आते हैं; परिवेश दृश्य का संदर्भ समझाता है। ये क्षेत्र सोचने और समीक्षा के लिए हैं। हर फ़ाइल पर चिपकाने के लिए ये चार अनिवार्य कीवर्ड-ढेर नहीं हैं।",
+    "sections": [
+      {
+        "heading": "पोर्टफोलियो के वास्तविक दृश्य क्षेत्र से शुरुआत करें",
+        "paragraphs": [
+          "अपनी मौजूदा कुकिंग छवियों का एक संभालने योग्य नमूना देखें और बार-बार दिखाई देने वाले दृश्य तथ्यों को लिखें। कल्पित खोज-शब्दों या किसी दूसरे योगदानकर्ता से कॉपी की गई सूची से शुरुआत न करें। यदि आपके पोर्टफोलियो में अधिकतर रसोई के काउंटर पर सब्ज़ियाँ तैयार करते हाथ दिखाई देते हैं, तो आपके शब्द-संग्रह को उसी क्षेत्र का प्रतिनिधित्व करना चाहिए।",
+          "दोहराए जा सकने वाले विचारों को एकबारगी विवरणों से अलग करें। “Chopping,” “mixing,” और “sautéing” कई सत्रों में दोहर सकते हैं। कोई खास जड़ी-बूटी, पैन या काउंटरटॉप तभी संग्रह में रखें जब वह सचमुच दिखाई दे और उपयोगी हो। यह अंतर व्यापक वर्गीकरण को बिना आधार वाले अनुमानों का संग्रह बनने से रोकता है।"
+        ],
+        "bullets": [
+          "मानी हुई रेसिपी या निजी कहानियों के बजाय दिखाई देने वाले, वर्णन योग्य विचारों का उपयोग करें।",
+          "वैकल्पिक शब्द तभी दर्ज करें जब वे उसी व्यावहारिक विचार का वर्णन करते हों।",
+          "जिन विचारों को आप जानबूझकर शामिल नहीं करते, जैसे न दिखाई देने वाली सामग्री, उनका नोट रखें।"
+        ],
+        "example": "पोर्टफोलियो का केंद्र: सरल भोजन तैयार करते हाथ, सामग्री के क्लोज़-अप, कुकवेयर और शांत रसोई के कार्य-स्थल।\nउपयोगी शब्द-संग्रह क्षेत्र: chopping, stirring, pouring, seasoning; tomato, onion, dough, oil; knife, bowl, skillet; countertop, home kitchen, overhead view।"
+      },
+      {
+        "heading": "चार पूरक क्षेत्रों को परिभाषित करें",
+        "paragraphs": [
+          "विषय मुख्य वस्तु, सामग्री, व्यंजन के घटक या मानव-रहित गतिविधि का केंद्र है। क्रिया गति या प्रक्रिया को पकड़ती है, जैसे आटा गूँधना या सॉस फेंटना। सामग्री में खाद्य सामग्री, बर्तन, कुकवेयर और स्पर्श योग्य सतहें आती हैं। परिवेश वातावरण या संरचना बताता है, जैसे home kitchen, overhead view, countertop या close up।",
+          "क्षेत्र एक-दूसरे से मिल सकते हैं, इसलिए उन्हें कठोर डेटाबेस नियमों के बजाय संकेत के रूप में उपयोग करें। एक चित्र में skillet सामग्री हो सकता है और दूसरे में मुख्य विषय। “Baking” पूरी गतिविधि का वर्णन कर सकता है, जबकि “pouring batter” किसी खास फ़्रेम की अधिक सटीक क्रिया है। जो क्षेत्र आपको स्पष्ट निर्णय लेने में मदद करे, वही चुनें।"
+        ],
+        "bullets": [
+          "विषय: फ़्रेम में किस पर ध्यान जाना चाहिए।",
+          "क्रिया: दिखाई देने वाला काम क्या हो रहा है।",
+          "सामग्री: भोजन, औज़ार और सतहें किससे बनी हैं या उनमें क्या शामिल है।",
+          "परिवेश: दृश्य कहाँ और किस तरह प्रस्तुत किया गया है।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "संग्रह को चयन नियमों में बदलें",
+        "paragraphs": [
+          "हर नई छवि के लिए पहले सरल भाषा में वर्णन लिखें। फिर हर प्रासंगिक क्षेत्र से थोड़े-से शब्द चुनें। हर क्षेत्र को बराबर योगदान देने के लिए बाध्य न करें। तैयार कटोरे को विषय और सामग्री के शब्द चाहिए हो सकते हैं, लेकिन क्रिया का शब्द नहीं। हिलाते हुए क्लोज़-अप को क्रिया और परिवेश के शब्द चाहिए हो सकते हैं, जबकि कोई खास सामग्री गौण रह सकती है।",
+          "विशिष्टता तभी जोड़ें जब छवि उसका समर्थन करे। दिखाई देने वाली मिश्रित तैयारी के लिए “Vegetable” उपयोगी हो सकता है, लेकिन गाजर और काटने की क्रिया स्पष्ट हो तो “chopped carrot” अधिक प्रभावी है। अनुमानित आहार-संबंधी दावों, सांस्कृतिक पहचान, स्वामित्व, स्थान या न दिखाई देने वाली सामग्री से बचें। अनिश्चितता को मेटाडेटा में बदलने के लिए वर्गीकरण का उपयोग कभी न करें।"
+        ],
+        "bullets": [
+          "सबसे स्पष्ट संज्ञाओं और क्रियाओं से शुरुआत करें।",
+          "संदर्भ तभी जोड़ें जब उससे छवि को समझने का तरीका बदलता हो।",
+          "समानार्थी शब्द, दोहराव और आकर्षक लेकिन अप्रासंगिक शब्द हटाएँ।",
+          "मार्केटप्लेस की भाषा-संबंधी आवश्यकताओं का ध्यान रखें; कुछ प्लेटफ़ॉर्म अंग्रेज़ी मेटाडेटा मांगते हैं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "कार्य किया हुआ उदाहरण: एक चित्र, चार निर्णय",
+        "paragraphs": [
+          "उदाहरण: एक क्षैतिज चित्र की कल्पना करें जिसमें एक हाथ काँच की बोतल से काले फ्राइंग पैन में रखे कटे हुए मशरूम पर जैतून का तेल डाल रहा है। पृष्ठभूमि में हल्के रंग का रसोई काउंटरटॉप है। नीचे दिया गया चयन पूरे संग्रह की तुलना में जानबूझकर छोटा है। इस शैक्षिक उदाहरण में फ़ोटोग्राफ़र के शूट नोट जैतून के तेल और घर की रसोई की पुष्टि करते हैं।",
+          "विषय के शब्द दिखाई देने वाले भोजन और बर्तन की पहचान करते हैं। क्रिया के शब्द डालने की प्रक्रिया बताते हैं। सामग्री के शब्द oil, mushrooms, bottle और skillet जोड़ते हैं। परिवेश के शब्द घरेलू तैयारी का संदर्भ समझाते हैं। “Healthy,” “Italian,” “restaurant,” और “dinner” को हटाया गया है, क्योंकि पिक्सेल इन दावों को साबित नहीं करते।"
+        ],
+        "bullets": [
+          "विषय: mushrooms, skillet, olive oil",
+          "क्रिया: pouring",
+          "सामग्री: glass bottle, black skillet, oil",
+          "परिवेश: home kitchen, countertop, close up"
+        ],
+        "example": "संभावित शीर्षक: Pouring olive oil over mushrooms in a skillet\nसंभावित कीवर्ड क्रम: mushrooms, olive oil, skillet, pouring, home kitchen, countertop, glass bottle, black skillet, food preparation\nहटाए गए: healthy, Italian, restaurant, dinner, family recipe"
+      },
+      {
+        "heading": "हर प्लेटफ़ॉर्म के लिए मेटाडेटा का क्रम और रूप बदलें",
+        "paragraphs": [
+          "जब कोई मार्केटप्लेस शुरुआती कीवर्ड को अधिक महत्व देता हो, तो सबसे महत्वपूर्ण सटीक विचार पहले रखें। Adobe Stock के वर्तमान मार्गदर्शन में अधिकतम 49 कीवर्ड की अनुमति है और पहले दस पर ज़ोर दिया गया है; वर्तमान योगदानकर्ता इंटरफ़ेस देखते समय इसे सावधानीपूर्ण कार्य-सीमा मानें। दूसरे मार्केटप्लेस की अपनी सीमाएँ और नियम होते हैं, इसलिए शब्द-संग्रह को एक सार्वभौमिक अपलोड स्ट्रिंग बनाने के बजाय अनुकूलन में मदद करनी चाहिए।",
+          "विवरण ऐसा लगे जैसे चित्र का संक्षिप्त लेखा हो, दोहराए गए टैगों से बनाया गया वाक्य नहीं। अपलोड से पहले वर्तमान योगदानकर्ता आवश्यकताओं की समीक्षा करें। यदि आप CSV का उपयोग करते हैं, तो सही फ़ाइलनाम और पोर्टल निरीक्षण फिर भी महत्वपूर्ण हैं; निर्यात की गई फ़ाइल मेटाडेटा स्वीकार होने का प्रमाण नहीं है।"
+        ],
+        "bullets": [
+          "मास्टर संग्रह को प्रति-फ़ाइल कीवर्ड चयन से अलग रखें।",
+          "प्लेटफ़ॉर्म-विशिष्ट सीमाएँ एक छोटे संदर्भ-नोट में रखें।",
+          "संबंधित योगदानकर्ता पोर्टल में आयात किए गए मेटाडेटा की जाँच करें।",
+          "नीतियों को बदलने योग्य मानें और सबमिशन से पहले वर्तमान पोर्टल देखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "स्थानीय मेटाडेटा जनरेशन को मसौदा बनाने में सहायक मानें",
+        "paragraphs": [
+          "MetaStocker ब्राउज़र में दिखाई देने वाली छवि से संपादन योग्य मेटाडेटा मसौदे तैयार करने में मदद कर सकता है। इसका स्थानीय मोड WebGPU के ज़रिए आगंतुक के डिवाइस पर समर्थित विज़न और थिंकिंग मॉडल चलाता है; पहली मॉडल डाउनलोड के लिए इंटरनेट आवश्यक है। मॉडल को मेमोरी में लोड करना और डाउनलोड की गई मॉडल फ़ाइलों को ब्राउज़र कैश में रखना अलग बातें हैं, और ब्राउज़र स्टोरेज हटाया जा सकता है।",
+          "छोटे पोर्टफोलियो के लिए एक स्थानीय समानांतर थ्रेड से शुरू करें और परिणाम को अपने वर्गीकरण से मिलाकर देखें। बैच के वर्णन में केवल बैच के साझा तथ्य दें; मिश्रित सेट का वर्णन एक जैसे सामान्य टैगों से न करें। अतिरिक्त टैग सुझाव हैं, अनुमोदन नहीं। हर फ़ाइल जाँचें, केवल प्रासंगिक पंक्तियाँ रखें और तैयार होने पर निर्यात करें। ऐप समर्थित गंतव्यों के लिए CSV फ़ाइलें बनाता है, लेकिन अपलोड, सबमिट, मूल फ़ाइलों में मेटाडेटा एम्बेड या स्वीकृति की गारंटी नहीं देता।"
+        ],
+        "bullets": [
+          "तैयार मसौदों की समीक्षा के संकेत के रूप में चारों क्षेत्रों का उपयोग करें।",
+          "निर्यात से पहले असमर्थित विवरण सुधारें।",
+          "नमूना वीडियो प्रीव्यू के साथ काम करते समय वीडियो की पूरी गति जाँचें।",
+          "वैकल्पिक निजी API मोड उपयोग करने पर अपनी API कुंजी सुरक्षित रखें और समझें कि प्रीव्यू या संदर्भ OpenAI को भेजे जाते हैं।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "अपनी मौजूदा छवियों से वास्तविक कुकिंग केंद्र निर्धारित करें।",
+      "दिखाई देने वाले तथ्यों से विषय, क्रिया, सामग्री और परिवेश के संग्रह बनाएं।",
+      "कीवर्ड चुनने से पहले सरल भाषा में वर्णन लिखें।",
+      "हर फ़ाइल के लिए शब्द चुनें; पूरा शब्द-संग्रह कभी न चिपकाएँ।",
+      "जहाँ मार्केटप्लेस सुझाए, वहाँ सबसे मजबूत सटीक शब्द पहले रखें।",
+      "अनुमानित दावे, दोहराव और अप्रासंगिक समानार्थी शब्द हटाएँ।",
+      "निर्यात या अपलोड से पहले संपादन योग्य मेटाडेटा और वर्तमान पोर्टल नियमों की समीक्षा करें।"
+    ],
+    "illustration": {
+      "title": "कुकिंग चित्र से केंद्रित मेटाडेटा तक",
+      "steps": [
+        {
+          "label": "दृश्य का नक्शा बनाएं",
+          "detail": "विषय, क्रिया, सामग्री और परिवेश को नोट करें जो सचमुच दिखाई दे रहे हैं।"
+        },
+        {
+          "label": "फ़ाइल-विशिष्ट शब्द चुनें",
+          "detail": "संग्रह से सटीक शब्द चुनें; अनुमान और सभी पर लागू टैग हटाएँ।"
+        },
+        {
+          "label": "समीक्षा और निर्यात करें",
+          "detail": "सबमिशन से पहले क्रम, सीमाएँ, फ़ाइलनाम और पोर्टल आवश्यकताएँ जाँचें।"
+        }
+      ]
+    }
+  }
+}

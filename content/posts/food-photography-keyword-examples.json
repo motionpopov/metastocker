@@ -1,0 +1,439 @@
+{
+  "slug": "food-photography-keyword-examples",
+  "category": "metadata",
+  "source_ids": [
+    "adobe-keywords",
+    "shutterstock-metadata",
+    "metastocker"
+  ],
+  "en": {
+    "title": "Food Photography Keywords Without Guessing Ingredients",
+    "description": "Build accurate English keywords for tomato soup photos by describing visible evidence and separating real ingredient notes from assumptions.",
+    "intro": "A bowl of red soup with green leaves looks simple to describe, but metadata can become inaccurate quickly. The image may show a red soup, a bowl, a spoon and green leaves, yet it does not prove that the recipe is vegan, organic, gluten-free, homemade or connected to a particular cuisine. A useful keyword list stays close to what a buyer can actually see, while confirmed production notes can add carefully supported details. This guide shows how to create practical English metadata for a food photograph without inventing ingredients.",
+    "sections": [
+      {
+        "heading": "Start with visible facts",
+        "paragraphs": [
+          "Describe the subject, arrangement and photographic treatment before thinking about search volume. For this image, visible observations include a soup bowl, red soup, green leaves, food and a close-up. Add composition terms only when they are true, such as top view, overhead, spoon or copy space. A red soup alone does not establish tomatoes, and green leaves do not establish edible herbs.",
+          "Avoid turning visual impressions into recipe claims. Red color does not confirm a specific tomato variety, and green herbs do not identify basil, parsley or cilantro unless you know which herb was used. Steam can suggest warmth, but it does not establish a serving temperature or cooking method."
+        ],
+        "bullets": [
+          "Use nouns buyers might use to find the subject.",
+          "Add viewpoint, lighting or composition only when visible.",
+          "Remove any word that depends on an unverified recipe detail."
+        ],
+        "example": "Visible evidence: a bowl, red soup, green leaves, spoon, table surface.\nSupported terms: soup bowl, red soup, green leaves, food, close-up.\nRequire recipe confirmation: tomato soup, herbs, vegan, organic, gluten-free, basil, Italian cuisine."
+      },
+      {
+        "heading": "Separate observation from confirmation",
+        "paragraphs": [
+          "Ingredient metadata becomes stronger when it comes from a reliable production note rather than visual guessing. If the photographer recorded that the soup contains tomatoes and basil, those terms may be considered. If a recipe document confirms that the dish is vegan or gluten-free, those claims can also be evaluated against the target marketplace’s current rules.",
+          "Keep the distinction visible in your workflow. “Green leaves” describes the visible appearance; “herbs” identifies an ingredient and needs confirmation. “Basil” is a confirmed ingredient only if your notes support it. “Vegan” describes the recipe or preparation, not the bowl’s appearance. If no documentation exists, leave the narrower claim out."
+        ],
+        "bullets": [
+          "Treat recipe notes as evidence, not as a license to add every dietary label.",
+          "Do not infer named cuisine from color, garnish or presentation.",
+          "Check current contributor requirements when a platform has specific metadata rules."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Put the strongest terms first",
+        "paragraphs": [
+          "Adobe’s keyword guidance gives particular importance to the first ten positions. Put the supported subject first, followed by the container, visible elements and useful context. Without recipe notes, a practical sequence could begin with red soup, soup bowl, soup, green leaves, spoon, close-up, food photography. With confirmed tomato and herb ingredients, the more specific terms tomato soup and herbs become possible.",
+          "Do not repeat the same idea through near-duplicates simply to fill space. A shorter list of relevant terms is easier to audit than a long list containing generic or speculative tags. Platform limits differ, so use the current contributor portal as the final authority; for Adobe Stock, the general keyword guidance permits up to 49 keywords, while CSV requirements should still be checked before import."
+        ],
+        "bullets": [
+          "Lead with the exact dish when it is supported.",
+          "Group related concepts in a readable order.",
+          "Use the portal’s current limit and language requirements."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: two metadata versions",
+        "paragraphs": [
+          "The following is a hypothetical example, not a measured search result. Assume the photographer has a preview but no recipe notes: it shows red soup, unidentified green leaves and a spoon. Version A uses only these visible facts. Version B becomes possible after a recipe note confirms tomatoes, basil and a vegan preparation.",
+          "The tradeoff is precision versus unsupported specificity. “Green leaves” describes the visible form without identifying an ingredient. “Tomato soup,” “herbs,” “basil” and “vegan” belong in Version B only when production notes confirm those claims."
+        ],
+        "bullets": [
+          "Version A: use when there are no confirmed recipe notes.",
+          "Version B: use only when the stated ingredient and preparation are documented.",
+          "Recheck every term after changing the recipe or crop."
+        ],
+        "example": "Hypothetical Version A\nTitle: Bowl of red soup with green leaves\nKeywords: soup bowl, red soup, soup, green leaves, meal, spoon, close-up, food photography\n\nHypothetical Version B, only with confirmed notes\nTitle: Vegan tomato soup with basil in a bowl\nKeywords: vegan tomato soup, tomato soup, soup bowl, basil, herbs, red soup, savory food, meal, spoon, close-up, food photography, plant-based meal"
+      },
+      {
+        "heading": "Prepare metadata for a marketplace",
+        "paragraphs": [
+          "Write metadata in the language required by the target account or platform. An English-language marketplace may need English titles and keywords even when your working notes or blog are in another language. Do not assume one list fits every marketplace: keyword counts, categories and wording rules can differ, and contributor policies can change.",
+          "If you use MetaStocker’s local generator, provide factual batch context rather than a blanket phrase such as “healthy vegan dishes” for mixed files. Local models run in the browser after the required model is downloaded and loaded; generation is not a substitute for your review. Inspect each editable result, remove guesses, and export only rows you are ready to check in the contributor portal."
+        ],
+        "bullets": [
+          "Keep the filename matched to the correct image.",
+          "Review generated tags file by file.",
+          "Treat CSV export as preparation, not submission or acceptance."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Do a final accuracy pass",
+        "paragraphs": [
+          "Read the title as a factual sentence. Then inspect the first several keywords and ask whether each one is visible, documented or merely plausible. “Comfort food” is an interpretive concept that may be acceptable for some uses, but it is less literal than “tomato soup”; retain it only when it fits your intended context.",
+          "Finally, compare the result with the destination’s current rules. A clean list cannot guarantee indexing, ranking, sales or acceptance, but disciplined evidence-based metadata gives reviewers and buyers a clearer description of the image."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Confirm visible elements from the image and ingredient names from reliable notes.",
+      "Use “green leaves” for appearance; use “herbs” only if that ingredient is confirmed.",
+      "Do not add vegan, organic, gluten-free or cuisine claims without evidence.",
+      "Place the most important terms at the beginning.",
+      "Remove repeated, irrelevant or speculative keywords.",
+      "Check the target platform’s current language and limit rules.",
+      "Inspect every generated or exported row before using it."
+    ],
+    "illustration": {
+      "title": "From image evidence to metadata",
+      "steps": [
+        {
+          "label": "List visible elements",
+          "detail": "Record the bowl, red soup, green leaves, spoon and composition."
+        },
+        {
+          "label": "Check recipe notes",
+          "detail": "Add basil or dietary claims only when documented."
+        },
+        {
+          "label": "Review each row",
+          "detail": "Remove guesses, confirm platform rules, then export ready metadata."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Ключевые слова для фото еды без выдуманных ингредиентов",
+    "description": "Составьте точные английские ключевые слова для фото томатного супа: описывайте видимое и отделяйте подтвержденные ингредиенты от догадок.",
+    "intro": "Миска красного супа с зелеными листьями кажется легким сюжетом для описания, но метаданные быстро становятся неточными. На фотографии могут быть видны красный суп, миска, ложка и зеленые листья, однако изображение само по себе не доказывает, что рецепт веганский, органический, безглютеновый, домашний или относится к конкретной кухне. Хороший список ключевых слов опирается на то, что действительно можно увидеть, а подтвержденные сведения о рецепте добавляются отдельно. Ниже — практический способ подготовить английские метаданные для снимка еды без выдуманных ингредиентов.",
+    "sections": [
+      {
+        "heading": "Начните с видимых фактов",
+        "paragraphs": [
+          "Сначала опишите объект, композицию и фотографические особенности, а не предполагаемую ценность для поиска. Здесь видны миска, красный суп, зеленые листья, ложка и крупный план. Добавляйте top view, overhead, spoon или copy space только тогда, когда это действительно видно. Красный цвет супа сам по себе не доказывает наличие томатов, а зеленые листья не подтверждают, что это съедобная зелень.",
+          "Не превращайте визуальное впечатление в утверждение о рецепте. Красный цвет не подтверждает конкретный сорт помидоров, а зеленые листья не позволяют надежно назвать их базиликом, петрушкой или кинзой без дополнительных сведений. Пар может указывать на теплое блюдо, но не доказывает температуру подачи или способ приготовления."
+        ],
+        "bullets": [
+          "Используйте слова, которыми покупатель может искать изображение.",
+          "Добавляйте ракурс, свет и композицию только при наличии визуального подтверждения.",
+          "Удаляйте термин, если он основан на догадке о рецепте."
+        ],
+        "example": "Видимые факты: миска, красный суп, зеленые листья, ложка, поверхность стола.\nПоддерживаемые термины: soup bowl, red soup, green leaves, food, close-up.\nТребуют подтверждения рецепта: tomato soup, herbs, vegan, organic, gluten-free, basil, Italian cuisine."
+      },
+      {
+        "heading": "Отделяйте наблюдение от подтверждения",
+        "paragraphs": [
+          "Сведения об ингредиентах становятся надежнее, когда происходят из записи о приготовлении, а не из попытки угадать по пикселям. Если фотограф записал, что в супе есть помидоры и базилик, эти термины можно рассмотреть. Если рецепт подтверждает веганский или безглютеновый состав, такие характеристики также можно оценить с учетом правил нужной площадки.",
+          "Сохраняйте это различие в рабочем процессе. “Green leaves” описывает видимые листья; “herbs” называет пищевой ингредиент и требует подтверждения. “Basil” — конкретный ингредиент, который допустим только при подтверждении. “Vegan” описывает рецепт или способ приготовления, а не внешний вид миски. Если документов или надежных заметок нет, не добавляйте узкое утверждение."
+        ],
+        "bullets": [
+          "Считайте заметки о рецепте подтверждением, а не поводом добавить все возможные диетические ярлыки.",
+          "Не выводите название кухни из цвета, украшения или подачи.",
+          "Если у площадки есть особые правила, проверяйте актуальные требования автора."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Поставьте сильные термины в начало",
+        "paragraphs": [
+          "В рекомендациях Adobe особое значение имеют первые десять позиций. Начните с подтвержденного объекта, затем добавьте миску, видимые элементы и уместный контекст. Без заметок о рецепте можно начать так: red soup, soup bowl, soup, green leaves, spoon, close-up, food photography. Если состав с томатами и зеленью подтвержден, допустимы более точные tomato soup и herbs.",
+          "Не повторяйте одну мысль множеством близких вариантов только ради длины списка. Короткий релевантный список проще проверить, чем длинный набор общих или предположительных слов. Лимиты зависят от площадки, поэтому окончательным ориентиром остается текущий портал автора. Для Adobe Stock общая памятка допускает до 49 ключевых слов, но требования к CSV перед импортом все равно нужно перепроверить."
+        ],
+        "bullets": [
+          "Ставьте точное название блюда первым, если оно подтверждено.",
+          "Располагая слова, группируйте близкие понятия логично.",
+          "Проверяйте актуальный лимит и язык аккаунта."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Рабочий пример: две версии метаданных",
+        "paragraphs": [
+          "Это гипотетический пример, а не измеренный результат поиска. Допустим, у фотографа есть превью без заметок о рецепте: видны красный суп, неопределенные зеленые листья и ложка. Версия A использует только эти видимые факты. Версия B становится возможной после подтверждения томатов, базилика и веганского состава в заметке о рецепте.",
+          "Здесь есть компромисс между точностью и лишней конкретикой. “Green leaves” описывает видимую форму, не называя ингредиент. “Tomato soup”, “herbs”, “basil” и “vegan” уместны в версии B лишь при подтверждении в съемочных заметках."
+        ],
+        "bullets": [
+          "Версия A подходит, если подтвержденных заметок о рецепте нет.",
+          "Версию B используйте только при наличии подтвержденных сведений.",
+          "После изменения рецепта или кадрирования проверьте все слова заново."
+        ],
+        "example": "Гипотетическая версия A\nTitle: Bowl of red soup with green leaves\nKeywords: soup bowl, red soup, soup, green leaves, meal, spoon, close-up, food photography\n\nГипотетическая версия B, только при подтвержденных заметках\nTitle: Vegan tomato soup with basil in a bowl\nKeywords: vegan tomato soup, tomato soup, soup bowl, basil, herbs, red soup, savory food, meal, spoon, close-up, food photography, plant-based meal"
+      },
+      {
+        "heading": "Подготовьте метаданные для стока",
+        "paragraphs": [
+          "Пишите метаданные на языке, который требует целевой аккаунт или площадка. Даже если ваши рабочие заметки или статья написаны по-русски, англоязычный сток может требовать английские title и keywords. Не считайте, что один и тот же список подойдет всем сервисам: отличаются лимиты, категории и правила формулировок, а требования могут меняться.",
+          "Если вы используете локальный генератор MetaStocker, передавайте в контексте партии только факты. Не пишите для смешанной подборки общее “healthy vegan dishes”, если это не подтверждено для каждого файла. Локальная модель работает в браузере после загрузки и явной загрузки модели; генерация не заменяет проверку. Просмотрите каждый редактируемый результат, удалите догадки и экспортируйте только готовые строки для дальнейшей проверки на портале."
+        ],
+        "bullets": [
+          "Следите, чтобы имя файла соответствовало нужному изображению.",
+          "Проверяйте теги отдельно для каждого файла.",
+          "Считайте CSV подготовкой данных, а не отправкой или гарантией принятия."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Проведите финальную проверку точности",
+        "paragraphs": [
+          "Прочитайте title как фактическое предложение. Затем просмотрите первые ключевые слова и спросите себя, относится ли каждое к видимому, документированному или только предположительному. “Comfort food” — более интерпретативное понятие, чем “tomato soup”; оставляйте его лишь тогда, когда оно соответствует назначению снимка.",
+          "В конце сопоставьте результат с актуальными правилами выбранной площадки. Аккуратный список не гарантирует индексацию, высокую позицию, продажи или принятие, но метаданные, основанные на доказуемых фактах, дают покупателю и проверяющему ясное описание изображения."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Проверьте видимые элементы по изображению, а названия ингредиентов — по надежным заметкам.",
+      "Используйте green leaves для внешнего вида; herbs добавляйте лишь при подтверждении ингредиента.",
+      "Не добавляйте vegan, organic, gluten-free или название кухни без доказательств.",
+      "Поставьте самые важные термины в начало.",
+      "Удалите повторы, нерелевантные и предположительные слова.",
+      "Проверьте текущие требования площадки к языку и лимиту.",
+      "Просмотрите каждую сгенерированную или экспортированную строку."
+    ],
+    "illustration": {
+      "title": "От фактов снимка к метаданным",
+      "steps": [
+        {
+          "label": "Составьте список видимого",
+          "detail": "Запишите миску, красный суп, зеленые листья, ложку и композицию."
+        },
+        {
+          "label": "Проверьте заметки рецепта",
+          "detail": "Добавляйте basil или диетические признаки только по подтверждению."
+        },
+        {
+          "label": "Проверьте каждую строку",
+          "detail": "Удалите догадки, сверьте правила и экспортируйте готовые данные."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "উপাদান অনুমান না করে খাদ্যছবির কীওয়ার্ড",
+    "description": "দৃশ্যমান প্রমাণ বর্ণনা করে এবং বাস্তব উপাদানের নোটকে অনুমান থেকে আলাদা রেখে টমেটো স্যুপের ছবির জন্য নির্ভুল ইংরেজি কীওয়ার্ড তৈরি করুন।",
+    "intro": "সবুজ পাতাসহ এক বাটি লাল স্যুপ বর্ণনা করা সহজ মনে হতে পারে, কিন্তু মেটাডেটা দ্রুত ভুল হয়ে যেতে পারে। ছবিতে লাল স্যুপ, একটি বাটি, একটি চামচ ও সবুজ পাতা দেখা গেলেও এটি প্রমাণ করে না যে রেসিপিটি ভেগান, জৈব, গ্লুটেন-মুক্ত, ঘরে তৈরি বা কোনো নির্দিষ্ট রান্নার সঙ্গে যুক্ত। উপকারী কীওয়ার্ডের তালিকা ক্রেতা বাস্তবে যা দেখতে পারেন তার কাছাকাছি থাকে, আর নিশ্চিত উৎপাদন-নোট সতর্কভাবে সমর্থিত অতিরিক্ত তথ্য যোগ করতে পারে। উপাদান বানিয়ে না নিয়ে কীভাবে খাদ্যছবির জন্য ব্যবহারিক ইংরেজি মেটাডেটা তৈরি করবেন, এই নির্দেশিকায় তা দেখানো হয়েছে।",
+    "sections": [
+      {
+        "heading": "দৃশ্যমান তথ্য দিয়ে শুরু করুন",
+        "paragraphs": [
+          "সার্চ ভলিউম নিয়ে ভাবার আগে বিষয়, বিন্যাস ও আলোকচিত্রের ধরন বর্ণনা করুন। এই ছবিতে দৃশ্যমান পর্যবেক্ষণের মধ্যে আছে স্যুপের বাটি, লাল স্যুপ, সবুজ পাতা, খাবার ও ক্লোজ-আপ। টপ ভিউ, ওভারহেড, চামচ বা কপি স্পেসের মতো কম্পোজিশনের শব্দ কেবল সত্য হলে যোগ করুন। শুধু লাল স্যুপ দেখেই টমেটো নিশ্চিত হয় না, আর সবুজ পাতা দেখেই ভোজ্য ভেষজ নিশ্চিত হয় না।",
+          "দৃশ্যমান ধারণাকে রেসিপির দাবিতে পরিণত করা এড়িয়ে চলুন। লাল রং কোনো নির্দিষ্ট টমেটোর জাত নিশ্চিত করে না, আর কোন ভেষজ ব্যবহার করা হয়েছে তা না জানলে সবুজ ভেষজ থেকে তুলসি, পার্সলি বা ধনেপাতা শনাক্ত করা যায় না। বাষ্প উষ্ণতার ইঙ্গিত দিতে পারে, কিন্তু পরিবেশনের তাপমাত্রা বা রান্নার পদ্ধতি নিশ্চিত করে না।"
+        ],
+        "bullets": [
+          "বিষয়টি খুঁজতে ক্রেতারা ব্যবহার করতে পারেন এমন বিশেষ্য ব্যবহার করুন।",
+          "দৃষ্টিগোচর হলেই কেবল দৃষ্টিকোণ, আলো বা কম্পোজিশন যোগ করুন।",
+          "যে শব্দের ভিত্তি যাচাই না-করা রেসিপির তথ্য, তা বাদ দিন।"
+        ],
+        "example": "দৃশ্যমান প্রমাণ: একটি বাটি, লাল স্যুপ, সবুজ পাতা, চামচ, টেবিলের পৃষ্ঠ।\nসমর্থিত শব্দ: soup bowl, red soup, green leaves, food, close-up.\nরেসিপি নিশ্চিত করা দরকার: tomato soup, herbs, vegan, organic, gluten-free, basil, Italian cuisine."
+      },
+      {
+        "heading": "পর্যবেক্ষণ ও নিশ্চিত তথ্য আলাদা করুন",
+        "paragraphs": [
+          "অনুমান করে নয়, নির্ভরযোগ্য উৎপাদন-নোট থেকে এলে উপাদানের মেটাডেটা আরও শক্তিশালী হয়। আলোকচিত্রী যদি নথিবদ্ধ করে থাকেন যে স্যুপে টমেটো ও তুলসি আছে, তাহলে শব্দগুলো বিবেচনা করা যেতে পারে। রেসিপির নথি যদি নিশ্চিত করে যে পদটি ভেগান বা গ্লুটেন-মুক্ত, তাহলে লক্ষ্য মার্কেটপ্লেসের বর্তমান নিয়মের সঙ্গে মিলিয়ে দাবিগুলোও মূল্যায়ন করা যেতে পারে।",
+          "আপনার কর্মপ্রবাহে এই পার্থক্য স্পষ্ট রাখুন। “Green leaves” দৃশ্যমান চেহারা বর্ণনা করে; “herbs” একটি উপাদান শনাক্ত করে এবং তার জন্য নিশ্চিত তথ্য দরকার। আপনার নোটে সমর্থন থাকলেই “Basil” নিশ্চিত উপাদান হিসেবে ব্যবহার করা যায়। “Vegan” বাটির চেহারা নয়, রেসিপি বা প্রস্তুতপ্রণালী বর্ণনা করে। কোনো নথি না থাকলে আরও নির্দিষ্ট দাবিটি বাদ দিন।"
+        ],
+        "bullets": [
+          "রেসিপির নোটকে প্রমাণ হিসেবে নিন, প্রতিটি খাদ্যসংক্রান্ত লেবেল যোগ করার অনুমতি হিসেবে নয়।",
+          "রং, সাজসজ্জা বা পরিবেশন দেখে নির্দিষ্ট রান্নার ধরন অনুমান করবেন না।",
+          "কোনো প্ল্যাটফর্মে নির্দিষ্ট মেটাডেটা নিয়ম থাকলে বর্তমান অবদানকারী-সংক্রান্ত শর্ত পরীক্ষা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "সবচেয়ে শক্তিশালী শব্দ আগে রাখুন",
+        "paragraphs": [
+          "Adobe-এর কীওয়ার্ড নির্দেশিকায় প্রথম দশটি অবস্থানকে বিশেষ গুরুত্ব দেওয়া হয়েছে। সমর্থিত বিষয়টি আগে রাখুন, তারপর পাত্র, দৃশ্যমান উপাদান ও উপযোগী প্রেক্ষাপট দিন। রেসিপির নোট না থাকলে ব্যবহারিক ক্রমটি red soup, soup bowl, soup, green leaves, spoon, close-up, food photography দিয়ে শুরু হতে পারে। টমেটো ও ভেষজ উপাদান নিশ্চিত হলে tomato soup এবং herbs-এর মতো আরও নির্দিষ্ট শব্দ ব্যবহার করা সম্ভব।",
+          "শুধু জায়গা পূরণ করার জন্য কাছাকাছি অর্থের পুনরাবৃত্তি করবেন না। অপ্রাসঙ্গিক বা অনুমাননির্ভর ট্যাগে ভরা দীর্ঘ তালিকার চেয়ে প্রাসঙ্গিক শব্দের ছোট তালিকা যাচাই করা সহজ। প্ল্যাটফর্মের সীমা ভিন্ন হতে পারে, তাই বর্তমান অবদানকারী পোর্টালকে চূড়ান্ত কর্তৃপক্ষ হিসেবে ব্যবহার করুন; Adobe Stock-এর সাধারণ কীওয়ার্ড নির্দেশিকা সর্বোচ্চ 49টি কীওয়ার্ডের অনুমতি দেয়, তবে আমদানির আগে CSV-এর শর্তও পরীক্ষা করা উচিত।"
+        ],
+        "bullets": [
+          "সমর্থিত হলে সঠিক পদটির নাম দিয়ে শুরু করুন।",
+          "সম্পর্কিত ধারণাগুলো পাঠযোগ্য ক্রমে সাজান।",
+          "পোর্টালের বর্তমান সীমা ও ভাষার শর্ত ব্যবহার করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজ করা উদাহরণ: মেটাডেটার দুটি সংস্করণ",
+        "paragraphs": [
+          "নিচেরটি একটি কাল্পনিক উদাহরণ, পরিমাপ করা সার্চ-ফল নয়। ধরুন, আলোকচিত্রীর কাছে একটি প্রিভিউ আছে কিন্তু রেসিপির নোট নেই: সেখানে লাল স্যুপ, অশনাক্ত সবুজ পাতা ও একটি চামচ দেখা যাচ্ছে। সংস্করণ A কেবল এই দৃশ্যমান তথ্য ব্যবহার করে। রেসিপির নোটে টমেটো, তুলসি ও ভেগান প্রস্তুতপ্রণালী নিশ্চিত হলে সংস্করণ B সম্ভব হয়।",
+          "এখানে নির্ভুলতা ও অসমর্থিত নির্দিষ্টতার মধ্যে ভারসাম্য আছে। “Green leaves” কোনো উপাদান শনাক্ত না করেই দৃশ্যমান রূপ বর্ণনা করে। “Tomato soup”, “herbs”, “basil” এবং “vegan” কেবল উৎপাদন-নোটে এসব দাবি নিশ্চিত হলে সংস্করণ B-তে থাকা উচিত।"
+        ],
+        "bullets": [
+          "সংস্করণ A: নিশ্চিত রেসিপির নোট না থাকলে ব্যবহার করুন।",
+          "সংস্করণ B: উল্লিখিত উপাদান ও প্রস্তুতপ্রণালী নথিবদ্ধ থাকলেই ব্যবহার করুন।",
+          "রেসিপি বা ক্রপ বদলানোর পর প্রতিটি শব্দ আবার যাচাই করুন।"
+        ],
+        "example": "কাল্পনিক সংস্করণ A\nTitle: Bowl of red soup with green leaves\nKeywords: soup bowl, red soup, soup, green leaves, meal, spoon, close-up, food photography\n\nকাল্পনিক সংস্করণ B, কেবল নিশ্চিত নোট থাকলে\nTitle: Vegan tomato soup with basil in a bowl\nKeywords: vegan tomato soup, tomato soup, soup bowl, basil, herbs, red soup, savory food, meal, spoon, close-up, food photography, plant-based meal"
+      },
+      {
+        "heading": "মার্কেটপ্লেসের জন্য মেটাডেটা প্রস্তুত করুন",
+        "paragraphs": [
+          "লক্ষ্য অ্যাকাউন্ট বা প্ল্যাটফর্ম যে ভাষা চায়, সেই ভাষায় মেটাডেটা লিখুন। আপনার কাজের নোট বা ব্লগ অন্য ভাষায় হলেও ইংরেজি-ভাষার মার্কেটপ্লেসে ইংরেজি শিরোনাম ও কীওয়ার্ড প্রয়োজন হতে পারে। একটি তালিকা সব মার্কেটপ্লেসে চলবে ধরে নেবেন না: কীওয়ার্ডের সংখ্যা, বিভাগ ও শব্দচয়নের নিয়ম আলাদা হতে পারে এবং অবদানকারীর নীতি বদলাতে পারে।",
+          "আপনি MetaStocker-এর স্থানীয় জেনারেটর ব্যবহার করলে মিশ্র ফাইলের জন্য “healthy vegan dishes”-এর মতো সামগ্রিক বাক্যের বদলে তথ্যভিত্তিক ব্যাচের প্রেক্ষাপট দিন। প্রয়োজনীয় মডেল ডাউনলোড ও লোড হওয়ার পর স্থানীয় মডেল ব্রাউজারে চলে; তৈরি হওয়া ফল পর্যালোচনার বিকল্প নয়। প্রতিটি সম্পাদনাযোগ্য ফল দেখুন, অনুমান বাদ দিন এবং অবদানকারী পোর্টালে যাচাই করার জন্য প্রস্তুত সারিগুলোই রপ্তানি করুন।"
+        ],
+        "bullets": [
+          "সঠিক ছবির সঙ্গে ফাইলের নাম মিলিয়ে রাখুন।",
+          "প্রতিটি ফাইলের তৈরি ট্যাগ পর্যালোচনা করুন।",
+          "CSV রপ্তানিকে প্রস্তুতি হিসেবে নিন, জমা বা গ্রহণযোগ্যতা হিসেবে নয়।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "চূড়ান্ত নির্ভুলতা যাচাই করুন",
+        "paragraphs": [
+          "শিরোনামটি একটি তথ্যভিত্তিক বাক্য হিসেবে পড়ুন। তারপর প্রথম কয়েকটি কীওয়ার্ড দেখুন এবং জিজ্ঞেস করুন, প্রতিটি কি দৃশ্যমান, নথিবদ্ধ, নাকি কেবল সম্ভাব্য। “Comfort food” একটি ব্যাখ্যামূলক ধারণা; কিছু ব্যবহারে তা গ্রহণযোগ্য হতে পারে, কিন্তু “tomato soup”-এর চেয়ে এটি কম আক্ষরিক। আপনার নির্দিষ্ট প্রেক্ষাপটে মানানসই হলেই এটি রাখুন।",
+          "সবশেষে ফলটি গন্তব্যের বর্তমান নিয়মের সঙ্গে তুলনা করুন। পরিচ্ছন্ন তালিকা ইনডেক্সিং, র‍্যাঙ্কিং, বিক্রি বা গ্রহণযোগ্যতার নিশ্চয়তা দিতে পারে না, তবে প্রমাণভিত্তিক ও নিয়মিত মেটাডেটা পর্যালোচক ও ক্রেতাকে ছবিটির আরও স্পষ্ট বর্ণনা দেয়।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "ছবির দৃশ্যমান উপাদান এবং নির্ভরযোগ্য নোট থেকে উপাদানের নাম নিশ্চিত করুন।",
+      "চেহারার জন্য “green leaves” ব্যবহার করুন; উপাদান নিশ্চিত হলেই “herbs” ব্যবহার করুন।",
+      "প্রমাণ ছাড়া vegan, organic, gluten-free বা cuisine-এর দাবি যোগ করবেন না।",
+      "সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো শুরুতে রাখুন।",
+      "পুনরাবৃত্ত, অপ্রাসঙ্গিক বা অনুমাননির্ভর কীওয়ার্ড বাদ দিন।",
+      "লক্ষ্য প্ল্যাটফর্মের বর্তমান ভাষা ও সীমার নিয়ম পরীক্ষা করুন।",
+      "ব্যবহারের আগে প্রতিটি তৈরি বা রপ্তানি করা সারি দেখুন।"
+    ],
+    "illustration": {
+      "title": "ছবির প্রমাণ থেকে মেটাডেটা",
+      "steps": [
+        {
+          "label": "দৃশ্যমান উপাদান তালিকাভুক্ত করুন",
+          "detail": "বাটি, লাল স্যুপ, সবুজ পাতা, চামচ ও কম্পোজিশন নথিবদ্ধ করুন।"
+        },
+        {
+          "label": "রেসিপির নোট পরীক্ষা করুন",
+          "detail": "নথিবদ্ধ থাকলেই তুলসি বা খাদ্যসংক্রান্ত দাবি যোগ করুন।"
+        },
+        {
+          "label": "প্রতিটি সারি পর্যালোচনা করুন",
+          "detail": "অনুমান বাদ দিন, প্ল্যাটফর্মের নিয়ম নিশ্চিত করুন, তারপর প্রস্তুত মেটাডেটা রপ্তানি করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "सामग्री का अनुमान लगाए बिना खाद्य फ़ोटोग्राफ़ी कीवर्ड",
+    "description": "दिखाई देने वाले प्रमाण का वर्णन करके और वास्तविक सामग्री के नोट को अनुमानों से अलग रखकर टमाटर सूप की तस्वीरों के लिए सटीक अंग्रेज़ी कीवर्ड बनाएँ।",
+    "intro": "हरी पत्तियों वाली लाल सूप की एक कटोरी का वर्णन आसान लगता है, लेकिन मेटाडेटा जल्दी ही गलत हो सकता है। तस्वीर में लाल सूप, एक कटोरी, एक चम्मच और हरी पत्तियाँ दिखाई देती हैं, फिर भी इससे यह साबित नहीं होता कि रेसिपी वीगन, ऑर्गेनिक, ग्लूटेन-फ़्री, घर की बनी या किसी खास व्यंजन से जुड़ी है। उपयोगी कीवर्ड सूची उसी के करीब रहती है जिसे खरीदार वास्तव में देख सकता है, जबकि पुष्ट उत्पादन-नोट सावधानी से समर्थित विवरण जोड़ सकते हैं। यह मार्गदर्शिका दिखाती है कि सामग्री गढ़े बिना खाद्य फ़ोटोग्राफ़ के लिए व्यावहारिक अंग्रेज़ी मेटाडेटा कैसे बनाएँ।",
+    "sections": [
+      {
+        "heading": "दिखाई देने वाले तथ्यों से शुरू करें",
+        "paragraphs": [
+          "सर्च वॉल्यूम के बारे में सोचने से पहले विषय, विन्यास और फ़ोटोग्राफ़िक प्रस्तुति का वर्णन करें। इस तस्वीर में दिखाई देने वाले अवलोकनों में सूप की कटोरी, लाल सूप, हरी पत्तियाँ, भोजन और क्लोज़-अप शामिल हैं। टॉप व्यू, ओवरहेड, चम्मच या कॉपी स्पेस जैसे संयोजन-संबंधी शब्द तभी जोड़ें जब वे सच हों। केवल लाल सूप से टमाटर सिद्ध नहीं होता और हरी पत्तियों से खाने योग्य जड़ी-बूटियाँ सिद्ध नहीं होतीं।",
+          "दृश्य प्रभावों को रेसिपी के दावों में बदलने से बचें। लाल रंग किसी खास टमाटर की किस्म की पुष्टि नहीं करता, और हरी जड़ी-बूटियाँ तब तक तुलसी, पार्सली या धनिया की पहचान नहीं करतीं जब तक आपको पता न हो कि कौन-सी जड़ी-बूटी इस्तेमाल हुई थी। भाप गर्माहट का संकेत दे सकती है, लेकिन परोसने का तापमान या पकाने की विधि सिद्ध नहीं करती।"
+        ],
+        "bullets": [
+          "विषय खोजने के लिए खरीदारों द्वारा इस्तेमाल किए जा सकने वाले संज्ञा-शब्द चुनें।",
+          "दिखाई देने पर ही दृष्टिकोण, रोशनी या संयोजन जोड़ें।",
+          "ऐसा हर शब्द हटा दें जो अपुष्ट रेसिपी-विवरण पर निर्भर हो।"
+        ],
+        "example": "दृश्य प्रमाण: एक कटोरी, लाल सूप, हरी पत्तियाँ, चम्मच, मेज़ की सतह।\nसमर्थित शब्द: soup bowl, red soup, green leaves, food, close-up.\nरेसिपी की पुष्टि ज़रूरी: tomato soup, herbs, vegan, organic, gluten-free, basil, Italian cuisine."
+      },
+      {
+        "heading": "अवलोकन और पुष्टि अलग रखें",
+        "paragraphs": [
+          "सामग्री का मेटाडेटा दृश्य अनुमान से नहीं, बल्कि विश्वसनीय उत्पादन-नोट से मिलने पर अधिक मजबूत होता है। अगर फ़ोटोग्राफ़र ने दर्ज किया है कि सूप में टमाटर और तुलसी है, तो इन शब्दों पर विचार किया जा सकता है। अगर रेसिपी का दस्तावेज़ पुष्टि करता है कि व्यंजन वीगन या ग्लूटेन-फ़्री है, तो लक्ष्य मार्केटप्लेस के वर्तमान नियमों के अनुसार उन दावों का भी मूल्यांकन किया जा सकता है।",
+          "अपने कार्यप्रवाह में यह अंतर स्पष्ट रखें। “Green leaves” दिखाई देने वाले रूप का वर्णन करता है; “herbs” एक सामग्री की पहचान करता है और इसकी पुष्टि ज़रूरी है। “Basil” तभी पुष्ट सामग्री है जब आपके नोट इसका समर्थन करें। “Vegan” कटोरी की शक्ल नहीं, बल्कि रेसिपी या तैयारी का वर्णन करता है। कोई दस्तावेज़ न हो तो अधिक संकीर्ण दावा छोड़ दें।"
+        ],
+        "bullets": [
+          "रेसिपी-नोट को प्रमाण मानें, हर आहार-लेबल जोड़ने की अनुमति नहीं।",
+          "रंग, सजावट या प्रस्तुति से किसी विशेष व्यंजन-शैली का अनुमान न लगाएँ।",
+          "जब किसी प्लेटफ़ॉर्म के मेटाडेटा संबंधी विशेष नियम हों, तो वर्तमान योगदानकर्ता आवश्यकताएँ जाँचें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "सबसे मजबूत शब्द पहले रखें",
+        "paragraphs": [
+          "Adobe की कीवर्ड मार्गदर्शिका पहले दस स्थानों को विशेष महत्व देती है। समर्थित विषय को पहले रखें, उसके बाद कंटेनर, दिखाई देने वाले तत्व और उपयोगी संदर्भ दें। रेसिपी-नोट न हों तो व्यावहारिक क्रम red soup, soup bowl, soup, green leaves, spoon, close-up, food photography से शुरू हो सकता है। टमाटर और जड़ी-बूटी की सामग्री की पुष्टि होने पर अधिक विशिष्ट शब्द tomato soup और herbs इस्तेमाल किए जा सकते हैं।",
+          "सिर्फ जगह भरने के लिए एक ही विचार के लगभग समान शब्द दोहराएँ नहीं। सामान्य या अनुमानित टैग वाली लंबी सूची की तुलना में प्रासंगिक शब्दों की छोटी सूची जाँचना आसान है। प्लेटफ़ॉर्म की सीमाएँ अलग-अलग होती हैं, इसलिए वर्तमान योगदानकर्ता पोर्टल को अंतिम प्राधिकरण मानें; Adobe Stock की सामान्य कीवर्ड मार्गदर्शिका अधिकतम 49 कीवर्ड की अनुमति देती है, फिर भी आयात से पहले CSV आवश्यकताएँ जाँचनी चाहिए।"
+        ],
+        "bullets": [
+          "समर्थित होने पर सही व्यंजन के नाम से शुरुआत करें।",
+          "संबंधित अवधारणाओं को पढ़ने योग्य क्रम में रखें।",
+          "पोर्टल की वर्तमान सीमा और भाषा संबंधी आवश्यकताएँ इस्तेमाल करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण: मेटाडेटा के दो संस्करण",
+        "paragraphs": [
+          "यह एक काल्पनिक उदाहरण है, मापा हुआ सर्च परिणाम नहीं। मान लें कि फ़ोटोग्राफ़र के पास प्रीव्यू है, लेकिन रेसिपी-नोट नहीं: इसमें लाल सूप, अज्ञात हरी पत्तियाँ और एक चम्मच दिखाई देते हैं। संस्करण A केवल इन दिखाई देने वाले तथ्यों का उपयोग करता है। रेसिपी-नोट में टमाटर, तुलसी और वीगन तैयारी की पुष्टि होने के बाद संस्करण B संभव होता है।",
+          "यहाँ सटीकता और असमर्थित विशिष्टता के बीच संतुलन है। “Green leaves” किसी सामग्री की पहचान किए बिना दिखाई देने वाले रूप का वर्णन करता है। “Tomato soup”, “herbs”, “basil” और “vegan” केवल तभी संस्करण B में होने चाहिए जब उत्पादन-नोट इन दावों की पुष्टि करें।"
+        ],
+        "bullets": [
+          "संस्करण A: जब रेसिपी की कोई पुष्ट टिप्पणी न हो, तब इस्तेमाल करें।",
+          "संस्करण B: बताए गए घटक और तैयारी का दस्तावेज़ हो, तभी इस्तेमाल करें।",
+          "रेसिपी या क्रॉप बदलने के बाद हर शब्द फिर से जाँचें।"
+        ],
+        "example": "काल्पनिक संस्करण A\nTitle: Bowl of red soup with green leaves\nKeywords: soup bowl, red soup, soup, green leaves, meal, spoon, close-up, food photography\n\nकाल्पनिक संस्करण B, केवल पुष्ट नोट के साथ\nTitle: Vegan tomato soup with basil in a bowl\nKeywords: vegan tomato soup, tomato soup, soup bowl, basil, herbs, red soup, savory food, meal, spoon, close-up, food photography, plant-based meal"
+      },
+      {
+        "heading": "मार्केटप्लेस के लिए मेटाडेटा तैयार करें",
+        "paragraphs": [
+          "लक्ष्य खाते या प्लेटफ़ॉर्म द्वारा अपेक्षित भाषा में मेटाडेटा लिखें। आपके काम के नोट या ब्लॉग किसी दूसरी भाषा में हों, तब भी अंग्रेज़ी-भाषी मार्केटप्लेस को अंग्रेज़ी शीर्षक और कीवर्ड चाहिए हो सकते हैं। यह न मानें कि एक सूची हर मार्केटप्लेस के लिए सही होगी: कीवर्ड की संख्या, श्रेणियाँ और शब्द-प्रयोग के नियम अलग हो सकते हैं और योगदानकर्ता नीतियाँ बदल सकती हैं।",
+          "अगर आप MetaStocker के स्थानीय जनरेटर का उपयोग करते हैं, तो मिश्रित फ़ाइलों के लिए “healthy vegan dishes” जैसे व्यापक वाक्यांश की जगह तथ्यात्मक बैच संदर्भ दें। आवश्यक मॉडल डाउनलोड और लोड होने के बाद स्थानीय मॉडल ब्राउज़र में चलते हैं; जनरेशन आपकी समीक्षा का विकल्प नहीं है। हर संपादन योग्य परिणाम देखें, अनुमान हटाएँ और केवल उन्हीं पंक्तियों को निर्यात करें जिन्हें आप योगदानकर्ता पोर्टल में जाँचने के लिए तैयार हैं।"
+        ],
+        "bullets": [
+          "फ़ाइल का नाम सही तस्वीर से मिलाकर रखें।",
+          "हर फ़ाइल के बनाए गए टैग की समीक्षा करें।",
+          "CSV निर्यात को तैयारी मानें, जमा करना या स्वीकृति नहीं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "अंतिम सटीकता जाँच करें",
+        "paragraphs": [
+          "शीर्षक को तथ्यात्मक वाक्य की तरह पढ़ें। फिर शुरुआती कुछ कीवर्ड देखें और पूछें कि हर एक दिखाई देता है, दस्तावेज़ित है या केवल संभावित है। “Comfort food” एक व्याख्यात्मक अवधारणा है जो कुछ उपयोगों के लिए स्वीकार्य हो सकती है, लेकिन “tomato soup” की तुलना में कम शाब्दिक है; इसे तभी रखें जब यह आपके इच्छित संदर्भ के अनुकूल हो।",
+          "अंत में परिणाम की तुलना गंतव्य के वर्तमान नियमों से करें। साफ़-सुथरी सूची इंडेक्सिंग, रैंकिंग, बिक्री या स्वीकृति की गारंटी नहीं दे सकती, लेकिन प्रमाण-आधारित और अनुशासित मेटाडेटा समीक्षकों और खरीदारों को तस्वीर का अधिक स्पष्ट वर्णन देता है।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "तस्वीर में दिखाई देने वाले तत्वों और विश्वसनीय नोट से सामग्री के नाम की पुष्टि करें।",
+      "दिखाई देने वाले रूप के लिए “green leaves” इस्तेमाल करें; सामग्री की पुष्टि होने पर ही “herbs” इस्तेमाल करें।",
+      "प्रमाण के बिना vegan, organic, gluten-free या cuisine संबंधी दावे न जोड़ें।",
+      "सबसे महत्वपूर्ण शब्द शुरुआत में रखें।",
+      "दोहराए गए, अप्रासंगिक या अनुमानित कीवर्ड हटा दें।",
+      "लक्ष्य प्लेटफ़ॉर्म के वर्तमान भाषा और सीमा संबंधी नियम जाँचें।",
+      "इस्तेमाल से पहले हर बनाए गए या निर्यात किए गए पंक्ति-रिकॉर्ड का निरीक्षण करें।"
+    ],
+    "illustration": {
+      "title": "तस्वीर के प्रमाण से मेटाडेटा तक",
+      "steps": [
+        {
+          "label": "दिखाई देने वाले तत्व लिखें",
+          "detail": "कटोरी, लाल सूप, हरी पत्तियाँ, चम्मच और संयोजन दर्ज करें।"
+        },
+        {
+          "label": "रेसिपी-नोट जाँचें",
+          "detail": "दस्तावेज़ित होने पर ही तुलसी या आहार संबंधी दावे जोड़ें।"
+        },
+        {
+          "label": "हर पंक्ति की समीक्षा करें",
+          "detail": "अनुमान हटाएँ, प्लेटफ़ॉर्म नियमों की पुष्टि करें, फिर तैयार मेटाडेटा निर्यात करें।"
+        }
+      ]
+    }
+  }
+}

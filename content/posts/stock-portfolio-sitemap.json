@@ -1,0 +1,459 @@
+{
+  "slug": "stock-portfolio-sitemap",
+  "category": "seo",
+  "source_ids": [
+    "google-sitemap",
+    "google-images",
+    "google-language"
+  ],
+  "en": {
+    "title": "How to Create a Sitemap for Your Photography Portfolio",
+    "description": "Build a focused sitemap for five canonical portfolio pages, exclude private views, use honest lastmod dates, and submit it without confusing discovery with indexing.",
+    "intro": "A sitemap is a discovery aid for your photography website. It gives search engines a clean list of pages that are eligible for consideration, but it does not guarantee crawling or indexing. For a small portfolio, accuracy matters more than volume: five stable canonical pages are more useful than a long file containing drafts, filtered galleries, duplicate URLs, or temporary previews.\n\nThis guide uses a practical example: a photographer has five public portfolio pages and several private working views. The goal is to create one sitemap that reflects the public site as it exists today, then submit it in Search Console and maintain it honestly.",
+    "sections": [
+      {
+        "heading": "1. Define the pages the sitemap should represent",
+        "paragraphs": [
+          "Start with the pages a visitor can intentionally open and that you want search engines to discover. In this example, the portfolio has five canonical pages: a homepage, a portraits collection, a coastal landscapes collection, a studio still-life collection, and an about page.",
+          "Exclude login screens, private drafts, internal search results, filter combinations, preview links, and duplicate versions of the same page. A filtered URL such as /portfolio?color=blue may be useful for visitors but does not automatically deserve a separate sitemap entry. If several URLs show substantially the same page, choose the one canonical URL and list that URL only.",
+          "Use complete absolute URLs, including the correct protocol and domain. Before adding a page, open it in a normal browser session and confirm that it is the public, intended version rather than an editor preview."
+        ],
+        "bullets": [
+          "List stable public pages, not every URL your site can generate.",
+          "Choose one canonical URL for each page.",
+          "Keep private drafts and temporary views out of the file."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Build a small, readable XML file",
+        "paragraphs": [
+          "A sitemap does not need descriptive prose about each photograph. Its essential purpose here is to identify canonical page URLs. Keep the file limited to the five pages in scope and check that every URL is spelled consistently.",
+          "The following is a hypothetical example for the portfolio described above. The dates are illustrative; replace them with the actual dates from the site. Save the file at a stable public location such as the site root, using the filename your site configuration supports."
+        ],
+        "bullets": [],
+        "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url><loc>https://example.com/</loc><lastmod>2026-09-12</lastmod></url>\n  <url><loc>https://example.com/portfolio/portraits</loc><lastmod>2026-09-10</lastmod></url>\n  <url><loc>https://example.com/portfolio/coastal-landscapes</loc><lastmod>2026-09-08</lastmod></url>\n  <url><loc>https://example.com/portfolio/still-life</loc><lastmod>2026-08-29</lastmod></url>\n  <url><loc>https://example.com/about</loc><lastmod>2026-08-20</lastmod></url>\n</urlset>"
+      },
+      {
+        "heading": "3. Treat lastmod as an editorial signal",
+        "paragraphs": [
+          "Use lastmod only when the page received a meaningful update, such as a changed collection, revised text, or a genuine replacement of the page content. It is not a field for the date you generated the sitemap or the date a photograph was originally taken.",
+          "For the worked example, the portraits page was revised on September 10, so its date is 2026-09-10. The coastal page changed on September 8, while the about page has not changed since August 20. Those dates describe page revisions, not promises that a crawler will visit on those days.",
+          "If you cannot verify a date, omit lastmod rather than inventing precision. A consistently honest file is easier to maintain than one whose dates change on every export."
+        ],
+        "bullets": [
+          "Record the page’s real content-update date.",
+          "Do not refresh every lastmod value when only the sitemap changed.",
+          "Omit uncertain dates instead of guessing."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. Keep website SEO separate from marketplace metadata",
+        "paragraphs": [
+          "A portfolio sitemap describes your own website. It does not submit photographs to a stock marketplace and does not replace titles, descriptions, keywords, categories, or platform-specific metadata. Marketplace search and Google website indexing are different systems with different inputs.",
+          "Likewise, a sitemap does not determine how an image appears in Google Images. For that, use accurate surrounding text and appropriate alt text on the relevant page. Do not turn marketplace keyword lists into unnatural page copy, and do not assume that adding more terms to a sitemap will improve visibility.",
+          "If your site has English and Russian versions, give each translated page its own canonical URL. The language versions can identify their reciprocal alternatives, while the sitemap should list the actual canonical URLs you want discovered."
+        ],
+        "bullets": [
+          "Use the sitemap for page discovery.",
+          "Use page text and alt text for website image context.",
+          "Keep translated pages on their own canonical URLs."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "5. Check the file before submitting it",
+        "paragraphs": [
+          "Open the published sitemap URL and inspect it as an ordinary visitor. Confirm that the XML is visible rather than an error page, every listed URL uses the correct domain, and none of the five pages redirects to a draft, login, or alternate duplicate.",
+          "Then compare the sitemap with the current site navigation and page content. If the still-life collection was removed, remove it from the sitemap. If a new canonical page replaces it, add the replacement only after it is publicly available. Recheck the XML after any change to URL spelling or date values.",
+          "This review cannot make indexing automatic. It simply prevents the sitemap from sending stale or misleading discovery signals."
+        ],
+        "bullets": [
+          "Open the public sitemap URL.",
+          "Test each listed page and its canonical address.",
+          "Remove deleted or private pages promptly."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Submit it and interpret the result correctly",
+        "paragraphs": [
+          "Submit the sitemap in Google Search Console for the verified property, using the public sitemap address. Keep a note of the submission date and the version of the portfolio it represented. If the site changes, update the file and review the reported status rather than assuming submission means inclusion in search.",
+          "A submitted sitemap helps discovery, but Google still decides whether and when to crawl or index individual pages. A page may remain unindexed for reasons unrelated to whether the sitemap is syntactically correct. Evaluate the page itself: is it public, canonical, useful, and supported by clear surrounding content?",
+          "Review the contributor portal when a stock marketplace changes its policies, but do not confuse that separate workflow with your portfolio sitemap. Your sitemap is a website maintenance task, not an upload or sales guarantee."
+        ],
+        "bullets": [
+          "Submit the public sitemap address in Search Console.",
+          "Use the report as a diagnostic signal, not an indexing promise.",
+          "Recheck the file when portfolio URLs change."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Identify the five public canonical pages.",
+      "Exclude private drafts, filters, previews, and duplicates.",
+      "Use absolute URLs with consistent spelling.",
+      "Set lastmod only for genuine page updates.",
+      "Open and inspect the published sitemap.",
+      "Submit its address in Search Console.",
+      "Remember that discovery does not guarantee indexing."
+    ],
+    "illustration": {
+      "title": "Five-page portfolio sitemap workflow",
+      "steps": [
+        {
+          "label": "Select canonical pages",
+          "detail": "Keep five public pages; remove drafts, filters, and duplicate URLs."
+        },
+        {
+          "label": "Record honest changes",
+          "detail": "Add real page-update dates or leave uncertain lastmod values out."
+        },
+        {
+          "label": "Submit and review",
+          "detail": "Send the public sitemap to Search Console and interpret discovery cautiously."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как создать sitemap для собственного фотопортфолио",
+    "description": "Соберите точную sitemap из пяти канонических страниц, исключите черновики и фильтры, укажите честные lastmod и отправьте файл через Search Console.",
+    "intro": "Sitemap помогает поисковой системе обнаружить страницы фотосайта. Она не гарантирует обход или индексацию, поэтому для небольшого портфолио важнее точность, чем количество записей. Файл из пяти стабильных канонических страниц лучше длинного списка с черновиками, временными превью, фильтрами и дублями.",
+    "sections": [
+      {
+        "heading": "1. Определите страницы для sitemap",
+        "paragraphs": [
+          "Представим фотографа с пятью публичными страницами: главной, подборкой портретов, подборкой морских пейзажей, подборкой студийного натюрморта и страницей «О фотографе». Именно эти страницы посетитель может открыть, а владелец хочет сделать доступными для обнаружения в поиске.",
+          "Не включайте экран входа, закрытые черновики, ссылки редактора, внутренний поиск и комбинации фильтров. Например, /portfolio?color=blue может быть удобен посетителю, но это не означает, что ему нужен отдельный адрес в sitemap. Если несколько URL показывают одну и ту же страницу, выберите канонический вариант и укажите только его.",
+          "Откройте каждый адрес обычным способом и убедитесь, что он ведёт на публичную версию, а не на предварительный просмотр."
+        ],
+        "bullets": [
+          "Включайте устойчивые публичные страницы.",
+          "Используйте один канонический URL для каждой страницы.",
+          "Исключайте закрытые и временные представления."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Создайте компактный XML-файл",
+        "paragraphs": [
+          "Для такого сайта sitemap не должна содержать описания фотографий. Её задача — перечислить канонические адреса страниц. Проверьте домен, протокол, регистр букв и написание каждого URL.",
+          "Ниже приведён гипотетический пример для описанного портфолио. Даты условные: замените их фактическими датами обновления страниц. Разместите файл в стабильном публичном месте, предусмотренном конфигурацией сайта."
+        ],
+        "bullets": [],
+        "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url><loc>https://example.com/</loc><lastmod>2026-09-12</lastmod></url>\n  <url><loc>https://example.com/portfolio/portraits</loc><lastmod>2026-09-10</lastmod></url>\n  <url><loc>https://example.com/portfolio/coastal-landscapes</loc><lastmod>2026-09-08</lastmod></url>\n  <url><loc>https://example.com/portfolio/still-life</loc><lastmod>2026-08-29</lastmod></url>\n  <url><loc>https://example.com/about</loc><lastmod>2026-08-20</lastmod></url>\n</urlset>"
+      },
+      {
+        "heading": "3. Используйте lastmod честно",
+        "paragraphs": [
+          "Поле lastmod должно показывать существенное обновление страницы: изменение состава коллекции, текста или самой страницы. Это не дата создания sitemap и не дата съёмки фотографии.",
+          "В нашем примере страница портретов действительно обновлена 10 сентября, поэтому дата 2026-09-10 уместна. Морские пейзажи менялись 8 сентября, а страница «О фотографе» — 20 августа. Эти значения описывают изменения контента, а не обещают дату визита поискового робота.",
+          "Если дату нельзя подтвердить, лучше не указывать её. Не меняйте все lastmod только потому, что заново сохранили sitemap: так сигнал становится менее полезным."
+        ],
+        "bullets": [
+          "Указывайте фактическую дату обновления страницы.",
+          "Не обновляйте все даты при каждом экспорте файла.",
+          "При сомнении пропускайте lastmod."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. Не смешивайте сайт и стоковые метаданные",
+        "paragraphs": [
+          "Sitemap относится к вашему сайту. Она не отправляет фотографии на стоковую площадку и не заменяет заголовки, описания, ключевые слова или категории, которые требуются маркетплейсу. Поиск внутри стока и индексация сайта Google — разные процессы.",
+          "Для показа изображения в Google Images важны понятный окружающий текст страницы и подходящий alt-текст. Не превращайте длинный список стоковых ключевых слов в неестественный текст страницы и не рассчитывайте, что добавление слов в sitemap улучшит видимость.",
+          "Если у портфолио есть русская и английская версии, каждая переведённая страница должна иметь собственный канонический URL. Версии могут указывать взаимные языковые альтернативы с помощью hreflang, а sitemap должна включать фактические канонические адреса, которые нужно обнаружить поисковику."
+        ],
+        "bullets": [
+          "Используйте sitemap для обнаружения страниц.",
+          "Контекст изображения задавайте текстом и alt-текстом страницы.",
+          "Для переводов сохраняйте отдельные канонические URL."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "5. Проверьте sitemap до отправки",
+        "paragraphs": [
+          "Откройте опубликованный адрес sitemap в браузере. Убедитесь, что вместо страницы ошибки показывается XML, домен везде правильный, а все пять URL ведут на публичные канонические страницы.",
+          "Сопоставьте файл с текущей навигацией. Если подборка натюрморта удалена, удалите её из sitemap. Если ей на смену пришла новая публичная каноническая страница, добавьте новый адрес только после публикации. После изменения URL или дат снова проверьте файл.",
+          "Такая проверка не делает индексацию автоматической. Она лишь не позволяет отправлять поисковой системе устаревшие или вводящие в заблуждение данные."
+        ],
+        "bullets": [
+          "Откройте публичный адрес sitemap.",
+          "Проверьте каждую страницу и её канонический адрес.",
+          "Своевременно удаляйте закрытые и удалённые страницы."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Отправьте файл через Search Console",
+        "paragraphs": [
+          "Добавьте публичный адрес sitemap в Google Search Console для подтверждённого ресурса. Зафиксируйте дату отправки и состояние портфолио, которому соответствовал файл. После изменений обновите sitemap и смотрите отчёт, не принимая сам факт отправки за включение страниц в поиск.",
+          "Sitemap помогает обнаружению, но Google отдельно решает, когда обходить и индексировать каждую страницу. Если URL не появился в поиске, проверьте саму страницу: доступна ли она публично, является ли канонической, полезна ли она посетителю и есть ли на ней ясный контекст.",
+          "Требования стоковой площадки при необходимости проверяйте в её актуальном кабинете. Это отдельная процедура и не часть sitemap собственного портфолио."
+        ],
+        "bullets": [
+          "Отправьте публичный адрес через Search Console.",
+          "Считайте отчёт диагностикой, а не обещанием индексации.",
+          "Проверяйте файл при изменении структуры портфолио."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Определите пять публичных канонических страниц.",
+      "Исключите черновики, фильтры, превью и дубли.",
+      "Используйте абсолютные URL с единообразным написанием.",
+      "Указывайте lastmod только при реальном обновлении страницы.",
+      "Откройте и проверьте опубликованный XML.",
+      "Отправьте его адрес в Search Console.",
+      "Помните: обнаружение не гарантирует индексацию."
+    ],
+    "illustration": {
+      "title": "Рабочий процесс sitemap для портфолио",
+      "steps": [
+        {
+          "label": "Выберите канонические страницы",
+          "detail": "Оставьте пять публичных страниц; удалите черновики, фильтры и дубли."
+        },
+        {
+          "label": "Зафиксируйте изменения",
+          "detail": "Укажите реальные даты обновлений или пропустите сомнительный lastmod."
+        },
+        {
+          "label": "Отправьте и проверьте",
+          "detail": "Передайте sitemap в Search Console и осторожно оцените результат."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "ফটোগ্রাফি পোর্টফোলিওর জন্য সাইটম্যাপ কীভাবে তৈরি করবেন",
+    "description": "পাঁচটি ক্যানোনিকাল পোর্টফোলিও পৃষ্ঠার জন্য সংক্ষিপ্ত সাইটম্যাপ তৈরি করুন, ব্যক্তিগত ভিউ বাদ দিন, সঠিক lastmod তারিখ ব্যবহার করুন এবং ইনডেক্সিংকে আবিষ্কারযোগ্যতার সঙ্গে গুলিয়ে ফেলবেন না।",
+    "intro": "সাইটম্যাপ আপনার ফটোগ্রাফি ওয়েবসাইটের পৃষ্ঠাগুলো খুঁজে পাওয়ার সহায়ক। এটি সার্চ ইঞ্জিনকে বিবেচনার উপযোগী পৃষ্ঠাগুলোর একটি পরিষ্কার তালিকা দেয়, তবে ক্রল বা ইনডেক্সিংয়ের নিশ্চয়তা দেয় না। ছোট পোর্টফোলিওর ক্ষেত্রে সংখ্যার চেয়ে নির্ভুলতা বেশি গুরুত্বপূর্ণ: খসড়া, ফিল্টার করা গ্যালারি, ডুপ্লিকেট URL বা অস্থায়ী প্রিভিউসহ দীর্ঘ ফাইলের চেয়ে পাঁচটি স্থিতিশীল ক্যানোনিকাল পৃষ্ঠা বেশি কার্যকর।\n\nএই নির্দেশিকায় একটি বাস্তব উদাহরণ ব্যবহার করা হয়েছে: একজন ফটোগ্রাফারের পাঁচটি প্রকাশ্য পোর্টফোলিও পৃষ্ঠা এবং কয়েকটি ব্যক্তিগত কাজের ভিউ আছে। লক্ষ্য হলো আজকের প্রকাশ্য সাইটকে সঠিকভাবে উপস্থাপন করে একটি সাইটম্যাপ তৈরি করা, তারপর সেটি Search Console-এ জমা দেওয়া এবং সততার সঙ্গে রক্ষণাবেক্ষণ করা।",
+    "sections": [
+      {
+        "heading": "১. সাইটম্যাপে যে পৃষ্ঠাগুলো থাকবে, সেগুলো নির্ধারণ করুন",
+        "paragraphs": [
+          "এমন পৃষ্ঠাগুলো দিয়ে শুরু করুন, যেগুলো কোনো দর্শক ইচ্ছা করে খুলতে পারেন এবং যেগুলো সার্চ ইঞ্জিনকে খুঁজে পেতে দিতে চান। এই উদাহরণে পোর্টফোলিওতে পাঁচটি ক্যানোনিকাল পৃষ্ঠা আছে: একটি হোমপেজ, একটি প্রতিকৃতি সংগ্রহ, একটি উপকূলীয় দৃশ্যের সংগ্রহ, একটি স্টুডিও স্থিরচিত্রের সংগ্রহ এবং একটি পরিচিতি পৃষ্ঠা।",
+          "লগইন স্ক্রিন, ব্যক্তিগত খসড়া, অভ্যন্তরীণ সার্চ ফলাফল, ফিল্টারের সমন্বয়, প্রিভিউ লিংক এবং একই পৃষ্ঠার ডুপ্লিকেট সংস্করণ বাদ দিন। /portfolio?color=blue-এর মতো ফিল্টার করা URL দর্শকদের জন্য উপযোগী হতে পারে, কিন্তু তাই বলে সেটির আলাদা সাইটম্যাপ এন্ট্রি প্রাপ্য নয়। একাধিক URL-এ প্রায় একই পৃষ্ঠা দেখা গেলে একটি ক্যানোনিকাল URL বেছে নিয়ে শুধু সেটিই তালিকাভুক্ত করুন।",
+          "সঠিক প্রোটোকল ও ডোমেইনসহ সম্পূর্ণ পরম URL ব্যবহার করুন। কোনো পৃষ্ঠা যোগ করার আগে সাধারণ ব্রাউজার সেশনে সেটি খুলে নিশ্চিত করুন যে এটি সম্পাদকীয় প্রিভিউ নয়, বরং প্রকাশ্য ও প্রত্যাশিত সংস্করণ।"
+        ],
+        "bullets": [
+          "আপনার সাইট তৈরি করতে পারে এমন প্রতিটি URL নয়, স্থিতিশীল প্রকাশ্য পৃষ্ঠাগুলো তালিকাভুক্ত করুন।",
+          "প্রতিটি পৃষ্ঠার জন্য একটি ক্যানোনিকাল URL বেছে নিন।",
+          "ব্যক্তিগত খসড়া ও অস্থায়ী ভিউ ফাইলের বাইরে রাখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "২. ছোট ও সহজপাঠ্য XML ফাইল তৈরি করুন",
+        "paragraphs": [
+          "সাইটম্যাপে প্রতিটি ফটোগ্রাফ সম্পর্কে বর্ণনামূলক গদ্য দেওয়ার প্রয়োজন নেই। এখানে এর মূল উদ্দেশ্য হলো ক্যানোনিকাল পৃষ্ঠার URL শনাক্ত করা। ফাইলটিকে এই পরিধির পাঁচটি পৃষ্ঠায় সীমাবদ্ধ রাখুন এবং প্রতিটি URL-এর বানান একইভাবে লেখা হয়েছে কি না পরীক্ষা করুন।",
+          "উপরের পোর্টফোলিওটির জন্য নিচে একটি কাল্পনিক উদাহরণ দেওয়া হলো। তারিখগুলো দৃষ্টান্তমূলক; সাইটের প্রকৃত তারিখ দিয়ে সেগুলো প্রতিস্থাপন করুন। সাইটের বিন্যাসে সমর্থিত ফাইলনাম ব্যবহার করে ফাইলটি একটি স্থিতিশীল প্রকাশ্য অবস্থানে, যেমন সাইটের মূল ডিরেক্টরিতে, সংরক্ষণ করুন।"
+        ],
+        "bullets": [],
+        "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url><loc>https://example.com/</loc><lastmod>2026-09-12</lastmod></url>\n  <url><loc>https://example.com/portfolio/portraits</loc><lastmod>2026-09-10</lastmod></url>\n  <url><loc>https://example.com/portfolio/coastal-landscapes</loc><lastmod>2026-09-08</lastmod></url>\n  <url><loc>https://example.com/portfolio/still-life</loc><lastmod>2026-08-29</lastmod></url>\n  <url><loc>https://example.com/about</loc><lastmod>2026-08-20</lastmod></url>\n</urlset>"
+      },
+      {
+        "heading": "৩. lastmod-কে সম্পাদকীয় সংকেত হিসেবে ব্যবহার করুন",
+        "paragraphs": [
+          "lastmod শুধু তখনই ব্যবহার করুন, যখন পৃষ্ঠায় অর্থবহ পরিবর্তন হয়েছে—যেমন সংগ্রহ বদলানো, লেখা সংশোধন করা বা পৃষ্ঠার বিষয়বস্তু সত্যিই প্রতিস্থাপন করা। সাইটম্যাপ তৈরি করার তারিখ বা কোনো ফটোগ্রাফ প্রথম তোলার তারিখ লেখার জন্য এটি ব্যবহার করবেন না।",
+          "কাজের উদাহরণে প্রতিকৃতি পৃষ্ঠাটি 10 সেপ্টেম্বর সংশোধন করা হয়েছিল, তাই তারিখটি 2026-09-10। উপকূলীয় পৃষ্ঠাটি 8 সেপ্টেম্বর বদলেছে, আর পরিচিতি পৃষ্ঠাটি 20 আগস্টের পর বদলায়নি। এই তারিখগুলো পৃষ্ঠা সংশোধনের তারিখ, ওই দিন ক্রলার আসবে—এমন প্রতিশ্রুতি নয়।",
+          "কোনো তারিখ যাচাই করতে না পারলে নির্ভুলতার ভান করে তারিখ বানানোর বদলে lastmod বাদ দিন। প্রতিবার রপ্তানির সময় তারিখ বদলানো ফাইলের চেয়ে ধারাবাহিকভাবে সৎ ফাইল রক্ষণাবেক্ষণ করা সহজ।"
+        ],
+        "bullets": [
+          "পৃষ্ঠার প্রকৃত বিষয়বস্তু-হালনাগাদের তারিখ লিখুন।",
+          "শুধু সাইটম্যাপ বদলালে প্রতিটি lastmod মান নতুন করে দেবেন না।",
+          "অনিশ্চিত তারিখ অনুমান না করে বাদ দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৪. ওয়েবসাইটের SEO-কে মার্কেটপ্লেস মেটাডেটা থেকে আলাদা রাখুন",
+        "paragraphs": [
+          "পোর্টফোলিও সাইটম্যাপ আপনার নিজের ওয়েবসাইটকে বর্ণনা করে। এটি কোনো স্টক মার্কেটপ্লেসে ফটোগ্রাফ জমা দেয় না এবং শিরোনাম, বর্ণনা, কীওয়ার্ড, বিভাগ বা প্ল্যাটফর্ম-নির্দিষ্ট মেটাডেটার বিকল্প নয়। মার্কেটপ্লেস সার্চ এবং Google ওয়েবসাইট ইনডেক্সিং ভিন্ন ইনপুট ব্যবহার করা দুটি আলাদা ব্যবস্থা।",
+          "একইভাবে, কোনো ছবি Google Images-এ কীভাবে দেখা যাবে তা সাইটম্যাপ নির্ধারণ করে না। এর জন্য সংশ্লিষ্ট পৃষ্ঠায় সঠিক পারিপার্শ্বিক লেখা ও উপযুক্ত alt text ব্যবহার করুন। মার্কেটপ্লেসের কীওয়ার্ড তালিকাকে অস্বাভাবিক পৃষ্ঠার লেখায় পরিণত করবেন না এবং সাইটম্যাপে আরও শব্দ যোগ করলেই দৃশ্যমানতা বাড়বে—এমন ধারণা করবেন না।",
+          "আপনার সাইটে ইংরেজি ও রুশ সংস্করণ থাকলে প্রতিটি অনূদিত পৃষ্ঠার নিজস্ব ক্যানোনিকাল URL দিন। ভাষার সংস্করণগুলো পরস্পরের বিকল্প সংস্করণ শনাক্ত করতে পারে, আর সাইটম্যাপে আপনার খুঁজে পাওয়াতে চাওয়া প্রকৃত ক্যানোনিকাল URL-গুলোই তালিকাভুক্ত করা উচিত।"
+        ],
+        "bullets": [
+          "পৃষ্ঠা খুঁজে পাওয়ার জন্য সাইটম্যাপ ব্যবহার করুন।",
+          "ওয়েবসাইটের ছবির প্রসঙ্গ বোঝাতে পৃষ্ঠার লেখা ও alt text ব্যবহার করুন।",
+          "অনূদিত পৃষ্ঠাগুলো নিজস্ব ক্যানোনিকাল URL-এ রাখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৫. জমা দেওয়ার আগে ফাইল পরীক্ষা করুন",
+        "paragraphs": [
+          "প্রকাশিত সাইটম্যাপ URL খুলে একজন সাধারণ দর্শকের মতো পরীক্ষা করুন। নিশ্চিত করুন যে সেখানে ত্রুটি পৃষ্ঠা নয়, XML দেখা যাচ্ছে; প্রতিটি তালিকাভুক্ত URL সঠিক ডোমেইন ব্যবহার করছে; এবং পাঁচটি পৃষ্ঠার কোনোটি খসড়া, লগইন বা বিকল্প ডুপ্লিকেটে পুনর্নির্দেশিত হচ্ছে না।",
+          "এরপর সাইটম্যাপকে বর্তমান সাইট নেভিগেশন ও পৃষ্ঠার বিষয়বস্তুর সঙ্গে তুলনা করুন। স্থিরচিত্রের সংগ্রহটি সরিয়ে ফেলা হলে সেটি সাইটম্যাপ থেকেও সরান। কোনো নতুন ক্যানোনিকাল পৃষ্ঠা তার জায়গা নিলে, সেটি প্রকাশ্যে উপলভ্য হওয়ার পরেই প্রতিস্থাপনটি যোগ করুন। URL-এর বানান বা তারিখের মান বদলালে XML আবার পরীক্ষা করুন।",
+          "এই পর্যালোচনা ইনডেক্সিং স্বয়ংক্রিয় করতে পারে না। এটি শুধু সাইটম্যাপের মাধ্যমে পুরোনো বা বিভ্রান্তিকর আবিষ্কার-সংকেত পাঠানো ঠেকায়।"
+        ],
+        "bullets": [
+          "প্রকাশ্য সাইটম্যাপ URL খুলুন।",
+          "প্রতিটি তালিকাভুক্ত পৃষ্ঠা ও তার ক্যানোনিকাল ঠিকানা পরীক্ষা করুন।",
+          "মুছে ফেলা বা ব্যক্তিগত পৃষ্ঠা দ্রুত সরিয়ে দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৬. জমা দিন এবং ফলাফল সঠিকভাবে ব্যাখ্যা করুন",
+        "paragraphs": [
+          "যাচাইকৃত প্রপার্টির জন্য Google Search Console-এ প্রকাশ্য সাইটম্যাপ ঠিকানা ব্যবহার করে সেটি জমা দিন। জমা দেওয়ার তারিখ এবং এটি পোর্টফোলিওর কোন সংস্করণকে উপস্থাপন করেছিল, তা নোট করুন। সাইট বদলালে ফাইল হালনাগাদ করুন এবং জমা দেওয়া মানেই সার্চে অন্তর্ভুক্তি—এমন ধারণা না করে প্রদর্শিত অবস্থা পর্যালোচনা করুন।",
+          "জমা দেওয়া সাইটম্যাপ আবিষ্কারযোগ্যতায় সহায়তা করে, কিন্তু কোন পৃষ্ঠা কখন ক্রল বা ইনডেক্স করা হবে তা Google-ই ঠিক করে। সাইটম্যাপের গঠনগত সঠিকতার সঙ্গে সম্পর্কহীন কারণেও কোনো পৃষ্ঠা ইনডেক্স না-হতে পারে। পৃষ্ঠাটিকেই মূল্যায়ন করুন: এটি কি প্রকাশ্য, ক্যানোনিকাল, উপযোগী এবং পরিষ্কার পারিপার্শ্বিক বিষয়বস্তু দ্বারা সমর্থিত?",
+          "কোনো স্টক মার্কেটপ্লেস নীতি বদলালে অবদানকারী পোর্টাল পর্যালোচনা করুন, কিন্তু সেই আলাদা কাজের ধারা ও আপনার পোর্টফোলিও সাইটম্যাপকে গুলিয়ে ফেলবেন না। সাইটম্যাপ হলো ওয়েবসাইট রক্ষণাবেক্ষণের কাজ, আপলোড বা বিক্রির নিশ্চয়তা নয়।"
+        ],
+        "bullets": [
+          "Search Console-এ প্রকাশ্য সাইটম্যাপ ঠিকানা জমা দিন।",
+          "প্রতিবেদনকে ইনডেক্সিংয়ের প্রতিশ্রুতি নয়, রোগনির্ণয়ের সংকেত হিসেবে ব্যবহার করুন।",
+          "পোর্টফোলিওর URL বদলালে ফাইলটি আবার পরীক্ষা করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "পাঁচটি প্রকাশ্য ক্যানোনিকাল পৃষ্ঠা শনাক্ত করুন।",
+      "ব্যক্তিগত খসড়া, ফিল্টার, প্রিভিউ ও ডুপ্লিকেট বাদ দিন।",
+      "একই বানানসহ পরম URL ব্যবহার করুন।",
+      "শুধু প্রকৃত পৃষ্ঠা-হালনাগাদের জন্য lastmod নির্ধারণ করুন।",
+      "প্রকাশিত সাইটম্যাপ খুলে পরীক্ষা করুন।",
+      "Search Console-এ তার ঠিকানা জমা দিন।",
+      "মনে রাখুন, আবিষ্কারযোগ্যতা ইনডেক্সিংয়ের নিশ্চয়তা দেয় না।"
+    ],
+    "illustration": {
+      "title": "পাঁচ-পৃষ্ঠার পোর্টফোলিও সাইটম্যাপের কাজের ধারা",
+      "steps": [
+        {
+          "label": "ক্যানোনিকাল পৃষ্ঠা বাছাই করুন",
+          "detail": "পাঁচটি প্রকাশ্য পৃষ্ঠা রাখুন; খসড়া, ফিল্টার ও ডুপ্লিকেট URL সরিয়ে দিন।"
+        },
+        {
+          "label": "সততার সঙ্গে পরিবর্তন লিখুন",
+          "detail": "প্রকৃত পৃষ্ঠা-হালনাগাদের তারিখ যোগ করুন, অথবা অনিশ্চিত lastmod মান বাদ দিন।"
+        },
+        {
+          "label": "জমা দিন ও পর্যালোচনা করুন",
+          "detail": "প্রকাশ্য সাইটম্যাপ Search Console-এ পাঠান এবং আবিষ্কারযোগ্যতাকে সতর্কভাবে ব্যাখ্যা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "अपने फ़ोटोग्राफ़ी पोर्टफोलियो के लिए साइटमैप कैसे बनाएँ",
+    "description": "पाँच कैननिकल पोर्टफोलियो पृष्ठों का केंद्रित साइटमैप बनाएँ, निजी दृश्य हटाएँ, सही lastmod तिथियाँ रखें और खोजे जाने को इंडेक्सिंग न समझें।",
+    "intro": "साइटमैप आपकी फ़ोटोग्राफ़ी वेबसाइट को खोजे जाने में मदद करता है। यह सर्च इंजन को विचार के योग्य पृष्ठों की साफ़ सूची देता है, लेकिन क्रॉल या इंडेक्सिंग की गारंटी नहीं देता। छोटे पोर्टफोलियो में संख्या से अधिक सटीकता मायने रखती है: ड्राफ़्ट, फ़िल्टर की गई गैलरी, डुप्लिकेट URL या अस्थायी प्रीव्यू वाली लंबी फ़ाइल की तुलना में पाँच स्थिर कैननिकल पृष्ठ अधिक उपयोगी होते हैं।\n\nयह मार्गदर्शिका एक व्यावहारिक उदाहरण लेती है: एक फ़ोटोग्राफ़र के पाँच सार्वजनिक पोर्टफोलियो पृष्ठ और कई निजी कार्य-दृश्य हैं। लक्ष्य है ऐसी एक साइटमैप बनाना जो आज की सार्वजनिक साइट को सही रूप में दिखाए, फिर उसे Search Console में जमा करके ईमानदारी से बनाए रखना।",
+    "sections": [
+      {
+        "heading": "१. तय करें कि साइटमैप में कौन-से पृष्ठ होने चाहिए",
+        "paragraphs": [
+          "उन पृष्ठों से शुरुआत करें जिन्हें कोई आगंतुक जानबूझकर खोल सकता है और जिन्हें आप सर्च इंजन से खोजवाना चाहते हैं। इस उदाहरण में पोर्टफोलियो में पाँच कैननिकल पृष्ठ हैं: एक होमपेज, एक पोर्ट्रेट संग्रह, एक तटीय दृश्यों का संग्रह, एक स्टूडियो स्थिर-चित्र संग्रह और एक परिचय पृष्ठ।",
+          "लॉगिन स्क्रीन, निजी ड्राफ़्ट, आंतरिक सर्च परिणाम, फ़िल्टर संयोजन, प्रीव्यू लिंक और उसी पृष्ठ के डुप्लिकेट संस्करण हटाएँ। /portfolio?color=blue जैसा फ़िल्टर किया हुआ URL आगंतुकों के लिए उपयोगी हो सकता है, लेकिन उसे अपने-आप अलग साइटमैप प्रविष्टि का अधिकार नहीं मिल जाता। यदि कई URL लगभग एक ही पृष्ठ दिखाते हैं, तो एक कैननिकल URL चुनें और केवल उसी को सूची में रखें।",
+          "सही प्रोटोकॉल और डोमेन सहित पूर्ण एब्सोल्यूट URL इस्तेमाल करें। कोई पृष्ठ जोड़ने से पहले उसे सामान्य ब्राउज़र सत्र में खोलकर सुनिश्चित करें कि वह संपादक का प्रीव्यू नहीं, बल्कि सार्वजनिक और इच्छित संस्करण है।"
+        ],
+        "bullets": [
+          "आपकी साइट द्वारा बनाए जा सकने वाले हर URL के बजाय स्थिर सार्वजनिक पृष्ठ सूचीबद्ध करें।",
+          "हर पृष्ठ के लिए एक कैननिकल URL चुनें।",
+          "निजी ड्राफ़्ट और अस्थायी दृश्य फ़ाइल से बाहर रखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "२. छोटी और पढ़ने योग्य XML फ़ाइल बनाएँ",
+        "paragraphs": [
+          "साइटमैप में हर फ़ोटोग्राफ़ के बारे में वर्णनात्मक गद्य देने की आवश्यकता नहीं है। यहाँ इसका मुख्य उद्देश्य कैननिकल पृष्ठों के URL पहचानना है। फ़ाइल को इस दायरे के पाँच पृष्ठों तक सीमित रखें और जाँचें कि हर URL की वर्तनी एक जैसी है।",
+          "ऊपर बताए गए पोर्टफोलियो के लिए नीचे एक काल्पनिक उदाहरण है। तिथियाँ केवल उदाहरण हैं; उन्हें साइट की वास्तविक तिथियों से बदलें। साइट के विन्यास में समर्थित फ़ाइलनाम का उपयोग करते हुए फ़ाइल को किसी स्थिर सार्वजनिक स्थान, जैसे साइट के मूल स्थान, पर सहेजें।"
+        ],
+        "bullets": [],
+        "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  <url><loc>https://example.com/</loc><lastmod>2026-09-12</lastmod></url>\n  <url><loc>https://example.com/portfolio/portraits</loc><lastmod>2026-09-10</lastmod></url>\n  <url><loc>https://example.com/portfolio/coastal-landscapes</loc><lastmod>2026-09-08</lastmod></url>\n  <url><loc>https://example.com/portfolio/still-life</loc><lastmod>2026-08-29</lastmod></url>\n  <url><loc>https://example.com/about</loc><lastmod>2026-08-20</lastmod></url>\n</urlset>"
+      },
+      {
+        "heading": "३. lastmod को संपादकीय संकेत मानें",
+        "paragraphs": [
+          "lastmod का उपयोग तभी करें जब पृष्ठ में सार्थक बदलाव हुआ हो, जैसे संग्रह बदलना, पाठ संशोधित करना या पृष्ठ की सामग्री को वास्तव में बदलना। यह साइटमैप बनाने की तिथि या फ़ोटोग्राफ़ लिए जाने की मूल तिथि दर्ज करने का क्षेत्र नहीं है।",
+          "काम के उदाहरण में पोर्ट्रेट पृष्ठ 10 सितंबर को संशोधित हुआ, इसलिए उसकी तिथि 2026-09-10 है। तटीय पृष्ठ 8 सितंबर को बदला, जबकि परिचय पृष्ठ 20 अगस्त के बाद नहीं बदला। ये तिथियाँ पृष्ठ-संशोधन बताती हैं, यह वादा नहीं कि क्रॉलर उन्हीं दिनों आएगा।",
+          "यदि आप किसी तिथि की पुष्टि नहीं कर सकते, तो सटीकता का दिखावा करते हुए उसे गढ़ने के बजाय lastmod हटा दें। हर निर्यात पर बदलने वाली तिथियों वाली फ़ाइल की तुलना में लगातार ईमानदार फ़ाइल को बनाए रखना आसान है।"
+        ],
+        "bullets": [
+          "पृष्ठ की वास्तविक सामग्री-अपडेट तिथि दर्ज करें।",
+          "जब केवल साइटमैप बदला हो, तब हर lastmod मान नया न करें।",
+          "अनिश्चित तिथियों का अनुमान लगाने के बजाय उन्हें हटा दें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "४. वेबसाइट SEO को मार्केटप्लेस मेटाडेटा से अलग रखें",
+        "paragraphs": [
+          "पोर्टफोलियो साइटमैप आपकी अपनी वेबसाइट का विवरण देता है। यह किसी स्टॉक मार्केटप्लेस पर फ़ोटोग्राफ़ जमा नहीं करता और न ही शीर्षक, विवरण, कीवर्ड, श्रेणियों या प्लेटफ़ॉर्म-विशिष्ट मेटाडेटा का विकल्प है। मार्केटप्लेस सर्च और Google वेबसाइट इंडेक्सिंग अलग इनपुट वाली अलग प्रणालियाँ हैं।",
+          "इसी तरह, किसी चित्र का Google Images में दिखना साइटमैप तय नहीं करता। इसके लिए संबंधित पृष्ठ पर सही आसपास का पाठ और उपयुक्त alt text इस्तेमाल करें। मार्केटप्लेस की कीवर्ड सूचियों को अप्राकृतिक पृष्ठ-पाठ में न बदलें और यह न मानें कि साइटमैप में अधिक शब्द जोड़ने से दृश्यता बढ़ेगी।",
+          "यदि आपकी साइट के अंग्रेज़ी और रूसी संस्करण हैं, तो हर अनूदित पृष्ठ को अपना कैननिकल URL दें। भाषा संस्करण अपने पारस्परिक वैकल्पिक संस्करणों की पहचान कर सकते हैं, जबकि साइटमैप में वही वास्तविक कैननिकल URL सूचीबद्ध होने चाहिए जिन्हें आप खोजवाना चाहते हैं।"
+        ],
+        "bullets": [
+          "पृष्ठ खोजने में मदद के लिए साइटमैप इस्तेमाल करें।",
+          "वेबसाइट पर चित्र का संदर्भ देने के लिए पृष्ठ-पाठ और alt text इस्तेमाल करें।",
+          "अनूदित पृष्ठों को उनके अपने कैननिकल URL पर रखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "५. जमा करने से पहले फ़ाइल जाँचें",
+        "paragraphs": [
+          "प्रकाशित साइटमैप URL खोलकर उसे सामान्य आगंतुक की तरह देखें। सुनिश्चित करें कि XML दिखाई दे रहा है, त्रुटि पृष्ठ नहीं; हर सूचीबद्ध URL सही डोमेन इस्तेमाल करता है; और पाँचों में से कोई भी पृष्ठ ड्राफ़्ट, लॉगिन या किसी वैकल्पिक डुप्लिकेट पर रीडायरेक्ट नहीं हो रहा।",
+          "फिर साइटमैप की तुलना वर्तमान साइट नेविगेशन और पृष्ठ की सामग्री से करें। यदि स्थिर-चित्र संग्रह हटा दिया गया है, तो उसे साइटमैप से भी हटाएँ। यदि उसकी जगह कोई नया कैननिकल पृष्ठ आया है, तो उसे सार्वजनिक रूप से उपलब्ध होने के बाद ही जोड़ें। URL की वर्तनी या तिथि के मान में बदलाव के बाद XML फिर जाँचें।",
+          "यह समीक्षा इंडेक्सिंग को स्वचालित नहीं कर सकती। यह केवल साइटमैप से पुराने या भ्रामक खोज-संकेत भेजे जाने से रोकती है।"
+        ],
+        "bullets": [
+          "सार्वजनिक साइटमैप URL खोलें।",
+          "हर सूचीबद्ध पृष्ठ और उसका कैननिकल पता जाँचें।",
+          "हटाए गए या निजी पृष्ठ तुरंत निकालें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "६. जमा करें और परिणाम को सही ढंग से समझें",
+        "paragraphs": [
+          "सत्यापित प्रॉपर्टी के लिए Google Search Console में सार्वजनिक साइटमैप पता इस्तेमाल करके उसे जमा करें। जमा करने की तिथि और उस समय पोर्टफोलियो के जिस संस्करण को वह दर्शाता था, उसका नोट रखें। साइट बदलने पर फ़ाइल अपडेट करें और यह मानने के बजाय कि जमा करने का अर्थ खोज में शामिल होना है, रिपोर्ट की गई स्थिति की समीक्षा करें।",
+          "जमा किया गया साइटमैप खोजे जाने में मदद करता है, लेकिन अलग-अलग पृष्ठों को कब क्रॉल या इंडेक्स करना है, यह Google तय करता है। साइटमैप के वाक्य-विन्यास के सही होने से असंबंधित कारणों से कोई पृष्ठ इंडेक्स न भी हो सकता है। स्वयं पृष्ठ का मूल्यांकन करें: क्या वह सार्वजनिक, कैननिकल और उपयोगी है, और क्या उसके आसपास का पाठ उसे स्पष्ट रूप से सहारा देता है?",
+          "जब कोई स्टॉक मार्केटप्लेस अपनी नीतियाँ बदले, तो योगदानकर्ता पोर्टल देखें, लेकिन उस अलग कार्यप्रवाह को अपने पोर्टफोलियो साइटमैप से न मिलाएँ। साइटमैप वेबसाइट के रखरखाव का काम है, अपलोड या बिक्री की गारंटी नहीं।"
+        ],
+        "bullets": [
+          "Search Console में सार्वजनिक साइटमैप पता जमा करें।",
+          "रिपोर्ट को इंडेक्सिंग के वादे के बजाय जाँच-संबंधी संकेत मानें।",
+          "पोर्टफोलियो के URL बदलने पर फ़ाइल फिर जाँचें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "पाँच सार्वजनिक कैननिकल पृष्ठ पहचानें।",
+      "निजी ड्राफ़्ट, फ़िल्टर, प्रीव्यू और डुप्लिकेट हटाएँ।",
+      "एक जैसी वर्तनी वाले एब्सोल्यूट URL इस्तेमाल करें।",
+      "lastmod केवल वास्तविक पृष्ठ-अपडेट के लिए रखें।",
+      "प्रकाशित साइटमैप खोलकर जाँचें।",
+      "उसका पता Search Console में जमा करें।",
+      "याद रखें कि खोजे जाना इंडेक्सिंग की गारंटी नहीं है।"
+    ],
+    "illustration": {
+      "title": "पाँच-पृष्ठीय पोर्टफोलियो साइटमैप कार्यप्रवाह",
+      "steps": [
+        {
+          "label": "कैननिकल पृष्ठ चुनें",
+          "detail": "पाँच सार्वजनिक पृष्ठ रखें; ड्राफ़्ट, फ़िल्टर और डुप्लिकेट URL हटा दें।"
+        },
+        {
+          "label": "ईमानदार बदलाव दर्ज करें",
+          "detail": "वास्तविक पृष्ठ-अपडेट तिथियाँ जोड़ें या अनिश्चित lastmod मान छोड़ दें।"
+        },
+        {
+          "label": "जमा करें और समीक्षा करें",
+          "detail": "सार्वजनिक साइटमैप Search Console में भेजें और खोजे जाने को सावधानी से समझें।"
+        }
+      ]
+    }
+  }
+}

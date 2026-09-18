@@ -7,9 +7,9 @@
   let queue = [], timer, visit, started = 0, sending = false;
   let page = location.pathname.replace(/\/index\.html$/, '/');
   if (page === '/blog') page = '/blog/';
-  if (/^\/blog\/[a-z0-9-]+$/.test(page)) page += '.html';
+  if (/^\/blog\/(?:(?:ru|bn|hi)\/)?[a-z0-9-]+$/.test(page) && !/^\/blog\/(?:ru|bn|hi)$/.test(page)) page += '.html';
   const enabled = () => {
-    try { return (page === '/' || /^\/blog\/(?:[a-z0-9-]+\.html)?$/.test(page)) && navigator.doNotTrack !== '1' && !navigator.globalPrivacyControl && localStorage.getItem(preference) !== '1' && typeof crypto.randomUUID === 'function'; } catch { return false; }
+    try { return (page === '/' || /^\/blog\/(?:(?:ru|bn|hi)\/)?(?:[a-z0-9-]+\.html|(?:topics\/[a-z0-9-]+\/)?(?:page\/[1-9][0-9]*\/)?)$/.test(page)) && navigator.doNotTrack !== '1' && !navigator.globalPrivacyControl && localStorage.getItem(preference) !== '1' && typeof crypto.randomUUID === 'function'; } catch { return false; }
   };
   let referrer = '';
   try { const url = new URL(document.referrer); if (url.hostname !== location.hostname && /^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,63}$/.test(url.hostname)) referrer = url.hostname; } catch { }

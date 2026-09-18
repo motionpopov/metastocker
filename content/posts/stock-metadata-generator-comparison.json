@@ -1,0 +1,503 @@
+{
+  "slug": "stock-metadata-generator-comparison",
+  "category": "local-ai",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "openai-key"
+  ],
+  "en": {
+    "title": "How to Compare Local AI, Paid APIs, and Manual Keywords",
+    "description": "A practical six-asset test for comparing local AI, paid API, and manual stock metadata by factual errors and editing time.",
+    "intro": "Choosing a metadata method is less about finding a universal winner and more about matching a workflow to your files, privacy needs, and tolerance for editing. A local generator may keep photos and prompts in the browser, a paid API may offer another drafting option, and manual keywording gives you direct control. None should be judged by model league tables or promises of sales. Test the methods on the same small set, record what went wrong, and choose the process that produces accurate, editable metadata for your portfolio.",
+    "sections": [
+      {
+        "heading": "Define the comparison before generating anything",
+        "paragraphs": [
+          "Use six assets that represent different reasoning problems rather than six similar photographs. For example, choose a simple object still life, a landscape with uncertain location, a person whose identity must not be guessed, a food image, a busy commercial scene, and a short video. Keep the original filenames and prepare the same factual notes for every method.",
+          "Decide in advance what counts as an error. An invented location, species, date, brand, identity, action, or visible object is factual. An irrelevant keyword, duplicate, unsupported technical claim, or keyword in the wrong language is also a quality problem. Do not count a missing optional synonym as a factual error."
+        ],
+        "bullets": [
+          "Use identical source images and factual notes.",
+          "Keep the target platform and language consistent.",
+          "Record editing time with a simple timer.",
+          "Treat all examples as tests, not measured industry results."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Build a repeatable six-asset test set",
+        "paragraphs": [
+          "Make a small worksheet with one row per file. Record only what you can verify: visible subject, broad setting, orientation, activity, and any information known from your own records. Mark unknown details explicitly. This prevents a system from receiving hidden advantages from extra notes.",
+          "For a video, compare metadata with sampled previews but inspect the full motion yourself. A sampled preview can miss a later action, transition, or object. For a person, use a neutral description such as “adult person” unless you have an appropriate basis for more detail. Do not infer personal identity, ownership, release status, location, or species from pixels."
+        ],
+        "bullets": [
+          "Object still life",
+          "Landscape with unknown location",
+          "Person without identity claims",
+          "Food or preparation scene",
+          "Busy commercial composition",
+          "Short video requiring full-motion review"
+        ],
+        "example": "Test worksheet\nFile: market-bowl.jpg\nVerified: ceramic bowl, oranges, wooden table, daylight\nUnknown: city, photographer, brand, exact date\nRequired language: English\nTarget: descriptive title plus relevant keywords"
+      },
+      {
+        "heading": "Test local AI with controlled settings",
+        "paragraphs": [
+          "MetaStocker’s local mode runs supported vision and thinking models in WebGPU workers in your browser. The default local model is Gemma 4 E2B, with Gemma 4 E4B and Qwen3.5 2B also available. Downloading a model needs internet; after that, the model is loaded into memory when you explicitly choose Load.",
+          "For a fair comparison, begin with one local thread and the same prompt for all six files. A second parallel thread can be tested later, but each thread may load its own model copy. Do not confuse a retained browser cache with active model memory: unloading can retain downloaded files while releasing the model from memory, and browser storage can be evicted.",
+          "Give the batch description only verified context. A mixed batch should not receive blanket tags that fit one image but not another. Review every file’s editable result, especially extra tags and video descriptions. The requested tag count can be validated while the content remains inaccurate."
+        ],
+        "bullets": [
+          "Download once, then record whether the model is loaded.",
+          "Use one thread for the baseline.",
+          "Remove speculative tags before scoring.",
+          "Delete browser model files only after the comparison is complete if you may need them again."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Compare a paid API and manual keywording fairly",
+        "paragraphs": [
+          "For the paid API condition, use the same six assets, notes, output language, target platform, and requested field structure. Record the time spent preparing the request and correcting the result, not just the generation time. If using MetaStocker’s optional personal OpenAI mode, previews and context are sent to OpenAI using your own key. Keep the key private; never place it in public client-side code or share it.",
+          "For manual keywording, work from the same worksheet and use a fixed maximum working time, such as 12 minutes per image in this hypothetical test. Manual work is not automatically error-free: hurried contributors can add irrelevant terms or forget important visible concepts. Score it with exactly the same rules as the AI outputs."
+        ],
+        "bullets": [
+          "Local AI: record setup, editing, and review time.",
+          "Paid API: include request preparation and correction time.",
+          "Manual: include research-free drafting and final review.",
+          "Do not compare one polished result with another method’s raw draft."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Use an error-and-time scorecard",
+        "paragraphs": [
+          "A useful scorecard has two primary columns: factual errors and editing minutes. Add secondary notes for missing important concepts, irrelevant tags, duplicates, language mismatches, and uncertainty. Keep factual errors separate from style preferences. A concise title may be better than a longer one even when both are accurate.",
+          "For platform metadata, verify the current contributor rules before exporting. Adobe’s guidance allows up to 49 keywords and emphasizes the most important terms early; its CSV requirements also map filenames to titles and keywords. Use a conservative 49-keyword ceiling, check the current upload screen, and inspect imported metadata in the contributor portal. Uploading assets before a CSV import and matching filenames, including extensions and case, are part of that workflow. A CSV does not guarantee acceptance."
+        ],
+        "bullets": [
+          "Factual errors: count unsupported claims.",
+          "Editing time: record minutes per file.",
+          "Relevance: mark irrelevant or repeated terms.",
+          "Completeness: note important concepts that are missing.",
+          "Compliance: check current platform requirements separately."
+        ],
+        "example": "Scorecard example\nMethod: local AI\nFactual errors: 2\nEditing minutes: 7\nOther notes: one duplicate keyword; location correctly left unknown\nDecision: usable draft after removing two speculative terms"
+      },
+      {
+        "heading": "Worked example: make the decision from evidence",
+        "paragraphs": [
+          "Example, not a measured result: imagine the market-bowl.jpg row produces a title mentioning a city that was never supplied, plus “organic” and “fresh” as if they were verified facts. Remove the city and any unsupported claim, retain accurate terms such as bowl, oranges, wooden table, and daylight, then record three factual errors and the minutes required for correction.",
+          "Suppose the paid API produces a fluent title but adds a brand implication, while manual keywording is accurate but takes longer. The decision is not “AI wins” or “manual wins.” It might be to use local AI for first drafts of ordinary still lifes, manual review for every file, and a separate careful process for people and video. If the local model repeatedly invents details on your test set, its privacy advantage may not compensate for the editing burden.",
+          "If the target marketplace requires English metadata, write or translate the final title and keywords in English even when your working notes or this guide are in Russian. Keep the wording descriptive rather than stuffing a list of search terms into a title. Marketplace search metadata is separate from Google website indexing; neither method guarantees ranking, visibility, or sales."
+        ],
+        "bullets": [
+          "Choose the method per file type if the evidence supports it.",
+          "Keep unknown facts unknown.",
+          "Export only rows you have reviewed.",
+          "Recheck portal rules when requirements change."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Prepare six deliberately different files and one factual worksheet.",
+      "Run local AI, paid API, and manual methods on identical inputs.",
+      "Count factual errors using rules written before the test.",
+      "Time editing and review, not only draft generation.",
+      "Inspect people, brands, locations, species, releases, and full video motion.",
+      "Use English metadata when the target marketplace requires it.",
+      "Check current contributor requirements before CSV export or upload.",
+      "Keep API keys private and review every editable result."
+    ],
+    "illustration": {
+      "title": "A fair metadata comparison",
+      "steps": [
+        {
+          "label": "Prepare six test files",
+          "detail": "Record only verified facts and mark unknown details."
+        },
+        {
+          "label": "Run three workflows",
+          "detail": "Use identical inputs for local AI, paid API, and manual drafting."
+        },
+        {
+          "label": "Score and choose",
+          "detail": "Compare factual errors, editing minutes, and platform fit."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как сравнить локальный ИИ, API и ручные ключевые слова",
+    "description": "Практический тест на шести изображениях: сравните локальный ИИ, платный API и ручную работу по ошибкам и времени правки.",
+    "intro": "Выбор способа подготовки метаданных — это не поиск универсального победителя. Важнее понять, какой процесс подходит вашим файлам, требованиям к приватности и готовности редактировать черновики. Локальный генератор может обрабатывать фотографии и подсказки в браузере, платный API предлагает другой вариант черновика, а ручная разметка оставляет решения за вами. Сравнивайте эти подходы на одинаковом наборе файлов, считайте фактические ошибки и время правки, но не делайте выводы по рейтингам моделей или обещаниям продаж.",
+    "sections": [
+      {
+        "heading": "Сначала задайте правила сравнения",
+        "paragraphs": [
+          "Возьмите шесть изображений с разными задачами распознавания, а не шесть похожих фотографий. Например: простой предметный натюрморт, пейзаж с неизвестным местом, человек без оснований для идентификации, еда, сложная коммерческая сцена и короткое видео. Сохраните исходные имена файлов и подготовьте одинаковые проверяемые заметки для каждого метода.",
+          "Заранее определите ошибку. Выдуманный город, вид растения или животного, дата, бренд, личность, действие либо объект — фактическая ошибка. Нерелевантное или повторяющееся ключевое слово и неподходящий язык — отдельная проблема качества. Не считайте ошибкой отсутствие необязательного синонима."
+        ],
+        "bullets": [
+          "Используйте одинаковые файлы и исходные заметки.",
+          "Заранее выберите платформу и язык метаданных.",
+          "Засекайте именно время редактирования.",
+          "Считайте все результаты примерами теста, а не отраслевой статистикой."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Соберите воспроизводимый набор из шести файлов",
+        "paragraphs": [
+          "Сделайте таблицу с одной строкой на файл. Запишите только то, что можно проверить: видимый предмет, обстановку общего типа, ориентацию, действие и сведения из собственных записей. Неизвестные детали помечайте как неизвестные. Так ни одна система не получит скрытого преимущества от дополнительных догадок.",
+          "Для видео сравнивайте черновик с выборочными превью, но обязательно просматривайте весь ролик. В выборке может не оказаться позднего действия, перехода или объекта. Для человека используйте нейтральное описание вроде «взрослый человек», если у вас нет надёжного и уместного основания для большей конкретики. Нельзя угадывать по пикселям личность, владельца, наличие релиза, место или вид."
+        ],
+        "bullets": [
+          "Предметный натюрморт",
+          "Пейзаж с неизвестной локацией",
+          "Человек без утверждения личности",
+          "Еда или процесс приготовления",
+          "Насыщенная коммерческая композиция",
+          "Короткое видео для проверки полного движения"
+        ],
+        "example": "Тестовая строка\nФайл: market-bowl.jpg\nПроверено: керамическая миска, апельсины, деревянный стол, дневной свет\nНеизвестно: город, фотограф, бренд, точная дата\nЯзык: английский\nЦель: описательный заголовок и релевантные ключевые слова"
+      },
+      {
+        "heading": "Проведите контролируемый тест локального ИИ",
+        "paragraphs": [
+          "Локальный режим MetaStocker запускает поддерживаемые зрительные и рассуждающие модели в WebGPU-воркерах браузера. Доступны Gemma 4 E2B, Gemma 4 E4B и Qwen3.5 2B; модель Gemma E2B выбрана по умолчанию. Загрузка модели требует интернета, после чего её нужно явно загрузить в память.",
+          "Для честного сравнения начните с одного локального потока и одинаковой подсказки для всех шести файлов. Позже можно отдельно проверить два потока, но каждый поток способен загрузить собственную копию модели. Не путайте сохранённые браузером файлы с активной памятью модели: выгрузка может освободить память, сохранив кэш, а браузер вправе удалить хранимые данные.",
+          "В описание партии включайте только проверенный контекст. Для смешанной партии не задавайте общие теги, подходящие лишь одному изображению. Проверьте каждую редактируемую строку, особенно дополнительные теги и описание видео. Проверка запрошенного количества тегов не доказывает их точность."
+        ],
+        "bullets": [
+          "Для исходного замера используйте один поток.",
+          "Запишите, когда модель загружена.",
+          "Удаляйте предположительные теги до подсчёта.",
+          "Не удаляйте файлы модели, пока тест может понадобиться снова."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Сопоставьте API и ручную работу",
+        "paragraphs": [
+          "В условии с платным API используйте те же шесть изображений, заметки, язык, платформу и структуру полей. Засекайте подготовку запроса и исправление результата, а не только время генерации. В дополнительном режиме MetaStocker для OpenAI превью и контекст отправляются в OpenAI с вашим ключом. Ключ является секретом: не публикуйте и не встраивайте его в клиентский код.",
+          "Ручная разметка тоже должна проходить по той же таблице и в пределах заранее выбранного времени — например, 12 минут на файл в таком гипотетическом тесте. Ручная работа не гарантирует отсутствия ошибок: при спешке легко добавить нерелевантные слова или пропустить видимый объект. Оценивайте её по тем же правилам, что и ответы ИИ."
+        ],
+        "bullets": [
+          "Локальный ИИ: считайте настройку, правку и проверку.",
+          "API: добавьте подготовку запроса и исправления.",
+          "Ручная работа: включите составление и финальную проверку.",
+          "Не сравнивайте отредактированный результат с сырым черновиком."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Составьте таблицу ошибок и времени",
+        "paragraphs": [
+          "В основной таблице оставьте два показателя: фактические ошибки и минуты редактирования. Дополнительно отмечайте пропущенные понятия, нерелевантные слова, повторы, неверный язык и сомнительные утверждения. Отделяйте факты от стилистических предпочтений: короткий точный заголовок может быть лучше длинного, даже если оба допустимы.",
+          "Перед экспортом проверьте текущие правила площадки. В руководстве Adobe указано ограничение до 49 ключевых слов и важность первых терминов; CSV сопоставляет имена файлов с заголовками и ключевыми словами. Используйте консервативный максимум 49, проверьте актуальный экран загрузки и осмотрите импортированные данные в кабинете автора. Для CSV сначала загружают файлы, а имена вместе с расширением и регистром должны совпадать. Сам CSV не гарантирует принятие."
+        ],
+        "bullets": [
+          "Фактические ошибки: считайте неподтверждённые утверждения.",
+          "Время редактирования: записывайте минуты на файл.",
+          "Релевантность: отмечайте лишние и повторные слова.",
+          "Полнота: фиксируйте пропущенные важные понятия.",
+          "Соответствие: отдельно проверяйте правила площадки."
+        ],
+        "example": "Пример строки оценки\nМетод: локальный ИИ\nФактические ошибки: 2\nМинуты правки: 7\nПримечание: один повтор; место корректно оставлено неизвестным\nРешение: черновик пригоден после удаления двух предположений"
+      },
+      {
+        "heading": "Рабочий пример: принимайте решение по данным",
+        "paragraphs": [
+          "Пример, а не измеренный результат: пусть для market-bowl.jpg система добавит в заголовок город, которого вы не указывали, а также слова «органический» и «свежий» как будто это проверенные факты. Удалите город и неподтверждённые утверждения, оставьте точные понятия — миска, апельсины, деревянный стол, дневной свет — и запишите три фактические ошибки и затраченное на исправление время.",
+          "Предположим, платный API составил плавный текст, но намекнул на бренд, а ручная работа оказалась точной, но более долгой. Выводом не должно быть «ИИ лучше» или «ручная работа лучше». Возможно, локальный ИИ стоит использовать для черновиков обычных натюрмортов, проверяя каждый файл вручную, а людей и видео обрабатывать осторожнее. Если локальная модель часто выдумывает детали, выигрыш в приватности может не окупить дополнительные правки.",
+          "Если площадка требует английские метаданные, финальные заголовки и ключевые слова пишите или переводите на английский, даже когда рабочие заметки и эта статья русские. Заголовок должен быть описательным, а не списком поисковых терминов. Поиск внутри фотобанка и индексация сайта Google — разные задачи; ни один метод не гарантирует позиции, видимость или продажи."
+        ],
+        "bullets": [
+          "Если тест это показывает, выбирайте метод по типу файла.",
+          "Не превращайте неизвестные сведения в догадки.",
+          "Экспортируйте только проверенные строки.",
+          "Повторяйте проверку правил при их изменении."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Подготовьте шесть разных файлов и общую таблицу проверенных фактов.",
+      "Запустите локальный ИИ, API и ручной метод на одинаковых входных данных.",
+      "Считайте ошибки по правилам, составленным до теста.",
+      "Засекайте редактирование и проверку, а не только генерацию.",
+      "Проверяйте людей, бренды, места, виды, релизы и полное движение видео.",
+      "Используйте английские метаданные, если этого требует площадка.",
+      "Перед экспортом и загрузкой проверьте актуальные правила автора.",
+      "Храните API-ключи в секрете и просматривайте каждую строку."
+    ],
+    "illustration": {
+      "title": "Честное сравнение метаданных",
+      "steps": [
+        {
+          "label": "Подготовьте шесть файлов",
+          "detail": "Запишите проверенные факты и отметьте неизвестные детали."
+        },
+        {
+          "label": "Запустите три процесса",
+          "detail": "Используйте одинаковые входные данные для ИИ, API и ручной работы."
+        },
+        {
+          "label": "Оцените и выберите",
+          "detail": "Сравните ошибки, минуты правки и соответствие площадке."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "স্থানীয় AI, পেইড API ও ম্যানুয়াল কীওয়ার্ড তুলনা করবেন কীভাবে",
+    "description": "তথ্যগত ভুল ও সম্পাদনার সময় দিয়ে স্থানীয় AI, পেইড API এবং ম্যানুয়াল স্টক মেটাডেটা তুলনার জন্য 6-সম্পদের ব্যবহারিক পরীক্ষা।",
+    "intro": "মেটাডেটার পদ্ধতি বেছে নেওয়া কোনো সর্বজনীন বিজয়ী খোঁজার বিষয় নয়; বরং আপনার ফাইল, গোপনীয়তার প্রয়োজন এবং সম্পাদনা করার সহনশীলতার সঙ্গে একটি কর্মপ্রবাহ মিলিয়ে নেওয়ার বিষয়। স্থানীয় জেনারেটর ছবি ও প্রম্পট ব্রাউজারে রাখতে পারে, পেইড API আরেকটি খসড়া তৈরির বিকল্প দিতে পারে, আর ম্যানুয়াল কীওয়ার্ডিং আপনাকে সরাসরি নিয়ন্ত্রণ দেয়। কোনো পদ্ধতিকেই মডেলের র‌্যাঙ্কিং বা বিক্রির প্রতিশ্রুতি দিয়ে বিচার করা উচিত নয়। একই ছোট সেটে পদ্ধতিগুলো পরীক্ষা করুন, কী ভুল হয়েছে তা লিখে রাখুন, এবং এমন প্রক্রিয়া বেছে নিন যা আপনার পোর্টফোলিওর জন্য নির্ভুল ও সম্পাদনাযোগ্য মেটাডেটা তৈরি করে।",
+    "sections": [
+      {
+        "heading": "কিছু তৈরি করার আগে তুলনার নিয়ম ঠিক করুন",
+        "paragraphs": [
+          "ছয়টি একই রকম ছবি নয়, বরং ভিন্ন ধরনের যুক্তির সমস্যা তুলে ধরে এমন 6টি সম্পদ ব্যবহার করুন। উদাহরণ হিসেবে, একটি সাধারণ বস্তুর স্থিরচিত্র, অনিশ্চিত অবস্থানের একটি দৃশ্য, এমন একজন ব্যক্তির ছবি যার পরিচয় অনুমান করা যাবে না, একটি খাবারের ছবি, ব্যস্ত বাণিজ্যিক দৃশ্য এবং একটি ছোট ভিডিও বেছে নিন। মূল ফাইলের নাম রাখুন এবং প্রতিটি পদ্ধতির জন্য একই তথ্যভিত্তিক নোট প্রস্তুত করুন।",
+          "আগেই ঠিক করুন কোন বিষয়কে ভুল হিসেবে গণ্য করবেন। বানানো স্থান, প্রজাতি, তারিখ, ব্র্যান্ড, পরিচয়, কাজ বা দৃশ্যমান বস্তু তথ্যগত ভুল। অপ্রাসঙ্গিক কীওয়ার্ড, পুনরাবৃত্তি, ভিত্তিহীন প্রযুক্তিগত দাবি বা ভুল ভাষার কীওয়ার্ডও মানের সমস্যা। অনুপস্থিত ঐচ্ছিক সমার্থক শব্দকে তথ্যগত ভুল হিসেবে গণনা করবেন না।"
+        ],
+        "bullets": [
+          "একই উৎস-ছবি ও তথ্যভিত্তিক নোট ব্যবহার করুন।",
+          "লক্ষ্য প্ল্যাটফর্ম ও ভাষা একই রাখুন।",
+          "সহজ টাইমার দিয়ে সম্পাদনার সময় লিখে রাখুন।",
+          "সব উদাহরণকে পরীক্ষা হিসেবে দেখুন, শিল্পক্ষেত্রের পরিমাপ করা ফল হিসেবে নয়।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "পুনরাবৃত্তিযোগ্য 6-সম্পদের পরীক্ষাসেট তৈরি করুন",
+        "paragraphs": [
+          "প্রতিটি ফাইলের জন্য একটি করে সারি রেখে ছোট একটি ওয়ার্কশিট বানান। শুধু যা যাচাই করতে পারেন তা লিখুন: দৃশ্যমান বিষয়, মোটামুটি পরিবেশ, অভিমুখ, কার্যকলাপ এবং নিজের রেকর্ড থেকে জানা তথ্য। অজানা তথ্য স্পষ্টভাবে চিহ্নিত করুন। এতে অতিরিক্ত নোটের মাধ্যমে কোনো সিস্টেম অদৃশ্য সুবিধা পাবে না।",
+          "ভিডিওর ক্ষেত্রে নমুনা প্রিভিউয়ের সঙ্গে মেটাডেটা তুলনা করুন, কিন্তু পুরো গতি নিজে পরীক্ষা করুন। নমুনা প্রিভিউতে পরের কোনো কাজ, পরিবর্তন বা বস্তু বাদ পড়তে পারে। কোনো ব্যক্তির ক্ষেত্রে, আরও বিস্তারিত বলার উপযুক্ত ভিত্তি না থাকলে “adult person”-এর মতো নিরপেক্ষ বর্ণনা ব্যবহার করুন। পিক্সেল দেখে ব্যক্তিগত পরিচয়, মালিকানা, রিলিজের অবস্থা, স্থান বা প্রজাতি অনুমান করবেন না।"
+        ],
+        "bullets": [
+          "বস্তুর স্থিরচিত্র",
+          "অজানা অবস্থানের দৃশ্য",
+          "পরিচয়-সংক্রান্ত দাবি ছাড়া ব্যক্তি",
+          "খাবার বা প্রস্তুতির দৃশ্য",
+          "ব্যস্ত বাণিজ্যিক কম্পোজিশন",
+          "সম্পূর্ণ গতি পর্যালোচনার প্রয়োজন এমন ছোট ভিডিও"
+        ],
+        "example": "Test worksheet\nFile: market-bowl.jpg\nVerified: ceramic bowl, oranges, wooden table, daylight\nUnknown: city, photographer, brand, exact date\nRequired language: English\nTarget: descriptive title plus relevant keywords"
+      },
+      {
+        "heading": "নিয়ন্ত্রিত সেটিংসে স্থানীয় AI পরীক্ষা করুন",
+        "paragraphs": [
+          "MetaStocker-এর স্থানীয় মোড আপনার ব্রাউজারে WebGPU workers ব্যবহার করে সমর্থিত vision ও thinking মডেল চালায়। ডিফল্ট স্থানীয় মডেল Gemma 4 E2B; Gemma 4 E4B এবং Qwen3.5 2B-ও উপলভ্য। মডেল ডাউনলোড করতে ইন্টারনেট লাগে; এরপর আপনি স্পষ্টভাবে Load বেছে নিলে মডেলটি মেমরিতে লোড হয়।",
+          "ন্যায্য তুলনার জন্য প্রথমে একটি স্থানীয় থ্রেড এবং 6টি ফাইলের জন্য একই প্রম্পট ব্যবহার করুন। পরে দ্বিতীয় সমান্তরাল থ্রেড পরীক্ষা করা যায়, তবে প্রতিটি থ্রেড নিজের মডেল কপি লোড করতে পারে। ব্রাউজারের সংরক্ষিত ক্যাশকে সক্রিয় মডেল মেমরির সঙ্গে গুলিয়ে ফেলবেন না: আনলোড করলে ডাউনলোড করা ফাইল থেকে যেতে পারে, কিন্তু মডেল মেমরি থেকে মুক্ত হয়, এবং ব্রাউজারের স্টোরেজ মুছে যেতে পারে।",
+          "ব্যাচের বর্ণনায় শুধু যাচাই করা প্রেক্ষাপট দিন। মিশ্র ব্যাচে এমন সামগ্রিক ট্যাগ দেবেন না যা একটি ছবির ক্ষেত্রে মানানসই কিন্তু অন্যটির ক্ষেত্রে নয়। প্রতিটি ফাইলের সম্পাদনাযোগ্য ফল পর্যালোচনা করুন, বিশেষ করে অতিরিক্ত ট্যাগ ও ভিডিওর বর্ণনা। চাওয়া ট্যাগের সংখ্যা যাচাই করা গেলেও বিষয়বস্তু ভুল থাকতে পারে।"
+        ],
+        "bullets": [
+          "একবার ডাউনলোড করে মডেল লোড হয়েছে কি না লিখে রাখুন।",
+          "প্রাথমিক পরীক্ষায় একটি থ্রেড ব্যবহার করুন।",
+          "স্কোর দেওয়ার আগে অনুমানভিত্তিক ট্যাগ সরিয়ে দিন।",
+          "তুলনা শেষ হওয়ার আগে আবার প্রয়োজন হতে পারে এমন ব্রাউজার মডেল ফাইল মুছবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "পেইড API ও ম্যানুয়াল কীওয়ার্ডিং ন্যায্যভাবে তুলনা করুন",
+        "paragraphs": [
+          "পেইড API পরীক্ষায় একই 6টি সম্পদ, নোট, আউটপুট ভাষা, লক্ষ্য প্ল্যাটফর্ম এবং অনুরোধ করা ফিল্ডের কাঠামো ব্যবহার করুন। শুধু তৈরির সময় নয়, অনুরোধ প্রস্তুত ও ফল সংশোধনে ব্যয় করা সময়ও লিখে রাখুন। MetaStocker-এর ঐচ্ছিক ব্যক্তিগত OpenAI মোড ব্যবহার করলে আপনার নিজের কী দিয়ে প্রিভিউ ও প্রেক্ষাপট OpenAI-তে পাঠানো হয়। কী গোপন রাখুন; এটি কখনো পাবলিক ক্লায়েন্ট-সাইড কোডে রাখবেন না বা অন্যের সঙ্গে ভাগ করবেন না।",
+          "ম্যানুয়াল কীওয়ার্ডিংয়ের ক্ষেত্রে একই ওয়ার্কশিট ব্যবহার করুন এবং একটি নির্দিষ্ট সর্বোচ্চ সময় ঠিক করুন, যেমন এই কাল্পনিক পরীক্ষায় প্রতি ছবিতে 12 মিনিট। ম্যানুয়াল কাজ নিজে থেকেই ভুলমুক্ত নয়: তাড়াহুড়ো করা অবদানকারীরা অপ্রাসঙ্গিক শব্দ যোগ করতে বা দৃশ্যমান গুরুত্বপূর্ণ ধারণা বাদ দিতে পারেন। AI-এর ফলের মতো একই নিয়মে এরও স্কোর দিন।"
+        ],
+        "bullets": [
+          "স্থানীয় AI: সেটআপ, সম্পাদনা ও পর্যালোচনার সময় লিখুন।",
+          "পেইড API: অনুরোধ প্রস্তুত ও সংশোধনের সময় অন্তর্ভুক্ত করুন।",
+          "ম্যানুয়াল: গবেষণাবিহীন খসড়া ও চূড়ান্ত পর্যালোচনার সময় অন্তর্ভুক্ত করুন।",
+          "একটি পদ্ধতির পালিশ করা ফলকে অন্য পদ্ধতির কাঁচা খসড়ার সঙ্গে তুলনা করবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ভুল ও সময়ের স্কোরকার্ড ব্যবহার করুন",
+        "paragraphs": [
+          "একটি কার্যকর স্কোরকার্ডে দুটি প্রধান কলাম থাকে: তথ্যগত ভুল এবং সম্পাদনার মিনিট। অনুপস্থিত গুরুত্বপূর্ণ ধারণা, অপ্রাসঙ্গিক ট্যাগ, পুনরাবৃত্তি, ভাষার অমিল ও অনিশ্চয়তার জন্য অতিরিক্ত নোট রাখুন। তথ্যগত ভুলকে শৈলীগত পছন্দ থেকে আলাদা রাখুন। দুটি শিরোনামই নির্ভুল হলেও ছোট শিরোনাম দীর্ঘটির চেয়ে ভালো হতে পারে।",
+          "প্ল্যাটফর্মের মেটাডেটা রপ্তানির আগে বর্তমান অবদানকারীর নিয়ম যাচাই করুন। Adobe-এর নির্দেশনায় সর্বোচ্চ 49টি কীওয়ার্ডের অনুমতি আছে এবং শুরুতেই সবচেয়ে গুরুত্বপূর্ণ শব্দ রাখার ওপর জোর দেওয়া হয়েছে; এর CSV প্রয়োজনীয়তায় ফাইলের নামকে শিরোনাম ও কীওয়ার্ডের সঙ্গে মিলানো হয়। সতর্কতার জন্য 49-কীওয়ার্ড সীমা রাখুন, বর্তমান আপলোড স্ক্রিন পরীক্ষা করুন এবং অবদানকারী পোর্টালে আমদানি করা মেটাডেটা দেখুন। CSV আমদানির আগে সম্পদ আপলোড করা এবং এক্সটেনশন ও বড়-ছোট অক্ষরসহ ফাইলের নাম মেলানো এই কর্মপ্রবাহের অংশ। CSV গ্রহণযোগ্যতার নিশ্চয়তা দেয় না।"
+        ],
+        "bullets": [
+          "তথ্যগত ভুল: ভিত্তিহীন দাবির সংখ্যা গুনুন।",
+          "সম্পাদনার সময়: প্রতি ফাইলে মিনিট লিখুন।",
+          "প্রাসঙ্গিকতা: অপ্রাসঙ্গিক বা পুনরাবৃত্ত শব্দ চিহ্নিত করুন।",
+          "সম্পূর্ণতা: অনুপস্থিত গুরুত্বপূর্ণ ধারণা লিখুন।",
+          "নিয়মপালন: বর্তমান প্ল্যাটফর্মের প্রয়োজনীয়তা আলাদাভাবে পরীক্ষা করুন।"
+        ],
+        "example": "Scorecard example\nMethod: local AI\nFactual errors: 2\nEditing minutes: 7\nOther notes: one duplicate keyword; location correctly left unknown\nDecision: usable draft after removing two speculative terms"
+      },
+      {
+        "heading": "কাজ করা উদাহরণ: প্রমাণ দেখে সিদ্ধান্ত নিন",
+        "paragraphs": [
+          "উদাহরণ, পরিমাপ করা ফল নয়: ধরুন market-bowl.jpg সারিতে এমন একটি শিরোনাম তৈরি হলো যেখানে এমন একটি শহরের নাম আছে যা কখনো দেওয়া হয়নি, আর “organic” ও “fresh”-কে যাচাই করা তথ্যের মতো যোগ করা হয়েছে। শহরের নাম এবং ভিত্তিহীন দাবি সরিয়ে দিন, bowl, oranges, wooden table এবং daylight-এর মতো নির্ভুল শব্দ রাখুন, তারপর 3টি তথ্যগত ভুল এবং সংশোধনে লাগা মিনিট লিখে রাখুন।",
+          "ধরুন পেইড API সাবলীল শিরোনাম তৈরি করল, কিন্তু একটি ব্র্যান্ডের ইঙ্গিত যোগ করল, আর ম্যানুয়াল কীওয়ার্ডিং নির্ভুল হলেও বেশি সময় নিল। সিদ্ধান্তটি “AI জিতেছে” বা “ম্যানুয়াল জিতেছে” নয়। প্রমাণের ভিত্তিতে সাধারণ স্থিরচিত্রের প্রথম খসড়ায় স্থানীয় AI, প্রতিটি ফাইলে ম্যানুয়াল পর্যালোচনা এবং ব্যক্তি ও ভিডিওর জন্য আলাদা সতর্ক প্রক্রিয়া বেছে নেওয়া যেতে পারে। আপনার পরীক্ষাসেটে স্থানীয় মডেল বারবার তথ্য বানালে, তার গোপনীয়তার সুবিধা সম্পাদনার অতিরিক্ত বোঝা সামলানোর জন্য যথেষ্ট নাও হতে পারে।",
+          "লক্ষ্য মার্কেটপ্লেসে ইংরেজি মেটাডেটা প্রয়োজন হলে, আপনার কাজের নোট বা এই নির্দেশিকা রুশ ভাষায় হলেও চূড়ান্ত শিরোনাম ও কীওয়ার্ড ইংরেজিতে লিখুন বা অনুবাদ করুন। শিরোনামে অনুসন্ধান শব্দের তালিকা গুঁজে না দিয়ে বর্ণনামূলক ভাষা রাখুন। মার্কেটপ্লেসের অনুসন্ধান মেটাডেটা Google ওয়েবসাইট ইনডেক্সিং থেকে আলাদা; কোনো পদ্ধতিই র‌্যাঙ্কিং, দৃশ্যমানতা বা বিক্রির নিশ্চয়তা দেয় না।"
+        ],
+        "bullets": [
+          "প্রমাণ সমর্থন করলে ফাইলের ধরন অনুযায়ী পদ্ধতি বেছে নিন।",
+          "অজানা তথ্য অজানাই রাখুন।",
+          "শুধু পর্যালোচনা করা সারি রপ্তানি করুন।",
+          "প্রয়োজনীয়তা বদলালে পোর্টালের নিয়ম আবার পরীক্ষা করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "ইচ্ছাকৃতভাবে ভিন্ন 6টি ফাইল ও একটি তথ্যভিত্তিক ওয়ার্কশিট প্রস্তুত করুন।",
+      "একই ইনপুটে স্থানীয় AI, পেইড API ও ম্যানুয়াল পদ্ধতি চালান।",
+      "পরীক্ষার আগে লেখা নিয়মে তথ্যগত ভুল গুনুন।",
+      "শুধু খসড়া তৈরি নয়, সম্পাদনা ও পর্যালোচনার সময়ও মাপুন।",
+      "ব্যক্তি, ব্র্যান্ড, স্থান, প্রজাতি, রিলিজ এবং ভিডিওর সম্পূর্ণ গতি পরীক্ষা করুন।",
+      "লক্ষ্য মার্কেটপ্লেস চাইলে ইংরেজি মেটাডেটা ব্যবহার করুন।",
+      "CSV রপ্তানি বা আপলোডের আগে বর্তমান অবদানকারীর প্রয়োজনীয়তা পরীক্ষা করুন।",
+      "API কী গোপন রাখুন এবং প্রতিটি সম্পাদনাযোগ্য ফল পর্যালোচনা করুন।"
+    ],
+    "illustration": {
+      "title": "ন্যায্য মেটাডেটা তুলনা",
+      "steps": [
+        {
+          "label": "6টি পরীক্ষার ফাইল প্রস্তুত করুন",
+          "detail": "শুধু যাচাই করা তথ্য লিখুন এবং অজানা বিষয় চিহ্নিত করুন।"
+        },
+        {
+          "label": "তিনটি কর্মপ্রবাহ চালান",
+          "detail": "স্থানীয় AI, পেইড API ও ম্যানুয়াল খসড়ায় একই ইনপুট ব্যবহার করুন।"
+        },
+        {
+          "label": "স্কোর দিয়ে বেছে নিন",
+          "detail": "তথ্যগত ভুল, সম্পাদনার মিনিট ও প্ল্যাটফর্মের উপযোগিতা তুলনা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "स्थानीय AI, पेड API और मैनुअल कीवर्ड की तुलना कैसे करें",
+    "description": "तथ्यगत त्रुटियों और संपादन समय के आधार पर स्थानीय AI, पेड API और मैनुअल स्टॉक मेटाडेटा की तुलना के लिए 6-एसेट परीक्षण।",
+    "intro": "मेटाडेटा की विधि चुनना किसी सार्वभौमिक विजेता को खोजने से कम और अपने फ़ाइलों, निजता की ज़रूरतों तथा संपादन की सहनशीलता के अनुसार कार्यप्रवाह मिलाने से अधिक जुड़ा है। स्थानीय जनरेटर फ़ोटो और प्रॉम्प्ट ब्राउज़र में रख सकता है, पेड API एक और प्रारूप-निर्माण विकल्प दे सकता है, और मैनुअल कीवर्डिंग आपको सीधा नियंत्रण देती है। किसी भी विधि का मूल्यांकन मॉडल की रैंकिंग या बिक्री के वादों से नहीं किया जाना चाहिए। समान छोटे सेट पर विधियों का परीक्षण करें, जो गलत हुआ उसे दर्ज करें, और वह प्रक्रिया चुनें जो आपके पोर्टफ़ोलियो के लिए सटीक तथा संपादन योग्य मेटाडेटा बनाए।",
+    "sections": [
+      {
+        "heading": "कुछ जनरेट करने से पहले तुलना की परिभाषा तय करें",
+        "paragraphs": [
+          "छह समान फ़ोटोग्राफ़ के बजाय अलग-अलग तर्क संबंधी समस्याओं का प्रतिनिधित्व करने वाली 6 एसेट लें। उदाहरण के लिए, किसी साधारण वस्तु का स्थिर चित्र, अनिश्चित स्थान वाला लैंडस्केप, ऐसा व्यक्ति जिसकी पहचान का अनुमान नहीं लगाया जाना चाहिए, भोजन की छवि, व्यस्त वाणिज्यिक दृश्य और एक छोटा वीडियो चुनें। मूल फ़ाइल नाम बनाए रखें और हर विधि के लिए समान तथ्यात्मक नोट तैयार करें।",
+          "पहले से तय करें कि किसे त्रुटि माना जाएगा। गढ़ा हुआ स्थान, प्रजाति, तारीख, ब्रांड, पहचान, क्रिया या दिखाई देने वाली वस्तु तथ्यगत त्रुटि है। अप्रासंगिक कीवर्ड, दोहराव, बिना आधार का तकनीकी दावा या गलत भाषा का कीवर्ड भी गुणवत्ता की समस्या है। किसी वैकल्पिक समानार्थी शब्द के न होने को तथ्यगत त्रुटि न गिनें।"
+        ],
+        "bullets": [
+          "एक जैसी स्रोत छवियाँ और तथ्यात्मक नोट इस्तेमाल करें।",
+          "लक्षित प्लेटफ़ॉर्म और भाषा एकसमान रखें।",
+          "साधारण टाइमर से संपादन समय दर्ज करें।",
+          "सभी उदाहरणों को परीक्षण मानें, उद्योग के मापे हुए परिणाम नहीं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "दोहराए जा सकने वाला 6-एसेट परीक्षण सेट बनाएँ",
+        "paragraphs": [
+          "हर फ़ाइल के लिए एक पंक्ति वाली छोटी वर्कशीट बनाएँ। केवल वही दर्ज करें जिसे आप सत्यापित कर सकते हैं: दिखाई देने वाला विषय, व्यापक परिवेश, अभिविन्यास, गतिविधि और अपने रिकॉर्ड से ज्ञात जानकारी। अज्ञात विवरण स्पष्ट रूप से चिह्नित करें। इससे किसी सिस्टम को अतिरिक्त नोटों से छिपा लाभ नहीं मिलेगा।",
+          "वीडियो के लिए मेटाडेटा की तुलना नमूना प्रीव्यू से करें, लेकिन पूरी गति की स्वयं जाँच करें। नमूना प्रीव्यू में बाद की क्रिया, बदलाव या वस्तु छूट सकती है। व्यक्ति के लिए “adult person” जैसा तटस्थ वर्णन इस्तेमाल करें, जब तक अधिक विवरण के लिए उचित आधार न हो। पिक्सेल से व्यक्तिगत पहचान, स्वामित्व, रिलीज़ की स्थिति, स्थान या प्रजाति का अनुमान न लगाएँ।"
+        ],
+        "bullets": [
+          "वस्तु का स्थिर चित्र",
+          "अज्ञात स्थान वाला लैंडस्केप",
+          "पहचान संबंधी दावों के बिना व्यक्ति",
+          "भोजन या तैयारी का दृश्य",
+          "व्यस्त वाणिज्यिक संरचना",
+          "पूरी गति की समीक्षा आवश्यक वाला छोटा वीडियो"
+        ],
+        "example": "Test worksheet\nFile: market-bowl.jpg\nVerified: ceramic bowl, oranges, wooden table, daylight\nUnknown: city, photographer, brand, exact date\nRequired language: English\nTarget: descriptive title plus relevant keywords"
+      },
+      {
+        "heading": "नियंत्रित सेटिंग्स में स्थानीय AI का परीक्षण करें",
+        "paragraphs": [
+          "MetaStocker का स्थानीय मोड आपके ब्राउज़र में WebGPU workers के माध्यम से समर्थित vision और thinking मॉडल चलाता है। डिफ़ॉल्ट स्थानीय मॉडल Gemma 4 E2B है; Gemma 4 E4B और Qwen3.5 2B भी उपलब्ध हैं। मॉडल डाउनलोड करने के लिए इंटरनेट चाहिए; इसके बाद जब आप स्पष्ट रूप से Load चुनते हैं, तब मॉडल मेमोरी में लोड होता है।",
+          "निष्पक्ष तुलना के लिए शुरुआत में एक स्थानीय थ्रेड और सभी 6 फ़ाइलों के लिए एक ही प्रॉम्प्ट इस्तेमाल करें। बाद में दूसरा समानांतर थ्रेड आज़माया जा सकता है, लेकिन हर थ्रेड अपनी मॉडल कॉपी लोड कर सकता है। ब्राउज़र कैश में सुरक्षित फ़ाइलों को सक्रिय मॉडल मेमोरी न समझें: अनलोड करने पर डाउनलोड की गई फ़ाइलें बनी रह सकती हैं, जबकि मॉडल मेमोरी से हट जाता है, और ब्राउज़र स्टोरेज हटाया जा सकता है।",
+          "बैच के वर्णन में केवल सत्यापित संदर्भ दें। मिश्रित बैच में ऐसे सामूहिक टैग न दें जो एक छवि पर लागू हों लेकिन दूसरी पर नहीं। हर फ़ाइल के संपादन योग्य परिणाम की समीक्षा करें, विशेषकर अतिरिक्त टैग और वीडियो वर्णनों की। माँगी गई टैग संख्या सही हो सकती है, जबकि सामग्री गलत रह सकती है।"
+        ],
+        "bullets": [
+          "एक बार डाउनलोड करें, फिर दर्ज करें कि मॉडल लोड है या नहीं।",
+          "बेसलाइन के लिए एक थ्रेड इस्तेमाल करें।",
+          "स्कोर देने से पहले अनुमानित टैग हटा दें।",
+          "तुलना पूरी होने तक ब्राउज़र मॉडल फ़ाइलें न हटाएँ, यदि आपको उनकी फिर ज़रूरत पड़ सकती है।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "पेड API और मैनुअल कीवर्डिंग की निष्पक्ष तुलना करें",
+        "paragraphs": [
+          "पेड API स्थिति में वही 6 एसेट, नोट, आउटपुट भाषा, लक्षित प्लेटफ़ॉर्म और माँगे गए फ़ील्ड ढाँचे का उपयोग करें। केवल जनरेशन समय नहीं, बल्कि अनुरोध तैयार करने और परिणाम सुधारने में लगा समय भी दर्ज करें। यदि MetaStocker का वैकल्पिक व्यक्तिगत OpenAI मोड इस्तेमाल करते हैं, तो प्रीव्यू और संदर्भ आपकी अपनी कुंजी से OpenAI को भेजे जाते हैं। कुंजी निजी रखें; इसे सार्वजनिक क्लाइंट-साइड कोड में न रखें और न साझा करें।",
+          "मैनुअल कीवर्डिंग में उसी वर्कशीट से काम करें और एक निश्चित अधिकतम समय रखें, जैसे इस काल्पनिक परीक्षण में प्रति छवि 12 मिनट। मैनुअल काम अपने आप त्रुटिरहित नहीं होता: जल्दबाज़ी करने वाले योगदानकर्ता अप्रासंगिक शब्द जोड़ सकते हैं या महत्वपूर्ण दिखाई देने वाली अवधारणाएँ भूल सकते हैं। इसका स्कोर भी AI आउटपुट जैसे बिल्कुल उन्हीं नियमों से करें।"
+        ],
+        "bullets": [
+          "स्थानीय AI: सेटअप, संपादन और समीक्षा का समय दर्ज करें।",
+          "पेड API: अनुरोध तैयार करने और सुधारने का समय शामिल करें।",
+          "मैनुअल: बिना शोध वाले प्रारूप और अंतिम समीक्षा का समय शामिल करें।",
+          "एक विधि के सजे हुए परिणाम की तुलना दूसरी विधि के कच्चे प्रारूप से न करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "त्रुटि और समय का स्कोरकार्ड इस्तेमाल करें",
+        "paragraphs": [
+          "एक उपयोगी स्कोरकार्ड में दो मुख्य कॉलम होते हैं: तथ्यगत त्रुटियाँ और संपादन मिनट। छूटी हुई महत्वपूर्ण अवधारणाओं, अप्रासंगिक टैग, दोहराव, भाषा के मेल न खाने और अनिश्चितता के लिए अतिरिक्त नोट रखें। तथ्यगत त्रुटियों को शैलीगत पसंद से अलग रखें। दोनों सटीक होने पर भी छोटा शीर्षक लंबे शीर्षक से बेहतर हो सकता है।",
+          "प्लेटफ़ॉर्म मेटाडेटा निर्यात करने से पहले वर्तमान योगदानकर्ता नियमों की पुष्टि करें। Adobe के निर्देशों में अधिकतम 49 कीवर्ड की अनुमति है और सबसे महत्वपूर्ण शब्दों को शुरुआत में रखने पर ज़ोर दिया गया है; इसकी CSV आवश्यकताएँ फ़ाइल नामों को शीर्षक और कीवर्ड से मिलाती हैं। सावधानी के लिए 49-कीवर्ड सीमा रखें, वर्तमान अपलोड स्क्रीन जाँचें और योगदानकर्ता पोर्टल में आयात किए गए मेटाडेटा का निरीक्षण करें। CSV आयात से पहले एसेट अपलोड करना और एक्सटेंशन तथा बड़े-छोटे अक्षरों सहित फ़ाइल नामों का मिलान इस कार्यप्रवाह का हिस्सा है। CSV स्वीकृति की गारंटी नहीं देती।"
+        ],
+        "bullets": [
+          "तथ्यगत त्रुटियाँ: बिना आधार के दावों की संख्या गिनें।",
+          "संपादन समय: प्रति फ़ाइल मिनट दर्ज करें।",
+          "प्रासंगिकता: अप्रासंगिक या दोहराए गए शब्द चिह्नित करें।",
+          "पूर्णता: छूटी हुई महत्वपूर्ण अवधारणाएँ लिखें।",
+          "अनुपालन: वर्तमान प्लेटफ़ॉर्म आवश्यकताओं की अलग से जाँच करें।"
+        ],
+        "example": "Scorecard example\nMethod: local AI\nFactual errors: 2\nEditing minutes: 7\nOther notes: one duplicate keyword; location correctly left unknown\nDecision: usable draft after removing two speculative terms"
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण: प्रमाण से निर्णय लें",
+        "paragraphs": [
+          "उदाहरण, मापा हुआ परिणाम नहीं: मान लें कि market-bowl.jpg वाली पंक्ति में ऐसा शीर्षक बनता है जिसमें एक ऐसे शहर का नाम है जो कभी दिया ही नहीं गया था, और “organic” तथा “fresh” को सत्यापित तथ्यों की तरह जोड़ दिया गया है। शहर का नाम और बिना आधार का दावा हटाएँ, bowl, oranges, wooden table और daylight जैसे सटीक शब्द रखें, फिर 3 तथ्यगत त्रुटियाँ और सुधार में लगा समय दर्ज करें।",
+          "मान लें पेड API एक सहज शीर्षक बनाता है लेकिन ब्रांड का संकेत जोड़ देता है, जबकि मैनुअल कीवर्डिंग सटीक है पर अधिक समय लेती है। निर्णय “AI जीतता है” या “मैनुअल जीतता है” नहीं है। प्रमाण के आधार पर साधारण स्थिर चित्रों के पहले प्रारूप के लिए स्थानीय AI, हर फ़ाइल की मैनुअल समीक्षा और व्यक्तियों तथा वीडियो के लिए अलग सावधान प्रक्रिया चुनी जा सकती है। यदि स्थानीय मॉडल आपके परीक्षण सेट में बार-बार विवरण गढ़ता है, तो उसका निजता लाभ संपादन के अतिरिक्त बोझ की भरपाई नहीं कर सकता।",
+          "यदि लक्षित मार्केटप्लेस में अंग्रेज़ी मेटाडेटा आवश्यक है, तो आपके कार्य नोट या यह मार्गदर्शिका रूसी में होने पर भी अंतिम शीर्षक और कीवर्ड अंग्रेज़ी में लिखें या अनुवाद करें। शीर्षक में खोज शब्दों की सूची भरने के बजाय भाषा वर्णनात्मक रखें। मार्केटप्लेस खोज मेटाडेटा Google वेबसाइट इंडेक्सिंग से अलग है; कोई भी विधि रैंकिंग, दृश्यता या बिक्री की गारंटी नहीं देती।"
+        ],
+        "bullets": [
+          "यदि प्रमाण समर्थन करे तो फ़ाइल प्रकार के अनुसार विधि चुनें।",
+          "अज्ञात तथ्यों को अज्ञात ही रखें।",
+          "केवल समीक्षा की गई पंक्तियाँ निर्यात करें।",
+          "आवश्यकताएँ बदलने पर पोर्टल के नियम फिर जाँचें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "जानबूझकर अलग 6 फ़ाइलें और एक तथ्यात्मक वर्कशीट तैयार करें।",
+      "समान इनपुट पर स्थानीय AI, पेड API और मैनुअल विधियाँ चलाएँ।",
+      "परीक्षण से पहले लिखे नियमों के अनुसार तथ्यगत त्रुटियाँ गिनें।",
+      "केवल प्रारूप बनाने का नहीं, संपादन और समीक्षा का समय भी मापें।",
+      "व्यक्तियों, ब्रांड, स्थानों, प्रजातियों, रिलीज़ और पूरी वीडियो गति की जाँच करें।",
+      "लक्षित मार्केटप्लेस माँगे तो अंग्रेज़ी मेटाडेटा इस्तेमाल करें।",
+      "CSV निर्यात या अपलोड से पहले वर्तमान योगदानकर्ता आवश्यकताएँ जाँचें।",
+      "API कुंजियाँ निजी रखें और हर संपादन योग्य परिणाम की समीक्षा करें।"
+    ],
+    "illustration": {
+      "title": "निष्पक्ष मेटाडेटा तुलना",
+      "steps": [
+        {
+          "label": "6 परीक्षण फ़ाइलें तैयार करें",
+          "detail": "केवल सत्यापित तथ्य दर्ज करें और अज्ञात विवरण चिह्नित करें।"
+        },
+        {
+          "label": "तीन कार्यप्रवाह चलाएँ",
+          "detail": "स्थानीय AI, पेड API और मैनुअल प्रारूप में समान इनपुट इस्तेमाल करें।"
+        },
+        {
+          "label": "स्कोर दें और चुनें",
+          "detail": "तथ्यगत त्रुटियाँ, संपादन मिनट और प्लेटफ़ॉर्म उपयुक्तता की तुलना करें।"
+        }
+      ]
+    }
+  }
+}

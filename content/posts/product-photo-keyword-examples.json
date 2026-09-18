@@ -1,0 +1,435 @@
+{
+  "slug": "product-photo-keyword-examples",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "adobe-csv"
+  ],
+  "en": {
+    "title": "Product Photo Keyword Examples for an Unbranded Steel Bottle",
+    "description": "Build accurate stock keywords for an isolated reusable steel bottle, with a worked example, English metadata, and a practical review workflow.",
+    "intro": "A clean product photo can be easy to describe and still receive weak metadata. An unbranded steel bottle on white is not simply “bottle” and “eco”: buyers may need a cutout for a catalog, a kitchen object, a hydration concept, or a reusable container. The useful keywords are the ones visibly supported by the image and your shoot notes. This guide shows how to turn one verified product description into focused stock metadata without inventing sustainability claims, brand information, or details hidden by the pixels.",
+    "sections": [
+      {
+        "heading": "Start with what the image proves",
+        "paragraphs": [
+          "Separate visible facts from information supplied by production notes. In this assignment, the object is a reusable steel bottle, and the material is verified by the shoot notes. The image shows an unbranded container isolated against white. Those facts support terms such as bottle, steel, reusable, unbranded, isolated, white background, and product photography.",
+          "Do not add organic, plastic-free, zero-waste, carbon-neutral, healthy, or leakproof unless the product documentation and image genuinely support those claims. A sustainability concept may be suggested by context, but a generic steel bottle does not prove a promise about its environmental impact."
+        ],
+        "bullets": [
+          "Use the product identity before broad concepts.",
+          "Treat verified notes as evidence, not permission to add marketing copy.",
+          "Do not infer a brand, country, owner, or performance feature."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Choose the buyer’s likely search paths",
+        "paragraphs": [
+          "Keywording works best when it reflects several plausible uses without turning into a word dump. For this image, one path is object search: steel bottle, reusable bottle, drinking container. Another is design use: isolated product, white background, cutout, mockup space. A third is lifestyle concept: hydration, everyday carry, refillable container. Keep each term relevant to the exact file.",
+          "Think about the difference between a synonym and a new claim. “Water bottle” may be a reasonable object term if the shape clearly supports it. “Thermal flask” is different: use it only when the construction or notes verify that function. “Sustainable packaging” is not a synonym for reusable bottle and should be excluded."
+        ],
+        "bullets": [
+          "Map object, appearance, use, and buyer context.",
+          "Prefer established phrases that a buyer might actually enter.",
+          "Remove terms that describe an imagined use rather than the file."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: from notes to a focused set",
+        "paragraphs": [
+          "Example, not a measured result: suppose the file is named steel-bottle-white-01.jpg. The shoot notes verify stainless steel and reusable design. The image shows a plain, unbranded bottle standing alone on a seamless white background. I would lead with the object and material, then add the isolated presentation and restrained use concepts.",
+          "The order matters on platforms that give particular attention to the first terms. Adobe’s guidance highlights the first ten keywords, so the opening should carry the strongest identity rather than filler. I would also keep the title as a readable description, not a comma-separated keyword list. The final list should be reviewed against the image one term at a time."
+        ],
+        "bullets": [],
+        "example": "Title: Unbranded reusable steel water bottle isolated on white background\nKeywords: steel bottle, reusable bottle, water bottle, drinking container, unbranded, isolated, white background, product photography, cutout, refillable, hydration, beverage container, kitchen object, everyday carry, minimal, plain, upright, container"
+      },
+      {
+        "heading": "Keep marketplace metadata in the required language",
+        "paragraphs": [
+          "For a marketplace that requires English metadata, write the title and keywords in English even when your working notes or blog language are Russian. Translate the meaning, not the spelling of individual words. For example, “многоразовая стальная бутылка” becomes “reusable steel bottle,” while “изолированный объект” becomes “isolated object” or “cutout,” depending on what the image actually shows.",
+          "Requirements differ by platform and can change. Adobe’s current guidance permits up to 49 keywords and says metadata language must match the contributor account; its CSV documentation also gives a 70-character title limit. Treat those as upload constraints to check before export, not as a reason to fill every available field."
+        ],
+        "bullets": [
+          "Confirm the platform’s current language and field limits.",
+          "Use one consistent English naming scheme for repeated product files.",
+          "Check the contributor portal when policies or upload screens may have changed."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Prepare a CSV without losing file identity",
+        "paragraphs": [
+          "If you use CSV metadata, the filename, including extension and case, must match the uploaded asset. Upload the images first where the platform requires that sequence, then import the CSV and inspect the resulting fields in the contributor portal. A correct-looking spreadsheet is not proof that the marketplace accepted or interpreted every value correctly.",
+          "MetaStocker can export formats including Adobe CSV, but its exporter does not upload, submit, guarantee acceptance, or embed metadata into the original image. Treat the export as a draft for your platform workflow. Open the final file, check delimiters and quoting, and compare a few rows with the actual filenames before importing."
+        ],
+        "bullets": [
+          "Keep the original image unchanged and retain a separate metadata file.",
+          "Check exact filename spelling, extension, title length, and keyword count.",
+          "Inspect imported metadata before making the item available."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Use local generation as a drafting aid",
+        "paragraphs": [
+          "MetaStocker’s local mode runs supported vision and thinking models in the browser through WebGPU workers. The default local model is Gemma 4 E2B, and the first model download needs internet access. Loading a model into working memory is different from keeping downloaded browser files in cache; browser storage can be evicted, and local execution is not a promise of permanent offline use.",
+          "Give the generator narrow, factual context such as “unbranded reusable steel bottle; steel verified in shoot notes; isolated on white; no visible logo.” Then edit every result. A requested tag count can be validated mechanically, but that does not make the terms accurate. If a batch contains different products, avoid blanket context and review each file separately. Start with one local thread; additional threads may load another model copy and require more resources."
+        ],
+        "bullets": [
+          "State verified facts and visual presentation in the batch description.",
+          "Reject unsupported claims produced by the draft.",
+          "Export only rows you have personally checked."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Confirm the object, material, and reusable status from visible evidence or shoot notes.",
+      "Place the strongest object terms in the title and opening keywords.",
+      "Remove brand, performance, health, and sustainability claims that are not verified.",
+      "Use the marketplace’s required metadata language and current limits.",
+      "Match every CSV filename exactly, including extension and case.",
+      "Inspect editable metadata and the contributor portal before submission."
+    ],
+    "illustration": {
+      "title": "Bottle metadata workflow",
+      "steps": [
+        {
+          "label": "Verify product facts",
+          "detail": "Confirm steel, reusable design, unbranded status, and white isolation."
+        },
+        {
+          "label": "Draft focused metadata",
+          "detail": "Order object terms first, then appearance and relevant use concepts."
+        },
+        {
+          "label": "Review and export",
+          "detail": "Remove claims, match filenames, and inspect the platform import."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Примеры ключевых слов для фото стальной бутылки",
+    "description": "Практическая разметка фото многоразовой стальной бутылки без бренда: пример ключевых слов, проверка фактов и подготовка CSV для стоков.",
+    "intro": "Даже простую предметную фотографию можно описать неточно. На снимке многоразовой стальной бутылки на белом фоне покупателю может понадобиться изолированный объект для каталога, тема питьевого режима или нейтральный контейнер для макета. Полезные ключевые слова должны опираться на изображение и подтверждённые заметки со съёмки. Ниже показано, как составить метаданные для такого файла без выдуманных экологических обещаний, бренда и характеристик, которых фотография не доказывает.",
+    "sections": [
+      {
+        "heading": "Отделите доказанные факты от догадок",
+        "paragraphs": [
+          "Сначала выпишите то, что видно или подтверждено рабочими заметками. В нашем задании это стальная бутылка, многоразовое использование, отсутствие бренда и изоляция на белом фоне. Материал стали подтверждён заметками со съёмки, поэтому его можно отражать в названии и ключевых словах.",
+          "Не добавляйте organic, plastic-free, zero-waste, carbon-neutral, healthy или leakproof без отдельного подтверждения. Само наличие стальной бутылки не доказывает экологический эффект, герметичность или безопасность для здоровья. Не угадывайте марку, происхождение, владельца и назначение, если они не подтверждены."
+        ],
+        "bullets": [
+          "Начинайте с предмета, а не с рекламной идеи.",
+          "Считайте заметки источником фактов, а не рекламным текстом.",
+          "Не превращайте предполагаемое применение в характеристику товара."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Составьте несколько честных поисковых маршрутов",
+        "paragraphs": [
+          "Покупатель может искать файл по разным признакам. Первый маршрут — сам объект: steel bottle, reusable bottle, drinking container. Второй — вид изображения: isolated product, white background, cutout, product photography. Третий — умеренный контекст: hydration, refillable container, everyday carry. Все эти группы допустимы только там, где они соответствуют конкретному кадру.",
+          "Различайте синоним и новое утверждение. “Water bottle” подходит, если форма явно указывает на бутылку для воды. “Thermal flask” уже означает дополнительную функцию и требует подтверждения. “Sustainable packaging” описывает не этот объект, а неподтверждённую концепцию упаковки, поэтому такое слово нужно исключить."
+        ],
+        "bullets": [
+          "Разделяйте предмет, внешний вид, применение и контекст.",
+          "Выбирайте устойчивые словосочетания, которыми реально ищут изображение.",
+          "Удаляйте слова о воображаемой сцене или функции."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Практический пример: от заметок к списку",
+        "paragraphs": [
+          "Пример ниже гипотетический и не является измеренным результатом: файл называется steel-bottle-white-01.jpg. В заметках подтверждены сталь и многоразовый дизайн. На снимке видна простая бутылка без логотипа, стоящая отдельно на ровном белом фоне. Я поставлю в начало предмет и материал, затем опишу изоляцию и осторожный контекст использования.",
+          "Порядок важен на площадках, которые особенно учитывают первые слова. В рекомендациях Adobe отдельное внимание уделено первым десяти ключевым словам, поэтому туда не стоит помещать общие заполнители. Название должно читаться как нормальное описание, а не выглядеть перечнем через запятую. После генерации или ручного ввода проверьте каждый термин по изображению."
+        ],
+        "bullets": [],
+        "example": "Title: Unbranded reusable steel water bottle isolated on white background\nKeywords: steel bottle, reusable bottle, water bottle, drinking container, unbranded, isolated, white background, product photography, cutout, refillable, hydration, beverage container, kitchen object, everyday carry, minimal, plain, upright, container"
+      },
+      {
+        "heading": "Пишите метаданные на языке площадки",
+        "paragraphs": [
+          "Если сток требует английские метаданные, название и ключевые слова должны быть на английском, даже когда ваши заметки или статья написаны по-русски. Переводите смысл целиком: “многоразовая стальная бутылка” — это “reusable steel bottle”, а “изолированный объект” может стать “isolated object” или “cutout”, если изображение действительно показывает вырезанный объект.",
+          "У каждой площадки свои правила, и они могут измениться. Для Adobe руководство указывает английский язык в зависимости от языка аккаунта и допускает до 49 ключевых слов; в документации CSV также приведён лимит названия 70 символов. Перед загрузкой проверьте текущий портал и форму импорта, а не заполняйте поля автоматически до максимума."
+        ],
+        "bullets": [
+          "Уточните актуальный язык и лимиты конкретного стока.",
+          "Используйте одинаковое английское написание в серии похожих файлов.",
+          "Проверяйте портал автора, если правила или экран загрузки обновились."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Подготовьте CSV и сохраните связь с файлом",
+        "paragraphs": [
+          "При работе с CSV имя файла, включая расширение и регистр букв, должно совпадать с загруженным изображением. Там, где этого требует площадка, сначала загрузите сами изображения, затем импортируйте CSV и осмотрите появившиеся метаданные в кабинете автора. Таблица без видимой ошибки ещё не доказывает, что сток правильно прочитал каждое поле.",
+          "MetaStocker умеет экспортировать форматы, включая Adobe CSV, но экспортёр не загружает и не отправляет файлы, не гарантирует принятие и не встраивает метаданные в оригиналы. Используйте экспорт как черновик для дальнейшей процедуры стока. Откройте итоговый CSV, проверьте разделители, кавычки, длину названия и сравните несколько строк с настоящими именами изображений."
+        ],
+        "bullets": [
+          "Храните оригинал отдельно от файла метаданных.",
+          "Проверьте регистр, расширение, количество слов и длину названия.",
+          "После импорта осмотрите поля до публикации работы."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Используйте локальный генератор только как черновик",
+        "paragraphs": [
+          "Локальный режим MetaStocker запускает поддерживаемые модели в браузере через WebGPU-воркеры. По умолчанию используется Gemma 4 E2B, а первая загрузка модели требует интернета. Загруженная в рабочую память модель — не то же самое, что сохранённые файлы браузерного кэша: хранилище может очищаться, поэтому нельзя обещать постоянную работу офлайн.",
+          "Передайте генератору узкий контекст: “unbranded reusable steel bottle; steel verified in shoot notes; isolated on white; no visible logo”. Затем вручную отредактируйте результат. Проверка запрошенного количества тегов подтверждает лишь количество, а не точность. Для смешанной пачки не используйте общие теги. Начните с одного локального потока: дополнительные потоки могут загружать отдельную копию модели и требовать больше памяти."
+        ],
+        "bullets": [
+          "Указывайте только подтверждённые факты и видимую подачу.",
+          "Удаляйте неподтверждённые обещания из автоматически созданного черновика.",
+          "Экспортируйте только проверенные строки."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Подтвердите предмет, материал и многоразовое использование.",
+      "Поставьте главные признаки предмета в название и начало списка.",
+      "Удалите неподтверждённые обещания о бренде, функциях и экологичности.",
+      "Используйте язык и текущие ограничения выбранной площадки.",
+      "Сверьте каждое имя файла в CSV, включая расширение и регистр.",
+      "Проверьте импортированные поля в кабинете автора перед отправкой."
+    ],
+    "illustration": {
+      "title": "Рабочий процесс для бутылки",
+      "steps": [
+        {
+          "label": "Проверьте факты товара",
+          "detail": "Подтвердите сталь, многоразовость, отсутствие бренда и белую изоляцию."
+        },
+        {
+          "label": "Составьте точные метаданные",
+          "detail": "Сначала укажите предмет, затем вид изображения и уместный контекст."
+        },
+        {
+          "label": "Проверьте и экспортируйте",
+          "detail": "Удалите обещания, сверьте имена и осмотрите импорт на стоке."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "ব্র্যান্ডহীন স্টিলের বোতলের পণ্যের ছবির কীওয়ার্ড উদাহরণ",
+    "description": "ব্র্যান্ডহীন পুনর্ব্যবহারযোগ্য স্টিলের বোতলের জন্য নির্ভুল স্টক কীওয়ার্ড তৈরি করুন—উদাহরণ, ইংরেজি মেটাডেটা ও ব্যবহারিক পর্যালোচনা-ধাপসহ।",
+    "intro": "পরিষ্কার পণ্যের ছবি বর্ণনা করা সহজ হলেও দুর্বল মেটাডেটা পেতে পারে। সাদা পটভূমিতে ব্র্যান্ডহীন স্টিলের বোতল শুধু “বোতল” ও “পরিবেশবান্ধব” নয়: ক্রেতার ক্যাটালগের জন্য কাটআউট, রান্নাঘরের বস্তু, জলপানের ধারণা বা পুনর্ব্যবহারযোগ্য পাত্রের প্রয়োজন হতে পারে। উপযোগী কীওয়ার্ড হলো যেগুলো ছবিতে স্পষ্টভাবে দেখা যায় এবং শুটের নোটে সমর্থিত। এই নির্দেশিকায় দেখানো হয়েছে কীভাবে একটি যাচাই করা পণ্যের বর্ণনা থেকে পরিবেশগত দাবি, ব্র্যান্ড-তথ্য বা পিক্সেলে না-দেখা বিবরণ না বানিয়ে কেন্দ্রীভূত স্টক মেটাডেটা তৈরি করা যায়।",
+    "sections": [
+      {
+        "heading": "ছবিতে যা প্রমাণিত, তা দিয়েই শুরু করুন",
+        "paragraphs": [
+          "চোখে দেখা তথ্যকে প্রোডাকশন নোটে দেওয়া তথ্য থেকে আলাদা করুন। এই কাজটিতে বস্তুটি একটি পুনর্ব্যবহারযোগ্য স্টিলের বোতল, এবং শুটের নোটে উপাদানটি যাচাই করা হয়েছে। ছবিতে সাদা পটভূমির ওপর আলাদা করে রাখা একটি ব্র্যান্ডহীন পাত্র দেখা যাচ্ছে। এই তথ্যগুলো bottle, steel, reusable, unbranded, isolated, white background এবং product photography-এর মতো শব্দ সমর্থন করে।",
+          "পণ্যের নথি ও ছবি সত্যিই সমর্থন না করলে organic, plastic-free, zero-waste, carbon-neutral, healthy বা leakproof যোগ করবেন না। প্রেক্ষাপট থেকে পরিবেশবান্ধব ধারণা ইঙ্গিত করা যেতে পারে, কিন্তু সাধারণ স্টিলের বোতল তার পরিবেশগত প্রভাব সম্পর্কে কোনো প্রতিশ্রুতি প্রমাণ করে না।"
+        ],
+        "bullets": [
+          "বিস্তৃত ধারণার আগে পণ্যের পরিচয় ব্যবহার করুন।",
+          "যাচাই করা নোটকে প্রমাণ হিসেবে বিবেচনা করুন, বিপণনমূলক লেখা যোগ করার অনুমতি হিসেবে নয়।",
+          "ব্র্যান্ড, দেশ, মালিক বা কার্যক্ষমতার বৈশিষ্ট্য অনুমান করবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ক্রেতার সম্ভাব্য অনুসন্ধানের পথ বেছে নিন",
+        "paragraphs": [
+          "কীওয়ার্ডিং সবচেয়ে কার্যকর হয় যখন তা শব্দের স্তূপে পরিণত না হয়ে একাধিক সম্ভাব্য ব্যবহার প্রতিফলিত করে। এই ছবির জন্য একটি পথ হলো বস্তুর অনুসন্ধান: steel bottle, reusable bottle, drinking container। আরেকটি হলো নকশাগত ব্যবহার: isolated product, white background, cutout, mockup space। তৃতীয়টি হলো জীবনযাপন-ধারণা: hydration, everyday carry, refillable container। প্রতিটি শব্দকে নির্দিষ্ট ফাইলটির সঙ্গে প্রাসঙ্গিক রাখুন।",
+          "সমার্থক শব্দ এবং নতুন দাবির পার্থক্য মনে রাখুন। আকৃতি স্পষ্টভাবে সমর্থন করলে “Water bottle” যুক্তিসঙ্গত বস্তুর শব্দ হতে পারে। “Thermal flask” আলাদা বিষয়: নির্মাণ বা নোটে সেই কার্যকারিতা যাচাই থাকলেই ব্যবহার করুন। “Sustainable packaging” পুনর্ব্যবহারযোগ্য বোতলের সমার্থক নয়, তাই এটি বাদ দিতে হবে।"
+        ],
+        "bullets": [
+          "বস্তু, চেহারা, ব্যবহার ও ক্রেতার প্রেক্ষাপট নির্ধারণ করুন।",
+          "ক্রেতা সত্যিই লিখতে পারেন এমন প্রচলিত বাক্যাংশকে অগ্রাধিকার দিন।",
+          "ফাইলটি নয়, কল্পিত ব্যবহার বর্ণনা করে এমন শব্দ বাদ দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: নোট থেকে কেন্দ্রীভূত সেট",
+        "paragraphs": [
+          "এটি পরিমাপ করা ফল নয়, একটি উদাহরণ: ধরুন ফাইলটির নাম steel-bottle-white-01.jpg। শুটের নোটে স্টেইনলেস স্টিল এবং পুনর্ব্যবহারযোগ্য নকশা যাচাই করা হয়েছে। ছবিতে সিমলেস সাদা পটভূমিতে একা দাঁড়ানো একটি সাধারণ, ব্র্যান্ডহীন বোতল দেখা যাচ্ছে। আমি প্রথমে বস্তু ও উপাদান উল্লেখ করব, তারপর আলাদা করে দেখানোর ধরন এবং সংযত ব্যবহার-ধারণা যোগ করব।",
+          "যেসব প্ল্যাটফর্ম প্রথম দিকের শব্দকে বিশেষ গুরুত্ব দেয়, সেখানে ক্রম গুরুত্বপূর্ণ। Adobe-এর নির্দেশিকায় প্রথম দশটি কীওয়ার্ডের ওপর গুরুত্ব দেওয়া হয়েছে, তাই শুরুতে ফাঁপা শব্দ নয়, সবচেয়ে শক্তিশালী পরিচয় থাকা উচিত। শিরোনামও আমি কমা দিয়ে আলাদা করা কীওয়ার্ডের তালিকা নয়, পাঠযোগ্য বর্ণনা হিসেবে রাখব। চূড়ান্ত তালিকাটি একবারে একটি শব্দ ধরে ছবির সঙ্গে মিলিয়ে পর্যালোচনা করতে হবে।"
+        ],
+        "bullets": [],
+        "example": "Title: Unbranded reusable steel water bottle isolated on white background\nKeywords: steel bottle, reusable bottle, water bottle, drinking container, unbranded, isolated, white background, product photography, cutout, refillable, hydration, beverage container, kitchen object, everyday carry, minimal, plain, upright, container"
+      },
+      {
+        "heading": "প্রয়োজনীয় ভাষায় মার্কেটপ্লেসের মেটাডেটা রাখুন",
+        "paragraphs": [
+          "যে মার্কেটপ্লেসে ইংরেজি মেটাডেটা আবশ্যক, সেখানে আপনার কাজের নোট বা ব্লগের ভাষা বাংলা হলেও শিরোনাম ও কীওয়ার্ড ইংরেজিতে লিখুন। পৃথক শব্দের বানান নয়, অর্থ অনুবাদ করুন। যেমন, “многоразовая стальная бутылка” হবে “reusable steel bottle”, আর “изолированный объект” ছবিতে আসলে যা দেখা যাচ্ছে তার ওপর নির্ভর করে “isolated object” বা “cutout” হবে।",
+          "প্ল্যাটফর্মভেদে প্রয়োজনীয়তা আলাদা এবং পরিবর্তিত হতে পারে। Adobe-এর বর্তমান নির্দেশিকায় সর্বোচ্চ 49টি কীওয়ার্ডের অনুমতি আছে এবং বলা হয়েছে যে মেটাডেটার ভাষা অবদানকারীর অ্যাকাউন্টের ভাষার সঙ্গে মিলতে হবে; তাদের CSV নথিতে শিরোনামের 70 অক্ষরের সীমাও দেওয়া আছে। রপ্তানির আগে যাচাই করার আপলোড-সীমা হিসেবে এগুলো বিবেচনা করুন, প্রতিটি খালি ঘর পূরণ করার কারণ হিসেবে নয়।"
+        ],
+        "bullets": [
+          "প্ল্যাটফর্মের বর্তমান ভাষা ও ক্ষেত্রের সীমা নিশ্চিত করুন।",
+          "একই ধরনের পণ্যের ফাইলগুলোর জন্য একটি সামঞ্জস্যপূর্ণ ইংরেজি নামকরণ-পদ্ধতি ব্যবহার করুন।",
+          "নীতি বা আপলোডের পর্দা বদলে যেতে পারে—তাই অবদানকারী পোর্টাল পরীক্ষা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ফাইলের পরিচয় না হারিয়ে CSV প্রস্তুত করুন",
+        "paragraphs": [
+          "আপনি CSV মেটাডেটা ব্যবহার করলে এক্সটেনশন ও বড়-ছোট অক্ষরসহ ফাইলের নাম আপলোড করা সম্পদের সঙ্গে মিলতে হবে। প্ল্যাটফর্মে যদি আগে ছবি আপলোড করার নিয়ম থাকে, আগে ছবি আপলোড করুন; তারপর CSV আমদানি করে অবদানকারী পোর্টালে তৈরি হওয়া ক্ষেত্রগুলো পরীক্ষা করুন। ঠিকঠাক দেখানো স্প্রেডশিটই যে মার্কেটপ্লেস প্রতিটি মান গ্রহণ বা সঠিকভাবে ব্যাখ্যা করেছে, তার প্রমাণ নয়।",
+          "MetaStocker Adobe CSV-সহ বিভিন্ন ফরম্যাট রপ্তানি করতে পারে, কিন্তু এর রপ্তানিকারক আপলোড, জমা, গ্রহণের নিশ্চয়তা বা মূল ছবিতে মেটাডেটা এম্বেড করে না। আপনার প্ল্যাটফর্মের কাজের ধাপের জন্য রপ্তানিটিকে খসড়া হিসেবে বিবেচনা করুন। চূড়ান্ত ফাইল খুলে বিভাজক ও উদ্ধৃতি-চিহ্ন পরীক্ষা করুন এবং আমদানির আগে কয়েকটি সারি প্রকৃত ফাইলের নামের সঙ্গে মিলিয়ে দেখুন।"
+        ],
+        "bullets": [
+          "মূল ছবি অপরিবর্তিত রাখুন এবং আলাদা মেটাডেটা ফাইল সংরক্ষণ করুন।",
+          "ফাইলের নামের বানান, এক্সটেনশন, শিরোনামের দৈর্ঘ্য ও কীওয়ার্ডের সংখ্যা হুবহু পরীক্ষা করুন।",
+          "আইটেমটি প্রকাশের আগে আমদানি করা মেটাডেটা পরীক্ষা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "স্থানীয় জেনারেশনকে খসড়া তৈরির সহায়ক হিসেবে ব্যবহার করুন",
+        "paragraphs": [
+          "MetaStocker-এর স্থানীয় মোড WebGPU কর্মীর মাধ্যমে ব্রাউজারে সমর্থিত ভিশন ও চিন্তন মডেল চালায়। ডিফল্ট স্থানীয় মডেল হলো Gemma 4 E2B, এবং প্রথম মডেল ডাউনলোডে ইন্টারনেট সংযোগ দরকার। মডেলকে কাজের মেমরিতে লোড করা এবং ডাউনলোড করা ব্রাউজার ফাইল ক্যাশে রেখে দেওয়া এক বিষয় নয়; ব্রাউজারের সঞ্চয়স্থান সরিয়ে দেওয়া হতে পারে, আর স্থানীয় কার্যকরিতা স্থায়ী অফলাইন ব্যবহারের প্রতিশ্রুতি নয়।",
+          "জেনারেটরকে “unbranded reusable steel bottle; steel verified in shoot notes; isolated on white; no visible logo.”-এর মতো সংক্ষিপ্ত, তথ্যভিত্তিক প্রেক্ষাপট দিন। এরপর প্রতিটি ফল সম্পাদনা করুন। চাওয়া ট্যাগের সংখ্যা যান্ত্রিকভাবে যাচাই করা যায়, কিন্তু তাতে শব্দগুলো নির্ভুল হয়ে যায় না। একটি ব্যাচে ভিন্ন পণ্য থাকলে সবার ওপর একই প্রেক্ষাপট প্রয়োগ করবেন না এবং প্রতিটি ফাইল আলাদাভাবে পর্যালোচনা করুন। একটি স্থানীয় থ্রেড দিয়ে শুরু করুন; অতিরিক্ত থ্রেড আরেকটি মডেলের অনুলিপি লোড করতে পারে এবং বেশি সম্পদ লাগতে পারে।"
+        ],
+        "bullets": [
+          "ব্যাচের বর্ণনায় যাচাই করা তথ্য ও ছবিতে দেখা উপস্থাপন-পদ্ধতি লিখুন।",
+          "খসড়ায় তৈরি হওয়া অসমর্থিত দাবি প্রত্যাখ্যান করুন।",
+          "নিজে পরীক্ষা করা সারিগুলোই রপ্তানি করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "দৃশ্যমান প্রমাণ বা শুটের নোট থেকে বস্তু, উপাদান ও পুনর্ব্যবহারযোগ্যতার অবস্থা নিশ্চিত করুন।",
+      "শিরোনাম ও শুরুতে থাকা কীওয়ার্ডে সবচেয়ে শক্তিশালী বস্তুর শব্দ রাখুন।",
+      "যাচাই না-করা ব্র্যান্ড, কার্যক্ষমতা, স্বাস্থ্য ও পরিবেশগত দাবি বাদ দিন।",
+      "মার্কেটপ্লেসের প্রয়োজনীয় মেটাডেটা-ভাষা ও বর্তমান সীমা ব্যবহার করুন।",
+      "এক্সটেনশন ও বড়-ছোট অক্ষরসহ প্রতিটি CSV ফাইলের নাম হুবহু মিলিয়ে নিন।",
+      "জমা দেওয়ার আগে সম্পাদনাযোগ্য মেটাডেটা ও অবদানকারী পোর্টাল পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "বোতলের মেটাডেটা কাজের ধাপ",
+      "steps": [
+        {
+          "label": "পণ্যের তথ্য যাচাই করুন",
+          "detail": "স্টিল, পুনর্ব্যবহারযোগ্য নকশা, ব্র্যান্ডহীন অবস্থা ও সাদা পটভূমি নিশ্চিত করুন।"
+        },
+        {
+          "label": "কেন্দ্রীভূত মেটাডেটার খসড়া করুন",
+          "detail": "প্রথমে বস্তুর শব্দ, তারপর চেহারা ও প্রাসঙ্গিক ব্যবহার-ধারণা সাজান।"
+        },
+        {
+          "label": "পর্যালোচনা ও রপ্তানি করুন",
+          "detail": "দাবি বাদ দিন, ফাইলের নাম মিলিয়ে নিন এবং প্ল্যাটফর্মের আমদানি পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "बिना ब्रांड की स्टील बोतल के उत्पाद-फ़ोटो कीवर्ड उदाहरण",
+    "description": "बिना ब्रांड की पुनःप्रयोग योग्य स्टील बोतल के लिए सटीक स्टॉक कीवर्ड बनाएं—काम का उदाहरण, अंग्रेज़ी मेटाडेटा और व्यावहारिक समीक्षा-प्रवाह सहित।",
+    "intro": "साफ़ उत्पाद-फ़ोटो का वर्णन करना आसान हो सकता है, फिर भी उसका मेटाडेटा कमज़ोर रह सकता है। सफ़ेद पृष्ठभूमि पर बिना ब्रांड की स्टील बोतल केवल “बोतल” और “पर्यावरण-अनुकूल” नहीं है: खरीदार को कैटलॉग के लिए कटआउट, रसोई की वस्तु, जलपान की अवधारणा या पुनःप्रयोग योग्य कंटेनर चाहिए हो सकता है। उपयोगी कीवर्ड वही हैं जिन्हें तस्वीर स्पष्ट रूप से दिखाती है और शूट नोट्स समर्थन देते हैं। यह मार्गदर्शिका दिखाती है कि पर्यावरणीय दावे, ब्रांड जानकारी या पिक्सेल में छिपे विवरण गढ़े बिना एक सत्यापित उत्पाद-विवरण को केंद्रित स्टॉक मेटाडेटा में कैसे बदला जाए।",
+    "sections": [
+      {
+        "heading": "जो तस्वीर साबित करती है, उसी से शुरू करें",
+        "paragraphs": [
+          "दिखाई देने वाले तथ्यों को प्रोडक्शन नोट्स से मिली जानकारी से अलग रखें। इस असाइनमेंट में वस्तु एक पुनःप्रयोग योग्य स्टील बोतल है और सामग्री की पुष्टि शूट नोट्स से हुई है। तस्वीर में सफ़ेद पृष्ठभूमि पर अलग रखी हुई बिना ब्रांड की बोतल दिखाई देती है। ये तथ्य bottle, steel, reusable, unbranded, isolated, white background और product photography जैसे शब्दों का समर्थन करते हैं।",
+          "जब तक उत्पाद के दस्तावेज़ और तस्वीर वास्तव में समर्थन न करें, organic, plastic-free, zero-waste, carbon-neutral, healthy या leakproof न जोड़ें। संदर्भ से स्थिरता की अवधारणा सुझाई जा सकती है, लेकिन सामान्य स्टील बोतल अपने पर्यावरणीय प्रभाव के बारे में कोई वादा सिद्ध नहीं करती।"
+        ],
+        "bullets": [
+          "व्यापक अवधारणाओं से पहले उत्पाद की पहचान रखें।",
+          "सत्यापित नोट्स को प्रमाण समझें, मार्केटिंग भाषा जोड़ने की अनुमति नहीं।",
+          "ब्रांड, देश, मालिक या प्रदर्शन-संबंधी विशेषता का अनुमान न लगाएं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "खरीदार की संभावित खोज-पद्धतियां चुनें",
+        "paragraphs": [
+          "कीवर्डिंग तब सबसे अच्छी काम करती है जब वह शब्दों का ढेर बनने के बजाय कई संभावित उपयोगों को दर्शाए। इस तस्वीर के लिए एक मार्ग वस्तु-खोज है: steel bottle, reusable bottle, drinking container। दूसरा डिज़ाइन-उपयोग है: isolated product, white background, cutout, mockup space। तीसरा जीवनशैली-संबंधी अवधारणा है: hydration, everyday carry, refillable container। हर शब्द को उसी फ़ाइल के लिए प्रासंगिक रखें।",
+          "पर्यायवाची और नए दावे का अंतर समझें। यदि आकार स्पष्ट रूप से समर्थन करता है, तो “Water bottle” उचित वस्तु-शब्द हो सकता है। “Thermal flask” अलग बात है: इसे तभी इस्तेमाल करें जब बनावट या नोट्स उस कार्यक्षमता की पुष्टि करें। “Sustainable packaging” पुनःप्रयोग योग्य बोतल का पर्याय नहीं है, इसलिए इसे हटा देना चाहिए।"
+        ],
+        "bullets": [
+          "वस्तु, रूप, उपयोग और खरीदार के संदर्भ को दर्ज करें।",
+          "ऐसे प्रचलित वाक्यांश चुनें जिन्हें खरीदार वास्तव में खोज सकता है।",
+          "उन शब्दों को हटाएं जो फ़ाइल के बजाय कल्पित उपयोग का वर्णन करते हैं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम का उदाहरण: नोट्स से केंद्रित सेट तक",
+        "paragraphs": [
+          "यह मापा हुआ परिणाम नहीं, एक उदाहरण है: मान लें फ़ाइल का नाम steel-bottle-white-01.jpg है। शूट नोट्स में स्टेनलेस स्टील और पुनःप्रयोग योग्य डिज़ाइन की पुष्टि है। तस्वीर में सीमलेस सफ़ेद पृष्ठभूमि पर अकेली खड़ी सादी, बिना ब्रांड की बोतल दिखाई देती है। मैं पहले वस्तु और सामग्री रखूंगा, फिर अलग करके दिखाने का रूप और सीमित उपयोग-अवधारणाएं जोड़ूंगा।",
+          "जिन प्लेटफ़ॉर्म पर शुरुआती शब्दों को विशेष महत्व मिलता है, वहां क्रम महत्वपूर्ण है। Adobe के दिशानिर्देश पहले दस कीवर्ड पर ज़ोर देते हैं, इसलिए शुरुआत में भराव शब्द नहीं बल्कि सबसे मजबूत पहचान होनी चाहिए। मैं शीर्षक को अल्पविराम से अलग की गई कीवर्ड सूची के बजाय पढ़ने योग्य विवरण रखूंगा। अंतिम सूची की हर प्रविष्टि को एक-एक करके तस्वीर से मिलाकर देखना चाहिए।"
+        ],
+        "bullets": [],
+        "example": "Title: Unbranded reusable steel water bottle isolated on white background\nKeywords: steel bottle, reusable bottle, water bottle, drinking container, unbranded, isolated, white background, product photography, cutout, refillable, hydration, beverage container, kitchen object, everyday carry, minimal, plain, upright, container"
+      },
+      {
+        "heading": "मार्केटप्लेस का मेटाडेटा आवश्यक भाषा में रखें",
+        "paragraphs": [
+          "जिस मार्केटप्लेस को अंग्रेज़ी मेटाडेटा चाहिए, वहां आपके कामकाजी नोट्स या ब्लॉग की भाषा हिन्दी होने पर भी शीर्षक और कीवर्ड अंग्रेज़ी में लिखें। अलग-अलग शब्दों की वर्तनी नहीं, अर्थ का अनुवाद करें। उदाहरण के लिए, “многоразовая стальная бутылка” का अर्थ “reusable steel bottle” होगा, जबकि “изолированный объект” तस्वीर में वास्तव में जो दिखता है उसके अनुसार “isolated object” या “cutout” होगा।",
+          "प्लेटफ़ॉर्म की आवश्यकताएं अलग हो सकती हैं और बदल भी सकती हैं। Adobe के वर्तमान दिशानिर्देश अधिकतम 49 कीवर्ड की अनुमति देते हैं और कहते हैं कि मेटाडेटा की भाषा योगदानकर्ता खाते की भाषा से मेल खानी चाहिए; उसके CSV दस्तावेज़ में शीर्षक की 70 अक्षरों की सीमा भी दी गई है। इन्हें निर्यात से पहले जांचने योग्य अपलोड सीमाएं मानें, हर उपलब्ध फ़ील्ड भरने का कारण नहीं।"
+        ],
+        "bullets": [
+          "प्लेटफ़ॉर्म की वर्तमान भाषा और फ़ील्ड सीमाएं सुनिश्चित करें।",
+          "दोहराए जाने वाले उत्पाद फ़ाइलों के लिए एकसमान अंग्रेज़ी नामकरण-पद्धति रखें।",
+          "नीतियां या अपलोड स्क्रीन बदल सकती हैं, इसलिए योगदानकर्ता पोर्टल देखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "फ़ाइल की पहचान बचाते हुए CSV तैयार करें",
+        "paragraphs": [
+          "यदि आप CSV मेटाडेटा इस्तेमाल करते हैं, तो एक्सटेंशन और बड़े-छोटे अक्षरों सहित फ़ाइल का नाम अपलोड की गई संपत्ति से मेल खाना चाहिए। जहां प्लेटफ़ॉर्म पहले तस्वीरें अपलोड करने को कहता है, वहां पहले तस्वीरें अपलोड करें, फिर CSV आयात करें और योगदानकर्ता पोर्टल में बने फ़ील्ड जांचें। सही दिखने वाली स्प्रेडशीट यह प्रमाण नहीं है कि मार्केटप्लेस ने हर मान स्वीकार या सही ढंग से समझ लिया है।",
+          "MetaStocker Adobe CSV सहित कई फ़ॉर्मैट निर्यात कर सकता है, लेकिन उसका निर्यातक अपलोड, सबमिट, स्वीकृति की गारंटी या मूल तस्वीर में मेटाडेटा एम्बेड नहीं करता। अपने प्लेटफ़ॉर्म के कार्यप्रवाह के लिए निर्यात को मसौदा समझें। अंतिम फ़ाइल खोलें, विभाजक और उद्धरण जांचें, और आयात से पहले कुछ पंक्तियों की तुलना वास्तविक फ़ाइल नामों से करें।"
+        ],
+        "bullets": [
+          "मूल तस्वीर को अपरिवर्तित रखें और अलग मेटाडेटा फ़ाइल सुरक्षित रखें।",
+          "फ़ाइल नाम की वर्तनी, एक्सटेंशन, शीर्षक की लंबाई और कीवर्ड की संख्या जांचें।",
+          "आइटम उपलब्ध कराने से पहले आयात किया गया मेटाडेटा जांचें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "स्थानीय जनरेशन को मसौदा-सहायता की तरह इस्तेमाल करें",
+        "paragraphs": [
+          "MetaStocker का स्थानीय मोड WebGPU वर्कर के ज़रिए ब्राउज़र में समर्थित विज़न और थिंकिंग मॉडल चलाता है। डिफ़ॉल्ट स्थानीय मॉडल Gemma 4 E2B है और पहली बार मॉडल डाउनलोड करने के लिए इंटरनेट चाहिए। मॉडल को कामकाजी मेमरी में लोड करना और डाउनलोड की गई ब्राउज़र फ़ाइलों को कैश में रखना अलग बातें हैं; ब्राउज़र स्टोरेज हटाया जा सकता है और स्थानीय संचालन स्थायी ऑफ़लाइन उपयोग का वादा नहीं है।",
+          "जनरेटर को “unbranded reusable steel bottle; steel verified in shoot notes; isolated on white; no visible logo.” जैसा संकीर्ण, तथ्यात्मक संदर्भ दें। फिर हर परिणाम संपादित करें। मांगी गई टैग संख्या को यांत्रिक रूप से जांचा जा सकता है, लेकिन इससे शब्द सटीक नहीं हो जाते। यदि किसी बैच में अलग-अलग उत्पाद हैं, तो सभी पर एक जैसा संदर्भ न लगाएं और हर फ़ाइल अलग से जांचें। एक स्थानीय थ्रेड से शुरू करें; अतिरिक्त थ्रेड मॉडल की दूसरी प्रति लोड कर सकते हैं और अधिक संसाधन मांग सकते हैं।"
+        ],
+        "bullets": [
+          "बैच-विवरण में सत्यापित तथ्य और तस्वीर में दिखाई देने वाला रूप लिखें।",
+          "मसौदे में बने असमर्थित दावों को अस्वीकार करें।",
+          "केवल वे पंक्तियां निर्यात करें जिन्हें आपने स्वयं जांचा है।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "दिखाई देने वाले प्रमाण या शूट नोट्स से वस्तु, सामग्री और पुनःप्रयोग योग्य होने की पुष्टि करें।",
+      "शीर्षक और शुरुआती कीवर्ड में सबसे मजबूत वस्तु-शब्द रखें।",
+      "असत्यापित ब्रांड, प्रदर्शन, स्वास्थ्य और स्थिरता-संबंधी दावे हटाएं।",
+      "मार्केटप्लेस की आवश्यक मेटाडेटा भाषा और वर्तमान सीमाएं अपनाएं।",
+      "एक्सटेंशन और बड़े-छोटे अक्षरों सहित हर CSV फ़ाइल नाम का सटीक मिलान करें।",
+      "सबमिशन से पहले संपादन योग्य मेटाडेटा और योगदानकर्ता पोर्टल जांचें।"
+    ],
+    "illustration": {
+      "title": "बोतल मेटाडेटा कार्यप्रवाह",
+      "steps": [
+        {
+          "label": "उत्पाद तथ्य सत्यापित करें",
+          "detail": "स्टील, पुनःप्रयोग योग्य डिज़ाइन, बिना ब्रांड की स्थिति और सफ़ेद अलगाव की पुष्टि करें।"
+        },
+        {
+          "label": "केंद्रित मेटाडेटा मसौदा बनाएं",
+          "detail": "पहले वस्तु-शब्द, फिर रूप और प्रासंगिक उपयोग-अवधारणाएं क्रम में रखें।"
+        },
+        {
+          "label": "समीक्षा और निर्यात करें",
+          "detail": "दावे हटाएं, फ़ाइल नाम मिलाएं और प्लेटफ़ॉर्म आयात की जांच करें।"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,802 @@
+[
+  {
+    "slug": "stock-photo-keywords-guide",
+    "category": "metadata",
+    "intent": "Build a relevant keyword list from an image",
+    "brief": "A ceramic mug beside an open notebook at a kitchen table. Separate visible objects, setting and supported concepts. No assumptions about remote work.",
+    "initial": true,
+    "order": 1
+  },
+  {
+    "slug": "mastering-adobe-stock-autokeywording",
+    "category": "platforms",
+    "intent": "Review Adobe Stock automatic keywords and reorder the first ten",
+    "brief": "A cyclist crossing a wooden bridge. Remove an incorrect city and race label; show a ten-term priority sequence and explain omissions.",
+    "initial": true,
+    "order": 2
+  },
+  {
+    "slug": "find-adobe-stock-keywords-automatically",
+    "category": "metadata",
+    "intent": "Find missing Adobe Stock keywords without copying competitors",
+    "brief": "A macro of a dew-covered leaf. Subject-detail-composition audit; distinguish moss from a leaf and only use botanical species if verified.",
+    "initial": true,
+    "order": 3
+  },
+  {
+    "slug": "ai-stock-keyword-generator",
+    "category": "local-ai",
+    "intent": "Generate stock keywords locally with AI and review the result",
+    "brief": "Start to finish on one photo of fresh bread; explicit download, one thread, observe preview, review hallucinated ingredients, export.",
+    "initial": true,
+    "order": 4
+  },
+  {
+    "slug": "ai-metadata-editor-adobe-shutterstock",
+    "category": "platforms",
+    "intent": "Adapt one metadata draft for Adobe Stock and Shutterstock",
+    "brief": "A potter shaping a clay bowl. Explain English draft, title style, priority and per-platform review, with two worked metadata variants.",
+    "initial": true,
+    "order": 5
+  },
+  {
+    "slug": "microstock-metadata-csv-export",
+    "category": "exports",
+    "intent": "Export stock metadata CSV and verify filename matching",
+    "brief": "Three assets with .jpg and .mov extensions, one case mismatch and one renamed file. Show a safe reconciliation procedure.",
+    "initial": true,
+    "order": 6
+  },
+  {
+    "slug": "bulk-keywording-professionals",
+    "category": "workflow",
+    "intent": "Batch keywording for a mixed professional shoot",
+    "brief": "A 24-file shoot with portraits, workspace details and empty interiors. Group by actual subject; shared factual context without blanket tags.",
+    "initial": true,
+    "order": 7
+  },
+  {
+    "slug": "automate-keywords-budget",
+    "category": "local-ai",
+    "intent": "Plan free local keywording time and optional API costs",
+    "brief": "A hypothetical 120-file batch. Give a worksheet using measured local sample time, no invented speed or price claims, optional API bill checking.",
+    "initial": true,
+    "order": 8
+  },
+  {
+    "slug": "stock-metadata-generator-comparison",
+    "category": "local-ai",
+    "intent": "Compare local AI, paid API and manual keywording fairly",
+    "brief": "A repeatable small test set of six different image types; score factual errors and editing time instead of unverified model league tables.",
+    "initial": true,
+    "order": 9
+  },
+  {
+    "slug": "best-ai-keywording-tool-2026",
+    "category": "workflow",
+    "intent": "Choose a stock keywording tool using a practical checklist",
+    "brief": "Feature requirements: privacy, CSV schema, model cache, editing, batch control. No claim MetaStocker is objectively best; run same user-owned sample.",
+    "initial": true,
+    "order": 10
+  },
+  {
+    "slug": "envato-freepik-metadata-generator",
+    "category": "exports",
+    "intent": "Prepare separate Envato and Freepik metadata exports",
+    "brief": "One illustrated gardening set. Distinguish the app's separate export choices from each platform's current required fields; no universal CSV guarantee.",
+    "initial": true,
+    "order": 11
+  },
+  {
+    "slug": "how-to-get-openai-api-key",
+    "category": "local-ai",
+    "intent": "Use an optional personal OpenAI API key in MetaStocker",
+    "brief": "Local mode needs no key. Optional personal API mode, developer account billing separate from ChatGPT, key not shared/publicly embedded, avoid exact prices/UI guesses.",
+    "initial": true,
+    "order": 12
+  },
+  {
+    "slug": "stock-photo-title-examples",
+    "category": "metadata",
+    "intent": "Write descriptive stock photo titles with before-and-after examples",
+    "brief": "Three scenes: red umbrella on wet pavement, hands folding linen, seedlings by a window. Tighten vague titles without stuffing keywords.",
+    "initial": true,
+    "order": 13
+  },
+  {
+    "slug": "adobe-stock-first-ten-keywords",
+    "category": "metadata",
+    "intent": "Choose the first ten Adobe Stock keywords for a difficult scene",
+    "brief": "A close-up of hands repairing a bicycle wheel. Rank action, object, detail, setting; compare an equipment-heavy list with a subject-first list.",
+    "initial": true,
+    "order": 14
+  },
+  {
+    "slug": "remove-irrelevant-stock-keywords",
+    "category": "metadata",
+    "intent": "Remove irrelevant AI-generated stock keywords",
+    "brief": "A blue glass bottle on sand. Challenge ocean, perfume, recycling, luxury and brand guesses using a visible/known/unsupported table.",
+    "initial": true,
+    "order": 15
+  },
+  {
+    "slug": "compound-stock-keywords",
+    "category": "metadata",
+    "intent": "Choose compound keywords without inventing long phrases",
+    "brief": "Ice cream, copy space, coffee cup and yellow flower examples. Explain established concepts versus phrase spam; adapt to platform rules.",
+    "initial": true,
+    "order": 16
+  },
+  {
+    "slug": "translate-stock-metadata-english",
+    "category": "metadata",
+    "intent": "Translate stock metadata into natural English",
+    "brief": "Russian draft of a forest path scene; distinguish walk/path/footpath, preserve known location, avoid mixing language lists and literal translations.",
+    "initial": true,
+    "order": 17
+  },
+  {
+    "slug": "stock-photo-copy-space-keywords",
+    "category": "metadata",
+    "intent": "Describe copy space and composition accurately",
+    "brief": "A potted plant placed at the right edge with clean wall to the left; when negative space is usable and why not every background qualifies.",
+    "initial": true,
+    "order": 18
+  },
+  {
+    "slug": "stock-photo-location-keywords",
+    "category": "metadata",
+    "intent": "Add location keywords only when verified",
+    "brief": "A generic European old street, a documented Krakow square and an unknown generated city. Explain what the photographer knows versus what AI guesses.",
+    "initial": true,
+    "order": 19
+  },
+  {
+    "slug": "stock-people-keywords-accuracy",
+    "category": "metadata",
+    "intent": "Describe people accurately without guessing identity",
+    "brief": "Hands preparing a meal, a self-described adult model and a distant group. Observable activity; demographic claims only from reliable model information.",
+    "initial": true,
+    "order": 20
+  },
+  {
+    "slug": "food-photography-keyword-examples",
+    "category": "metadata",
+    "intent": "Keyword food photography without inventing ingredients",
+    "brief": "Bowl of tomato soup with visible herbs. Don't assume vegan, organic, gluten-free or a named cuisine; hypothetical ingredient notes change valid metadata.",
+    "initial": true,
+    "order": 21
+  },
+  {
+    "slug": "product-photo-keyword-examples",
+    "category": "metadata",
+    "intent": "Keyword isolated product photos for stock",
+    "brief": "Unbranded reusable steel bottle on white. Material verified by shoot notes, isolated versus white backdrop, remove invisible sustainability promises.",
+    "initial": true,
+    "order": 22
+  },
+  {
+    "slug": "abstract-background-keywords",
+    "category": "metadata",
+    "intent": "Describe abstract backgrounds without generic keyword spam",
+    "brief": "Blue curved glass-like shapes with empty lower area. Visual texture, color, form, composition; don't assert real glass or 3D rendering unless known.",
+    "initial": true,
+    "order": 23
+  },
+  {
+    "slug": "stock-vector-metadata",
+    "category": "metadata",
+    "intent": "Prepare metadata for vector illustrations",
+    "brief": "A flat gardening icon collection; describe actual icons and style, distinguish editable vector deliverable from its raster preview and unsupported format claims.",
+    "initial": true,
+    "order": 24
+  },
+  {
+    "slug": "stock-video-motion-keywords",
+    "category": "metadata",
+    "intent": "Write stock video metadata from the whole clip",
+    "brief": "A camera pushes toward a steaming kettle while a hand enters. Sampled AI preview misses motion; watch start/middle/end, distinguish camera movement and subject action.",
+    "initial": true,
+    "order": 25
+  },
+  {
+    "slug": "seasonal-stock-keyword-planning",
+    "category": "workflow",
+    "intent": "Plan seasonal metadata without mislabeling assets",
+    "brief": "A generic autumn leaf flat lay. Seasonal relevance versus adding Christmas/Halloween without cues; schedule preparation from observed needs, no revenue forecasts.",
+    "initial": true,
+    "order": 26
+  },
+  {
+    "slug": "adobe-stock-csv-import-checklist",
+    "category": "exports",
+    "intent": "Check an Adobe Stock CSV before importing",
+    "brief": "Use one sample row with Filename,Title,Keywords,Category; category code must be verified; preview parsed cells; distinguish file export from successful portal import.",
+    "initial": true,
+    "order": 27
+  },
+  {
+    "slug": "csv-commas-quotes-utf8",
+    "category": "exports",
+    "intent": "Fix commas, quotes and UTF-8 in metadata CSV",
+    "brief": "A title containing quotes and a comma plus accented place name. Show CSV escaping with doubled quotes and quoted keyword list, spreadsheet preview.",
+    "initial": true,
+    "order": 28
+  },
+  {
+    "slug": "stock-csv-filename-mismatch",
+    "category": "exports",
+    "intent": "Diagnose metadata CSV filename mismatch",
+    "brief": "IMG_042.JPG versus img_042.jpg and a duplicated filename in separate folders. Reconcile basenames and extensions, protect original filenames and map one to one.",
+    "initial": true,
+    "order": 29
+  },
+  {
+    "slug": "stock-metadata-spreadsheet-review",
+    "category": "exports",
+    "intent": "Review generated metadata in a spreadsheet safely",
+    "brief": "Columns for filename, title, keywords and reviewer note; avoid auto-formatting and formula execution from untrusted values. Work on copies, not originals.",
+    "initial": true,
+    "order": 30
+  },
+  {
+    "slug": "local-ai-browser-requirements",
+    "category": "local-ai",
+    "intent": "Check browser and computer readiness for local vision AI",
+    "brief": "Compatibility checklist, secure HTTPS, WebGPU detected versus actual model success, disk for cache versus RAM/GPU memory, start with a single image.",
+    "initial": true,
+    "order": 31
+  },
+  {
+    "slug": "gemma-qwen-stock-keywords-test",
+    "category": "local-ai",
+    "intent": "Test Gemma and Qwen for your own stock metadata workflow",
+    "brief": "Same five images, same prompts and tag count, factual-error score and editing-time sheet; no unmeasured model superiority or fabricated benchmarks.",
+    "initial": true,
+    "order": 32
+  },
+  {
+    "slug": "local-ai-model-download",
+    "category": "local-ai",
+    "intent": "Download and reuse a local AI model in the browser",
+    "brief": "Explicit Download/Load; do not close tab mid-download; stable connection; browser/profile/origin isolation, cache may be evicted, don't promise offline.",
+    "initial": true,
+    "order": 33
+  },
+  {
+    "slug": "unload-delete-local-ai-model",
+    "category": "local-ai",
+    "intent": "Unload or delete a browser AI model correctly",
+    "brief": "Unload frees active worker memory while retaining downloaded files; delete cached model requires future download; device files elsewhere aren't deleted.",
+    "initial": true,
+    "order": 34
+  },
+  {
+    "slug": "local-ai-parallel-requests",
+    "category": "local-ai",
+    "intent": "Choose a sensible number of local AI threads",
+    "brief": "One-thread baseline, test two, memory grows with separate worker model copies, diagnose slower parallel run and errors, no magic RAM rule.",
+    "initial": true,
+    "order": 35
+  },
+  {
+    "slug": "webgpu-model-memory-errors",
+    "category": "local-ai",
+    "intent": "Troubleshoot WebGPU memory errors during keywording",
+    "brief": "Unload unused models, reduce threads, close GPU-heavy applications and retry small file; distinguish download/network, incompatible GPU and bad output.",
+    "initial": true,
+    "order": 36
+  },
+  {
+    "slug": "local-ai-thinking-metadata",
+    "category": "local-ai",
+    "intent": "Understand thinking mode in local metadata generation",
+    "brief": "Reasoning versus final metadata, only final result exported, extra tokens cost latency, still check hallucinations, no chain-of-thought disclosure or accuracy guarantee.",
+    "initial": true,
+    "order": 37
+  },
+  {
+    "slug": "local-ai-photo-privacy",
+    "category": "local-ai",
+    "intent": "Understand what stays local during browser AI keywording",
+    "brief": "Local photo inference versus model downloads, aggregate analytics and optional paid API path; public network diagram without misleading zero-network promise.",
+    "initial": true,
+    "order": 38
+  },
+  {
+    "slug": "ai-preview-file-errors",
+    "category": "workflow",
+    "intent": "Fix unreadable image, video and Illustrator previews",
+    "brief": "A playable .mov with unsupported browser codec, an .ai without PDF-compatible preview, corrupted JPEG. Make supported previews carefully without changing original assets.",
+    "initial": true,
+    "order": 39
+  },
+  {
+    "slug": "stock-batch-description-context",
+    "category": "workflow",
+    "intent": "Write useful batch context for AI keywording",
+    "brief": "A known terracotta workshop in Porto plus a mixed travel batch. Context can supply facts but should not impose details on every file.",
+    "initial": true,
+    "order": 40
+  },
+  {
+    "slug": "mandatory-extra-tags-review",
+    "category": "workflow",
+    "intent": "Use shared extra tags without contaminating a batch",
+    "brief": "A set of confirmed watercolor botanical illustrations and an unrelated photo. Shared style tags when true; first/end/random placement tradeoff and per-file audit.",
+    "initial": true,
+    "order": 41
+  },
+  {
+    "slug": "stock-metadata-quality-checklist",
+    "category": "workflow",
+    "intent": "Run a final metadata quality check before stock upload",
+    "brief": "A reusable two-pass review: image-to-text facts then text-to-platform format; inspect rejected words, filenames, language and portal readback.",
+    "initial": true,
+    "order": 42
+  },
+  {
+    "slug": "stock-keyword-portfolio-audit",
+    "category": "workflow",
+    "intent": "Audit an older stock portfolio without rewriting everything",
+    "brief": "Small sampled group, record original title/tags/date, identify clear errors, change one justified group, compare future observations without causal claims.",
+    "initial": true,
+    "order": 43
+  },
+  {
+    "slug": "stock-keyword-taxonomy",
+    "category": "workflow",
+    "intent": "Build a reusable keyword vocabulary for a small portfolio",
+    "brief": "Home cooking portfolio with subject/action/material/setting fields; vocabulary is suggestion library, not a list pasted onto every asset.",
+    "initial": true,
+    "order": 44
+  },
+  {
+    "slug": "stock-asset-version-tracking",
+    "category": "workflow",
+    "intent": "Track metadata versions across exports and marketplaces",
+    "brief": "Master file plus cropped variant, preserve mapping and reviewed exports with dates; no automatic upload status inferred from downloaded CSV.",
+    "initial": true,
+    "order": 45
+  },
+  {
+    "slug": "stock-seo-vs-google-seo",
+    "category": "seo",
+    "intent": "Understand stock marketplace search versus Google SEO",
+    "brief": "A marketplace photo listing and photographer's own portfolio page use different signals; keyword CSV is not an HTML meta-keywords SEO trick.",
+    "initial": true,
+    "order": 46
+  },
+  {
+    "slug": "photographer-portfolio-image-seo",
+    "category": "seo",
+    "intent": "Improve image SEO on a photographer's own portfolio site",
+    "brief": "A page about handmade ceramics with original photo, useful caption and concise alt text, crawlable image URL, fast dimensions, no tag-stuffed alt text.",
+    "initial": true,
+    "order": 47
+  },
+  {
+    "slug": "stock-portfolio-sitemap",
+    "category": "seo",
+    "intent": "Create a sitemap for a photographer's own portfolio",
+    "brief": "Five real canonical pages, exclude private drafts/filters; sitemap discovery versus indexing, honest lastmod and Search Console submission.",
+    "initial": true,
+    "order": 48
+  },
+  {
+    "slug": "bilingual-photography-blog-seo",
+    "category": "seo",
+    "intent": "Organize an English and Russian photography blog",
+    "brief": "Two translated guide URLs with self-canonical and reciprocal hreflang, language switch that stays on article, no auto-redirect by IP.",
+    "initial": true,
+    "order": 49
+  },
+  {
+    "slug": "measure-stock-content-seo",
+    "category": "seo",
+    "intent": "Measure useful outcomes from a stock photography blog",
+    "brief": "Search impressions, clicks, article visits and generator use are separate; no permanent visitor ID means no unique-person attribution; compare like periods.",
+    "initial": true,
+    "order": 50
+  },
+  {
+    "slug": "stock-drone-video-metadata",
+    "category": "metadata",
+    "intent": "Review metadata for drone footage",
+    "brief": "Distinguish actual aerial viewpoint from guessed location or altitude.",
+    "initial": false,
+    "order": 51
+  },
+  {
+    "slug": "stock-timelapse-keywords",
+    "category": "metadata",
+    "intent": "Describe time-lapse footage accurately",
+    "brief": "Differentiate time-lapse, slow motion and ordinary video using verified production notes.",
+    "initial": false,
+    "order": 52
+  },
+  {
+    "slug": "stock-slow-motion-metadata",
+    "category": "metadata",
+    "intent": "Write metadata for slow-motion footage",
+    "brief": "A pouring water clip; motion seen versus frame-rate specifications.",
+    "initial": false,
+    "order": 53
+  },
+  {
+    "slug": "stock-macro-photography-keywords",
+    "category": "metadata",
+    "intent": "Keyword macro photos without guessing species",
+    "brief": "A close-up of an unknown insect on bark.",
+    "initial": false,
+    "order": 54
+  },
+  {
+    "slug": "stock-architecture-keywords",
+    "category": "metadata",
+    "intent": "Describe architectural stock photos",
+    "brief": "A modern lobby; materials, interior view and verified building facts.",
+    "initial": false,
+    "order": 55
+  },
+  {
+    "slug": "stock-texture-photography-keywords",
+    "category": "metadata",
+    "intent": "Write useful stock texture metadata",
+    "brief": "Cracked painted plaster; distinguish seamless deliverable from visual repetition.",
+    "initial": false,
+    "order": 56
+  },
+  {
+    "slug": "stock-handmade-craft-keywords",
+    "category": "metadata",
+    "intent": "Keyword handmade craft scenes",
+    "brief": "Hands weaving a basket; verified process versus guessed cultural origin.",
+    "initial": false,
+    "order": 57
+  },
+  {
+    "slug": "stock-fitness-photo-keywords",
+    "category": "metadata",
+    "intent": "Describe fitness photos accurately",
+    "brief": "Stretching on a mat; no medical benefit promises or guessed identity.",
+    "initial": false,
+    "order": 58
+  },
+  {
+    "slug": "stock-business-photo-keywords",
+    "category": "metadata",
+    "intent": "Remove generic business keyword clutter",
+    "brief": "A person packing parcels in a small workshop.",
+    "initial": false,
+    "order": 59
+  },
+  {
+    "slug": "stock-weather-photo-keywords",
+    "category": "metadata",
+    "intent": "Describe visible weather in stock imagery",
+    "brief": "Wet pavement versus active rainfall; time and season from reliable notes.",
+    "initial": false,
+    "order": 60
+  },
+  {
+    "slug": "stock-night-photography-keywords",
+    "category": "metadata",
+    "intent": "Keyword night photos with precision",
+    "brief": "Street lamps and reflections; don't invent nightlife events.",
+    "initial": false,
+    "order": 61
+  },
+  {
+    "slug": "stock-pet-photo-keywords",
+    "category": "metadata",
+    "intent": "Describe pet photos without breed guesses",
+    "brief": "Cat resting beside a window; breed requires confirmation.",
+    "initial": false,
+    "order": 62
+  },
+  {
+    "slug": "stock-garden-photo-keywords",
+    "category": "metadata",
+    "intent": "Keyword gardening photos accurately",
+    "brief": "Hands repotting a seedling with verified plant information.",
+    "initial": false,
+    "order": 63
+  },
+  {
+    "slug": "stock-overhead-flatlay-keywords",
+    "category": "metadata",
+    "intent": "Describe overhead flat lays",
+    "brief": "Stationery arrangement; top view, copy space and actual objects.",
+    "initial": false,
+    "order": 64
+  },
+  {
+    "slug": "stock-transparent-background-metadata",
+    "category": "metadata",
+    "intent": "Explain transparent backgrounds in asset metadata",
+    "brief": "PNG with real alpha versus white raster background.",
+    "initial": false,
+    "order": 65
+  },
+  {
+    "slug": "stock-before-after-edit-keywords",
+    "category": "workflow",
+    "intent": "Keep edited variants distinguishable",
+    "brief": "Three crops of a fruit still life, mapping titles and filenames.",
+    "initial": false,
+    "order": 66
+  },
+  {
+    "slug": "stock-contact-sheet-review",
+    "category": "workflow",
+    "intent": "Review batch metadata using a contact sheet",
+    "brief": "Spot outlier subjects before using shared context.",
+    "initial": false,
+    "order": 67
+  },
+  {
+    "slug": "stock-factual-notes-workflow",
+    "category": "workflow",
+    "intent": "Record shoot facts before AI keywording",
+    "brief": "Location, materials, permissions kept separate from guessed visual facts.",
+    "initial": false,
+    "order": 68
+  },
+  {
+    "slug": "stock-rejected-keywords-repair",
+    "category": "workflow",
+    "intent": "Repair rejected keywords from a specific review reason",
+    "brief": "Read actual rejection, narrow repair, preserve original metadata.",
+    "initial": false,
+    "order": 69
+  },
+  {
+    "slug": "stock-keyword-spelling-audit",
+    "category": "workflow",
+    "intent": "Check spelling without adding duplicates",
+    "brief": "American/British spelling, established terms and platform language.",
+    "initial": false,
+    "order": 70
+  },
+  {
+    "slug": "stock-metadata-punctuation",
+    "category": "metadata",
+    "intent": "Handle punctuation in stock titles",
+    "brief": "Short clear descriptions, quotes and CSV representation.",
+    "initial": false,
+    "order": 71
+  },
+  {
+    "slug": "stock-short-title-editing",
+    "category": "metadata",
+    "intent": "Shorten long stock titles without losing subject",
+    "brief": "A 100-character draft edited to a concise descriptive sentence.",
+    "initial": false,
+    "order": 72
+  },
+  {
+    "slug": "stock-photo-mood-keywords",
+    "category": "metadata",
+    "intent": "Use mood keywords conservatively",
+    "brief": "Empty bench at dusk: supported solitude versus invented sadness diagnosis.",
+    "initial": false,
+    "order": 73
+  },
+  {
+    "slug": "stock-color-keywords",
+    "category": "metadata",
+    "intent": "Choose color terms that help describe an asset",
+    "brief": "Dominant versus incidental colors in a pattern.",
+    "initial": false,
+    "order": 74
+  },
+  {
+    "slug": "stock-video-loop-metadata",
+    "category": "metadata",
+    "intent": "Describe seamless loops only after checking playback",
+    "brief": "Animated gradient loop with end-to-start inspection.",
+    "initial": false,
+    "order": 75
+  },
+  {
+    "slug": "stock-video-alpha-channel",
+    "category": "metadata",
+    "intent": "Review alpha-channel claims for motion graphics",
+    "brief": "Actual exported alpha versus dark preview background.",
+    "initial": false,
+    "order": 76
+  },
+  {
+    "slug": "stock-video-camera-movement",
+    "category": "metadata",
+    "intent": "Separate pan, tilt, zoom and subject movement",
+    "brief": "A bicycle crossing a static frame versus following camera.",
+    "initial": false,
+    "order": 77
+  },
+  {
+    "slug": "stock-video-frame-selection",
+    "category": "workflow",
+    "intent": "Select representative frames for metadata review",
+    "brief": "Action only visible at the end of a clip.",
+    "initial": false,
+    "order": 78
+  },
+  {
+    "slug": "stock-csv-duplicate-rows",
+    "category": "exports",
+    "intent": "Find duplicate rows before metadata import",
+    "brief": "Same filename twice with conflicting keywords.",
+    "initial": false,
+    "order": 79
+  },
+  {
+    "slug": "stock-csv-empty-fields",
+    "category": "exports",
+    "intent": "Find missing metadata fields before export",
+    "brief": "Partial generation results and blank category cells.",
+    "initial": false,
+    "order": 80
+  },
+  {
+    "slug": "stock-csv-spreadsheet-delimiters",
+    "category": "exports",
+    "intent": "Diagnose semicolon versus comma CSV imports",
+    "brief": "Locale changes spreadsheet interpretation; preserve quoted fields.",
+    "initial": false,
+    "order": 81
+  },
+  {
+    "slug": "stock-csv-backup-strategy",
+    "category": "exports",
+    "intent": "Keep recoverable metadata export versions",
+    "brief": "Original draft, reviewed CSV and portal confirmation note.",
+    "initial": false,
+    "order": 82
+  },
+  {
+    "slug": "local-ai-model-cache-eviction",
+    "category": "local-ai",
+    "intent": "Recover when a browser model cache disappears",
+    "brief": "Browser cleanup and private profile behavior; redownload explicitly.",
+    "initial": false,
+    "order": 83
+  },
+  {
+    "slug": "local-ai-browser-profile",
+    "category": "local-ai",
+    "intent": "Understand model downloads across browser profiles",
+    "brief": "Same laptop, two profiles, independent caches.",
+    "initial": false,
+    "order": 84
+  },
+  {
+    "slug": "local-ai-cancel-batch",
+    "category": "local-ai",
+    "intent": "Cancel a batch and preserve reviewed results",
+    "brief": "Distinguish cancellation from failed output; don't close unsaved work.",
+    "initial": false,
+    "order": 85
+  },
+  {
+    "slug": "local-ai-small-sample-test",
+    "category": "local-ai",
+    "intent": "Design a ten-file local AI trial",
+    "brief": "Representative formats and difficult cases, record edits needed.",
+    "initial": false,
+    "order": 86
+  },
+  {
+    "slug": "local-ai-model-switching",
+    "category": "local-ai",
+    "intent": "Switch local models without wasting memory",
+    "brief": "Unload old model, load selected, start single thread.",
+    "initial": false,
+    "order": 87
+  },
+  {
+    "slug": "local-ai-network-download-errors",
+    "category": "local-ai",
+    "intent": "Diagnose interrupted model downloads",
+    "brief": "Network hosts, available storage and error messages without disabling security.",
+    "initial": false,
+    "order": 88
+  },
+  {
+    "slug": "local-ai-output-review",
+    "category": "local-ai",
+    "intent": "Check valid-looking AI output for factual errors",
+    "brief": "Well-formed metadata can still describe the wrong object.",
+    "initial": false,
+    "order": 89
+  },
+  {
+    "slug": "local-ai-battery-workflow",
+    "category": "local-ai",
+    "intent": "Plan a laptop keywording session",
+    "brief": "Power supply, cooling, measured throughput, no hardware promises.",
+    "initial": false,
+    "order": 90
+  },
+  {
+    "slug": "photographer-alt-text-vs-caption",
+    "category": "seo",
+    "intent": "Distinguish alt text, captions and stock keywords",
+    "brief": "Same ceramic cup image in three different contexts.",
+    "initial": false,
+    "order": 91
+  },
+  {
+    "slug": "photographer-canonical-urls",
+    "category": "seo",
+    "intent": "Choose canonical portfolio URLs",
+    "brief": "Tracking parameters and duplicate routes do not need extra indexable pages.",
+    "initial": false,
+    "order": 92
+  },
+  {
+    "slug": "photographer-internal-links",
+    "category": "seo",
+    "intent": "Link related portfolio guides usefully",
+    "brief": "Specific next-step articles rather than repeated generic link blocks.",
+    "initial": false,
+    "order": 93
+  },
+  {
+    "slug": "photographer-page-titles",
+    "category": "seo",
+    "intent": "Write clear page titles for a stock workflow blog",
+    "brief": "Match actual question answered, avoid unsupported best claims.",
+    "initial": false,
+    "order": 94
+  },
+  {
+    "slug": "photographer-meta-descriptions",
+    "category": "seo",
+    "intent": "Write useful search descriptions",
+    "brief": "Summarize concrete page value without clickbait or ranking promises.",
+    "initial": false,
+    "order": 95
+  },
+  {
+    "slug": "photographer-search-console-pages",
+    "category": "seo",
+    "intent": "Read indexing reports without panic",
+    "brief": "Submitted versus discovered versus indexed pages and waiting for data.",
+    "initial": false,
+    "order": 96
+  },
+  {
+    "slug": "photographer-update-old-guides",
+    "category": "seo",
+    "intent": "Update old metadata guides honestly",
+    "brief": "Verify changed steps and only change modified date when content changes.",
+    "initial": false,
+    "order": 97
+  },
+  {
+    "slug": "stock-blog-content-calendar",
+    "category": "seo",
+    "intent": "Plan a useful stock contributor content calendar",
+    "brief": "Distinct reader questions instead of keyword permutations.",
+    "initial": false,
+    "order": 98
+  },
+  {
+    "slug": "stock-blog-original-examples",
+    "category": "seo",
+    "intent": "Create original worked examples for tutorials",
+    "brief": "Use owned assets or clearly described hypothetical scenes.",
+    "initial": false,
+    "order": 99
+  },
+  {
+    "slug": "stock-blog-search-intent",
+    "category": "seo",
+    "intent": "Match a contributor guide to its search intent",
+    "brief": "Troubleshooting CSV versus choosing a keyword tool; different deliverables.",
+    "initial": false,
+    "order": 100
+  }
+]

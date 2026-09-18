@@ -1,0 +1,25 @@
+[Unit]
+Description=MetaStocker daily multilingual guide publication
+After=docker.service network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=4h
+StartLimitBurst=3
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/metastocker/current/source
+ExecStart=/usr/bin/python3 /opt/metastocker/current/source/seo/publish_daily.py
+TimeoutStartSec=55min
+Restart=on-failure
+RestartSec=30min
+UMask=0077
+Environment=DOCKER_CONFIG=/opt/metastocker/editorial/docker-config
+Nice=10
+IOSchedulingClass=idle
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/opt/metastocker /run/docker.sock
+NoNewPrivileges=true
+StandardOutput=journal
+StandardError=journal

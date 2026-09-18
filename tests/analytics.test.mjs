@@ -97,6 +97,7 @@ test('HTTP authorization, CSRF, privacy exclusions, validation and login rate li
   const base = `http://127.0.0.1:${server.address().port}`;
   const post = (path, body, headers = {}) => fetch(base + path, { method: 'POST', headers: { origin, 'content-type': 'application/json', 'user-agent': 'Chrome/140', ...headers }, body: JSON.stringify(body), redirect: 'manual' });
   assert.equal((await fetch(base + '/admin/api/summary')).status, 401);
+  assert.equal((await fetch(base + '/admin/api/editorial')).status, 401);
   assert.equal((await fetch(base + '/admin/', { redirect: 'manual' })).status, 303);
   assert.equal((await fetch(base + '/admin/assets/admin.js')).status, 401);
   assert.equal((await post('/api/analytics', batch(), { origin: 'https://evil.example' })).status, 403);
@@ -105,6 +106,8 @@ test('HTTP authorization, CSRF, privacy exclusions, validation and login rate li
   const login = await post('/admin/api/login', { password: 'a-test-only-password' });
   assert.equal(login.status, 200); assert.equal(login.headers.get('cache-control'), 'no-store');
   const cookie = login.headers.get('set-cookie').split(';')[0];
+  const editorial = await fetch(base + '/admin/api/editorial', { headers: { cookie } });
+  assert.equal(editorial.status, 200); assert.equal(editorial.headers.get('cache-control'), 'no-store');
   for (const headers of [{ cookie }, { DNT: '1' }, { 'sec-gpc': '1' }, { 'user-agent': 'Googlebot' }]) assert.equal((await post('/api/analytics', batch(), headers)).status, 204);
   const response = await fetch(base + '/admin/api/summary?days=1', { headers: { cookie } });
   assert.equal(response.status, 200); assert.equal((await response.json()).totals.visits, 1);
@@ -117,9 +120,9 @@ test('HTTP authorization, CSRF, privacy exclusions, validation and login rate li
 test('rate limiter resets on expiry', () => { const allow = limiter(2, 1000); assert.ok(allow('ip', 0)); assert.ok(allow('ip', 10)); assert.ok(!allow('ip', 20)); assert.ok(allow('ip', 1000)); });
 
 const trackerSource = readFileSync(new URL('../analytics.js', import.meta.url), 'utf8');
-function tracker({ disabled = false, dnt = false } = {}) {
+function tracker({ disabled = false, dnt = false, page = '/' } = {}) {
   const handlers = {}, sent = [], writes = [];
-  const ctx = { location: { pathname: '/', hostname: 'metastocker.net' }, document: { hidden: false, referrer: 'https://google.com/search?q=secret', addEventListener: (name, fn) => { handlers[name] = fn; } }, navigator: { doNotTrack: dnt ? '1' : '0', sendBeacon: (url, blob) => { sent.push({ url, blob }); return true; } }, localStorage: { getItem: () => disabled ? '1' : null, setItem: (...args) => writes.push(args) }, crypto: { randomUUID }, URL, Blob, Date, setTimeout: () => 1, clearTimeout: () => {}, addEventListener: (name, fn) => { handlers[name] = fn; } };
+  const ctx = { location: { pathname: page, hostname: 'metastocker.net' }, document: { hidden: false, referrer: 'https://google.com/search?q=secret', addEventListener: (name, fn) => { handlers[name] = fn; } }, navigator: { doNotTrack: dnt ? '1' : '0', sendBeacon: (url, blob) => { sent.push({ url, blob }); return true; } }, localStorage: { getItem: () => disabled ? '1' : null, setItem: (...args) => writes.push(args) }, crypto: { randomUUID }, URL, Blob, Date, setTimeout: () => 1, clearTimeout: () => {}, addEventListener: (name, fn) => { handlers[name] = fn; } };
   ctx.window = ctx; vm.runInNewContext(trackerSource, ctx);
   return { ctx, handlers, sent, writes };
 }
@@ -134,4 +137,16 @@ test('tracker creates a new in-memory page ID, strips unrelated props and referr
 test('tracker respects DNT, opt-out and opt-out changes in another tab', () => {
   for (const options of [{ disabled: true }, { dnt: true }]) { const t = tracker(options); t.ctx.MetaStockerStats.event('files_added', { count: 1 }); t.handlers.pagehide(); assert.equal(t.sent.length, 0); }
   const t = tracker(); t.handlers.storage({ key: 'metastocker_stats_disabled', newValue: '1' }); t.handlers.pagehide(); assert.equal(t.sent.length, 0);
+});
+
+test('multilingual blog routes count page views without widening collection to arbitrary paths', async () => {
+  for (const page of ['/blog/ru/', '/blog/ru/stock-csv-filename-mismatch.html', '/blog/topics/seo/', '/blog/ru/page/2/', '/blog/bn/', '/blog/hi/stock-photo-keywords-guide.html', '/blog/bn/topics/metadata/', '/blog/hi/page/2/']) {
+    const t = tracker({ page }); t.handlers.pagehide();
+    assert.equal(t.sent.length, 1);
+    assert.equal(JSON.parse(await t.sent[0].blob.text()).page, page);
+    assert.equal(t.writes.length, 0);
+  }
+  for (const page of ['/admin/', '/blog/private@example.com', '/blog/bn/private@example.com', '/blog/hi/private.jpg', '/private/file.jpg']) {
+    const t = tracker({ page }); t.handlers.pagehide(); assert.equal(t.sent.length, 0);
+  }
 });

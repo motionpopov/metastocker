@@ -1,0 +1,487 @@
+{
+  "slug": "ai-metadata-editor-adobe-shutterstock",
+  "category": "platforms",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-metadata"
+  ],
+  "en": {
+    "title": "Adapt One Metadata Draft for Adobe Stock and Shutterstock",
+    "description": "A practical workflow for turning one potter-and-bowl draft into accurate Adobe Stock and Shutterstock metadata, with priorities and review steps.",
+    "intro": "One image can need two slightly different metadata treatments. Adobe Stock and Shutterstock both need accurate, relevant descriptions, but their limits, category handling, and review expectations are not identical. The safest workflow is to create one restrained English draft from what the image visibly shows, then adapt it for each platform instead of copying a long keyword list everywhere.\n\nThis guide uses a hypothetical example: a potter shaping a clay bowl in a studio. The goal is not to guess the maker’s identity, location, nationality, occupation beyond what is visible, or whether the scene is commercial or editorial. The goal is to describe the subject, action, material, and useful context that a buyer could reasonably recognize. Review every generated field yourself before export or submission.",
+    "sections": [
+      {
+        "heading": "Start with one factual English draft",
+        "paragraphs": [
+          "Write a sentence that describes the visible event rather than a pile of search terms. Begin with the main subject and action, then add material, setting, and composition only when they are actually present. Avoid claims such as handmade by a professional, traditional craft, sustainable production, or local artisan unless you have supporting information.",
+          "For the hypothetical image, a useful base draft is: “Potter shaping a clay bowl on a pottery wheel in a studio.” It identifies the person only by the visible activity, names the object and material, and gives a setting without inventing a place or backstory.",
+          "Keep the draft in English when the target account or marketplace requires English metadata. A Russian explanation of the workflow does not mean the submitted title and keywords should automatically be translated."
+        ],
+        "bullets": [
+          "Describe visible facts, not presumed biography.",
+          "Prefer specific nouns and one clear action.",
+          "Remove decorative adjectives that add no searchable meaning."
+        ],
+        "example": "Base draft: Potter shaping a clay bowl on a pottery wheel in a studio."
+      },
+      {
+        "heading": "Set the title before expanding keywords",
+        "paragraphs": [
+          "The title should read naturally as a description, not as a keyword inventory. Put the strongest identifying information early: subject, action, and main object. A title such as “Potter Shaping a Clay Bowl on a Pottery Wheel” is clearer than “Ceramics Art Craft Handmade Studio Creative.”",
+          "For Adobe Stock, keep the title within the current CSV limit of 70 characters if you plan to use a CSV workflow, and remember that Adobe’s general keyword guidance allows up to 49 keywords. The practical priority is relevance, especially among the first ten terms, rather than filling every available slot.",
+          "For Shutterstock, use an accurate descriptive phrase and tailor it to the individual image. A shorter title-like description can work, but it should still sound like a human description rather than a list of tags."
+        ],
+        "bullets": [
+          "Lead with “potter,” “shaping,” and “clay bowl.”",
+          "Keep “pottery wheel” only if it is visible.",
+          "Do not use “portrait,” “woman,” “man,” or a named identity unless verified."
+        ],
+        "example": "Adobe title draft: Potter shaping a clay bowl on a pottery wheel\nShutterstock description: Potter shaping a clay bowl on a pottery wheel in a studio"
+      },
+      {
+        "heading": "Build a priority-based keyword set",
+        "paragraphs": [
+          "After the title, turn the remaining visible concepts into keywords. Start with the subject and action, then the object and material, then the process, setting, and useful conceptual terms. Do not repeat the same idea through near-duplicates merely to increase the count.",
+          "A disciplined list might include potter, pottery, shaping, clay, bowl, pottery wheel, ceramics, ceramic art, craft, handmade, studio, artisan, making, vessel, workshop, creative process, and craftsmanship. “Handmade” is reasonable only when the image shows the object being made; it should not become a claim about the seller or product origin.",
+          "For Adobe, place the most important terms first and keep the total conservative. For Shutterstock, use 7 to 50 relevant keywords, include at least one appropriate category, and remove terms that do not fit this particular frame. The same order can be a starting point, but it is not a reason to skip platform review."
+        ],
+        "bullets": [
+          "Priority 1: subject and action.",
+          "Priority 2: object, material, and process.",
+          "Priority 3: setting and restrained concepts.",
+          "Delete irrelevant or repeated terms before export."
+        ],
+        "example": "Priority order: potter, shaping, clay bowl, pottery wheel, pottery, ceramics, craft, handmade, studio, vessel, workshop, making, ceramic art, craftsmanship."
+      },
+      {
+        "heading": "Worked example: Adobe Stock variant",
+        "paragraphs": [
+          "Imagine the visible frame shows both hands shaping a round, unfinished bowl on a wheel. The wheel, clay, and studio work surface are visible; no sign identifies the person or location. The Adobe version should therefore stay concrete and front-load the strongest terms.",
+          "A practical variant is: title “Potter Shaping a Clay Bowl on a Pottery Wheel.” Keywords can begin with “potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship.” Add only further terms that the image supports. Check the title and keyword language against the contributor account, then inspect the fields in the contributor portal after any import.",
+          "If you use a CSV, the filename must match the uploaded asset exactly, including extension and case. Upload the assets first, then import the CSV. Treat the result as a draft to inspect, not as proof of acceptance. The portal and current contributor instructions remain the final authority."
+        ],
+        "bullets": [
+          "Use a readable title within the current Adobe CSV limit.",
+          "Keep the first ten keywords especially strong.",
+          "Inspect the imported row before exporting or submitting."
+        ],
+        "example": "Adobe variant\nTitle: Potter Shaping a Clay Bowl on a Pottery Wheel\nKeywords: potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship"
+      },
+      {
+        "heading": "Worked example: Shutterstock variant",
+        "paragraphs": [
+          "Use the same facts, but review the result against Shutterstock’s contextual metadata expectations. The description should remain a sentence or natural phrase, and the keywords should be specific to this image rather than inherited from a batch.",
+          "Variant description: “Potter shaping a clay bowl on a pottery wheel in a studio.” Variant keywords: “potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship.” Choose at least one category that matches the current submission interface. Do not add a documentary date or location unless those details are verified and the work is being handled under the relevant editorial rules.",
+          "The two variants look similar because the underlying image facts have not changed. That is a good outcome: platform adaptation should clarify compliance and priorities, not manufacture extra concepts. Before submission, check the current contributor portal because policies and interface requirements can change."
+        ],
+        "bullets": [
+          "Keep the description natural and factual.",
+          "Use 7–50 relevant keywords.",
+          "Review category selection and remove batch-only terms."
+        ],
+        "example": "Shutterstock variant\nDescription: Potter shaping a clay bowl on a pottery wheel in a studio.\nKeywords: potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship"
+      },
+      {
+        "heading": "Use local generation as a draft assistant",
+        "paragraphs": [
+          "A local metadata generator can help turn the image into editable Adobe or Shutterstock rows, but generation does not replace judgment. In MetaStocker’s local mode, the model runs in the visitor’s browser after the selected model is downloaded and loaded; model memory is different from browser cache. The first download needs internet, and local inference is not a cloud fallback.",
+          "Give a mixed batch only facts that apply to every file. For varied pottery images, write separate context or review each row individually. Extra tags can be useful, but a requested tag count is not evidence that every tag is accurate. For video, inspect the full motion because sampled previews may miss important details.",
+          "Keep only ready rows, edit doubtful claims, and export after review. The exporter does not upload or submit files, embed metadata into originals, or guarantee acceptance. If you choose an optional personal API mode, treat the key as secret and understand that previews and context are sent to OpenAI."
+        ],
+        "bullets": [
+          "Use generation for a first draft, not final approval.",
+          "Review every title, keyword, and category per file.",
+          "Keep original files and exported metadata as separate workflow items."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Write one factual English draft from visible content.",
+      "Put subject and action first in each title.",
+      "Keep Adobe titles within the current CSV limit when using CSV.",
+      "Prioritize Adobe’s first ten keywords and stay within a conservative 49-keyword maximum.",
+      "Give Shutterstock 7–50 relevant keywords and an appropriate category.",
+      "Remove identities, locations, dates, and claims that are not verified.",
+      "Inspect imported or generated metadata in the relevant contributor portal.",
+      "Check current Adobe and Shutterstock contributor requirements before submission."
+    ],
+    "illustration": {
+      "title": "One draft, two platform reviews",
+      "steps": [
+        {
+          "label": "Describe visible facts",
+          "detail": "Write one English sentence about the potter, bowl, action, and setting."
+        },
+        {
+          "label": "Adapt each row",
+          "detail": "Apply Adobe priorities and Shutterstock keyword and category checks."
+        },
+        {
+          "label": "Inspect before sending",
+          "detail": "Edit every field, verify filenames, then submit only ready metadata."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как адаптировать метаданные для Adobe Stock и Shutterstock",
+    "description": "Практическая схема для одного снимка с гончаром: английский черновик, приоритеты Adobe Stock и Shutterstock и две версии метаданных.",
+    "intro": "Одному изображению не обязательно подходят две полностью одинаковые карточки. Adobe Stock и Shutterstock требуют точного описания, но ограничения, категории и этапы проверки отличаются. Поэтому разумно сначала составить короткий английский черновик по видимым фактам, а затем отдельно проверить его для каждой площадки.\n\nНиже используется гипотетический пример: гончар формирует глиняную чашу в студии. Мы не угадываем личность человека, его профессию за пределами видимого действия, место съёмки, происхождение изделия или редакционный статус. Практическая цель — описать объект, действие, материал и контекст, которые действительно распознаются на кадре. Любой сгенерированный текст нужно проверить до экспорта или отправки.",
+    "sections": [
+      {
+        "heading": "Начните с одного фактического английского черновика",
+        "paragraphs": [
+          "Составьте предложение, а не длинный список поисковых слов. Сначала назовите главный объект и действие, затем добавьте материал, обстановку и композицию, только если они видны. Не пишите “профессиональный мастер”, “традиционное ремесло”, “экологичное производство” или “местный artisan” без подтверждённых сведений.",
+          "Для нашего примера подходит фраза: “Potter shaping a clay bowl on a pottery wheel in a studio.” В ней есть видимое действие, объект, материал и обстановка, но нет выдуманной биографии или географии.",
+          "Русский язык этой статьи не означает, что метаданные нужно переводить на русский. Если требования аккаунта или площадки предполагают английский, заголовок, описание и ключевые слова оставляйте на английском."
+        ],
+        "bullets": [
+          "Описывайте видимое, а не предполагаемую биографию.",
+          "Используйте конкретные существительные и одно ясное действие.",
+          "Убирайте рекламные прилагательные без поисковой пользы."
+        ],
+        "example": "Базовый черновик: Potter shaping a clay bowl on a pottery wheel in a studio."
+      },
+      {
+        "heading": "Сначала определите стиль заголовка",
+        "paragraphs": [
+          "Заголовок должен звучать как нормальное описание, а не как набор тегов. Сильная структура — субъект, действие, главный объект. “Potter Shaping a Clay Bowl on a Pottery Wheel” лучше, чем “Ceramics Art Craft Handmade Studio Creative”.",
+          "Для Adobe Stock, если вы готовите CSV, учитывайте текущий лимит заголовка в 70 символов. Общая инструкция Adobe допускает до 49 ключевых слов; на практике важнее точность и особенно первые десять, чем заполнение всех полей.",
+          "Для Shutterstock описание должно быть точной фразой или предложением. Не превращайте его в перечень ключевых слов. Если кадр показывает колесо, его можно назвать; если оно обрезано или неразличимо, удалите этот термин."
+        ],
+        "bullets": [
+          "Ставьте в начало “potter”, “shaping” и “clay bowl”.",
+          "Оставляйте “pottery wheel” только при видимом подтверждении.",
+          "Не добавляйте пол или имя человека без проверки."
+        ],
+        "example": "Adobe: Potter Shaping a Clay Bowl on a Pottery Wheel\nShutterstock: Potter shaping a clay bowl on a pottery wheel in a studio"
+      },
+      {
+        "heading": "Соберите ключевые слова по приоритету",
+        "paragraphs": [
+          "После заголовка расширьте описание терминами, которые видны или непосредственно следуют из сцены. Сначала идут субъект и действие, затем объект, материал и процесс; после них — студия и умеренные концептуальные слова. Близкие повторы не делают список точнее.",
+          "Для примера возможен такой набор: potter, pottery, shaping, clay, bowl, pottery wheel, ceramics, ceramic art, craft, handmade, studio, vessel, workshop, making, creative process, craftsmanship. Слово “handmade” здесь связано с видимым изготовлением, а не с заявлением о происхождении товара или продавце.",
+          "В Adobe расположите главные термины в начале и придерживайтесь консервативного максимума. В Shutterstock используйте от 7 до 50 релевантных слов и выберите хотя бы одну подходящую категорию. Один и тот же порядок можно взять за основу, но финальная проверка должна быть отдельной."
+        ],
+        "bullets": [
+          "Приоритет 1: субъект и действие.",
+          "Приоритет 2: объект, материал и процесс.",
+          "Приоритет 3: обстановка и сдержанные понятия.",
+          "Удаляйте нерелевантные и повторяющиеся термины."
+        ],
+        "example": "Порядок приоритета: potter, shaping, clay bowl, pottery wheel, pottery, ceramics, craft, handmade, studio, vessel, workshop, making, ceramic art, craftsmanship."
+      },
+      {
+        "heading": "Разбор примера: вариант для Adobe Stock",
+        "paragraphs": [
+          "Предположим, на кадре видны обе руки, круглая незавершённая чаша, глина и гончарный круг. Название человека или места отсутствует. Поэтому версия Adobe должна начинаться с самых распознаваемых терминов и не добавлять историю, которой нет в изображении.",
+          "Рабочий вариант: заголовок “Potter Shaping a Clay Bowl on a Pottery Wheel”. Ключевые слова можно начать так: “potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship”. Добавляйте новые слова только при визуальной опоре. Проверьте язык метаданных по настройкам аккаунта и осмотрите поля в портале после импорта.",
+          "Если используете CSV, имя файла должно полностью совпадать с загруженным файлом, включая расширение и регистр. Сначала загрузите изображения, затем импортируйте CSV. Результат импорта — черновик для проверки, а не гарантия принятия."
+        ],
+        "bullets": [
+          "Соблюдайте текущий лимит Adobe для заголовка в CSV.",
+          "Особенно внимательно проверьте первые десять ключевых слов.",
+          "Осмотрите импортированную строку в портале."
+        ],
+        "example": "Вариант Adobe\nTitle: Potter Shaping a Clay Bowl on a Pottery Wheel\nKeywords: potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship"
+      },
+      {
+        "heading": "Разбор примера: вариант для Shutterstock",
+        "paragraphs": [
+          "Для Shutterstock оставьте те же подтверждённые факты, но заново проверьте контекстные метаданные. Описание должно быть естественным, а ключевые слова — относиться именно к этому кадру, а не к целой серии разных фотографий.",
+          "Вариант описания: “Potter shaping a clay bowl on a pottery wheel in a studio.” Вариант ключевых слов: “potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship.” Выберите подходящую категорию в текущем интерфейсе. Дату и место не добавляйте без проверки; правила для документальных редакционных подписей нельзя автоматически переносить на коммерческую работу.",
+          "Похожесть двух вариантов — хороший результат: изображение содержит одни и те же факты. Адаптация нужна для проверки формата и приоритетов, а не для искусственного расширения списка. Перед отправкой откройте актуальные требования портала, поскольку правила и интерфейс могут меняться."
+        ],
+        "bullets": [
+          "Пишите естественное и точное описание.",
+          "Используйте от 7 до 50 релевантных ключевых слов.",
+          "Проверьте категорию и удалите слова, пришедшие из другой серии."
+        ],
+        "example": "Вариант Shutterstock\nDescription: Potter shaping a clay bowl on a pottery wheel in a studio.\nKeywords: potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship"
+      },
+      {
+        "heading": "Используйте локальную генерацию как черновик",
+        "paragraphs": [
+          "Локальный генератор помогает получить редактируемые строки для Adobe или Shutterstock, но не заменяет решение автора. В локальном режиме MetaStocker модель работает в браузере после скачивания и загрузки; память загруженной модели — не то же самое, что кэш браузера. Для первой загрузки нужен интернет, а автоматического облачного перехода нет.",
+          "В описание пакетной обработки помещайте только факты, общие для всех файлов. Если в серии разные гончарные сцены, проверяйте каждую строку отдельно. Дополнительные теги нужно оценивать по релевантности. Запрошенное число тегов подтверждает количество, но не точность. Для видео просматривайте весь ролик: выборочные превью могут пропустить важную деталь.",
+          "Оставляйте только готовые строки и экспортируйте после редактирования. Экспортёр не загружает и не отправляет материалы, не встраивает метаданные в оригиналы и не гарантирует принятие. При использовании личного режима OpenAI храните API-ключ в секрете и учитывайте, что превью и контекст передаются OpenAI."
+        ],
+        "bullets": [
+          "Считайте генерацию первым черновиком.",
+          "Проверяйте каждый заголовок, тег и категорию отдельно.",
+          "Храните оригиналы и экспортированные метаданные раздельно."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Составьте один фактический английский черновик.",
+      "Поставьте субъект и действие в начало заголовка.",
+      "При CSV для Adobe соблюдайте текущий лимит заголовка.",
+      "Для Adobe расставьте приоритеты в первых десяти словах и придерживайтесь консервативного максимума 49.",
+      "Для Shutterstock используйте 7–50 релевантных ключевых слов и категорию.",
+      "Удалите неподтверждённые личности, места, даты и свойства.",
+      "Проверьте сгенерированные или импортированные поля в портале.",
+      "Перед отправкой откройте актуальные требования Adobe Stock и Shutterstock."
+    ],
+    "illustration": {
+      "title": "Один черновик, две проверки",
+      "steps": [
+        {
+          "label": "Опишите видимые факты",
+          "detail": "Составьте английскую фразу о гончаре, чаше, действии и обстановке."
+        },
+        {
+          "label": "Адаптируйте строки",
+          "detail": "Проверьте приоритеты Adobe и теги с категорией Shutterstock."
+        },
+        {
+          "label": "Проверьте перед отправкой",
+          "detail": "Исправьте поля, сверьте имена файлов и отправьте готовые данные."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "Adobe Stock ও Shutterstock-এর জন্য এক মেটাডেটা খসড়া মানিয়ে নিন",
+    "description": "একটি কুমোর ও বাটির খসড়া থেকে নির্ভুল Adobe Stock ও Shutterstock মেটাডেটা তৈরির ব্যবহারিক কর্মপদ্ধতি, অগ্রাধিকার ও পর্যালোচনার ধাপ।",
+    "intro": "একটি ছবির জন্য দুটি সামান্য ভিন্ন মেটাডেটা প্রয়োজন হতে পারে। Adobe Stock এবং Shutterstock—উভয়েরই নির্ভুল ও প্রাসঙ্গিক বর্ণনা দরকার, কিন্তু তাদের সীমা, বিভাগ ব্যবস্থাপনা এবং পর্যালোচনার প্রত্যাশা এক নয়। সবচেয়ে নিরাপদ কর্মপদ্ধতি হলো ছবিতে দৃশ্যমান বিষয় থেকে একটি সংযত ইংরেজি খসড়া তৈরি করা, তারপর সর্বত্র দীর্ঘ কীওয়ার্ড তালিকা কপি না করে প্রতিটি প্ল্যাটফর্মের জন্য সেটি মানিয়ে নেওয়া।\n\nএই নির্দেশিকায় একটি কাল্পনিক উদাহরণ ব্যবহার করা হয়েছে: স্টুডিওতে মাটির বাটি তৈরি করছেন একজন কুমোর। লক্ষ্য হলো নির্মাতার পরিচয়, স্থান, জাতীয়তা, দৃশ্যমান তথ্যের অতিরিক্ত পেশা, অথবা দৃশ্যটি বাণিজ্যিক নাকি সম্পাদকীয়—এসব অনুমান করা নয়। লক্ষ্য হলো এমন বিষয়, কাজ, উপাদান এবং কার্যকর প্রেক্ষাপট বর্ণনা করা, যা একজন ক্রেতা যুক্তিসঙ্গতভাবে শনাক্ত করতে পারেন। রপ্তানি বা জমা দেওয়ার আগে প্রতিটি তৈরি করা ঘর নিজে পর্যালোচনা করুন।",
+    "sections": [
+      {
+        "heading": "একটি তথ্যভিত্তিক ইংরেজি খসড়া দিয়ে শুরু করুন",
+        "paragraphs": [
+          "অনুসন্ধান-শব্দের স্তূপ না বানিয়ে দৃশ্যমান ঘটনাটি বর্ণনা করে একটি বাক্য লিখুন। প্রধান বিষয় ও কাজ দিয়ে শুরু করুন, তারপর উপাদান, পরিবেশ এবং বিন্যাস কেবল তখনই যোগ করুন, যখন সেগুলো সত্যিই উপস্থিত। সহায়ক তথ্য না থাকলে পেশাদার হাতে তৈরি, ঐতিহ্যবাহী কারুশিল্প, টেকসই উৎপাদন বা স্থানীয় কারিগর—এ ধরনের দাবি এড়িয়ে চলুন।",
+          "কাল্পনিক ছবিটির জন্য একটি কার্যকর ভিত্তি-খসড়া হলো: “Potter shaping a clay bowl on a pottery wheel in a studio.” এটি দৃশ্যমান কাজের ভিত্তিতে ব্যক্তিকে শনাক্ত করে, বস্তু ও উপাদানের নাম দেয় এবং কোনো স্থান বা অতীতকথা না বানিয়ে পরিবেশ জানায়।",
+          "লক্ষ্য অ্যাকাউন্ট বা মার্কেটপ্লেসে ইংরেজি মেটাডেটা প্রয়োজন হলে খসড়াটি ইংরেজিতেই রাখুন। কর্মপদ্ধতির ব্যাখ্যা রুশ ভাষায় লেখা আছে বলে জমা দেওয়া শিরোনাম ও কীওয়ার্ড স্বয়ংক্রিয়ভাবে অনুবাদ করতে হবে—এমন নয়।"
+        ],
+        "bullets": [
+          "অনুমান করা জীবনী নয়, দৃশ্যমান তথ্য বর্ণনা করুন।",
+          "নির্দিষ্ট বিশেষ্য এবং একটি স্পষ্ট কাজকে অগ্রাধিকার দিন।",
+          "অনুসন্ধানে কোনো অর্থ যোগ করে না—এমন অলংকারমূলক বিশেষণ বাদ দিন।"
+        ],
+        "example": "ভিত্তি-খসড়া: Potter shaping a clay bowl on a pottery wheel in a studio."
+      },
+      {
+        "heading": "কীওয়ার্ড বাড়ানোর আগে শিরোনাম নির্ধারণ করুন",
+        "paragraphs": [
+          "শিরোনামটি কীওয়ার্ডের তালিকা নয়, স্বাভাবিক বর্ণনার মতো পড়া উচিত। সবচেয়ে গুরুত্বপূর্ণ পরিচয়-তথ্য আগে রাখুন: বিষয়, কাজ এবং প্রধান বস্তু। “Potter Shaping a Clay Bowl on a Pottery Wheel” শিরোনামটি “Ceramics Art Craft Handmade Studio Creative”-এর চেয়ে স্পষ্ট।",
+          "Adobe Stock-এর জন্য CSV কর্মপদ্ধতি ব্যবহার করলে শিরোনামটি বর্তমান 70 অক্ষরের সীমার মধ্যে রাখুন এবং মনে রাখুন, Adobe-এর সাধারণ কীওয়ার্ড নির্দেশিকায় সর্বোচ্চ 49টি কীওয়ার্ডের অনুমতি আছে। বাস্তব অগ্রাধিকার হলো প্রাসঙ্গিকতা, বিশেষ করে প্রথম দশটি শব্দে; প্রতিটি খালি স্থান পূরণ করা নয়।",
+          "Shutterstock-এর জন্য নির্ভুল বর্ণনামূলক বাক্যাংশ ব্যবহার করুন এবং প্রতিটি ছবির সঙ্গে মানিয়ে নিন। ছোট শিরোনামধর্মী বর্ণনাও চলতে পারে, তবে সেটি ট্যাগের তালিকা নয়, মানুষের স্বাভাবিক বর্ণনার মতো শোনানো উচিত।"
+        ],
+        "bullets": [
+          "“potter”, “shaping” এবং “clay bowl” দিয়ে শুরু করুন।",
+          "“pottery wheel” কেবল দৃশ্যমান হলে রাখুন।",
+          "যাচাই না করা পর্যন্ত “portrait”, “woman”, “man” বা কোনো নামযুক্ত পরিচয় ব্যবহার করবেন না।"
+        ],
+        "example": "Adobe শিরোনামের খসড়া: Potter shaping a clay bowl on a pottery wheel\nShutterstock বর্ণনা: Potter shaping a clay bowl on a pottery wheel in a studio"
+      },
+      {
+        "heading": "অগ্রাধিকারভিত্তিক কীওয়ার্ড সেট তৈরি করুন",
+        "paragraphs": [
+          "শিরোনামের পর দৃশ্যমান অবশিষ্ট ধারণাগুলোকে কীওয়ার্ডে রূপান্তর করুন। প্রথমে বিষয় ও কাজ, তারপর বস্তু ও উপাদান, এরপর প্রক্রিয়া, পরিবেশ এবং সংযত ধারণাগত শব্দ রাখুন। সংখ্যা বাড়ানোর জন্য কাছাকাছি অর্থের পুনরাবৃত্তি করবেন না।",
+          "একটি নিয়ন্ত্রিত তালিকায় potter, pottery, shaping, clay, bowl, pottery wheel, ceramics, ceramic art, craft, handmade, studio, artisan, making, vessel, workshop, creative process এবং craftsmanship থাকতে পারে। “Handmade” কেবল তখনই যুক্তিসঙ্গত, যখন ছবিতে বস্তুটি তৈরি হতে দেখা যায়; এটি বিক্রেতা বা পণ্যের উৎস সম্পর্কে দাবি হওয়া উচিত নয়।",
+          "Adobe-এর জন্য সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো আগে রাখুন এবং মোট সংখ্যা সংযত রাখুন। Shutterstock-এর জন্য 7 থেকে 50টি প্রাসঙ্গিক কীওয়ার্ড ব্যবহার করুন, অন্তত একটি উপযুক্ত বিভাগ যোগ করুন এবং এই নির্দিষ্ট ফ্রেমের সঙ্গে না-মেলা শব্দ বাদ দিন। একই ক্রম শুরুর ভিত্তি হতে পারে, কিন্তু প্ল্যাটফর্ম পর্যালোচনা বাদ দেওয়ার কারণ নয়।"
+        ],
+        "bullets": [
+          "অগ্রাধিকার 1: বিষয় ও কাজ।",
+          "অগ্রাধিকার 2: বস্তু, উপাদান ও প্রক্রিয়া।",
+          "অগ্রাধিকার 3: পরিবেশ ও সংযত ধারণা।",
+          "রপ্তানির আগে অপ্রাসঙ্গিক বা পুনরাবৃত্ত শব্দ মুছে দিন।"
+        ],
+        "example": "অগ্রাধিকারের ক্রম: potter, shaping, clay bowl, pottery wheel, pottery, ceramics, craft, handmade, studio, vessel, workshop, making, ceramic art, craftsmanship."
+      },
+      {
+        "heading": "কাজের উদাহরণ: Adobe Stock সংস্করণ",
+        "paragraphs": [
+          "ধরুন দৃশ্যমান ফ্রেমে চাকার ওপর গোল, অসমাপ্ত একটি বাটি দুই হাতে তৈরি করা হচ্ছে। চাকা, মাটি এবং স্টুডিওর কাজের পৃষ্ঠ দৃশ্যমান; কোনো চিহ্নে ব্যক্তি বা স্থান শনাক্ত হয় না। তাই Adobe সংস্করণটি বাস্তব তথ্যনির্ভর থাকবে এবং সবচেয়ে শক্তিশালী শব্দগুলো শুরুতেই রাখবে।",
+          "একটি ব্যবহারিক সংস্করণ হলো: শিরোনাম “Potter Shaping a Clay Bowl on a Pottery Wheel।” কীওয়ার্ড শুরু হতে পারে “potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship।” ছবির সমর্থন আছে এমন অতিরিক্ত শব্দই কেবল যোগ করুন। অবদানকারী অ্যাকাউন্টের সঙ্গে শিরোনাম ও কীওয়ার্ডের ভাষা মিলিয়ে দেখুন, তারপর যেকোনো আমদানির পরে অবদানকারী পোর্টালে ঘরগুলো পরীক্ষা করুন।",
+          "CSV ব্যবহার করলে ফাইলের নাম আপলোড করা সম্পদের সঙ্গে হুবহু মিলতে হবে, এক্সটেনশন ও বড়-ছোট অক্ষরসহ। আগে সম্পদ আপলোড করুন, তারপর CSV আমদানি করুন। ফলাফলকে পরীক্ষা করার মতো খসড়া হিসেবে দেখুন, গ্রহণযোগ্যতার প্রমাণ হিসেবে নয়। পোর্টাল এবং বর্তমান অবদানকারী নির্দেশনাই চূড়ান্ত কর্তৃপক্ষ।"
+        ],
+        "bullets": [
+          "বর্তমান Adobe CSV সীমার মধ্যে পাঠযোগ্য শিরোনাম রাখুন।",
+          "প্রথম দশটি কীওয়ার্ড বিশেষভাবে শক্তিশালী রাখুন।",
+          "রপ্তানি বা জমা দেওয়ার আগে আমদানি করা সারিটি পরীক্ষা করুন।"
+        ],
+        "example": "Adobe সংস্করণ\nশিরোনাম: Potter Shaping a Clay Bowl on a Pottery Wheel\nকীওয়ার্ড: potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship"
+      },
+      {
+        "heading": "কাজের উদাহরণ: Shutterstock সংস্করণ",
+        "paragraphs": [
+          "একই তথ্য ব্যবহার করুন, কিন্তু ফলাফলটি Shutterstock-এর প্রাসঙ্গিক মেটাডেটা প্রত্যাশার সঙ্গে মিলিয়ে দেখুন। বর্ণনাটি একটি বাক্য বা স্বাভাবিক বাক্যাংশ থাকবে এবং কীওয়ার্ডগুলো কোনো ব্যাচ থেকে উত্তরাধিকারসূত্রে নেওয়া নয়, এই ছবির জন্য নির্দিষ্ট হবে।",
+          "সংস্করণ বর্ণনা: “Potter shaping a clay bowl on a pottery wheel in a studio।” সংস্করণ কীওয়ার্ড: “potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship।” বর্তমান জমা দেওয়ার ইন্টারফেসের সঙ্গে মেলে এমন অন্তত একটি বিভাগ বেছে নিন। যাচাই করা না থাকলে এবং প্রাসঙ্গিক সম্পাদকীয় নিয়মে কাজটি পরিচালিত না হলে কোনো নথিভুক্ত তারিখ বা স্থান যোগ করবেন না।",
+          "দুটি সংস্করণ দেখতে একই রকম, কারণ অন্তর্নিহিত ছবির তথ্য বদলায়নি। এটি ভালো ফল: প্ল্যাটফর্মে মানিয়ে নেওয়া মানে নিয়ম মেনে চলা ও অগ্রাধিকার স্পষ্ট করা, অতিরিক্ত ধারণা বানানো নয়। জমা দেওয়ার আগে বর্তমান অবদানকারী পোর্টাল পরীক্ষা করুন, কারণ নীতি ও ইন্টারফেসের প্রয়োজনীয়তা বদলাতে পারে।"
+        ],
+        "bullets": [
+          "বর্ণনা স্বাভাবিক ও তথ্যভিত্তিক রাখুন।",
+          "7–50টি প্রাসঙ্গিক কীওয়ার্ড ব্যবহার করুন।",
+          "বিভাগ নির্বাচন পর্যালোচনা করুন এবং শুধু ব্যাচে ব্যবহৃত শব্দ বাদ দিন।"
+        ],
+        "example": "Shutterstock সংস্করণ\nবর্ণনা: Potter shaping a clay bowl on a pottery wheel in a studio.\nকীওয়ার্ড: potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship"
+      },
+      {
+        "heading": "স্থানীয় তৈরি-ব্যবস্থাকে খসড়া সহকারী হিসেবে ব্যবহার করুন",
+        "paragraphs": [
+          "একটি স্থানীয় মেটাডেটা জেনারেটর ছবিকে সম্পাদনাযোগ্য Adobe বা Shutterstock সারিতে রূপান্তরে সাহায্য করতে পারে, কিন্তু তৈরি করা ফলাফল বিচারবুদ্ধির বিকল্প নয়। MetaStocker-এর স্থানীয় মোডে নির্বাচিত মডেল ডাউনলোড ও লোড করার পর মডেলটি দর্শকের ব্রাউজারে চলে; মডেলের মেমরি ব্রাউজার ক্যাশ থেকে আলাদা। প্রথম ডাউনলোডের জন্য ইন্টারনেট দরকার, এবং স্থানীয় ইনফারেন্স ক্লাউডের বিকল্প নয়।",
+          "মিশ্র ব্যাচে এমন তথ্যই দিন, যা প্রতিটি ফাইলের ক্ষেত্রে প্রযোজ্য। বিভিন্ন ধরনের মাটির কাজের ছবির জন্য আলাদা প্রেক্ষাপট লিখুন অথবা প্রতিটি সারি আলাদাভাবে পর্যালোচনা করুন। অতিরিক্ত ট্যাগ কাজে লাগতে পারে, কিন্তু চাওয়া ট্যাগের সংখ্যা প্রতিটি ট্যাগ নির্ভুল—এর প্রমাণ নয়। ভিডিওর ক্ষেত্রে সম্পূর্ণ চলমান দৃশ্য পরীক্ষা করুন, কারণ নমুনাভিত্তিক প্রিভিউ গুরুত্বপূর্ণ বিবরণ বাদ দিতে পারে।",
+          "শুধু প্রস্তুত সারি রাখুন, সন্দেহজনক দাবি সম্পাদনা করুন এবং পর্যালোচনার পরে রপ্তানি করুন। রপ্তানিকারক ফাইল আপলোড বা জমা দেয় না, মূল ফাইলে মেটাডেটা সংযুক্ত করে না এবং গ্রহণযোগ্যতার নিশ্চয়তা দেয় না। ঐচ্ছিক ব্যক্তিগত API মোড বেছে নিলে কীটি গোপন রাখুন এবং বুঝে নিন যে প্রিভিউ ও প্রেক্ষাপট OpenAI-তে পাঠানো হয়।"
+        ],
+        "bullets": [
+          "তৈরি-ব্যবস্থাকে প্রথম খসড়ার জন্য ব্যবহার করুন, চূড়ান্ত অনুমোদনের জন্য নয়।",
+          "প্রতিটি ফাইলের প্রতিটি শিরোনাম, কীওয়ার্ড ও বিভাগ পর্যালোচনা করুন।",
+          "মূল ফাইল এবং রপ্তানি করা মেটাডেটাকে কর্মপদ্ধতির আলাদা উপাদান হিসেবে রাখুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "দৃশ্যমান বিষয়বস্তু থেকে একটি তথ্যভিত্তিক ইংরেজি খসড়া লিখুন।",
+      "প্রতিটি শিরোনামে বিষয় ও কাজ আগে রাখুন।",
+      "CSV ব্যবহার করলে Adobe শিরোনাম বর্তমান CSV সীমার মধ্যে রাখুন।",
+      "Adobe-এর প্রথম দশটি কীওয়ার্ডকে অগ্রাধিকার দিন এবং সংযত সর্বোচ্চ 49টি কীওয়ার্ডের সীমার মধ্যে থাকুন।",
+      "Shutterstock-এ 7–50টি প্রাসঙ্গিক কীওয়ার্ড এবং একটি উপযুক্ত বিভাগ দিন।",
+      "যাচাই না করা পরিচয়, স্থান, তারিখ ও দাবি বাদ দিন।",
+      "প্রাসঙ্গিক অবদানকারী পোর্টালে আমদানি করা বা তৈরি করা মেটাডেটা পরীক্ষা করুন।",
+      "জমা দেওয়ার আগে বর্তমান Adobe ও Shutterstock অবদানকারী-সংক্রান্ত প্রয়োজনীয়তা পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "এক খসড়া, দুটি প্ল্যাটফর্ম পর্যালোচনা",
+      "steps": [
+        {
+          "label": "দৃশ্যমান তথ্য বর্ণনা করুন",
+          "detail": "কুমোর, বাটি, কাজ ও পরিবেশ নিয়ে একটি ইংরেজি বাক্য লিখুন।"
+        },
+        {
+          "label": "প্রতিটি সারি মানিয়ে নিন",
+          "detail": "Adobe-এর অগ্রাধিকার এবং Shutterstock-এর কীওয়ার্ড ও বিভাগ পরীক্ষা প্রয়োগ করুন।"
+        },
+        {
+          "label": "পাঠানোর আগে পরীক্ষা করুন",
+          "detail": "প্রতিটি ঘর সম্পাদনা করুন, ফাইলের নাম যাচাই করুন, তারপর প্রস্তুত মেটাডেটাই জমা দিন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "Adobe Stock और Shutterstock के लिए एक मेटाडेटा मसौदा ढालें",
+    "description": "एक कुम्हार और कटोरे के मसौदे से सटीक Adobe Stock और Shutterstock मेटाडेटा बनाने की व्यावहारिक कार्यप्रणाली, प्राथमिकताओं और समीक्षा चरणों सहित।",
+    "intro": "एक तस्वीर के लिए दो थोड़े अलग मेटाडेटा उपचारों की आवश्यकता हो सकती है। Adobe Stock और Shutterstock दोनों को सटीक, प्रासंगिक विवरण चाहिए, लेकिन उनकी सीमाएँ, श्रेणी-प्रबंधन और समीक्षा अपेक्षाएँ समान नहीं हैं। सबसे सुरक्षित कार्यप्रणाली यह है कि तस्वीर में स्पष्ट रूप से दिखने वाली चीज़ों से एक संयत अंग्रेज़ी मसौदा बनाएँ, फिर हर प्लेटफ़ॉर्म के लिए उसे ढालें, बजाय इसके कि हर जगह लंबी कीवर्ड सूची की नकल करें।\n\nयह मार्गदर्शिका एक काल्पनिक उदाहरण का उपयोग करती है: स्टूडियो में मिट्टी का कटोरा आकार देता एक कुम्हार। लक्ष्य निर्माता की पहचान, स्थान, राष्ट्रीयता, दिखाई देने वाली जानकारी से आगे का पेशा, या दृश्य वाणिज्यिक है या संपादकीय—इनमें से किसी का अनुमान लगाना नहीं है। लक्ष्य विषय, क्रिया, सामग्री और ऐसा उपयोगी संदर्भ बताना है जिसे खरीदार उचित रूप से पहचान सके। निर्यात या जमा करने से पहले हर बनाए गए फ़ील्ड की स्वयं समीक्षा करें।",
+    "sections": [
+      {
+        "heading": "एक तथ्यात्मक अंग्रेज़ी मसौदे से शुरू करें",
+        "paragraphs": [
+          "खोज-शब्दों का ढेर बनाने के बजाय दिखाई देने वाली घटना का वर्णन करने वाला वाक्य लिखें। मुख्य विषय और क्रिया से शुरू करें, फिर सामग्री, परिवेश और संरचना केवल तभी जोड़ें जब वे वास्तव में मौजूद हों। सहायक जानकारी के बिना पेशेवर द्वारा हाथ से बनाया गया, पारंपरिक शिल्प, टिकाऊ उत्पादन या स्थानीय कारीगर जैसे दावे न करें।",
+          "काल्पनिक तस्वीर के लिए उपयोगी आधार मसौदा है: “Potter shaping a clay bowl on a pottery wheel in a studio.” यह व्यक्ति की पहचान केवल दिखाई देने वाली गतिविधि से करता है, वस्तु और सामग्री का नाम देता है और कोई स्थान या पिछली कहानी गढ़े बिना परिवेश बताता है।",
+          "यदि लक्षित खाता या बाज़ार अंग्रेज़ी मेटाडेटा माँगता है तो मसौदा अंग्रेज़ी में ही रखें। कार्यप्रणाली की व्याख्या रूसी में होने का अर्थ यह नहीं है कि जमा किया गया शीर्षक और कीवर्ड अपने-आप अनुवादित किए जाएँ।"
+        ],
+        "bullets": [
+          "मानी हुई जीवनी नहीं, दिखाई देने वाले तथ्य बताएँ।",
+          "विशिष्ट संज्ञाओं और एक स्पष्ट क्रिया को प्राथमिकता दें।",
+          "ऐसे सजावटी विशेषण हटाएँ जो खोजने योग्य कोई अर्थ नहीं जोड़ते।"
+        ],
+        "example": "आधार मसौदा: Potter shaping a clay bowl on a pottery wheel in a studio."
+      },
+      {
+        "heading": "कीवर्ड बढ़ाने से पहले शीर्षक तय करें",
+        "paragraphs": [
+          "शीर्षक स्वाभाविक विवरण जैसा पढ़ा जाना चाहिए, कीवर्ड सूची जैसा नहीं। सबसे मजबूत पहचान-सूचना पहले रखें: विषय, क्रिया और मुख्य वस्तु। “Potter Shaping a Clay Bowl on a Pottery Wheel” शीर्षक “Ceramics Art Craft Handmade Studio Creative” से अधिक स्पष्ट है।",
+          "Adobe Stock के लिए, यदि आप CSV कार्यप्रणाली इस्तेमाल करने वाले हैं तो शीर्षक को वर्तमान 70 अक्षरों की सीमा में रखें और याद रखें कि Adobe की सामान्य कीवर्ड मार्गदर्शिका अधिकतम 49 कीवर्ड की अनुमति देती है। व्यावहारिक प्राथमिकता प्रासंगिकता है, विशेषकर पहले दस शब्दों में, हर उपलब्ध स्थान भरना नहीं।",
+          "Shutterstock के लिए सटीक वर्णनात्मक वाक्यांश इस्तेमाल करें और उसे व्यक्तिगत तस्वीर के अनुसार ढालें। छोटा शीर्षक-जैसा विवरण चल सकता है, लेकिन उसे टैगों की सूची के बजाय मानवीय विवरण जैसा सुनाई देना चाहिए।"
+        ],
+        "bullets": [
+          "“potter”, “shaping” और “clay bowl” से शुरुआत करें।",
+          "“pottery wheel” केवल तभी रखें जब वह दिखाई दे।",
+          "सत्यापित न होने तक “portrait”, “woman”, “man” या किसी नामित पहचान का उपयोग न करें।"
+        ],
+        "example": "Adobe शीर्षक मसौदा: Potter shaping a clay bowl on a pottery wheel\nShutterstock विवरण: Potter shaping a clay bowl on a pottery wheel in a studio"
+      },
+      {
+        "heading": "प्राथमिकता-आधारित कीवर्ड सेट बनाएँ",
+        "paragraphs": [
+          "शीर्षक के बाद दिखाई देने वाली बाकी अवधारणाओं को कीवर्ड में बदलें। पहले विषय और क्रिया, फिर वस्तु और सामग्री, उसके बाद प्रक्रिया, परिवेश और उपयोगी वैचारिक शब्द रखें। केवल संख्या बढ़ाने के लिए समान अर्थ वाले शब्दों को दोहराएँ नहीं।",
+          "एक अनुशासित सूची में potter, pottery, shaping, clay, bowl, pottery wheel, ceramics, ceramic art, craft, handmade, studio, artisan, making, vessel, workshop, creative process और craftsmanship शामिल हो सकते हैं। “Handmade” तभी उचित है जब तस्वीर में वस्तु बनती हुई दिखे; इसे विक्रेता या उत्पाद के मूल के बारे में दावा नहीं बनना चाहिए।",
+          "Adobe के लिए सबसे महत्वपूर्ण शब्द पहले रखें और कुल संख्या संयत रखें। Shutterstock के लिए 7 से 50 प्रासंगिक कीवर्ड इस्तेमाल करें, कम-से-कम एक उपयुक्त श्रेणी शामिल करें और इस विशेष फ़्रेम से मेल न खाने वाले शब्द हटाएँ। यही क्रम शुरुआती आधार हो सकता है, लेकिन यह प्लेटफ़ॉर्म समीक्षा छोड़ने का कारण नहीं है।"
+        ],
+        "bullets": [
+          "प्राथमिकता 1: विषय और क्रिया।",
+          "प्राथमिकता 2: वस्तु, सामग्री और प्रक्रिया।",
+          "प्राथमिकता 3: परिवेश और संयत अवधारणाएँ।",
+          "निर्यात से पहले अप्रासंगिक या दोहराए गए शब्द हटाएँ।"
+        ],
+        "example": "प्राथमिकता क्रम: potter, shaping, clay bowl, pottery wheel, pottery, ceramics, craft, handmade, studio, vessel, workshop, making, ceramic art, craftsmanship."
+      },
+      {
+        "heading": "काम का उदाहरण: Adobe Stock संस्करण",
+        "paragraphs": [
+          "मान लें कि दिखाई देने वाले फ़्रेम में दोनों हाथ चाक पर एक गोल, अधूरा कटोरा आकार दे रहे हैं। चाक, मिट्टी और स्टूडियो की कार्य-सतह दिखाई देती है; कोई संकेत व्यक्ति या स्थान की पहचान नहीं करता। इसलिए Adobe संस्करण ठोस रहेगा और सबसे मजबूत शब्दों को शुरुआत में रखेगा।",
+          "एक व्यावहारिक संस्करण है: शीर्षक “Potter Shaping a Clay Bowl on a Pottery Wheel।” कीवर्ड “potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship” से शुरू हो सकते हैं। केवल वही अतिरिक्त शब्द जोड़ें जिनका समर्थन तस्वीर करती है। शीर्षक और कीवर्ड की भाषा को योगदानकर्ता खाते से मिलाएँ, फिर किसी भी आयात के बाद योगदानकर्ता पोर्टल में फ़ील्ड जाँचें।",
+          "यदि आप CSV इस्तेमाल करते हैं, तो फ़ाइल का नाम अपलोड की गई परिसंपत्ति से हूबहू मेल खाना चाहिए, जिसमें एक्सटेंशन और बड़े-छोटे अक्षर भी शामिल हैं। पहले परिसंपत्तियाँ अपलोड करें, फिर CSV आयात करें। परिणाम को जाँचने योग्य मसौदा मानें, स्वीकृति के प्रमाण के रूप में नहीं। पोर्टल और वर्तमान योगदानकर्ता निर्देश ही अंतिम प्राधिकरण हैं।"
+        ],
+        "bullets": [
+          "वर्तमान Adobe CSV सीमा के भीतर पठनीय शीर्षक रखें।",
+          "पहले दस कीवर्ड विशेष रूप से मजबूत रखें।",
+          "निर्यात या जमा करने से पहले आयात की गई पंक्ति जाँचें।"
+        ],
+        "example": "Adobe संस्करण\nशीर्षक: Potter Shaping a Clay Bowl on a Pottery Wheel\nकीवर्ड: potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship"
+      },
+      {
+        "heading": "काम का उदाहरण: Shutterstock संस्करण",
+        "paragraphs": [
+          "उन्हीं तथ्यों का उपयोग करें, लेकिन परिणाम की समीक्षा Shutterstock की संदर्भात्मक मेटाडेटा अपेक्षाओं के अनुसार करें। विवरण वाक्य या स्वाभाविक वाक्यांश बना रहना चाहिए और कीवर्ड इस तस्वीर के लिए विशिष्ट होने चाहिए, किसी बैच से विरासत में मिले हुए नहीं।",
+          "संस्करण विवरण: “Potter shaping a clay bowl on a pottery wheel in a studio।” संस्करण कीवर्ड: “potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship।” वर्तमान जमा इंटरफ़ेस से मेल खाने वाली कम-से-कम एक श्रेणी चुनें। जब तक विवरण सत्यापित न हों और काम संबंधित संपादकीय नियमों के तहत न संभाला जा रहा हो, कोई दस्तावेज़ित तारीख या स्थान न जोड़ें।",
+          "दोनों संस्करण समान दिखते हैं क्योंकि तस्वीर के मूल तथ्य नहीं बदले हैं। यह अच्छा परिणाम है: प्लेटफ़ॉर्म के अनुसार ढालने का उद्देश्य अनुपालन और प्राथमिकताएँ स्पष्ट करना है, अतिरिक्त अवधारणाएँ गढ़ना नहीं। जमा करने से पहले वर्तमान योगदानकर्ता पोर्टल जाँचें, क्योंकि नीतियाँ और इंटरफ़ेस आवश्यकताएँ बदल सकती हैं।"
+        ],
+        "bullets": [
+          "विवरण स्वाभाविक और तथ्यात्मक रखें।",
+          "7–50 प्रासंगिक कीवर्ड इस्तेमाल करें।",
+          "श्रेणी चयन की समीक्षा करें और केवल बैच में उपयोग होने वाले शब्द हटाएँ।"
+        ],
+        "example": "Shutterstock संस्करण\nविवरण: Potter shaping a clay bowl on a pottery wheel in a studio.\nकीवर्ड: potter, shaping, clay bowl, pottery wheel, pottery, clay, ceramics, ceramic art, craft, handmade, vessel, studio, workshop, making, craftsmanship"
+      },
+      {
+        "heading": "स्थानीय निर्माण को मसौदा सहायक की तरह इस्तेमाल करें",
+        "paragraphs": [
+          "स्थानीय मेटाडेटा जनरेटर तस्वीर को संपादन योग्य Adobe या Shutterstock पंक्तियों में बदलने में मदद कर सकता है, लेकिन निर्माण निर्णय का विकल्प नहीं है। MetaStocker के स्थानीय मोड में चुना गया मॉडल डाउनलोड और लोड होने के बाद आगंतुक के ब्राउज़र में चलता है; मॉडल मेमोरी ब्राउज़र कैश से अलग होती है। पहली डाउनलोड के लिए इंटरनेट चाहिए और स्थानीय इन्फ़रेंस क्लाउड का विकल्प नहीं है।",
+          "मिश्रित बैच को केवल वही तथ्य दें जो हर फ़ाइल पर लागू होते हैं। अलग-अलग मिट्टी की तस्वीरों के लिए अलग संदर्भ लिखें या हर पंक्ति की अलग समीक्षा करें। अतिरिक्त टैग उपयोगी हो सकते हैं, लेकिन माँगी गई टैग संख्या इस बात का प्रमाण नहीं है कि हर टैग सटीक है। वीडियो के लिए पूरी गति जाँचें, क्योंकि नमूना-आधारित प्रीव्यू महत्वपूर्ण विवरण छोड़ सकते हैं।",
+          "केवल तैयार पंक्तियाँ रखें, संदिग्ध दावों को संपादित करें और समीक्षा के बाद निर्यात करें। निर्यातक फ़ाइलें अपलोड या जमा नहीं करता, मूल फ़ाइलों में मेटाडेटा एम्बेड नहीं करता और स्वीकृति की गारंटी नहीं देता। यदि आप वैकल्पिक व्यक्तिगत API मोड चुनते हैं, तो कुंजी को गुप्त रखें और समझें कि प्रीव्यू और संदर्भ OpenAI को भेजे जाते हैं।"
+        ],
+        "bullets": [
+          "निर्माण का उपयोग पहले मसौदे के लिए करें, अंतिम अनुमोदन के लिए नहीं।",
+          "प्रत्येक फ़ाइल के हर शीर्षक, कीवर्ड और श्रेणी की समीक्षा करें।",
+          "मूल फ़ाइलों और निर्यात किए गए मेटाडेटा को कार्यप्रणाली की अलग वस्तुओं के रूप में रखें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "दिखाई देने वाली सामग्री से एक तथ्यात्मक अंग्रेज़ी मसौदा लिखें।",
+      "हर शीर्षक में विषय और क्रिया पहले रखें।",
+      "CSV इस्तेमाल करते समय Adobe शीर्षक को वर्तमान CSV सीमा में रखें।",
+      "Adobe के पहले दस कीवर्ड को प्राथमिकता दें और संयत अधिकतम 49 कीवर्ड की सीमा में रहें।",
+      "Shutterstock को 7–50 प्रासंगिक कीवर्ड और एक उपयुक्त श्रेणी दें।",
+      "असत्यापित पहचान, स्थान, तारीख और दावे हटाएँ।",
+      "संबंधित योगदानकर्ता पोर्टल में आयात किए गए या बनाए गए मेटाडेटा की जाँच करें।",
+      "जमा करने से पहले वर्तमान Adobe और Shutterstock योगदानकर्ता आवश्यकताएँ जाँचें।"
+    ],
+    "illustration": {
+      "title": "एक मसौदा, दो प्लेटफ़ॉर्म समीक्षाएँ",
+      "steps": [
+        {
+          "label": "दिखाई देने वाले तथ्य बताएँ",
+          "detail": "कुम्हार, कटोरे, क्रिया और परिवेश पर एक अंग्रेज़ी वाक्य लिखें।"
+        },
+        {
+          "label": "हर पंक्ति ढालें",
+          "detail": "Adobe की प्राथमिकताएँ और Shutterstock कीवर्ड व श्रेणी जाँच लागू करें।"
+        },
+        {
+          "label": "भेजने से पहले जाँचें",
+          "detail": "हर फ़ील्ड संपादित करें, फ़ाइल नाम सत्यापित करें, फिर तैयार मेटाडेटा ही जमा करें।"
+        }
+      ]
+    }
+  }
+}

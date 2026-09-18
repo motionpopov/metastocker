@@ -1,0 +1,491 @@
+{
+  "slug": "adobe-stock-first-ten-keywords",
+  "category": "metadata",
+  "source_ids": [
+    "adobe-keywords",
+    "adobe-upload",
+    "metastocker"
+  ],
+  "en": {
+    "title": "How to Choose the First Ten Adobe Stock Keywords",
+    "description": "Build a subject-first keyword order for a difficult bicycle-repair scene, then refine the list for Adobe Stock without guessing unseen details.",
+    "intro": "The first ten Adobe Stock keywords deserve deliberate ordering. For a difficult image, the goal is not to fill the field with every visible tool or mechanical part. The goal is to make the central subject, action, and useful context immediately clear. Adobe’s guidance places particular importance on the first ten terms, while the full keyword field can contain up to 49 keywords. This guide uses a hypothetical close-up of hands repairing a bicycle wheel and shows how to choose those opening terms without inventing identity, location, species, ownership, or other facts that pixels cannot prove.",
+    "sections": [
+      {
+        "heading": "Start with what the viewer is seeing",
+        "paragraphs": [
+          "Describe the photograph as a visual event, not as a parts catalogue. In this scene, the strongest facts are hands, bicycle wheel, and repair activity. A wrench, spokes, rim, and workbench may matter, but they should support the subject rather than displace it.",
+          "Separate four layers before writing keywords: action, main object, visible detail, and setting. This prevents a technical-looking image from turning into a list dominated by equipment. It also gives you a repeatable way to rank terms when several objects compete for attention."
+        ],
+        "bullets": [
+          "Action: repairing, fixing, adjusting, maintaining.",
+          "Object: bicycle wheel, bicycle, wheel, rim, spokes.",
+          "Detail: hands, fingers, wrench, tire, hub.",
+          "Setting: workshop, workbench, maintenance, close-up."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Choose the opening action terms",
+        "paragraphs": [
+          "Ask what is happening in the frame. If the hands are clearly manipulating a tool or component, “repairing” is more useful than a generic term such as “working.” “Bicycle repair” can combine the action and object, but it should not replace all the individual concepts that describe the image.",
+          "Do not turn an ambiguous gesture into a precise mechanical claim. If the photograph does not show whether the person is truing, replacing, tightening, or inspecting the wheel, use the broader verified action. Precision is valuable only when the image supports it."
+        ],
+        "bullets": [
+          "Prefer a visible action over a vague activity word.",
+          "Use a technical action only when the frame proves it.",
+          "Treat “repairing” as a safer umbrella term than an unseen procedure."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Rank the subject before the equipment",
+        "paragraphs": [
+          "A subject-first list leads with what a buyer would likely search for: the bicycle repair scene. An equipment-heavy list may begin with wrench, spoke, rim, hub, and tire. Those terms can be relevant, yet they describe components before explaining why they are present.",
+          "Compare the two approaches for the same hypothetical image. The equipment-heavy version is not necessarily false; it is simply less clear about the main subject in its opening positions. The subject-first version gives the scene a readable spine, then adds the visible technical details."
+        ],
+        "bullets": [
+          "Equipment-heavy: wrench, spokes, rim, hub, tire, hands, bicycle wheel, repair, workshop, maintenance.",
+          "Subject-first: bicycle repair, repairing, bicycle wheel, hands, wheel, spokes, wrench, maintenance, workshop, close-up."
+        ],
+        "example": "Hypothetical example: If the wheel occupies most of the frame and the hands are actively working on it, choose the subject-first sequence. If the image is actually a tight crop of a wrench on a spoke with little visible context, move the tool higher—but only because the composition changed."
+      },
+      {
+        "heading": "Worked example: make ten terms earn their place",
+        "paragraphs": [
+          "Imagine a close-up horizontal photograph: two hands hold a bicycle wheel on a workbench, one hand using a small wrench near the spokes. The background is blurred. No face, brand, location, or exact repair procedure is visible. Based on those limits, the first ten can be built in layers.",
+          "The first two terms identify the scene and action. The next three establish the main object. The following three add visible details. The final two provide practical context. This ordering balances search clarity with factual restraint."
+        ],
+        "bullets": [
+          "1. bicycle repair — the central subject.",
+          "2. repairing — the visible activity.",
+          "3. bicycle wheel — the specific object.",
+          "4. hands — the human detail that is actually visible.",
+          "5. wheel — a broader object term.",
+          "6. spokes — a visible structural detail.",
+          "7. wrench — a visible tool in use.",
+          "8. bicycle — the wider object category.",
+          "9. maintenance — supported by the repair context.",
+          "10. close-up — describes the composition."
+        ],
+        "example": "Title example: Close-up hands repairing a bicycle wheel\nFirst ten keywords: bicycle repair, repairing, bicycle wheel, hands, wheel, spokes, wrench, bicycle, maintenance, close-up"
+      },
+      {
+        "heading": "Audit relevance and language",
+        "paragraphs": [
+          "After ranking the first ten, inspect the rest of the proposed list for repetition and unsupported claims. Add terms only when they describe the actual image or a clearly visible use. “Workshop” belongs only if the setting reads as a workshop; a blurred neutral background is not enough. “Professional mechanic” adds a role that the image may not establish.",
+          "Metadata language must match the language configured for the contributor account. If the account requires English, keep the keyword list in English even when your editorial notes or blog post are in another language. Also check the current contributor portal because upload limits and validation details can change."
+        ],
+        "bullets": [
+          "Remove brands, ownership claims, occupations, and locations that are not shown.",
+          "Do not repeat the same concept through near-duplicate filler.",
+          "Keep the strongest ten focused on the image’s actual buyer-facing subject.",
+          "Use the portal’s current requirements before final submission."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Use MetaStocker as a draft, then edit",
+        "paragraphs": [
+          "MetaStocker can generate editable metadata locally in the visitor’s browser. Its local vision and thinking models run through WebGPU workers on the visitor’s device; the default local model is Gemma 4 E2B. A contributor can load a model, provide the image, and use the result as a starting point, but generated ordering is not proof of accuracy.",
+          "Give a single image-specific description rather than a blanket instruction for a mixed batch. Then review every suggested keyword, especially the first ten. Remove guesses about identity, profession, brand, location, or exact mechanical action. Export only rows that are ready. The exporter can create Adobe CSV output, but it does not upload the file, guarantee acceptance, or embed metadata into the original image."
+        ],
+        "bullets": [
+          "Load the local model deliberately; the first download needs internet.",
+          "Begin with one local parallel thread and test additional threads only if useful.",
+          "Review editable results per file before exporting.",
+          "For CSV workflows, upload assets first and inspect imported metadata in the contributor portal."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Identify the central action and object before listing tools.",
+      "Rank the first ten by subject clarity, not by how technical the image looks.",
+      "Use only details visible in the frame.",
+      "Avoid inferred identities, occupations, brands, locations, and ownership.",
+      "Match metadata language to the contributor account.",
+      "Check current Adobe requirements and inspect the portal after CSV import.",
+      "Edit generated suggestions before exporting a ready row."
+    ],
+    "illustration": {
+      "title": "From difficult scene to first ten",
+      "steps": [
+        {
+          "label": "Read the visible scene",
+          "detail": "Separate action, object, detail, and setting from what is actually shown."
+        },
+        {
+          "label": "Rank the subject first",
+          "detail": "Place bicycle repair and wheel terms before supporting equipment details."
+        },
+        {
+          "label": "Audit and export",
+          "detail": "Remove guesses, review each row, then inspect metadata in Adobe’s portal."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как выбрать первые десять ключевых слов Adobe Stock",
+    "description": "Разберите сложную сцену с ремонтом велосипедного колеса и составьте первые десять ключевых слов Adobe Stock по принципу «сначала сюжет».",
+    "intro": "Первые десять ключевых слов Adobe Stock стоит расставлять осознанно. Для сложного кадра задача не в том, чтобы перечислить все инструменты и детали механизма. Важно сразу обозначить главный сюжет, действие и полезный контекст. В руководстве Adobe особое внимание уделяется первым десяти словам, а всего поле может содержать до 49 ключевых слов. Ниже — практический разбор гипотетического крупного плана, где руки ремонтируют велосипедное колесо. Мы составим порядок без догадок о личности, профессии, месте, владельце или других свойствах, которые невозможно подтвердить по пикселям.",
+    "sections": [
+      {
+        "heading": "Сначала опишите происходящее",
+        "paragraphs": [
+          "Воспринимайте фотографию как визуальное событие, а не как каталог запчастей. В этой сцене главные подтверждённые факты — руки, велосипедное колесо и ремонтное действие. Гаечный ключ, спицы, обод и верстак могут быть полезны, но они должны уточнять сюжет, а не вытеснять его.",
+          "Перед составлением списка разделите наблюдения на четыре слоя: действие, основной объект, видимая деталь и окружение. Такой подход помогает не превратить технический кадр в перечень оборудования и даёт понятный способ ранжировать слова."
+        ],
+        "bullets": [
+          "Действие: repairing, fixing, adjusting, maintaining.",
+          "Объект: bicycle wheel, bicycle, wheel, rim, spokes.",
+          "Деталь: hands, fingers, wrench, tire, hub.",
+          "Окружение: workshop, workbench, maintenance, close-up."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Выберите слова для действия",
+        "paragraphs": [
+          "Спросите себя, что именно происходит в кадре. Если руки явно работают инструментом или с деталью, слово “repairing” полезнее расплывчатого “working”. Сочетание “bicycle repair” объединяет действие и объект, но не должно вытеснять все отдельные понятия, описывающие изображение.",
+          "Не приписывайте кадру точную механическую операцию, если её нельзя увидеть. Возможно, человек правит колесо, меняет деталь, подтягивает спицу или только осматривает узел. Если это не доказано, широкое “repairing” будет точнее. Узкий термин хорош лишь тогда, когда изображение его подтверждает."
+        ],
+        "bullets": [
+          "Предпочитайте видимое действие общему слову о занятости.",
+          "Используйте техническую операцию только при явном подтверждении.",
+          "Считайте “repairing” безопасным обобщением, а не доказательством конкретной процедуры."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Ставьте сюжет выше оборудования",
+        "paragraphs": [
+          "Список, начинающийся с сюжета, отвечает вероятному поиску покупателя: ремонт велосипеда. В списке, ориентированном на оборудование, первыми могут оказаться wrench, spoke, rim, hub и tire. Эти слова могут быть релевантными, но они объясняют отдельные компоненты раньше, чем саму сцену.",
+          "Сравните два варианта для одного гипотетического изображения. Оборудование-ориентированный список не обязательно ошибочен — он просто хуже объясняет главный предмет в начальных позициях. В subject-first варианте сначала читается сцена, а затем добавляются технические детали."
+        ],
+        "bullets": [
+          "Оборудование: wrench, spokes, rim, hub, tire, hands, bicycle wheel, repair, workshop, maintenance.",
+          "Сначала сюжет: bicycle repair, repairing, bicycle wheel, hands, wheel, spokes, wrench, maintenance, workshop, close-up."
+        ],
+        "example": "Гипотетический пример: если колесо занимает большую часть кадра, а руки явно работают с ним, выберите порядок «сначала сюжет». Если в кадре почти только ключ и спица, поднимите wrench выше — но потому, что изменилась композиция."
+      },
+      {
+        "heading": "Разбор примера: десять слов по делу",
+        "paragraphs": [
+          "Представим горизонтальную фотографию крупным планом: две руки удерживают велосипедное колесо на верстаке, а одна рука работает небольшим ключом возле спиц. Фон размыт. Лицо, бренд, место и точная процедура ремонта не видны. Из этих ограничений можно построить первые десять слов.",
+          "Первые два слова называют сцену и действие. Следующие три закрепляют основной объект. Затем идут три видимые детали, а последние два дают практический контекст. Так список остаётся понятным и не выходит за пределы доказуемого."
+        ],
+        "bullets": [
+          "1. bicycle repair — центральный сюжет.",
+          "2. repairing — заметное действие.",
+          "3. bicycle wheel — конкретный объект.",
+          "4. hands — действительно видимая деталь.",
+          "5. wheel — более широкое обозначение объекта.",
+          "6. spokes — видимая конструктивная деталь.",
+          "7. wrench — инструмент в работе.",
+          "8. bicycle — более общая категория.",
+          "9. maintenance — контекст ремонта.",
+          "10. close-up — описание композиции."
+        ],
+        "example": "Пример заголовка: Close-up hands repairing a bicycle wheel\nПервые десять ключевых слов: bicycle repair, repairing, bicycle wheel, hands, wheel, spokes, wrench, bicycle, maintenance, close-up"
+      },
+      {
+        "heading": "Проверьте релевантность и язык",
+        "paragraphs": [
+          "После расстановки первых десяти пересмотрите весь список: уберите повторы и неподтверждённые утверждения. “Workshop” уместно только тогда, когда место действительно выглядит как мастерская. Нейтральный размытый фон этого не доказывает. “Professional mechanic” добавляет профессию, которой изображение может не подтверждать.",
+          "Язык метаданных должен совпадать с языком, настроенным в аккаунте автора. Если аккаунт требует английский, сохраняйте английские ключевые слова, даже если заметки и статья написаны по-русски. Перед загрузкой проверьте актуальные требования в кабинете автора: правила и проверки могут меняться."
+        ],
+        "bullets": [
+          "Удаляйте бренды, сведения о владельце, профессии и местах, которых не видно.",
+          "Не заполняйте список близкими повторами ради количества.",
+          "Сохраняйте первые десять сфокусированными на сюжете и пользе для поиска.",
+          "Перед отправкой сверяйтесь с текущими требованиями портала."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Используйте MetaStocker как черновик",
+        "paragraphs": [
+          "MetaStocker может подготовить редактируемые метаданные локально в браузере посетителя. Его локальные модели анализа изображения и рассуждения работают через WebGPU на устройстве пользователя; моделью по умолчанию является Gemma 4 E2B. Такой результат удобен как черновик, но порядок слов не является доказательством их точности.",
+          "Для одного изображения задайте конкретное описание, а не общее указание для смешанной пачки. Затем проверьте каждое предложенное слово, особенно первые десять. Удалите догадки о личности, профессии, бренде, месте и точном механическом действии. Экспортируйте только готовые строки. Экспортёр умеет создавать CSV для Adobe, но не загружает файл, не гарантирует принятие и не встраивает метаданные в исходную фотографию."
+        ],
+        "bullets": [
+          "Загружайте локальную модель осознанно: первое скачивание требует интернета.",
+          "Начните с одного локального параллельного потока и увеличивайте число только после проверки.",
+          "Редактируйте результат отдельно для каждого файла.",
+          "При работе с CSV сначала загрузите материалы и затем проверьте импортированные метаданные в кабинете Adobe."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Сначала определите видимое действие и главный объект.",
+      "Ранжируйте первые десять по ясности сюжета, а не по технической сложности кадра.",
+      "Используйте только детали, которые подтверждаются изображением.",
+      "Не приписывайте личности, профессии, бренды, места и владельцев.",
+      "Согласуйте язык метаданных с языком аккаунта автора.",
+      "Проверьте актуальные требования Adobe и результат импорта в кабинете.",
+      "Отредактируйте подсказки генератора перед экспортом готовой строки."
+    ],
+    "illustration": {
+      "title": "От сложной сцены к первым десяти",
+      "steps": [
+        {
+          "label": "Прочитайте видимую сцену",
+          "detail": "Отделите действие, объект, детали и окружение от догадок."
+        },
+        {
+          "label": "Сначала расставьте сюжет",
+          "detail": "Поставьте ремонт и колесо перед словами об инструментах."
+        },
+        {
+          "label": "Проверьте и экспортируйте",
+          "detail": "Удалите догадки, проверьте строки и осмотрите метаданные в Adobe."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "অ্যাডোবি স্টকের প্রথম দশটি কীওয়ার্ড কীভাবে বাছবেন",
+    "description": "কঠিন সাইকেল মেরামতের দৃশ্যের জন্য বিষয়ভিত্তিক কীওয়ার্ডের ক্রম তৈরি করুন, তারপর অদৃশ্য তথ্য অনুমান না করে অ্যাডোবি স্টকের জন্য তালিকা পরিমার্জন করুন।",
+    "intro": "অ্যাডোবি স্টকের প্রথম দশটি কীওয়ার্ড সচেতনভাবে সাজানো উচিত। কঠিন কোনো ছবির ক্ষেত্রে লক্ষ্য হলো দৃশ্যমান প্রতিটি সরঞ্জাম বা যান্ত্রিক অংশ দিয়ে ঘরটি ভরে ফেলা নয়। লক্ষ্য হলো কেন্দ্রীয় বিষয়, কাজ এবং প্রয়োজনীয় প্রেক্ষাপট দ্রুত স্পষ্ট করা। অ্যাডোবির নির্দেশনায় প্রথম দশটি শব্দকে বিশেষ গুরুত্ব দেওয়া হয়েছে, যদিও সম্পূর্ণ কীওয়ার্ড ঘরে সর্বোচ্চ 49টি কীওয়ার্ড রাখা যায়। এই নির্দেশিকায় সাইকেলের চাকার মেরামতরত হাতের একটি কাল্পনিক ক্লোজ-আপ ব্যবহার করে দেখানো হয়েছে, কীভাবে পিক্সেল দিয়ে প্রমাণ করা যায় না এমন পরিচয়, স্থান, প্রজাতি, মালিকানা বা অন্য কোনো তথ্য বানিয়ে না নিয়ে শুরুর শব্দগুলো বাছাই করতে হয়।",
+    "sections": [
+      {
+        "heading": "দর্শক যা দেখছেন, তা দিয়ে শুরু করুন",
+        "paragraphs": [
+          "ছবিটিকে যন্ত্রাংশের তালিকা হিসেবে নয়, একটি দৃশ্যমান ঘটনা হিসেবে বর্ণনা করুন। এই দৃশ্যে সবচেয়ে শক্তিশালী তথ্য হলো হাত, সাইকেলের চাকা এবং মেরামতের কাজ। রেঞ্চ, স্পোক, রিম ও কাজের টেবিল গুরুত্বপূর্ণ হতে পারে, কিন্তু এগুলোকে বিষয়টিকে সরিয়ে না দিয়ে বিষয়টির সহায়ক হওয়া উচিত।",
+          "কীওয়ার্ড লেখার আগে চারটি স্তর আলাদা করুন: কাজ, প্রধান বস্তু, দৃশ্যমান বিবরণ এবং পরিবেশ। এতে প্রযুক্তিনির্ভর দেখতে একটি ছবি সরঞ্জামকেন্দ্রিক তালিকায় পরিণত হয় না। একাধিক বস্তু মনোযোগের জন্য প্রতিদ্বন্দ্বিতা করলে শব্দের ক্রম নির্ধারণের একটি পুনর্ব্যবহারযোগ্য পদ্ধতিও এতে পাওয়া যায়।"
+        ],
+        "bullets": [
+          "কাজ: repairing, fixing, adjusting, maintaining।",
+          "বস্তু: bicycle wheel, bicycle, wheel, rim, spokes।",
+          "বিবরণ: hands, fingers, wrench, tire, hub।",
+          "পরিবেশ: workshop, workbench, maintenance, close-up।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "শুরুর কাজ-সংক্রান্ত শব্দ বাছুন",
+        "paragraphs": [
+          "ছবির ফ্রেমে কী ঘটছে, তা জিজ্ঞেস করুন। হাত যদি স্পষ্টভাবে কোনো সরঞ্জাম বা অংশ নাড়াচাড়া করে, তাহলে “repairing” শব্দটি “working”-এর মতো সাধারণ শব্দের চেয়ে বেশি কার্যকর। “Bicycle repair” কাজ ও বস্তুকে একত্র করতে পারে, কিন্তু ছবির বর্ণনায় থাকা প্রতিটি স্বতন্ত্র ধারণার বদলে এটি ব্যবহার করা উচিত নয়।",
+          "অস্পষ্ট ভঙ্গিকে নির্দিষ্ট যান্ত্রিক দাবি হিসেবে উপস্থাপন করবেন না। ছবিতে ব্যক্তি চাকাটি সোজা করছেন, বদলাচ্ছেন, আঁটছেন নাকি পরীক্ষা করছেন—তা যদি দেখা না যায়, তাহলে যাচাই করা যায় এমন বিস্তৃত কাজের শব্দ ব্যবহার করুন। ছবি সমর্থন করলেই কেবল নির্ভুলতা মূল্যবান।"
+        ],
+        "bullets": [
+          "অস্পষ্ট কার্যকলাপের শব্দের বদলে দৃশ্যমান কাজকে অগ্রাধিকার দিন।",
+          "ফ্রেমে প্রমাণ থাকলেই কেবল প্রযুক্তিগত কাজের শব্দ ব্যবহার করুন।",
+          "অদৃশ্য কোনো প্রক্রিয়ার চেয়ে “repairing”-কে নিরাপদ সামগ্রিক শব্দ হিসেবে বিবেচনা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "সরঞ্জামের আগে বিষয়কে গুরুত্ব দিন",
+        "paragraphs": [
+          "বিষয়ভিত্তিক তালিকা শুরু হয় এমন শব্দ দিয়ে, যা একজন ক্রেতা সম্ভবত খুঁজবেন: সাইকেল মেরামতের দৃশ্য। সরঞ্জামকেন্দ্রিক তালিকা শুরু হতে পারে wrench, spoke, rim, hub এবং tire দিয়ে। এসব শব্দ প্রাসঙ্গিক হতে পারে, কিন্তু এগুলো উপস্থিত থাকার কারণ ব্যাখ্যা করার আগে অংশগুলোর বর্ণনা দেয়।",
+          "একই কাল্পনিক ছবির জন্য দুটি পদ্ধতি তুলনা করুন। সরঞ্জামকেন্দ্রিক সংস্করণটি অগত্যা মিথ্যা নয়; শুধু শুরুর অবস্থানগুলোতে প্রধান বিষয়টি কম স্পষ্ট করে। বিষয়ভিত্তিক সংস্করণ দৃশ্যটির একটি পাঠযোগ্য কাঠামো তৈরি করে, তারপর দৃশ্যমান প্রযুক্তিগত বিবরণ যোগ করে।"
+        ],
+        "bullets": [
+          "সরঞ্জামকেন্দ্রিক: wrench, spokes, rim, hub, tire, hands, bicycle wheel, repair, workshop, maintenance।",
+          "বিষয়ভিত্তিক: bicycle repair, repairing, bicycle wheel, hands, wheel, spokes, wrench, maintenance, workshop, close-up।"
+        ],
+        "example": "কাল্পনিক উদাহরণ: যদি চাকা ফ্রেমের বেশির ভাগ জায়গা দখল করে এবং হাত সক্রিয়ভাবে তাতে কাজ করে, তাহলে বিষয়ভিত্তিক ক্রম বেছে নিন। ছবিটি যদি আসলে অল্প দৃশ্যমান প্রেক্ষাপটসহ স্পোকের ওপর থাকা একটি রেঞ্চের ঘনিষ্ঠ ক্রপ হয়, তাহলে সরঞ্জামটিকে ওপরে আনুন—তবে কেবল বিন্যাস বদলেছে বলেই।"
+      },
+      {
+        "heading": "কাজের উদাহরণ: দশটি শব্দকে প্রয়োজনীয় করে তুলুন",
+        "paragraphs": [
+          "একটি অনুভূমিক ক্লোজ-আপ ছবি কল্পনা করুন: কাজের টেবিলের ওপর দুটি হাত একটি সাইকেলের চাকা ধরে আছে, আর একটি হাত স্পোকের কাছে ছোট রেঞ্চ ব্যবহার করছে। পটভূমি ঝাপসা। কোনো মুখ, ব্র্যান্ড, স্থান বা নির্দিষ্ট মেরামত-পদ্ধতি দেখা যাচ্ছে না। এই সীমাগুলোর ভিত্তিতে প্রথম দশটি ধাপে ধাপে তৈরি করা যায়।",
+          "প্রথম দুটি শব্দ দৃশ্য ও কাজ শনাক্ত করে। পরের তিনটি প্রধান বস্তু নির্ধারণ করে। এরপরের তিনটি দৃশ্যমান বিবরণ যোগ করে। শেষ দুটি ব্যবহারিক প্রেক্ষাপট দেয়। এই ক্রম অনুসন্ধানের স্পষ্টতা ও তথ্যগত সংযমের মধ্যে ভারসাম্য রাখে।"
+        ],
+        "bullets": [
+          "1. bicycle repair — কেন্দ্রীয় বিষয়।",
+          "2. repairing — দৃশ্যমান কাজ।",
+          "3. bicycle wheel — নির্দিষ্ট বস্তু।",
+          "4. hands — বাস্তবে দৃশ্যমান মানবিক বিবরণ।",
+          "5. wheel — আরও বিস্তৃত বস্তুর শব্দ।",
+          "6. spokes — দৃশ্যমান কাঠামোগত বিবরণ।",
+          "7. wrench — ব্যবহৃত দৃশ্যমান সরঞ্জাম।",
+          "8. bicycle — বৃহত্তর বস্তুশ্রেণি।",
+          "9. maintenance — মেরামতের প্রেক্ষাপট দ্বারা সমর্থিত।",
+          "10. close-up — ছবির বিন্যাস বর্ণনা করে।"
+        ],
+        "example": "শিরোনামের উদাহরণ: Close-up hands repairing a bicycle wheel\nপ্রথম দশটি কীওয়ার্ড: bicycle repair, repairing, bicycle wheel, hands, wheel, spokes, wrench, bicycle, maintenance, close-up"
+      },
+      {
+        "heading": "প্রাসঙ্গিকতা ও ভাষা যাচাই করুন",
+        "paragraphs": [
+          "প্রথম দশটি সাজানোর পর পুনরাবৃত্তি ও অসমর্থিত দাবির জন্য প্রস্তাবিত বাকি তালিকাটি পরীক্ষা করুন। কেবল এমন শব্দ যোগ করুন, যা প্রকৃত ছবি বা স্পষ্টভাবে দৃশ্যমান ব্যবহারকে বর্ণনা করে। পরিবেশটি কর্মশালার মতো বোঝা গেলেই “Workshop” ব্যবহার করা যায়; ঝাপসা নিরপেক্ষ পটভূমি যথেষ্ট নয়। “Professional mechanic” এমন একটি ভূমিকা যোগ করে, যা ছবি হয়তো প্রতিষ্ঠা করে না।",
+          "মেটাডেটার ভাষা অবদানকারীর অ্যাকাউন্টে নির্ধারিত ভাষার সঙ্গে মিলতে হবে। অ্যাকাউন্টে ইংরেজি প্রয়োজন হলে, আপনার সম্পাদকীয় নোট বা নিবন্ধ অন্য ভাষায় হলেও কীওয়ার্ডের তালিকা ইংরেজিতেই রাখুন। আপলোডের সীমা ও যাচাইয়ের বিবরণ বদলাতে পারে, তাই বর্তমান অবদানকারী পোর্টালও পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "দেখানো হয়নি এমন ব্র্যান্ড, মালিকানা-দাবি, পেশা ও স্থান বাদ দিন।",
+          "কাছাকাছি-অর্থের ভরাট শব্দ দিয়ে একই ধারণা পুনরাবৃত্তি করবেন না।",
+          "সবচেয়ে শক্তিশালী দশটি শব্দকে ছবির প্রকৃত ক্রেতামুখী বিষয়ের ওপর কেন্দ্রীভূত রাখুন।",
+          "চূড়ান্ত জমা দেওয়ার আগে পোর্টালের বর্তমান প্রয়োজনীয়তা ব্যবহার করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "খসড়া হিসেবে MetaStocker ব্যবহার করুন, তারপর সম্পাদনা করুন",
+        "paragraphs": [
+          "MetaStocker দর্শকের ব্রাউজারে স্থানীয়ভাবে সম্পাদনাযোগ্য মেটাডেটা তৈরি করতে পারে। এর স্থানীয় ভিশন ও চিন্তন মডেলগুলো দর্শকের ডিভাইসে WebGPU কর্মীর মাধ্যমে চলে; ডিফল্ট স্থানীয় মডেল হলো Gemma 4 E2B। একজন অবদানকারী একটি মডেল লোড করে ছবি দিতে পারেন এবং ফলাফলকে শুরুর ভিত্তি হিসেবে ব্যবহার করতে পারেন, কিন্তু তৈরি হওয়া ক্রম নির্ভুলতার প্রমাণ নয়।",
+          "মিশ্র ব্যাচের জন্য সার্বিক নির্দেশনার বদলে একটি নির্দিষ্ট ছবির বর্ণনা দিন। তারপর প্রতিটি প্রস্তাবিত কীওয়ার্ড, বিশেষ করে প্রথম দশটি, পর্যালোচনা করুন। পরিচয়, পেশা, ব্র্যান্ড, স্থান বা নির্দিষ্ট যান্ত্রিক কাজ সম্পর্কে অনুমান বাদ দিন। কেবল প্রস্তুত সারিগুলো রপ্তানি করুন। রপ্তানিকারক Adobe CSV আউটপুট তৈরি করতে পারে, কিন্তু এটি ফাইল আপলোড করে না, গ্রহণযোগ্যতার নিশ্চয়তা দেয় না বা মূল ছবিতে মেটাডেটা বসায় না।"
+        ],
+        "bullets": [
+          "স্থানীয় মডেলটি সচেতনভাবে লোড করুন; প্রথম ডাউনলোডের জন্য ইন্টারনেট প্রয়োজন।",
+          "একটি স্থানীয় সমান্তরাল থ্রেড দিয়ে শুরু করুন এবং উপযোগী হলে অতিরিক্ত থ্রেড পরীক্ষা করুন।",
+          "রপ্তানির আগে প্রতি ফাইলের সম্পাদনাযোগ্য ফলাফল পর্যালোচনা করুন।",
+          "CSV কর্মপ্রবাহে আগে সম্পদ আপলোড করুন এবং অবদানকারী পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "সরঞ্জামের তালিকা করার আগে কেন্দ্রীয় কাজ ও বস্তু শনাক্ত করুন।",
+      "ছবিটি কতটা প্রযুক্তিগত দেখায় তার ভিত্তিতে নয়, বিষয়ের স্পষ্টতার ভিত্তিতে প্রথম দশটি সাজান।",
+      "ফ্রেমে দৃশ্যমান বিবরণই ব্যবহার করুন।",
+      "অনুমানভিত্তিক পরিচয়, পেশা, ব্র্যান্ড, স্থান ও মালিকানা এড়িয়ে চলুন।",
+      "মেটাডেটার ভাষা অবদানকারীর অ্যাকাউন্টের সঙ্গে মিলিয়ে নিন।",
+      "বর্তমান Adobe-এর প্রয়োজনীয়তা পরীক্ষা করুন এবং CSV আমদানির পর পোর্টাল দেখুন।",
+      "প্রস্তুত সারি রপ্তানির আগে তৈরি করা প্রস্তাব সম্পাদনা করুন।"
+    ],
+    "illustration": {
+      "title": "কঠিন দৃশ্য থেকে প্রথম দশটি",
+      "steps": [
+        {
+          "label": "দৃশ্যমান দৃশ্য পড়ুন",
+          "detail": "যা সত্যিই দেখানো হয়েছে, সেখান থেকে কাজ, বস্তু, বিবরণ ও পরিবেশ আলাদা করুন।"
+        },
+        {
+          "label": "আগে বিষয় সাজান",
+          "detail": "সহায়ক সরঞ্জামের বিবরণের আগে bicycle repair ও wheel-সংক্রান্ত শব্দ রাখুন।"
+        },
+        {
+          "label": "যাচাই করে রপ্তানি করুন",
+          "detail": "অনুমান বাদ দিন, প্রতিটি সারি পর্যালোচনা করুন, তারপর Adobe-এর পোর্টালে মেটাডেটা পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "Adobe Stock के पहले दस कीवर्ड कैसे चुनें",
+    "description": "कठिन साइकिल-मरम्मत दृश्य के लिए विषय-प्रथम कीवर्ड क्रम बनाएं, फिर अनदेखे विवरणों का अनुमान लगाए बिना Adobe Stock के लिए सूची सुधारें।",
+    "intro": "Adobe Stock के पहले दस कीवर्ड सोच-समझकर क्रमबद्ध किए जाने चाहिए। कठिन छवि में लक्ष्य हर दिखाई देने वाले औज़ार या यांत्रिक हिस्से से फ़ील्ड भरना नहीं है। लक्ष्य केंद्रीय विषय, क्रिया और उपयोगी संदर्भ को तुरंत स्पष्ट करना है। Adobe के मार्गदर्शन में पहले दस शब्दों को विशेष महत्व दिया गया है, जबकि पूरे कीवर्ड फ़ील्ड में अधिकतम 49 कीवर्ड हो सकते हैं। यह मार्गदर्शिका साइकिल के पहिए की मरम्मत करते हाथों के एक काल्पनिक क्लोज़-अप का उपयोग करके दिखाती है कि ऐसे शुरुआती शब्द कैसे चुने जाएं, जिनमें ऐसी पहचान, जगह, प्रजाति, स्वामित्व या अन्य बातें गढ़ी न जाएं जिन्हें पिक्सेल प्रमाणित नहीं कर सकते।",
+    "sections": [
+      {
+        "heading": "दर्शक जो देख रहा है, उससे शुरू करें",
+        "paragraphs": [
+          "फ़ोटो का वर्णन हिस्सों की सूची के रूप में नहीं, बल्कि एक दृश्य घटना के रूप में करें। इस दृश्य में सबसे मजबूत तथ्य हाथ, साइकिल का पहिया और मरम्मत की क्रिया हैं। रिंच, स्पोक, रिम और कार्य-मेज़ महत्वपूर्ण हो सकते हैं, लेकिन उन्हें विषय को हटाने के बजाय उसका समर्थन करना चाहिए।",
+          "कीवर्ड लिखने से पहले चार स्तर अलग करें: क्रिया, मुख्य वस्तु, दिखाई देने वाला विवरण और परिवेश। इससे तकनीकी दिखने वाली छवि उपकरणों की सूची में बदलने से बचती है। कई वस्तुएं ध्यान खींच रही हों तो यह शब्दों का क्रम तय करने का दोहराया जा सकने वाला तरीका भी देता है।"
+        ],
+        "bullets": [
+          "क्रिया: repairing, fixing, adjusting, maintaining।",
+          "वस्तु: bicycle wheel, bicycle, wheel, rim, spokes।",
+          "विवरण: hands, fingers, wrench, tire, hub।",
+          "परिवेश: workshop, workbench, maintenance, close-up।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "शुरुआती क्रिया-शब्द चुनें",
+        "paragraphs": [
+          "पूछें कि फ़्रेम में क्या हो रहा है। यदि हाथ किसी औज़ार या हिस्से को स्पष्ट रूप से चला रहे हैं, तो “repairing” जैसे शब्द “working” जैसे सामान्य शब्द से अधिक उपयोगी हैं। “Bicycle repair” क्रिया और वस्तु को जोड़ सकता है, लेकिन छवि का वर्णन करने वाली सभी अलग-अलग अवधारणाओं की जगह इसका उपयोग नहीं होना चाहिए।",
+          "अस्पष्ट हावभाव को सटीक यांत्रिक दावे में न बदलें। यदि फ़ोटो यह नहीं दिखाती कि व्यक्ति पहिए को सीधा कर रहा है, बदल रहा है, कस रहा है या जाँच रहा है, तो व्यापक और सत्यापित क्रिया का उपयोग करें। सटीकता तभी मूल्यवान है जब छवि उसका समर्थन करे।"
+        ],
+        "bullets": [
+          "अस्पष्ट गतिविधि-शब्द के बजाय दिखाई देने वाली क्रिया को प्राथमिकता दें।",
+          "तकनीकी क्रिया तभी लिखें जब फ़्रेम उसे प्रमाणित करता हो।",
+          "“repairing” को अनदेखी प्रक्रिया से अधिक सुरक्षित व्यापक शब्द मानें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "उपकरण से पहले विषय को क्रम दें",
+        "paragraphs": [
+          "विषय-प्रथम सूची उन शब्दों से शुरू होती है जिन्हें खरीदार संभवतः खोजेगा: साइकिल-मरम्मत का दृश्य। उपकरण-प्रधान सूची wrench, spoke, rim, hub और tire से शुरू हो सकती है। ये शब्द प्रासंगिक हो सकते हैं, फिर भी वे यह समझाने से पहले हिस्सों का वर्णन करते हैं कि वे वहां क्यों मौजूद हैं।",
+          "उसी काल्पनिक छवि के लिए दोनों तरीकों की तुलना करें। उपकरण-प्रधान संस्करण आवश्यक रूप से गलत नहीं है; वह केवल शुरुआती स्थानों में मुख्य विषय को कम स्पष्ट करता है। विषय-प्रथम संस्करण दृश्य की समझने योग्य रीढ़ बनाता है और फिर दिखाई देने वाले तकनीकी विवरण जोड़ता है।"
+        ],
+        "bullets": [
+          "उपकरण-प्रधान: wrench, spokes, rim, hub, tire, hands, bicycle wheel, repair, workshop, maintenance।",
+          "विषय-प्रथम: bicycle repair, repairing, bicycle wheel, hands, wheel, spokes, wrench, maintenance, workshop, close-up।"
+        ],
+        "example": "काल्पनिक उदाहरण: यदि पहिया फ़्रेम के अधिकांश हिस्से में है और हाथ सक्रिय रूप से उस पर काम कर रहे हैं, तो विषय-प्रथम क्रम चुनें। यदि छवि वास्तव में कम दिखाई देने वाले संदर्भ के साथ स्पोक पर रखे रिंच का बहुत कसा हुआ फ़सल-दृश्य है, तो औज़ार को ऊपर लाएं—लेकिन केवल इसलिए कि संयोजन बदल गया है।"
+      },
+      {
+        "heading": "कार्य उदाहरण: दस शब्दों को अपनी जगह का हकदार बनाएं",
+        "paragraphs": [
+          "एक क्षैतिज क्लोज़-अप फ़ोटो की कल्पना करें: कार्य-मेज़ पर दो हाथ साइकिल का पहिया पकड़े हुए हैं और एक हाथ स्पोक के पास छोटा रिंच चला रहा है। पृष्ठभूमि धुंधली है। कोई चेहरा, ब्रांड, स्थान या सटीक मरम्मत-प्रक्रिया दिखाई नहीं देती। इन सीमाओं के आधार पर पहले दस शब्द परतों में बनाए जा सकते हैं।",
+          "पहले दो शब्द दृश्य और क्रिया की पहचान करते हैं। अगले तीन मुख्य वस्तु स्थापित करते हैं। उसके बाद के तीन दिखाई देने वाले विवरण जोड़ते हैं। अंतिम दो व्यावहारिक संदर्भ देते हैं। यह क्रम खोज की स्पष्टता और तथ्यात्मक संयम के बीच संतुलन रखता है।"
+        ],
+        "bullets": [
+          "1. bicycle repair — केंद्रीय विषय।",
+          "2. repairing — दिखाई देने वाली गतिविधि।",
+          "3. bicycle wheel — विशिष्ट वस्तु।",
+          "4. hands — वास्तव में दिखाई देने वाला मानवीय विवरण।",
+          "5. wheel — व्यापक वस्तु-शब्द।",
+          "6. spokes — दिखाई देने वाला संरचनात्मक विवरण।",
+          "7. wrench — उपयोग में दिखाई देने वाला औज़ार।",
+          "8. bicycle — व्यापक वस्तु-श्रेणी।",
+          "9. maintenance — मरम्मत के संदर्भ से समर्थित।",
+          "10. close-up — संयोजन का वर्णन करता है।"
+        ],
+        "example": "शीर्षक उदाहरण: Close-up hands repairing a bicycle wheel\nपहले दस कीवर्ड: bicycle repair, repairing, bicycle wheel, hands, wheel, spokes, wrench, bicycle, maintenance, close-up"
+      },
+      {
+        "heading": "प्रासंगिकता और भाषा की जाँच करें",
+        "paragraphs": [
+          "पहले दस शब्दों को क्रम देने के बाद दोहराव और असमर्थित दावों के लिए प्रस्तावित बाकी सूची देखें। केवल वही शब्द जोड़ें जो वास्तविक छवि या स्पष्ट रूप से दिखाई देने वाले उपयोग का वर्णन करते हों। “Workshop” तभी उचित है जब परिवेश कार्यशाला जैसा दिखे; धुंधली तटस्थ पृष्ठभूमि पर्याप्त नहीं है। “Professional mechanic” ऐसी भूमिका जोड़ता है जिसे छवि शायद स्थापित न करती हो।",
+          "मेटाडेटा की भाषा योगदानकर्ता खाते में निर्धारित भाषा से मेल खानी चाहिए। यदि खाते में अंग्रेज़ी आवश्यक है, तो संपादकीय नोट या लेख दूसरी भाषा में होने पर भी कीवर्ड सूची अंग्रेज़ी में रखें। अपलोड सीमाएं और सत्यापन विवरण बदल सकते हैं, इसलिए वर्तमान योगदानकर्ता पोर्टल भी जांचें।"
+        ],
+        "bullets": [
+          "दिखाई न देने वाले ब्रांड, स्वामित्व-दावे, पेशे और स्थान हटा दें।",
+          "समान अर्थ वाले भराव शब्दों से एक ही अवधारणा दोहराएं नहीं।",
+          "सबसे मजबूत दस शब्दों को छवि के वास्तविक खरीदार-केंद्रित विषय पर केंद्रित रखें।",
+          "अंतिम जमा करने से पहले पोर्टल की वर्तमान आवश्यकताओं का उपयोग करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "MetaStocker को मसौदे के रूप में उपयोग करें, फिर संपादित करें",
+        "paragraphs": [
+          "MetaStocker आगंतुक के ब्राउज़र में स्थानीय रूप से संपादित किए जा सकने वाले मेटाडेटा बना सकता है। इसके स्थानीय विज़न और चिंतन मॉडल आगंतुक के उपकरण पर WebGPU वर्कर्स के माध्यम से चलते हैं; डिफ़ॉल्ट स्थानीय मॉडल Gemma 4 E2B है। योगदानकर्ता मॉडल लोड करके छवि दे सकता है और परिणाम को शुरुआती आधार के रूप में उपयोग कर सकता है, लेकिन बनाया गया क्रम सटीकता का प्रमाण नहीं है।",
+          "मिश्रित बैच के लिए सामान्य निर्देश देने के बजाय एकल छवि-विशिष्ट विवरण दें। फिर हर सुझाए गए कीवर्ड, विशेष रूप से पहले दस, की समीक्षा करें। पहचान, पेशे, ब्रांड, स्थान या सटीक यांत्रिक क्रिया के बारे में अनुमान हटा दें। केवल तैयार पंक्तियां निर्यात करें। निर्यातक Adobe CSV आउटपुट बना सकता है, लेकिन वह फ़ाइल अपलोड नहीं करता, स्वीकृति की गारंटी नहीं देता और मूल छवि में मेटाडेटा एम्बेड नहीं करता।"
+        ],
+        "bullets": [
+          "स्थानीय मॉडल को सोच-समझकर लोड करें; पहली डाउनलोड के लिए इंटरनेट आवश्यक है।",
+          "एक स्थानीय समानांतर थ्रेड से शुरू करें और उपयोगी होने पर अतिरिक्त थ्रेड जांचें।",
+          "निर्यात से पहले हर फ़ाइल के संपादन योग्य परिणाम की समीक्षा करें।",
+          "CSV कार्यप्रवाह में पहले संपत्तियां अपलोड करें और योगदानकर्ता पोर्टल में आयात किए गए मेटाडेटा की जांच करें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "औज़ारों की सूची बनाने से पहले केंद्रीय क्रिया और वस्तु पहचानें।",
+      "छवि कितनी तकनीकी दिखती है, इसके बजाय विषय की स्पष्टता के आधार पर पहले दस शब्द क्रमबद्ध करें।",
+      "फ़्रेम में दिखाई देने वाले विवरण ही उपयोग करें।",
+      "अनुमानित पहचान, पेशे, ब्रांड, स्थान और स्वामित्व से बचें।",
+      "मेटाडेटा की भाषा योगदानकर्ता खाते से मिलाएं।",
+      "Adobe की वर्तमान आवश्यकताएं जांचें और CSV आयात के बाद पोर्टल का निरीक्षण करें।",
+      "तैयार पंक्ति निर्यात करने से पहले बनाए गए सुझावों को संपादित करें।"
+    ],
+    "illustration": {
+      "title": "कठिन दृश्य से पहले दस तक",
+      "steps": [
+        {
+          "label": "दिखाई देने वाला दृश्य पढ़ें",
+          "detail": "जो वास्तव में दिखाया गया है, उसमें से क्रिया, वस्तु, विवरण और परिवेश अलग करें।"
+        },
+        {
+          "label": "पहले विषय को क्रम दें",
+          "detail": "सहायक उपकरण-विवरण से पहले bicycle repair और wheel से जुड़े शब्द रखें।"
+        },
+        {
+          "label": "जांच कर निर्यात करें",
+          "detail": "अनुमान हटाएं, हर पंक्ति की समीक्षा करें, फिर Adobe के पोर्टल में मेटाडेटा देखें।"
+        }
+      ]
+    }
+  }
+}

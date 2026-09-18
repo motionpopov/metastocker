@@ -1,0 +1,475 @@
+{
+  "slug": "csv-commas-quotes-utf8",
+  "category": "exports",
+  "source_ids": [
+    "metastocker",
+    "adobe-csv",
+    "adobe-upload"
+  ],
+  "en": {
+    "title": "How to Fix Commas, Quotes, and UTF-8 in Metadata CSV",
+    "description": "Prepare a reliable metadata CSV when titles contain commas, quotes, or accented names, with escaping rules and a spreadsheet preview workflow.",
+    "intro": "A metadata CSV can look correct in a text editor and still open incorrectly in a spreadsheet or import with damaged fields. The usual trouble is not the comma itself: it is the combination of commas inside values, quotation marks inside titles, and character encoding. A place name such as São Paulo or Łódź makes the encoding issue visible immediately. This guide shows a practical way to prepare, inspect, and export a CSV for a stock workflow.",
+    "sections": [
+      {
+        "heading": "Know what the CSV must represent",
+        "paragraphs": [
+          "A CSV row should connect one exact filename with its title, keyword field, and any platform-specific columns you use. The filename, including extension and letter case, must match the uploaded asset when the destination requires that match. For Adobe Stock, upload the assets first, then import the CSV and inspect the resulting metadata in the contributor portal.",
+          "Do not assume that one schema works everywhere. Adobe, Envato, and Shutterstock can have different fields and limits, so use the destination’s current contributor instructions before exporting. A correctly formatted CSV can still be rejected or require edits if its columns or values do not meet current rules."
+        ],
+        "bullets": [
+          "Keep one header row and one metadata record per asset.",
+          "Use the exact filename, including its extension and case.",
+          "Treat marketplace validation as a separate step from CSV syntax."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "The three escaping rules",
+        "paragraphs": [
+          "Use UTF-8 when saving the file so accented characters remain characters rather than replacement symbols. Then apply the CSV quoting rules consistently. A field containing a comma should be surrounded by double quotes. A field containing a double quote should also be surrounded by double quotes, and each internal double quote must be doubled.",
+          "A keyword list is often safest as one quoted field because it contains commas between keywords. Do not add quotes around every keyword individually. The correct structure is one CSV cell containing a comma-separated list."
+        ],
+        "bullets": [
+          "Comma inside a value: quote the whole field.",
+          "Double quote inside a value: write it as two double quotes.",
+          "Comma-separated keyword list: quote the complete keyword field.",
+          "Save as UTF-8 and inspect the reopened file."
+        ],
+        "example": "filename,title,keywords\nsao-paulo.jpg,\"Street sign \"\"Centro\"\", São Paulo, Brazil\",\"street sign,Centro,São Paulo,Brazil,urban travel\""
+      },
+      {
+        "heading": "Worked example: prepare one difficult row",
+        "paragraphs": [
+          "Example: suppose the image file is sao-paulo.jpg and the intended title is Street sign \"Centro\", São Paulo, Brazil. The title contains both quotation marks and a comma. The correct CSV representation begins and ends the title with a double quote, while the internal quotation marks become doubled quotation marks.",
+          "The keyword field also contains commas, so it is enclosed in double quotes. São Paulo is preserved as UTF-8 text. Keep the metadata factual: the example describes visible wording and a place name you have verified, rather than guessing a person, ownership, or an unseen location."
+        ],
+        "bullets": [
+          "Start with the exact filename: sao-paulo.jpg.",
+          "Escape the title’s internal quotes as \"\"Centro\"\".",
+          "Quote the entire keyword list.",
+          "Use only relevant keywords and check the platform’s current maximum."
+        ],
+        "example": "filename,title,keywords\nsao-paulo.jpg,\"Street sign \"\"Centro\"\", São Paulo, Brazil\",\"street sign,Centro,São Paulo,Brazil,urban travel\""
+      },
+      {
+        "heading": "Preview it in a spreadsheet without corrupting it",
+        "paragraphs": [
+          "Open a copy in your spreadsheet application using its text or CSV import dialog when available. Select comma as the delimiter and UTF-8 as the encoding. The preview should show three columns: filename, the complete title in one cell, and the complete keyword list in one cell. If the title breaks into extra columns, the comma was not protected by quotes or the wrong delimiter was selected.",
+          "Check the accented place name visually. Also click into the title and confirm that the displayed value has one pair of quotation marks around Centro, not two pairs. Some spreadsheet programs may alter formatting when saving, so after inspection reopen the exported CSV as plain text or repeat the import preview."
+        ],
+        "bullets": [
+          "Confirm the delimiter is comma.",
+          "Confirm the character encoding is UTF-8.",
+          "Look for exactly three expected columns in the example row.",
+          "Reopen the saved CSV before sending it to a marketplace."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Generate and review metadata locally",
+        "paragraphs": [
+          "MetaStocker can generate editable metadata locally in the browser and export formats including Adobe CSV. In local mode, the model runs on your device through WebGPU; the first model download needs internet. Loading a model into memory is different from keeping downloaded model files in the browser cache, and cache retention is not a promise of permanent offline availability.",
+          "Whether you generate the row manually or with MetaStocker, review each title and keyword field before export. The app’s requested tag count validation checks the count, not the factual accuracy or CSV suitability. If you use a batch description, write facts that apply to the whole batch; add file-specific details only after checking each result."
+        ],
+        "bullets": [
+          "Edit the generated title before exporting.",
+          "Check that the title stays within the destination’s current limit.",
+          "Inspect keyword relevance, order, spelling, and language.",
+          "Export only rows that are ready for portal inspection."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Final import checks",
+        "paragraphs": [
+          "Before importing, compare every CSV filename with the uploaded asset list, including extension and case. Confirm that no row has shifted columns, no accented characters have changed, and no newline or stray delimiter has entered a field. For Adobe Stock, use a conservative maximum of 49 keywords and verify the current upload screen because requirements can change.",
+          "After import, inspect the metadata in the contributor portal rather than treating a successful file selection as proof that every value arrived correctly. If the portal shows a broken title, return to the source row, fix the escaping or encoding, and export a fresh copy."
+        ],
+        "bullets": [
+          "Check filenames against uploaded assets.",
+          "Confirm titles and keywords use the account’s required language.",
+          "Verify current field and keyword limits in the contributor portal.",
+          "Inspect imported values after the CSV is processed."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Save the CSV as UTF-8.",
+      "Quote every field containing a comma.",
+      "Double every internal double quote.",
+      "Keep the keyword list inside one quoted field.",
+      "Preview the row with comma delimiter and UTF-8 encoding.",
+      "Match filenames exactly, including extension and case.",
+      "Review imported metadata in the destination portal."
+    ],
+    "illustration": {
+      "title": "Three-step CSV cleanup",
+      "steps": [
+        {
+          "label": "Escape difficult fields",
+          "detail": "Quote comma fields and double internal quotation marks."
+        },
+        {
+          "label": "Preview UTF-8 data",
+          "detail": "Open the CSV with comma delimiter and UTF-8 encoding."
+        },
+        {
+          "label": "Inspect before import",
+          "detail": "Match filenames and review every portal value."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как исправить запятые, кавычки и UTF-8 в CSV",
+    "description": "Практическая подготовка CSV для стоковых метаданных: экранирование запятых и кавычек, UTF-8 и проверка в таблице перед импортом.",
+    "intro": "CSV с метаданными может выглядеть нормально в текстовом редакторе, но при открытии в таблице разбить заголовок на несколько ячеек или испортить буквы с диакритикой. Проблема обычно возникает из-за сочетания запятых внутри значений, кавычек внутри названия и неверной кодировки. Например, São Paulo или Łódź сразу показывают, что файл прочитан неправильно. Ниже — рабочий порядок подготовки, проверки и экспорта CSV для стокового процесса.",
+    "sections": [
+      {
+        "heading": "Сначала определите структуру строки",
+        "paragraphs": [
+          "Строка CSV должна связывать точное имя файла с его title, списком keywords и нужными полями конкретной платформы. Если сервис требует совпадения, имя файла вместе с расширением и регистром должно быть таким же, как у загруженного ассета. Для Adobe Stock сначала загружают файлы, затем импортируют CSV и проверяют результат в кабинете автора.",
+          "Не рассчитывайте, что одна схема подойдет всем площадкам. У Adobe, Envato и Shutterstock различаются поля и ограничения, поэтому перед экспортом откройте актуальные требования нужной площадки. Синтаксически правильный CSV все равно может потребовать исправлений или не соответствовать текущему формату импорта."
+        ],
+        "bullets": [
+          "Оставьте одну строку заголовков и одну запись на ассет.",
+          "Указывайте точное имя файла с расширением и регистром.",
+          "Отделяйте проверку синтаксиса CSV от проверки требований площадки."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Три правила экранирования",
+        "paragraphs": [
+          "Сохраняйте файл в UTF-8, чтобы буквы вроде ã, ó или ł не превращались в знаки замены. Затем применяйте правила CSV. Поле с запятой заключают в двойные кавычки. Поле с кавычками тоже заключают в двойные кавычки, а каждую внутреннюю кавычку записывают двумя кавычками.",
+          "Список ключевых слов безопаснее хранить как одно поле, заключенное в кавычки, потому что внутри него есть запятые между словами. Не заключайте каждое слово в отдельные кавычки: это меняет структуру значения."
+        ],
+        "bullets": [
+          "Запятая внутри значения: заключите все поле в кавычки.",
+          "Кавычка внутри значения: запишите ее двумя кавычками.",
+          "Список keywords: заключите в кавычки весь список.",
+          "Сохраните файл в UTF-8 и проверьте его повторным открытием."
+        ],
+        "example": "filename,title,keywords\nsao-paulo.jpg,\"Street sign \"\"Centro\"\", São Paulo, Brazil\",\"street sign,Centro,São Paulo,Brazil,urban travel\""
+      },
+      {
+        "heading": "Рабочий пример: одна сложная строка",
+        "paragraphs": [
+          "Пример: файл называется sao-paulo.jpg, а нужный title — Street sign \"Centro\", São Paulo, Brazil. В нем есть и кавычки, и запятая. Поэтому весь title заключается в двойные кавычки, а кавычки вокруг Centro превращаются в удвоенные.",
+          "В поле keywords также есть запятые, поэтому в кавычки заключен весь список. São Paulo сохраняется как текст UTF-8. Описывайте только проверяемое: в примере указаны видимая надпись и подтвержденное название места, без догадок о личности, владельце или деталях, которых нет в кадре."
+        ],
+        "bullets": [
+          "Начните с точного имени sao-paulo.jpg.",
+          "Замените кавычки вокруг Centro на \"\"Centro\"\" внутри CSV.",
+          "Заключите весь список keywords в кавычки.",
+          "Используйте релевантные слова и проверьте актуальный лимит площадки."
+        ],
+        "example": "filename,title,keywords\nsao-paulo.jpg,\"Street sign \"\"Centro\"\", São Paulo, Brazil\",\"street sign,Centro,São Paulo,Brazil,urban travel\""
+      },
+      {
+        "heading": "Проверьте файл в таблице",
+        "paragraphs": [
+          "Открывайте копию CSV через диалог импорта текста или CSV, если ваша таблица его предлагает. Выберите разделитель-запятую и кодировку UTF-8. В предварительном просмотре должно быть три столбца: filename, весь title в одной ячейке и весь список keywords в одной ячейке. Если title распался на дополнительные столбцы, запятая не была защищена кавычками либо выбран неправильный разделитель.",
+          "Проверьте буквы в названии места. Затем войдите в ячейку title и убедитесь, что вокруг Centro отображается одна пара кавычек, а не две пары. Некоторые таблицы меняют CSV при сохранении, поэтому после проверки снова откройте экспортированный файл как текст или повторите предпросмотр импорта."
+        ],
+        "bullets": [
+          "Убедитесь, что разделитель — запятая.",
+          "Убедитесь, что кодировка — UTF-8.",
+          "Проверьте ожидаемые столбцы в строке примера.",
+          "После сохранения повторно откройте CSV."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Генерируйте и редактируйте метаданные локально",
+        "paragraphs": [
+          "MetaStocker умеет генерировать редактируемые метаданные локально в браузере и экспортировать форматы, включая Adobe CSV. В локальном режиме модель работает на устройстве пользователя через WebGPU; для первой загрузки модели нужен интернет. Загрузка модели в память отличается от хранения скачанных файлов в кэше браузера, а сохранение кэша не означает гарантированную постоянную работу офлайн.",
+          "Независимо от способа создания строки проверьте каждый title и keywords перед экспортом. Проверка запрошенного количества тегов подтверждает количество, но не фактическую точность и не пригодность CSV. Если используете общее описание для партии, пишите только факты, относящиеся ко всем файлам; индивидуальные детали добавляйте после проверки каждого результата."
+        ],
+        "bullets": [
+          "Отредактируйте сгенерированный title перед экспортом.",
+          "Сверьте title с актуальным лимитом площадки.",
+          "Проверьте релевантность, порядок, написание и язык keywords.",
+          "Экспортируйте только готовые строки."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Проведите финальную проверку импорта",
+        "paragraphs": [
+          "Перед импортом сравните каждое имя в CSV со списком загруженных ассетов, включая расширение и регистр. Убедитесь, что столбцы не сдвинулись, диакритические знаки не изменились, а в поля не попали лишние разделители или переносы строк. Для Adobe Stock используйте консервативный максимум 49 keywords и проверьте текущий экран загрузки, поскольку требования могут меняться.",
+          "После импорта проверьте метаданные в кабинете автора. Сам факт выбора файла не доказывает, что каждое значение прочитано правильно. Если title отображается с ошибкой, исправьте исходную строку, заново примените экранирование и экспортируйте новую копию."
+        ],
+        "bullets": [
+          "Сверьте имена CSV с загруженными файлами.",
+          "Проверьте язык, требуемый аккаунтом и площадкой.",
+          "Уточните актуальные лимиты полей и keywords.",
+          "Проверьте импортированные значения в кабинете автора."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Сохраните CSV в UTF-8.",
+      "Заключите в кавычки каждое поле с запятой.",
+      "Удваивайте внутренние двойные кавычки.",
+      "Храните список keywords в одном поле в кавычках.",
+      "Проверьте файл с разделителем-запятой и UTF-8.",
+      "Сверьте имена файлов, расширения и регистр.",
+      "Проверьте метаданные после импорта на площадке."
+    ],
+    "illustration": {
+      "title": "Три шага проверки CSV",
+      "steps": [
+        {
+          "label": "Экранируйте сложные поля",
+          "detail": "Заключите поля с запятыми в кавычки и удвойте внутренние кавычки."
+        },
+        {
+          "label": "Проверьте UTF-8",
+          "detail": "Откройте CSV с разделителем-запятой и кодировкой UTF-8."
+        },
+        {
+          "label": "Проверьте импорт",
+          "detail": "Сверьте имена файлов и каждое значение в кабинете автора."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "মেটাডেটা CSV-তে কমা, উদ্ধৃতি ও UTF-8 ঠিক করার উপায়",
+    "description": "শিরোনামে কমা, উদ্ধৃতি বা উচ্চারণচিহ্নযুক্ত নাম থাকলে পালানোর নিয়ম ও টেবিল-প্রিভিউ কর্মপ্রবাহ মেনে নির্ভরযোগ্য মেটাডেটা CSV প্রস্তুত করুন।",
+    "intro": "মেটাডেটা CSV কোনো টেক্সট এডিটরে ঠিক দেখালেও টেবিল-সম্পাদনা অ্যাপে ভুলভাবে খুলতে পারে বা ক্ষতিগ্রস্ত ক্ষেত্রসহ আমদানি হতে পারে। সাধারণ সমস্যা শুধু কমা নয়; ক্ষেত্রের ভেতরের কমা, শিরোনামের ভেতরের উদ্ধৃতিচিহ্ন এবং অক্ষর-এনকোডিং একসঙ্গে সমস্যা তৈরি করে। São Paulo বা Łódź-এর মতো স্থানের নাম থাকলে এনকোডিংয়ের সমস্যা সঙ্গে সঙ্গে বোঝা যায়। এই নির্দেশিকায় স্টক কর্মপ্রবাহের জন্য CSV প্রস্তুত, পরীক্ষা ও রপ্তানির ব্যবহারিক পদ্ধতি দেখানো হয়েছে।",
+    "sections": [
+      {
+        "heading": "CSV-তে কী উপস্থাপিত হতে হবে তা জানুন",
+        "paragraphs": [
+          "একটি CSV সারিতে একটি নির্দিষ্ট ফাইলের নাম, তার শিরোনাম, কীওয়ার্ড ক্ষেত্র এবং আপনি ব্যবহার করা প্ল্যাটফর্ম-নির্দিষ্ট কলামগুলোর মধ্যে সংযোগ থাকা উচিত। গন্তব্যে মিল থাকা আবশ্যক হলে এক্সটেনশন ও বড়-ছোট অক্ষরসহ ফাইলের নাম আপলোড করা সম্পদের সঙ্গে হুবহু মিলতে হবে। Adobe Stock-এর ক্ষেত্রে আগে সম্পদ আপলোড করুন, তারপর CSV আমদানি করে অবদানকারী পোর্টালে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন।",
+          "একটি স্কিমা সব জায়গায় কাজ করবে—এমন ধরে নেবেন না। Adobe, Envato এবং Shutterstock-এর ক্ষেত্র ও সীমা আলাদা হতে পারে, তাই রপ্তানির আগে গন্তব্যের বর্তমান অবদানকারী নির্দেশনা ব্যবহার করুন। কলাম বা মান বর্তমান নিয়ম পূরণ না করলে সঠিকভাবে বিন্যস্ত CSV-ও প্রত্যাখ্যাত হতে পারে বা সম্পাদনা প্রয়োজন হতে পারে।"
+        ],
+        "bullets": [
+          "একটি হেডার সারি এবং প্রতিটি সম্পদের জন্য একটি মেটাডেটা রেকর্ড রাখুন।",
+          "এক্সটেনশন ও বড়-ছোট অক্ষরসহ সঠিক ফাইলের নাম ব্যবহার করুন।",
+          "মার্কেটপ্লেস যাচাইকে CSV গঠনের নিয়ম থেকে আলাদা ধাপ হিসেবে বিবেচনা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "উদ্ধৃতি ব্যবহারের তিনটি নিয়ম",
+        "paragraphs": [
+          "ফাইল সংরক্ষণের সময় UTF-8 ব্যবহার করুন, যাতে উচ্চারণচিহ্নযুক্ত অক্ষর প্রতিস্থাপন-চিহ্নে পরিণত না হয়ে অক্ষর হিসেবেই থাকে। এরপর ধারাবাহিকভাবে CSV-র উদ্ধৃতি-নিয়ম প্রয়োগ করুন। কোনো ক্ষেত্রে কমা থাকলে পুরো ক্ষেত্রটি দ্বৈত উদ্ধৃতিচিহ্নের মধ্যে রাখুন। কোনো ক্ষেত্রে দ্বৈত উদ্ধৃতিচিহ্ন থাকলেও পুরো ক্ষেত্রটি দ্বৈত উদ্ধৃতিচিহ্নের মধ্যে রাখতে হবে এবং ভেতরের প্রতিটি দ্বৈত উদ্ধৃতিচিহ্ন দুবার লিখতে হবে।",
+          "কীওয়ার্ড তালিকায় কীওয়ার্ডগুলোর মাঝখানে কমা থাকে বলে সেটিকে একটি উদ্ধৃত ক্ষেত্র হিসেবে রাখা সবচেয়ে নিরাপদ। প্রতিটি কীওয়ার্ড আলাদাভাবে উদ্ধৃত করবেন না। সঠিক গঠন হলো কমা দিয়ে আলাদা করা একটি তালিকা থাকা একটিমাত্র CSV ঘর।"
+        ],
+        "bullets": [
+          "মানের ভেতরে কমা থাকলে পুরো ক্ষেত্রটি উদ্ধৃত করুন।",
+          "মানের ভেতরে দ্বৈত উদ্ধৃতিচিহ্ন থাকলে সেটিকে দুটি দ্বৈত উদ্ধৃতিচিহ্ন হিসেবে লিখুন।",
+          "কমা-বিভাজিত কীওয়ার্ড তালিকা হলে সম্পূর্ণ কীওয়ার্ড ক্ষেত্রটি উদ্ধৃত করুন।",
+          "UTF-8 হিসেবে সংরক্ষণ করে পুনরায় খোলা ফাইল পরীক্ষা করুন।"
+        ],
+        "example": "filename,title,keywords\nsao-paulo.jpg,\"Street sign \"\"Centro\"\", São Paulo, Brazil\",\"street sign,Centro,São Paulo,Brazil,urban travel\""
+      },
+      {
+        "heading": "কাজের উদাহরণ: একটি কঠিন সারি প্রস্তুত করুন",
+        "paragraphs": [
+          "উদাহরণ হিসেবে ধরুন, ছবির ফাইলটি sao-paulo.jpg এবং নির্ধারিত শিরোনাম হলো Street sign \"Centro\", São Paulo, Brazil। শিরোনামে উদ্ধৃতিচিহ্ন ও কমা—দুটিই আছে। সঠিক CSV উপস্থাপনায় শিরোনামটি শুরু ও শেষে দ্বৈত উদ্ধৃতিচিহ্ন দিয়ে ঘেরা থাকবে, আর ভেতরের উদ্ধৃতিচিহ্নগুলো দ্বিগুণ করা হবে।",
+          "কীওয়ার্ড ক্ষেত্রেও কমা আছে, তাই সেটিকে দ্বৈত উদ্ধৃতিচিহ্নের মধ্যে রাখতে হবে। São Paulo-কে UTF-8 পাঠ্য হিসেবে অপরিবর্তিত রাখুন। মেটাডেটা তথ্যনির্ভর রাখুন: উদাহরণে যাচাই করা দৃশ্যমান লেখা ও স্থানের নাম বর্ণনা করা হয়েছে; কোনো ব্যক্তি, মালিকানা বা অদৃশ্য স্থানের বিষয়ে অনুমান করা হয়নি।"
+        ],
+        "bullets": [
+          "সঠিক ফাইলের নাম দিয়ে শুরু করুন: sao-paulo.jpg।",
+          "শিরোনামের ভেতরের উদ্ধৃতিচিহ্নকে \"\"Centro\"\" হিসেবে পালান।",
+          "সম্পূর্ণ কীওয়ার্ড তালিকাটি উদ্ধৃত করুন।",
+          "শুধু প্রাসঙ্গিক কীওয়ার্ড ব্যবহার করুন এবং প্ল্যাটফর্মের বর্তমান সর্বোচ্চ সীমা পরীক্ষা করুন।"
+        ],
+        "example": "filename,title,keywords\nsao-paulo.jpg,\"Street sign \"\"Centro\"\", São Paulo, Brazil\",\"street sign,Centro,São Paulo,Brazil,urban travel\""
+      },
+      {
+        "heading": "ক্ষতি না করে টেবিল-সম্পাদনা অ্যাপে প্রিভিউ করুন",
+        "paragraphs": [
+          "সম্ভব হলে টেক্সট বা CSV আমদানি সংলাপ ব্যবহার করে টেবিল-সম্পাদনা অ্যাপে একটি অনুলিপি খুলুন। বিভাজক হিসেবে কমা এবং এনকোডিং হিসেবে UTF-8 নির্বাচন করুন। প্রিভিউতে তিনটি কলাম দেখা উচিত: filename, একটি ঘরে সম্পূর্ণ শিরোনাম এবং একটি ঘরে সম্পূর্ণ কীওয়ার্ড তালিকা। শিরোনাম অতিরিক্ত কলামে ভেঙে গেলে কমাটি উদ্ধৃতিচিহ্ন দিয়ে সুরক্ষিত করা হয়নি, অথবা ভুল বিভাজক নির্বাচন করা হয়েছে।",
+          "উচ্চারণচিহ্নযুক্ত স্থানের নামটি চোখে দেখে পরীক্ষা করুন। শিরোনামে ক্লিক করে নিশ্চিত করুন যে প্রদর্শিত মানে Centro-কে ঘিরে এক জোড়া উদ্ধৃতিচিহ্ন আছে, দুই জোড়া নয়। কিছু টেবিল-সম্পাদনা প্রোগ্রাম সংরক্ষণের সময় বিন্যাস বদলে দিতে পারে, তাই পরীক্ষা শেষে রপ্তানি করা CSV-কে সাধারণ টেক্সট হিসেবে আবার খুলুন অথবা আমদানি-প্রিভিউ পুনরাবৃত্তি করুন।"
+        ],
+        "bullets": [
+          "বিভাজক কমা কি না নিশ্চিত করুন।",
+          "অক্ষর-এনকোডিং UTF-8 কি না নিশ্চিত করুন।",
+          "উদাহরণ সারিতে প্রত্যাশিত ঠিক তিনটি কলাম আছে কি না দেখুন।",
+          "মার্কেটপ্লেসে পাঠানোর আগে সংরক্ষিত CSV আবার খুলুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "স্থানীয়ভাবে মেটাডেটা তৈরি ও পর্যালোচনা করুন",
+        "paragraphs": [
+          "MetaStocker ব্রাউজারে স্থানীয়ভাবে সম্পাদনাযোগ্য মেটাডেটা তৈরি করতে পারে এবং Adobe CSV-সহ বিভিন্ন বিন্যাসে রপ্তানি করতে পারে। স্থানীয় মোডে মডেলটি WebGPU-এর মাধ্যমে আপনার ডিভাইসে চলে; প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট প্রয়োজন। মডেলকে মেমরিতে লোড করা এবং ডাউনলোড করা মডেল ফাইল ব্রাউজারের ক্যাশে রেখে দেওয়া এক বিষয় নয়; ক্যাশে থাকা মানেই স্থায়ী অফলাইন ব্যবহারের নিশ্চয়তা নয়।",
+          "আপনি সারিটি হাতে তৈরি করুন বা MetaStocker দিয়ে তৈরি করুন, রপ্তানির আগে প্রতিটি শিরোনাম ও কীওয়ার্ড ক্ষেত্র পরীক্ষা করুন। অ্যাপের চাওয়া ট্যাগ-সংখ্যা যাচাই শুধু সংখ্যা পরীক্ষা করে, তথ্যের সত্যতা বা CSV-র উপযোগিতা নয়। কোনো ব্যাচের বর্ণনা ব্যবহার করলে পুরো ব্যাচে প্রযোজ্য তথ্য লিখুন; প্রতিটি ফল পরীক্ষা করার পরই শুধু ফাইল-নির্দিষ্ট বিবরণ যোগ করুন।"
+        ],
+        "bullets": [
+          "রপ্তানির আগে তৈরি হওয়া শিরোনাম সম্পাদনা করুন।",
+          "শিরোনামটি গন্তব্যের বর্তমান সীমার মধ্যে আছে কি না পরীক্ষা করুন।",
+          "কীওয়ার্ডের প্রাসঙ্গিকতা, ক্রম, বানান ও ভাষা পরীক্ষা করুন।",
+          "শুধু পোর্টালে পরীক্ষা করার জন্য প্রস্তুত সারিগুলো রপ্তানি করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "চূড়ান্ত আমদানি পরীক্ষা",
+        "paragraphs": [
+          "আমদানি করার আগে এক্সটেনশন ও বড়-ছোট অক্ষরসহ প্রতিটি CSV ফাইলের নাম আপলোড করা সম্পদের তালিকার সঙ্গে মিলিয়ে দেখুন। কোনো সারির কলাম সরে গেছে কি না, উচ্চারণচিহ্নযুক্ত অক্ষর বদলেছে কি না এবং কোনো নতুন লাইন বা অতিরিক্ত বিভাজক কোনো ক্ষেত্রে ঢুকেছে কি না নিশ্চিত করুন। Adobe Stock-এর ক্ষেত্রে সতর্কতামূলক সর্বোচ্চ সীমা হিসেবে 49টি কীওয়ার্ড ব্যবহার করুন এবং বর্তমান আপলোড স্ক্রিন যাচাই করুন, কারণ প্রয়োজনীয়তা বদলাতে পারে।",
+          "আমদানির পর শুধু ফাইল নির্বাচন সফল হয়েছে বলেই সব মান সঠিকভাবে এসেছে ধরে নেবেন না; অবদানকারী পোর্টালে মেটাডেটা পরীক্ষা করুন। পোর্টালে শিরোনাম ভাঙা দেখালে মূল সারিতে ফিরে গিয়ে উদ্ধৃতি বা এনকোডিং ঠিক করুন এবং নতুন অনুলিপি রপ্তানি করুন।"
+        ],
+        "bullets": [
+          "আপলোড করা সম্পদের সঙ্গে ফাইলের নাম মিলিয়ে দেখুন।",
+          "শিরোনাম ও কীওয়ার্ড অ্যাকাউন্টে প্রয়োজনীয় ভাষায় আছে কি না নিশ্চিত করুন।",
+          "অবদানকারী পোর্টালে বর্তমান ক্ষেত্র ও কীওয়ার্ডের সীমা যাচাই করুন।",
+          "CSV প্রক্রিয়াকরণের পর আমদানি হওয়া মানগুলো পরীক্ষা করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "CSV-কে UTF-8 হিসেবে সংরক্ষণ করুন।",
+      "কমা থাকা প্রতিটি ক্ষেত্র উদ্ধৃত করুন।",
+      "ভেতরের প্রতিটি দ্বৈত উদ্ধৃতিচিহ্ন দুবার লিখুন।",
+      "কীওয়ার্ড তালিকাটি একটি উদ্ধৃত ক্ষেত্রের মধ্যে রাখুন।",
+      "কমা বিভাজক ও UTF-8 এনকোডিং দিয়ে সারিটি প্রিভিউ করুন।",
+      "এক্সটেনশন ও বড়-ছোট অক্ষরসহ ফাইলের নাম হুবহু মিলিয়ে নিন।",
+      "গন্তব্যের পোর্টালে আমদানি হওয়া মেটাডেটা পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "CSV পরিষ্কারের তিন ধাপ",
+      "steps": [
+        {
+          "label": "কঠিন ক্ষেত্র পালান",
+          "detail": "কমাযুক্ত ক্ষেত্র উদ্ধৃত করুন এবং ভেতরের উদ্ধৃতিচিহ্ন দ্বিগুণ করুন।"
+        },
+        {
+          "label": "UTF-8 তথ্য প্রিভিউ করুন",
+          "detail": "কমা বিভাজক ও UTF-8 এনকোডিং দিয়ে CSV খুলুন।"
+        },
+        {
+          "label": "আমদানির আগে পরীক্ষা করুন",
+          "detail": "ফাইলের নাম মিলিয়ে নিন এবং পোর্টালের প্রতিটি মান পর্যালোচনা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "मेटाडेटा CSV में कॉमा, उद्धरण और UTF-8 ठीक करने का तरीका",
+    "description": "शीर्षकों में कॉमा, उद्धरण या उच्चारण-चिह्न वाले नाम होने पर एस्केपिंग नियमों और टेबल-प्रिव्यू कार्यप्रवाह से भरोसेमंद मेटाडेटा CSV तैयार करें।",
+    "intro": "मेटाडेटा CSV टेक्स्ट एडिटर में सही दिख सकती है, फिर भी टेबल-एडिटिंग ऐप में गलत खुल सकती है या खराब फ़ील्ड के साथ आयात हो सकती है। आम समस्या केवल कॉमा नहीं है; फ़ील्ड के भीतर के कॉमा, शीर्षकों के भीतर के उद्धरण-चिह्न और अक्षर-एन्कोडिंग का मेल परेशानी पैदा करता है। São Paulo या Łódź जैसे स्थान-नाम एन्कोडिंग की समस्या तुरंत दिखा देते हैं। यह मार्गदर्शिका स्टॉक कार्यप्रवाह के लिए CSV तैयार करने, जाँचने और निर्यात करने का व्यावहारिक तरीका बताती है।",
+    "sections": [
+      {
+        "heading": "जानें कि CSV को क्या दर्शाना है",
+        "paragraphs": [
+          "CSV की एक पंक्ति में एक सटीक फ़ाइल नाम को उसके शीर्षक, कीवर्ड फ़ील्ड और आपके द्वारा उपयोग किए जाने वाले प्लेटफ़ॉर्म-विशिष्ट कॉलमों से जोड़ना चाहिए। जहाँ गंतव्य पर मिलान आवश्यक हो, वहाँ एक्सटेंशन और बड़े-छोटे अक्षरों सहित फ़ाइल नाम अपलोड की गई संपत्ति से बिल्कुल मेल खाना चाहिए। Adobe Stock के लिए पहले संपत्तियाँ अपलोड करें, फिर CSV आयात करें और योगदानकर्ता पोर्टल में बनी मेटाडेटा की जाँच करें।",
+          "यह न मानें कि एक ही स्कीमा हर जगह काम करेगी। Adobe, Envato और Shutterstock में फ़ील्ड और सीमाएँ अलग हो सकती हैं, इसलिए निर्यात से पहले गंतव्य के वर्तमान योगदानकर्ता निर्देशों का उपयोग करें। कॉलम या मान वर्तमान नियमों के अनुरूप न हों तो सही तरह से बनाई गई CSV भी अस्वीकार हो सकती है या उसमें बदलाव माँगा जा सकता है।"
+        ],
+        "bullets": [
+          "एक हेडर पंक्ति और हर संपत्ति के लिए एक मेटाडेटा रिकॉर्ड रखें।",
+          "एक्सटेंशन और बड़े-छोटे अक्षरों सहित सटीक फ़ाइल नाम इस्तेमाल करें।",
+          "मार्केटप्लेस सत्यापन को CSV संरचना से अलग चरण मानें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "एस्केपिंग के तीन नियम",
+        "paragraphs": [
+          "फ़ाइल सहेजते समय UTF-8 इस्तेमाल करें, ताकि उच्चारण-चिह्न वाले अक्षर प्रतिस्थापन-चिह्नों में न बदलें। इसके बाद CSV के उद्धरण नियम लगातार लागू करें। जिस फ़ील्ड में कॉमा हो, उसे दोहरे उद्धरण-चिह्नों में रखें। जिस फ़ील्ड में दोहरा उद्धरण-चिह्न हो, उसे भी दोहरे उद्धरण-चिह्नों में रखें और हर आंतरिक दोहरे उद्धरण-चिह्न को दो बार लिखें।",
+          "कीवर्ड सूची में कीवर्डों के बीच कॉमा होते हैं, इसलिए उसे एक उद्धृत फ़ील्ड के रूप में रखना अक्सर सबसे सुरक्षित होता है। हर कीवर्ड को अलग-अलग उद्धृत न करें। सही संरचना एक ही CSV सेल है जिसमें कॉमा से अलग की गई सूची हो।"
+        ],
+        "bullets": [
+          "मान के भीतर कॉमा हो: पूरे फ़ील्ड को उद्धृत करें।",
+          "मान के भीतर दोहरा उद्धरण-चिह्न हो: उसे दो दोहरे उद्धरण-चिह्नों के रूप में लिखें।",
+          "कॉमा से अलग की गई कीवर्ड सूची हो: पूरे कीवर्ड फ़ील्ड को उद्धृत करें।",
+          "UTF-8 के रूप में सहेजें और दोबारा खोली गई फ़ाइल जाँचें।"
+        ],
+        "example": "filename,title,keywords\nsao-paulo.jpg,\"Street sign \"\"Centro\"\", São Paulo, Brazil\",\"street sign,Centro,São Paulo,Brazil,urban travel\""
+      },
+      {
+        "heading": "काम का उदाहरण: एक कठिन पंक्ति तैयार करें",
+        "paragraphs": [
+          "उदाहरण के लिए, मान लें कि छवि फ़ाइल sao-paulo.jpg है और इच्छित शीर्षक Street sign \"Centro\", São Paulo, Brazil है। शीर्षक में उद्धरण-चिह्न और कॉमा दोनों हैं। सही CSV रूप में शीर्षक की शुरुआत और अंत दोहरे उद्धरण-चिह्नों से होंगे, जबकि भीतर के उद्धरण-चिह्नों को दोहरा लिखा जाएगा।",
+          "कीवर्ड फ़ील्ड में भी कॉमा हैं, इसलिए उसे दोहरे उद्धरण-चिह्नों में रखें। São Paulo को UTF-8 टेक्स्ट के रूप में बनाए रखें। मेटाडेटा को तथ्यपरक रखें: उदाहरण में सत्यापित दिखाई देने वाले शब्द और स्थान-नाम का वर्णन है, किसी व्यक्ति, स्वामित्व या न दिखने वाले स्थान का अनुमान नहीं।"
+        ],
+        "bullets": [
+          "सटीक फ़ाइल नाम से शुरू करें: sao-paulo.jpg।",
+          "शीर्षक के आंतरिक उद्धरण-चिह्नों को \"\"Centro\"\" के रूप में एस्केप करें।",
+          "पूरी कीवर्ड सूची को उद्धृत करें।",
+          "केवल प्रासंगिक कीवर्ड इस्तेमाल करें और प्लेटफ़ॉर्म की वर्तमान अधिकतम सीमा जाँचें।"
+        ],
+        "example": "filename,title,keywords\nsao-paulo.jpg,\"Street sign \"\"Centro\"\", São Paulo, Brazil\",\"street sign,Centro,São Paulo,Brazil,urban travel\""
+      },
+      {
+        "heading": "इसे खराब किए बिना टेबल-एडिटिंग ऐप में प्रिव्यू करें",
+        "paragraphs": [
+          "जहाँ उपलब्ध हो, वहाँ अपने टेबल-एडिटिंग ऐप के टेक्स्ट या CSV आयात संवाद से एक प्रति खोलें। विभाजक के रूप में कॉमा और एन्कोडिंग के रूप में UTF-8 चुनें। प्रिव्यू में तीन कॉलम दिखने चाहिए: filename, एक सेल में पूरा शीर्षक और एक सेल में पूरी कीवर्ड सूची। यदि शीर्षक अतिरिक्त कॉलमों में टूट जाए, तो कॉमा उद्धरण-चिह्नों से सुरक्षित नहीं है या गलत विभाजक चुना गया है।",
+          "उच्चारण-चिह्न वाले स्थान-नाम को आँखों से जाँचें। शीर्षक में क्लिक करके पक्का करें कि प्रदर्शित मान में Centro के चारों ओर उद्धरण-चिह्नों की एक जोड़ी है, दो जोड़ियाँ नहीं। कुछ टेबल-एडिटिंग प्रोग्राम सहेजते समय फ़ॉर्मैट बदल सकते हैं, इसलिए जाँच के बाद निर्यात की गई CSV को साधारण टेक्स्ट के रूप में फिर खोलें या आयात प्रिव्यू दोहराएँ।"
+        ],
+        "bullets": [
+          "पक्का करें कि विभाजक कॉमा है।",
+          "पक्का करें कि अक्षर-एन्कोडिंग UTF-8 है।",
+          "उदाहरण की पंक्ति में अपेक्षित ठीक तीन कॉलम देखें।",
+          "मार्केटप्लेस को भेजने से पहले सहेजी गई CSV फिर खोलें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "मेटाडेटा स्थानीय रूप से बनाएँ और जाँचें",
+        "paragraphs": [
+          "MetaStocker ब्राउज़र में स्थानीय रूप से संपादन योग्य मेटाडेटा बना सकता है और Adobe CSV सहित कई प्रारूपों में निर्यात कर सकता है। स्थानीय मोड में मॉडल WebGPU के ज़रिए आपके डिवाइस पर चलता है; पहली मॉडल डाउनलोड के लिए इंटरनेट चाहिए। मॉडल को मेमरी में लोड करना और डाउनलोड की गई मॉडल फ़ाइलों को ब्राउज़र कैश में रखना अलग बातें हैं; कैश में बने रहना स्थायी ऑफ़लाइन उपलब्धता की गारंटी नहीं है।",
+          "चाहे आप पंक्ति स्वयं बनाएँ या MetaStocker से, निर्यात से पहले हर शीर्षक और कीवर्ड फ़ील्ड जाँचें। ऐप का माँगी गई टैग संख्या सत्यापन केवल संख्या जाँचता है, तथ्यात्मक शुद्धता या CSV की उपयुक्तता नहीं। यदि आप किसी बैच का विवरण इस्तेमाल करते हैं, तो पूरे बैच पर लागू होने वाले तथ्य लिखें; हर परिणाम जाँचने के बाद ही फ़ाइल-विशिष्ट विवरण जोड़ें।"
+        ],
+        "bullets": [
+          "निर्यात से पहले बनाए गए शीर्षक को संपादित करें।",
+          "जाँचें कि शीर्षक गंतव्य की वर्तमान सीमा के भीतर है।",
+          "कीवर्ड की प्रासंगिकता, क्रम, वर्तनी और भाषा जाँचें।",
+          "केवल वे पंक्तियाँ निर्यात करें जो पोर्टल पर जाँच के लिए तैयार हों।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "अंतिम आयात जाँच",
+        "paragraphs": [
+          "आयात से पहले एक्सटेंशन और बड़े-छोटे अक्षरों सहित हर CSV फ़ाइल नाम को अपलोड की गई संपत्तियों की सूची से मिलाएँ। पक्का करें कि किसी पंक्ति के कॉलम खिसके नहीं हैं, उच्चारण-चिह्न वाले अक्षर बदले नहीं हैं और कोई नई पंक्ति या अतिरिक्त विभाजक किसी फ़ील्ड में नहीं आया है। Adobe Stock के लिए सावधानीपूर्ण अधिकतम 49 कीवर्ड रखें और वर्तमान अपलोड स्क्रीन जाँचें, क्योंकि आवश्यकताएँ बदल सकती हैं।",
+          "आयात के बाद योगदानकर्ता पोर्टल में मेटाडेटा जाँचें; केवल फ़ाइल चयन सफल होने को इस बात का प्रमाण न मानें कि हर मान सही पहुँचा है। यदि पोर्टल में शीर्षक टूटा हुआ दिखे, तो मूल पंक्ति पर लौटें, उद्धरण या एन्कोडिंग ठीक करें और नई प्रति निर्यात करें।"
+        ],
+        "bullets": [
+          "अपलोड की गई संपत्तियों से फ़ाइल नाम मिलाएँ।",
+          "पक्का करें कि शीर्षक और कीवर्ड खाते की आवश्यक भाषा में हैं।",
+          "योगदानकर्ता पोर्टल में वर्तमान फ़ील्ड और कीवर्ड सीमाएँ जाँचें।",
+          "CSV संसाधित होने के बाद आयात किए गए मानों की जाँच करें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "CSV को UTF-8 के रूप में सहेजें।",
+      "कॉमा वाले हर फ़ील्ड को उद्धृत करें।",
+      "हर आंतरिक दोहरे उद्धरण-चिह्न को दो बार लिखें।",
+      "कीवर्ड सूची को एक ही उद्धृत फ़ील्ड में रखें।",
+      "कॉमा विभाजक और UTF-8 एन्कोडिंग से पंक्ति का प्रिव्यू करें।",
+      "एक्सटेंशन और बड़े-छोटे अक्षरों सहित फ़ाइल नाम बिल्कुल मिलाएँ।",
+      "गंतव्य पोर्टल में आयात किए गए मेटाडेटा की जाँच करें।"
+    ],
+    "illustration": {
+      "title": "CSV साफ़ करने के तीन चरण",
+      "steps": [
+        {
+          "label": "कठिन फ़ील्ड एस्केप करें",
+          "detail": "कॉमा वाले फ़ील्ड उद्धृत करें और आंतरिक उद्धरण-चिह्न दोहरे करें।"
+        },
+        {
+          "label": "UTF-8 डेटा का प्रिव्यू लें",
+          "detail": "CSV को कॉमा विभाजक और UTF-8 एन्कोडिंग के साथ खोलें।"
+        },
+        {
+          "label": "आयात से पहले जाँचें",
+          "detail": "फ़ाइल नाम मिलाएँ और पोर्टल के हर मान की समीक्षा करें।"
+        }
+      ]
+    }
+  }
+}

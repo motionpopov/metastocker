@@ -1,0 +1,415 @@
+{
+  "slug": "mastering-adobe-stock-autokeywording",
+  "category": "platforms",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "adobe-upload"
+  ],
+  "en": {
+    "title": "How to Review Adobe Stock Auto-Keywords and Fix the First Ten",
+    "description": "A practical Adobe Stock workflow for checking automatic keywords, removing false labels, and arranging the first ten terms around what the image shows.",
+    "intro": "Adobe Stock automatic keywords can save time, but they are only a draft. The useful question is not whether the generator produced enough words; it is whether the metadata describes the actual image, in the right order, without adding unsupported claims. Adobe Stock gives special importance to the first ten keywords, so a short review of that group can have more practical value than keeping a long list untouched.",
+    "sections": [
+      {
+        "heading": "Start with what the image proves",
+        "paragraphs": [
+          "Look at the image as a contributor and write down only visible, defensible facts. For this guide, the subject is a cyclist crossing a wooden bridge. The image can support a cyclist, bicycle, bridge, wood, crossing, outdoors, and perhaps a landscape setting if that setting is genuinely visible. It cannot prove the rider’s name, nationality, event affiliation, city, or whether the crossing belongs to a race.",
+          "The metadata language must match the language associated with the contributor account. If the account uses English, review and export English keywords. A Russian-language explanation does not mean that Russian terms should be inserted into an English Adobe Stock submission."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Inspect the automatic draft critically",
+        "paragraphs": [
+          "Treat every generated term as a suggestion. Separate clear subjects from guesses, broad context, and labels that depend on information outside the frame. A city name is usually a location claim, not a visual description. A race label can imply an organized competition, while a single cyclist on a bridge may simply be recreational or commuting activity.",
+          "Also look for repetition and near-duplicates. More keywords are not automatically better. Adobe’s general keyword guidance permits up to 49 keywords, but relevance matters more than filling the allowance. Keep terms that add a useful search concept and remove words that merely repeat the same idea."
+        ],
+        "bullets": [
+          "Keep visible nouns and actions.",
+          "Question places, events, identities, and intentions.",
+          "Remove repeated or weakly related wording."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: repair the first ten",
+        "paragraphs": [
+          "Example, not a measured result: suppose the automatic draft begins with cyclist, bike, city, race, bridge, bicycle, outdoors, sport, wood, crossing, river, travel. The image shows no recognizable city and no verified race. Remove city and race. Then choose a sequence that leads with the principal subject and action, followed by the setting and useful visual context.",
+          "One defensible ten-term priority sequence is: cyclist, bicycle, bridge, crossing, wooden bridge, outdoors, cycling, sport, river, landscape. The exact final terms still depend on the frame. If no river is visible, omit river. If the image does not clearly show a wider landscape, omit landscape. The point is to preserve accuracy while placing the strongest concepts first.",
+          "Notice the tradeoff: cyclist and bicycle overlap, but they can serve different search phrasing. Wooden bridge is more specific than bridge, yet it should not replace bridge if the broader term remains useful. Sport is acceptable only when the visual context supports it; otherwise use a neutral activity term."
+        ],
+        "bullets": [],
+        "example": "Automatic draft: cyclist, bike, city, race, bridge, bicycle, outdoors, sport, wood, crossing, river, travel\n\nRemove: city, race\n\nPriority sequence: cyclist, bicycle, bridge, crossing, wooden bridge, outdoors, cycling, sport, river, landscape"
+      },
+      {
+        "heading": "Use a local generator as a drafting aid",
+        "paragraphs": [
+          "MetaStocker can generate local metadata in the visitor’s browser using local vision and thinking models. In local mode, the model runs on the visitor’s device through WebGPU workers; the first model download requires internet. Loading a model into memory is different from retaining downloaded model files in the browser cache, and browser storage can be evicted.",
+          "For a single image, begin with one local parallel thread and review the result before trying two. Give batch description context only when it is true for every file in the batch. Extra tags can be placed at selected positions, but each added term still needs per-file review. The app can validate the requested tag count; that does not prove that the tags are accurate."
+        ],
+        "bullets": [
+          "Load the model explicitly, then generate a draft.",
+          "Compare every term with the image.",
+          "Unload memory or delete browser model files when appropriate."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Edit before exporting or uploading",
+        "paragraphs": [
+          "Keep the editable result as a working draft until the first ten are correct. Check the title as a natural description rather than a keyword list, and stay within the current Adobe requirements. The CSV workflow maps filenames to titles and keywords, so exact filenames matter when importing. Upload the assets before importing the CSV, then inspect the resulting metadata in the contributor portal.",
+          "MetaStocker exports an Adobe CSV, but it does not upload or submit the file, guarantee acceptance, or embed metadata into the original image. Marketplace requirements can change, so check Adobe’s current contributor portal and CSV guidance immediately before submission."
+        ],
+        "bullets": [
+          "Confirm the filename, extension, and capitalization.",
+          "Review the title and all keywords in the portal.",
+          "Submit only after correcting unsupported claims."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Keep marketplace metadata separate from website SEO",
+        "paragraphs": [
+          "Adobe Stock search metadata and Google website indexing are different systems. Reordering Adobe keywords does not guarantee Google visibility, marketplace ranking, sales, or revenue. If you also publish the image on your own site, use descriptive surrounding text and appropriate alt text for that page, rather than copying every marketplace keyword into the page.",
+          "This separation keeps the workflow honest: the Adobe list describes the asset for the marketplace, while website text explains the image to visitors and search engines."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Describe only what the image visibly supports.",
+      "Delete the incorrect city and race labels.",
+      "Place the strongest ten terms in priority order.",
+      "Check every added tag for individual relevance.",
+      "Use the contributor account’s metadata language.",
+      "Match filenames exactly in any CSV workflow.",
+      "Inspect imported metadata in Adobe’s portal.",
+      "Recheck current Adobe requirements before submission."
+    ],
+    "illustration": {
+      "title": "Adobe keyword review workflow",
+      "steps": [
+        {
+          "label": "Read the visible evidence",
+          "detail": "List the subject, action, setting, and materials you can defend."
+        },
+        {
+          "label": "Remove unsupported labels",
+          "detail": "Delete the city and race guesses, then rank the strongest ten terms."
+        },
+        {
+          "label": "Verify and export",
+          "detail": "Inspect each row, match filenames, and review the portal import."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как проверить автоключевые слова Adobe Stock и исправить первые десять",
+    "description": "Практическое руководство по проверке автоключевых слов Adobe Stock: удалите ошибочные ярлыки и расставьте первые десять терминов по важности.",
+    "intro": "Автоматические ключевые слова Adobe Stock экономят время, но остаются черновиком. Важно не количество сгенерированных слов, а то, насколько точно они описывают кадр и насколько удачно расставлены. Adobe Stock придаёт особое значение первым десяти ключевым словам, поэтому короткая внимательная проверка этой группы полезнее, чем бездумное сохранение длинного списка.",
+    "sections": [
+      {
+        "heading": "Начните с того, что видно в кадре",
+        "paragraphs": [
+          "Рассматривайте изображение как автор и записывайте только проверяемые визуальные факты. В нашем примере велосипедист пересекает деревянный мост. Кадр может подтверждать слова cyclist, bicycle, bridge, wood, crossing, outdoors и, возможно, landscape, если окружающий пейзаж действительно различим. Но пиксели не подтверждают имя человека, его гражданство, город, участие в соревновании или принадлежность к конкретному событию.",
+          "Язык метаданных должен соответствовать языку аккаунта автора. Если аккаунт настроен на английский, проверяйте и экспортируйте английские ключевые слова. Русский язык этой статьи не означает, что в англоязычную отправку Adobe Stock нужно добавлять русские термины."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Относитесь к автоматике как к черновику",
+        "paragraphs": [
+          "Проверяйте каждое предложенное слово. Отделяйте ясные предметы от догадок, общего контекста и обозначений, которые требуют сведений за пределами изображения. Название города обычно является утверждением о местоположении, а не визуальным описанием. Метка race может создать впечатление официальной гонки, хотя один велосипедист на мосту может ехать для отдыха или по своим делам.",
+          "Проверьте повторы и близкие по смыслу варианты. Заполнение лимита не является целью. Общая инструкция Adobe допускает до 49 ключевых слов, но релевантность важнее количества. Оставляйте термин, если он добавляет полезный поисковый смысл, а не просто повторяет уже выбранное слово."
+        ],
+        "bullets": [
+          "Оставляйте видимые предметы и действия.",
+          "Сомневайтесь в местах, событиях и намерениях.",
+          "Удаляйте повторы и слабые связи с кадром."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Разбор примера: исправляем первые десять",
+        "paragraphs": [
+          "Пример, а не измеренный результат: представим, что автоматический список начинается так: cyclist, bike, city, race, bridge, bicycle, outdoors, sport, wood, crossing, river, travel. На изображении нет узнаваемого города и нет подтверждённой гонки. Удаляем city и race, а затем строим порядок от главного объекта и действия к окружению и полезному контексту.",
+          "Одна обоснованная последовательность из десяти приоритетных терминов: cyclist, bicycle, bridge, crossing, wooden bridge, outdoors, cycling, sport, river, landscape. Итог зависит от конкретного кадра. Если реки не видно, удалите river. Если широкий пейзаж не является заметной частью композиции, удалите landscape. Главная задача — сохранить точность и поставить самые сильные понятия в начало.",
+          "Здесь есть компромиссы. Cyclist и bicycle частично пересекаются, но могут соответствовать разным поисковым формулировкам. Wooden bridge точнее, чем bridge, однако общий термин может оставаться полезным. Sport уместно оставлять только при наличии визуального контекста; иначе лучше выбрать нейтральное описание активности."
+        ],
+        "bullets": [],
+        "example": "Исходный черновик: cyclist, bike, city, race, bridge, bicycle, outdoors, sport, wood, crossing, river, travel\n\nУдалить: city, race\n\nПриоритетная последовательность: cyclist, bicycle, bridge, crossing, wooden bridge, outdoors, cycling, sport, river, landscape"
+      },
+      {
+        "heading": "Используйте локальный генератор для черновика",
+        "paragraphs": [
+          "MetaStocker умеет создавать локальные метаданные в браузере посетителя с помощью локальных моделей зрения и рассуждения. В локальном режиме модель работает на устройстве пользователя через WebGPU workers; для первой загрузки модели нужен интернет. Загрузка модели в память — не то же самое, что сохранение скачанных файлов в кэше браузера: браузер может удалить такие файлы.",
+          "Для одного изображения начните с одного параллельного потока и сначала проверьте результат. Два потока можно испытать позднее, если устройство справляется. Контекст описания для пакетной обработки добавляйте только тогда, когда он верен для каждого файла. Дополнительные теги можно поставить в начало, конец или случайные позиции, но каждый нужно проверить отдельно. Проверка количества тегов не доказывает их смысловую точность."
+        ],
+        "bullets": [
+          "Явно загрузите модель и создайте черновик.",
+          "Сопоставьте каждое слово с изображением.",
+          "При необходимости выгрузите модель из памяти или удалите её файлы браузера."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Проверьте данные до экспорта и отправки",
+        "paragraphs": [
+          "Не считайте результат готовым, пока первые десять терминов не проверены вручную. Заголовок должен быть естественным описанием, а не перечнем ключевых слов, и должен соответствовать текущим требованиям Adobe. В CSV имена файлов связываются с заголовками и ключевыми словами, поэтому совпадение имени, расширения и регистра имеет значение. Сначала загрузите сами материалы, затем импортируйте CSV и осмотрите получившиеся метаданные в портале автора.",
+          "MetaStocker экспортирует Adobe CSV, но не загружает и не отправляет его, не гарантирует принятие и не записывает метаданные в исходный файл. Требования площадки меняются, поэтому перед отправкой проверьте текущий портал автора Adobe и актуальные правила CSV."
+        ],
+        "bullets": [
+          "Сверьте имя файла, расширение и регистр.",
+          "Проверьте заголовок и весь список ключевых слов.",
+          "Исправьте неподтверждённые утверждения до отправки."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Не смешивайте метаданные площадки и SEO сайта",
+        "paragraphs": [
+          "Поиск внутри Adobe Stock и индексация сайта Google — разные системы. Перестановка ключевых слов Adobe не гарантирует видимость в Google, более высокую позицию на площадке, продажи или доход. Если вы публикуете изображение на собственном сайте, добавьте описательный окружающий текст и подходящий alt-текст для этой страницы, а не переносите туда весь список marketplace-ключей.",
+          "Такой разделённый подход сохраняет точность: список Adobe описывает файл для внутреннего поиска площадки, а текст сайта объясняет изображение посетителям и поисковым системам."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Описывайте только то, что подтверждается кадром.",
+      "Удалите ошибочные обозначения города и гонки.",
+      "Поставьте десять сильнейших терминов в приоритетном порядке.",
+      "Проверьте релевантность каждого добавленного тега.",
+      "Используйте язык метаданных аккаунта автора.",
+      "Точно сопоставьте имена файлов в CSV.",
+      "Проверьте импортированные данные в портале Adobe.",
+      "Перед отправкой сверяйтесь с актуальными правилами Adobe."
+    ],
+    "illustration": {
+      "title": "Проверка ключевых слов Adobe",
+      "steps": [
+        {
+          "label": "Прочитайте видимые факты",
+          "detail": "Запишите предмет, действие, окружение и материалы, которые можно доказать."
+        },
+        {
+          "label": "Удалите неподтверждённое",
+          "detail": "Уберите догадки о городе и гонке, затем выберите десять главных терминов."
+        },
+        {
+          "label": "Проверьте и экспортируйте",
+          "detail": "Осмотрите строки, сверьте имена файлов и проверьте импорт в портале."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "Adobe Stock-এর স্বয়ংক্রিয় কীওয়ার্ড পর্যালোচনা ও প্রথম দশটি ঠিক করা",
+    "description": "স্বয়ংক্রিয় কীওয়ার্ড যাচাই, ভুল লেবেল বাদ দেওয়া এবং ছবির বিষয় অনুযায়ী প্রথম দশটি সাজানোর ব্যবহারিক Adobe Stock কর্মপ্রবাহ।",
+    "intro": "Adobe Stock-এর স্বয়ংক্রিয় কীওয়ার্ড সময় বাঁচাতে পারে, কিন্তু এগুলো কেবল একটি খসড়া। আসল প্রশ্ন হলো, জেনারেটর যথেষ্ট শব্দ তৈরি করেছে কি না তা নয়; বরং মেটাডেটা ছবির বাস্তব বিষয়কে সঠিক ক্রমে বর্ণনা করছে কি না এবং অসমর্থিত দাবি যোগ করছে কি না। Adobe Stock প্রথম দশটি কীওয়ার্ডকে বিশেষ গুরুত্ব দেয়, তাই এই অংশটি সংক্ষেপে পর্যালোচনা করা দীর্ঘ তালিকা অপরিবর্তিত রাখার চেয়ে বেশি কার্যকর হতে পারে।",
+    "sections": [
+      {
+        "heading": "ছবিটি যা প্রমাণ করে, তা দিয়ে শুরু করুন",
+        "paragraphs": [
+          "একজন অবদানকারী হিসেবে ছবিটি দেখুন এবং কেবল দৃশ্যমান ও যুক্তিসঙ্গতভাবে সমর্থনযোগ্য তথ্য লিখে রাখুন। এই নির্দেশিকার জন্য বিষয় হলো কাঠের সেতু পার হওয়া একজন সাইক্লিস্ট। ছবিটি সাইক্লিস্ট, সাইকেল, সেতু, কাঠ, পার হওয়া, বাইরের পরিবেশ এবং সম্ভবত দৃশ্যপটের পরিবেশ সমর্থন করতে পারে, যদি সেই পরিবেশ সত্যিই দৃশ্যমান হয়। কিন্তু এটি আরোহীর নাম, জাতীয়তা, কোনো অনুষ্ঠানের সঙ্গে সম্পর্ক, শহর বা পারাপারটি কোনো দৌড়ের অংশ কি না—এসব প্রমাণ করতে পারে না।",
+          "মেটাডেটার ভাষা অবদানকারী অ্যাকাউন্টের সঙ্গে যুক্ত ভাষার মতো হতে হবে। অ্যাকাউন্টে ইংরেজি ব্যবহার হলে ইংরেজি কীওয়ার্ড পর্যালোচনা ও রপ্তানি করুন। কোনো রুশ-ভাষার ব্যাখ্যা থাকলেই ইংরেজি Adobe Stock জমাদানে রুশ শব্দ ঢোকানো উচিত নয়।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "স্বয়ংক্রিয় খসড়াটি সমালোচনামূলকভাবে পরীক্ষা করুন",
+        "paragraphs": [
+          "প্রতিটি তৈরি হওয়া শব্দকে একটি প্রস্তাব হিসেবে বিবেচনা করুন। স্পষ্ট বিষয়কে অনুমান, বিস্তৃত প্রেক্ষাপট এবং ফ্রেমের বাইরের তথ্যের ওপর নির্ভরশীল লেবেল থেকে আলাদা করুন। শহরের নাম সাধারণত অবস্থানসংক্রান্ত দাবি, দৃশ্যমান বর্ণনা নয়। দৌড়ের লেবেল কোনো আয়োজিত প্রতিযোগিতা বোঝাতে পারে, অথচ সেতুর ওপর একা একজন সাইক্লিস্ট কেবল বিনোদনমূলকভাবে বা যাতায়াতের জন্য চলতে পারেন।",
+          "পুনরাবৃত্তি ও কাছাকাছি অর্থের শব্দও খুঁজুন। বেশি কীওয়ার্ড স্বয়ংক্রিয়ভাবে ভালো নয়। Adobe-এর সাধারণ কীওয়ার্ড নির্দেশিকা সর্বোচ্চ 49টি কীওয়ার্ডের অনুমতি দেয়, কিন্তু সীমা পূরণের চেয়ে প্রাসঙ্গিকতা বেশি গুরুত্বপূর্ণ। যেসব শব্দ উপযোগী অনুসন্ধান-ধারণা যোগ করে সেগুলো রাখুন, আর একই ভাব কেবল পুনরাবৃত্তি করে এমন শব্দ বাদ দিন।"
+        ],
+        "bullets": [
+          "দৃশ্যমান বিশেষ্য ও কাজের শব্দ রাখুন।",
+          "স্থান, অনুষ্ঠান, পরিচয় ও উদ্দেশ্য নিয়ে প্রশ্ন তুলুন।",
+          "পুনরাবৃত্ত বা দুর্বলভাবে সম্পর্কিত শব্দ বাদ দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: প্রথম দশটি ঠিক করুন",
+        "paragraphs": [
+          "উদাহরণ, পরিমাপক ফল নয়: ধরুন স্বয়ংক্রিয় খসড়াটি শুরু হয়েছে cyclist, bike, city, race, bridge, bicycle, outdoors, sport, wood, crossing, river, travel দিয়ে। ছবিতে শনাক্তযোগ্য কোনো শহর বা যাচাই করা দৌড় দেখা যাচ্ছে না। city ও race বাদ দিন। এরপর এমন ক্রম বেছে নিন, যাতে প্রধান বিষয় ও কাজ আগে আসে, তারপর পরিবেশ ও উপযোগী দৃশ্যগত প্রেক্ষাপট।",
+          "সমর্থনযোগ্য দশটি অগ্রাধিকার শব্দের একটি ক্রম হলো: cyclist, bicycle, bridge, crossing, wooden bridge, outdoors, cycling, sport, river, landscape। চূড়ান্ত শব্দগুলো এখনও ফ্রেমের ওপর নির্ভর করবে। নদী দেখা না গেলে river বাদ দিন। ছবিতে বিস্তৃত দৃশ্যপট স্পষ্ট না হলে landscape বাদ দিন। লক্ষ্য হলো নির্ভুলতা বজায় রেখে সবচেয়ে শক্তিশালী ধারণাগুলো আগে রাখা।",
+          "এই ভারসাম্যটি লক্ষ করুন: cyclist ও bicycle-এর অর্থ কিছুটা কাছাকাছি হলেও তারা ভিন্ন অনুসন্ধান-ভাষা হিসেবে কাজ করতে পারে। wooden bridge, bridge-এর চেয়ে নির্দিষ্ট, তবে বিস্তৃত শব্দটি উপযোগী থাকলে wooden bridge দিয়ে bridge প্রতিস্থাপন করা উচিত নয়। দৃশ্যগত প্রেক্ষাপট সমর্থন করলেই sport গ্রহণযোগ্য; অন্যথায় নিরপেক্ষ কোনো কার্যকলাপের শব্দ ব্যবহার করুন।"
+        ],
+        "bullets": [],
+        "example": "স্বয়ংক্রিয় খসড়া: cyclist, bike, city, race, bridge, bicycle, outdoors, sport, wood, crossing, river, travel\n\nবাদ দিন: city, race\n\nঅগ্রাধিকারের ক্রম: cyclist, bicycle, bridge, crossing, wooden bridge, outdoors, cycling, sport, river, landscape"
+      },
+      {
+        "heading": "স্থানীয় জেনারেটরকে খসড়া তৈরির সহায়ক হিসেবে ব্যবহার করুন",
+        "paragraphs": [
+          "MetaStocker স্থানীয় দৃষ্টি ও চিন্তন মডেল ব্যবহার করে দর্শকের ব্রাউজারে স্থানীয় মেটাডেটা তৈরি করতে পারে। স্থানীয় মোডে মডেলটি WebGPU কর্মীর মাধ্যমে দর্শকের ডিভাইসে চলে; প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট প্রয়োজন। মডেল মেমরিতে লোড করা এবং ডাউনলোড করা মডেলের ফাইল ব্রাউজার ক্যাশে রেখে দেওয়া এক বিষয় নয়, আর ব্রাউজারের সংরক্ষণস্থান উচ্ছেদ হয়ে যেতে পারে।",
+          "একটি ছবির ক্ষেত্রে প্রথমে একটি স্থানীয় সমান্তরাল থ্রেড দিয়ে শুরু করুন এবং দুইটি চেষ্টা করার আগে ফল পর্যালোচনা করুন। ব্যাচের বর্ণনার প্রেক্ষাপট কেবল তখনই দিন, যখন তা ব্যাচের প্রতিটি ফাইলের জন্য সত্য। অতিরিক্ত ট্যাগ বাছাই করা অবস্থানে রাখা যায়, কিন্তু প্রতিটি যোগ করা শব্দের জন্যও ফাইলভিত্তিক পর্যালোচনা দরকার। অ্যাপটি চাওয়া ট্যাগের সংখ্যা যাচাই করতে পারে; এতে ট্যাগ সঠিক প্রমাণ হয় না।"
+        ],
+        "bullets": [
+          "মডেলটি স্পষ্টভাবে লোড করে তারপর খসড়া তৈরি করুন।",
+          "প্রতিটি শব্দের সঙ্গে ছবির তুলনা করুন।",
+          "প্রয়োজন অনুযায়ী মেমরি খালি করুন বা ব্রাউজারের মডেল ফাইল মুছে দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "রপ্তানি বা আপলোডের আগে সম্পাদনা করুন",
+        "paragraphs": [
+          "প্রথম দশটি সঠিক না হওয়া পর্যন্ত সম্পাদনাযোগ্য ফলটিকে কাজের খসড়া হিসেবে রাখুন। শিরোনামটি কীওয়ার্ডের তালিকা নয়, স্বাভাবিক বর্ণনা হিসেবে যাচাই করুন এবং বর্তমান Adobe প্রয়োজনীয়তার মধ্যে থাকুন। CSV কর্মপ্রবাহে ফাইলের নামের সঙ্গে শিরোনাম ও কীওয়ার্ড মিলিয়ে নেওয়া হয়, তাই আমদানির সময় নির্ভুল ফাইলের নাম গুরুত্বপূর্ণ। CSV আমদানি করার আগে সম্পদগুলো আপলোড করুন, তারপর অবদানকারী পোর্টালে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন।",
+          "MetaStocker Adobe CSV রপ্তানি করে, কিন্তু ফাইলটি আপলোড বা জমা দেয় না, গ্রহণের নিশ্চয়তা দেয় না এবং মূল ছবিতে মেটাডেটা সংযুক্ত করে না। বাজারের প্রয়োজনীয়তা বদলাতে পারে, তাই জমা দেওয়ার ঠিক আগে Adobe-এর বর্তমান অবদানকারী পোর্টাল ও CSV নির্দেশিকা পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "ফাইলের নাম, এক্সটেনশন ও বড়-ছোট হাতের অক্ষর নিশ্চিত করুন।",
+          "পোর্টালে শিরোনাম ও সব কীওয়ার্ড পর্যালোচনা করুন।",
+          "অসমর্থিত দাবি সংশোধন করার পরই জমা দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "বাজারের মেটাডেটা ও ওয়েবসাইটের SEO আলাদা রাখুন",
+        "paragraphs": [
+          "Adobe Stock-এর অনুসন্ধান-মেটাডেটা ও Google-এর ওয়েবসাইট সূচিবদ্ধকরণ দুটি আলাদা ব্যবস্থা। Adobe কীওয়ার্ডের ক্রম বদলালে Google-এ দৃশ্যমানতা, বাজারে অবস্থান, বিক্রি বা আয়ের নিশ্চয়তা হয় না। ছবিটি নিজের সাইটেও প্রকাশ করলে প্রতিটি বাজারের কীওয়ার্ড পৃষ্ঠায় কপি না করে সেই পৃষ্ঠার জন্য বর্ণনামূলক পারিপার্শ্বিক লেখা ও উপযুক্ত বিকল্প লেখা ব্যবহার করুন।",
+          "এই আলাদা ব্যবস্থা কর্মপ্রবাহকে সৎ রাখে: Adobe তালিকা বাজারের জন্য সম্পদটি বর্ণনা করে, আর ওয়েবসাইটের লেখা দর্শক ও অনুসন্ধান ইঞ্জিনকে ছবিটি ব্যাখ্যা করে।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "ছবিটি দৃশ্যত যতটুকু সমর্থন করে, কেবল ততটুকুই বর্ণনা করুন।",
+      "ভুল city ও race লেবেল মুছে দিন।",
+      "সবচেয়ে শক্তিশালী দশটি শব্দ অগ্রাধিকারের ক্রমে রাখুন।",
+      "প্রতিটি যোগ করা ট্যাগের স্বতন্ত্র প্রাসঙ্গিকতা যাচাই করুন।",
+      "অবদানকারী অ্যাকাউন্টের মেটাডেটা ভাষা ব্যবহার করুন।",
+      "যেকোনো CSV কর্মপ্রবাহে ফাইলের নাম হুবহু মিলিয়ে নিন।",
+      "Adobe-এর পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।",
+      "জমা দেওয়ার আগে Adobe-এর বর্তমান প্রয়োজনীয়তা আবার যাচাই করুন।"
+    ],
+    "illustration": {
+      "title": "Adobe কীওয়ার্ড পর্যালোচনার কর্মপ্রবাহ",
+      "steps": [
+        {
+          "label": "দৃশ্যমান প্রমাণ পড়ুন",
+          "detail": "যে বিষয়, কাজ, পরিবেশ ও উপকরণ সমর্থন করতে পারেন, সেগুলোর তালিকা করুন।"
+        },
+        {
+          "label": "অসমর্থিত লেবেল বাদ দিন",
+          "detail": "city ও race-এর অনুমান মুছে সবচেয়ে শক্তিশালী দশটি শব্দের ক্রম ঠিক করুন।"
+        },
+        {
+          "label": "যাচাই করে রপ্তানি করুন",
+          "detail": "প্রতিটি সারি পরীক্ষা করুন, ফাইলের নাম মিলিয়ে নিন এবং পোর্টালে আমদানি পর্যালোচনা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "Adobe Stock के ऑटो-कीवर्ड की समीक्षा और पहले दस को सुधारना",
+    "description": "स्वचालित कीवर्ड जाँचने, गलत लेबल हटाने और चित्र के अनुसार पहले दस शब्दों को क्रम देने की व्यावहारिक Adobe Stock कार्यप्रणाली।",
+    "intro": "Adobe Stock के स्वचालित कीवर्ड समय बचा सकते हैं, लेकिन वे केवल एक मसौदा हैं। उपयोगी प्रश्न यह नहीं है कि जनरेटर ने पर्याप्त शब्द बनाए या नहीं; प्रश्न यह है कि मेटाडेटा वास्तविक चित्र का सही क्रम में वर्णन करता है या नहीं और बिना आधार के दावे जोड़ता है या नहीं। Adobe Stock पहले दस कीवर्ड को विशेष महत्व देता है, इसलिए इस समूह की छोटी-सी समीक्षा लंबी सूची को बिना जाँचे रखने से अधिक उपयोगी हो सकती है।",
+    "sections": [
+      {
+        "heading": "चित्र जो साबित करता है, उसी से शुरुआत करें",
+        "paragraphs": [
+          "योगदानकर्ता के रूप में चित्र को देखें और केवल दिखाई देने वाले, ठोस रूप से समर्थित तथ्यों को लिखें। इस मार्गदर्शिका में विषय लकड़ी के पुल को पार करता हुआ एक साइकिल चालक है। चित्र साइकिल चालक, साइकिल, पुल, लकड़ी, पार करना, बाहरी वातावरण और शायद किसी दृश्य-परिवेश का समर्थन कर सकता है, यदि वह परिवेश सचमुच दिखाई देता हो। यह सवार का नाम, राष्ट्रीयता, किसी आयोजन से संबंध, शहर या यह नहीं साबित कर सकता कि पार करना किसी दौड़ का हिस्सा है।",
+          "मेटाडेटा की भाषा योगदानकर्ता अकाउंट से जुड़ी भाषा के अनुरूप होनी चाहिए। यदि अकाउंट में अंग्रेज़ी उपयोग होती है, तो अंग्रेज़ी कीवर्ड की समीक्षा और निर्यात करें। रूसी भाषा में कोई व्याख्या होने का अर्थ यह नहीं है कि अंग्रेज़ी Adobe Stock सबमिशन में रूसी शब्द डाले जाएँ।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "स्वचालित मसौदे की आलोचनात्मक जाँच करें",
+        "paragraphs": [
+          "हर बनाए गए शब्द को एक सुझाव मानें। स्पष्ट विषयों को अनुमानों, व्यापक संदर्भ और फ़्रेम के बाहर की जानकारी पर निर्भर लेबलों से अलग करें। शहर का नाम आम तौर पर स्थान संबंधी दावा होता है, दृश्य विवरण नहीं। दौड़ का लेबल किसी संगठित प्रतियोगिता का संकेत दे सकता है, जबकि पुल पर अकेला साइकिल चालक केवल मनोरंजन या आवागमन के लिए चल रहा हो सकता है।",
+          "दोहराव और लगभग समान अर्थ वाले शब्द भी देखें। अधिक कीवर्ड अपने-आप बेहतर नहीं होते। Adobe के सामान्य कीवर्ड निर्देश अधिकतम 49 कीवर्ड की अनुमति देते हैं, लेकिन सीमा भरने से अधिक महत्वपूर्ण प्रासंगिकता है। ऐसे शब्द रखें जो खोज की उपयोगी अवधारणा जोड़ते हों और ऐसे शब्द हटाएँ जो केवल उसी विचार को दोहराते हों।"
+        ],
+        "bullets": [
+          "दिखाई देने वाले संज्ञा-शब्द और क्रियाएँ रखें।",
+          "स्थान, आयोजन, पहचान और इरादे पर सवाल उठाएँ।",
+          "दोहराए गए या कमजोर रूप से संबंधित शब्द हटाएँ।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "काम का उदाहरण: पहले दस को सुधारें",
+        "paragraphs": [
+          "उदाहरण, मापा हुआ परिणाम नहीं: मान लें कि स्वचालित मसौदा cyclist, bike, city, race, bridge, bicycle, outdoors, sport, wood, crossing, river, travel से शुरू होता है। चित्र में कोई पहचानने योग्य शहर या सत्यापित दौड़ नहीं दिखती। city और race हटाएँ। फिर ऐसा क्रम चुनें जो मुख्य विषय और क्रिया से शुरू हो, उसके बाद परिवेश और उपयोगी दृश्य संदर्भ आए।",
+          "समर्थन योग्य दस शब्दों का एक प्राथमिकता क्रम है: cyclist, bicycle, bridge, crossing, wooden bridge, outdoors, cycling, sport, river, landscape। अंतिम शब्द अभी भी फ़्रेम पर निर्भर करते हैं। यदि नदी दिखाई नहीं देती, तो river हटा दें। यदि चित्र में विस्तृत दृश्य-परिवेश स्पष्ट नहीं है, तो landscape हटा दें। उद्देश्य सटीकता बनाए रखते हुए सबसे मजबूत अवधारणाओं को पहले रखना है।",
+          "इस संतुलन पर ध्यान दें: cyclist और bicycle एक-दूसरे से मिलते-जुलते हैं, लेकिन खोज में अलग वाक्य-प्रयोग के रूप में काम कर सकते हैं। wooden bridge, bridge से अधिक विशिष्ट है, फिर भी यदि व्यापक शब्द उपयोगी बना रहता है तो wooden bridge को bridge की जगह नहीं रखना चाहिए। sport तभी स्वीकार्य है जब दृश्य संदर्भ उसका समर्थन करे; अन्यथा किसी तटस्थ गतिविधि-शब्द का उपयोग करें।"
+        ],
+        "bullets": [],
+        "example": "स्वचालित मसौदा: cyclist, bike, city, race, bridge, bicycle, outdoors, sport, wood, crossing, river, travel\n\nहटाएँ: city, race\n\nप्राथमिकता का क्रम: cyclist, bicycle, bridge, crossing, wooden bridge, outdoors, cycling, sport, river, landscape"
+      },
+      {
+        "heading": "स्थानीय जनरेटर को मसौदा बनाने में सहायक की तरह उपयोग करें",
+        "paragraphs": [
+          "MetaStocker स्थानीय विज़न और सोचने वाले मॉडल का उपयोग करके दर्शक के ब्राउज़र में स्थानीय मेटाडेटा बना सकता है। स्थानीय मोड में मॉडल WebGPU वर्कर के ज़रिए दर्शक के डिवाइस पर चलता है; पहली बार मॉडल डाउनलोड करने के लिए इंटरनेट आवश्यक है। मॉडल को मेमोरी में लोड करना और डाउनलोड की गई मॉडल फ़ाइलों को ब्राउज़र कैश में बनाए रखना अलग बातें हैं, और ब्राउज़र स्टोरेज हटाया जा सकता है।",
+          "एक चित्र के लिए पहले एक स्थानीय समानांतर थ्रेड से शुरू करें और दो आज़माने से पहले परिणाम की समीक्षा करें। बैच का विवरण केवल तभी दें जब वह बैच की हर फ़ाइल पर लागू होता हो। अतिरिक्त टैग चुनी हुई जगहों पर रखे जा सकते हैं, लेकिन हर जोड़े गए शब्द की फ़ाइल-दर-फ़ाइल समीक्षा फिर भी आवश्यक है। ऐप माँगे गए टैग की संख्या की पुष्टि कर सकता है; इससे टैग सही साबित नहीं होते।"
+        ],
+        "bullets": [
+          "मॉडल को स्पष्ट रूप से लोड करें, फिर मसौदा बनाएँ।",
+          "हर शब्द की तुलना चित्र से करें।",
+          "उचित होने पर मेमोरी खाली करें या ब्राउज़र की मॉडल फ़ाइलें हटाएँ।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "निर्यात या अपलोड से पहले संपादन करें",
+        "paragraphs": [
+          "जब तक पहले दस सही न हों, संपादन योग्य परिणाम को कार्यशील मसौदे के रूप में रखें। शीर्षक को कीवर्ड सूची के बजाय स्वाभाविक विवरण के रूप में जाँचें और वर्तमान Adobe आवश्यकताओं की सीमा में रहें। CSV कार्यप्रवाह फ़ाइलनाम को शीर्षक और कीवर्ड से मिलाता है, इसलिए आयात करते समय सटीक फ़ाइलनाम महत्वपूर्ण हैं। CSV आयात करने से पहले संपत्तियाँ अपलोड करें, फिर योगदानकर्ता पोर्टल में बने मेटाडेटा की जाँच करें।",
+          "MetaStocker Adobe CSV निर्यात करता है, लेकिन फ़ाइल को अपलोड या सबमिट नहीं करता, स्वीकृति की गारंटी नहीं देता और मूल चित्र में मेटाडेटा एम्बेड नहीं करता। बाज़ार की आवश्यकताएँ बदल सकती हैं, इसलिए सबमिशन से ठीक पहले Adobe के वर्तमान योगदानकर्ता पोर्टल और CSV निर्देशों की जाँच करें।"
+        ],
+        "bullets": [
+          "फ़ाइलनाम, एक्सटेंशन और बड़े-छोटे अक्षरों की पुष्टि करें।",
+          "पोर्टल में शीर्षक और सभी कीवर्ड की समीक्षा करें।",
+          "बिना आधार वाले दावों को सुधारने के बाद ही सबमिट करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "मार्केटप्लेस मेटाडेटा को वेबसाइट SEO से अलग रखें",
+        "paragraphs": [
+          "Adobe Stock का खोज मेटाडेटा और Google का वेबसाइट इंडेक्सिंग अलग-अलग प्रणालियाँ हैं। Adobe कीवर्ड का क्रम बदलने से Google दृश्यता, मार्केटप्लेस रैंकिंग, बिक्री या आय की गारंटी नहीं मिलती। यदि आप चित्र अपनी वेबसाइट पर भी प्रकाशित करते हैं, तो हर मार्केटप्लेस कीवर्ड को पृष्ठ पर कॉपी करने के बजाय उस पृष्ठ के लिए वर्णनात्मक आसपास का पाठ और उपयुक्त वैकल्पिक पाठ इस्तेमाल करें।",
+          "यह अलगाव कार्यप्रणाली को ईमानदार रखता है: Adobe सूची मार्केटप्लेस के लिए संपत्ति का वर्णन करती है, जबकि वेबसाइट का पाठ आगंतुकों और खोज इंजनों को चित्र समझाता है।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "केवल वही वर्णन करें जिसे चित्र दृश्य रूप से समर्थित करता है।",
+      "गलत city और race लेबल हटाएँ।",
+      "सबसे मजबूत दस शब्दों को प्राथमिकता क्रम में रखें।",
+      "हर जोड़े गए टैग की व्यक्तिगत प्रासंगिकता जाँचें।",
+      "योगदानकर्ता अकाउंट की मेटाडेटा भाषा का उपयोग करें।",
+      "किसी भी CSV कार्यप्रवाह में फ़ाइलनाम हूबहू मिलाएँ।",
+      "Adobe के पोर्टल में आयात किए गए मेटाडेटा की जाँच करें।",
+      "सबमिशन से पहले Adobe की वर्तमान आवश्यकताओं को फिर से जाँचें।"
+    ],
+    "illustration": {
+      "title": "Adobe कीवर्ड समीक्षा कार्यप्रणाली",
+      "steps": [
+        {
+          "label": "दिखाई देने वाले प्रमाण पढ़ें",
+          "detail": "उस विषय, क्रिया, परिवेश और सामग्री की सूची बनाएँ जिसे आप प्रमाणित कर सकते हैं।"
+        },
+        {
+          "label": "बिना आधार वाले लेबल हटाएँ",
+          "detail": "city और race के अनुमान हटाएँ, फिर सबसे मजबूत दस शब्दों का क्रम तय करें।"
+        },
+        {
+          "label": "सत्यापित करके निर्यात करें",
+          "detail": "हर पंक्ति जाँचें, फ़ाइलनाम मिलाएँ और पोर्टल के आयात की समीक्षा करें।"
+        }
+      ]
+    }
+  }
+}

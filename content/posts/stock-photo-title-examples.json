@@ -1,0 +1,479 @@
+{
+  "slug": "stock-photo-title-examples",
+  "category": "metadata",
+  "source_ids": [
+    "adobe-keywords",
+    "shutterstock-metadata",
+    "metastocker"
+  ],
+  "en": {
+    "title": "Stock Photo Title Examples: Clear Before-and-After Edits",
+    "description": "Learn to write accurate stock photo titles with three practical before-and-after examples, from wet pavement to seedlings, without keyword stuffing.",
+    "intro": "A strong stock photo title tells a buyer what is visibly present and why the image may be useful. It is not a hidden keyword list, a sales promise, or an opportunity to invent a story behind the pixels. The most useful titles usually combine the main subject, the visible action or setting, and a meaningful context when the image supports it.\n\nThis guide uses three hypothetical examples: a red umbrella on wet pavement, hands folding linen, and seedlings beside a window. The goal is to tighten vague wording while keeping each title natural, accurate, and easy to adapt for a stock marketplace. Put the most important terms near the beginning, then remove repetition and unsupported assumptions. Always check the current requirements of the marketplace where you plan to submit.",
+    "sections": [
+      {
+        "heading": "Start with what the viewer can verify",
+        "paragraphs": [
+          "Before writing, describe the image as if you were explaining it to someone who cannot see it. Identify the central object, visible action, setting, and any useful visual quality such as copy space or a close-up view. Then decide which of those facts belong in the title.",
+          "Avoid adding information that is not visible. A pair of hands does not identify age, gender, profession, or relationship. Seedlings by a window do not prove that they are organic, a particular species, or part of a commercial farm. Accurate restraint is more valuable than imaginative detail."
+        ],
+        "bullets": [
+          "Name the main subject first.",
+          "Use one clear action or condition.",
+          "Add context only when the image supports it.",
+          "Exclude identities, locations, dates, and claims you cannot verify."
+        ],
+        "example": "Vague: “Beautiful lifestyle image with many concepts”\nTighter: “Hands folding white linen on a wooden table”"
+      },
+      {
+        "heading": "Use a simple title structure",
+        "paragraphs": [
+          "A practical structure is subject + action or appearance + setting or purpose. You do not need every possible keyword in the title. The title should read like a descriptive phrase or sentence, while relevant keywords can provide additional searchable detail according to the platform’s rules.",
+          "For many stock workflows, the opening words carry particular importance. Lead with the distinctive subject rather than generic terms such as “image,” “photo,” “background,” or “concept.” If the scene has useful copy space, mention it only when that space is genuinely visible and relevant."
+        ],
+        "bullets": [
+          "Prefer “red umbrella on wet pavement” to “rainy weather concept image.”",
+          "Keep related words together so the scene is immediately understood.",
+          "Remove adjectives that express opinion rather than observation.",
+          "Do not repeat the same noun in slightly different forms."
+        ],
+        "example": "Structure: distinctive subject + visible condition/action + setting\nPossible title: “Red umbrella reflected on wet pavement after rain”"
+      },
+      {
+        "heading": "Worked example 1: red umbrella",
+        "paragraphs": [
+          "Suppose the image shows one bright red umbrella resting or moving across rain-darkened pavement. The reflection and wet surface are visible, but the owner is not. A vague title such as “Rainy day mood and travel concept” hides the strongest visual details and introduces a travel interpretation that may not be supported.",
+          "A tighter title gives the buyer concrete information first. “Red umbrella reflected on wet pavement after rain” describes the subject, a visible relationship, and the weather condition. If there is clearly empty space for text, an alternative could be “Red umbrella on wet pavement with copy space.” Do not use both versions unless the composition truly supports both claims."
+        ],
+        "bullets": [
+          "Keep “red umbrella” near the beginning.",
+          "Use “reflected” only if a reflection is visible.",
+          "Use “after rain” when the wet surface supports that reading.",
+          "Avoid guessing who owns or carries the umbrella."
+        ],
+        "example": "Before: “Rainy day mood and travel concept”\nAfter: “Red umbrella reflected on wet pavement after rain”"
+      },
+      {
+        "heading": "Worked example 2: hands folding linen",
+        "paragraphs": [
+          "Imagine a close view of hands folding a white linen napkin or cloth on a table. The hands and material are clear, but the image does not establish the person’s identity, occupation, age, or household. “Professional cleaner preparing luxury hotel” would overstate what can be known.",
+          "A more dependable title is “Hands folding white linen on a wooden table.” It identifies the visible action, material, color, and surface without turning a domestic scene into a hotel narrative. If the image unmistakably shows several arranged place settings, “Hands folding linen napkins for a table setting” may be appropriate, but only when that context is visible."
+        ],
+        "bullets": [
+          "Describe hands without assigning personal attributes.",
+          "Name the material only when its appearance supports it.",
+          "Use “napkin” instead of “linen” only if the object’s purpose is clear.",
+          "Treat “luxury,” “professional,” and “hotel” as claims requiring evidence."
+        ],
+        "example": "Before: “Professional cleaner preparing luxury hotel”\nAfter: “Hands folding white linen on a wooden table”"
+      },
+      {
+        "heading": "Worked example 3: seedlings by a window",
+        "paragraphs": [
+          "Consider a row of small seedlings in containers beside a bright window. The image may suggest growth, home gardening, or spring, but it does not prove the plant species, growing method, or owner’s intentions. A title packed with “organic sustainable eco farm agriculture” is both vague and overextended.",
+          "A focused option is “Young seedlings in pots beside a sunlit window.” It describes the visible plants, containers, placement, and light. If the frame clearly includes a tray and gardening tools, you could write “Young vegetable seedlings in a tray beside a sunlit window,” but “vegetable” should be used only when the plants can be identified reliably."
+        ],
+        "bullets": [
+          "Use “seedlings” when the plants are visibly young.",
+          "Say “sunlit” when light from the window is apparent.",
+          "Do not infer species, organic certification, or farm ownership.",
+          "Choose one useful context instead of stacking every gardening term."
+        ],
+        "example": "Before: “Organic sustainable eco farm agriculture concept”\nAfter: “Young seedlings in pots beside a sunlit window”"
+      },
+      {
+        "heading": "Review titles before exporting or submitting",
+        "paragraphs": [
+          "Read each title aloud. It should sound like a person describing one image, not like a string of search terms. Check whether the first words identify the image quickly, whether every important noun is supported visually, and whether any word is repeated without adding meaning.",
+          "If you use a metadata tool, treat its draft as editable work. MetaStocker’s local generator can create metadata in the browser, but generated titles still require file-by-file review. Local execution means inference happens on the visitor’s device; loading a model into memory is separate from a downloaded browser cache. If you export CSV metadata, filenames and platform-specific limits still need checking, and the contributor portal should be inspected after import. Marketplace rules can change."
+        ],
+        "bullets": [
+          "Compare the title with the actual image, not your shooting intention.",
+          "Delete unsupported identity, location, species, and certification claims.",
+          "Check the target marketplace’s language and character rules.",
+          "Review the final metadata in the contributor portal."
+        ],
+        "example": "Review question: “Could a buyer understand this image from the first eight to twelve words without being misled?”"
+      }
+    ],
+    "checklist": [
+      "Lead with the image’s most distinctive visible subject.",
+      "Describe an action, condition, or setting that can be verified.",
+      "Keep the title natural instead of turning it into a keyword list.",
+      "Remove guesses about people, places, species, ownership, and certifications.",
+      "Use the shortest accurate version that distinguishes the image.",
+      "Check current marketplace requirements before export or submission.",
+      "Inspect every generated or imported title before finalizing it."
+    ],
+    "illustration": {
+      "title": "Three passes for a stronger title",
+      "steps": [
+        {
+          "label": "Observe the frame",
+          "detail": "List only the subject, action, setting, and visible conditions."
+        },
+        {
+          "label": "Tighten the phrase",
+          "detail": "Put the distinctive subject first and remove unsupported claims."
+        },
+        {
+          "label": "Review each file",
+          "detail": "Read the title against the image before exporting or submitting."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Примеры названий стоковых фото: правки до и после",
+    "description": "Учитесь писать точные названия для стоковых фото на трёх примерах: зонт, льняная ткань и рассада — без набивки ключевыми словами.",
+    "intro": "Хорошее название стоковой фотографии быстро объясняет покупателю, что видно на изображении и чем сцена может быть полезна. Это не список скрытых ключевых слов, не обещание продаж и не повод придумывать историю за пределами кадра. Обычно достаточно соединить главный объект, заметное действие или состояние и уместный контекст.\n\nНиже три гипотетических примера: красный зонт на мокром тротуаре, руки, складывающие лён, и рассада у окна. Задача — заменить расплывчатые формулировки точными, естественными названиями. Самые важные слова лучше ставить в начало, но не повторять их механически. Перед публикацией всегда сверяйтесь с актуальными правилами выбранного стокового сервиса.",
+    "sections": [
+      {
+        "heading": "Начинайте с того, что можно проверить",
+        "paragraphs": [
+          "Сначала опишите кадр так, будто объясняете его человеку, который не может его увидеть. Назовите центральный объект, видимое действие, окружение и полезную визуальную особенность — например, свободное место для текста или крупный план. Затем оставьте в названии только те факты, которые действительно помогают различать изображение.",
+          "Не добавляйте сведения, которых в кадре нет. По одним рукам нельзя определить возраст, пол, профессию или отношения людей. Рассада у окна не доказывает, что она органическая, относится к конкретному виду или выращивается на ферме. Точность важнее эффектной, но неподтверждённой истории."
+        ],
+        "bullets": [
+          "Ставьте главный объект в начало.",
+          "Добавляйте одно ясное действие или состояние.",
+          "Указывайте контекст только при наличии визуального подтверждения.",
+          "Не приписывайте людям, местам и растениям неподтверждённые свойства."
+        ],
+        "example": "Расплывчато: «Красивое lifestyle-фото со множеством идей»\nТочнее: «Руки складывают белую льняную ткань на деревянном столе»"
+      },
+      {
+        "heading": "Используйте простую конструкцию",
+        "paragraphs": [
+          "Практичная схема выглядит так: объект + действие или состояние + место либо контекст. Название не обязано содержать все возможные ключевые слова. Оно должно читаться как нормальная описательная фраза, а дополнительные релевантные термины можно внести в отдельные поля по правилам платформы.",
+          "В начале особенно важно быстро показать, что изображено. Поэтому лучше начинать с отличительного предмета, а не со слов «фото», «изображение», «концепция» или «фон». Если в кадре действительно есть место для надписи, его можно указать, но не следует добавлять это описание автоматически."
+        ],
+        "bullets": [
+          "Предпочитайте «красный зонт на мокром тротуаре» фразе «концепция дождливой погоды».",
+          "Держите связанные слова рядом.",
+          "Удаляйте оценочные прилагательные вроде «прекрасный» и «идеальный».",
+          "Не повторяйте один объект разными словами без дополнительного смысла."
+        ],
+        "example": "Схема: отличительный объект + видимое состояние/действие + окружение\nВариант: «Красный зонт отражается в мокром тротуаре после дождя»"
+      },
+      {
+        "heading": "Пример 1: красный зонт",
+        "paragraphs": [
+          "Представим кадр с одним ярко-красным зонтом на потемневшем от дождя тротуаре. Отражение и мокрая поверхность видны, но владелец зонта — нет. Расплывчатое название «Настроение дождливого дня и концепция путешествий» скрывает главные детали и добавляет тему путешествий без достаточного основания.",
+          "Более точный вариант — «Красный зонт отражается в мокром тротуаре после дождя». Здесь сначала назван предмет, затем видимая связь и состояние поверхности. Если в композиции явно оставлено свободное место для текста, возможен вариант «Красный зонт на мокром тротуаре со свободным местом для текста». Выбирайте его только тогда, когда это действительно заметно."
+        ],
+        "bullets": [
+          "Ставьте «красный зонт» ближе к началу.",
+          "Используйте «отражается» только при наличии отражения.",
+          "Фраза «после дождя» должна соответствовать видимой мокрой поверхности.",
+          "Не угадывайте, кому принадлежит зонт и куда направляется человек."
+        ],
+        "example": "До: «Настроение дождливого дня и концепция путешествий»\nПосле: «Красный зонт отражается в мокром тротуаре после дождя»"
+      },
+      {
+        "heading": "Пример 2: руки складывают лён",
+        "paragraphs": [
+          "Допустим, на крупном плане руки складывают белую льняную салфетку или ткань на столе. Видны руки и материал, но кадр не сообщает личность, профессию, возраст или место работы человека. Название «Профессиональный уборщик готовит роскошный отель» превращает бытовую сцену в неподтверждённый сюжет.",
+          "Надёжнее написать: «Руки складывают белую льняную ткань на деревянном столе». Название описывает действие, материал, цвет и поверхность, не приписывая сцене гостиничную историю. Если в кадре ясно видны сервировка и несколько приборов, можно уточнить «Руки складывают льняные салфетки для сервировки стола», но только при наличии такого контекста."
+        ],
+        "bullets": [
+          "Описывайте руки без предположений о человеке.",
+          "Называйте материал, если его внешний вид это позволяет.",
+          "Используйте слово «салфетки», только если назначение предмета понятно.",
+          "Слова «профессиональный», «роскошный» и «отель» требуют видимых доказательств."
+        ],
+        "example": "До: «Профессиональный уборщик готовит роскошный отель»\nПосле: «Руки складывают белую льняную ткань на деревянном столе»"
+      },
+      {
+        "heading": "Пример 3: рассада у окна",
+        "paragraphs": [
+          "Представим ряд молодых растений в контейнерах возле светлого окна. Кадр может напоминать о выращивании дома, весне или росте, но не доказывает вид растений, способ выращивания или намерения владельца. Название «Органическое устойчивое экопроизводство фермерского хозяйства» перегружено и содержит неподтверждённые утверждения.",
+          "Точный вариант — «Молодая рассада в горшках у залитого солнцем окна». Он называет растения, ёмкости, расположение и свет. Если в кадре однозначно видны лоток и садовые инструменты, можно написать «Молодая овощная рассада в лотке у солнечного окна», но слово «овощная» допустимо лишь при надёжной идентификации растений."
+        ],
+        "bullets": [
+          "Используйте «рассада», если растения явно молодые.",
+          "Слово «солнечного» должно соответствовать видимому освещению.",
+          "Не угадывайте вид растений, органическую сертификацию или принадлежность ферме.",
+          "Выберите один полезный контекст вместо длинной цепочки садовых терминов."
+        ],
+        "example": "До: «Органическое устойчивое экопроизводство фермерского хозяйства»\nПосле: «Молодая рассада в горшках у залитого солнцем окна»"
+      },
+      {
+        "heading": "Проверьте название перед экспортом",
+        "paragraphs": [
+          "Прочитайте каждое название вслух. Оно должно звучать как описание одного изображения, а не как набор поисковых запросов. Проверьте, понятен ли кадр по первым словам, подтверждается ли каждое существительное изображением и не повторяется ли термин без необходимости.",
+          "Если вы используете генератор метаданных, считайте результат черновиком. MetaStocker может создавать метаданные локально в браузере, но каждое название всё равно нужно проверить отдельно. Локальное выполнение означает, что вывод модели происходит на устройстве посетителя; загрузка модели в память не равна сохранению файлов в кэше браузера. При экспорте CSV дополнительно проверьте имена файлов и правила платформы, а после импорта просмотрите данные в кабинете. Требования маркетплейсов меняются."
+        ],
+        "bullets": [
+          "Сверяйте название с фотографией, а не с замыслом съёмки.",
+          "Удаляйте неподтверждённые сведения о людях, местах, видах и сертификации.",
+          "Проверьте язык и ограничение длины на целевой платформе.",
+          "Просмотрите каждую строку после генерации и импорта."
+        ],
+        "example": "Вопрос для проверки: «Поймёт ли покупатель по первым словам, что изображено, и не вводит ли название его в заблуждение?»"
+      }
+    ],
+    "checklist": [
+      "Начинайте с самого отличительного видимого объекта.",
+      "Опишите проверяемое действие, состояние или окружение.",
+      "Пишите естественную фразу, а не перечень ключевых слов.",
+      "Удаляйте догадки о личности, месте, виде растения, владельце и сертификации.",
+      "Выбирайте короткую точную формулировку, отличающую этот кадр от других.",
+      "Перед экспортом проверьте актуальные требования маркетплейса.",
+      "Проверьте каждое сгенерированное или импортированное название вручную."
+    ],
+    "illustration": {
+      "title": "Три шага к точному названию",
+      "steps": [
+        {
+          "label": "Рассмотрите кадр",
+          "detail": "Запишите только объект, действие, место и видимые состояния."
+        },
+        {
+          "label": "Сожмите формулировку",
+          "detail": "Поставьте объект первым и уберите неподтверждённые выводы."
+        },
+        {
+          "label": "Проверьте каждый файл",
+          "detail": "Сверьте название с изображением перед экспортом или отправкой."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "স্টক ছবির শিরোনামের উদাহরণ: সম্পাদনার আগে ও পরে",
+    "description": "তিনটি বাস্তবধর্মী আগে-পরে উদাহরণের মাধ্যমে নির্ভুল স্টক ছবির শিরোনাম লিখুন—ভেজা ফুটপাত থেকে চারার গাছ পর্যন্ত, কীওয়ার্ডের অতিরিক্ত ব্যবহার ছাড়াই।",
+    "intro": "একটি ভালো স্টক ছবির শিরোনাম ক্রেতাকে জানায় ছবিতে দৃশ্যমান কী আছে এবং ছবিটি কেন কাজে লাগতে পারে। এটি গোপন কীওয়ার্ডের তালিকা, বিক্রির প্রতিশ্রুতি, বা ছবির পিক্সেলের আড়ালে একটি গল্প বানানোর সুযোগ নয়। সবচেয়ে কার্যকর শিরোনামে সাধারণত মূল বিষয়, দৃশ্যমান কাজ বা পরিবেশ, এবং ছবি সমর্থন করলে প্রাসঙ্গিক প্রসঙ্গ থাকে।\n\nএই নির্দেশিকায় তিনটি কাল্পনিক উদাহরণ ব্যবহার করা হয়েছে: ভেজা ফুটপাথে একটি লাল ছাতা, লিনেন ভাঁজ করা হাত, এবং জানালার পাশে চারার গাছ। লক্ষ্য হলো অস্পষ্ট ভাষাকে সংক্ষিপ্ত করা, পাশাপাশি প্রতিটি শিরোনামকে স্বাভাবিক, নির্ভুল এবং স্টক বাজারে সহজে মানিয়ে নেওয়ার উপযোগী রাখা। সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো শুরুতে রাখুন, তারপর পুনরাবৃত্তি ও প্রমাণহীন অনুমান বাদ দিন। যে বাজারে জমা দেওয়ার পরিকল্পনা করছেন, তার বর্তমান নিয়ম সবসময় যাচাই করুন।",
+    "sections": [
+      {
+        "heading": "দর্শক যা যাচাই করতে পারেন, তা দিয়ে শুরু করুন",
+        "paragraphs": [
+          "লেখার আগে ছবিটি এমনভাবে বর্ণনা করুন, যেন আপনি এমন কাউকে বোঝাচ্ছেন যিনি ছবিটি দেখতে পারেন না। কেন্দ্রীয় বস্তু, দৃশ্যমান কাজ, পরিবেশ এবং খালি জায়গা বা কাছ থেকে তোলা দৃশ্যের মতো উপযোগী দৃশ্যমান বৈশিষ্ট্য শনাক্ত করুন। এরপর ঠিক করুন, এসব তথ্যের কোনগুলো শিরোনামে থাকা উচিত।",
+          "যা দৃশ্যমান নয়, তা যোগ করা এড়িয়ে চলুন। একজোড়া হাত দেখে বয়স, লিঙ্গ, পেশা বা সম্পর্ক নির্ধারণ করা যায় না। জানালার পাশে থাকা চারার গাছ যে জৈব পদ্ধতিতে উৎপাদিত, নির্দিষ্ট কোনো প্রজাতির, বা বাণিজ্যিক খামারের অংশ—তা প্রমাণিত হয় না। কল্পনাপ্রসূত বিস্তারিতের চেয়ে নির্ভুল সংযম বেশি মূল্যবান।"
+        ],
+        "bullets": [
+          "প্রথমে মূল বিষয়ের নাম লিখুন।",
+          "একটি স্পষ্ট কাজ বা অবস্থা ব্যবহার করুন।",
+          "ছবি সমর্থন করলেই কেবল প্রসঙ্গ যোগ করুন।",
+          "যে পরিচয়, স্থান, তারিখ বা দাবি যাচাই করতে পারবেন না, তা বাদ দিন।"
+        ],
+        "example": "অস্পষ্ট: “Beautiful lifestyle image with many concepts”\nআরও নির্দিষ্ট: “Hands folding white linen on a wooden table”"
+      },
+      {
+        "heading": "সহজ শিরোনাম কাঠামো ব্যবহার করুন",
+        "paragraphs": [
+          "একটি ব্যবহারিক কাঠামো হলো বিষয় + কাজ বা চেহারা + পরিবেশ বা উদ্দেশ্য। সম্ভাব্য প্রতিটি কীওয়ার্ড শিরোনামে দেওয়ার দরকার নেই। শিরোনামটি বর্ণনামূলক বাক্যাংশ বা বাক্যের মতো পড়া উচিত; আর প্রাসঙ্গিক কীওয়ার্ড প্ল্যাটফর্মের নিয়ম অনুযায়ী অতিরিক্ত অনুসন্ধানযোগ্য তথ্য দিতে পারে।",
+          "অনেক স্টক-ভিত্তিক কাজের ধারায় শুরুর শব্দগুলোর বিশেষ গুরুত্ব থাকে। “image,” “photo,” “background” বা “concept”-এর মতো সাধারণ শব্দের বদলে স্বতন্ত্র বিষয় দিয়ে শুরু করুন। দৃশ্যে ব্যবহারযোগ্য খালি জায়গা থাকলে, তা সত্যিই দৃশ্যমান ও প্রাসঙ্গিক হলেই উল্লেখ করুন।"
+        ],
+        "bullets": [
+          "“rainy weather concept image”-এর বদলে “red umbrella on wet pavement” পছন্দ করুন।",
+          "সম্পর্কিত শব্দগুলো একসঙ্গে রাখুন, যাতে দৃশ্যটি সঙ্গে সঙ্গে বোঝা যায়।",
+          "পর্যবেক্ষণের বদলে মতামত প্রকাশ করে এমন বিশেষণ বাদ দিন।",
+          "একই বিশেষ্যকে সামান্য ভিন্ন রূপে পুনরাবৃত্তি করবেন না।"
+        ],
+        "example": "গঠন: স্বতন্ত্র বিষয় + দৃশ্যমান অবস্থা বা কাজ + পরিবেশ\nসম্ভাব্য শিরোনাম: “Red umbrella reflected on wet pavement after rain”"
+      },
+      {
+        "heading": "কাজ করা উদাহরণ ১: লাল ছাতা",
+        "paragraphs": [
+          "ধরা যাক, ছবিতে বৃষ্টিতে কালচে হয়ে যাওয়া ফুটপাথে একটি উজ্জ্বল লাল ছাতা রাখা আছে বা চলমান অবস্থায় দেখা যাচ্ছে। প্রতিফলন ও ভেজা পৃষ্ঠ দৃশ্যমান, কিন্তু ছাতার মালিককে দেখা যাচ্ছে না। “Rainy day mood and travel concept”-এর মতো অস্পষ্ট শিরোনাম সবচেয়ে শক্তিশালী দৃশ্যমান বিবরণ আড়াল করে এবং এমন ভ্রমণ-ব্যাখ্যা যোগ করে, যার সমর্থন ছবিতে নাও থাকতে পারে।",
+          "আরও সংক্ষিপ্ত শিরোনামটি প্রথমেই ক্রেতাকে নির্দিষ্ট তথ্য দেয়। “Red umbrella reflected on wet pavement after rain” বিষয়, একটি দৃশ্যমান সম্পর্ক এবং আবহাওয়ার অবস্থা বর্ণনা করে। লেখার জন্য স্পষ্ট খালি জায়গা থাকলে বিকল্প হিসেবে “Red umbrella on wet pavement with copy space” ব্যবহার করা যেতে পারে। বিন্যাস সত্যিই উভয় দাবিকে সমর্থন না করলে দুটি সংস্করণ একসঙ্গে ব্যবহার করবেন না।"
+        ],
+        "bullets": [
+          "“red umbrella” শুরুটির কাছাকাছি রাখুন।",
+          "প্রতিফলন দৃশ্যমান হলেই “reflected” ব্যবহার করুন।",
+          "ভেজা পৃষ্ঠ সেই ব্যাখ্যাকে সমর্থন করলে “after rain” ব্যবহার করুন।",
+          "ছাতাটি কার বা কে বহন করছে, তা অনুমান করবেন না।"
+        ],
+        "example": "আগে: “Rainy day mood and travel concept”\nপরে: “Red umbrella reflected on wet pavement after rain”"
+      },
+      {
+        "heading": "কাজ করা উদাহরণ ২: লিনেন ভাঁজ করা হাত",
+        "paragraphs": [
+          "টেবিলের ওপর সাদা লিনেনের ন্যাপকিন বা কাপড় ভাঁজ করা হাতের কাছ থেকে তোলা দৃশ্য কল্পনা করুন। হাত ও উপাদান স্পষ্ট, কিন্তু ছবিটি ব্যক্তির পরিচয়, পেশা, বয়স বা গৃহস্থালির অবস্থা প্রকাশ করে না। “Professional cleaner preparing luxury hotel” যা জানা সম্ভব, তার চেয়ে বেশি দাবি করবে।",
+          "আরও নির্ভরযোগ্য শিরোনাম হলো “Hands folding white linen on a wooden table।” এটি দৃশ্যমান কাজ, উপাদান, রং ও পৃষ্ঠের নাম বলে, কিন্তু ঘরোয়া দৃশ্যকে হোটেলের গল্পে পরিণত করে না। ছবিতে নিঃসন্দেহে কয়েকটি সাজানো টেবিলের বাসনপত্র দেখা গেলে “Hands folding linen napkins for a table setting” উপযুক্ত হতে পারে; তবে সেই প্রসঙ্গ দৃশ্যমান হলেই কেবল ব্যবহার করুন।"
+        ],
+        "bullets": [
+          "ব্যক্তিগত বৈশিষ্ট্য আরোপ না করে হাতের বর্ণনা দিন।",
+          "চেহারা তা সমর্থন করলেই কেবল উপাদানের নাম বলুন।",
+          "বস্তুর ব্যবহার স্পষ্ট হলেই “linen”-এর বদলে “napkin” লিখুন।",
+          "“luxury,” “professional” এবং “hotel”-কে প্রমাণসাপেক্ষ দাবি হিসেবে বিবেচনা করুন।"
+        ],
+        "example": "আগে: “Professional cleaner preparing luxury hotel”\nপরে: “Hands folding white linen on a wooden table”"
+      },
+      {
+        "heading": "কাজ করা উদাহরণ ৩: জানালার পাশে চারার গাছ",
+        "paragraphs": [
+          "উজ্জ্বল জানালার পাশে পাত্রে রাখা ছোট ছোট চারার সারি বিবেচনা করুন। ছবিটি বৃদ্ধি, বাড়ির বাগান করা বা বসন্তের ইঙ্গিত দিতে পারে, কিন্তু উদ্ভিদের প্রজাতি, চাষের পদ্ধতি বা মালিকের উদ্দেশ্য প্রমাণ করে না। “Organic sustainable eco farm agriculture concept” দিয়ে ভরা শিরোনাম অস্পষ্ট এবং অতিরঞ্জিত।",
+          "একটি কেন্দ্রীভূত বিকল্প হলো “Young seedlings in pots beside a sunlit window।” এটি দৃশ্যমান গাছ, পাত্র, অবস্থান ও আলো বর্ণনা করে। ফ্রেমে ট্রে ও বাগানের সরঞ্জাম স্পষ্টভাবে থাকলে “Young vegetable seedlings in a tray beside a sunlit window” লেখা যেতে পারে; তবে গাছ নির্ভরযোগ্যভাবে শনাক্ত করা গেলেই “vegetable” ব্যবহার করুন।"
+        ],
+        "bullets": [
+          "গাছ দৃশ্যত কমবয়সী হলে “seedlings” ব্যবহার করুন।",
+          "জানালা দিয়ে আসা আলো স্পষ্ট হলে “sunlit” বলুন।",
+          "প্রজাতি, জৈব প্রত্যয়ন বা খামারের মালিকানা অনুমান করবেন না।",
+          "বাগান-সংক্রান্ত সব শব্দ স্তূপ না করে একটি উপযোগী প্রসঙ্গ বেছে নিন।"
+        ],
+        "example": "আগে: “Organic sustainable eco farm agriculture concept”\nপরে: “Young seedlings in pots beside a sunlit window”"
+      },
+      {
+        "heading": "রপ্তানি বা জমা দেওয়ার আগে শিরোনাম পর্যালোচনা করুন",
+        "paragraphs": [
+          "প্রতিটি শিরোনাম জোরে পড়ুন। এটি যেন একজন মানুষ একটি ছবি বর্ণনা করছেন—এমন শোনায়; অনুসন্ধান-শব্দের সারির মতো নয়। প্রথম শব্দগুলো দ্রুত ছবিটি শনাক্ত করছে কি না, প্রতিটি গুরুত্বপূর্ণ বিশেষ্য দৃশ্যত সমর্থিত কি না, এবং কোনো শব্দ অর্থ না বাড়িয়ে পুনরাবৃত্ত হয়েছে কি না, তা যাচাই করুন।",
+          "আপনি যদি কোনো মেটাডেটা টুল ব্যবহার করেন, তার খসড়াকে সম্পাদনাযোগ্য কাজ হিসেবে দেখুন। MetaStocker-এর স্থানীয় জেনারেটর ব্রাউজারে মেটাডেটা তৈরি করতে পারে, কিন্তু তৈরি হওয়া শিরোনাম প্রতিটি ফাইল ধরে পর্যালোচনা করা দরকার। স্থানীয়ভাবে চলার অর্থ হলো অনুমান দর্শকের ডিভাইসে ঘটে; মডেলকে মেমরিতে লোড করা ডাউনলোড করা ব্রাউজার ক্যাশের থেকে আলাদা। মেটাডেটা CSV হিসেবে রপ্তানি করলে ফাইলের নাম ও প্ল্যাটফর্ম-নির্দিষ্ট সীমাও যাচাই করতে হবে, এবং আমদানির পর অবদানকারী পোর্টাল পরীক্ষা করা উচিত। বাজারের নিয়ম বদলাতে পারে।"
+        ],
+        "bullets": [
+          "ছবি তোলার উদ্দেশ্যের সঙ্গে নয়, আসল ছবির সঙ্গে শিরোনাম মিলিয়ে দেখুন।",
+          "সমর্থনহীন পরিচয়, স্থান, প্রজাতি ও প্রত্যয়নের দাবি মুছে দিন।",
+          "লক্ষ্য বাজারের ভাষা ও অক্ষরসংক্রান্ত নিয়ম যাচাই করুন।",
+          "অবদানকারী পোর্টালে চূড়ান্ত মেটাডেটা পর্যালোচনা করুন।"
+        ],
+        "example": "পর্যালোচনার প্রশ্ন: “কোনো বিভ্রান্তি ছাড়াই কি একজন ক্রেতা প্রথম আট থেকে বারোটি শব্দ পড়ে এই ছবিটি বুঝতে পারবেন?”"
+      }
+    ],
+    "checklist": [
+      "ছবির সবচেয়ে স্বতন্ত্র দৃশ্যমান বিষয় দিয়ে শুরু করুন।",
+      "যাচাই করা যায় এমন কাজ, অবস্থা বা পরিবেশ বর্ণনা করুন।",
+      "শিরোনামকে কীওয়ার্ডের তালিকায় না বদলে স্বাভাবিক রাখুন।",
+      "মানুষ, স্থান, প্রজাতি, মালিকানা ও প্রত্যয়ন সম্পর্কে অনুমান বাদ দিন।",
+      "ছবিটিকে আলাদা করে চেনায়—এমন সবচেয়ে সংক্ষিপ্ত নির্ভুল সংস্করণ ব্যবহার করুন।",
+      "রপ্তানি বা জমা দেওয়ার আগে বাজারের বর্তমান নিয়ম যাচাই করুন।",
+      "চূড়ান্ত করার আগে তৈরি বা আমদানি করা প্রতিটি শিরোনাম পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "আরও শক্তিশালী শিরোনামের জন্য তিন ধাপ",
+      "steps": [
+        {
+          "label": "ফ্রেম পর্যবেক্ষণ করুন",
+          "detail": "শুধু বিষয়, কাজ, পরিবেশ ও দৃশ্যমান অবস্থা তালিকাভুক্ত করুন।"
+        },
+        {
+          "label": "বাক্যাংশ সংক্ষিপ্ত করুন",
+          "detail": "স্বতন্ত্র বিষয়টি আগে রাখুন এবং সমর্থনহীন দাবি বাদ দিন।"
+        },
+        {
+          "label": "প্রতিটি ফাইল পর্যালোচনা করুন",
+          "detail": "রপ্তানি বা জমা দেওয়ার আগে ছবির সঙ্গে মিলিয়ে শিরোনাম পড়ুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "स्टॉक फ़ोटो शीर्षक उदाहरण: संपादन से पहले और बाद",
+    "description": "तीन व्यावहारिक पहले-बाद उदाहरणों से सटीक स्टॉक फ़ोटो शीर्षक लिखना सीखें—गीले फुटपाथ से नन्हे पौधों तक, कीवर्ड भरने के बिना।",
+    "intro": "एक अच्छा स्टॉक फ़ोटो शीर्षक खरीदार को बताता है कि तस्वीर में स्पष्ट रूप से क्या मौजूद है और वह उपयोगी क्यों हो सकती है। यह छिपी हुई कीवर्ड सूची, बिक्री का वादा या पिक्सेल के पीछे कहानी गढ़ने का अवसर नहीं है। सबसे उपयोगी शीर्षक आम तौर पर मुख्य विषय, दिखाई देने वाली क्रिया या परिवेश, और तस्वीर उसका समर्थन करे तो सार्थक संदर्भ को मिलाते हैं।\n\nइस मार्गदर्शिका में तीन काल्पनिक उदाहरण हैं: गीले फुटपाथ पर लाल छाता, लिनेन मोड़ते हाथ और खिड़की के पास नन्हे पौधे। लक्ष्य अस्पष्ट शब्दों को कसना है, जबकि हर शीर्षक को स्वाभाविक, सटीक और स्टॉक बाज़ार के लिए आसानी से अनुकूल रखने का ध्यान रखा गया है। सबसे महत्वपूर्ण शब्द शुरुआत में रखें, फिर दोहराव और बिना प्रमाण वाली धारणाएँ हटा दें। जिस बाज़ार में जमा करने की योजना है, उसकी मौजूदा आवश्यकताएँ हमेशा जाँचें।",
+    "sections": [
+      {
+        "heading": "दर्शक जो सत्यापित कर सकता है, वहीं से शुरू करें",
+        "paragraphs": [
+          "लिखने से पहले तस्वीर का वर्णन ऐसे करें जैसे आप उसे किसी ऐसे व्यक्ति को समझा रहे हों जो उसे देख नहीं सकता। केंद्रीय वस्तु, दिखाई देने वाली क्रिया, परिवेश और उपयोगी दृश्य गुण, जैसे खाली जगह या नज़दीक से लिया गया दृश्य, पहचानें। फिर तय करें कि इनमें से कौन-से तथ्य शीर्षक में होने चाहिए।",
+          "जो दिखाई नहीं देता, उसे जोड़ने से बचें। हाथों की एक जोड़ी से उम्र, लिंग, पेशा या संबंध की पहचान नहीं होती। खिड़की के पास नन्हे पौधे से यह सिद्ध नहीं होता कि वे जैविक हैं, किसी विशेष प्रजाति के हैं या व्यावसायिक फ़ार्म का हिस्सा हैं। कल्पनाशील विवरण से अधिक मूल्यवान सटीक संयम है।"
+        ],
+        "bullets": [
+          "सबसे पहले मुख्य विषय का नाम दें।",
+          "एक स्पष्ट क्रिया या स्थिति का उपयोग करें।",
+          "संदर्भ तभी जोड़ें जब तस्वीर उसका समर्थन करे।",
+          "ऐसी पहचान, जगह, तारीख और दावे हटाएँ जिन्हें आप सत्यापित नहीं कर सकते।"
+        ],
+        "example": "अस्पष्ट: “Beautiful lifestyle image with many concepts”\nअधिक सटीक: “Hands folding white linen on a wooden table”"
+      },
+      {
+        "heading": "सरल शीर्षक संरचना अपनाएँ",
+        "paragraphs": [
+          "एक व्यावहारिक संरचना है: विषय + क्रिया या रूप + परिवेश या उद्देश्य। हर संभव कीवर्ड को शीर्षक में डालना आवश्यक नहीं है। शीर्षक किसी वर्णनात्मक वाक्यांश या वाक्य की तरह पढ़ा जाना चाहिए, जबकि प्रासंगिक कीवर्ड प्लेटफ़ॉर्म के नियमों के अनुसार अतिरिक्त खोज योग्य विवरण दे सकते हैं।",
+          "कई स्टॉक कार्यप्रवाहों में शुरुआती शब्दों का विशेष महत्व होता है। “image,” “photo,” “background” या “concept” जैसे सामान्य शब्दों के बजाय विशिष्ट विषय से शुरुआत करें। दृश्य में उपयोगी खाली जगह हो तो उसका उल्लेख तभी करें जब वह वास्तव में दिखाई दे और प्रासंगिक हो।"
+        ],
+        "bullets": [
+          "“rainy weather concept image” की जगह “red umbrella on wet pavement” को प्राथमिकता दें।",
+          "संबंधित शब्दों को साथ रखें ताकि दृश्य तुरंत समझ में आ जाए।",
+          "अवलोकन के बजाय राय व्यक्त करने वाले विशेषण हटा दें।",
+          "एक ही संज्ञा को थोड़े अलग रूपों में दोहराएँ नहीं।"
+        ],
+        "example": "संरचना: विशिष्ट विषय + दिखाई देने वाली स्थिति या गतिविधि + परिवेश\nसंभावित शीर्षक: “Red umbrella reflected on wet pavement after rain”"
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण १: लाल छाता",
+        "paragraphs": [
+          "मान लें कि तस्वीर में बारिश से गहरे हुए फुटपाथ पर एक चमकीला लाल छाता रखा या चलता हुआ दिखाई देता है। प्रतिबिंब और गीली सतह दिखाई देती है, लेकिन उसका मालिक नहीं। “Rainy day mood and travel concept” जैसा अस्पष्ट शीर्षक सबसे मजबूत दृश्य विवरण छिपा देता है और यात्रा की ऐसी व्याख्या जोड़ता है जिसका तस्वीर समर्थन नहीं करती।",
+          "अधिक सटीक शीर्षक खरीदार को पहले ठोस जानकारी देता है। “Red umbrella reflected on wet pavement after rain” विषय, दिखाई देने वाला संबंध और मौसम की स्थिति बताता है। यदि पाठ के लिए साफ़ खाली जगह स्पष्ट रूप से मौजूद हो, तो “Red umbrella on wet pavement with copy space” विकल्प हो सकता है। रचना दोनों दावों का सचमुच समर्थन न करती हो तो दोनों संस्करण साथ न इस्तेमाल करें।"
+        ],
+        "bullets": [
+          "“red umbrella” को शुरुआत के पास रखें।",
+          "प्रतिबिंब दिखाई देने पर ही “reflected” का उपयोग करें।",
+          "गीली सतह उस अर्थ का समर्थन करे तो “after rain” लिखें।",
+          "छाते का मालिक कौन है या उसे कौन ले जा रहा है, इसका अनुमान न लगाएँ।"
+        ],
+        "example": "पहले: “Rainy day mood and travel concept”\nबाद में: “Red umbrella reflected on wet pavement after rain”"
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण २: लिनेन मोड़ते हाथ",
+        "paragraphs": [
+          "टेबल पर सफेद लिनेन का नैपकिन या कपड़ा मोड़ते हाथों का नज़दीकी दृश्य कल्पना करें। हाथ और सामग्री स्पष्ट हैं, लेकिन तस्वीर व्यक्ति की पहचान, पेशा, उम्र या घरेलू स्थिति स्थापित नहीं करती। “Professional cleaner preparing luxury hotel” ज्ञात जानकारी से अधिक दावा करेगा।",
+          "अधिक भरोसेमंद शीर्षक है “Hands folding white linen on a wooden table।” यह दिखाई देने वाली क्रिया, सामग्री, रंग और सतह बताता है, बिना घरेलू दृश्य को होटल की कहानी में बदले। यदि तस्वीर में खाने की मेज़ पर कई लोगों के लिए सजे बर्तन स्पष्ट रूप से दिखाई दें, तो “Hands folding linen napkins for a table setting” उपयुक्त हो सकता है, लेकिन तभी जब वह संदर्भ दिखाई देता हो।"
+        ],
+        "bullets": [
+          "व्यक्तिगत गुण बताए बिना हाथों का वर्णन करें।",
+          "सामग्री का रूप उसका समर्थन करे तभी उसका नाम लें।",
+          "वस्तु का उपयोग स्पष्ट हो तभी “linen” की जगह “napkin” लिखें।",
+          "“luxury,” “professional” और “hotel” को प्रमाण माँगने वाले दावों की तरह देखें।"
+        ],
+        "example": "पहले: “Professional cleaner preparing luxury hotel”\nबाद में: “Hands folding white linen on a wooden table”"
+      },
+      {
+        "heading": "काम किया हुआ उदाहरण ३: खिड़की के पास नन्हे पौधे",
+        "paragraphs": [
+          "तेज़ रोशनी वाली खिड़की के पास पात्रों में रखी छोटे पौधों की कतार पर विचार करें। तस्वीर वृद्धि, घरेलू बागवानी या वसंत का संकेत दे सकती है, लेकिन पौधे की प्रजाति, उगाने की विधि या मालिक के इरादे सिद्ध नहीं करती। “Organic sustainable eco farm agriculture concept” से भरा शीर्षक अस्पष्ट और जरूरत से अधिक विस्तृत है।",
+          "एक केंद्रित विकल्प है “Young seedlings in pots beside a sunlit window।” यह दिखाई देने वाले पौधों, पात्रों, स्थान और रोशनी का वर्णन करता है। यदि फ़्रेम में ट्रे और बागवानी के औज़ार स्पष्ट रूप से हों, तो “Young vegetable seedlings in a tray beside a sunlit window” लिखा जा सकता है; लेकिन “vegetable” तभी उपयोग करें जब पौधों की विश्वसनीय पहचान हो सके।"
+        ],
+        "bullets": [
+          "पौधे स्पष्ट रूप से छोटे हों तो “seedlings” का उपयोग करें।",
+          "खिड़की से आती रोशनी स्पष्ट हो तो “sunlit” लिखें।",
+          "प्रजाति, जैविक प्रमाणन या फ़ार्म के स्वामित्व का अनुमान न लगाएँ।",
+          "बागवानी से जुड़े हर शब्द को जोड़ने के बजाय एक उपयोगी संदर्भ चुनें।"
+        ],
+        "example": "पहले: “Organic sustainable eco farm agriculture concept”\nबाद में: “Young seedlings in pots beside a sunlit window”"
+      },
+      {
+        "heading": "निर्यात या जमा करने से पहले शीर्षकों की समीक्षा करें",
+        "paragraphs": [
+          "हर शीर्षक को ज़ोर से पढ़ें। उसे ऐसा लगना चाहिए जैसे कोई व्यक्ति एक तस्वीर का वर्णन कर रहा हो, न कि खोज शब्दों की कतार। जाँचें कि शुरुआती शब्द तस्वीर की जल्दी पहचान कराते हैं या नहीं, हर महत्वपूर्ण संज्ञा दृश्य रूप से समर्थित है या नहीं, और कोई शब्द बिना अर्थ बढ़ाए दोहराया तो नहीं गया।",
+          "यदि आप मेटाडेटा टूल का उपयोग करते हैं, तो उसके मसौदे को संपादन योग्य काम मानें। MetaStocker का स्थानीय जनरेटर ब्राउज़र में मेटाडेटा बना सकता है, लेकिन बनाए गए शीर्षकों की फ़ाइल-दर-फ़ाइल समीक्षा फिर भी आवश्यक है। स्थानीय रूप से चलने का अर्थ है कि अनुमान दर्शक के डिवाइस पर होता है; मॉडल को मेमोरी में लोड करना डाउनलोड किए गए ब्राउज़र कैश से अलग है। यदि आप मेटाडेटा को CSV में निर्यात करते हैं, तो फ़ाइल नाम और प्लेटफ़ॉर्म-विशिष्ट सीमाएँ भी जाँचनी होंगी, और आयात के बाद योगदानकर्ता पोर्टल देखना चाहिए। बाज़ार के नियम बदल सकते हैं।"
+        ],
+        "bullets": [
+          "शीर्षक की तुलना तस्वीर से करें, तस्वीर लेने के अपने इरादे से नहीं।",
+          "बिना समर्थन वाली पहचान, जगह, प्रजाति और प्रमाणन के दावे हटाएँ।",
+          "लक्षित बाज़ार की भाषा और अक्षर-संबंधी सीमाएँ जाँचें।",
+          "योगदानकर्ता पोर्टल में अंतिम मेटाडेटा की समीक्षा करें।"
+        ],
+        "example": "समीक्षा का प्रश्न: “क्या खरीदार पहले आठ से बारह शब्द पढ़कर बिना भ्रमित हुए इस तस्वीर को समझ सकता है?”"
+      }
+    ],
+    "checklist": [
+      "तस्वीर के सबसे विशिष्ट दिखाई देने वाले विषय से शुरुआत करें।",
+      "ऐसी क्रिया, स्थिति या परिवेश बताएँ जिसे सत्यापित किया जा सके।",
+      "शीर्षक को कीवर्ड सूची में बदलने के बजाय स्वाभाविक रखें।",
+      "लोगों, जगहों, प्रजातियों, स्वामित्व और प्रमाणन के बारे में अनुमान हटाएँ।",
+      "तस्वीर को अलग पहचानने वाला सबसे छोटा सटीक संस्करण चुनें।",
+      "निर्यात या जमा करने से पहले बाज़ार की मौजूदा आवश्यकताएँ जाँचें।",
+      "अंतिम रूप देने से पहले बनाए या आयात किए गए हर शीर्षक की जाँच करें।"
+    ],
+    "illustration": {
+      "title": "बेहतर शीर्षक के लिए तीन चरण",
+      "steps": [
+        {
+          "label": "फ़्रेम का निरीक्षण करें",
+          "detail": "केवल विषय, क्रिया, परिवेश और दिखाई देने वाली स्थितियाँ लिखें।"
+        },
+        {
+          "label": "वाक्यांश को कसें",
+          "detail": "विशिष्ट विषय पहले रखें और बिना समर्थन वाले दावे हटाएँ।"
+        },
+        {
+          "label": "हर फ़ाइल की समीक्षा करें",
+          "detail": "निर्यात या जमा करने से पहले तस्वीर के साथ शीर्षक पढ़ें।"
+        }
+      ]
+    }
+  }
+}

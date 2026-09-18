@@ -39,11 +39,17 @@ def verify(release=None, commit=None):
     assert headers.get('x-metastocker-host') == 'vintage-shop-prod'
     expected_headers = metadata['headers']
     if commit:
-        assert expected_headers == read_headers(Path(__file__).resolve().parent.parent)
+        source = Path(__file__).resolve().parent.parent
+        if not (source / '_headers').exists():
+            source /= 'source'
+        assert expected_headers == read_headers(source)
 
     def asset(item):
         name, checksum = item
-        status, remote, headers, body = fetch(ORIGIN + '/' + name)
+        route = '/' + name
+        if metadata.get('editorial') and route.endswith('/index.html'):
+            route = route[:-10]
+        status, remote, headers, body = fetch(ORIGIN + route)
         assert status == 200 and remote == IP, (name, status, remote)
         assert hashlib.sha256(body).hexdigest() == checksum, name
         for header, value in expected_headers.items():
@@ -60,12 +66,13 @@ def verify(release=None, commit=None):
         status, remote, headers, _ = fetch(url)
         assert status in (301, 308) and remote == IP, (url, status, remote)
         assert headers.get('location') == ORIGIN + '/blog/?qa=1', (url, headers)
-    for path in ('/', '/blog/', '/blog/how-to-get-openai-api-key'):
+    for path in ('/', '/blog/', '/blog/how-to-get-openai-api-key.html'):
         status, remote, _, _ = fetch(ORIGIN + path)
         assert status == 200 and remote == IP, (path, status, remote)
     for path in ('/.git/config', '/.env', '/_headers', '/AGENTS.md', '/README.md',
                  '/deploy/compose.yaml', '/tests/local-ai.test.js', '/server/package.json',
-                 '/data/analytics.sqlite', '/secrets/auth.json', '/not-a-page'):
+                 '/data/analytics.sqlite', '/secrets/auth.json', '/not-a-page',
+                 '/source/content/topics.json', '/editorial/status.json', '/seo/sources.json'):
         status, _, _, _ = fetch(ORIGIN + path)
         assert status == 404, (path, status)
     if 'analytics.js' in metadata['files']:
@@ -76,6 +83,14 @@ def verify(release=None, commit=None):
             status, _, headers, _ = fetch(ORIGIN + path)
             assert status == 401 and headers.get('cache-control') == 'no-store', path
         assert fetch(ORIGIN + '/admin/login')[0] == 200
+    if metadata.get('editorial'):
+        assert metadata['editorial']['articles'] >= 200
+        for alias, canonical in [('/index.html', '/'), ('/blog/index.html', '/blog/'),
+                                 ('/blog/ru/index.html', '/blog/ru/'),
+                                 ('/blog/how-to-get-openai-api-key', '/blog/how-to-get-openai-api-key.html')]:
+            status, _, headers, _ = fetch(ORIGIN + alias)
+            assert status == 308 and headers.get('location') == canonical, (alias, status, headers)
+        assert fetch(ORIGIN + '/admin/api/editorial')[0] == 401
     return dict(release=metadata['release'], commit=metadata['commit'], version=metadata['version'],
                 remote_ip=remote, verified_files=len(files), checks='HTTPS, hashes, headers, MIME, redirects, blog, private-file 404')
 

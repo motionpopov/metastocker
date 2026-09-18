@@ -8,7 +8,23 @@ target="$base/releases/$release_id"
 test -d "$target/public"
 exec 9>"$base/.deploy.lock"
 flock -n 9 || { echo 'Another MetaStocker deployment is active.' >&2; exit 1; }
+if test -n "${METASTOCKER_EXPECTED_RELEASE:-}"; then
+  python3 - "$base/current/public/release.json" "$METASTOCKER_EXPECTED_RELEASE" <<'PY'
+import json,sys
+assert json.load(open(sys.argv[1]))['release']==sys.argv[2], 'Active code changed during editorial generation; retry with the new release'
+PY
+fi
 (cd "$target" && sha256sum --check --quiet SHA256SUMS)
+if [[ "${METASTOCKER_ROLLBACK:-0}" != 1 ]] && test -d "$base/editorial/published"; then
+  # Fail closed if a daily article appeared while a code release was being packaged.
+  python3 - "$base/editorial/published" "$target/content-snapshot.json" <<'PY'
+import hashlib,json,sys
+from pathlib import Path
+manifest=json.loads(Path(sys.argv[2]).read_text())
+for post in Path(sys.argv[1]).glob('*.json'):
+    assert manifest.get(post.name)==hashlib.sha256(post.read_bytes()).hexdigest(), 'Release omits durable article: '+post.name
+PY
+fi
 image=$(sed -n 's/^    image: \(caddy[^ ]*\)$/\1/p' "$target/deploy/compose.yaml")
 docker image inspect "$image" >/dev/null
 docker run --rm --network none --read-only -v "$base:/srv/metastocker:ro" "$image" \

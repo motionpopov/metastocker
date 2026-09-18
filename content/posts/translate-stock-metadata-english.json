@@ -1,0 +1,367 @@
+{
+  "slug": "translate-stock-metadata-english",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-metadata"
+  ],
+  "en": {
+    "title": "How to Translate Russian Stock Metadata into Natural English",
+    "description": "Turn Russian forest-scene metadata into precise English stock titles and keywords without literal translations, mixed languages, or guessed visual facts.",
+    "intro": "Translating stock metadata into English is more than replacing Russian words with dictionary equivalents. English-speaking buyers search for natural descriptions, while stock platforms expect relevant, accurate metadata in their own formats. A Russian draft about a forest path may contain several reasonable English choices, but those choices are not interchangeable: path, footpath, trail, and walk suggest different things. The safest workflow is to identify what the image actually shows, preserve any verified location, then build an English title and keyword list around the main subject. This example is hypothetical and assumes the contributor has verified that the scene is in Karelia, Russia.",
+    "sections": [
+      {
+        "heading": "Separate visual facts from translation choices",
+        "paragraphs": [
+          "Start by dividing the Russian draft into three groups: visible facts, verified context, and interpretation. Visible facts might include a wooded route, trees, ground cover, and daylight. Verified context might include Karelia, Russia, if the contributor knows and can support the location. Interpretation includes claims such as peaceful, remote, untouched, or ideal for hiking. These may sound attractive but should not be added unless the image or accompanying records justify them.",
+          "Do not infer a person, season, species, ownership, or exact location from pixels alone. If the Russian text says лесная дорожка, decide whether the image shows a pedestrian route, a wider dirt road, or merely a narrow opening between trees. That decision is more important than finding a literal equivalent."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Choose path, footpath, trail, or walk",
+        "paragraphs": [
+          "Use path when the image shows a general route through the landscape and its use is not certain. Use footpath when it is clearly a narrow route intended for people on foot. Trail can work when the scene conveys a marked or established route, especially in hiking or nature contexts, but it may imply recreation more strongly than path. Walk usually describes the activity or experience, not the visible route itself, so it is rarely the best primary noun for a forest track.",
+          "Avoid adding road if vehicles cannot reasonably use it. Avoid hiking trail if there is no evidence that the route is intended for hiking. A natural English title can mention a forest path even when the Russian draft uses a diminutive such as тропинка; English stock metadata generally needs clarity more than emotional nuance."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: rebuild the English metadata",
+        "paragraphs": [
+          "Example Russian draft: Лесная тропинка среди сосен в Карелии, Россия, мягкий дневной свет. Assume the contributor has verified the location and wants English metadata for a landscape photograph. The central subject is a pedestrian route through a pine forest. The location belongs in the title and keywords because it is known, not because the trees appear to identify the region.",
+          "A suitable title is “Forest footpath among pine trees in Karelia, Russia.” It is a sentence-like description rather than a keyword pile. If the route is wider or its use is uncertain, replace footpath with path: “Forest path among pine trees in Karelia, Russia.” Do not call it a hiking trail unless that fact is known. The keyword order should put the strongest concepts first, followed by useful context and visual details.",
+          "For Adobe Stock, keep the title within the current CSV title limit and use a conservative maximum of 49 keywords. For a Shutterstock submission, use English descriptive metadata and check the current contributor requirements, including the relevant category and keyword range. These are platform-specific checks, not a universal translation rule."
+        ],
+        "bullets": [],
+        "example": "Title: Forest footpath among pine trees in Karelia, Russia\nKeywords: forest footpath, pine forest, Karelia, Russia, woodland path, nature, trees, landscape, outdoors, countryside, daylight, travel, wilderness, scenic, rural, environment"
+      },
+      {
+        "heading": "Build keywords in natural English",
+        "paragraphs": [
+          "Translate concepts, not individual words in isolation. лес means forest, but woodland may be a better choice when the image feels enclosed and temperate. сосны means pine trees or pine forest, depending on whether the trees or the setting is the main idea. мягкий дневной свет can become soft daylight if that quality is genuinely visible; it does not require poetic additions such as magical light.",
+          "Put the subject first, then location, setting, visual elements, and legitimate use cases. Remove duplicates and near-duplicates that do not add meaning. Do not mix Russian and English in one language list unless a specific platform or account configuration requires it. Platform language rules differ, so check the current contributor portal before uploading."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Use a local generator as a drafting assistant",
+        "paragraphs": [
+          "MetaStocker can help create an initial English title and keyword list from a preview. Its local mode runs the selected vision model in the browser, so the inference happens on the visitor’s device. The first model download needs internet; loading a model into memory is separate from retaining downloaded browser files in cache. Local mode does not automatically fall back to a cloud model.",
+          "Give the batch description only facts that apply to every file. For a mixed folder, add file-specific context after generation and review each row. If the image is a video, inspect the full motion yourself because sampled previews cannot establish every detail. Edit the result before export; an exact keyword count does not prove that the words are accurate."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Prepare and inspect the platform file",
+        "paragraphs": [
+          "If you use Adobe’s CSV workflow, upload the assets first. The filename, including extension and letter case, must match between the asset and CSV. After importing, inspect the resulting metadata in the contributor portal. A CSV exporter creates a file; it does not upload, submit, guarantee acceptance, or embed metadata into the original image.",
+          "Keep the English list specific to the image and platform. Recheck the current contributor rules because limits and fields can change. For a known location, retain the verified place name consistently. For an unknown location, use broader wording such as forest path rather than inventing a region."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Identify the visible route before choosing path, footpath, trail, or walk.",
+      "Keep only locations and contextual facts that are verified.",
+      "Write a natural English title, not a list of keywords.",
+      "Place the main subject and location near the beginning.",
+      "Use one consistent metadata language for the submission.",
+      "Remove duplicates, guesses, and irrelevant tags.",
+      "Review every generated row before exporting.",
+      "Check the current contributor portal rules and inspect imported metadata."
+    ],
+    "illustration": {
+      "title": "From Russian draft to English metadata",
+      "steps": [
+        {
+          "label": "Extract verified facts",
+          "detail": "Separate visible details, confirmed location, and unsupported interpretation."
+        },
+        {
+          "label": "Choose natural terms",
+          "detail": "Select path, footpath, or trail according to the route shown."
+        },
+        {
+          "label": "Review the export",
+          "detail": "Edit each row, match filenames, and inspect portal metadata."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как естественно перевести русские метаданные на английский",
+    "description": "Практический способ перевести описание лесной тропы на английский: выбрать точные термины, сохранить место и подготовить релевантные теги.",
+    "intro": "Перевод стоковых метаданных на английский — это не механическая замена русских слов словарными эквивалентами. Покупатель ищет естественные английские формулировки, а площадка проверяет релевантность и формат полей. В описании лесной сцены слова path, footpath, trail и walk могут выглядеть похожими, но обозначают разные вещи. Сначала определите, что действительно показано на изображении, затем сохраните подтверждённое место и только после этого составляйте заголовок и список ключевых слов. Ниже приведён гипотетический пример: предполагается, что автор подтвердил место съёмки — Карелию, Россию.",
+    "sections": [
+      {
+        "heading": "Разделите факты, контекст и догадки",
+        "paragraphs": [
+          "Разберите русский черновик на три части. Первая — видимые факты: лесная дорога или тропа, деревья, покрытие земли, дневной свет. Вторая — подтверждённый контекст: например, Карелия, Россия, если автор действительно знает место съёмки. Третья — интерпретации: тихий, нетронутый, удалённый, идеальный для похода. Такие слова нельзя добавлять только ради привлекательности, если изображение или документы их не подтверждают.",
+          "Не угадывайте по пикселям вид деревьев, сезон, принадлежность территории, присутствие людей или точное местоположение. Если в русском тексте сказано «лесная дорожка», выясните, виден ли широкий грунтовый проезд, узкая пешеходная тропа или просто просвет между деревьями. Смысл важнее буквального перевода."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Когда использовать path, footpath, trail и walk",
+        "paragraphs": [
+          "Path — самый нейтральный вариант для маршрута в ландшафте, когда его назначение не вполне ясно. Footpath подходит для узкой дорожки, явно предназначенной для пешеходов. Trail уместен для заметной или обозначенной тропы, особенно в контексте природы и пеших маршрутов, но он сильнее связывает сцену с прогулками. Walk чаще обозначает действие или впечатление от прогулки, а не сам объект на фотографии, поэтому обычно не должен быть главным существительным в заголовке.",
+          "Не называйте маршрут road, если по нему нельзя обоснованно представить движение автомобилей. Не добавляйте hiking trail, если нет подтверждения, что это именно туристическая тропа. Русское уменьшительное «тропинка» не обязательно передавать эмоционально: для стокового английского важнее ясное описание."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Практический пример перевода",
+        "paragraphs": [
+          "Гипотетический русский черновик: «Лесная тропинка среди сосен в Карелии, Россия, мягкий дневной свет». Предположим, автор подтвердил локацию и описывает пейзажную фотографию. Главный объект здесь — пешеходный маршрут среди сосен. Место можно включить в метаданные, потому что оно известно автору, а не потому, что лес якобы можно определить по внешнему виду.",
+          "Естественный заголовок: “Forest footpath among pine trees in Karelia, Russia”. Если назначение дорожки неясно или она шире обычной тропы, лучше выбрать: “Forest path among pine trees in Karelia, Russia”. Формулировка hiking trail потребовала бы отдельного подтверждения. Ключевые слова начинаются с главного объекта, затем идут место, окружение и видимые детали.",
+          "Для Adobe Stock используйте консервативный максимум в 49 ключевых слов и учитывайте текущий лимит длины заголовка для CSV. В Shutterstock нужны английские описательные метаданные, релевантные ключевые слова и категория; диапазон и требования следует проверить в кабинете. Это правила конкретных площадок, а не универсальный закон перевода."
+        ],
+        "bullets": [],
+        "example": "Title: Forest footpath among pine trees in Karelia, Russia\nKeywords: forest footpath, pine forest, Karelia, Russia, woodland path, nature, trees, landscape, outdoors, countryside, daylight, travel, wilderness, scenic, rural, environment"
+      },
+      {
+        "heading": "Переводите смысл, а не отдельные слова",
+        "paragraphs": [
+          "Слово «лес» обычно переводится как forest, но woodland может лучше передавать замкнутое лиственное или смешанное пространство. «Сосны» — это pine trees, когда важны сами деревья, или pine forest, когда главным является тип леса. «Мягкий дневной свет» можно передать как soft daylight, если такая характеристика действительно заметна; не нужно добавлять magical light или atmospheric scene без визуального основания.",
+          "Стройте список в порядке: главный объект, подтверждённая локация, окружение, видимые детали и допустимый контекст использования. Удаляйте повторы и почти одинаковые варианты, которые не добавляют смысла. Не смешивайте русский и английский в одном списке, если правила конкретного аккаунта не требуют иного."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Проверьте результат локального генератора",
+        "paragraphs": [
+          "MetaStocker может подготовить черновой английский заголовок и список ключевых слов по превью. В локальном режиме выбранная модель выполняет вывод в браузере посетителя, а не на AI-сервере. Первое скачивание модели требует интернета. При этом загрузка модели в память — не то же самое, что сохранение скачанных файлов в кэше браузера: доступность кэша и его очистка зависят от браузера.",
+          "Описание партии должно содержать только факты, общие для всех файлов. Для смешанной папки проверяйте и исправляйте каждую строку отдельно. Для видео просматривайте полное движение самостоятельно, поскольку выборочные превью не показывают весь материал. Точное количество ключевых слов не доказывает их точность, поэтому редактирование обязательно."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Подготовьте CSV и осмотрите импорт",
+        "paragraphs": [
+          "В рабочем процессе Adobe сначала загрузите сами файлы, а затем импортируйте CSV. Имя файла, включая расширение и регистр букв, должно совпадать в обоих местах. После импорта проверьте получившиеся поля в кабинете автора. Экспортёр создаёт файл, но не загружает и не отправляет его автоматически, не гарантирует принятие и не встраивает метаданные в оригинал.",
+          "Сохраняйте подтверждённое название места одинаковым во всех релевантных строках. Если локация неизвестна, используйте общее выражение forest path и не придумывайте регион. Перед отправкой ещё раз откройте актуальные требования площадки: лимиты и поля могут меняться."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Определите, что именно показано: path, footpath или trail.",
+      "Используйте только подтверждённую локацию и контекст.",
+      "Составьте естественный английский заголовок, а не цепочку тегов.",
+      "Поставьте главный объект и место ближе к началу.",
+      "Не смешивайте языки в одном списке метаданных.",
+      "Удалите повторы, догадки и нерелевантные слова.",
+      "Проверьте каждую строку после генерации.",
+      "Сверьте актуальные правила площадки и результат импорта."
+    ],
+    "illustration": {
+      "title": "От русского черновика к английским метаданным",
+      "steps": [
+        {
+          "label": "Выделите подтверждённые факты",
+          "detail": "Отделите видимые детали, известное место и неподтверждённые трактовки."
+        },
+        {
+          "label": "Выберите точный термин",
+          "detail": "Определите, подходит ли path, footpath или trail."
+        },
+        {
+          "label": "Проверьте экспорт",
+          "detail": "Исправьте строки, сопоставьте имена и осмотрите поля в кабинете."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "রাশিয়ান স্টক মেটাডেটা কীভাবে স্বাভাবিক ইংরেজিতে অনুবাদ করবেন",
+    "description": "আক্ষরিক অনুবাদ, মিশ্র ভাষা বা অনুমান করা দৃশ্যমান তথ্য ছাড়াই রাশিয়ান বনদৃশ্যের নির্ভুল ইংরেজি স্টক শিরোনাম ও কীওয়ার্ড তৈরি করুন।",
+    "intro": "স্টক মেটাডেটা ইংরেজিতে অনুবাদ করা রাশিয়ান শব্দের অভিধানগত সমতুল্য বসানোর চেয়ে বেশি কিছু। ইংরেজিভাষী ক্রেতারা স্বাভাবিক বর্ণনা দিয়ে খোঁজেন, আর স্টক প্ল্যাটফর্মগুলো নিজেদের নির্দিষ্ট বিন্যাসে প্রাসঙ্গিক ও নির্ভুল মেটাডেটা প্রত্যাশা করে। বনের একটি পথ নিয়ে রাশিয়ান খসড়ায় বেশ কয়েকটি যুক্তিসঙ্গত ইংরেজি বিকল্প থাকতে পারে, কিন্তু সেগুলো পরস্পরের বদলি নয়: path, footpath, trail এবং walk ভিন্ন অর্থের ইঙ্গিত দেয়। সবচেয়ে নিরাপদ কর্মপ্রবাহ হলো ছবিতে আসলে কী দেখা যাচ্ছে তা শনাক্ত করা, যাচাই করা অবস্থান অপরিবর্তিত রাখা, তারপর মূল বিষয়কে ঘিরে ইংরেজি শিরোনাম ও কীওয়ার্ডের তালিকা তৈরি করা। এই উদাহরণটি কাল্পনিক এবং ধরে নেওয়া হয়েছে যে অবদানকারী যাচাই করেছেন দৃশ্যটি রাশিয়ার কারেলিয়ায়।",
+    "sections": [
+      {
+        "heading": "দৃশ্যমান তথ্য ও অনুবাদ-নির্ভর পছন্দ আলাদা করুন",
+        "paragraphs": [
+          "রাশিয়ান খসড়াটি শুরুতেই তিন ভাগে ভাগ করুন: দৃশ্যমান তথ্য, যাচাই করা প্রেক্ষাপট এবং ব্যাখ্যা। দৃশ্যমান তথ্যের মধ্যে থাকতে পারে গাছপালায় ঘেরা পথ, গাছ, মাটির আবরণ এবং দিনের আলো। অবদানকারী অবস্থানটি জানেন ও তার সমর্থনে প্রমাণ দিতে পারেন—এমন ক্ষেত্রে যাচাই করা প্রেক্ষাপটের মধ্যে কারেলিয়া, রাশিয়া থাকতে পারে। ব্যাখ্যার মধ্যে রয়েছে শান্ত, দূরবর্তী, অক্ষত বা হাঁটার জন্য আদর্শ—এ ধরনের দাবি। এগুলো আকর্ষণীয় শোনালেও ছবি বা সহায়ক নথিতে যথেষ্ট ভিত্তি না থাকলে যোগ করা উচিত নয়।",
+          "শুধু পিক্সেল দেখে কোনো ব্যক্তি, ঋতু, প্রজাতি, মালিকানা বা সুনির্দিষ্ট অবস্থান অনুমান করবেন না। রাশিয়ান লেখায় лесная дорожка থাকলে সিদ্ধান্ত নিন ছবিতে পথচারীদের পথ, আরও চওড়া মাটির রাস্তা, নাকি গাছের মাঝের সরু খোলা অংশ দেখা যাচ্ছে। আক্ষরিক সমতুল্য খোঁজার চেয়ে এই সিদ্ধান্ত বেশি গুরুত্বপূর্ণ।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "path, footpath, trail বা walk বেছে নিন",
+        "paragraphs": [
+          "ছবিতে প্রাকৃতিক দৃশ্যের মধ্য দিয়ে একটি সাধারণ পথ দেখা গেলে এবং তার ব্যবহার নিশ্চিত না হলে path ব্যবহার করুন। মানুষের হাঁটার জন্য তৈরি সরু পথ স্পষ্ট হলে footpath ব্যবহার করুন। দৃশ্যটি চিহ্নিত বা প্রতিষ্ঠিত পথের ইঙ্গিত দিলে, বিশেষ করে হাঁটা বা প্রকৃতি-ভিত্তিক প্রেক্ষাপটে, trail ব্যবহার করা যায়; তবে এটি path-এর তুলনায় বিনোদনমূলক ব্যবহারের ইঙ্গিত বেশি দিতে পারে। walk সাধারণত দৃশ্যমান পথ নয়, কাজ বা অভিজ্ঞতাকে বোঝায়; তাই বনের ট্র্যাকের প্রাথমিক বিশেষ্য হিসেবে এটি খুব কম ক্ষেত্রেই সেরা পছন্দ।",
+          "যানবাহন যুক্তিসঙ্গতভাবে চলতে না পারলে road যোগ করা এড়িয়ে চলুন। পথটি হাঁটার জন্য ব্যবহৃত—এমন প্রমাণ না থাকলে hiking trail লিখবেন না। রাশিয়ান খসড়ায় тропинка-এর মতো ছোট বা স্নেহসূচক শব্দ থাকলেও স্বাভাবিক ইংরেজি শিরোনামে আবেগের সূক্ষ্মতার চেয়ে স্পষ্টতাই সাধারণত বেশি গুরুত্বপূর্ণ।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: ইংরেজি মেটাডেটা নতুন করে তৈরি করুন",
+        "paragraphs": [
+          "রাশিয়ান উদাহরণ খসড়া: Лесная тропинка среди сосен в Карелии, Россия, мягкий дневной свет। ধরে নিন অবদানকারী অবস্থানটি যাচাই করেছেন এবং একটি ভূদৃশ্য ছবির জন্য ইংরেজি মেটাডেটা চান। কেন্দ্রীয় বিষয় হলো পাইন বনের মধ্য দিয়ে যাওয়া পথচারীদের একটি পথ। গাছ দেখে অঞ্চলটি শনাক্ত করা যায় বলে নয়, বরং অবস্থানটি জানা বলে শিরোনাম ও কীওয়ার্ডে স্থানটি রাখা হবে।",
+          "উপযুক্ত শিরোনাম হলো “Forest footpath among pine trees in Karelia, Russia.” এটি কীওয়ার্ডের স্তূপ নয়, বরং বাক্যসদৃশ বর্ণনা। পথটি চওড়া হলে বা এর ব্যবহার অনিশ্চিত হলে footpath-এর বদলে path লিখুন: “Forest path among pine trees in Karelia, Russia.” তথ্যটি জানা না থাকলে একে hiking trail বলবেন না। কীওয়ার্ডের ক্রমে সবচেয়ে শক্তিশালী ধারণাগুলো আগে রাখুন, তারপর দরকারি প্রেক্ষাপট ও দৃশ্যমান বিবরণ দিন।",
+          "Adobe Stock-এর জন্য শিরোনামটি বর্তমান CSV শিরোনাম-সীমার মধ্যে রাখুন এবং সর্বোচ্চ 49টি কীওয়ার্ডের সংযত সীমা ব্যবহার করুন। Shutterstock-এ জমা দেওয়ার ক্ষেত্রে ইংরেজি বর্ণনামূলক মেটাডেটা ব্যবহার করুন এবং প্রাসঙ্গিক বিভাগ ও কীওয়ার্ডের পরিসরসহ বর্তমান অবদানকারী-নির্দেশনা যাচাই করুন। এগুলো প্ল্যাটফর্ম-নির্দিষ্ট পরীক্ষা, সর্বজনীন অনুবাদ-নিয়ম নয়।"
+        ],
+        "bullets": [],
+        "example": "Title: Forest footpath among pine trees in Karelia, Russia\nKeywords: forest footpath, pine forest, Karelia, Russia, woodland path, nature, trees, landscape, outdoors, countryside, daylight, travel, wilderness, scenic, rural, environment"
+      },
+      {
+        "heading": "স্বাভাবিক ইংরেজিতে কীওয়ার্ড তৈরি করুন",
+        "paragraphs": [
+          "আলাদা আলাদা শব্দ নয়, ধারণা অনুবাদ করুন। лес-এর অর্থ forest, কিন্তু ছবি ঘেরা ও নাতিশীতোষ্ণ মনে হলে woodland ভালো পছন্দ হতে পারে। сосны-এর অর্থ pine trees বা pine forest হতে পারে—গাছগুলো নাকি পরিবেশটি মূল ভাব, তার ওপর নির্ভর করবে। мягкий дневной свет-এর গুণটি সত্যিই দৃশ্যমান হলে soft daylight লেখা যায়; এতে magical light-এর মতো কাব্যিক সংযোজন দরকার নেই।",
+          "প্রথমে বিষয়, তারপর অবস্থান, পরিবেশ, দৃশ্যমান উপাদান এবং বৈধ ব্যবহারিক প্রেক্ষাপট রাখুন। অর্থ যোগ করে না—এমন পুনরাবৃত্তি ও কাছাকাছি অর্থের শব্দ বাদ দিন। নির্দিষ্ট কোনো প্ল্যাটফর্ম বা অ্যাকাউন্টের বিন্যাসে প্রয়োজন না হলে একই ভাষার তালিকায় রাশিয়ান ও ইংরেজি মেশাবেন না। প্ল্যাটফর্মের ভাষা-নিয়ম ভিন্ন হতে পারে, তাই আপলোডের আগে বর্তমান অবদানকারী পোর্টাল যাচাই করুন।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "স্থানীয় জেনারেটরকে খসড়া তৈরির সহকারী হিসেবে ব্যবহার করুন",
+        "paragraphs": [
+          "MetaStocker প্রিভিউ থেকে প্রাথমিক ইংরেজি শিরোনাম ও কীওয়ার্ডের তালিকা তৈরি করতে সাহায্য করতে পারে। এর স্থানীয় মোড নির্বাচিত ভিশন মডেলটি ব্রাউজারে চালায়, তাই অনুমান-প্রক্রিয়া ব্যবহারকারীর ডিভাইসেই সম্পন্ন হয়। প্রথমবার মডেল ডাউনলোড করতে ইন্টারনেট প্রয়োজন; মডেলকে মেমরিতে লোড করা এবং ডাউনলোড করা ব্রাউজার ফাইল ক্যাশে রেখে দেওয়া আলাদা বিষয়। স্থানীয় মোড স্বয়ংক্রিয়ভাবে ক্লাউড মডেলে ফিরে যায় না।",
+          "ব্যাচের বর্ণনায় কেবল প্রতিটি ফাইলে প্রযোজ্য তথ্য দিন। মিশ্র ফোল্ডারের ক্ষেত্রে তৈরির পর ফাইলভিত্তিক প্রেক্ষাপট যোগ করুন এবং প্রতিটি সারি পর্যালোচনা করুন। ছবি ভিডিও হলে সম্পূর্ণ চলমান দৃশ্য নিজে পরীক্ষা করুন, কারণ নমুনা প্রিভিউ প্রতিটি বিবরণ নিশ্চিত করতে পারে না। রপ্তানির আগে ফলাফল সম্পাদনা করুন; সঠিক সংখ্যক কীওয়ার্ড থাকা শব্দগুলোর নির্ভুলতার প্রমাণ নয়।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "প্ল্যাটফর্মের ফাইল প্রস্তুত ও পরীক্ষা করুন",
+        "paragraphs": [
+          "Adobe-এর CSV কর্মপ্রবাহ ব্যবহার করলে আগে সম্পদগুলো আপলোড করুন। এক্সটেনশন ও অক্ষরের বড়-ছোট রূপসহ ফাইলের নাম সম্পদ ও CSV-তে একই হতে হবে। আমদানির পর অবদানকারী পোর্টালে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন। CSV রপ্তানিকারক একটি ফাইল তৈরি করে; এটি আপলোড, জমা, গ্রহণযোগ্যতার নিশ্চয়তা বা মূল ছবিতে মেটাডেটা সংযুক্ত করে না।",
+          "ইংরেজি তালিকাটি ছবি ও প্ল্যাটফর্মের জন্য নির্দিষ্ট রাখুন। সীমা ও ক্ষেত্র পরিবর্তিত হতে পারে বলে বর্তমান অবদানকারী-নিয়ম আবার যাচাই করুন। অবস্থান জানা থাকলে যাচাই করা স্থাননামটি ধারাবাহিকভাবে রাখুন। অবস্থান অজানা হলে কোনো অঞ্চল বানিয়ে না লিখে forest path-এর মতো বিস্তৃত শব্দ ব্যবহার করুন।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "path, footpath, trail বা walk বেছে নেওয়ার আগে দৃশ্যমান পথটি শনাক্ত করুন।",
+      "শুধু যাচাই করা অবস্থান ও প্রেক্ষাপটের তথ্য রাখুন।",
+      "কীওয়ার্ডের তালিকা নয়, স্বাভাবিক ইংরেজি শিরোনাম লিখুন।",
+      "মূল বিষয় ও অবস্থান শুরুর কাছাকাছি রাখুন।",
+      "জমা দেওয়ার জন্য একটি সামঞ্জস্যপূর্ণ মেটাডেটা-ভাষা ব্যবহার করুন।",
+      "পুনরাবৃত্তি, অনুমান ও অপ্রাসঙ্গিক ট্যাগ বাদ দিন।",
+      "রপ্তানির আগে তৈরি হওয়া প্রতিটি সারি পর্যালোচনা করুন।",
+      "বর্তমান অবদানকারী পোর্টালের নিয়ম পরীক্ষা করুন এবং আমদানি করা মেটাডেটা দেখুন।"
+    ],
+    "illustration": {
+      "title": "রাশিয়ান খসড়া থেকে ইংরেজি মেটাডেটা",
+      "steps": [
+        {
+          "label": "যাচাই করা তথ্য বের করুন",
+          "detail": "দৃশ্যমান বিবরণ, নিশ্চিত অবস্থান এবং সমর্থনহীন ব্যাখ্যা আলাদা করুন।"
+        },
+        {
+          "label": "স্বাভাবিক শব্দ বেছে নিন",
+          "detail": "দেখানো পথ অনুযায়ী path, footpath বা trail নির্বাচন করুন।"
+        },
+        {
+          "label": "রপ্তানি পর্যালোচনা করুন",
+          "detail": "প্রতিটি সারি সম্পাদনা করুন, ফাইলের নাম মিলিয়ে নিন এবং পোর্টালের মেটাডেটা দেখুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "रूसी स्टॉक मेटाडेटा का स्वाभाविक अंग्रेज़ी में अनुवाद कैसे करें",
+    "description": "शाब्दिक अनुवाद, मिश्रित भाषाओं या अनुमानित दृश्य तथ्यों के बिना रूसी वन-दृश्य के सटीक अंग्रेज़ी स्टॉक शीर्षक और कीवर्ड बनाएँ।",
+    "intro": "स्टॉक मेटाडेटा का अंग्रेज़ी में अनुवाद केवल रूसी शब्दों के शब्दकोशीय समानार्थी रखने का काम नहीं है। अंग्रेज़ी बोलने वाले खरीदार स्वाभाविक विवरणों से खोजते हैं, जबकि स्टॉक प्लेटफ़ॉर्म अपने प्रारूपों में प्रासंगिक और सटीक मेटाडेटा चाहते हैं। वन-पथ के बारे में रूसी मसौदे में कई उचित अंग्रेज़ी विकल्प हो सकते हैं, लेकिन वे एक-दूसरे के बदले नहीं चल सकते: path, footpath, trail और walk अलग-अलग अर्थ सुझाते हैं। सबसे सुरक्षित कार्यप्रवाह है कि पहले पहचाना जाए कि चित्र में वास्तव में क्या दिख रहा है, सत्यापित स्थान को बनाए रखा जाए, और फिर मुख्य विषय के आधार पर अंग्रेज़ी शीर्षक तथा कीवर्ड सूची बनाई जाए। यह उदाहरण काल्पनिक है और मानता है कि योगदानकर्ता ने सत्यापित किया है कि दृश्य करेलिया, रूस में है।",
+    "sections": [
+      {
+        "heading": "दृश्य तथ्यों को अनुवाद के विकल्पों से अलग करें",
+        "paragraphs": [
+          "रूसी मसौदे को शुरुआत में तीन समूहों में बाँटें: दिखाई देने वाले तथ्य, सत्यापित संदर्भ और व्याख्या। दिखाई देने वाले तथ्यों में पेड़ों से घिरा मार्ग, पेड़, ज़मीन का आवरण और दिन का प्रकाश शामिल हो सकते हैं। यदि योगदानकर्ता स्थान को जानता है और उसका समर्थन कर सकता है, तो सत्यापित संदर्भ में करेलिया, रूस शामिल हो सकता है। व्याख्या में शांत, दूरस्थ, अछूता या पैदल यात्रा के लिए आदर्श जैसे दावे आते हैं। ये आकर्षक लग सकते हैं, लेकिन चित्र या साथ के अभिलेख उनका आधार न दें तो इन्हें नहीं जोड़ना चाहिए।",
+          "केवल पिक्सेल देखकर किसी व्यक्ति, मौसम, प्रजाति, स्वामित्व या सटीक स्थान का अनुमान न लगाएँ। यदि रूसी पाठ में лесная дорожка लिखा है, तो तय करें कि चित्र में पैदल चलने का मार्ग, चौड़ी कच्ची सड़क या केवल पेड़ों के बीच की संकरी खुली जगह दिखती है। शाब्दिक समानार्थी खोजने से अधिक महत्वपूर्ण यही निर्णय है।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "path, footpath, trail या walk चुनें",
+        "paragraphs": [
+          "जब चित्र में परिदृश्य से होकर जाने वाला सामान्य मार्ग दिखे और उसका उपयोग निश्चित न हो, तो path का उपयोग करें। जब वह स्पष्ट रूप से पैदल चलने वालों के लिए बना संकरा मार्ग हो, तो footpath लिखें। जब दृश्य किसी चिह्नित या स्थापित मार्ग का संकेत दे, विशेषकर पैदल यात्रा या प्रकृति के संदर्भ में, तो trail उपयुक्त हो सकता है; हालांकि path की तुलना में यह मनोरंजनात्मक उपयोग का अधिक संकेत दे सकता है। walk आम तौर पर दिखाई देने वाले मार्ग के बजाय गतिविधि या अनुभव का वर्णन करता है, इसलिए वन-पथ के लिए प्राथमिक संज्ञा के रूप में यह बहुत कम ही सर्वोत्तम विकल्प होता है।",
+          "यदि वाहन वहाँ उचित रूप से नहीं चल सकते, तो road जोड़ने से बचें। यदि इस बात का प्रमाण नहीं है कि मार्ग पैदल यात्रा के लिए है, तो hiking trail न लिखें। भले ही रूसी मसौदे में тропинка जैसा लघुरूप हो, स्वाभाविक अंग्रेज़ी स्टॉक मेटाडेटा में भावनात्मक बारीकी से अधिक स्पष्टता की आवश्यकता होती है।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "काम का उदाहरण: अंग्रेज़ी मेटाडेटा फिर से बनाएँ",
+        "paragraphs": [
+          "रूसी मसौदे का उदाहरण: Лесная тропинка среди сосен в Карелии, Россия, мягкий дневной свет। मान लें कि योगदानकर्ता ने स्थान सत्यापित कर लिया है और लैंडस्केप फ़ोटोग्राफ़ के लिए अंग्रेज़ी मेटाडेटा चाहता है। मुख्य विषय पाइन वन से होकर जाने वाला पैदल मार्ग है। स्थान शीर्षक और कीवर्ड में इसलिए शामिल है क्योंकि वह ज्ञात है, इसलिए नहीं कि पेड़ उस क्षेत्र की पहचान करते हुए दिखाई देते हैं।",
+          "उपयुक्त शीर्षक है “Forest footpath among pine trees in Karelia, Russia.” यह कीवर्डों का ढेर नहीं, बल्कि वाक्य जैसा विवरण है। यदि मार्ग अधिक चौड़ा हो या उसका उपयोग अनिश्चित हो, तो footpath की जगह path लिखें: “Forest path among pine trees in Karelia, Russia.” जब तक यह तथ्य ज्ञात न हो, इसे hiking trail न कहें। कीवर्ड क्रम में सबसे मजबूत अवधारणाएँ पहले रखें, फिर उपयोगी संदर्भ और दृश्य विवरण दें।",
+          "Adobe Stock के लिए शीर्षक को वर्तमान CSV शीर्षक सीमा के भीतर रखें और अधिकतम 49 कीवर्ड की सावधान सीमा अपनाएँ। Shutterstock पर जमा करते समय अंग्रेज़ी वर्णनात्मक मेटाडेटा इस्तेमाल करें और संबंधित श्रेणी तथा कीवर्ड सीमा सहित वर्तमान योगदानकर्ता आवश्यकताओं की जाँच करें। ये प्लेटफ़ॉर्म-विशिष्ट जाँच हैं, सार्वभौमिक अनुवाद नियम नहीं।"
+        ],
+        "bullets": [],
+        "example": "Title: Forest footpath among pine trees in Karelia, Russia\nKeywords: forest footpath, pine forest, Karelia, Russia, woodland path, nature, trees, landscape, outdoors, countryside, daylight, travel, wilderness, scenic, rural, environment"
+      },
+      {
+        "heading": "स्वाभाविक अंग्रेज़ी में कीवर्ड बनाएँ",
+        "paragraphs": [
+          "अलग-अलग शब्दों का नहीं, अवधारणाओं का अनुवाद करें। лес का अर्थ forest है, लेकिन जब चित्र घना और समशीतोष्ण लगे, तो woodland बेहतर विकल्प हो सकता है। сосны का अर्थ pine trees या pine forest हो सकता है, यह इस पर निर्भर करता है कि मुख्य विचार पेड़ हैं या परिवेश। यदि यह गुण वास्तव में दिखाई देता हो, तो мягкий дневной свет का अनुवाद soft daylight किया जा सकता है; इसमें magical light जैसे काव्यात्मक जोड़ की आवश्यकता नहीं है।",
+          "पहले विषय, फिर स्थान, परिवेश, दृश्य तत्व और वैध उपयोग-संदर्भ रखें। ऐसे दोहराव और मिलते-जुलते शब्द हटा दें जो कोई अतिरिक्त अर्थ नहीं देते। जब तक किसी विशेष प्लेटफ़ॉर्म या खाते की व्यवस्था में इसकी आवश्यकता न हो, एक ही भाषा की सूची में रूसी और अंग्रेज़ी न मिलाएँ। प्लेटफ़ॉर्म की भाषा संबंधी नीतियाँ अलग होती हैं, इसलिए अपलोड से पहले वर्तमान योगदानकर्ता पोर्टल जाँचें।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "स्थानीय जनरेटर को मसौदा-सहायक के रूप में उपयोग करें",
+        "paragraphs": [
+          "MetaStocker प्रीव्यू से शुरुआती अंग्रेज़ी शीर्षक और कीवर्ड सूची बनाने में सहायता कर सकता है। इसका स्थानीय मोड चुने गए विज़न मॉडल को ब्राउज़र में चलाता है, इसलिए अनुमान-प्रक्रिया उपयोगकर्ता के डिवाइस पर होती है। पहली बार मॉडल डाउनलोड करने के लिए इंटरनेट चाहिए; मॉडल को मेमोरी में लोड करना और डाउनलोड की गई ब्राउज़र फ़ाइलों को कैश में रखना अलग बातें हैं। स्थानीय मोड अपने-आप क्लाउड मॉडल पर वापस नहीं जाता।",
+          "बैच के विवरण में केवल वे तथ्य दें जो हर फ़ाइल पर लागू होते हैं। मिश्रित फ़ोल्डर के लिए निर्माण के बाद फ़ाइल-विशिष्ट संदर्भ जोड़ें और हर पंक्ति की समीक्षा करें। यदि चित्र वीडियो है, तो पूरा चलायमान दृश्य स्वयं जाँचें, क्योंकि नमूना प्रीव्यू हर विवरण स्थापित नहीं कर सकते। निर्यात से पहले परिणाम संपादित करें; कीवर्डों की सही संख्या होना शब्दों की सटीकता का प्रमाण नहीं है।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "प्लेटफ़ॉर्म फ़ाइल तैयार करें और जाँचें",
+        "paragraphs": [
+          "यदि आप Adobe का CSV कार्यप्रवाह उपयोग करते हैं, तो पहले संपत्तियाँ अपलोड करें। एक्सटेंशन और अक्षरों के बड़े-छोटे रूप सहित फ़ाइलनाम, संपत्ति और CSV में समान होना चाहिए। आयात के बाद योगदानकर्ता पोर्टल में तैयार मेटाडेटा की जाँच करें। CSV निर्यातक एक फ़ाइल बनाता है; वह अपलोड, जमा, स्वीकृति की गारंटी या मूल चित्र में मेटाडेटा शामिल नहीं करता।",
+          "अंग्रेज़ी सूची को चित्र और प्लेटफ़ॉर्म के लिए विशिष्ट रखें। सीमाएँ और फ़ील्ड बदल सकते हैं, इसलिए वर्तमान योगदानकर्ता नियम फिर से जाँचें। ज्ञात स्थान के लिए सत्यापित स्थान-नाम को लगातार बनाए रखें। अज्ञात स्थान के लिए कोई क्षेत्र गढ़ने के बजाय forest path जैसे व्यापक शब्दों का उपयोग करें।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "path, footpath, trail या walk चुनने से पहले दिखाई देने वाले मार्ग की पहचान करें।",
+      "केवल सत्यापित स्थान और संदर्भ संबंधी तथ्य रखें।",
+      "कीवर्डों की सूची नहीं, स्वाभाविक अंग्रेज़ी शीर्षक लिखें।",
+      "मुख्य विषय और स्थान को शुरुआत के पास रखें।",
+      "जमा करने के लिए एक ही सुसंगत मेटाडेटा भाषा का उपयोग करें।",
+      "दोहराव, अनुमान और अप्रासंगिक टैग हटाएँ।",
+      "निर्यात से पहले हर बनाई गई पंक्ति की समीक्षा करें।",
+      "वर्तमान योगदानकर्ता पोर्टल के नियम जाँचें और आयात किया गया मेटाडेटा देखें।"
+    ],
+    "illustration": {
+      "title": "रूसी मसौदे से अंग्रेज़ी मेटाडेटा तक",
+      "steps": [
+        {
+          "label": "सत्यापित तथ्य निकालें",
+          "detail": "दृश्य विवरण, पुष्टि किया गया स्थान और असमर्थित व्याख्या अलग करें।"
+        },
+        {
+          "label": "स्वाभाविक शब्द चुनें",
+          "detail": "दिखाए गए मार्ग के अनुसार path, footpath या trail चुनें।"
+        },
+        {
+          "label": "निर्यात की समीक्षा करें",
+          "detail": "हर पंक्ति संपादित करें, फ़ाइलनाम मिलाएँ और पोर्टल मेटाडेटा जाँचें।"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "adobe-keywords": {
+    "title": "Adobe Stock: titles and keywords",
+    "url": "https://helpx.adobe.com/stock/contributor/content-policies-guidelines/metadata/tips-effective-titles-keywords.html",
+    "facts": "Relevant descriptive metadata; put the most important terms first, with particular attention to the first ten. The keyword guide permits up to 49 keywords. Metadata language must match the contributor account. Do not infer personal identities.",
+    "verified_on": "2026-09-18"
+  },
+  "adobe-csv": {
+    "title": "Adobe Stock: CSV requirements",
+    "url": "https://helpx.adobe.com/stock/contributor/manage-your-portfolio/csv-requirements-content.html",
+    "facts": "CSV maps filenames to titles and keywords, with optional category number and release filenames. The CSV guide currently gives a 70-character title limit. Its keyword maximum differs from the general keyword guide; use a conservative maximum of 49 and validate the current upload screen. Never claim a CSV guarantees acceptance.",
+    "verified_on": "2026-09-18"
+  },
+  "adobe-upload": {
+    "title": "Adobe Stock: upload a CSV file",
+    "url": "https://helpx.adobe.com/stock/contributor/manage-your-portfolio/upload-csv-file.html",
+    "facts": "Upload the assets before importing the CSV. Filenames including extension and case must match. Inspect the resulting metadata in the contributor portal.",
+    "verified_on": "2026-09-18"
+  },
+  "shutterstock-metadata": {
+    "title": "Shutterstock: contextual metadata",
+    "url": "https://submit.shutterstock.com/help/en/articles/10617427-content-publishing-standards-contextual-metadata",
+    "facts": "English descriptive metadata, 7 to 50 relevant keywords, at least one category. Documentary editorial captions require verified date and location. Do not extend editorial rules to commercial work.",
+    "verified_on": "2026-09-18"
+  },
+  "shutterstock-quality": {
+    "title": "Shutterstock: description and keyword best practices",
+    "url": "https://submit.shutterstock.com/help/en/articles/10594702-description-and-keyword-best-practices",
+    "facts": "Use an accurate descriptive sentence or phrase, not a title made from a list of keywords. Tailor terms to each work; avoid irrelevant or repeated terms.",
+    "verified_on": "2026-09-18"
+  },
+  "envato-metadata": {
+    "title": "Envato: item information and metadata",
+    "url": "https://help.author.envato.com/hc/en-us/articles/360000471066-Item-Information-and-Metadata-Requirements",
+    "facts": "Requirements differ by content type. Photos and video allow up to 50 tags; other types have different limits. Relevant established compound terms are allowed. Check the current item-specific upload requirements.",
+    "verified_on": "2026-09-18"
+  },
+  "envato-upload": {
+    "title": "Envato: upload methods and stock video CSV",
+    "url": "https://help.author.envato.com/hc/en-us/articles/360000518446-Upload-Methods",
+    "facts": "Stock video supports CSV metadata with exact filenames including extensions. A description and platform-specific fields may still need attention. Do not promise one CSV schema works for all Envato item types.",
+    "verified_on": "2026-09-18"
+  },
+  "google-helpful": {
+    "title": "Google Search: helpful, reliable, people-first content",
+    "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content",
+    "facts": "Create useful original content for people. Do not promise rankings, traffic or revenue; there is no magic word count.",
+    "verified_on": "2026-09-18"
+  },
+  "google-images": {
+    "title": "Google Search: image SEO best practices",
+    "url": "https://developers.google.com/search/docs/appearance/google-images",
+    "facts": "Use descriptive surrounding text and appropriate alt text for images. Website image SEO is separate from marketplace keyword metadata.",
+    "verified_on": "2026-09-18"
+  },
+  "google-sitemap": {
+    "title": "Google Search: build and submit a sitemap",
+    "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
+    "facts": "A sitemap helps discovery but does not guarantee crawling or indexing. Include canonical absolute URLs.",
+    "verified_on": "2026-09-18"
+  },
+  "google-language": {
+    "title": "Google Search: localized versions",
+    "url": "https://developers.google.com/search/docs/specialty/international/localized-versions",
+    "facts": "Separate language URLs can declare reciprocal hreflang alternatives. Translations should retain their own canonical URLs.",
+    "verified_on": "2026-09-18"
+  },
+  "webgpu": {
+    "title": "MDN: WebGPU API",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API",
+    "facts": "WebGPU needs a secure context and compatible browser, GPU and driver. A browser supporting the API does not guarantee enough memory for a model.",
+    "verified_on": "2026-09-18"
+  },
+  "browser-cache": {
+    "title": "MDN: CacheStorage",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage",
+    "facts": "Browser cache is distinct from active model memory. Storage availability and eviction depend on browser behavior; do not promise permanent storage or full offline availability.",
+    "verified_on": "2026-09-18"
+  },
+  "openai-key": {
+    "title": "OpenAI: API key safety",
+    "url": "https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety",
+    "facts": "API keys are secrets and should not be shared. MetaStocker's optional personal API mode uses the user's own key directly with OpenAI; this does not make public client-side key embedding safe.",
+    "verified_on": "2026-09-18"
+  },
+  "metastocker": {
+    "title": "MetaStocker: free local metadata generator",
+    "url": "https://metastocker.net/",
+    "facts": "Verified implementation: static web app. Local vision and thinking models Gemma 4 E2B, Gemma 4 E4B and Qwen3.5 2B. Gemma E2B default. Explicit Download/Load, unload from memory retaining cache, delete browser model files. Local execution uses WebGPU workers in the user's browser; no AI server inference. First model download needs internet. Each local parallel thread can load its own model copy; begin with 1, then test 2. No automatic cloud fallback. Optional paid OpenAI API with user's key sends previews/context to OpenAI. Files input accepts images, videos and .ai; an .ai file needs a readable preview, not all files work. Video metadata is based on sampled previews, so humans must inspect full motion. Outputs Adobe, Envato, Shutterstock, Freepik CSV; exporter does not upload, submit, guarantee acceptance, embed metadata into originals, or preserve work across tab closure. UI English. Batch description is context sent with generation; use only facts, not blanket tags for mixed batches. Extra tags support start/end/random positions; review per-file relevance. App validates exact requested tag count but that is not proof of accuracy. Review editable results and only export ready rows. Minimal first-party aggregate analytics without permanent visitor ID; local mode keeps photos/prompts/results on device, model downloads still contact external hosts. No account/API key needed for local mode. Thinking is enabled for every local model request; the app has no thinking on/off switch and no standard-mode selection. Intermediate reasoning is not exported; only the final metadata is parsed. Qwen has a bounded reasoning budget, which does not guarantee factual accuracy.",
+    "verified_on": "2026-09-18"
+  }
+}

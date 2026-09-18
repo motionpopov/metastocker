@@ -25,7 +25,7 @@ function bars(id, rows, total, label = v => v, links = false) {
   for (const item of rows) {
     const row = node('div', undefined, 'rank-row'), top = node('div', undefined, 'bar-label');
     let title = node('span', label(item.name));
-    if (links && /^\/(?:blog\/(?:[a-z0-9-]+\.html)?)?$/.test(item.name)) { title = node('a', label(item.name)); title.href = item.name; }
+    if (links && /^\/(?:blog\/(?:(?:ru|bn|hi)\/)?(?:[a-z0-9-]+\.html|(?:topics\/[a-z0-9-]+\/)?(?:page\/[1-9][0-9]*\/)?)?)?$/.test(item.name)) { title = node('a', label(item.name)); title.href = item.name; }
     top.append(title, node('span', `${number(item.count)} · ${percent(item.count, total)}`, 'bar-value'));
     const track = node('div', undefined, 'bar-track'), fill = node('div', undefined, 'bar-fill');
     fill.style.width = Math.min(100, total ? 100 * item.count / total : 0) + '%'; track.append(fill); row.append(top, track); target.append(row);
@@ -87,6 +87,7 @@ function render() {
   renderChart(); $('dashboard').hidden = false;
 }
 async function load() {
+  void loadEditorial();
   controller?.abort(); controller = new AbortController();
   const signal = controller.signal;
   $('requestError').hidden = true; $('refresh').disabled = true; $('freshness').textContent = 'Обновляем статистику…';
@@ -101,6 +102,21 @@ async function load() {
     $('dashboard').hidden = true; $('freshness').textContent = 'Данные не загружены.'; $('requestError').hidden = false;
     $('requestError').textContent = error instanceof TypeError ? 'Нет связи с сервером. Попробуйте обновить.' : error.message;
   } finally { if (!signal.aborted) $('refresh').disabled = false; }
+}
+async function loadEditorial() {
+  try {
+    const response = await fetch('/admin/api/editorial');
+    if (!response.ok) throw new Error();
+    const value = await response.json();
+    const names = { ready: 'Готов к ежедневному выпуску', planning: 'Подбираются новые темы', published: 'Последний выпуск опубликован', writing: 'Готовится новая статья', translating: 'Готовятся переводы', reviewing: 'Проверяется новая статья', publishing: 'Развёртывается новый выпуск', failed: 'Выпуск остановлен из-за ошибки', not_configured: 'Расписание ещё не настроено' };
+    $('editorialStatus').textContent = names[value.status] || 'Статус обновляется';
+    const details = $('editorialDetails'); details.replaceChildren();
+    details.append(node('p', `${number(value.articles)} статей · ${number(value.topics)} тем · английский, русский, бенгальский и хинди`));
+    if (value.schedule) details.append(node('p', `Ежедневно в ${value.schedule}: одна тема на четырёх языках. Тем в очереди: ${number(value.remaining_topics)}.`, 'small'));
+    if (value.last_success) details.append(node('p', `Последняя публикация: ${new Date(value.last_success).toLocaleString('ru-RU', { timeZone: 'Europe/Warsaw' })}`, 'small'));
+    if (value.current_topic || value.last_topic) details.append(node('p', value.current_topic || value.last_topic, 'small muted'));
+    if (value.error) details.append(node('p', `Публикация не завершена: ${value.error}. Черновик сохранён; текущий сайт продолжает работать.`, 'error-message'));
+  } catch { $('editorialStatus').textContent = 'Не удалось получить статус публикаций. Обновите страницу.'; }
 }
 function setPeriod(days) {
   const end = today(), start = new Date(Date.parse(end) - (days - 1) * 86400000).toISOString().slice(0, 10);

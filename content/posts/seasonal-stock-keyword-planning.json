@@ -1,0 +1,431 @@
+{
+  "slug": "seasonal-stock-keyword-planning",
+  "category": "workflow",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "adobe-upload"
+  ],
+  "en": {
+    "title": "Seasonal Stock Keywords Without Mislabeling Assets",
+    "description": "A practical workflow for planning autumn stock metadata, separating visible seasonal cues from unsupported Christmas or Halloween claims.",
+    "intro": "Seasonal keywords can make a useful image easier to find, but they can also make metadata inaccurate when they describe an imagined use rather than the picture itself. A generic autumn leaf flat lay may suit autumn, harvest, wellness, education, or background-design searches. That does not automatically make it a Christmas image, a Halloween image, or a holiday greeting card. This guide shows how to prepare seasonal metadata from observable details and documented contributor needs, then schedule your work without forecasting sales or promising marketplace placement.",
+    "sections": [
+      {
+        "heading": "Start with what the image actually shows",
+        "paragraphs": [
+          "Describe the visible subject before thinking about a calendar. Record the objects, colors, arrangement, surface, lighting, and usable copy space. Then identify a season only when the visual evidence supports it: fallen leaves, warm earthy colors, and a natural outdoor texture support autumn.",
+          "Avoid turning a possible use into a fact. A buyer could use an autumn image in a Halloween campaign, but that possibility does not prove that the image contains Halloween content. Do not add Christmas, Halloween, Thanksgiving, winter, or a specific celebration unless the image provides recognizable cues."
+        ],
+        "bullets": [
+          "Visible subject: dried maple leaves on a neutral tabletop.",
+          "Composition: overhead flat lay with open space on the right.",
+          "Supported concept: autumn background or seasonal nature composition.",
+          "Unsupported leap: Christmas sale, Halloween party, or Thanksgiving dinner."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Separate seasonal relevance from holiday labeling",
+        "paragraphs": [
+          "Use a two-layer decision. First, add broad terms supported by the picture, such as autumn, fall, leaves, seasonal background, warm colors, or natural texture. Second, test narrower event terms against visible evidence. If there is no pumpkin, jack-o'-lantern, costume, ornament, snow, gift, or holiday typography, leave Halloween and Christmas out.",
+          "This restraint is practical because irrelevant or repeated terms can weaken the usefulness of a metadata set and may conflict with marketplace guidance. Seasonal timing belongs in your planning calendar; it does not belong in the keyword field unless the image itself supports it."
+        ],
+        "bullets": [
+          "Use “autumn” and “fall” when both are accurate audience terms.",
+          "Use “holiday background” only when the visual genuinely signals a holiday.",
+          "Do not infer a celebration, location, person, species, or ownership from pixels alone."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Build a compact, platform-aware keyword set",
+        "paragraphs": [
+          "Write a descriptive title or phrase first, then choose the most important terms early. For an Adobe Stock submission, the current reference guidance permits up to 49 keywords, while the CSV guide has its own requirements; using fewer, highly relevant terms is often easier to review. Keep the metadata language aligned with the contributor account where required.",
+          "Do not copy one list blindly across marketplaces. Requirements vary, and current contributor portals should be checked before upload. If a platform requests English metadata, a Russian-language article or personal workflow does not change that requirement."
+        ],
+        "bullets": [
+          "Title: Autumn leaf flat lay with copy space.",
+          "Keywords: autumn, fall, leaves, leaf, flat lay, seasonal background, nature, warm colors, minimal, texture, copy space, overhead view.",
+          "Remove terms that describe a possible campaign rather than the image."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Worked example: prepare and schedule one asset",
+        "paragraphs": [
+          "Example, not a measured result: suppose the file is named autumn-leaves-01.jpg. It shows three dried leaves on beige paper, photographed from above, with empty space on the right. The first metadata draft says “Autumn leaf flat lay with copy space.” The keyword review keeps autumn, fall, dried leaves, flat lay, beige background, copy space, overhead, minimal, nature, and seasonal design.",
+          "The review rejects Christmas, Halloween, harvest festival, Thanksgiving, winter, and greeting card because none is visibly established. “Harvest” might be conceptually related, but it is still too specific for this frame unless the image includes harvest objects or the contributor can accurately defend that interpretation.",
+          "Now schedule preparation from observed needs. If your portfolio review shows that you repeatedly lack clean seasonal backgrounds, prepare this file and similar assets before the relevant planning window. That is a production decision based on a documented gap, not a forecast of downloads or revenue. Recheck the portal rules when you are ready to submit."
+        ],
+        "bullets": [],
+        "example": "Filename: autumn-leaves-01.jpg\nTitle: Autumn leaf flat lay with copy space\nKeywords: autumn, fall, leaves, dried leaves, flat lay, seasonal background, beige background, copy space, overhead, minimal, nature, texture, warm colors, seasonal design"
+      },
+      {
+        "heading": "Use a local generator as a drafting aid",
+        "paragraphs": [
+          "MetaStocker can generate editable metadata locally in the browser using its supported local models, with the default model loaded explicitly by the user. Treat the output as a draft: provide batch context that states only shared facts, inspect each file, and remove unsupported holiday terms. Extra tags still need file-by-file review; a requested count is not evidence that every tag is accurate.",
+          "Local execution keeps photos, prompts, and results on the device during local mode, but the first model download needs internet. Model memory and browser cache are different things. Exporters create files for supported formats; they do not upload or submit them, guarantee acceptance, or embed metadata into the original image."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Final review before exporting",
+        "paragraphs": [
+          "Read the title as a natural description, not a pile of search terms. Check the first important terms, remove duplicates and speculative events, and confirm that the filename exactly matches the asset when using a CSV workflow. After importing, inspect the resulting metadata in the contributor portal. Marketplace policies can change, so verify current limits and language rules at the point of submission.",
+          "For website SEO, keep the distinction clear: marketplace keywords affect internal stock search, while Google indexing concerns pages on a website and their surrounding text. Neither workflow guarantees ranking, traffic, downloads, or revenue."
+        ],
+        "bullets": [
+          "Review every seasonal and event term against visible evidence.",
+          "Confirm language, title limits, keyword limits, and category rules for the target platform.",
+          "Keep the original image unchanged unless your own separate workflow says otherwise.",
+          "Export only rows that you have manually approved."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "I described the visible subject before selecting seasonal terms.",
+      "I used autumn or fall only because the image contains autumn cues.",
+      "I excluded Christmas and Halloween without supporting visual evidence.",
+      "I kept metadata relevant, readable, and platform-specific.",
+      "I scheduled preparation from an observed portfolio need, not a sales prediction.",
+      "I reviewed generated output and checked current portal requirements before submission."
+    ],
+    "illustration": {
+      "title": "Three-step seasonal metadata workflow",
+      "steps": [
+        {
+          "label": "Inspect visible cues",
+          "detail": "Record objects, colors, layout, and supported seasonal meaning."
+        },
+        {
+          "label": "Filter event terms",
+          "detail": "Keep Christmas or Halloween only when clear cues appear."
+        },
+        {
+          "label": "Review and schedule",
+          "detail": "Approve metadata, check portal rules, and plan from portfolio gaps."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Сезонные ключевые слова для стоков без ошибок",
+    "description": "Практическая схема подготовки осенних метаданных: как отделить видимые сезонные признаки от неподтвержденных слов Christmas и Halloween.",
+    "intro": "Сезонные ключевые слова помогают найти подходящее изображение, но становятся ошибочными, если описывают не сам кадр, а предполагаемую рекламную кампанию. Обычная композиция с осенними листьями может подойти для поиска по темам autumn, nature, background или copy space. Однако это не делает ее автоматически изображением Christmas, Halloween или поздравительной открытки. Ниже — рабочий процесс: как составить метаданные по наблюдаемым признакам и запланировать подготовку на основе реальных пробелов в портфолио, без прогнозов продаж.",
+    "sections": [
+      {
+        "heading": "Сначала опишите то, что видно",
+        "paragraphs": [
+          "До календаря и праздников зафиксируйте содержание кадра: предметы, цвета, расположение, поверхность, свет и свободное место для текста. Сезон можно обозначить, когда его поддерживают визуальные признаки. Засохшие листья, теплые природные оттенки и фактура поверхности достаточно обоснованно указывают на autumn или fall.",
+          "Возможное применение не равно факту изображения. Покупатель может использовать осенний фон в Halloween-кампании, но это не означает, что в кадре есть Halloween. Не добавляйте Christmas, Halloween, Thanksgiving, winter или название конкретного праздника без узнаваемых деталей."
+        ],
+        "bullets": [
+          "Видимый объект: сухие кленовые листья на нейтральной поверхности.",
+          "Композиция: вид сверху и свободное место справа.",
+          "Поддержанная тема: осенний фон или природная сезонная композиция.",
+          "Необоснованный вывод: рождественская распродажа, вечеринка Halloween или ужин Thanksgiving."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Отделите сезон от названия праздника",
+        "paragraphs": [
+          "Используйте двухэтапную проверку. Сначала выберите широкие слова, которые прямо описывают изображение: autumn, fall, leaves, seasonal background, warm colors, natural texture. Затем проверьте узкие термины событий. Если нет тыквы, фонаря-джек-o'-лантерна, костюма, украшений, снега, подарка или праздничной надписи, слова Halloween и Christmas лучше исключить.",
+          "Такой подход полезен не только для точности. Нерелевантные и повторяющиеся термины делают набор менее понятным и могут противоречить правилам площадки. Сезон можно учитывать в календаре подготовки, но не превращать его в ключевое слово без визуального подтверждения."
+        ],
+        "bullets": [
+          "Используйте autumn и fall, если оба варианта точно соответствуют теме.",
+          "Holiday background добавляйте только при заметных признаках праздника.",
+          "Не выводите по пикселям личность, место, вид, владельца или событие."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Соберите короткий набор под площадку",
+        "paragraphs": [
+          "Сначала напишите естественный заголовок или описательную фразу, затем поставьте самые важные слова ближе к началу. Для Adobe Stock справочные правила допускают до 49 ключевых слов, но требования CSV имеют собственные детали. На практике удобнее начинать с компактного набора точных терминов и проверять актуальные ограничения перед загрузкой.",
+          "Не переносите один список на все стоки без проверки. Требования различаются. Если площадка требует английские метаданные, язык этой статьи или вашего рабочего интерфейса не меняет это правило. Русские пояснения можно оставить для себя, а отправляемые поля заполнить на английском."
+        ],
+        "bullets": [
+          "Title: Autumn leaf flat lay with copy space.",
+          "Keywords: autumn, fall, leaves, leaf, flat lay, seasonal background, nature, warm colors, minimal, texture, copy space, overhead view.",
+          "Удалите слова о возможной кампании, если они не описывают сам кадр."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Рабочий пример: подготовьте один файл",
+        "paragraphs": [
+          "Пример, а не измеренный результат: файл autumn-leaves-01.jpg показывает три сухих листа на бежевой бумаге, снятые сверху; справа остается свободное место. Черновой заголовок: “Autumn leaf flat lay with copy space”. После проверки остаются autumn, fall, dried leaves, flat lay, beige background, copy space, overhead, minimal, nature и seasonal design.",
+          "В проверке отклоняются Christmas, Halloween, harvest festival, Thanksgiving, winter и greeting card: в кадре нет признаков этих тем. Даже harvest может быть слишком конкретным, если рядом нет урожая, сельскохозяйственных предметов или другого подтверждения.",
+          "Теперь запланируйте подготовку по наблюдаемой потребности. Например, аудит портфолио показывает, что вам не хватает чистых сезонных фонов с местом под текст. Тогда этот файл и похожие съемки можно подготовить заранее к соответствующему периоду. Это решение о производстве на основе обнаруженного пробела, а не обещание скачиваний или дохода. Перед отправкой снова проверьте правила портала."
+        ],
+        "bullets": [],
+        "example": "Filename: autumn-leaves-01.jpg\nTitle: Autumn leaf flat lay with copy space\nKeywords: autumn, fall, leaves, dried leaves, flat lay, seasonal background, beige background, copy space, overhead, minimal, nature, texture, warm colors, seasonal design"
+      },
+      {
+        "heading": "Используйте локальный генератор как черновик",
+        "paragraphs": [
+          "MetaStocker может подготовить редактируемые метаданные локально в браузере с поддерживаемыми локальными моделями; модель пользователь загружает и включает явно. Результат нужно считать черновиком: в контексте партии указывайте только общие проверяемые факты, затем просматривайте каждый файл и удаляйте неподтвержденные праздничные термины. Дополнительные теги также проверяются отдельно для каждого изображения; точное количество не доказывает точность.",
+          "В локальном режиме фотографии, промпты и результаты остаются на устройстве, но первая загрузка модели требует интернета. Память модели и кэш браузера — разные вещи. Экспорт создает файлы поддерживаемых форматов, но не загружает и не отправляет их, не гарантирует принятие и не встраивает метаданные в оригинал."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "Проверьте всё перед экспортом",
+        "paragraphs": [
+          "Прочитайте заголовок как обычное описание, а не как цепочку поисковых слов. Проверьте первые важные термины, удалите дубли и догадки о событиях. При CSV-процессе убедитесь, что имя файла, включая расширение и регистр, совпадает с загруженным активом. После импорта осмотрите получившиеся поля в кабинете автора. Правила площадок меняются, поэтому актуальные лимиты и языковые требования нужно проверять перед отправкой.",
+          "Для SEO сайта сохраняйте различие: ключевые слова стока относятся к внутреннему поиску маркетплейса, а индексация Google — к страницам сайта, окружающему тексту и атрибутам изображений. Ни один из этих процессов не гарантирует позиции, трафик, скачивания или доход."
+        ],
+        "bullets": [
+          "Сверьте каждое сезонное слово с видимыми признаками.",
+          "Проверьте язык, лимиты заголовка и ключевых слов, категории и требования выбранной площадки.",
+          "Не изменяйте оригинал изображения без отдельной необходимости.",
+          "Экспортируйте только вручную проверенные строки."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Я описал(а) видимые элементы до выбора сезонных терминов.",
+      "Я использовал(а) autumn или fall, потому что в кадре есть осенние признаки.",
+      "Я исключил(а) Christmas и Halloween без подтверждающих деталей.",
+      "Я сделал(а) метаданные точными, читаемыми и подходящими для площадки.",
+      "Я запланировал(а) подготовку по пробелу в портфолио, а не по прогнозу продаж.",
+      "Я проверил(а) результат генерации и актуальные правила портала перед отправкой."
+    ],
+    "illustration": {
+      "title": "Три шага подготовки сезонных метаданных",
+      "steps": [
+        {
+          "label": "Проверьте видимые признаки",
+          "detail": "Зафиксируйте предметы, цвета, композицию и подтвержденный сезон."
+        },
+        {
+          "label": "Отфильтруйте праздники",
+          "detail": "Оставляйте Christmas или Halloween только при ясных деталях."
+        },
+        {
+          "label": "Проверьте и запланируйте",
+          "detail": "Одобрите поля, сверяйте правила и учитывайте пробелы портфолио."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "সম্পদের ভুল পরিচয় না দিয়ে ঋতুভিত্তিক স্টক কীওয়ার্ড",
+    "description": "শরতের স্টক মেটাডেটা পরিকল্পনা, দৃশ্যমান ঋতুসংকেত আলাদা করা এবং অপ্রমাণিত বড়দিন বা হ্যালোউইনের দাবি এড়ানোর ব্যবহারিক কর্মপদ্ধতি।",
+    "intro": "ঋতুভিত্তিক কীওয়ার্ড কোনো উপযোগী ছবি খুঁজে পাওয়া সহজ করতে পারে, তবে ছবির বদলে কল্পিত ব্যবহার বর্ণনা করলে মেটাডেটা ভুলও হতে পারে। সাধারণ শরতের পাতার ফ্ল্যাট লে শরৎ, ফসল, সুস্থতা, শিক্ষা বা ব্যাকগ্রাউন্ড-ডিজাইনের অনুসন্ধানে মানানসই হতে পারে। তাই বলে সেটি স্বয়ংক্রিয়ভাবে বড়দিনের ছবি, হ্যালোউইনের ছবি বা ছুটির শুভেচ্ছা কার্ড হয়ে যায় না। এই নির্দেশিকায় পর্যবেক্ষণযোগ্য বিবরণ ও নথিবদ্ধ অবদানকারীর প্রয়োজন থেকে কীভাবে ঋতুভিত্তিক মেটাডেটা প্রস্তুত করতে হয় এবং বিক্রির পূর্বাভাস বা মার্কেটপ্লেসে স্থান পাওয়ার প্রতিশ্রুতি না দিয়ে কীভাবে কাজের সময়সূচি করতে হয়, তা দেখানো হয়েছে।",
+    "sections": [
+      {
+        "heading": "ছবিতে সত্যিই যা দেখা যাচ্ছে, তা দিয়ে শুরু করুন",
+        "paragraphs": [
+          "ক্যালেন্ডার নিয়ে ভাবার আগে দৃশ্যমান বিষয় বর্ণনা করুন। বস্তু, রং, বিন্যাস, পৃষ্ঠ, আলো এবং ব্যবহারযোগ্য খালি জায়গা নথিভুক্ত করুন। এরপর দৃশ্যমান প্রমাণ সমর্থন করলেই ঋতু শনাক্ত করুন: ঝরে পড়া পাতা, উষ্ণ মাটিরঙা রং এবং প্রাকৃতিক বাইরের টেক্সচার শরৎকে সমর্থন করে।",
+          "সম্ভাব্য ব্যবহারকে সত্যে পরিণত করবেন না। কোনো ক্রেতা হ্যালোউইনের প্রচারে শরতের ছবি ব্যবহার করতে পারেন, কিন্তু সেই সম্ভাবনা ছবিতে হ্যালোউইনের বিষয়বস্তু থাকার প্রমাণ নয়। ছবি থেকে চেনা যায় এমন সংকেত না থাকলে বড়দিন, হ্যালোউইন, থ্যাঙ্কসগিভিং, শীত বা নির্দিষ্ট কোনো উদ্‌যাপন যোগ করবেন না।"
+        ],
+        "bullets": [
+          "দৃশ্যমান বিষয়: নিরপেক্ষ টেবিলের ওপর শুকনো ম্যাপল পাতা।",
+          "বিন্যাস: ওপর থেকে তোলা ফ্ল্যাট লে, ডানদিকে খালি জায়গা।",
+          "সমর্থিত ধারণা: শরতের ব্যাকগ্রাউন্ড বা ঋতুভিত্তিক প্রকৃতির বিন্যাস।",
+          "অসমর্থিত লাফ: বড়দিনের বিক্রি, হ্যালোউইন পার্টি বা থ্যাঙ্কসগিভিং ডিনার।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ঋতুর প্রাসঙ্গিকতা ও উৎসবের পরিচয় আলাদা করুন",
+        "paragraphs": [
+          "দুই স্তরের সিদ্ধান্ত নিন। প্রথমে ছবির সমর্থিত বিস্তৃত শব্দ যোগ করুন, যেমন শরৎ, পাতা, ঋতুভিত্তিক ব্যাকগ্রাউন্ড, উষ্ণ রং বা প্রাকৃতিক টেক্সচার। দ্বিতীয়ত, দৃশ্যমান প্রমাণের সঙ্গে সংকীর্ণ উৎসবের শব্দ মিলিয়ে দেখুন। কুমড়ো, জ্যাক-ও’-ল্যান্টার্ন, পোশাক, অলংকার, তুষার, উপহার বা উৎসবের টাইপোগ্রাফি না থাকলে হ্যালোউইন ও বড়দিন বাদ দিন।",
+          "এই সংযম বাস্তবসম্মত, কারণ অপ্রাসঙ্গিক বা পুনরাবৃত্ত শব্দ মেটাডেটা সেটের উপযোগিতা কমাতে পারে এবং মার্কেটপ্লেসের নির্দেশনার সঙ্গে বিরোধ তৈরি করতে পারে। ঋতুর সময় আপনার পরিকল্পনার ক্যালেন্ডারে থাকবে; ছবিটি সমর্থন না করলে তা কীওয়ার্ড ঘরে থাকবে না।"
+        ],
+        "bullets": [
+          "দুইটিই সঠিক দর্শকগোষ্ঠীর শব্দ হলে “autumn” ও “fall” ব্যবহার করুন।",
+          "দৃশ্য সত্যিই কোনো উৎসবের সংকেত দিলে তবেই “holiday background” ব্যবহার করুন।",
+          "শুধু পিক্সেল দেখে কোনো উদ্‌যাপন, স্থান, ব্যক্তি, প্রজাতি বা মালিকানা অনুমান করবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "সংক্ষিপ্ত, প্ল্যাটফর্ম-সচেতন কীওয়ার্ড সেট তৈরি করুন",
+        "paragraphs": [
+          "প্রথমে একটি বর্ণনামূলক শিরোনাম বা বাক্যাংশ লিখুন, তারপর সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো শুরুতেই বাছুন। Adobe Stock-এ জমা দেওয়ার ক্ষেত্রে বর্তমান রেফারেন্স নির্দেশনায় সর্বোচ্চ 49টি কীওয়ার্ড অনুমোদিত, আর CSV নির্দেশিকার নিজস্ব শর্ত রয়েছে; কম কিন্তু অত্যন্ত প্রাসঙ্গিক শব্দ পর্যালোচনা করা প্রায়ই সহজ। যেখানে প্রয়োজন, অবদানকারী অ্যাকাউন্টের সঙ্গে মেটাডেটার ভাষা সামঞ্জস্য রাখুন।",
+          "সব মার্কেটপ্লেসে একই তালিকা অন্ধভাবে কপি করবেন না। শর্ত ভিন্ন হয়, তাই আপলোডের আগে বর্তমান অবদানকারী পোর্টাল পরীক্ষা করা উচিত। কোনো প্ল্যাটফর্ম ইংরেজি মেটাডেটা চাইলে রুশ-ভাষার নিবন্ধ বা ব্যক্তিগত কর্মপদ্ধতি সেই শর্ত বদলায় না।"
+        ],
+        "bullets": [
+          "শিরোনাম: Autumn leaf flat lay with copy space.",
+          "কীওয়ার্ড: autumn, fall, leaves, leaf, flat lay, seasonal background, nature, warm colors, minimal, texture, copy space, overhead view.",
+          "ছবির বদলে সম্ভাব্য প্রচারাভিযান বর্ণনা করে এমন শব্দ বাদ দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "কাজের উদাহরণ: একটি সম্পদ প্রস্তুত ও সময়সূচিবদ্ধ করুন",
+        "paragraphs": [
+          "উদাহরণ, পরিমাপ করা ফল নয়: ধরুন ফাইলটির নাম autumn-leaves-01.jpg। এতে বেইজ কাগজের ওপর ওপর থেকে তোলা তিনটি শুকনো পাতা এবং ডানদিকে খালি জায়গা দেখা যাচ্ছে। প্রথম মেটাডেটা খসড়ায় লেখা আছে “Autumn leaf flat lay with copy space।” কীওয়ার্ড পর্যালোচনায় autumn, fall, dried leaves, flat lay, beige background, copy space, overhead, minimal, nature এবং seasonal design রাখা হলো।",
+          "পর্যালোচনায় Christmas, Halloween, harvest festival, Thanksgiving, winter এবং greeting card বাতিল করা হলো, কারণ কোনোটিই দৃশ্যমানভাবে প্রতিষ্ঠিত নয়। “Harvest” ধারণাগতভাবে সম্পর্কিত হতে পারে, কিন্তু ছবিতে ফসলের বস্তু না থাকলে বা অবদানকারী সেই ব্যাখ্যা যথাযথভাবে সমর্থন করতে না পারলে এই ফ্রেমের জন্য তা এখনও অতিরিক্ত নির্দিষ্ট।",
+          "এখন পর্যবেক্ষিত প্রয়োজন থেকে প্রস্তুতির সময়সূচি করুন। আপনার পোর্টফোলিও পর্যালোচনায় যদি দেখা যায় যে পরিষ্কার ঋতুভিত্তিক ব্যাকগ্রাউন্ড বারবার কম পড়ছে, তাহলে সংশ্লিষ্ট পরিকল্পনার সময়সীমার আগে এই ফাইল ও অনুরূপ সম্পদ প্রস্তুত করুন। এটি নথিবদ্ধ ঘাটতির ভিত্তিতে উৎপাদনের সিদ্ধান্ত, ডাউনলোড বা আয়ের পূর্বাভাস নয়। জমা দেওয়ার সময় প্রস্তুত হলে পোর্টালের নিয়ম আবার যাচাই করুন।"
+        ],
+        "bullets": [],
+        "example": "Filename: autumn-leaves-01.jpg\nTitle: Autumn leaf flat lay with copy space\nKeywords: autumn, fall, leaves, dried leaves, flat lay, seasonal background, beige background, copy space, overhead, minimal, nature, texture, warm colors, seasonal design"
+      },
+      {
+        "heading": "স্থানীয় জেনারেটরকে খসড়া তৈরির সহায়ক হিসেবে ব্যবহার করুন",
+        "paragraphs": [
+          "MetaStocker ব্যবহারকারীর স্পষ্টভাবে লোড করা ডিফল্ট মডেলসহ সমর্থিত স্থানীয় মডেল ব্যবহার করে ব্রাউজারে স্থানীয়ভাবে সম্পাদনাযোগ্য মেটাডেটা তৈরি করতে পারে। ফলাফলকে খসড়া হিসেবে ধরুন: শুধু যৌথ তথ্য উল্লেখ করে ব্যাচের প্রেক্ষাপট দিন, প্রতিটি ফাইল পরীক্ষা করুন এবং অসমর্থিত উৎসবের শব্দ বাদ দিন। অতিরিক্ত ট্যাগেরও ফাইলভিত্তিক পর্যালোচনা দরকার; চাওয়া সংখ্যাটি প্রতিটি ট্যাগ সঠিক হওয়ার প্রমাণ নয়।",
+          "স্থানীয় মোডে কাজ করলে ছবি, প্রম্পট ও ফলাফল কাজ চলাকালে ডিভাইসেই থাকে, তবে প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট দরকার। মডেলের মেমরি ও ব্রাউজার ক্যাশ আলাদা বিষয়। এক্সপোর্টার সমর্থিত ফরম্যাটের জন্য ফাইল তৈরি করে; তারা আপলোড বা জমা দেয় না, গ্রহণযোগ্যতার নিশ্চয়তা দেয় না এবং মূল ছবিতে মেটাডেটা বসায় না।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "এক্সপোর্টের আগে চূড়ান্ত পর্যালোচনা",
+        "paragraphs": [
+          "শিরোনামটি সার্চ শব্দের স্তূপ নয়, স্বাভাবিক বর্ণনা হিসেবে পড়ুন। প্রথম গুরুত্বপূর্ণ শব্দগুলো পরীক্ষা করুন, পুনরাবৃত্তি ও অনুমানভিত্তিক উৎসব বাদ দিন এবং CSV কর্মপদ্ধতিতে ফাইল ব্যবহার করার সময় ফাইলের নামটি সম্পদের সঙ্গে হুবহু মেলে কি না নিশ্চিত করুন। ইমপোর্টের পর অবদানকারী পোর্টালে উৎপন্ন মেটাডেটা পরীক্ষা করুন। মার্কেটপ্লেসের নীতি বদলাতে পারে, তাই জমা দেওয়ার সময় বর্তমান সীমা ও ভাষার নিয়ম যাচাই করুন।",
+          "ওয়েবসাইট SEO-র ক্ষেত্রে পার্থক্যটি পরিষ্কার রাখুন: মার্কেটপ্লেসের কীওয়ার্ড অভ্যন্তরীণ স্টক অনুসন্ধানকে প্রভাবিত করে, আর Google-এর ইনডেক্সিং ওয়েবসাইটের পৃষ্ঠা ও তার পারিপার্শ্বিক পাঠ নিয়ে কাজ করে। কোনো কর্মপদ্ধতিই র‍্যাঙ্কিং, ট্রাফিক, ডাউনলোড বা আয়ের নিশ্চয়তা দেয় না।"
+        ],
+        "bullets": [
+          "প্রতিটি ঋতু ও উৎসবের শব্দ দৃশ্যমান প্রমাণের সঙ্গে মিলিয়ে দেখুন।",
+          "লক্ষ্য প্ল্যাটফর্মের ভাষা, শিরোনামের সীমা, কীওয়ার্ডের সীমা ও বিভাগ-সংক্রান্ত নিয়ম নিশ্চিত করুন।",
+          "আপনার নিজস্ব আলাদা কর্মপদ্ধতিতে প্রয়োজন না হলে মূল ছবি অপরিবর্তিত রাখুন।",
+          "শুধু নিজে অনুমোদিত সারিগুলো এক্সপোর্ট করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "ঋতুভিত্তিক শব্দ বাছার আগে আমি দৃশ্যমান বিষয় বর্ণনা করেছি।",
+      "ছবিতে শরতের সংকেত থাকায় আমি autumn বা fall ব্যবহার করেছি।",
+      "সমর্থনকারী দৃশ্যমান প্রমাণ না থাকায় আমি Christmas ও Halloween বাদ দিয়েছি।",
+      "আমি মেটাডেটা প্রাসঙ্গিক, পাঠযোগ্য এবং প্ল্যাটফর্ম-নির্দিষ্ট রেখেছি।",
+      "বিক্রির পূর্বাভাস নয়, পর্যবেক্ষিত পোর্টফোলিওর প্রয়োজন থেকে প্রস্তুতির সময়সূচি করেছি।",
+      "উৎপন্ন ফলাফল পর্যালোচনা করে জমা দেওয়ার আগে বর্তমান পোর্টালের শর্ত পরীক্ষা করেছি।"
+    ],
+    "illustration": {
+      "title": "ঋতুভিত্তিক মেটাডেটার তিন ধাপের কর্মপদ্ধতি",
+      "steps": [
+        {
+          "label": "দৃশ্যমান সংকেত পরীক্ষা",
+          "detail": "বস্তু, রং, বিন্যাস এবং সমর্থিত ঋতুভিত্তিক অর্থ নথিভুক্ত করুন।"
+        },
+        {
+          "label": "উৎসবের শব্দ বাছাই",
+          "detail": "স্পষ্ট সংকেত থাকলেই বড়দিন বা হ্যালোউইন রাখুন।"
+        },
+        {
+          "label": "পর্যালোচনা ও সময়সূচি",
+          "detail": "মেটাডেটা অনুমোদন, পোর্টালের নিয়ম যাচাই এবং পোর্টফোলিওর ঘাটতি থেকে পরিকল্পনা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "संपत्तियों को गलत नाम दिए बिना मौसमी स्टॉक कीवर्ड",
+    "description": "शरद ऋतु के स्टॉक मेटाडेटा की योजना बनाने, दिखाई देने वाले मौसमी संकेतों को अलग करने और अप्रमाणित क्रिसमस या हैलोवीन दावों से बचने की व्यावहारिक कार्यप्रणाली।",
+    "intro": "मौसमी कीवर्ड किसी उपयोगी चित्र को आसानी से खोजे जाने में मदद कर सकते हैं, लेकिन जब वे चित्र के बजाय किसी कल्पित उपयोग का वर्णन करते हैं, तो मेटाडेटा गलत भी हो सकता है। पतझड़ की पत्तियों का सामान्य फ्लैट ले पतझड़, फसल, वेलनेस, शिक्षा या बैकग्राउंड-डिज़ाइन खोजों के लिए उपयुक्त हो सकता है। इससे वह अपने-आप क्रिसमस चित्र, हैलोवीन चित्र या त्योहार का शुभकामना कार्ड नहीं बन जाता। यह मार्गदर्शिका दिखाती है कि दिखाई देने वाले विवरणों और दर्ज की गई योगदानकर्ता आवश्यकताओं से मौसमी मेटाडेटा कैसे तैयार करें, फिर बिक्री का पूर्वानुमान या मार्केटप्लेस पर स्थान मिलने का वादा किए बिना अपने काम की समय-सारणी कैसे बनाएं।",
+    "sections": [
+      {
+        "heading": "चित्र में वास्तव में जो दिखता है, उससे शुरू करें",
+        "paragraphs": [
+          "कैलेंडर के बारे में सोचने से पहले दिखाई देने वाले विषय का वर्णन करें। वस्तुओं, रंगों, विन्यास, सतह, प्रकाश और उपयोगी खाली जगह को दर्ज करें। फिर केवल तभी कोई मौसम पहचानें जब दृश्य प्रमाण उसका समर्थन करें: गिरी हुई पत्तियाँ, गर्म मिट्टी जैसे रंग और प्राकृतिक बाहरी बनावट पतझड़ का समर्थन करते हैं।",
+          "संभावित उपयोग को तथ्य न बनाएं। कोई खरीदार हैलोवीन अभियान में पतझड़ का चित्र इस्तेमाल कर सकता है, लेकिन यह संभावना प्रमाणित नहीं करती कि चित्र में हैलोवीन की सामग्री है। जब तक चित्र पहचानने योग्य संकेत न दे, क्रिसमस, हैलोवीन, थैंक्सगिविंग, सर्दी या किसी विशेष उत्सव को न जोड़ें।"
+        ],
+        "bullets": [
+          "दिखाई देने वाला विषय: तटस्थ मेज़ पर सूखी मेपल पत्तियाँ।",
+          "विन्यास: ऊपर से लिया गया फ्लैट ले, दाईं ओर खाली जगह।",
+          "समर्थित अवधारणा: पतझड़ का बैकग्राउंड या मौसमी प्रकृति-विन्यास।",
+          "असमर्थित छलांग: क्रिसमस बिक्री, हैलोवीन पार्टी या थैंक्सगिविंग डिनर।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "मौसमी प्रासंगिकता और त्योहार का लेबल अलग रखें",
+        "paragraphs": [
+          "दो-स्तरीय निर्णय लें। पहले चित्र द्वारा समर्थित व्यापक शब्द जोड़ें, जैसे पतझड़, पत्तियाँ, मौसमी बैकग्राउंड, गर्म रंग या प्राकृतिक बनावट। फिर दिखाई देने वाले प्रमाण के आधार पर संकरे आयोजन-संबंधी शब्दों की जाँच करें। यदि कद्दू, जैक-ओ’-लैंटर्न, पोशाक, सजावटी वस्तु, बर्फ, उपहार या त्योहार की टाइपोग्राफी नहीं है, तो हैलोवीन और क्रिसमस को छोड़ दें।",
+          "यह संयम व्यावहारिक है, क्योंकि अप्रासंगिक या दोहराए गए शब्द मेटाडेटा सेट की उपयोगिता कम कर सकते हैं और मार्केटप्लेस के मार्गदर्शन से टकरा सकते हैं। मौसमी समय आपकी योजना-कैलेंडर में होना चाहिए; जब तक चित्र उसका समर्थन न करे, वह कीवर्ड फ़ील्ड में नहीं होना चाहिए।"
+        ],
+        "bullets": [
+          "जब दोनों सही दर्शक-शब्द हों, तब “autumn” और “fall” इस्तेमाल करें।",
+          "“holiday background” तभी इस्तेमाल करें जब दृश्य सचमुच किसी त्योहार का संकेत देता हो।",
+          "केवल पिक्सेल के आधार पर किसी उत्सव, स्थान, व्यक्ति, प्रजाति या स्वामित्व का अनुमान न लगाएं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "संक्षिप्त, प्लेटफ़ॉर्म-सचेत कीवर्ड सेट बनाएं",
+        "paragraphs": [
+          "पहले वर्णनात्मक शीर्षक या वाक्यांश लिखें, फिर सबसे महत्वपूर्ण शब्दों को शुरुआत में चुनें। Adobe Stock पर सबमिशन के लिए वर्तमान संदर्भ-मार्गदर्शन अधिकतम 49 कीवर्ड की अनुमति देता है, जबकि CSV मार्गदर्शिका की अपनी आवश्यकताएँ हैं; कम लेकिन अत्यंत प्रासंगिक शब्दों की समीक्षा करना अक्सर आसान होता है। जहाँ आवश्यक हो, मेटाडेटा की भाषा को योगदानकर्ता खाते के अनुरूप रखें।",
+          "सभी मार्केटप्लेस पर एक ही सूची को बिना सोचे कॉपी न करें। आवश्यकताएँ अलग होती हैं, इसलिए अपलोड से पहले वर्तमान योगदानकर्ता पोर्टल जाँचें। यदि कोई प्लेटफ़ॉर्म अंग्रेज़ी मेटाडेटा माँगता है, तो रूसी-भाषा का लेख या निजी कार्यप्रणाली उस आवश्यकता को नहीं बदलती।"
+        ],
+        "bullets": [
+          "शीर्षक: Autumn leaf flat lay with copy space.",
+          "कीवर्ड: autumn, fall, leaves, leaf, flat lay, seasonal background, nature, warm colors, minimal, texture, copy space, overhead view.",
+          "ऐसे शब्द हटाएं जो चित्र के बजाय संभावित अभियान का वर्णन करते हों।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "उदाहरण: एक संपत्ति तैयार करें और समय-सारणी बनाएं",
+        "paragraphs": [
+          "उदाहरण, मापा हुआ परिणाम नहीं: मान लें फ़ाइल का नाम autumn-leaves-01.jpg है। इसमें बेज कागज़ पर ऊपर से खींची गई तीन सूखी पत्तियाँ हैं और दाईं ओर खाली जगह है। पहली मेटाडेटा ड्राफ़्ट में “Autumn leaf flat lay with copy space।” लिखा है। कीवर्ड समीक्षा में autumn, fall, dried leaves, flat lay, beige background, copy space, overhead, minimal, nature और seasonal design रखे जाते हैं।",
+          "समीक्षा Christmas, Halloween, harvest festival, Thanksgiving, winter और greeting card को अस्वीकार करती है, क्योंकि इनमें से कोई भी दृश्य रूप से स्थापित नहीं है। “Harvest” अवधारणात्मक रूप से संबंधित हो सकता है, लेकिन इस फ़्रेम के लिए यह तब भी बहुत विशिष्ट है जब तक चित्र में फसल से जुड़ी वस्तुएँ न हों या योगदानकर्ता उस व्याख्या का सही ढंग से समर्थन न कर सके।",
+          "अब देखी गई आवश्यकताओं के आधार पर तैयारी की समय-सारणी बनाएं। यदि आपके पोर्टफोलियो की समीक्षा से पता चलता है कि साफ़ मौसमी बैकग्राउंड बार-बार कम पड़ते हैं, तो संबंधित योजना-अवधि से पहले यह फ़ाइल और ऐसी ही संपत्तियाँ तैयार करें। यह दर्ज की गई कमी पर आधारित उत्पादन-निर्णय है, डाउनलोड या आय का पूर्वानुमान नहीं। सबमिट करने के लिए तैयार होने पर पोर्टल के नियम फिर जाँचें।"
+        ],
+        "bullets": [],
+        "example": "Filename: autumn-leaves-01.jpg\nTitle: Autumn leaf flat lay with copy space\nKeywords: autumn, fall, leaves, dried leaves, flat lay, seasonal background, beige background, copy space, overhead, minimal, nature, texture, warm colors, seasonal design"
+      },
+      {
+        "heading": "स्थानीय जनरेटर को ड्राफ़्टिंग सहायक की तरह इस्तेमाल करें",
+        "paragraphs": [
+          "MetaStocker उपयोगकर्ता द्वारा समर्थित स्थानीय मॉडल में से डिफ़ॉल्ट मॉडल को स्पष्ट रूप से लोड करके, ब्राउज़र में स्थानीय रूप से संपादित किए जा सकने वाले मेटाडेटा बना सकता है। आउटपुट को ड्राफ़्ट मानें: बैच का संदर्भ केवल साझा तथ्यों के साथ दें, हर फ़ाइल की जाँच करें और असमर्थित त्योहार-संबंधी शब्द हटाएं। अतिरिक्त टैग की भी फ़ाइल-दर-फ़ाइल समीक्षा आवश्यक है; माँगी गई संख्या इस बात का प्रमाण नहीं है कि हर टैग सही है।",
+          "स्थानीय मोड में फ़ोटो, प्रॉम्प्ट और परिणाम काम के दौरान डिवाइस पर ही रहते हैं, लेकिन पहला मॉडल डाउनलोड करने के लिए इंटरनेट आवश्यक है। मॉडल मेमोरी और ब्राउज़र कैश अलग चीज़ें हैं। एक्सपोर्टर समर्थित फ़ॉर्मैट के लिए फ़ाइलें बनाते हैं; वे उन्हें अपलोड या सबमिट नहीं करते, स्वीकृति की गारंटी नहीं देते और मूल चित्र में मेटाडेटा एम्बेड नहीं करते।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "एक्सपोर्ट से पहले अंतिम समीक्षा",
+        "paragraphs": [
+          "शीर्षक को खोज-शब्दों के ढेर की तरह नहीं, बल्कि स्वाभाविक विवरण की तरह पढ़ें। पहले महत्वपूर्ण शब्दों की जाँच करें, दोहराए गए और अनुमानित आयोजनों को हटाएं, और CSV कार्यप्रणाली में फ़ाइल इस्तेमाल करते समय सुनिश्चित करें कि फ़ाइल का नाम संपत्ति से बिल्कुल मेल खाता हो। इम्पोर्ट करने के बाद योगदानकर्ता पोर्टल में परिणामी मेटाडेटा की जाँच करें। मार्केटप्लेस की नीतियाँ बदल सकती हैं, इसलिए सबमिशन के समय वर्तमान सीमाओं और भाषा के नियमों की पुष्टि करें।",
+          "वेबसाइट SEO के लिए अंतर स्पष्ट रखें: मार्केटप्लेस कीवर्ड आंतरिक स्टॉक खोज को प्रभावित करते हैं, जबकि Google इंडेक्सिंग वेबसाइट के पृष्ठों और उनके आसपास के पाठ से संबंधित है। कोई भी कार्यप्रणाली रैंकिंग, ट्रैफ़िक, डाउनलोड या आय की गारंटी नहीं देती।"
+        ],
+        "bullets": [
+          "हर मौसमी और आयोजन-संबंधी शब्द की दिखाई देने वाले प्रमाण से जाँच करें।",
+          "लक्ष्य प्लेटफ़ॉर्म की भाषा, शीर्षक सीमा, कीवर्ड सीमा और श्रेणी नियमों की पुष्टि करें।",
+          "जब तक आपकी अलग कार्यप्रणाली कुछ और न कहे, मूल चित्र को अपरिवर्तित रखें।",
+          "केवल उन्हीं पंक्तियों को एक्सपोर्ट करें जिन्हें आपने स्वयं मंज़ूर किया है।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "मौसमी शब्द चुनने से पहले मैंने दिखाई देने वाले विषय का वर्णन किया।",
+      "मैंने autumn या fall का इस्तेमाल केवल इसलिए किया क्योंकि चित्र में पतझड़ के संकेत हैं।",
+      "समर्थनकारी दृश्य प्रमाण न होने पर मैंने Christmas और Halloween को शामिल नहीं किया।",
+      "मैंने मेटाडेटा को प्रासंगिक, पठनीय और प्लेटफ़ॉर्म-विशिष्ट रखा।",
+      "मैंने बिक्री के पूर्वानुमान के बजाय देखी गई पोर्टफोलियो आवश्यकता के आधार पर तैयारी की समय-सारणी बनाई।",
+      "मैंने तैयार आउटपुट की समीक्षा की और सबमिशन से पहले वर्तमान पोर्टल आवश्यकताओं की जाँच की।"
+    ],
+    "illustration": {
+      "title": "मौसमी मेटाडेटा की तीन-चरणीय कार्यप्रणाली",
+      "steps": [
+        {
+          "label": "दिखाई देने वाले संकेत जाँचें",
+          "detail": "वस्तुएँ, रंग, लेआउट और समर्थित मौसमी अर्थ दर्ज करें।"
+        },
+        {
+          "label": "आयोजन-संबंधी शब्द छाँटें",
+          "detail": "स्पष्ट संकेत दिखाई देने पर ही क्रिसमस या हैलोवीन रखें।"
+        },
+        {
+          "label": "समीक्षा और समय-सारणी",
+          "detail": "मेटाडेटा मंज़ूर करें, पोर्टल नियम जाँचें और पोर्टफोलियो की कमी से योजना बनाएं।"
+        }
+      ]
+    }
+  }
+}

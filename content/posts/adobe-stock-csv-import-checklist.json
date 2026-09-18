@@ -1,0 +1,491 @@
+{
+  "slug": "adobe-stock-csv-import-checklist",
+  "category": "exports",
+  "source_ids": [
+    "adobe-csv",
+    "adobe-upload",
+    "metastocker"
+  ],
+  "en": {
+    "title": "Adobe Stock CSV Import Checklist: Check Every Row First",
+    "description": "A practical Adobe Stock CSV checklist for filenames, titles, keywords, category codes, parsed cells, and portal import verification.",
+    "intro": "A CSV export is only a prepared metadata file. It is not proof that Adobe Stock will accept the metadata or apply it to your assets. Before importing, check the structure, inspect how each cell is parsed, and compare every filename with the uploaded asset. This guide uses one concrete sample row and a repeatable review process for contributors who want to catch errors before they reach the portal.",
+    "sections": [
+      {
+        "heading": "1. Start with the Adobe-specific contract",
+        "paragraphs": [
+          "Adobe Stock CSV requirements can change, so check the current contributor upload guidance and the import screen before relying on an old template. The CSV maps filenames to titles and keywords, with an optional category number and release filenames. Treat the category number as a platform-specific code, not as a descriptive word.",
+          "Keep the conservative limit of 49 keywords while checking the current upload screen. Adobe’s general metadata guidance also says the most important terms should come first, especially within the first ten. Titles should be concise and descriptive; the current CSV guide gives a 70-character title limit."
+        ],
+        "bullets": [
+          "Use the exact column names and order expected by the current Adobe workflow.",
+          "Do not copy a category code from memory or from another marketplace.",
+          "Keep metadata in the language required by the contributor account."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Match filenames before checking metadata",
+        "paragraphs": [
+          "Upload the image or video assets before importing the CSV. Each filename in the CSV must match the uploaded asset, including its extension and letter case. A visually perfect row is still unusable if it points to the wrong file or to a filename that differs by one character.",
+          "Make a short comparison list from the asset folder and the CSV. Look specifically for renamed files, duplicate names, missing extensions, trailing spaces, and capitalization changes. For videos, remember that a metadata tool may work from sampled previews; inspect the full motion yourself before approving the description and keywords."
+        ],
+        "bullets": [
+          "Confirm one CSV row per intended asset.",
+          "Compare extensions such as .jpg, .png, and .mp4 exactly.",
+          "Remove rows for files you will not upload in this batch."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "3. Preview the parsed cells",
+        "paragraphs": [
+          "Do not judge a CSV only by how it looks in a text editor. Open a copy in a spreadsheet or another CSV-aware viewer and inspect the parsed cells. Confirm that commas inside a title or keyword list remain inside one cell, quotation marks are handled correctly, and line breaks have not shifted later values into the wrong columns.",
+          "Preview the header and several representative rows: a short title, a row with many keywords and a row with punctuation. If a category value has shifted into the Keywords column, repair the export. Category is optional, so an intentionally blank Category cell is valid; investigate it only if you meant to supply a category and its value was lost."
+        ],
+        "bullets": [
+          "Verify the header creates the intended columns.",
+          "Check that the Keywords cell stays a single cell.",
+          "Look for empty cells caused by extra separators.",
+          "Inspect the first and last keyword in each reviewed row."
+        ],
+        "example": "Filename,Title,Keywords,Category\ncity_bridge_dawn.jpg,Bridge over river at dawn,\"bridge,river,city,architecture,dawn,waterway,travel\",2"
+      },
+      {
+        "heading": "4. Worked example: verify the category instead of guessing",
+        "paragraphs": [
+          "Example, not a measured result: suppose you are preparing city_bridge_dawn.jpg, a commercial photograph showing a modern bridge over a river at sunrise. The title describes the visible subject and setting without turning into a keyword list. The keywords begin with the strongest concepts, then add relevant context. The category value is 12 only as a placeholder in this example; you must verify whether 12 is the current Adobe code for the intended category before import.",
+          "If the current portal assigns a different code, replace 12 with the verified value. If you cannot confirm the code, leave the row out of the import batch while you check the contributor documentation. Do not substitute a category name such as “Architecture” when the CSV field expects a number.",
+          "After exporting, preview the parsed row. You should see four cells: the filename, one title cell, one keywords cell, and one category cell. Then open the result in Adobe Stock and inspect the metadata applied to the asset. That final portal inspection is a separate step from creating the CSV."
+        ],
+        "bullets": [
+          "Confirm the bridge and river are actually visible.",
+          "Check that the title is within the current character limit.",
+          "Count keywords conservatively and remove irrelevant terms.",
+          "Verify the category code in the current Adobe workflow.",
+          "Inspect the imported metadata in the contributor portal."
+        ],
+        "example": "Filename: city_bridge_dawn.jpg\nTitle: Modern bridge over river at dawn\nKeywords: bridge, river, city, architecture, dawn, waterway, travel\nCategory: 12 (example placeholder; verify before use)"
+      },
+      {
+        "heading": "5. Review relevance, language, and sensitive assumptions",
+        "paragraphs": [
+          "Every keyword should describe something a buyer can reasonably find in the asset. Remove repeated, broad, or merely aspirational terms. Do not infer a person’s identity, ownership, location, species, or other sensitive fact from pixels. If a location, date, or person matters, use only information you have independently verified and that the submission context permits.",
+          "Metadata language must match the contributor account requirements. Writing this guide in Russian does not mean an Adobe account should receive Russian metadata. If the account requires English, prepare English titles and keywords, even when your working notes are in Russian."
+        ],
+        "bullets": [
+          "Keep keywords specific to the individual file.",
+          "Avoid guesses presented as facts.",
+          "Use the account’s required metadata language.",
+          "Do not reuse blanket batch tags for mixed content."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. If MetaStocker created the export",
+        "paragraphs": [
+          "MetaStocker can generate editable metadata locally in the browser and export Adobe CSV files. In local mode, model inference stays on your device; the first model download needs internet, and loading a model into memory is different from retaining downloaded browser files in cache. Review the generated result per file before exporting. The app’s requested tag count validation does not prove that the tags are accurate.",
+          "Use the app as a drafting and export step, then apply this Adobe checklist. A local export does not upload or submit anything, does not guarantee acceptance, and does not embed metadata into the original file. If you use the optional OpenAI API mode, previews and context are sent to OpenAI using your own key; protect that key and review the resulting metadata just as carefully."
+        ],
+        "bullets": [
+          "Edit questionable rows before exporting.",
+          "Preview the exported CSV in a CSV-aware viewer.",
+          "Keep the original assets separate from the CSV review copy.",
+          "Treat portal inspection as the final verification step."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Check the current Adobe CSV requirements and upload screen.",
+      "Confirm exact filename, extension, and case for every row.",
+      "Preview the CSV as parsed cells, not only as raw text.",
+      "Keep each title within the current 70-character CSV limit.",
+      "Use no more than 49 keywords unless the current portal instructs otherwise.",
+      "Put the strongest relevant terms first.",
+      "Verify every category number; never guess a code.",
+      "Upload assets before importing the CSV.",
+      "Inspect the metadata in the Adobe contributor portal after import.",
+      "Separate a successful file export from successful portal import."
+    ],
+    "illustration": {
+      "title": "Three checks before Adobe import",
+      "steps": [
+        {
+          "label": "Match uploaded filenames",
+          "detail": "Compare every CSV filename, extension, and letter case with the asset."
+        },
+        {
+          "label": "Preview four parsed cells",
+          "detail": "Confirm title, keywords, and verified category stay in their intended columns."
+        },
+        {
+          "label": "Inspect the portal result",
+          "detail": "Import only after review, then check the metadata on the uploaded asset."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Проверка CSV для Adobe Stock перед импортом",
+    "description": "Практический чек-лист для CSV Adobe Stock: имена файлов, заголовки, ключевые слова, код категории, ячейки и проверка импорта.",
+    "intro": "Экспорт CSV — это подготовленный файл метаданных, а не доказательство, что Adobe Stock примет данные и применит их к работам. Перед импортом проверьте структуру, посмотрите, как CSV разбирается на ячейки, и сопоставьте каждое имя с загруженным файлом. Ниже — конкретная строка-пример и последовательность действий, которую можно использовать перед каждой отправкой.",
+    "sections": [
+      {
+        "heading": "1. Сначала проверьте требования Adobe",
+        "paragraphs": [
+          "Требования Adobe Stock к CSV могут меняться, поэтому перед работой откройте актуальную справку для авторов и сам экран импорта. CSV связывает имена файлов с заголовками и ключевыми словами; номер категории и имена файлов релизов могут быть дополнительными полями. Номер категории следует воспринимать как код платформы, а не как свободный текст.",
+          "Для осторожной проверки используйте максимум 49 ключевых слов и всё равно сверяйтесь с текущим экраном загрузки. Общая рекомендация Adobe — ставить самые важные термины в начало, особенно в первые десять. Заголовок должен быть точным и кратким; в текущем руководстве CSV указан предел 70 символов."
+        ],
+        "bullets": [
+          "Используйте названия и порядок столбцов из актуального процесса Adobe.",
+          "Не переносите код категории из памяти или из другого маркетплейса.",
+          "Проверьте язык метаданных, требуемый аккаунтом автора."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Сопоставьте имена до проверки текста",
+        "paragraphs": [
+          "Сначала загрузите изображения или видео, а уже затем импортируйте CSV. Имя в CSV должно полностью совпадать с именем загруженного файла, включая расширение и регистр букв. Даже безупречная строка не сработает, если она указывает на другой файл или отличается одним символом.",
+          "Составьте короткий список имён из папки и из CSV. Ищите переименованные файлы, дубликаты, пропущенные расширения, пробелы в конце и различия в заглавных буквах. Для видео отдельно просмотрите полный ролик: инструмент метаданных может работать по выборочным кадрам, а не по всему движению."
+        ],
+        "bullets": [
+          "Подготовьте одну строку CSV на каждый нужный файл.",
+          "Сверяйте расширения .jpg, .png и .mp4 посимвольно.",
+          "Удалите строки файлов, которые не входят в текущую загрузку."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "3. Посмотрите на разобранные ячейки",
+        "paragraphs": [
+          "Не оценивайте CSV только по виду в текстовом редакторе. Откройте копию в таблице или другой программе, которая понимает CSV, и проверьте разобранные ячейки. Убедитесь, что запятые внутри заголовка или списка ключевых слов остаются внутри одной ячейки, кавычки обрабатываются правильно, а перенос строки не сдвигает последующие значения.",
+          "Просмотрите заголовок и несколько разных строк: короткое название, большой список ключевых слов и знаки препинания. Если номер категории попал в Keywords, исправьте экспорт. Category — необязательное поле: намеренно пустая ячейка допустима. Исправление нужно, если вы собирались указать категорию, но значение потерялось."
+        ],
+        "bullets": [
+          "Проверьте, что заголовок создаёт ожидаемые столбцы.",
+          "Убедитесь, что Keywords остаётся одной ячейкой.",
+          "Ищите пустые ячейки из-за лишних разделителей.",
+          "Проверьте первое и последнее ключевое слово в просмотренных строках."
+        ],
+        "example": "Filename,Title,Keywords,Category\ncity_bridge_dawn.jpg,Bridge over river at dawn,\"bridge,river,city,architecture,dawn,waterway,travel\",2"
+      },
+      {
+        "heading": "4. Рабочий пример: не угадывайте категорию",
+        "paragraphs": [
+          "Пример, а не измеренный результат: представим фотографию city_bridge_dawn.jpg — современный мост над рекой на рассвете. Заголовок описывает видимый объект и обстоятельства, но не превращается в перечень ключевых слов. Ключевые слова начинаются с главных понятий, затем добавляются уместные детали. Значение 12 в этом примере — только условная заглушка; перед импортом нужно проверить, соответствует ли оно нужной категории в актуальной системе Adobe.",
+          "Если портал показывает другой код, замените 12 на подтверждённое значение. Если код не удалось проверить, отложите строку и обратитесь к текущей документации. Не подставляйте название вроде «Architecture», если поле CSV ожидает число.",
+          "После экспорта откройте CSV в просмотрщике. В строке должны быть четыре ячейки: имя файла, одна ячейка заголовка, одна ячейка ключевых слов и одна ячейка категории. Затем проверьте результат в Adobe Stock. Осмотр метаданных в портале — отдельный этап, а не часть самого создания CSV."
+        ],
+        "bullets": [
+          "Убедитесь, что мост и река действительно видны.",
+          "Проверьте текущий лимит символов заголовка.",
+          "Пересчитайте ключевые слова и уберите нерелевантные.",
+          "Подтвердите номер категории по актуальному процессу Adobe.",
+          "После импорта осмотрите метаданные у работы в портале."
+        ],
+        "example": "Filename: city_bridge_dawn.jpg\nTitle: Modern bridge over river at dawn\nKeywords: bridge, river, city, architecture, dawn, waterway, travel\nCategory: 12 (условный пример; проверить перед использованием)"
+      },
+      {
+        "heading": "5. Проверьте релевантность, язык и предположения",
+        "paragraphs": [
+          "Каждое ключевое слово должно описывать то, что покупатель действительно может найти в файле. Удалите повторы, слишком общие и желательные, но не видимые характеристики. Не угадывайте по пикселям личность человека, владельца, точное место, вид животного или другой чувствительный факт. Дату, место или сведения о человеке используйте только при независимой проверке и если это допустимо для конкретной подачи.",
+          "Язык статьи не определяет язык метаданных. Если аккаунт Adobe требует английский, подготовьте английские заголовки и ключевые слова, даже если рабочие заметки и интерфейсный процесс у вас на русском."
+        ],
+        "bullets": [
+          "Проверяйте релевантность отдельно для каждого файла.",
+          "Не выдавайте догадки за подтверждённые факты.",
+          "Соблюдайте язык, требуемый аккаунтом.",
+          "Не применяйте одинаковые теги ко всем разнородным работам."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Если CSV подготовил MetaStocker",
+        "paragraphs": [
+          "MetaStocker умеет создавать редактируемые метаданные локально в браузере и экспортировать CSV для Adobe. В локальном режиме вывод модели выполняется на устройстве пользователя; первая загрузка модели требует интернета. Загрузка модели в память — не то же самое, что сохранённые в кеше файлы браузера. Перед экспортом проверьте результат по каждому файлу: проверка количества тегов не доказывает их точность.",
+          "Используйте приложение как этап подготовки и экспорта, а затем примените весь этот чек-лист Adobe. Локальный экспорт ничего не загружает и не отправляет в портал, не гарантирует принятие и не встраивает метаданные в оригинал. При необязательном режиме OpenAI превью и контекст отправляются в OpenAI с вашим ключом; ключ нужно защищать, а результат — проверять вручную."
+        ],
+        "bullets": [
+          "Отредактируйте сомнительные строки до экспорта.",
+          "Откройте готовый CSV в программе с разбором ячеек.",
+          "Храните оригиналы отдельно от копии для проверки.",
+          "Считайте проверку в портале финальным этапом."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Проверьте актуальные требования Adobe к CSV и экран импорта.",
+      "Сверьте имя, расширение и регистр каждого файла.",
+      "Посмотрите CSV как разобранные ячейки, а не только как текст.",
+      "Уложите каждый заголовок в текущий предел 70 символов.",
+      "Используйте не более 49 ключевых слов, если портал не требует иного.",
+      "Поставьте самые важные релевантные термины первыми.",
+      "Проверьте каждый номер категории; не угадывайте код.",
+      "Загрузите файлы до импорта CSV.",
+      "После импорта осмотрите метаданные в портале Adobe.",
+      "Разделяйте успешный экспорт файла и успешный импорт в портале."
+    ],
+    "illustration": {
+      "title": "Три проверки перед импортом Adobe",
+      "steps": [
+        {
+          "label": "Сверить загруженные файлы",
+          "detail": "Сопоставьте имя, расширение и регистр каждой строки с активом."
+        },
+        {
+          "label": "Проверить четыре ячейки",
+          "detail": "Убедитесь, что заголовок, Keywords и код категории не сместились."
+        },
+        {
+          "label": "Осмотреть результат в портале",
+          "detail": "Импортируйте после проверки и проверьте метаданные у работы."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "Adobe Stock CSV আমদানি চেকলিস্ট: আগে প্রতিটি সারি পরীক্ষা করুন",
+    "description": "ফাইলনাম, শিরোনাম, কীওয়ার্ড, ক্যাটাগরি কোড, পার্স করা সেল এবং পোর্টাল আমদানি যাচাইয়ের জন্য ব্যবহারিক Adobe Stock CSV চেকলিস্ট।",
+    "intro": "CSV এক্সপোর্ট কেবল প্রস্তুত করা মেটাডেটা ফাইল। এটি Adobe Stock মেটাডেটা গ্রহণ করবে বা আপনার সম্পদে প্রয়োগ করবে—এমন প্রমাণ নয়। আমদানির আগে কাঠামো পরীক্ষা করুন, প্রতিটি সেল কীভাবে পার্স হয়েছে তা দেখুন এবং আপলোড করা সম্পদের সঙ্গে প্রতিটি ফাইলনাম মিলিয়ে নিন। এই গাইডে একটি নির্দিষ্ট নমুনা সারি এবং পুনরাবৃত্তিযোগ্য পর্যালোচনা-পদ্ধতি ব্যবহার করা হয়েছে, যাতে পোর্টালে পৌঁছানোর আগেই অবদানকারীরা ভুল ধরতে পারেন।",
+    "sections": [
+      {
+        "heading": "১. Adobe-নির্দিষ্ট নিয়ম দিয়ে শুরু করুন",
+        "paragraphs": [
+          "Adobe Stock CSV-এর প্রয়োজনীয়তা বদলাতে পারে, তাই পুরোনো টেমপ্লেটের ওপর নির্ভর করার আগে বর্তমান অবদানকারী আপলোড নির্দেশিকা এবং আমদানি স্ক্রিন পরীক্ষা করুন। CSV ফাইলনামকে শিরোনাম ও কীওয়ার্ডের সঙ্গে এবং ঐচ্ছিক ক্যাটাগরি নম্বর ও রিলিজ ফাইলনামের সঙ্গে মিলিয়ে দেয়। ক্যাটাগরি নম্বরকে বর্ণনামূলক শব্দ নয়, প্ল্যাটফর্ম-নির্দিষ্ট কোড হিসেবে বিবেচনা করুন।",
+          "বর্তমান আপলোড স্ক্রিন পরীক্ষা করার সময় ৪৯টি কীওয়ার্ডের সংযত সীমা বজায় রাখুন। Adobe-এর সাধারণ মেটাডেটা নির্দেশিকাতেও বলা হয়েছে, সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো আগে থাকা উচিত, বিশেষ করে প্রথম দশটির মধ্যে। শিরোনাম সংক্ষিপ্ত ও বর্ণনামূলক হওয়া উচিত; বর্তমান CSV গাইডে শিরোনামের সীমা ৭০ অক্ষর বলা হয়েছে।"
+        ],
+        "bullets": [
+          "বর্তমান Adobe কর্মপ্রবাহে প্রত্যাশিত সঠিক কলামের নাম ও ক্রম ব্যবহার করুন।",
+          "মনে থাকা তথ্য বা অন্য কোনো মার্কেটপ্লেস থেকে ক্যাটাগরি কোড কপি করবেন না।",
+          "অবদানকারী অ্যাকাউন্টে যে ভাষা প্রয়োজন, সেই ভাষায় মেটাডেটা রাখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "২. মেটাডেটা পরীক্ষা করার আগে ফাইলনাম মিলিয়ে নিন",
+        "paragraphs": [
+          "CSV আমদানির আগে ছবি বা ভিডিও সম্পদ আপলোড করুন। CSV-এর প্রতিটি ফাইলনামকে আপলোড করা সম্পদের সঙ্গে মিলতে হবে, এক্সটেনশন ও অক্ষরের বড়-ছোট ব্যবহারসহ। কোনো সারি দেখতে নিখুঁত হলেও ভুল ফাইলের দিকে নির্দেশ করলে বা একটি অক্ষরের পার্থক্য থাকলে তা ব্যবহারযোগ্য নয়।",
+          "সম্পদ ফোল্ডার ও CSV থেকে একটি সংক্ষিপ্ত তুলনাতালিকা তৈরি করুন। নাম বদলানো ফাইল, একই নামের ফাইল, অনুপস্থিত এক্সটেনশন, শেষে অতিরিক্ত ফাঁকা স্থান এবং বড়-ছোট অক্ষরের পরিবর্তন বিশেষভাবে খুঁজুন। ভিডিওর ক্ষেত্রে মনে রাখুন, কোনো মেটাডেটা টুল নমুনা প্রিভিউ থেকে কাজ করতে পারে; বিবরণ ও কীওয়ার্ড অনুমোদনের আগে সম্পূর্ণ চলমান ভিডিও নিজে পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "উদ্দেশ্য করা প্রতিটি সম্পদের জন্য CSV-তে একটি করে সারি আছে কি না নিশ্চিত করুন।",
+          ".jpg, .png এবং .mp4-এর মতো এক্সটেনশন হুবহু মিলিয়ে দেখুন।",
+          "এই ব্যাচে আপলোড করবেন না এমন ফাইলের সারি সরিয়ে দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৩. পার্স করা সেল প্রিভিউ করুন",
+        "paragraphs": [
+          "শুধু টেক্সট এডিটরে CSV কেমন দেখাচ্ছে তা দেখে বিচার করবেন না। একটি কপি স্প্রেডশিট বা অন্য কোনো CSV-সচেতন ভিউয়ারে খুলে পার্স করা সেল পরীক্ষা করুন। শিরোনাম বা কীওয়ার্ড তালিকার ভেতরের কমা যেন একটি সেলের মধ্যেই থাকে, উদ্ধৃতি চিহ্ন সঠিকভাবে ব্যবহৃত হয় এবং লাইন-ব্রেকের কারণে পরের মানগুলো ভুল কলামে সরে না যায়—তা নিশ্চিত করুন।",
+          "হেডার এবং কয়েকটি প্রতিনিধিত্বশীল সারি প্রিভিউ করুন: একটি ছোট শিরোনাম, অনেক কীওয়ার্ড থাকা একটি সারি এবং বিরামচিহ্ন থাকা একটি সারি। কোনো ক্যাটাগরি মান যদি Keywords কলামে সরে যায়, এক্সপোর্ট ঠিক করুন। Category ঐচ্ছিক, তাই ইচ্ছাকৃতভাবে ফাঁকা Category সেল বৈধ; তবে ক্যাটাগরি দেওয়ার ইচ্ছা থাকলে এবং মান হারিয়ে গেলে তা পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "হেডারটি প্রত্যাশিত কলাম তৈরি করছে কি না যাচাই করুন।",
+          "Keywords সেলটি একটি একক সেল হিসেবে থাকছে কি না দেখুন।",
+          "অতিরিক্ত বিভাজক চিহ্নের কারণে তৈরি ফাঁকা সেল খুঁজুন।",
+          "পর্যালোচনা করা প্রতিটি সারির প্রথম ও শেষ কীওয়ার্ড পরীক্ষা করুন।"
+        ],
+        "example": "Filename,Title,Keywords,Category\ncity_bridge_dawn.jpg,Bridge over river at dawn,\"bridge,river,city,architecture,dawn,waterway,travel\",2"
+      },
+      {
+        "heading": "৪. কাজ করা উদাহরণ: অনুমান না করে ক্যাটাগরি যাচাই করুন",
+        "paragraphs": [
+          "এটি মাপা ফল নয়, উদাহরণ: ধরুন আপনি city_bridge_dawn.jpg প্রস্তুত করছেন—সূর্যোদয়ের সময় নদীর ওপর আধুনিক সেতু দেখানো একটি বাণিজ্যিক ছবি। শিরোনামটি দৃশ্যমান বিষয় ও পরিবেশ বর্ণনা করে, কিন্তু কীওয়ার্ড তালিকায় পরিণত হয় না। কীওয়ার্ডগুলো সবচেয়ে শক্তিশালী ধারণা দিয়ে শুরু হয়, তারপর প্রাসঙ্গিক প্রেক্ষাপট যোগ করে। এই উদাহরণে ক্যাটাগরি মান ১২ কেবল স্থানধারক; আমদানির আগে ১২ নির্দিষ্ট ক্যাটাগরির বর্তমান Adobe কোড কি না যাচাই করতেই হবে।",
+          "বর্তমান পোর্টাল যদি ভিন্ন কোড দেয়, যাচাইকৃত মান দিয়ে ১২ প্রতিস্থাপন করুন। কোড নিশ্চিত করতে না পারলে অবদানকারী নির্দেশিকা পরীক্ষা করা পর্যন্ত সারিটিকে আমদানি ব্যাচের বাইরে রাখুন। CSV ফিল্ডে সংখ্যা প্রত্যাশিত হলে “Architecture”-এর মতো ক্যাটাগরির নাম বসাবেন না।",
+          "এক্সপোর্টের পর পার্স করা সারিটি প্রিভিউ করুন। আপনার চারটি সেল দেখা উচিত: ফাইলনাম, একটি শিরোনাম সেল, একটি কীওয়ার্ড সেল এবং একটি ক্যাটাগরি সেল। এরপর Adobe Stock-এ ফলাফল খুলে সম্পদে প্রয়োগ হওয়া মেটাডেটা পরীক্ষা করুন। পোর্টালে এই চূড়ান্ত পরীক্ষা CSV তৈরির ধাপ থেকে আলাদা।"
+        ],
+        "bullets": [
+          "সেতু ও নদী সত্যিই দৃশ্যমান কি না নিশ্চিত করুন।",
+          "শিরোনামটি বর্তমান অক্ষরসীমার মধ্যে আছে কি না পরীক্ষা করুন।",
+          "সংযতভাবে কীওয়ার্ড গুনুন এবং অপ্রাসঙ্গিক শব্দ সরান।",
+          "বর্তমান Adobe কর্মপ্রবাহে ক্যাটাগরি কোড যাচাই করুন।",
+          "অবদানকারী পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।"
+        ],
+        "example": "Filename: city_bridge_dawn.jpg\nTitle: Modern bridge over river at dawn\nKeywords: bridge, river, city, architecture, dawn, waterway, travel\nCategory: 12 (example placeholder; verify before use)"
+      },
+      {
+        "heading": "৫. প্রাসঙ্গিকতা, ভাষা ও সংবেদনশীল অনুমান পর্যালোচনা করুন",
+        "paragraphs": [
+          "প্রতিটি কীওয়ার্ড এমন কিছু বর্ণনা করা উচিত, যা ক্রেতা যুক্তিসঙ্গতভাবে সম্পদে খুঁজে পেতে পারেন। পুনরাবৃত্ত, অতিরিক্ত সাধারণ বা কেবল প্রত্যাশাভিত্তিক শব্দ সরিয়ে দিন। পিক্সেল দেখে কোনো ব্যক্তির পরিচয়, মালিকানা, অবস্থান, প্রজাতি বা অন্য কোনো সংবেদনশীল তথ্য অনুমান করবেন না। কোনো অবস্থান, তারিখ বা ব্যক্তি গুরুত্বপূর্ণ হলে কেবল স্বাধীনভাবে যাচাই করা এবং জমাদানের প্রেক্ষাপটে অনুমোদিত তথ্য ব্যবহার করুন।",
+          "মেটাডেটার ভাষা অবদানকারী অ্যাকাউন্টের প্রয়োজনীয়তার সঙ্গে মিলতে হবে। এই গাইড রুশ ভাষায় লেখা হয়েছে বলেই Adobe অ্যাকাউন্টে রুশ মেটাডেটা পাঠাতে হবে—এমন নয়। অ্যাকাউন্টে ইংরেজি প্রয়োজন হলে, কাজের নোট রুশ ভাষায় হলেও ইংরেজি শিরোনাম ও কীওয়ার্ড প্রস্তুত করুন।"
+        ],
+        "bullets": [
+          "প্রতিটি পৃথক ফাইলের জন্য নির্দিষ্ট কীওয়ার্ড রাখুন।",
+          "অনুমানকে তথ্য হিসেবে উপস্থাপন করবেন না।",
+          "অ্যাকাউন্টে প্রয়োজনীয় মেটাডেটা ভাষা ব্যবহার করুন।",
+          "মিশ্র বিষয়বস্তুর জন্য একই ব্যাচের সাধারণ ট্যাগ পুনর্ব্যবহার করবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৬. MetaStocker এক্সপোর্ট তৈরি করলে",
+        "paragraphs": [
+          "MetaStocker ব্রাউজারে স্থানীয়ভাবে সম্পাদনযোগ্য মেটাডেটা তৈরি এবং Adobe CSV এক্সপোর্ট করতে পারে। স্থানীয় মোডে মডেলের অনুমান আপনার ডিভাইসেই থাকে; প্রথম মডেল ডাউনলোডে ইন্টারনেট প্রয়োজন, এবং কোনো মডেল মেমরিতে লোড করা ব্রাউজার ক্যাশে ডাউনলোড করা ফাইল ধরে রাখার থেকে আলাদা। এক্সপোর্টের আগে প্রতিটি ফাইল অনুযায়ী তৈরি ফলাফল পরীক্ষা করুন। অ্যাপের অনুরোধ করা ট্যাগ-সংখ্যা যাচাই ট্যাগগুলোর নির্ভুলতার প্রমাণ নয়।",
+          "অ্যাপটিকে খসড়া তৈরি ও এক্সপোর্টের ধাপ হিসেবে ব্যবহার করুন, তারপর এই Adobe চেকলিস্ট প্রয়োগ করুন। স্থানীয় এক্সপোর্ট কিছু আপলোড বা জমা দেয় না, গ্রহণযোগ্যতার নিশ্চয়তা দেয় না এবং মূল ফাইলে মেটাডেটা সংযুক্ত করে না। ঐচ্ছিক OpenAI API মোড ব্যবহার করলে প্রিভিউ ও প্রেক্ষাপট আপনার নিজের কী ব্যবহার করে OpenAI-এ পাঠানো হয়; সেই কী সুরক্ষিত রাখুন এবং তৈরি মেটাডেটাও একই যত্নে পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "এক্সপোর্টের আগে সন্দেহজনক সারি সম্পাদনা করুন।",
+          "CSV-সচেতন ভিউয়ারে এক্সপোর্ট করা CSV প্রিভিউ করুন।",
+          "মূল সম্পদগুলোকে CSV পর্যালোচনার কপি থেকে আলাদা রাখুন।",
+          "পোর্টাল পরীক্ষা চূড়ান্ত যাচাইয়ের ধাপ হিসেবে বিবেচনা করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "বর্তমান Adobe CSV প্রয়োজনীয়তা ও আপলোড স্ক্রিন পরীক্ষা করুন।",
+      "প্রতিটি সারির সঠিক ফাইলনাম, এক্সটেনশন ও বড়-ছোট অক্ষর নিশ্চিত করুন।",
+      "শুধু কাঁচা টেক্সট নয়, পার্স করা সেল হিসেবে CSV প্রিভিউ করুন।",
+      "প্রতিটি শিরোনাম বর্তমান ৭০ অক্ষরের CSV সীমার মধ্যে রাখুন।",
+      "বর্তমান পোর্টাল অন্য নির্দেশ না দিলে ৪৯টির বেশি কীওয়ার্ড ব্যবহার করবেন না।",
+      "সবচেয়ে শক্তিশালী প্রাসঙ্গিক শব্দগুলো আগে রাখুন।",
+      "প্রতিটি ক্যাটাগরি নম্বর যাচাই করুন; কখনো কোড অনুমান করবেন না।",
+      "CSV আমদানির আগে সম্পদ আপলোড করুন।",
+      "আমদানির পর Adobe অবদানকারী পোর্টালে মেটাডেটা পরীক্ষা করুন।",
+      "সফল ফাইল এক্সপোর্ট এবং সফল পোর্টাল আমদানিকে আলাদা বিষয় হিসেবে যাচাই করুন।"
+    ],
+    "illustration": {
+      "title": "Adobe আমদানির আগে তিনটি পরীক্ষা",
+      "steps": [
+        {
+          "label": "আপলোড করা ফাইলনাম মিলান",
+          "detail": "প্রতিটি CSV ফাইলনাম, এক্সটেনশন ও বড়-ছোট অক্ষর সম্পদের সঙ্গে তুলনা করুন।"
+        },
+        {
+          "label": "চারটি পার্স করা সেল প্রিভিউ করুন",
+          "detail": "শিরোনাম, কীওয়ার্ড ও যাচাইকৃত ক্যাটাগরি নির্ধারিত কলামে আছে কি না নিশ্চিত করুন।"
+        },
+        {
+          "label": "পোর্টালের ফলাফল পরীক্ষা করুন",
+          "detail": "পর্যালোচনার পরই আমদানি করুন, তারপর আপলোড করা সম্পদের মেটাডেটা দেখুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "Adobe Stock CSV आयात चेकलिस्ट: पहले हर पंक्ति जाँचें",
+    "description": "फ़ाइलनाम, शीर्षक, कीवर्ड, श्रेणी कोड, पार्स किए गए सेल और पोर्टल आयात सत्यापन के लिए व्यावहारिक Adobe Stock CSV चेकलिस्ट।",
+    "intro": "CSV एक्सपोर्ट केवल तैयार की गई मेटाडेटा फ़ाइल है। यह प्रमाण नहीं है कि Adobe Stock मेटाडेटा स्वीकार करेगा या उसे आपकी संपत्तियों पर लागू करेगा। आयात से पहले संरचना जाँचें, देखें कि हर सेल कैसे पार्स हुआ है और हर फ़ाइलनाम को अपलोड की गई संपत्ति से मिलाएँ। यह गाइड एक ठोस नमूना पंक्ति और दोहराई जा सकने वाली समीक्षा प्रक्रिया का उपयोग करती है, ताकि योगदानकर्ता पोर्टल तक पहुँचने से पहले त्रुटियाँ पकड़ सकें।",
+    "sections": [
+      {
+        "heading": "१. Adobe-विशिष्ट नियमों से शुरुआत करें",
+        "paragraphs": [
+          "Adobe Stock CSV की आवश्यकताएँ बदल सकती हैं, इसलिए पुराने टेम्पलेट पर निर्भर करने से पहले वर्तमान योगदानकर्ता अपलोड निर्देश और आयात स्क्रीन जाँचें। CSV फ़ाइलनामों को शीर्षकों और कीवर्ड से, तथा वैकल्पिक श्रेणी संख्या और रिलीज़ फ़ाइलनामों से जोड़ता है। श्रेणी संख्या को वर्णनात्मक शब्द नहीं, बल्कि प्लेटफ़ॉर्म-विशिष्ट कोड मानें।",
+          "वर्तमान अपलोड स्क्रीन जाँचते समय ४९ कीवर्ड की सतर्क सीमा बनाए रखें। Adobe के सामान्य मेटाडेटा निर्देश भी कहते हैं कि सबसे महत्वपूर्ण शब्द पहले आने चाहिए, विशेषकर पहले दस में। शीर्षक संक्षिप्त और वर्णनात्मक होने चाहिए; वर्तमान CSV गाइड में शीर्षक की सीमा ७० अक्षर दी गई है।"
+        ],
+        "bullets": [
+          "वर्तमान Adobe कार्यप्रवाह में अपेक्षित सटीक कॉलम नाम और क्रम का उपयोग करें।",
+          "याददाश्त या किसी दूसरे मार्केटप्लेस से श्रेणी कोड कॉपी न करें।",
+          "योगदानकर्ता खाते में आवश्यक भाषा में मेटाडेटा रखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "२. मेटाडेटा जाँचने से पहले फ़ाइलनाम मिलाएँ",
+        "paragraphs": [
+          "CSV आयात करने से पहले चित्र या वीडियो संपत्तियाँ अपलोड करें। CSV का हर फ़ाइलनाम अपलोड की गई संपत्ति से मेल खाना चाहिए, जिसमें एक्सटेंशन और अक्षरों का बड़ा-छोटा रूप भी शामिल है। कोई पंक्ति देखने में बिल्कुल सही हो, फिर भी गलत फ़ाइल की ओर संकेत करने या एक अक्षर के अंतर के कारण अनुपयोगी हो सकती है।",
+          "संपत्ति फ़ोल्डर और CSV से एक छोटी तुलना सूची बनाएँ। बदले गए फ़ाइलनाम, दोहराए गए नाम, गायब एक्सटेंशन, अंत में मौजूद रिक्त स्थान और बड़े-छोटे अक्षरों के बदलाव विशेष रूप से खोजें। वीडियो के लिए याद रखें कि कोई मेटाडेटा टूल नमूना प्रीव्यू से काम कर सकता है; विवरण और कीवर्ड स्वीकृत करने से पहले पूरा वीडियो स्वयं देखें।"
+        ],
+        "bullets": [
+          "हर इच्छित संपत्ति के लिए CSV में एक पंक्ति की पुष्टि करें।",
+          ".jpg, .png और .mp4 जैसे एक्सटेंशन ठीक-ठीक मिलाएँ।",
+          "इस बैच में अपलोड न की जाने वाली फ़ाइलों की पंक्तियाँ हटाएँ।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "३. पार्स किए गए सेल का प्रीव्यू देखें",
+        "paragraphs": [
+          "CSV को केवल टेक्स्ट एडिटर में देखकर उसका मूल्यांकन न करें। एक कॉपी को स्प्रेडशीट या किसी CSV-सक्षम व्यूअर में खोलें और पार्स किए गए सेल जाँचें। शीर्षक या कीवर्ड सूची के भीतर के कॉमा एक ही सेल में रहें, उद्धरण चिह्न सही ढंग से संभाले जाएँ और लाइन ब्रेक बाद के मानों को गलत कॉलम में न खिसकाएँ—यह सुनिश्चित करें।",
+          "हेडर और कुछ प्रतिनिधि पंक्तियों का प्रीव्यू देखें: एक छोटा शीर्षक, कई कीवर्ड वाली पंक्ति और विराम चिह्न वाली पंक्ति। यदि कोई श्रेणी मान Keywords कॉलम में खिसक गया है, तो एक्सपोर्ट ठीक करें। Category वैकल्पिक है, इसलिए जानबूझकर खाली Category सेल मान्य है; केवल तब जाँच करें जब आप श्रेणी देना चाहते थे और उसका मान खो गया हो।"
+        ],
+        "bullets": [
+          "सत्यापित करें कि हेडर अपेक्षित कॉलम बना रहा है।",
+          "जाँचें कि Keywords सेल एक ही सेल बना हुआ है।",
+          "अतिरिक्त विभाजकों से बने खाली सेल खोजें।",
+          "समीक्षित हर पंक्ति का पहला और अंतिम कीवर्ड जाँचें।"
+        ],
+        "example": "Filename,Title,Keywords,Category\ncity_bridge_dawn.jpg,Bridge over river at dawn,\"bridge,river,city,architecture,dawn,waterway,travel\",2"
+      },
+      {
+        "heading": "४. काम किया हुआ उदाहरण: अनुमान लगाने के बजाय श्रेणी सत्यापित करें",
+        "paragraphs": [
+          "यह मापा हुआ परिणाम नहीं, केवल उदाहरण है: मान लें कि आप city_bridge_dawn.jpg तैयार कर रहे हैं—सूर्योदय के समय नदी पर बने आधुनिक पुल को दिखाने वाली व्यावसायिक तस्वीर। शीर्षक दिखाई देने वाले विषय और परिवेश का वर्णन करता है, लेकिन कीवर्ड सूची नहीं बन जाता। कीवर्ड सबसे मजबूत अवधारणाओं से शुरू होते हैं और फिर प्रासंगिक संदर्भ जोड़ते हैं। इस उदाहरण में श्रेणी मान १२ केवल स्थानधारक है; आयात से पहले आपको सत्यापित करना होगा कि १२ इच्छित श्रेणी के लिए वर्तमान Adobe कोड है या नहीं।",
+          "यदि वर्तमान पोर्टल कोई अलग कोड देता है, तो १२ को सत्यापित मान से बदलें। यदि आप कोड की पुष्टि नहीं कर सकते, तो योगदानकर्ता दस्तावेज़ जाँचने तक पंक्ति को आयात बैच से बाहर रखें। जब CSV फ़ील्ड में संख्या अपेक्षित हो, तो “Architecture” जैसा श्रेणी नाम न डालें।",
+          "एक्सपोर्ट के बाद पार्स की गई पंक्ति का प्रीव्यू देखें। आपको चार सेल दिखाई देने चाहिए: फ़ाइलनाम, एक शीर्षक सेल, एक कीवर्ड सेल और एक श्रेणी सेल। फिर Adobe Stock में परिणाम खोलें और संपत्ति पर लागू मेटाडेटा जाँचें। पोर्टल की यह अंतिम जाँच CSV बनाने से अलग चरण है।"
+        ],
+        "bullets": [
+          "पुष्टि करें कि पुल और नदी वास्तव में दिखाई दे रहे हैं।",
+          "जाँचें कि शीर्षक वर्तमान अक्षर सीमा के भीतर है।",
+          "कीवर्ड सावधानी से गिनें और अप्रासंगिक शब्द हटाएँ।",
+          "वर्तमान Adobe कार्यप्रवाह में श्रेणी कोड सत्यापित करें।",
+          "योगदानकर्ता पोर्टल में आयात किए गए मेटाडेटा की जाँच करें।"
+        ],
+        "example": "Filename: city_bridge_dawn.jpg\nTitle: Modern bridge over river at dawn\nKeywords: bridge, river, city, architecture, dawn, waterway, travel\nCategory: 12 (example placeholder; verify before use)"
+      },
+      {
+        "heading": "५. प्रासंगिकता, भाषा और संवेदनशील अनुमानों की समीक्षा करें",
+        "paragraphs": [
+          "हर कीवर्ड ऐसी चीज़ का वर्णन करना चाहिए जिसे खरीदार उचित रूप से संपत्ति में खोज सके। दोहराए गए, बहुत व्यापक या केवल आकांक्षात्मक शब्द हटाएँ। पिक्सेल से किसी व्यक्ति की पहचान, स्वामित्व, स्थान, प्रजाति या किसी अन्य संवेदनशील तथ्य का अनुमान न लगाएँ। यदि कोई स्थान, तारीख या व्यक्ति महत्वपूर्ण है, तो केवल स्वतंत्र रूप से सत्यापित और सबमिशन के संदर्भ में अनुमत जानकारी का उपयोग करें।",
+          "मेटाडेटा की भाषा योगदानकर्ता खाते की आवश्यकताओं से मेल खानी चाहिए। यह गाइड रूसी में लिखी गई है, इसका अर्थ यह नहीं कि Adobe खाते को रूसी मेटाडेटा मिलना चाहिए। यदि खाते में अंग्रेज़ी आवश्यक है, तो अपने काम के नोट रूसी में होने पर भी अंग्रेज़ी शीर्षक और कीवर्ड तैयार करें।"
+        ],
+        "bullets": [
+          "हर अलग फ़ाइल के लिए विशिष्ट कीवर्ड रखें।",
+          "अनुमानों को तथ्यों के रूप में प्रस्तुत न करें।",
+          "खाते में आवश्यक मेटाडेटा भाषा का उपयोग करें।",
+          "मिश्रित सामग्री के लिए एक ही बैच के सामान्य टैग दोबारा न इस्तेमाल करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "६. यदि MetaStocker ने एक्सपोर्ट बनाया है",
+        "paragraphs": [
+          "MetaStocker ब्राउज़र में स्थानीय रूप से संपादन योग्य मेटाडेटा बना सकता है और Adobe CSV फ़ाइलें एक्सपोर्ट कर सकता है। स्थानीय मोड में मॉडल का अनुमान आपके डिवाइस पर ही रहता है; पहले मॉडल को डाउनलोड करने के लिए इंटरनेट चाहिए, और मॉडल को मेमोरी में लोड करना ब्राउज़र कैश में डाउनलोड की गई फ़ाइलें बनाए रखने से अलग है। एक्सपोर्ट करने से पहले हर फ़ाइल के लिए बनाए गए परिणाम की समीक्षा करें। ऐप की अनुरोधित टैग संख्या का सत्यापन टैग की सटीकता का प्रमाण नहीं है।",
+          "ऐप को प्रारूप तैयार करने और एक्सपोर्ट करने के चरण के रूप में उपयोग करें, फिर यह Adobe चेकलिस्ट लागू करें। स्थानीय एक्सपोर्ट कुछ अपलोड या सबमिट नहीं करता, स्वीकृति की गारंटी नहीं देता और मूल फ़ाइल में मेटाडेटा एम्बेड नहीं करता। यदि आप वैकल्पिक OpenAI API मोड का उपयोग करते हैं, तो प्रीव्यू और संदर्भ आपकी अपनी कुंजी का उपयोग करके OpenAI को भेजे जाते हैं; उस कुंजी को सुरक्षित रखें और बने हुए मेटाडेटा की भी उतनी ही सावधानी से समीक्षा करें।"
+        ],
+        "bullets": [
+          "एक्सपोर्ट से पहले संदिग्ध पंक्तियाँ संपादित करें।",
+          "CSV-सक्षम व्यूअर में एक्सपोर्ट किए गए CSV का प्रीव्यू देखें।",
+          "मूल संपत्तियों को CSV समीक्षा कॉपी से अलग रखें।",
+          "पोर्टल की जाँच को अंतिम सत्यापन चरण मानें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "वर्तमान Adobe CSV आवश्यकताओं और अपलोड स्क्रीन की जाँच करें।",
+      "हर पंक्ति का सटीक फ़ाइलनाम, एक्सटेंशन और अक्षरों का बड़ा-छोटा रूप सुनिश्चित करें।",
+      "CSV का प्रीव्यू केवल कच्चे टेक्स्ट के रूप में नहीं, पार्स किए गए सेल के रूप में देखें।",
+      "हर शीर्षक को वर्तमान ७०-अक्षर CSV सीमा के भीतर रखें।",
+      "जब तक वर्तमान पोर्टल अलग निर्देश न दे, ४९ से अधिक कीवर्ड का उपयोग न करें।",
+      "सबसे मजबूत प्रासंगिक शब्द पहले रखें।",
+      "हर श्रेणी संख्या सत्यापित करें; कोड का अनुमान कभी न लगाएँ।",
+      "CSV आयात करने से पहले संपत्तियाँ अपलोड करें।",
+      "आयात के बाद Adobe योगदानकर्ता पोर्टल में मेटाडेटा जाँचें।",
+      "सफल फ़ाइल एक्सपोर्ट और सफल पोर्टल आयात को अलग-अलग सत्यापित करें।"
+    ],
+    "illustration": {
+      "title": "Adobe आयात से पहले तीन जाँचें",
+      "steps": [
+        {
+          "label": "अपलोड किए फ़ाइलनाम मिलाएँ",
+          "detail": "हर CSV फ़ाइलनाम, एक्सटेंशन और अक्षरों का बड़ा-छोटा रूप संपत्ति से मिलाएँ।"
+        },
+        {
+          "label": "चार पार्स किए सेल का प्रीव्यू देखें",
+          "detail": "पुष्टि करें कि शीर्षक, कीवर्ड और सत्यापित श्रेणी सही कॉलम में हैं।"
+        },
+        {
+          "label": "पोर्टल परिणाम जाँचें",
+          "detail": "समीक्षा के बाद ही आयात करें, फिर अपलोड की गई संपत्ति का मेटाडेटा जाँचें।"
+        }
+      ]
+    }
+  }
+}

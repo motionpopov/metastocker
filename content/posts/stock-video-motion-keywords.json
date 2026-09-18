@@ -1,0 +1,435 @@
+{
+  "slug": "stock-video-motion-keywords",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-metadata"
+  ],
+  "en": {
+    "title": "How to Write Stock Video Metadata From the Whole Clip",
+    "description": "A practical workflow for describing camera movement and subject action in stock video metadata by checking the beginning, middle, and end.",
+    "intro": "A stock video is more than its opening frame. A preview may show a kettle and a hand, but the useful metadata depends on what changes during the shot: the camera may move forward, steam may rise, and a hand may enter and interact with the object. If you describe only the first visible subject, buyers searching for motion-related footage may miss the clip. If you invent details that never occur, the metadata becomes misleading. This guide shows how to watch the whole clip, separate camera movement from subject action, and turn those observations into accurate titles and keywords. The example is hypothetical and created for this guide, not a measured result or a real customer file.",
+    "sections": [
+      {
+        "heading": "1. Establish what the clip actually shows",
+        "paragraphs": [
+          "Watch the video once without writing keywords. Note the setting, main object, visible human action, lighting, and any clearly observable outcome. Avoid guessing ownership, identity, location, personal attributes, or anything outside the frame.",
+          "Then watch it again in three checkpoints: the start, the middle, and the end. These checkpoints are not a substitute for a full review; they are a simple way to prevent an opening-frame description from controlling the entire metadata set."
+        ],
+        "bullets": [
+          "Start: record the initial composition and camera state.",
+          "Middle: record what enters, moves, or changes.",
+          "End: record the final position and whether the action resolves."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Separate camera movement from subject action",
+        "paragraphs": [
+          "Use different words for what the camera does and what appears in front of it. A push-in or forward camera movement describes the viewpoint changing. A hand entering the frame describes subject action. Steam rising describes visible environmental motion. These can all belong in one accurate description, but they should not be collapsed into a vague word such as “dynamic.”",
+          "Be cautious with technical labels. If the camera clearly moves toward the kettle, “slow push-in” may be appropriate. If you only see the kettle becoming larger and cannot tell whether the camera moved or the lens changed, use a safer phrase such as “the kettle fills more of the frame.”"
+        ],
+        "bullets": [
+          "Camera: push-in, pan, tilt, tracking, or static, only when visible.",
+          "Subject: hand enters, reaches, touches, lifts, or pours, only when shown.",
+          "Environment: steam rises or drifts, only if that motion is visible."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "3. Worked example: the kettle shot",
+        "paragraphs": [
+          "Example: imagine a 12-second commercial-style clip. At the start, a steaming metal kettle sits on a countertop. From seconds 1 to 7, the camera slowly moves toward it. Around the middle, a hand enters from the right and reaches for the handle. By the end, the hand is holding the handle, while steam remains visible. The clip does not show a person’s face, a confirmed kitchen location, or the kettle being lifted.",
+          "A useful title leads with the main searchable concept and includes the meaningful motion: “Close-Up Push-In Toward Steaming Kettle as Hand Reaches for Handle.” It is descriptive rather than a list of disconnected tags. A shorter alternative may be preferable if the platform’s current title limit requires it.",
+          "Possible English keywords, reviewed for relevance, are: kettle, steaming kettle, steam, kitchen appliance, close up, push in, camera movement, hand, reaching, handle, countertop. Do not add “boiling” unless boiling is actually visible, and do not add “barista,” “tea,” or “coffee” unless the clip supports those terms."
+        ],
+        "bullets": [],
+        "example": "Title: Close-Up Push-In Toward Steaming Kettle as Hand Reaches for Handle\nKeywords: kettle, steaming kettle, steam, kitchen appliance, close up, push in, camera movement, hand, reaching, handle, countertop"
+      },
+      {
+        "heading": "4. Build the title and keyword order",
+        "paragraphs": [
+          "Put the strongest concepts first: the principal object, the visible action, and the important camera movement. On platforms that prioritize early terms, the first ten keywords deserve special attention. They should describe the clip’s core content, not broad hopes about how someone might use it.",
+          "Keep metadata specific to this file. Repeating near-identical words consumes space without adding meaning. A title should read like a natural description, while keywords can include established phrases such as “camera movement” or “steaming kettle” when they accurately describe the footage.",
+          "Platform rules differ. For example, Adobe’s general keyword guidance allows up to 49 keywords, while Shutterstock requires 7 to 50 relevant keywords and at least one category. Check the current contributor portal before exporting or submitting, because policies and field requirements can change."
+        ],
+        "bullets": [
+          "Lead with the object and observable action.",
+          "Reserve early keyword positions for the most important terms.",
+          "Remove guesses, generic filler, and repeated variants."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "5. Review AI-assisted metadata locally",
+        "paragraphs": [
+          "MetaStocker’s local mode can generate draft metadata in the browser using a downloaded vision model, but video analysis is based on sampled previews. A sampled preview can miss the hand entering or misread the direction of movement. Treat the result as a starting draft, then compare every important term with the full clip.",
+          "The local model runs on the visitor’s device through WebGPU workers; the first model download needs internet. Loading a model into memory is different from keeping downloaded files in browser cache. You can unload a model from memory while retaining cached files, but browser storage may be evicted. Begin with one local thread, and test additional parallel threads only if the device handles them reliably.",
+          "For the kettle example, edit a generated phrase such as “hot kettle in kitchen” if it omits the push-in and reaching hand. Conversely, delete “pouring tea” if no pouring occurs. The goal is not to accept the exact requested number of tags; it is to approve only relevant terms."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "6. Export carefully for each marketplace",
+        "paragraphs": [
+          "Before exporting, inspect the editable title, keywords, and any category field per file. A CSV is a mapping between filenames and metadata; it is not a submission. For Adobe, upload the assets first if using its CSV workflow, and make sure filenames, extensions, and case match exactly. Then inspect the imported metadata in the contributor portal.",
+          "Do not assume one CSV format serves every marketplace. Envato and other platforms may use different fields or limits. MetaStocker can export formats for Adobe, Envato, Shutterstock, and Freepik, but the exporter does not upload files, submit them, guarantee acceptance, or embed metadata into the original video. Check the current contributor requirements before final submission."
+        ],
+        "bullets": [
+          "Keep the original video unchanged and retain an editable metadata copy.",
+          "Validate filename matching and platform-specific limits.",
+          "Inspect the portal after import and correct any shifted fields."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Watch the complete clip, then compare start, middle, and end.",
+      "Describe camera movement separately from subject action.",
+      "Use only visible facts; do not infer identity, location, or intent.",
+      "Put the strongest concepts early in the title and keyword list.",
+      "Review every AI-generated term against the full video.",
+      "Check current marketplace rules before exporting or submitting.",
+      "Inspect imported metadata in the contributor portal."
+    ],
+    "illustration": {
+      "title": "From motion review to marketplace metadata",
+      "steps": [
+        {
+          "label": "Watch three checkpoints",
+          "detail": "Compare the start, middle, and end after a full viewing."
+        },
+        {
+          "label": "Split motion types",
+          "detail": "Record camera movement, subject action, and visible steam separately."
+        },
+        {
+          "label": "Edit and validate",
+          "detail": "Approve relevant terms, match filenames, then inspect the portal."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как описать движение в метаданных стокового видео",
+    "description": "Практическая схема для описания движения камеры и действий объекта в стоковом видео после просмотра начала, середины и конца ролика.",
+    "intro": "Первый кадр не всегда объясняет, чем ценен видеоролик. На превью можно увидеть чайник и руку, но полноценное описание зависит от того, что происходит во времени: камера приближается, поднимается пар, рука входит в кадр и тянется к ручке. Если записать только объекты из начала ролика, покупатель может не найти видео по движению. Если добавить действие, которого нет, метаданные станут неточными. Ниже — практический процесс: как просмотреть ролик целиком, разделить движение камеры и действие объекта, а затем составить заголовок и ключевые слова. Пример вымышленный и подготовлен специально для этой статьи, а не основан на реальном клиенте или измеренном результате.",
+    "sections": [
+      {
+        "heading": "1. Сначала зафиксируйте видимые факты",
+        "paragraphs": [
+          "Первый просмотр проведите без составления списка ключевых слов. Отметьте обстановку, главный предмет, видимое действие, свет и изменения в кадре. Не угадывайте личность человека, владельца предмета, точное место, личные характеристики или намерение, если этого нельзя подтвердить изображением.",
+          "Затем проверьте начало, середину и конец ролика. Эти три точки помогают не застрять на первом кадре, но не заменяют просмотр всего видео. Именно полный просмотр показывает, развивается ли действие и чем оно заканчивается."
+        ],
+        "bullets": [
+          "Начало: что находится в кадре и неподвижна ли камера.",
+          "Середина: что входит, движется или меняется.",
+          "Конец: где оказываются предметы и завершается ли действие."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Разделяйте движение камеры и действие в кадре",
+        "paragraphs": [
+          "Описывайте отдельно то, что делает камера, и то, что делает видимый объект или человек. Приближение камеры меняет точку наблюдения. Вход руки справа — действие в кадре. Поднимающийся пар — движение окружающей среды. Все три наблюдения могут быть частью одного точного описания, но слово «динамичный» слишком мало информативно.",
+          "Технический термин используйте только при достаточной уверенности. Если чайник явно становится крупнее из-за движения камеры вперед, подходит «медленное приближение» или «push-in». Если причина неясна, безопаснее написать, что чайник постепенно занимает большую часть кадра, чем приписывать ему неизвестный эффект объектива."
+        ],
+        "bullets": [
+          "Камера: приближение, панорама, наклон или статичный кадр.",
+          "Объект: рука входит, тянется, касается или удерживает ручку.",
+          "Среда: пар поднимается или движется, если это действительно видно."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "3. Рабочий пример с чайником",
+        "paragraphs": [
+          "Пример: представим рекламный ролик длительностью 12 секунд. В начале на рабочей поверхности стоит металлический чайник, из которого идет пар. С первой по седьмую секунду камера медленно движется к нему. В середине справа появляется рука и тянется к ручке. В конце рука держит ручку, а пар остается видимым. Лица в кадре нет; чайник не поднимают, и наливание напитка не показано. Точное помещение не установлено: не следует считать кухню подтвержденным местом съемки.",
+          "Подходящий английский заголовок для платформы с англоязычными метаданными: “Close-Up Push-In Toward Steaming Kettle as Hand Reaches for Handle”. Он объединяет предмет, движение камеры и действие руки в естественной фразе. Теги можно начать с самых важных понятий: kettle, steaming kettle, steam, kitchen appliance, close up, push in, camera movement, hand, reaching, handle, countertop.",
+          "Не добавляйте “boiling”, если кипение не видно. Не используйте “barista”, “tea” или “coffee”, если в ролике нет подтверждения этим словам. Русский язык статьи не означает, что метаданные нужно переводить: ориентируйтесь на язык и правила конкретного стока."
+        ],
+        "bullets": [],
+        "example": "Title: Close-Up Push-In Toward Steaming Kettle as Hand Reaches for Handle\nKeywords: kettle, steaming kettle, steam, kitchen appliance, close up, push in, camera movement, hand, reaching, handle, countertop"
+      },
+      {
+        "heading": "4. Расставьте приоритеты в заголовке и тегах",
+        "paragraphs": [
+          "Начинайте с главного предмета, заметного действия и существенного движения камеры. На площадках, где ранние слова важнее для поиска, особенно внимательно проверьте первые десять ключевых слов. Это должны быть точные признаки данного ролика, а не универсальные слова о возможном применении видео.",
+          "Заголовок должен читаться как обычное описание, а не как цепочка тегов. Ключевые слова могут содержать устойчивые сочетания вроде “camera movement” или “steaming kettle”, если они действительно относятся к кадру. Удаляйте повторы и близкие варианты, которые не добавляют смысла.",
+          "Требования площадок различаются. Например, общая инструкция Adobe допускает до 49 ключевых слов, а Shutterstock указывает от 7 до 50 релевантных ключевых слов и как минимум одну категорию. Перед экспортом проверьте актуальный портал автора: правила и поля могут измениться."
+        ],
+        "bullets": [
+          "Ставьте в начало предмет и видимое действие.",
+          "Отдавайте первые позиции самым полезным терминам.",
+          "Удаляйте догадки, повторения и слишком общие слова."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "5. Проверяйте черновик, созданный ИИ",
+        "paragraphs": [
+          "В локальном режиме MetaStocker может подготовить черновые метаданные прямо в браузере с помощью загруженной локальной модели. Для видео используются выборочные превью, поэтому модель может не увидеть момент, когда рука входит в кадр, или ошибиться в направлении движения. Сверяйте каждый важный термин с полным роликом.",
+          "Локальная обработка выполняется на устройстве пользователя через WebGPU-воркеры; первая загрузка модели требует интернета. Память активной модели и кэш скачанных файлов — разные вещи. Модель можно выгрузить из памяти, сохранив файлы в кэше, однако браузер может удалить их. Начните с одного потока и увеличивайте число параллельных потоков только после проверки устройства.",
+          "В примере с чайником исправьте фразу “hot kettle in kitchen”, если в ней пропущены приближение камеры и рука. Удалите “pouring tea”, если наливания нет. Запрошенное количество тегов не доказывает их точность: важна релевантность каждого слова."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "6. Экспортируйте данные с проверкой",
+        "paragraphs": [
+          "Перед экспортом проверьте для каждого файла заголовок, ключевые слова и категорию, если она нужна. CSV связывает имена файлов с метаданными, но не является отправкой работы на сток. В процессе Adobe CSV сначала загрузите сами материалы, затем убедитесь, что имя файла, расширение и регистр символов совпадают. После импорта осмотрите получившиеся поля в кабинете автора.",
+          "Не рассчитывайте, что одна схема CSV подойдет всем площадкам. У Envato и других сервисов могут быть собственные поля и ограничения. MetaStocker умеет экспортировать форматы для Adobe, Envato, Shutterstock и Freepik, но не загружает и не отправляет работы, не гарантирует принятие и не встраивает метаданные в исходное видео. Перед публикацией откройте актуальные требования нужной площадки."
+        ],
+        "bullets": [
+          "Сохраните исходный ролик без изменений и отдельную копию метаданных.",
+          "Проверьте совпадение имен и ограничения выбранной платформы.",
+          "После импорта осмотрите поля в кабинете и исправьте ошибки."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Посмотрите ролик полностью, затем сравните начало, середину и конец.",
+      "Отделяйте движение камеры от действия объекта.",
+      "Используйте только видимые факты, без догадок о личности и месте.",
+      "Поставьте главные понятия в начало заголовка и списка тегов.",
+      "Сверьте каждый ИИ-термин с полным видео.",
+      "Проверьте актуальные правила площадки перед экспортом.",
+      "Осмотрите метаданные после импорта в кабинете автора."
+    ],
+    "illustration": {
+      "title": "От просмотра движения к метаданным",
+      "steps": [
+        {
+          "label": "Проверьте три точки",
+          "detail": "Сравните начало, середину и конец после полного просмотра."
+        },
+        {
+          "label": "Разделите виды движения",
+          "detail": "Запишите отдельно камеру, действие руки и видимый пар."
+        },
+        {
+          "label": "Исправьте и проверьте",
+          "detail": "Одобрите точные термины, сопоставьте имена и осмотрите импорт."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "পুরো ক্লিপ দেখে স্টক ভিডিওর মেটাডেটা কীভাবে লিখবেন",
+    "description": "শুরু, মাঝ ও শেষ দেখে স্টক ভিডিওর ক্যামেরা-চলন ও বিষয়ের ক্রিয়া বর্ণনার ব্যবহারিক কর্মপ্রবাহ।",
+    "intro": "স্টক ভিডিও কেবল তার শুরুর ফ্রেমের চেয়ে বেশি কিছু। প্রিভিউতে একটি কেটলি ও একটি হাত দেখা যেতে পারে, কিন্তু কার্যকর মেটাডেটা নির্ভর করে শট চলাকালে কী বদলায় তার ওপর: ক্যামেরা সামনে এগোতে পারে, বাষ্প উঠতে পারে, আর একটি হাত ফ্রেমে ঢুকে বস্তুর সঙ্গে ক্রিয়া করতে পারে। আপনি যদি শুধু প্রথমে দেখা বিষয়টি বর্ণনা করেন, তাহলে গতি-সম্পর্কিত ফুটেজ খোঁজা ক্রেতারা ক্লিপটি নাও পেতে পারেন। আবার কখনো না-ঘটা বিবরণ বানিয়ে দিলে মেটাডেটা বিভ্রান্তিকর হয়ে ওঠে। এই নির্দেশিকায় পুরো ক্লিপ দেখা, ক্যামেরার চলনকে বিষয়ের ক্রিয়া থেকে আলাদা করা এবং সেই পর্যবেক্ষণকে নির্ভুল শিরোনাম ও কীওয়ার্ডে রূপ দেওয়া দেখানো হয়েছে। উদাহরণটি কাল্পনিক এবং এই নির্দেশিকার জন্য তৈরি; এটি পরিমাপ করা ফল বা প্রকৃত গ্রাহক-ফাইল নয়।",
+    "sections": [
+      {
+        "heading": "১. ক্লিপে আসলে কী দেখা যাচ্ছে তা নির্ধারণ করুন",
+        "paragraphs": [
+          "কীওয়ার্ড না লিখে একবার ভিডিওটি দেখুন। পরিবেশ, প্রধান বস্তু, দৃশ্যমান মানুষের ক্রিয়া, আলো এবং স্পষ্টভাবে পর্যবেক্ষণযোগ্য ফলাফল নোট করুন। মালিকানা, পরিচয়, অবস্থান, ব্যক্তিগত বৈশিষ্ট্য বা ফ্রেমের বাইরের কোনো বিষয় অনুমান করা এড়িয়ে চলুন।",
+          "এরপর তিনটি পর্যায়ে আবার দেখুন: শুরু, মাঝ এবং শেষ। এই পর্যায়গুলো পূর্ণ পর্যালোচনার বিকল্প নয়; এগুলো একটি সহজ পদ্ধতি, যা শুরুর ফ্রেমের বর্ণনাকে পুরো মেটাডেটা-সেট নিয়ন্ত্রণ করা থেকে আটকায়।"
+        ],
+        "bullets": [
+          "শুরু: প্রাথমিক কম্পোজিশন ও ক্যামেরার অবস্থা নথিবদ্ধ করুন।",
+          "মাঝ: কী প্রবেশ করছে, নড়ছে বা বদলাচ্ছে তা নথিবদ্ধ করুন।",
+          "শেষ: শেষ অবস্থান এবং ক্রিয়াটি সম্পূর্ণ হয়েছে কি না নথিবদ্ধ করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "২. ক্যামেরার চলনকে বিষয়ের ক্রিয়া থেকে আলাদা করুন",
+        "paragraphs": [
+          "ক্যামেরা কী করছে এবং তার সামনে কী দেখা যাচ্ছে—দুটির জন্য আলাদা শব্দ ব্যবহার করুন। সামনে এগিয়ে আসা বা পুশ-ইন ক্যামেরার দৃষ্টিকোণ বদলানোর বর্ণনা দেয়। একটি হাত ফ্রেমে ঢোকা বিষয়ের ক্রিয়া। বাষ্প ওঠা দৃশ্যমান পরিবেশগত গতি। এগুলো সবই একটি নির্ভুল বর্ণনার অংশ হতে পারে, কিন্তু “dynamic”-এর মতো অস্পষ্ট একটি শব্দে সবকিছুকে মিশিয়ে ফেলা উচিত নয়।",
+          "প্রযুক্তিগত লেবেল ব্যবহারে সতর্ক থাকুন। ক্যামেরা যদি স্পষ্টভাবে কেটলির দিকে এগোয়, “slow push-in” উপযুক্ত হতে পারে। কিন্তু কেটলিটিকে শুধু বড় হতে দেখেন এবং ক্যামেরা নড়েছে নাকি লেন্স বদলেছে তা বোঝা না গেলে, “the kettle fills more of the frame”-এর মতো নিরাপদ বাক্যাংশ ব্যবহার করুন।"
+        ],
+        "bullets": [
+          "ক্যামেরা: পুশ-ইন, প্যান, টিল্ট, ট্র্যাকিং বা স্থির—শুধু দৃশ্যমান হলে।",
+          "বিষয়: হাত ঢোকে, বাড়ায়, স্পর্শ করে, তোলে বা ঢালে—শুধু দেখানো হলে।",
+          "পরিবেশ: বাষ্প ওঠে বা ভেসে যায়—শুধু সেই গতি দৃশ্যমান হলে।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৩. কাজের উদাহরণ: কেটলির শট",
+        "paragraphs": [
+          "উদাহরণ: ১২ সেকেন্ডের বিজ্ঞাপনধর্মী একটি ক্লিপ কল্পনা করুন। শুরুতে একটি ধাতব কেটলি কাউন্টারটপের ওপর বাষ্প ছাড়ছে। ১ থেকে ৭ সেকেন্ড পর্যন্ত ক্যামেরা ধীরে ধীরে সেটির দিকে এগোয়। মাঝামাঝি সময়ে ডান দিক থেকে একটি হাত ফ্রেমে ঢুকে হাতল ধরার জন্য বাড়ে। শেষে হাতটি হাতল ধরে থাকে, আর বাষ্প দৃশ্যমান থাকে। ক্লিপে কোনো ব্যক্তির মুখ, নিশ্চিত রান্নাঘরের অবস্থান বা কেটলি তোলার দৃশ্য দেখা যায় না।",
+          "একটি কার্যকর শিরোনাম প্রধান অনুসন্ধানযোগ্য ধারণা দিয়ে শুরু হয় এবং তাৎপর্যপূর্ণ গতি অন্তর্ভুক্ত করে: “Close-Up Push-In Toward Steaming Kettle as Hand Reaches for Handle.” এটি বিচ্ছিন্ন ট্যাগের তালিকা না হয়ে বর্ণনামূলক। প্ল্যাটফর্মের বর্তমান শিরোনাম-সীমা তা প্রয়োজন করলে আরও ছোট বিকল্প ভালো হতে পারে।",
+          "প্রাসঙ্গিকতা যাচাই করা সম্ভাব্য English keywords হলো: kettle, steaming kettle, steam, kitchen appliance, close up, push in, camera movement, hand, reaching, handle, countertop। ফোটানো সত্যিই দৃশ্যমান না হলে “boiling” যোগ করবেন না; এবং ক্লিপে সমর্থন না থাকলে “barista,” “tea” বা “coffee” যোগ করবেন না।"
+        ],
+        "bullets": [],
+        "example": "Title: Close-Up Push-In Toward Steaming Kettle as Hand Reaches for Handle\nKeywords: kettle, steaming kettle, steam, kitchen appliance, close up, push in, camera movement, hand, reaching, handle, countertop"
+      },
+      {
+        "heading": "৪. শিরোনাম ও কীওয়ার্ডের ক্রম তৈরি করুন",
+        "paragraphs": [
+          "সবচেয়ে শক্তিশালী ধারণাগুলো আগে রাখুন: প্রধান বস্তু, দৃশ্যমান ক্রিয়া এবং গুরুত্বপূর্ণ ক্যামেরা-চলন। যেসব প্ল্যাটফর্ম শুরুর শব্দকে বেশি গুরুত্ব দেয়, সেখানে প্রথম দশটি কীওয়ার্ড বিশেষ মনোযোগের দাবি রাখে। এগুলো ক্লিপের মূল বিষয়বস্তু বর্ণনা করবে, কেউ কীভাবে এটি ব্যবহার করতে পারে সে-সম্পর্কিত বিস্তৃত আশা নয়।",
+          "মেটাডেটা এই ফাইলটির জন্য নির্দিষ্ট রাখুন। প্রায় একই অর্থের শব্দ বারবার লিখলে অর্থ না বাড়িয়ে স্থান নষ্ট হয়। শিরোনাম স্বাভাবিক বর্ণনার মতো পড়া উচিত; আর ফুটেজকে সঠিকভাবে বর্ণনা করলে কীওয়ার্ডে “camera movement” বা “steaming kettle”-এর মতো প্রচলিত বাক্যাংশ রাখা যায়।",
+          "প্ল্যাটফর্মভেদে নিয়ম আলাদা। উদাহরণস্বরূপ, Adobe Stock-এর সাধারণ কীওয়ার্ড নির্দেশিকায় সর্বোচ্চ ৪৯টি কীওয়ার্ড অনুমোদিত, আর Shutterstock-এ ৭ থেকে ৫০টি প্রাসঙ্গিক কীওয়ার্ড এবং অন্তত একটি বিভাগ প্রয়োজন। রপ্তানি বা জমা দেওয়ার আগে বর্তমান কনট্রিবিউটর পোর্টাল দেখুন, কারণ নীতি ও ফিল্ডের প্রয়োজনীয়তা বদলাতে পারে।"
+        ],
+        "bullets": [
+          "বস্তু ও পর্যবেক্ষণযোগ্য ক্রিয়া দিয়ে শুরু করুন।",
+          "সবচেয়ে গুরুত্বপূর্ণ শব্দগুলোর জন্য শুরুর কীওয়ার্ড অবস্থান রাখুন।",
+          "অনুমান, সাধারণ ফাঁকা শব্দ এবং পুনরাবৃত্ত রূপ বাদ দিন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৫. স্থানীয়ভাবে AI-সহায়িত মেটাডেটা পর্যালোচনা করুন",
+        "paragraphs": [
+          "MetaStocker-এর স্থানীয় মোড ডাউনলোড করা ভিশন মডেল ব্যবহার করে ব্রাউজারে খসড়া মেটাডেটা তৈরি করতে পারে, কিন্তু ভিডিও বিশ্লেষণ নমুনাভিত্তিক প্রিভিউয়ের ওপর নির্ভর করে। নমুনাভিত্তিক প্রিভিউতে হাতের প্রবেশ বাদ পড়তে পারে বা চলনের দিক ভুল পড়তে পারে। ফলাফলকে প্রাথমিক খসড়া হিসেবে নিন, তারপর প্রতিটি গুরুত্বপূর্ণ শব্দ পুরো ক্লিপের সঙ্গে মিলিয়ে দেখুন।",
+          "স্থানীয় মডেলটি WebGPU workers-এর মাধ্যমে দর্শকের ডিভাইসে চলে; প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট প্রয়োজন। মডেলকে মেমরিতে লোড করা এবং ডাউনলোড করা ফাইল ব্রাউজার ক্যাশে রেখে দেওয়া এক বিষয় নয়। ক্যাশে থাকা ফাইল বজায় রেখেও মেমরি থেকে মডেল আনলোড করা যায়, তবে ব্রাউজারের স্টোরেজ সরিয়ে দেওয়া হতে পারে। একটি স্থানীয় থ্রেড দিয়ে শুরু করুন, এবং ডিভাইস নির্ভরযোগ্যভাবে সামলাতে পারলে তবেই অতিরিক্ত সমান্তরাল থ্রেড পরীক্ষা করুন।",
+          "কেটলির উদাহরণে, “hot kettle in kitchen”-এর মতো তৈরি বাক্যাংশে পুশ-ইন ও বাড়িয়ে আসা হাতের উল্লেখ না থাকলে তা সম্পাদনা করুন। বিপরীতে, ঢালা না হলে “pouring tea” মুছে দিন। লক্ষ্য হলো চাওয়া সংখ্যক ট্যাগ হুবহু গ্রহণ করা নয়; শুধু প্রাসঙ্গিক শব্দ অনুমোদন করা।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "৬. প্রতিটি মার্কেটপ্লেসের জন্য সতর্কভাবে রপ্তানি করুন",
+        "paragraphs": [
+          "রপ্তানির আগে প্রতিটি ফাইলের সম্পাদনাযোগ্য শিরোনাম, কীওয়ার্ড এবং যেকোনো বিভাগ-ফিল্ড পরীক্ষা করুন। CSV হলো ফাইলনাম ও মেটাডেটার মধ্যকার একটি ম্যাপিং; এটি জমা নয়। Adobe-এর CSV কর্মপ্রবাহ ব্যবহার করলে আগে অ্যাসেট আপলোড করুন এবং ফাইলনাম, এক্সটেনশন ও বড়-ছোট হাতের অক্ষর হুবহু মেলে কি না নিশ্চিত করুন। এরপর কনট্রিবিউটর পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।",
+          "একটি CSV ফরম্যাট সব মার্কেটপ্লেসে কাজ করবে ধরে নেবেন না। Envato ও অন্যান্য প্ল্যাটফর্মে আলাদা ফিল্ড বা সীমা থাকতে পারে। MetaStocker Adobe, Envato, Shutterstock এবং Freepik-এর জন্য ফরম্যাট রপ্তানি করতে পারে, কিন্তু রপ্তানিকারক ফাইল আপলোড, জমা, গ্রহণের নিশ্চয়তা বা মূল ভিডিওতে মেটাডেটা এম্বেড করে না। চূড়ান্ত জমা দেওয়ার আগে বর্তমান কনট্রিবিউটর-প্রয়োজনীয়তা পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "মূল ভিডিও অপরিবর্তিত রাখুন এবং সম্পাদনাযোগ্য মেটাডেটার একটি কপি সংরক্ষণ করুন।",
+          "ফাইলনাম মিল এবং প্ল্যাটফর্ম-নির্দিষ্ট সীমা যাচাই করুন।",
+          "আমদানির পর পোর্টাল পরীক্ষা করুন এবং সরে যাওয়া কোনো ফিল্ড ঠিক করুন।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "সম্পূর্ণ ক্লিপ দেখুন, তারপর শুরু, মাঝ ও শেষ তুলনা করুন।",
+      "ক্যামেরার চলনকে বিষয়ের ক্রিয়া থেকে আলাদা করে বর্ণনা করুন।",
+      "শুধু দৃশ্যমান তথ্য ব্যবহার করুন; পরিচয়, অবস্থান বা উদ্দেশ্য অনুমান করবেন না।",
+      "শিরোনাম ও কীওয়ার্ড তালিকার শুরুতে সবচেয়ে শক্তিশালী ধারণাগুলো রাখুন।",
+      "প্রতিটি AI-তৈরি শব্দ পুরো ভিডিওর সঙ্গে মিলিয়ে দেখুন।",
+      "রপ্তানি বা জমা দেওয়ার আগে বর্তমান মার্কেটপ্লেসের নিয়ম পরীক্ষা করুন।",
+      "কনট্রিবিউটর পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "চলন পর্যালোচনা থেকে মার্কেটপ্লেস মেটাডেটা",
+      "steps": [
+        {
+          "label": "তিনটি পর্যায় দেখুন",
+          "detail": "পুরো ক্লিপ দেখার পর শুরু, মাঝ ও শেষ তুলনা করুন।"
+        },
+        {
+          "label": "চলনের ধরন আলাদা করুন",
+          "detail": "ক্যামেরার চলন, বিষয়ের ক্রিয়া ও দৃশ্যমান বাষ্প আলাদাভাবে নথিবদ্ধ করুন।"
+        },
+        {
+          "label": "সম্পাদনা ও যাচাই করুন",
+          "detail": "প্রাসঙ্গিক শব্দ অনুমোদন করুন, ফাইলনাম মিলিয়ে নিন, তারপর পোর্টাল পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "पूरे क्लिप से स्टॉक वीडियो का मेटाडेटा कैसे लिखें",
+    "description": "शुरुआत, मध्य और अंत देखकर स्टॉक वीडियो में कैमरा-गत‍ि और विषय की क्रिया बताने का व्यावहारिक कार्यप्रवाह।",
+    "intro": "स्टॉक वीडियो केवल अपने शुरुआती फ़्रेम से अधिक होता है। प्रीव्यू में केतली और हाथ दिखाई दे सकते हैं, लेकिन उपयोगी मेटाडेटा इस बात पर निर्भर करता है कि शॉट के दौरान क्या बदलता है: कैमरा आगे बढ़ सकता है, भाप उठ सकती है और एक हाथ फ़्रेम में आकर वस्तु के साथ क्रिया कर सकता है। यदि आप केवल पहले दिखाई देने वाले विषय का वर्णन करते हैं, तो गति-संबंधी फुटेज खोजने वाले खरीदार क्लिप को चूक सकते हैं। यदि आप कभी न होने वाले विवरण गढ़ते हैं, तो मेटाडेटा भ्रामक हो जाता है। यह मार्गदर्शिका पूरे क्लिप को देखने, कैमरा-गत‍ि को विषय की क्रिया से अलग करने और इन अवलोकनों को सटीक शीर्षकों व कीवर्ड में बदलने का तरीका दिखाती है। यह उदाहरण काल्पनिक है और इसी मार्गदर्शिका के लिए बनाया गया है; यह मापा हुआ परिणाम या वास्तविक ग्राहक फ़ाइल नहीं है।",
+    "sections": [
+      {
+        "heading": "१. तय करें कि क्लिप में वास्तव में क्या दिखता है",
+        "paragraphs": [
+          "कीवर्ड लिखे बिना वीडियो को एक बार देखें। परिवेश, मुख्य वस्तु, दिखाई देने वाली मानवीय क्रिया, रोशनी और स्पष्ट रूप से दिखाई देने वाले परिणाम को नोट करें। स्वामित्व, पहचान, स्थान, व्यक्तिगत विशेषताओं या फ़्रेम से बाहर की किसी भी बात का अनुमान लगाने से बचें।",
+          "फिर इसे तीन जाँच-बिंदुओं पर दोबारा देखें: शुरुआत, मध्य और अंत। ये जाँच-बिंदु पूरे निरीक्षण का विकल्प नहीं हैं; वे यह रोकने का सरल तरीका हैं कि शुरुआती फ़्रेम का वर्णन पूरे मेटाडेटा-समूह को नियंत्रित न करे।"
+        ],
+        "bullets": [
+          "शुरुआत: शुरुआती संयोजन और कैमरे की स्थिति दर्ज करें।",
+          "मध्य: क्या प्रवेश करता है, हिलता है या बदलता है, दर्ज करें।",
+          "अंत: अंतिम स्थिति और क्रिया पूरी होती है या नहीं, दर्ज करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "२. कैमरा-गत‍ि को विषय की क्रिया से अलग करें",
+        "paragraphs": [
+          "कैमरा क्या करता है और उसके सामने क्या दिखाई देता है, इनके लिए अलग शब्द इस्तेमाल करें। आगे बढ़ना या पुश-इन दृष्टिकोण के बदलने का वर्णन करता है। फ़्रेम में हाथ का प्रवेश विषय की क्रिया है। भाप का उठना दिखाई देने वाली परिवेशीय गति है। ये सभी एक सटीक वर्णन में शामिल हो सकते हैं, लेकिन इन्हें “dynamic” जैसे अस्पष्ट शब्द में समेटना नहीं चाहिए।",
+          "तकनीकी लेबल के साथ सावधान रहें। यदि कैमरा स्पष्ट रूप से केतली की ओर बढ़ता है, तो “slow push-in” उपयुक्त हो सकता है। यदि आपको केवल केतली बड़ी होती दिखाई देती है और यह पता नहीं चलता कि कैमरा हिला या लेंस बदला, तो “the kettle fills more of the frame” जैसे सुरक्षित वाक्यांश का उपयोग करें।"
+        ],
+        "bullets": [
+          "कैमरा: पुश-इन, पैन, टिल्ट, ट्रैकिंग या स्थिर—केवल तभी जब दिखाई दे।",
+          "विषय: हाथ प्रवेश करता है, बढ़ता है, छूता है, उठाता है या उँडेलता है—केवल तभी जब दिखाया गया हो।",
+          "परिवेश: भाप उठती या बहती है—केवल तभी जब वह गति दिखाई दे।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "३. काम का उदाहरण: केतली वाला शॉट",
+        "paragraphs": [
+          "उदाहरण: १२ सेकंड की विज्ञापन-शैली वाली क्लिप की कल्पना करें। शुरुआत में काउंटरटॉप पर धातु की केतली से भाप निकल रही है। १ से ७ सेकंड तक कैमरा धीरे-धीरे उसकी ओर बढ़ता है। लगभग मध्य में दाईं ओर से एक हाथ फ़्रेम में आता है और हैंडल की ओर बढ़ता है। अंत तक हाथ हैंडल पकड़े रहता है और भाप दिखाई देती रहती है। क्लिप में किसी व्यक्ति का चेहरा, रसोई का पुष्ट स्थान या केतली उठाए जाने का दृश्य नहीं दिखता।",
+          "एक उपयोगी शीर्षक मुख्य खोज योग्य अवधारणा से शुरू होता है और महत्वपूर्ण गति शामिल करता है: “Close-Up Push-In Toward Steaming Kettle as Hand Reaches for Handle.” यह अलग-अलग टैग की सूची के बजाय वर्णनात्मक है। यदि प्लेटफ़ॉर्म की वर्तमान शीर्षक-सीमा इसकी माँग करे, तो छोटा विकल्प बेहतर हो सकता है।",
+          "प्रासंगिकता की जाँच किए गए संभावित English keywords हैं: kettle, steaming kettle, steam, kitchen appliance, close up, push in, camera movement, hand, reaching, handle, countertop। जब तक उबलना वास्तव में दिखाई न दे, “boiling” न जोड़ें; और जब तक क्लिप उनका समर्थन न करे, “barista,” “tea” या “coffee” न जोड़ें।"
+        ],
+        "bullets": [],
+        "example": "Title: Close-Up Push-In Toward Steaming Kettle as Hand Reaches for Handle\nKeywords: kettle, steaming kettle, steam, kitchen appliance, close up, push in, camera movement, hand, reaching, handle, countertop"
+      },
+      {
+        "heading": "४. शीर्षक और कीवर्ड का क्रम बनाएँ",
+        "paragraphs": [
+          "सबसे मजबूत अवधारणाओं को पहले रखें: मुख्य वस्तु, दिखाई देने वाली क्रिया और महत्वपूर्ण कैमरा-गत‍ि। जिन प्लेटफ़ॉर्म पर शुरुआती शब्दों को प्राथमिकता मिलती है, वहाँ पहले दस कीवर्ड पर विशेष ध्यान दें। उन्हें क्लिप की मूल सामग्री बतानी चाहिए, न कि इस बारे में व्यापक उम्मीदें कि कोई इसका उपयोग कैसे कर सकता है।",
+          "मेटाडेटा को इसी फ़ाइल के लिए विशिष्ट रखें। लगभग समान शब्द दोहराने से अर्थ बढ़े बिना जगह खर्च होती है। शीर्षक स्वाभाविक वर्णन जैसा पढ़ा जाना चाहिए, जबकि फुटेज का सटीक वर्णन होने पर कीवर्ड में “camera movement” या “steaming kettle” जैसे स्थापित वाक्यांश शामिल किए जा सकते हैं।",
+          "प्लेटफ़ॉर्म के नियम अलग-अलग होते हैं। उदाहरण के लिए, Adobe Stock की सामान्य कीवर्ड मार्गदर्शिका अधिकतम ४९ कीवर्ड की अनुमति देती है, जबकि Shutterstock में ७ से ५० प्रासंगिक कीवर्ड और कम-से-कम एक श्रेणी आवश्यक है। निर्यात या जमा करने से पहले वर्तमान योगदानकर्ता पोर्टल जाँचें, क्योंकि नीतियाँ और फ़ील्ड की आवश्यकताएँ बदल सकती हैं।"
+        ],
+        "bullets": [
+          "वस्तु और दिखाई देने वाली क्रिया से शुरुआत करें।",
+          "सबसे महत्वपूर्ण शब्दों के लिए शुरुआती कीवर्ड स्थान रखें।",
+          "अनुमान, सामान्य भराव और दोहराए गए रूप हटाएँ।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "५. AI-सहायित मेटाडेटा की स्थानीय समीक्षा करें",
+        "paragraphs": [
+          "MetaStocker का स्थानीय मोड डाउनलोड किए गए विज़न मॉडल की मदद से ब्राउज़र में प्रारंभिक मेटाडेटा बना सकता है, लेकिन वीडियो विश्लेषण नमूना-आधारित प्रीव्यू पर निर्भर करता है। ऐसा प्रीव्यू फ़्रेम में प्रवेश करते हाथ को छोड़ सकता है या गति की दिशा गलत पढ़ सकता है। परिणाम को शुरुआती मसौदा मानें, फिर हर महत्वपूर्ण शब्द की तुलना पूरे क्लिप से करें।",
+          "स्थानीय मॉडल WebGPU workers के माध्यम से दर्शक के डिवाइस पर चलता है; पहले मॉडल को डाउनलोड करने के लिए इंटरनेट चाहिए। मॉडल को मेमोरी में लोड करना और डाउनलोड की गई फ़ाइलों को ब्राउज़र कैश में रखना अलग बातें हैं। कैश की फ़ाइलें रखते हुए मॉडल को मेमोरी से हटाया जा सकता है, लेकिन ब्राउज़र स्टोरेज हटाया जा सकता है। एक स्थानीय थ्रेड से शुरू करें और अतिरिक्त समानांतर थ्रेड तभी आज़माएँ जब डिवाइस उन्हें विश्वसनीय ढंग से संभाल सके।",
+          "केतली वाले उदाहरण में, यदि “hot kettle in kitchen” जैसे बनाए गए वाक्यांश में पुश-इन और बढ़ता हुआ हाथ छूट गया हो, तो उसे संपादित करें। इसके विपरीत, यदि कुछ उँडेला नहीं जाता, तो “pouring tea” हटा दें। लक्ष्य माँगी गई टैग-संख्या को ज्यों का त्यों स्वीकार करना नहीं, बल्कि केवल प्रासंगिक शब्दों को मंज़ूर करना है।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "६. हर मार्केटप्लेस के लिए सावधानी से निर्यात करें",
+        "paragraphs": [
+          "निर्यात से पहले हर फ़ाइल के संपादन योग्य शीर्षक, कीवर्ड और किसी भी श्रेणी-फ़ील्ड की जाँच करें। CSV फ़ाइलनाम और मेटाडेटा के बीच एक मैपिंग है; यह जमा करना नहीं है। Adobe की CSV कार्यप्रणाली इस्तेमाल करते समय पहले एसेट अपलोड करें और सुनिश्चित करें कि फ़ाइलनाम, एक्सटेंशन और अक्षरों का बड़ा-छोटा रूप बिल्कुल मेल खाता हो। फिर योगदानकर्ता पोर्टल में आयात किए गए मेटाडेटा की जाँच करें।",
+          "यह न मानें कि एक CSV प्रारूप हर मार्केटप्लेस पर चलेगा। Envato और अन्य प्लेटफ़ॉर्म अलग फ़ील्ड या सीमाएँ इस्तेमाल कर सकते हैं। MetaStocker Adobe, Envato, Shutterstock और Freepik के लिए प्रारूप निर्यात कर सकता है, लेकिन निर्यातक फ़ाइलें अपलोड या जमा नहीं करता, स्वीकृति की गारंटी नहीं देता और मूल वीडियो में मेटाडेटा एम्बेड नहीं करता। अंतिम जमा करने से पहले वर्तमान योगदानकर्ता आवश्यकताओं की जाँच करें।"
+        ],
+        "bullets": [
+          "मूल वीडियो को अपरिवर्तित रखें और संपादन योग्य मेटाडेटा की एक प्रति सुरक्षित रखें।",
+          "फ़ाइलनाम मिलान और प्लेटफ़ॉर्म-विशिष्ट सीमाओं की जाँच करें।",
+          "आयात के बाद पोर्टल देखें और खिसके हुए फ़ील्ड ठीक करें।"
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "पूरा क्लिप देखें, फिर शुरुआत, मध्य और अंत की तुलना करें।",
+      "कैमरा-गत‍ि को विषय की क्रिया से अलग करके लिखें।",
+      "केवल दिखाई देने वाले तथ्यों का उपयोग करें; पहचान, स्थान या इरादे का अनुमान न लगाएँ।",
+      "शीर्षक और कीवर्ड सूची में मजबूत अवधारणाएँ शुरुआत में रखें।",
+      "AI से बने हर शब्द की पूरे वीडियो से तुलना करें।",
+      "निर्यात या जमा करने से पहले वर्तमान मार्केटप्लेस नियम जाँचें।",
+      "योगदानकर्ता पोर्टल में आयात किए गए मेटाडेटा का निरीक्षण करें।"
+    ],
+    "illustration": {
+      "title": "गति की समीक्षा से मार्केटप्लेस मेटाडेटा तक",
+      "steps": [
+        {
+          "label": "तीन जाँच-बिंदु देखें",
+          "detail": "पूरे क्लिप को देखने के बाद शुरुआत, मध्य और अंत की तुलना करें।"
+        },
+        {
+          "label": "गति के प्रकार अलग करें",
+          "detail": "कैमरा-गत‍ि, विषय की क्रिया और दिखाई देने वाली भाप अलग-अलग दर्ज करें।"
+        },
+        {
+          "label": "संपादित और सत्यापित करें",
+          "detail": "प्रासंगिक शब्द मंज़ूर करें, फ़ाइलनाम मिलाएँ, फिर पोर्टल देखें।"
+        }
+      ]
+    }
+  }
+}

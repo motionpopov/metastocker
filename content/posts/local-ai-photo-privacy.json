@@ -1,0 +1,439 @@
+{
+  "slug": "local-ai-photo-privacy",
+  "category": "local-ai",
+  "source_ids": [
+    "metastocker",
+    "webgpu",
+    "browser-cache"
+  ],
+  "en": {
+    "title": "What Stays Local When MetaStocker Keywords Photos in Your Browser",
+    "description": "Understand what local browser AI keeps on your device, what model downloads and analytics reveal, and when the optional OpenAI path sends data.",
+    "intro": "Browser-based AI can make metadata work feel private, but “local” does not mean that every network connection disappears. The important distinction is between photo inference, model delivery, browser storage, analytics, and optional cloud processing. MetaStocker’s local mode runs its supported vision and thinking models in WebGPU workers inside your browser. Your photos, prompts, and generated results remain on the device during that local workflow, while the model must first be downloaded from external hosts. This guide shows how to inspect that boundary and prepare a small, practical batch without making a misleading zero-network promise.",
+    "sections": [
+      {
+        "heading": "Start with the privacy map",
+        "paragraphs": [
+          "Think of the workflow as four separate paths. The image and its prompt go to a model running in your browser when you use local mode. The model files travel from external hosts during the initial download. The browser may retain model files in cache, which is storage rather than active model memory. Finally, minimal first-party aggregate analytics may leave the app without a permanent visitor ID.",
+          "The useful question is therefore not “Does the app use the internet?” but “Which data travels, when, and for what purpose?” Local mode does not use AI server inference and has no automatic cloud fallback. That makes the photo-processing path local, while leaving model delivery and limited service telemetry as separate network concerns."
+        ],
+        "bullets": [
+          "Local inference: the browser performs the model work on your device.",
+          "Model delivery: the first download needs internet and contacts external hosts.",
+          "Analytics: minimal aggregate product analytics may be sent without a permanent visitor ID.",
+          "Cloud option: the personal API mode sends previews and context to OpenAI."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Download is not the same as inference",
+        "paragraphs": [
+          "Choose Download and then Load deliberately. Downloading obtains the model files; loading places a model into active memory so the browser can use it. Unloading removes the active copy from memory while retaining cached browser files. Deleting browser model files is a separate action. These states answer different privacy and storage questions.",
+          "Cache behavior belongs to the browser, not to a permanent offline guarantee. Storage can be limited or evicted according to browser behavior. WebGPU also depends on a secure context, a compatible browser, GPU, and driver, and API support alone does not prove that the device has enough memory for a model."
+        ],
+        "bullets": [
+          "Use Gemma 4 E2B as the default starting model.",
+          "Begin with one local parallel thread; test two only if the device handles it comfortably.",
+          "Delete cached model files when you no longer want them stored in the browser."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "A worked private-batch example",
+        "paragraphs": [
+          "Example: you have six product photographs of handmade blue ceramic mugs and want English marketplace metadata. You do not want the original images sent to a cloud AI service. Open MetaStocker over a secure connection, select the local Gemma 4 E2B model, download it once, load it, and keep parallel threads at one. Then add the six images and enter a factual batch description: “Blue glazed ceramic mugs on a neutral tabletop; describe only visible objects, materials, colors, and arrangement.”",
+          "Review each result individually. Remove guesses about the maker, location, intended buyer, or production story. If one image shows a spoon, retain that term only for that file. Add a few relevant extra tags at file-specific positions rather than treating the batch description as a blanket tag list. The decision to use one thread favors predictable memory use over speculative speed; the decision to use a factual prompt limits unsupported context.",
+          "This is a hypothetical workflow, not a measured privacy test or performance result. The local inference path keeps the photos, prompt, and results on the device, but the model download still made a network request."
+        ],
+        "bullets": [],
+        "example": "Batch description: Blue glazed ceramic mugs on a neutral tabletop; describe only visible objects, materials, colors, and arrangement.\nPossible per-file metadata: blue mug, ceramic, glazed pottery, tabletop, drinkware"
+      },
+      {
+        "heading": "Know the optional cloud boundary",
+        "paragraphs": [
+          "MetaStocker also offers an optional paid OpenAI API mode using your own key. In that mode, previews and context are sent to OpenAI, so it is not equivalent to local inference. Treat the key as a secret: do not paste it into public code, publish it, or share it with collaborators casually. A personal key can authorize usage and should be handled accordingly.",
+          "Choose this path only when its tradeoff fits the batch. It may be useful when local hardware cannot load a model, but the privacy boundary changes immediately. Check the current provider terms and your organization’s rules before sending commercial, confidential, or unreleased imagery."
+        ],
+        "bullets": [
+          "Use local mode for the smallest data exposure in the documented workflow.",
+          "Use API mode only after deciding that sending previews and context is acceptable.",
+          "Never confuse a user-supplied key with safe public client-side key embedding."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Review metadata, not just privacy",
+        "paragraphs": [
+          "Local execution does not make generated metadata accurate automatically. Inspect every editable result and export only rows that are ready. Do not infer identities, ownership, releases, locations, or species from pixels. For video, sampled previews cannot represent every moment, so inspect the full motion yourself.",
+          "If you prepare marketplace files, keep the platform’s current rules in view. Adobe’s general guidance permits up to 49 keywords and emphasizes important terms early; its CSV guidance currently gives a 70-character title limit, but the contributor portal remains the final place to validate current requirements. Exporters create files; they do not upload or submit them, guarantee acceptance, or embed metadata into the originals."
+        ],
+        "bullets": [
+          "Match metadata language to the destination account or platform requirement.",
+          "Use descriptive, relevant terms rather than repeated or blanket tags.",
+          "Inspect exact filenames and resulting metadata in the contributor portal.",
+          "Keep original files separate from exported CSV metadata."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "A practical privacy routine",
+        "paragraphs": [
+          "Before a sensitive batch, identify the destination, choose local or API processing, and note what must leave the device. Download the model from a network you trust, then load it and process a small test set. Afterward, unload the model if you want to release active memory, or delete browser model files if you want to remove the cached download. Closing a tab is not a reliable preservation strategy for unfinished work, so export ready results during the session.",
+          "For a public network diagram, describe the boundary precisely: browser-local image inference; external model download; limited aggregate analytics; optional OpenAI transfer. That wording is more useful than promising “no network,” because it tells contributors what to protect and what to inspect."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Choose local mode or the optional API path before adding sensitive files.",
+      "Remember that model download contacts external hosts even when inference is local.",
+      "Use Download, Load, Unload, and Delete as distinct storage and memory controls.",
+      "Start with one local thread and review results file by file.",
+      "Remove unsupported guesses about people, places, ownership, releases, and species.",
+      "Inspect full video and validate current marketplace requirements before export.",
+      "Treat API keys as secrets and never publish them.",
+      "Export ready rows during the session; the app does not upload or embed metadata."
+    ],
+    "illustration": {
+      "title": "From photo to reviewed local metadata",
+      "steps": [
+        {
+          "label": "Map the data paths",
+          "detail": "Separate local inference, model download, analytics, and API transfer."
+        },
+        {
+          "label": "Run one local batch",
+          "detail": "Load Gemma E2B, use factual context, and inspect each file."
+        },
+        {
+          "label": "Review and export",
+          "detail": "Remove guesses, validate metadata, and export only ready rows."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Что остается локальным при разметке фото в MetaStocker",
+    "description": "Разберитесь, какие данные остаются на устройстве при локальном AI в браузере, что загружается извне и когда работает путь через OpenAI API.",
+    "intro": "Браузерный AI может сделать подготовку метаданных более приватной, но слово «локальный» не означает полное отсутствие сетевых соединений. Важно разделять обработку фотографии, загрузку модели, кэш браузера, агрегированную аналитику и необязательную облачную обработку. В локальном режиме MetaStocker поддерживаемые модели работают в WebGPU-воркерах внутри браузера. Фотографии, промпты и результаты остаются на устройстве в рамках этого процесса, однако саму модель сначала нужно загрузить с внешних узлов. Ниже приведен практический способ проверить границы приватности и подготовить небольшую партию без обещаний «нулевой сети».",
+    "sections": [
+      {
+        "heading": "Сначала составьте карту приватности",
+        "paragraphs": [
+          "У процесса есть четыре отдельные линии. При локальном режиме изображение и его описание передаются модели, которая работает в вашем браузере. Файлы модели приходят с внешних узлов во время первой загрузки. Браузер может сохранить эти файлы в кэше; это хранилище, а не активная память модели. Кроме того, приложению разрешена минимальная агрегированная аналитика без постоянного идентификатора посетителя.",
+          "Поэтому полезнее спрашивать не «Приложение использует интернет?», а «Какие данные, когда и зачем покидают устройство?» В локальном режиме нет AI-инференса на сервере и автоматического перехода в облако. Путь обработки фотографии остается локальным, но доставка модели и ограниченная телеметрия являются отдельными сетевыми действиями."
+        ],
+        "bullets": [
+          "Локальный инференс: браузер выполняет обработку на вашем устройстве.",
+          "Доставка модели: первая загрузка требует интернета и обращается к внешним узлам.",
+          "Аналитика: минимальные агрегированные данные могут отправляться без постоянного ID.",
+          "Облачный вариант: личный API-режим отправляет превью и контекст в OpenAI."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Загрузка модели не равна ее работе",
+        "paragraphs": [
+          "Используйте Download и Load как разные действия. Download получает файлы модели, а Load помещает модель в активную память для работы браузера. Unload удаляет активную копию из памяти, сохраняя кэшированные файлы. Delete browser model files — отдельное действие, удаляющее файлы модели из браузерного хранилища.",
+          "Кэш зависит от поведения браузера и не дает гарантии постоянного хранения или полноценной офлайн-работы. WebGPU также требует защищенного контекста, совместимых браузера, GPU и драйвера. Поддержка API сама по себе не доказывает, что устройству хватит памяти для конкретной модели."
+        ],
+        "bullets": [
+          "Начните с Gemma 4 E2B, установленной по умолчанию.",
+          "Сначала используйте один локальный поток; два проверяйте только после пробного запуска.",
+          "Удалите файлы модели из кэша, если больше не хотите хранить их в браузере."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Практический пример локальной партии",
+        "paragraphs": [
+          "Пример: у вас есть шесть фотографий синих керамических кружек ручной работы, и нужны англоязычные метаданные для стоковой площадки. Вы не хотите отправлять оригиналы облачному AI-сервису. Откройте MetaStocker через защищенное соединение, выберите локальную Gemma 4 E2B, выполните Download, затем Load и оставьте один параллельный поток. Добавьте шесть изображений и укажите только фактический контекст: «Blue glazed ceramic mugs on a neutral tabletop; describe only visible objects, materials, colors, and arrangement».",
+          "Проверьте каждый результат отдельно. Удалите догадки о мастере, месте, покупателе или истории производства. Если ложка видна только на одном кадре, оставьте этот термин лишь у соответствующего файла. Дополнительные теги добавляйте точечно, а описание партии не превращайте в общий список тегов. Один поток выбран ради более понятного расхода памяти, а фактический промпт — чтобы ограничить неподтвержденный контекст.",
+          "Это гипотетический сценарий, а не измерение приватности или производительности. Локальный инференс оставляет фото, промпт и результаты на устройстве, но загрузка модели все равно создает сетевой запрос."
+        ],
+        "bullets": [],
+        "example": "Описание партии: Blue glazed ceramic mugs on a neutral tabletop; describe only visible objects, materials, colors, and arrangement.\nВозможные теги для одного файла: blue mug, ceramic, glazed pottery, tabletop, drinkware"
+      },
+      {
+        "heading": "Понимайте границу облачного режима",
+        "paragraphs": [
+          "MetaStocker также предлагает необязательный платный режим OpenAI API с вашим ключом. В этом режиме превью и контекст отправляются в OpenAI, поэтому он не равен локальному инференсу. Ключ нужно считать секретом: не публикуйте его в коде и не передавайте без необходимости коллегам. Личный ключ может разрешать расходование средств и требует соответствующего обращения.",
+          "Выбирайте этот путь только после оценки компромисса. Он может пригодиться, если локальное устройство не загружает модель, но граница приватности сразу меняется. Перед отправкой коммерческих, конфиденциальных или еще не опубликованных изображений проверьте актуальные условия провайдера и правила вашей организации."
+        ],
+        "bullets": [
+          "Для минимальной передачи данных выбирайте локальный режим.",
+          "API-режим используйте только после согласия отправлять превью и контекст.",
+          "Пользовательский ключ не делает безопасным встраивание ключей в публичный клиентский код."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Проверяйте метаданные, а не только приватность",
+        "paragraphs": [
+          "Локальная обработка не делает результат автоматически точным. Проверьте каждый редактируемый результат и экспортируйте только готовые строки. Не определяйте по пикселям личности, владельцев, наличие релизов, места или виды. Для видео превью выбираются из отдельных кадров, поэтому полное движение нужно просмотреть самостоятельно.",
+          "При подготовке файлов учитывайте актуальные правила конкретной площадки. В общей инструкции Adobe допускается до 49 ключевых слов, причем важные термины рекомендуется ставить в начале; текущая инструкция CSV указывает ограничение заголовка в 70 символов. Однако окончательно проверяйте требования в кабинете автора. Экспортер создает файлы, но не загружает и не отправляет их, не гарантирует приемку и не встраивает метаданные в оригиналы."
+        ],
+        "bullets": [
+          "Согласуйте язык метаданных с аккаунтом и требованиями площадки.",
+          "Используйте точные релевантные термины без повторов и общих тегов для всей партии.",
+          "Проверьте имена файлов и итоговые поля в кабинете автора.",
+          "Храните оригиналы отдельно от экспортированного CSV."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "Сделайте проверку приватности привычкой",
+        "paragraphs": [
+          "Перед чувствительной партией определите площадку, выберите локальный или API-путь и запишите, какие данные должны покинуть устройство. Скачайте модель через сеть, которой доверяете, загрузите ее и начните с небольшой проверки. После работы используйте Unload, если нужно освободить активную память, или удалите файлы модели, если хотите убрать кэшированную копию. Не рассчитывайте, что закрытие вкладки сохранит незавершенную работу: экспортируйте готовые результаты во время сеанса.",
+          "Для публичной схемы сети описывайте границу точно: локальный инференс изображения в браузере; внешняя загрузка модели; ограниченная агрегированная аналитика; необязательная передача в OpenAI. Такая формулировка полезнее обещания «без сети», потому что показывает, что именно нужно защищать и проверять."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "До добавления чувствительных файлов выберите локальный или API-режим.",
+      "Помните: загрузка модели обращается к внешним узлам даже при локальном инференсе.",
+      "Различайте Download, Load, Unload и Delete как действия с памятью и хранилищем.",
+      "Начинайте с одного локального потока и проверяйте файлы по отдельности.",
+      "Удаляйте догадки о людях, местах, владельцах, релизах и видах.",
+      "Просматривайте видео полностью и проверяйте актуальные правила площадки.",
+      "Считайте API-ключ секретом и не публикуйте его.",
+      "Экспортируйте готовые строки во время сеанса: приложение не загружает файлы и не встраивает метаданные."
+    ],
+    "illustration": {
+      "title": "От фотографии к проверенным локальным метаданным",
+      "steps": [
+        {
+          "label": "Разметьте пути данных",
+          "detail": "Разделите локальный инференс, загрузку модели, аналитику и API."
+        },
+        {
+          "label": "Запустите локальную партию",
+          "detail": "Загрузите Gemma E2B, задайте факты и проверьте каждый файл."
+        },
+        {
+          "label": "Проверьте и экспортируйте",
+          "detail": "Удалите догадки, сверяйте поля и экспортируйте готовые строки."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "মেটাস্টকার ব্রাউজারে ছবির কীওয়ার্ড করলে কোন তথ্য স্থানীয় থাকে",
+    "description": "স্থানীয় ব্রাউজার AI আপনার ডিভাইসে কী রাখে, মডেল ডাউনলোড ও অ্যানালিটিক্স কী প্রকাশ করে, এবং কখন ঐচ্ছিক OpenAI পথ তথ্য পাঠায় তা জানুন।",
+    "intro": "ব্রাউজারভিত্তিক AI মেটাডেটার কাজকে ব্যক্তিগত মনে করাতে পারে, কিন্তু “স্থানীয়” মানেই প্রতিটি নেটওয়ার্ক সংযোগ অদৃশ্য হয়ে যায় না। ছবির বিশ্লেষণ, মডেল সরবরাহ, ব্রাউজার স্টোরেজ, অ্যানালিটিক্স এবং ঐচ্ছিক ক্লাউড প্রক্রিয়াকরণের পার্থক্য বোঝা জরুরি। মেটাস্টকারের স্থানীয় মোডে সমর্থিত ভিশন ও চিন্তন মডেল আপনার ব্রাউজারের ভেতরের WebGPU কর্মীতে চলে। এই স্থানীয় কর্মপ্রবাহে আপনার ছবি, প্রম্পট ও তৈরি ফলাফল ডিভাইসেই থাকে, তবে মডেলটি প্রথমে বাহ্যিক হোস্ট থেকে ডাউনলোড করতে হয়। এই নির্দেশিকায় দেখানো হয়েছে কীভাবে সেই সীমা যাচাই করবেন এবং বিভ্রান্তিকর “শূন্য-নেটওয়ার্ক” প্রতিশ্রুতি না দিয়ে ছোট, ব্যবহারিক ব্যাচ প্রস্তুত করবেন।",
+    "sections": [
+      {
+        "heading": "গোপনীয়তার মানচিত্র দিয়ে শুরু করুন",
+        "paragraphs": [
+          "কর্মপ্রবাহটিকে চারটি আলাদা পথে ভাবুন। স্থানীয় মোড ব্যবহার করলে ছবি ও তার প্রম্পট আপনার ব্রাউজারে চলা একটি মডেলের কাছে যায়। প্রাথমিক ডাউনলোডের সময় মডেল ফাইল বাহ্যিক হোস্ট থেকে আসে। ব্রাউজার মডেল ফাইল ক্যাশে রাখতে পারে, যা স্টোরেজ—সক্রিয় মডেল মেমোরি নয়। শেষে, স্থায়ী ভিজিটর আইডি ছাড়াই সীমিত প্রথম-পক্ষের সমষ্টিগত অ্যানালিটিক্স অ্যাপের বাইরে যেতে পারে।",
+          "তাই উপযোগী প্রশ্ন “অ্যাপটি কি ইন্টারনেট ব্যবহার করে?” নয়, বরং “কোন তথ্য, কখন এবং কোন উদ্দেশ্যে স্থানান্তরিত হয়?” স্থানীয় মোড AI সার্ভারে বিশ্লেষণ চালায় না এবং স্বয়ংক্রিয় ক্লাউড বিকল্পও নেই। ফলে ছবির প্রক্রিয়াকরণ স্থানীয় থাকে, কিন্তু মডেল সরবরাহ ও সীমিত পরিষেবা টেলিমেট্রি আলাদা নেটওয়ার্ক-সংক্রান্ত বিষয় হিসেবে থেকে যায়।"
+        ],
+        "bullets": [
+          "স্থানীয় বিশ্লেষণ: ব্রাউজার আপনার ডিভাইসেই মডেলের কাজ সম্পন্ন করে।",
+          "মডেল সরবরাহ: প্রথম ডাউনলোডে ইন্টারনেট লাগে এবং বাহ্যিক হোস্টে সংযোগ হয়।",
+          "অ্যানালিটিক্স: স্থায়ী ভিজিটর আইডি ছাড়াই সীমিত সমষ্টিগত পণ্য-অ্যানালিটিক্স পাঠানো হতে পারে।",
+          "ক্লাউড বিকল্প: ব্যক্তিগত API মোড প্রিভিউ ও প্রসঙ্গ OpenAI-কে পাঠায়।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "ডাউনলোড আর বিশ্লেষণ এক জিনিস নয়",
+        "paragraphs": [
+          "ইচ্ছাকৃতভাবে Download নির্বাচন করুন, তারপর Load করুন। ডাউনলোডে মডেল ফাইল সংগ্রহ হয়; লোড করলে মডেল সক্রিয় মেমোরিতে আসে, যাতে ব্রাউজার তা ব্যবহার করতে পারে। Unload সক্রিয় কপিটি মেমোরি থেকে সরায়, কিন্তু ক্যাশে থাকা ব্রাউজার ফাইল রেখে দেয়। ব্রাউজারের মডেল ফাইল মুছে ফেলা আলাদা কাজ। এই অবস্থাগুলো গোপনীয়তা ও স্টোরেজ-সংক্রান্ত আলাদা প্রশ্নের উত্তর দেয়।",
+          "ক্যাশের আচরণ ব্রাউজারের বিষয়; এটি স্থায়ী অফলাইন নিশ্চয়তা নয়। ব্রাউজারের নিয়ম অনুযায়ী স্টোরেজ সীমিত বা সরিয়ে দেওয়া হতে পারে। WebGPU-র জন্য নিরাপদ কনটেক্সট, সামঞ্জস্যপূর্ণ ব্রাউজার, GPU ও ড্রাইভারও দরকার; শুধু API সমর্থন থাকলেই ডিভাইসে মডেলের জন্য যথেষ্ট মেমোরি আছে—এমন প্রমাণ হয় না।"
+        ],
+        "bullets": [
+          "ডিফল্ট শুরুর মডেল হিসেবে Gemma 4 E2B ব্যবহার করুন।",
+          "একটি স্থানীয় সমান্তরাল থ্রেড দিয়ে শুরু করুন; ডিভাইস স্বচ্ছন্দে সামলালে তবেই দুটি পরীক্ষা করুন।",
+          "ব্রাউজারে ক্যাশে রাখা মডেল আর সংরক্ষণ করতে না চাইলে তা মুছে ফেলুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "একটি বাস্তবসম্মত ব্যক্তিগত ব্যাচের উদাহরণ",
+        "paragraphs": [
+          "উদাহরণ: আপনার হাতে নীল রঙের হাতে-তৈরি সিরামিক মগের ছয়টি পণ্যের ছবি আছে এবং আপনি ইংরেজি মার্কেটপ্লেস মেটাডেটা চান। আপনি মূল ছবিগুলো কোনো ক্লাউড AI পরিষেবায় পাঠাতে চান না। নিরাপদ সংযোগে মেটাস্টকার খুলুন, স্থানীয় Gemma 4 E2B মডেল নির্বাচন করুন, একবার ডাউনলোড করে লোড করুন এবং সমান্তরাল থ্রেড একটি রাখুন। এরপর ছয়টি ছবি যোগ করে তথ্যভিত্তিক ব্যাচের বর্ণনা লিখুন: “Blue glazed ceramic mugs on a neutral tabletop; describe only visible objects, materials, colors, and arrangement.”",
+          "প্রতিটি ফল আলাদাভাবে পর্যালোচনা করুন। নির্মাতা, স্থান, সম্ভাব্য ক্রেতা বা উৎপাদনের গল্প সম্পর্কে অনুমান বাদ দিন। কোনো ছবিতে চামচ দেখা গেলে শুধু সেই ফাইলের জন্য শব্দটি রাখুন। ব্যাচের বর্ণনাকে সবার জন্য প্রযোজ্য ট্যাগের তালিকা না ধরে, ফাইলভিত্তিক অবস্থানে কয়েকটি প্রাসঙ্গিক অতিরিক্ত ট্যাগ যোগ করুন। একটি থ্রেড বেছে নেওয়ার সিদ্ধান্ত অনুমাননির্ভর গতির বদলে পূর্বানুমানযোগ্য মেমোরি ব্যবহারের পক্ষে; তথ্যভিত্তিক প্রম্পট বেছে নেওয়া ভিত্তিহীন প্রসঙ্গ কমায়।",
+          "এটি একটি কাল্পনিক কর্মপ্রবাহ, পরিমাপ করা গোপনীয়তা পরীক্ষা বা কর্মক্ষমতার ফল নয়। স্থানীয় বিশ্লেষণ-পথ ছবি, প্রম্পট ও ফলাফল ডিভাইসে রাখে, কিন্তু মডেল ডাউনলোডে তবুও একটি নেটওয়ার্ক অনুরোধ হয়েছিল।"
+        ],
+        "bullets": [],
+        "example": "ব্যাচের বর্ণনা: Blue glazed ceramic mugs on a neutral tabletop; describe only visible objects, materials, colors, and arrangement.\nফাইলভিত্তিক সম্ভাব্য মেটাডেটা: blue mug, ceramic, glazed pottery, tabletop, drinkware"
+      },
+      {
+        "heading": "ঐচ্ছিক ক্লাউড সীমাটি বুঝুন",
+        "paragraphs": [
+          "মেটাস্টকার আপনার নিজস্ব কী ব্যবহার করে একটি ঐচ্ছিক অর্থপ্রদত্ত OpenAI API মোডও দেয়। সেই মোডে প্রিভিউ ও প্রসঙ্গ OpenAI-কে পাঠানো হয়, তাই এটি স্থানীয় বিশ্লেষণের সমতুল্য নয়। কী-টিকে গোপন রাখুন: সর্বজনীন কোডে পেস্ট করবেন না, প্রকাশ করবেন না বা অবহেলায় সহযোগীদের সঙ্গে ভাগ করবেন না। ব্যক্তিগত কী ব্যবহারের অনুমোদন দিতে পারে, তাই সেটি সেই অনুযায়ী সামলাতে হবে।",
+          "শুধু তখনই এই পথ বেছে নিন, যখন এর বিনিময়টি ব্যাচের জন্য উপযুক্ত। স্থানীয় হার্ডওয়্যার কোনো মডেল লোড করতে না পারলে এটি কাজে লাগতে পারে, কিন্তু গোপনীয়তার সীমা সঙ্গে সঙ্গেই বদলে যায়। বাণিজ্যিক, গোপনীয় বা অপ্রকাশিত ছবি পাঠানোর আগে বর্তমান প্রদানকারীর শর্ত এবং আপনার প্রতিষ্ঠানের নিয়ম যাচাই করুন।"
+        ],
+        "bullets": [
+          "নথিভুক্ত কর্মপ্রবাহে তথ্যের প্রকাশ যত কম রাখতে স্থানীয় মোড ব্যবহার করুন।",
+          "প্রিভিউ ও প্রসঙ্গ পাঠানো গ্রহণযোগ্য কি না সিদ্ধান্ত নেওয়ার পরেই API মোড ব্যবহার করুন।",
+          "ব্যবহারকারীর দেওয়া কী-কে নিরাপদ সর্বজনীন ক্লায়েন্ট-সাইড কী সংযোজন বলে কখনো ভুল করবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "শুধু গোপনীয়তা নয়, মেটাডেটাও পর্যালোচনা করুন",
+        "paragraphs": [
+          "স্থানীয়ভাবে চললেই তৈরি মেটাডেটা স্বয়ংক্রিয়ভাবে নির্ভুল হয় না। প্রতিটি সম্পাদনাযোগ্য ফল পরীক্ষা করুন এবং প্রস্তুত সারিগুলোই রপ্তানি করুন। পিক্সেল দেখে পরিচয়, মালিকানা, রিলিজ, স্থান বা প্রজাতি অনুমান করবেন না। ভিডিওর ক্ষেত্রে নমুনা-প্রিভিউ প্রতিটি মুহূর্তের প্রতিনিধিত্ব করতে পারে না, তাই পুরো চলমান দৃশ্য নিজে পরীক্ষা করুন।",
+          "মার্কেটপ্লেসের ফাইল প্রস্তুত করলে প্ল্যাটফর্মের বর্তমান নিয়ম সামনে রাখুন। Adobe-এর সাধারণ নির্দেশনা সর্বোচ্চ 49টি কীওয়ার্ড অনুমোদন করে এবং গুরুত্বপূর্ণ শব্দ আগে রাখার ওপর জোর দেয়; তার CSV নির্দেশনায় বর্তমানে শিরোনামের সীমা 70 অক্ষর বলা হলেও বর্তমান প্রয়োজনীয়তা যাচাইয়ের চূড়ান্ত স্থান contributor portal। রপ্তানিকারক ফাইল তৈরি করে; আপলোড বা জমা দেয় না, গ্রহণের নিশ্চয়তা দেয় না এবং মূল ফাইলে মেটাডেটা সংযুক্ত করে না।"
+        ],
+        "bullets": [
+          "গন্তব্য অ্যাকাউন্ট বা প্ল্যাটফর্মের প্রয়োজন অনুযায়ী মেটাডেটার ভাষা মিলিয়ে নিন।",
+          "বারবার বা সবার ওপর প্রয়োগযোগ্য ট্যাগের বদলে বর্ণনামূলক, প্রাসঙ্গিক শব্দ ব্যবহার করুন।",
+          "contributor portal-এ সঠিক ফাইলের নাম এবং তৈরি মেটাডেটা পরীক্ষা করুন।",
+          "মূল ফাইলগুলো রপ্তানি করা CSV মেটাডেটা থেকে আলাদা রাখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "একটি ব্যবহারিক গোপনীয়তা রুটিন",
+        "paragraphs": [
+          "সংবেদনশীল ব্যাচের আগে গন্তব্য চিহ্নিত করুন, স্থানীয় না API প্রক্রিয়াকরণ বেছে নিন এবং কোন তথ্য ডিভাইস ছাড়বে তা লিখে রাখুন। বিশ্বাসযোগ্য নেটওয়ার্ক থেকে মডেল ডাউনলোড করে লোড করুন এবং ছোট পরীক্ষামূলক সেট প্রক্রিয়া করুন। পরে সক্রিয় মেমোরি ছাড়তে চাইলে মডেল Unload করুন, অথবা ক্যাশে রাখা ডাউনলোড সরাতে ব্রাউজারের মডেল ফাইল Delete করুন। অসমাপ্ত কাজ সংরক্ষণের নির্ভরযোগ্য কৌশল হিসেবে শুধু ট্যাব বন্ধ করার ওপর নির্ভর করবেন না; সেশন চলাকালেই প্রস্তুত ফল রপ্তানি করুন।",
+          "সর্বজনীন নেটওয়ার্ক চিত্রের জন্য সীমাটি নির্ভুলভাবে লিখুন: ব্রাউজারে স্থানীয় ছবি বিশ্লেষণ; বাহ্যিক মডেল ডাউনলোড; সীমিত সমষ্টিগত অ্যানালিটিক্স; ঐচ্ছিক OpenAI স্থানান্তর। “কোনো নেটওয়ার্ক নেই” বলার চেয়ে এই ভাষা বেশি কার্যকর, কারণ এতে অবদানকারীরা কী সুরক্ষিত রাখবেন এবং কী পরীক্ষা করবেন তা স্পষ্ট হয়।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "সংবেদনশীল ফাইল যোগ করার আগে স্থানীয় মোড বা ঐচ্ছিক API পথ বেছে নিন।",
+      "মনে রাখুন, বিশ্লেষণ স্থানীয় হলেও মডেল ডাউনলোডে বাহ্যিক হোস্টে সংযোগ হয়।",
+      "Download, Load, Unload এবং Delete-কে আলাদা স্টোরেজ ও মেমোরি নিয়ন্ত্রণ হিসেবে ব্যবহার করুন।",
+      "একটি স্থানীয় থ্রেড দিয়ে শুরু করুন এবং ফাইল ধরে ধরে ফল পরীক্ষা করুন।",
+      "মানুষ, স্থান, মালিকানা, রিলিজ ও প্রজাতি সম্পর্কে ভিত্তিহীন অনুমান বাদ দিন।",
+      "পুরো ভিডিও পরীক্ষা করুন এবং রপ্তানির আগে বর্তমান মার্কেটপ্লেসের প্রয়োজনীয়তা যাচাই করুন।",
+      "API কী-কে গোপন রাখুন এবং কখনো প্রকাশ করবেন না।",
+      "সেশন চলাকালেই প্রস্তুত সারি রপ্তানি করুন; অ্যাপ আপলোড করে না বা মেটাডেটা সংযুক্ত করে না।"
+    ],
+    "illustration": {
+      "title": "ছবি থেকে পর্যালোচিত স্থানীয় মেটাডেটা",
+      "steps": [
+        {
+          "label": "তথ্যের পথগুলো মানচিত্রে সাজান",
+          "detail": "স্থানীয় বিশ্লেষণ, মডেল ডাউনলোড, অ্যানালিটিক্স ও API স্থানান্তর আলাদা করুন।"
+        },
+        {
+          "label": "একটি স্থানীয় ব্যাচ চালান",
+          "detail": "Gemma E2B লোড করুন, তথ্যভিত্তিক প্রসঙ্গ ব্যবহার করুন এবং প্রতিটি ফাইল পরীক্ষা করুন।"
+        },
+        {
+          "label": "পর্যালোচনা ও রপ্তানি করুন",
+          "detail": "অনুমান বাদ দিন, মেটাডেটা যাচাই করুন এবং প্রস্তুত সারিগুলোই রপ্তানি করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "मेटास्टॉकर ब्राउज़र में फ़ोटो के कीवर्ड बनाते समय क्या स्थानीय रहता है",
+    "description": "जानें कि स्थानीय ब्राउज़र AI आपके डिवाइस पर क्या रखता है, मॉडल डाउनलोड और एनालिटिक्स क्या उजागर करते हैं, और वैकल्पिक OpenAI मार्ग कब डेटा भेजता है।",
+    "intro": "ब्राउज़र-आधारित AI मेटाडेटा के काम को निजी बना सकता है, लेकिन “स्थानीय” का अर्थ यह नहीं कि हर नेटवर्क कनेक्शन समाप्त हो जाता है। फ़ोटो विश्लेषण, मॉडल वितरण, ब्राउज़र स्टोरेज, एनालिटिक्स और वैकल्पिक क्लाउड प्रोसेसिंग के बीच अंतर महत्वपूर्ण है। मेटास्टॉकर का स्थानीय मोड आपके ब्राउज़र के भीतर WebGPU वर्करों में समर्थित विज़न और सोचने वाले मॉडल चलाता है। इस स्थानीय कार्यप्रवाह के दौरान आपकी फ़ोटो, प्रॉम्प्ट और बनाए गए परिणाम डिवाइस पर ही रहते हैं, जबकि मॉडल को पहले बाहरी होस्ट से डाउनलोड करना पड़ता है। यह मार्गदर्शिका बताती है कि इस सीमा की जाँच कैसे करें और भ्रामक “शून्य-नेटवर्क” वादे किए बिना एक छोटा, व्यावहारिक बैच कैसे तैयार करें।",
+    "sections": [
+      {
+        "heading": "गोपनीयता के मानचित्र से शुरू करें",
+        "paragraphs": [
+          "कार्यप्रवाह को चार अलग रास्तों के रूप में सोचें। स्थानीय मोड में फ़ोटो और उसका प्रॉम्प्ट आपके ब्राउज़र में चल रहे मॉडल तक जाते हैं। शुरुआती डाउनलोड के दौरान मॉडल फ़ाइलें बाहरी होस्ट से आती हैं। ब्राउज़र मॉडल फ़ाइलों को कैश में रख सकता है, जो स्टोरेज है, सक्रिय मॉडल मेमोरी नहीं। अंत में, स्थायी विज़िटर ID के बिना सीमित प्रथम-पक्ष समेकित एनालिटिक्स ऐप से बाहर जा सकता है।",
+          "इसलिए उपयोगी प्रश्न “क्या ऐप इंटरनेट इस्तेमाल करता है?” नहीं, बल्कि “कौन-सा डेटा, कब और किस उद्देश्य से जाता है?” है। स्थानीय मोड AI सर्वर पर विश्लेषण नहीं करता और इसमें अपने-आप क्लाउड फ़ॉलबैक नहीं है। इससे फ़ोटो-प्रोसेसिंग का रास्ता स्थानीय रहता है, जबकि मॉडल वितरण और सीमित सेवा टेलीमेट्री अलग नेटवर्क-संबंधी विषय बने रहते हैं।"
+        ],
+        "bullets": [
+          "स्थानीय विश्लेषण: ब्राउज़र आपके डिवाइस पर ही मॉडल का काम करता है।",
+          "मॉडल वितरण: पहले डाउनलोड के लिए इंटरनेट चाहिए और बाहरी होस्ट से संपर्क होता है।",
+          "एनालिटिक्स: स्थायी विज़िटर ID के बिना सीमित समेकित उत्पाद एनालिटिक्स भेजा जा सकता है।",
+          "क्लाउड विकल्प: व्यक्तिगत API मोड प्रीव्यू और संदर्भ OpenAI को भेजता है।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "डाउनलोड और विश्लेषण एक ही बात नहीं हैं",
+        "paragraphs": [
+          "जानबूझकर Download चुनें और फिर Load करें। डाउनलोड करने से मॉडल फ़ाइलें मिलती हैं; लोड करने से मॉडल सक्रिय मेमोरी में आता है, ताकि ब्राउज़र उसका उपयोग कर सके। Unload सक्रिय कॉपी को मेमोरी से हटाता है, जबकि कैश की गई ब्राउज़र फ़ाइलें बनी रहती हैं। ब्राउज़र की मॉडल फ़ाइलें Delete करना अलग कार्रवाई है। ये अवस्थाएँ गोपनीयता और स्टोरेज से जुड़े अलग प्रश्नों का उत्तर देती हैं।",
+          "कैश का व्यवहार ब्राउज़र से संबंधित है, स्थायी ऑफ़लाइन गारंटी से नहीं। ब्राउज़र के व्यवहार के अनुसार स्टोरेज सीमित या हटाया जा सकता है। WebGPU के लिए सुरक्षित संदर्भ, संगत ब्राउज़र, GPU और ड्राइवर भी चाहिए; केवल API समर्थन यह सिद्ध नहीं करता कि डिवाइस में मॉडल के लिए पर्याप्त मेमोरी है।"
+        ],
+        "bullets": [
+          "डिफ़ॉल्ट शुरुआती मॉडल के रूप में Gemma 4 E2B इस्तेमाल करें।",
+          "एक स्थानीय समानांतर थ्रेड से शुरू करें; डिवाइस आराम से संभाल सके तभी दो आज़माएँ।",
+          "ब्राउज़र में कैश की गई मॉडल फ़ाइलें अब नहीं रखनी हों तो उन्हें हटाएँ।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "एक व्यावहारिक निजी बैच का उदाहरण",
+        "paragraphs": [
+          "उदाहरण: आपके पास हाथ से बने नीले सिरेमिक मग की छह उत्पाद फ़ोटो हैं और आप अंग्रेज़ी मार्केटप्लेस मेटाडेटा चाहते हैं। आप मूल फ़ोटो किसी क्लाउड AI सेवा को नहीं भेजना चाहते। सुरक्षित कनेक्शन पर मेटास्टॉकर खोलें, स्थानीय Gemma 4 E2B मॉडल चुनें, उसे एक बार डाउनलोड और लोड करें, और समानांतर थ्रेड एक रखें। फिर छह फ़ोटो जोड़ें और तथ्यात्मक बैच विवरण दर्ज करें: “Blue glazed ceramic mugs on a neutral tabletop; describe only visible objects, materials, colors, and arrangement.”",
+          "हर परिणाम की अलग समीक्षा करें। निर्माता, स्थान, इच्छित खरीदार या उत्पादन-कथा के बारे में अनुमान हटाएँ। यदि किसी एक फ़ोटो में चम्मच दिखता है, तो वह शब्द केवल उसी फ़ाइल के लिए रखें। बैच विवरण को सभी फ़ाइलों पर लागू टैग सूची मानने के बजाय, फ़ाइल-विशिष्ट स्थानों पर कुछ प्रासंगिक अतिरिक्त टैग जोड़ें। एक थ्रेड चुनने का निर्णय अनुमानित गति के बजाय पूर्वानुमेय मेमोरी उपयोग को प्राथमिकता देता है; तथ्यात्मक प्रॉम्प्ट चुनने से असमर्थित संदर्भ सीमित होता है।",
+          "यह एक काल्पनिक कार्यप्रवाह है, मापी गई गोपनीयता जाँच या प्रदर्शन परिणाम नहीं। स्थानीय विश्लेषण-पथ फ़ोटो, प्रॉम्प्ट और परिणाम डिवाइस पर रखता है, लेकिन मॉडल डाउनलोड ने फिर भी एक नेटवर्क अनुरोध किया।"
+        ],
+        "bullets": [],
+        "example": "बैच विवरण: Blue glazed ceramic mugs on a neutral tabletop; describe only visible objects, materials, colors, and arrangement.\nफ़ाइल-विशिष्ट संभावित मेटाडेटा: blue mug, ceramic, glazed pottery, tabletop, drinkware"
+      },
+      {
+        "heading": "वैकल्पिक क्लाउड सीमा समझें",
+        "paragraphs": [
+          "मेटास्टॉकर आपकी अपनी कुंजी का उपयोग करने वाला वैकल्पिक भुगतानयुक्त OpenAI API मोड भी देता है। इस मोड में प्रीव्यू और संदर्भ OpenAI को भेजे जाते हैं, इसलिए यह स्थानीय विश्लेषण के बराबर नहीं है। कुंजी को रहस्य की तरह रखें: उसे सार्वजनिक कोड में पेस्ट न करें, प्रकाशित न करें और सहयोगियों के साथ लापरवाही से साझा न करें। व्यक्तिगत कुंजी उपयोग को अधिकृत कर सकती है, इसलिए इसे उसी अनुसार संभालें।",
+          "यह रास्ता तभी चुनें जब इसका विनिमय आपके बैच के लिए उपयुक्त हो। स्थानीय हार्डवेयर मॉडल लोड न कर पाए तो यह उपयोगी हो सकता है, लेकिन गोपनीयता की सीमा तुरंत बदल जाती है। व्यावसायिक, गोपनीय या अप्रकाशित चित्र भेजने से पहले वर्तमान प्रदाता की शर्तें और अपने संगठन के नियम जाँचें।"
+        ],
+        "bullets": [
+          "दस्तावेज़ित कार्यप्रवाह में डेटा का खुलासा न्यूनतम रखने के लिए स्थानीय मोड इस्तेमाल करें।",
+          "प्रीव्यू और संदर्भ भेजना स्वीकार्य है या नहीं तय करने के बाद ही API मोड इस्तेमाल करें।",
+          "उपयोगकर्ता की दी हुई कुंजी को सुरक्षित सार्वजनिक क्लाइंट-साइड कुंजी एम्बेडिंग न समझें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "केवल गोपनीयता नहीं, मेटाडेटा भी जाँचें",
+        "paragraphs": [
+          "स्थानीय रूप से चलने से बनाया गया मेटाडेटा अपने-आप सटीक नहीं हो जाता। हर संपादन योग्य परिणाम जाँचें और केवल तैयार पंक्तियाँ निर्यात करें। पिक्सेल से पहचान, स्वामित्व, रिलीज़, स्थान या प्रजाति का अनुमान न लगाएँ। वीडियो में नमूना प्रीव्यू हर क्षण का प्रतिनिधित्व नहीं कर सकते, इसलिए पूरे वीडियो को स्वयं जाँचें।",
+          "मार्केटप्लेस फ़ाइलें तैयार करते समय प्लेटफ़ॉर्म के वर्तमान नियम ध्यान में रखें। Adobe के सामान्य दिशानिर्देश अधिकतम 49 कीवर्ड की अनुमति देते हैं और महत्वपूर्ण शब्दों को शुरुआत में रखने पर ज़ोर देते हैं; उसकी CSV मार्गदर्शिका में वर्तमान में शीर्षक की सीमा 70 वर्ण दी गई है, लेकिन वर्तमान आवश्यकताओं की अंतिम जाँच contributor portal में ही करें। निर्यातक फ़ाइलें बनाते हैं; वे अपलोड या सबमिट नहीं करते, स्वीकृति की गारंटी नहीं देते और मूल फ़ाइलों में मेटाडेटा एम्बेड नहीं करते।"
+        ],
+        "bullets": [
+          "गंतव्य खाते या प्लेटफ़ॉर्म की आवश्यकता के अनुसार मेटाडेटा की भाषा मिलाएँ।",
+          "दोहराए गए या सभी फ़ाइलों पर लगाए गए टैग के बजाय वर्णनात्मक, प्रासंगिक शब्द इस्तेमाल करें।",
+          "contributor portal में सटीक फ़ाइल नाम और बने हुए मेटाडेटा की जाँच करें।",
+          "मूल फ़ाइलों को निर्यात किए गए CSV मेटाडेटा से अलग रखें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "एक व्यावहारिक गोपनीयता दिनचर्या",
+        "paragraphs": [
+          "संवेदनशील बैच से पहले गंतव्य पहचानें, स्थानीय या API प्रोसेसिंग चुनें और लिखें कि डिवाइस से क्या बाहर जाना है। भरोसेमंद नेटवर्क से मॉडल डाउनलोड करें, फिर उसे लोड करके एक छोटे परीक्षण सेट को प्रोसेस करें। बाद में सक्रिय मेमोरी छोड़नी हो तो मॉडल Unload करें, या कैश किया हुआ डाउनलोड हटाना हो तो ब्राउज़र की मॉडल फ़ाइलें Delete करें। अधूरे काम को सुरक्षित रखने के लिए केवल टैब बंद करना भरोसेमंद उपाय नहीं है, इसलिए सत्र के दौरान तैयार परिणाम निर्यात करें।",
+          "सार्वजनिक नेटवर्क आरेख के लिए सीमा को सटीक शब्दों में लिखें: ब्राउज़र-स्थानीय फ़ोटो विश्लेषण; बाहरी मॉडल डाउनलोड; सीमित समेकित एनालिटिक्स; वैकल्पिक OpenAI स्थानांतरण। “कोई नेटवर्क नहीं” कहने से यह भाषा अधिक उपयोगी है, क्योंकि इससे योगदानकर्ताओं को पता चलता है कि क्या सुरक्षित रखना और क्या जाँचना है।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "संवेदनशील फ़ाइलें जोड़ने से पहले स्थानीय मोड या वैकल्पिक API मार्ग चुनें।",
+      "याद रखें कि विश्लेषण स्थानीय होने पर भी मॉडल डाउनलोड बाहरी होस्ट से संपर्क करता है।",
+      "Download, Load, Unload और Delete को अलग स्टोरेज और मेमोरी नियंत्रणों के रूप में इस्तेमाल करें।",
+      "एक स्थानीय थ्रेड से शुरू करें और फ़ाइल-दर-फ़ाइल परिणाम जाँचें।",
+      "लोगों, स्थानों, स्वामित्व, रिलीज़ और प्रजातियों के बारे में असमर्थित अनुमान हटाएँ।",
+      "पूरा वीडियो जाँचें और निर्यात से पहले वर्तमान मार्केटप्लेस आवश्यकताओं का सत्यापन करें।",
+      "API कुंजियों को रहस्य की तरह रखें और उन्हें कभी प्रकाशित न करें।",
+      "सत्र के दौरान तैयार पंक्तियाँ निर्यात करें; ऐप अपलोड या मेटाडेटा एम्बेड नहीं करता।"
+    ],
+    "illustration": {
+      "title": "फ़ोटो से जाँचे गए स्थानीय मेटाडेटा तक",
+      "steps": [
+        {
+          "label": "डेटा के रास्तों का मानचित्र बनाएँ",
+          "detail": "स्थानीय विश्लेषण, मॉडल डाउनलोड, एनालिटिक्स और API स्थानांतरण अलग करें।"
+        },
+        {
+          "label": "एक स्थानीय बैच चलाएँ",
+          "detail": "Gemma E2B लोड करें, तथ्यात्मक संदर्भ दें और हर फ़ाइल जाँचें।"
+        },
+        {
+          "label": "समीक्षा और निर्यात करें",
+          "detail": "अनुमान हटाएँ, मेटाडेटा सत्यापित करें और केवल तैयार पंक्तियाँ निर्यात करें।"
+        }
+      ]
+    }
+  }
+}

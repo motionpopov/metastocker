@@ -1,0 +1,459 @@
+{
+  "slug": "stock-vector-metadata",
+  "category": "metadata",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "shutterstock-quality"
+  ],
+  "en": {
+    "title": "Metadata for a Flat Gardening Vector Icon Collection",
+    "description": "A practical workflow for describing gardening icons, separating editable vectors from raster previews, and preparing accurate marketplace metadata.",
+    "intro": "Preparing metadata for a gardening icon collection is more than listing words such as “plant” and “garden.” A contributor needs to identify what is actually drawn, explain the visual style, and avoid promising file properties that the submitted asset does not have. This guide uses a hypothetical flat collection of editable vector icons: a hand trowel, watering can, seed packet, garden gloves, potted sprout, rake, and wheelbarrow. The collection also has a PNG preview for display. The goal is to create useful English metadata while keeping the vector deliverable, preview image, and unsupported format claims clearly separate.",
+    "sections": [
+      {
+        "heading": "1. Inspect the collection before writing",
+        "paragraphs": [
+          "Open the editable source and review every icon, not just the preview sheet. Record the objects that are visibly present, whether the collection is isolated or arranged as a pattern, and whether the style is flat, outlined, geometric, colorful, or monochrome.",
+          "For this example, the accurate visual description is a flat gardening icon collection with seven separate tools and plant-related symbols. Do not add vegetables, greenhouse equipment, landscaping scenes, or organic textures unless they are actually included. A preview may show all icons together, but that does not turn the asset into a seamless pattern or a single raster illustration."
+        ],
+        "bullets": [
+          "List visible objects before choosing keywords.",
+          "Describe composition and style only when they are evident.",
+          "Treat the preview as evidence of appearance, not proof of every deliverable format."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Separate asset facts from preview facts",
+        "paragraphs": [
+          "Metadata should describe the item a buyer can receive. If the main deliverable is an editable vector file, state that only when the submitted package really contains an editable vector format supported by the marketplace or product listing. A PNG or JPEG preview demonstrates how the icons look; it does not prove that the preview itself is editable.",
+          "Avoid claims such as “SVG included,” “AI compatible,” “fully editable,” or “print-ready” unless those claims are true for the actual package and allowed by the platform. If an .ai source is provided, remember that a metadata tool may need a readable preview to analyze it; the tool cannot make an unreadable source reliable."
+        ],
+        "bullets": [
+          "Use “editable vector icon collection” only for the vector deliverable.",
+          "Use “raster preview” for the display image when that distinction matters.",
+          "Do not infer file formats from pixels or from a thumbnail."
+        ],
+        "example": "Deliverable fact: seven editable vector icons.\nPreview fact: one raster preview sheet showing the icons together.\nDo not claim: “PNG icons are editable vectors.”"
+      },
+      {
+        "heading": "3. Build a descriptive title",
+        "paragraphs": [
+          "Put the central subject and format near the beginning, while keeping the title natural rather than turning it into a keyword list. A useful title for this example is “Flat Gardening Tools and Plant Vector Icon Collection.” It identifies the theme, style, and asset type without claiming that the preview is the product.",
+          "If a platform imposes a title limit, check its current contributor guidance before exporting. Adobe’s CSV guidance currently states a 70-character title limit, while its general keyword guidance allows up to 49 keywords. Limits and upload rules can change, so validate the current portal requirements. A title should remain understandable even when the marketplace displays it without the keyword field."
+        ],
+        "bullets": [
+          "Start with the main subject: gardening tools and plants.",
+          "Mention “vector” only when the deliverable is vector.",
+          "Prefer a readable phrase over a comma-separated keyword pile."
+        ],
+        "example": "Flat Gardening Tools and Plant Vector Icon Collection"
+      },
+      {
+        "heading": "4. Choose relevant keywords by priority",
+        "paragraphs": [
+          "Begin with the most important concepts: gardening, tools, plant, icon, vector, flat design, and collection. Then add only terms supported by the artwork, such as watering can, trowel, rake, gloves, seed packet, potted plant, and wheelbarrow. Keep singular and plural choices purposeful instead of repeating near-duplicates.",
+          "The first terms deserve special care on services that give them greater attention. A keyword generator can suggest possibilities, but the contributor must remove terms that do not apply to every file or to the collection as a whole. If the platform requires English metadata, use English terms even when the article or interface is in another language. For Adobe, metadata language must match the contributor account, so check that account setting before export."
+        ],
+        "bullets": [
+          "Prioritize subject, asset type, style, and clearly visible objects.",
+          "Remove unrelated terms such as vegetable, greenhouse, landscape, or farming if absent.",
+          "Check the current marketplace keyword range and category rules."
+        ],
+        "example": "gardening, garden tools, plant, vector, icon, flat design, collection, watering can, trowel, rake, garden gloves, seed packet, potted plant, wheelbarrow, editable"
+      },
+      {
+        "heading": "5. Worked example: turn one collection into usable metadata",
+        "paragraphs": [
+          "Suppose the source contains seven separate icons in a consistent flat style. The watering can has a handle and spout, the trowel is hand-sized, the seed packet has a simple leaf symbol, and the remaining icons are a glove pair, sprout in a pot, rake, and wheelbarrow. The preview is a rectangular PNG sheet on a light background.",
+          "The decision is to describe the collection rather than invent a scene. “Flat gardening tools and plant vector icon collection” is more accurate than “farm landscape illustration.” “Colorful” is appropriate only if the artwork visibly uses several colors. “Isolated” should be used only if the individual icons are presented without a surrounding scene or background that changes their intended use."
+        ],
+        "bullets": [
+          "Title: Flat Gardening Tools and Plant Vector Icon Collection.",
+          "Style terms: flat design, simple shapes, colorful, only if visibly supported.",
+          "Object terms: watering can, trowel, seed packet, gloves, potted sprout, rake, wheelbarrow.",
+          "Format term: editable vector, only for the actual vector package."
+        ],
+        "example": "Title: Flat Gardening Tools and Plant Vector Icon Collection\nDescription: Seven separate flat icons for gardening and plant-related projects, including a watering can, trowel, seed packet, gloves, potted sprout, rake, and wheelbarrow.\nKeywords: gardening, garden tools, plant, vector, icon, flat design, watering can, trowel, seed packet, garden gloves, potted plant, rake, wheelbarrow, collection"
+      },
+      {
+        "heading": "6. Review, export, and verify the result",
+        "paragraphs": [
+          "If you use MetaStocker’s local generator, treat its output as an editable draft. Its local models run in the visitor’s browser, and the app can export marketplace-oriented CSV formats, but it does not upload or submit the files, embed metadata into the original artwork, or guarantee acceptance. Review each row before exporting, especially when a batch contains different icons.",
+          "For CSV workflows, filenames must match the uploaded assets exactly where the platform requires that mapping, including extension and case. Uploading assets before importing a CSV is part of Adobe’s stated workflow, and the resulting metadata should be inspected in the contributor portal. Shutterstock guidance also emphasizes an accurate descriptive phrase and relevant, non-repeated keywords. Finally, check the current contributor portal because marketplace policies and field limits change."
+        ],
+        "bullets": [
+          "Compare every title and keyword list with the actual icon.",
+          "Confirm filename, extension, capitalization, and required category fields.",
+          "Inspect imported metadata in the marketplace portal.",
+          "Keep the original vector source separate from the preview and exported CSV."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "I named only objects visible in the gardening collection.",
+      "I distinguished the editable vector deliverable from the raster preview.",
+      "I used a natural title and prioritized the most important terms.",
+      "I removed unsupported format, scene, and subject claims.",
+      "I checked the target marketplace’s current language, limits, and category rules.",
+      "I reviewed generated metadata per file before exporting or importing it."
+    ],
+    "illustration": {
+      "title": "From icon inspection to marketplace metadata",
+      "steps": [
+        {
+          "label": "Inventory visible icons",
+          "detail": "List the trowel, watering can, plants, and other drawn objects."
+        },
+        {
+          "label": "Separate format claims",
+          "detail": "Record vector deliverables and raster previews as different facts."
+        },
+        {
+          "label": "Review and export metadata",
+          "detail": "Check titles, keywords, filenames, and portal requirements."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Метаданные для плоской векторной коллекции садовых иконок",
+    "description": "Практическое руководство: как описать садовые иконки, отделить редактируемый вектор от растрового превью и подготовить точные метаданные.",
+    "intro": "Подготовка метаданных для коллекции садовых иконок — это не просто перечисление слов «сад» и «растение». Нужно определить, что действительно изображено, описать визуальный стиль и не приписать файлу свойства, которых у него нет. В этом руководстве используется гипотетический пример: плоская коллекция редактируемых векторных иконок — садовый совок, лейка, пакет семян, садовые перчатки, росток в горшке, грабли и тачка. Для показа коллекции есть PNG-превью. Цель — подготовить полезные англоязычные метаданные и ясно разделить векторный результат, растровую картинку-превью и неподтвержденные заявления о форматах.",
+    "sections": [
+      {
+        "heading": "1. Сначала проверьте саму коллекцию",
+        "paragraphs": [
+          "Откройте исходный редактируемый файл и просмотрите каждую иконку, а не только общий лист-превью. Зафиксируйте видимые предметы, композицию и стиль: это отдельные элементы или паттерн, плоская ли графика, есть ли контур, какие формы и цвета действительно используются.",
+          "В нашем примере корректное описание — плоская коллекция садовых иконок с семью отдельными инструментами и символами растений. Не добавляйте овощи, теплицу, ландшафт или фактуру земли, если их нет на изображении. Общий лист может показывать иконки вместе, но это не превращает файл в бесшовный паттерн или единственную растровую иллюстрацию."
+        ],
+        "bullets": [
+          "Составьте список видимых объектов до выбора ключевых слов.",
+          "Описывайте стиль и композицию только по наблюдаемым признакам.",
+          "Считайте превью показателем внешнего вида, а не доказательством всех форматов."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Отделите свойства результата от свойств превью",
+        "paragraphs": [
+          "Метаданные должны описывать то, что получает покупатель. Называйте работу редактируемой векторной коллекцией только тогда, когда в поставляемом наборе действительно есть редактируемый векторный формат, допустимый для выбранной площадки. PNG или JPEG показывает внешний вид, но сам по себе не подтверждает редактируемость.",
+          "Не пишите «в комплекте SVG», «совместимо с AI», «полностью редактируемое» или «готово к печати», если это не соответствует реальному пакету и требованиям площадки. Если исходник — .ai, генератору метаданных может понадобиться читаемое превью: инструмент не сделает нечитаемый файл надежным."
+        ],
+        "bullets": [
+          "Используйте «редактируемая векторная коллекция» только для векторного результата.",
+          "Называйте демонстрационную картинку растровым превью, если это важно.",
+          "Не определяйте формат файла по пикселям или миниатюре."
+        ],
+        "example": "Факт о результате: семь редактируемых векторных иконок.\nФакт о превью: один растровый лист с иконками.\nНе утверждайте: «PNG-иконки являются редактируемыми векторами»."
+      },
+      {
+        "heading": "3. Составьте естественный заголовок",
+        "paragraphs": [
+          "Поставьте главную тему и тип ресурса ближе к началу, но сохраните нормальную фразу, а не перечень ключевых слов через запятую. Для этого примера подходит заголовок “Flat Gardening Tools and Plant Vector Icon Collection”. Он сообщает тему, стиль и тип ресурса, не выдавая превью за сам продукт.",
+          "Если площадка ограничивает длину заголовка, перед экспортом проверьте актуальные правила автора. В текущих требованиях Adobe для CSV указано ограничение заголовка в 70 символов, а общее руководство по ключевым словам допускает до 49 ключевых слов. Правила могут измениться, поэтому сверяйтесь с текущим порталом. Заголовок должен быть понятен и без отдельного поля ключевых слов."
+        ],
+        "bullets": [
+          "Начните с главной темы: садовые инструменты и растения.",
+          "Добавляйте слово vector только при наличии векторного результата.",
+          "Используйте читаемую фразу, а не набор поисковых терминов."
+        ],
+        "example": "Flat Gardening Tools and Plant Vector Icon Collection"
+      },
+      {
+        "heading": "4. Подберите релевантные ключевые слова",
+        "paragraphs": [
+          "Начните с основных понятий: gardening, tools, plant, icon, vector, flat design, collection. Затем добавьте только подтвержденные изображением слова: watering can, trowel, rake, gloves, seed packet, potted plant, wheelbarrow. Не заполняйте поле повторяющимися вариантами одного и того же смысла.",
+          "На площадках, где первые позиции имеют особое значение, внимательно расставьте самые важные термины в начале. Генератор может предложить варианты, но автор должен удалить слова, которые не относятся к конкретному файлу или всей коллекции. Если целевая площадка требует английские метаданные, используйте английские примеры даже при русскоязычном тексте статьи. Для Adobe язык метаданных должен соответствовать языку аккаунта, поэтому проверьте настройку до экспорта."
+        ],
+        "bullets": [
+          "Сначала указывайте тему, тип ресурса, стиль и видимые предметы.",
+          "Удаляйте слова vegetable, greenhouse, landscape или farming, если они не подтверждены.",
+          "Проверьте текущие ограничения по числу ключевых слов и категории на выбранной площадке."
+        ],
+        "example": "gardening, garden tools, plant, vector, icon, flat design, watering can, trowel, seed packet, garden gloves, potted plant, rake, wheelbarrow, collection, editable"
+      },
+      {
+        "heading": "5. Практический пример подготовки описания",
+        "paragraphs": [
+          "Предположим, исходник содержит семь отдельных иконок в едином плоском стиле. У лейки видны ручка и носик, совок небольшой, на пакете семян изображен простой лист, а остальные элементы — пара перчаток, росток в горшке, грабли и тачка. Превью представляет собой прямоугольный PNG-лист на светлом фоне.",
+          "Решение — описывать коллекцию, а не выдумывать сцену. “Flat gardening tools and plant vector icon collection” точнее, чем “farm landscape illustration”. Слово “colorful” уместно только при явно многоцветной графике. “Isolated” используйте лишь тогда, когда отдельные иконки действительно показаны без окружения, меняющего их назначение."
+        ],
+        "bullets": [
+          "Заголовок: Flat Gardening Tools and Plant Vector Icon Collection.",
+          "Стиль: flat design, simple shapes, colorful — только при визуальном подтверждении.",
+          "Объекты: watering can, trowel, seed packet, garden gloves, potted plant, rake, wheelbarrow.",
+          "Формат: editable vector — только для реального векторного пакета."
+        ],
+        "example": "Title: Flat Gardening Tools and Plant Vector Icon Collection\nDescription: Seven separate flat icons for gardening and plant-related projects, including a watering can, trowel, seed packet, gloves, potted sprout, rake, and wheelbarrow.\nKeywords: gardening, garden tools, plant, vector, icon, flat design, watering can, trowel, seed packet, garden gloves, potted plant, rake, wheelbarrow, collection"
+      },
+      {
+        "heading": "6. Проверьте результат перед экспортом",
+        "paragraphs": [
+          "Если вы используете локальный генератор MetaStocker, воспринимайте его результат как редактируемый черновик. Локальные модели работают в браузере пользователя, а приложение умеет экспортировать CSV для ряда площадок, но не загружает и не отправляет файлы, не встраивает метаданные в оригиналы и не гарантирует принятие. Для смешанной партии проверяйте каждую строку отдельно.",
+          "В CSV-сценариях имена файлов должны совпадать с загруженными ресурсами там, где площадка требует такого сопоставления, включая расширение и регистр. В рабочем процессе Adobe сначала загружают ресурсы, затем импортируют CSV и проверяют получившиеся метаданные в портале автора. Руководство Shutterstock также требует точного описательного текста и релевантных неповторяющихся слов. Перед публикацией откройте актуальные правила площадки: поля и ограничения меняются."
+        ],
+        "bullets": [
+          "Сверьте каждый заголовок и список слов с конкретной иконкой.",
+          "Проверьте имя файла, расширение, регистр и обязательную категорию.",
+          "Посмотрите импортированные данные в портале площадки.",
+          "Храните исходный вектор отдельно от превью и экспортированного CSV."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Я назвал только объекты, которые видны в коллекции.",
+      "Я разделил редактируемый векторный результат и растровое превью.",
+      "Я использовал естественный заголовок и поставил главные термины впереди.",
+      "Я удалил неподтвержденные заявления о форматах и сюжете.",
+      "Я проверил язык, лимиты и категории актуальной площадки.",
+      "Я просмотрел метаданные каждого файла перед экспортом или импортом."
+    ],
+    "illustration": {
+      "title": "От осмотра иконок к метаданным",
+      "steps": [
+        {
+          "label": "Составьте список иконок",
+          "detail": "Запишите совок, лейку, растения и другие видимые предметы."
+        },
+        {
+          "label": "Разделите форматы",
+          "detail": "Зафиксируйте векторный результат и растровое превью отдельно."
+        },
+        {
+          "label": "Проверьте и экспортируйте",
+          "detail": "Сверьте заголовки, слова, имена файлов и правила портала."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "ফ্ল্যাট বাগানবিষয়ক ভেক্টর আইকন সংগ্রহের মেটাডেটা",
+    "description": "বাগানবিষয়ক আইকন বর্ণনা, সম্পাদনাযোগ্য ভেক্টর ও রাস্টার প্রিভিউ আলাদা করা এবং নির্ভুল মার্কেটপ্লেস মেটাডেটা তৈরির ব্যবহারিক কর্মপদ্ধতি।",
+    "intro": "বাগানবিষয়ক আইকন সংগ্রহের মেটাডেটা তৈরি করা শুধু “plant” ও “garden”-এর মতো শব্দ তালিকাভুক্ত করার বিষয় নয়। অবদানকারীকে আসলে কী আঁকা হয়েছে তা শনাক্ত করতে, দৃশ্যমান শৈলী ব্যাখ্যা করতে এবং জমা দেওয়া সম্পদে নেই—এমন ফাইলের বৈশিষ্ট্যের প্রতিশ্রুতি না দিতে হবে। এই নির্দেশিকায় সম্পাদনাযোগ্য ভেক্টর আইকনের একটি কাল্পনিক ফ্ল্যাট সংগ্রহ ব্যবহার করা হয়েছে: হাতের কোদাল, পানি দেওয়ার ক্যান, বীজের প্যাকেট, বাগানের দস্তানা, টবে লাগানো অঙ্কুর, রেক এবং ঠেলাগাড়ি। প্রদর্শনের জন্য সংগ্রহটির একটি PNG প্রিভিউও আছে। লক্ষ্য হলো কার্যকর ইংরেজি মেটাডেটা তৈরি করা এবং একই সঙ্গে ভেক্টর সরবরাহযোগ্য ফাইল, প্রিভিউ ছবি ও অসমর্থিত ফরম্যাট-সংক্রান্ত দাবিগুলো স্পষ্টভাবে আলাদা রাখা।",
+    "sections": [
+      {
+        "heading": "১. লেখার আগে সংগ্রহটি পরিদর্শন করুন",
+        "paragraphs": [
+          "শুধু প্রিভিউ শিট নয়, সম্পাদনাযোগ্য মূল ফাইল খুলে প্রতিটি আইকন পর্যালোচনা করুন। দৃশ্যমান বস্তুগুলো নথিভুক্ত করুন, সংগ্রহটি আলাদা আলাদা উপাদান হিসেবে আছে নাকি প্যাটার্নে সাজানো তা দেখুন, এবং শৈলী ফ্ল্যাট, আউটলাইনযুক্ত, জ্যামিতিক, রঙিন নাকি একরঙা তা নির্ধারণ করুন।",
+          "এই উদাহরণে নির্ভুল দৃশ্যবর্ণনা হলো সাতটি পৃথক সরঞ্জাম ও উদ্ভিদ-সম্পর্কিত প্রতীক নিয়ে তৈরি একটি ফ্ল্যাট বাগানবিষয়ক আইকন সংগ্রহ। বাস্তবে না থাকলে সবজি, গ্রিনহাউসের সরঞ্জাম, ল্যান্ডস্কেপ দৃশ্য বা জৈব টেক্সচার যোগ করবেন না। প্রিভিউতে সব আইকন একসঙ্গে দেখা যেতে পারে, কিন্তু তাতে সম্পদটি সিমলেস প্যাটার্ন বা একক রাস্টার ইলাস্ট্রেশন হয়ে যায় না।"
+        ],
+        "bullets": [
+          "কীওয়ার্ড বাছাইয়ের আগে দৃশ্যমান বস্তুগুলোর তালিকা করুন।",
+          "শুধু স্পষ্টভাবে দেখা গেলে কম্পোজিশন ও শৈলী বর্ণনা করুন।",
+          "প্রিভিউকে চেহারার প্রমাণ হিসেবে দেখুন, প্রতিটি সরবরাহযোগ্য ফরম্যাটের প্রমাণ হিসেবে নয়."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "২. সম্পদের তথ্য ও প্রিভিউয়ের তথ্য আলাদা করুন",
+        "paragraphs": [
+          "মেটাডেটায় এমন আইটেমের বর্ণনা থাকা উচিত যা ক্রেতা পেতে পারেন। মূল সরবরাহযোগ্য ফাইলটি সম্পাদনাযোগ্য ভেক্টর হলে তবেই তা উল্লেখ করুন—এবং কেবল তখনই, যখন জমা দেওয়া প্যাকেজে মার্কেটপ্লেস বা পণ্য তালিকা সমর্থিত সত্যিকারের সম্পাদনাযোগ্য ভেক্টর ফরম্যাট আছে। PNG বা JPEG প্রিভিউ আইকনগুলোর চেহারা দেখায়; প্রিভিউটি নিজেই সম্পাদনাযোগ্য—এমন প্রমাণ দেয় না।",
+          "“SVG included”, “AI compatible”, “fully editable” বা “print-ready”-এর মতো দাবি এড়িয়ে চলুন, যদি না সেগুলো প্রকৃত প্যাকেজের জন্য সত্য এবং প্ল্যাটফর্মে অনুমোদিত হয়। যদি .ai মূল ফাইল দেওয়া হয়, মনে রাখবেন, সেটি বিশ্লেষণ করতে মেটাডেটা টুলের পাঠযোগ্য প্রিভিউ দরকার হতে পারে; টুলটি অপাঠ্য মূল ফাইলকে নির্ভরযোগ্য করে তুলতে পারে না।"
+        ],
+        "bullets": [
+          "শুধু ভেক্টর সরবরাহযোগ্য ফাইলের জন্য “editable vector icon collection” ব্যবহার করুন।",
+          "এই পার্থক্য গুরুত্বপূর্ণ হলে প্রদর্শন-ছবির জন্য “raster preview” ব্যবহার করুন।",
+          "পিক্সেল বা থাম্বনেইল দেখে ফাইলের ফরম্যাট অনুমান করবেন না."
+        ],
+        "example": "সরবরাহযোগ্য ফাইলের তথ্য: সাতটি editable vector icons.\nপ্রিভিউয়ের তথ্য: আইকনগুলো একসঙ্গে দেখানো একটি raster preview sheet.\nদাবি করবেন না: “PNG icons are editable vectors.”"
+      },
+      {
+        "heading": "৩. বর্ণনামূলক শিরোনাম তৈরি করুন",
+        "paragraphs": [
+          "মূল বিষয় ও ফরম্যাট শিরোনামের শুরুতে রাখুন, তবে শিরোনামকে কীওয়ার্ডের তালিকায় পরিণত না করে স্বাভাবিক রাখুন। এই উদাহরণের জন্য একটি কার্যকর শিরোনাম হলো “Flat Gardening Tools and Plant Vector Icon Collection।” এতে প্রিভিউটিই পণ্য—এমন দাবি না করে বিষয়, শৈলী ও সম্পদের ধরন চিহ্নিত করা হয়।",
+          "কোনো প্ল্যাটফর্ম শিরোনামের সীমা নির্ধারণ করলে রপ্তানির আগে তার বর্তমান অবদানকারী নির্দেশিকা দেখুন। Adobe-এর CSV নির্দেশিকায় বর্তমানে শিরোনামের সীমা ৭০ অক্ষর বলা হয়েছে, আর সাধারণ কীওয়ার্ড নির্দেশিকায় সর্বোচ্চ ৪৯টি কীওয়ার্ড অনুমোদিত। সীমা ও আপলোডের নিয়ম বদলাতে পারে, তাই বর্তমান পোর্টালের প্রয়োজনীয়তা যাচাই করুন। মার্কেটপ্লেস কীওয়ার্ড ক্ষেত্র ছাড়া দেখালেও শিরোনামটি বোধগম্য থাকা উচিত।"
+        ],
+        "bullets": [
+          "মূল বিষয় দিয়ে শুরু করুন: বাগানের সরঞ্জাম ও উদ্ভিদ।",
+          "সরবরাহযোগ্য ফাইলটি ভেক্টর হলেই “vector” উল্লেখ করুন।",
+          "কমা দিয়ে জোড়া কীওয়ার্ডের স্তূপের বদলে পাঠযোগ্য বাক্যাংশ বেছে নিন."
+        ],
+        "example": "Flat Gardening Tools and Plant Vector Icon Collection"
+      },
+      {
+        "heading": "৪. অগ্রাধিকার অনুযায়ী প্রাসঙ্গিক কীওয়ার্ড বাছুন",
+        "paragraphs": [
+          "সবচেয়ে গুরুত্বপূর্ণ ধারণা দিয়ে শুরু করুন: gardening, tools, plant, icon, vector, flat design এবং collection। এরপর শুধু শিল্পকর্মে সমর্থিত শব্দ যোগ করুন, যেমন watering can, trowel, rake, gloves, seed packet, potted plant এবং wheelbarrow। কাছাকাছি অর্থের পুনরাবৃত্তি না করে একবচন ও বহুবচনের ব্যবহার উদ্দেশ্যপূর্ণ রাখুন।",
+          "যেসব পরিষেবা প্রথম দিকের শব্দকে বেশি গুরুত্ব দেয়, সেখানে প্রথম শব্দগুলোর প্রতি বিশেষ যত্ন নিন। কীওয়ার্ড জেনারেটর সম্ভাব্য শব্দ সাজেস্ট করতে পারে, কিন্তু কোন শব্দ প্রতিটি ফাইল বা পুরো সংগ্রহের ক্ষেত্রে প্রযোজ্য নয়, তা অবদানকারীকে বাদ দিতে হবে। প্ল্যাটফর্মে ইংরেজি মেটাডেটা প্রয়োজন হলে নিবন্ধ বা ইন্টারফেস অন্য ভাষায় হলেও ইংরেজি শব্দ ব্যবহার করুন। Adobe-এর ক্ষেত্রে মেটাডেটার ভাষা অবদানকারী অ্যাকাউন্টের সঙ্গে মিলতে হবে, তাই রপ্তানির আগে সেই অ্যাকাউন্ট সেটিং দেখুন।"
+        ],
+        "bullets": [
+          "বিষয়, সম্পদের ধরন, শৈলী ও স্পষ্টভাবে দৃশ্যমান বস্তুকে অগ্রাধিকার দিন।",
+          "অনুপস্থিত হলে vegetable, greenhouse, landscape বা farming-এর মতো অসংলগ্ন শব্দ বাদ দিন।",
+          "বর্তমান মার্কেটপ্লেসের কীওয়ার্ডের সীমা ও বিভাগ-সংক্রান্ত নিয়ম দেখুন."
+        ],
+        "example": "gardening, garden tools, plant, vector, icon, flat design, collection, watering can, trowel, rake, garden gloves, seed packet, potted plant, wheelbarrow, editable"
+      },
+      {
+        "heading": "৫. কাজের উদাহরণ: একটি সংগ্রহ থেকে ব্যবহারযোগ্য মেটাডেটা তৈরি",
+        "paragraphs": [
+          "ধরা যাক, মূল ফাইলে একই ধরনের ফ্ল্যাট শৈলীতে সাতটি পৃথক আইকন আছে। পানি দেওয়ার ক্যানটিতে হাতল ও মুখ আছে, হাতের কোদালটি হাতে ধরার মতো আকারের, বীজের প্যাকেটে একটি সরল পাতার প্রতীক আছে, আর বাকি আইকনগুলো হলো এক জোড়া দস্তানা, টবে অঙ্কুর, রেক ও ঠেলাগাড়ি। প্রিভিউটি হালকা পটভূমির ওপর একটি আয়তাকার PNG শিট।",
+          "সিদ্ধান্ত হলো কোনো দৃশ্য কল্পনা না করে সংগ্রহটির বর্ণনা দেওয়া। “Flat gardening tools and plant vector icon collection” “farm landscape illustration”-এর চেয়ে বেশি নির্ভুল। শিল্পকর্মে দৃশ্যমানভাবে একাধিক রং থাকলেই “Colorful” উপযুক্ত। পৃথক আইকনগুলোকে চারপাশের দৃশ্য বা পটভূমি ছাড়া উপস্থাপন করা হলে, এবং তাতে তাদের ব্যবহারের উদ্দেশ্য না বদলালে, তবেই “Isolated” ব্যবহার করুন।"
+        ],
+        "bullets": [
+          "শিরোনাম: Flat Gardening Tools and Plant Vector Icon Collection।",
+          "শৈলীর শব্দ: flat design, simple shapes, colorful—শুধু দৃশ্যত সমর্থিত হলে।",
+          "বস্তুর শব্দ: watering can, trowel, seed packet, gloves, potted sprout, rake, wheelbarrow।",
+          "ফরম্যাটের শব্দ: editable vector—শুধু প্রকৃত ভেক্টর প্যাকেজের জন্য."
+        ],
+        "example": "শিরোনাম: Flat Gardening Tools and Plant Vector Icon Collection\nবর্ণনা: Seven separate flat icons for gardening and plant-related projects, including a watering can, trowel, seed packet, gloves, potted sprout, rake, and wheelbarrow.\nকীওয়ার্ড: gardening, garden tools, plant, vector, icon, flat design, watering can, trowel, seed packet, garden gloves, potted plant, rake, wheelbarrow, collection"
+      },
+      {
+        "heading": "৬. ফলাফল পর্যালোচনা, রপ্তানি ও যাচাই করুন",
+        "paragraphs": [
+          "আপনি যদি MetaStocker-এর স্থানীয় জেনারেটর ব্যবহার করেন, তার আউটপুটকে সম্পাদনাযোগ্য খসড়া হিসেবে নিন। এর স্থানীয় মডেলগুলো ভিজিটরের ব্রাউজারে চলে এবং অ্যাপটি মার্কেটপ্লেস-উপযোগী CSV ফরম্যাট রপ্তানি করতে পারে, কিন্তু এটি ফাইল আপলোড বা জমা দেয় না, মূল শিল্পকর্মে মেটাডেটা এম্বেড করে না এবং গ্রহণযোগ্যতার নিশ্চয়তা দেয় না। রপ্তানির আগে প্রতিটি সারি পর্যালোচনা করুন, বিশেষ করে যখন একটি ব্যাচে বিভিন্ন আইকন থাকে।",
+          "CSV কর্মপ্রবাহে প্ল্যাটফর্মের ম্যাপিং-প্রয়োজনীয়তা থাকলে ফাইলের নাম আপলোড করা সম্পদের সঙ্গে হুবহু মিলতে হবে, এক্সটেনশন ও অক্ষরের বড়-ছোটের পার্থক্যসহ। Adobe-এর উল্লেখিত কর্মপ্রবাহের অংশ হলো CSV আমদানির আগে সম্পদ আপলোড করা, এবং ফলস্বরূপ মেটাডেটা অবদানকারী পোর্টালে পরীক্ষা করা উচিত। Shutterstock-এর নির্দেশিকাতেও নির্ভুল বর্ণনামূলক বাক্যাংশ এবং প্রাসঙ্গিক, পুনরাবৃত্তিহীন কীওয়ার্ডের ওপর জোর দেওয়া হয়েছে। সবশেষে বর্তমান অবদানকারী পোর্টাল পরীক্ষা করুন, কারণ মার্কেটপ্লেসের নীতি ও ক্ষেত্রের সীমা বদলায়।"
+        ],
+        "bullets": [
+          "প্রতিটি শিরোনাম ও কীওয়ার্ড তালিকা প্রকৃত আইকনের সঙ্গে মিলিয়ে দেখুন।",
+          "ফাইলের নাম, এক্সটেনশন, বড় হাতের অক্ষর এবং প্রয়োজনীয় বিভাগ-ক্ষেত্র নিশ্চিত করুন।",
+          "মার্কেটপ্লেস পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।",
+          "মূল ভেক্টর ফাইলকে প্রিভিউ ও রপ্তানি করা CSV থেকে আলাদা রাখুন."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "আমি বাগানবিষয়ক সংগ্রহে দৃশ্যমান বস্তুগুলোর নামই ব্যবহার করেছি।",
+      "আমি সম্পাদনাযোগ্য ভেক্টর সরবরাহযোগ্য ফাইল ও রাস্টার প্রিভিউ আলাদা করেছি।",
+      "আমি স্বাভাবিক শিরোনাম ব্যবহার করে সবচেয়ে গুরুত্বপূর্ণ শব্দকে অগ্রাধিকার দিয়েছি।",
+      "আমি অসমর্থিত ফরম্যাট, দৃশ্য ও বিষয়-সংক্রান্ত দাবি বাদ দিয়েছি।",
+      "আমি লক্ষ্য মার্কেটপ্লেসের বর্তমান ভাষা, সীমা ও বিভাগ-সংক্রান্ত নিয়ম দেখেছি।",
+      "রপ্তানি বা আমদানির আগে আমি প্রতিটি ফাইল অনুযায়ী তৈরি মেটাডেটা পর্যালোচনা করেছি."
+    ],
+    "illustration": {
+      "title": "আইকন পরিদর্শন থেকে মার্কেটপ্লেস মেটাডেটা",
+      "steps": [
+        {
+          "label": "দৃশ্যমান আইকন তালিকাভুক্ত করুন",
+          "detail": "হাতের কোদাল, পানি দেওয়ার ক্যান, উদ্ভিদ ও অন্যান্য আঁকা বস্তুর তালিকা করুন।"
+        },
+        {
+          "label": "ফরম্যাটের দাবি আলাদা করুন",
+          "detail": "ভেক্টর সরবরাহযোগ্য ফাইল ও রাস্টার প্রিভিউকে আলাদা তথ্য হিসেবে নথিভুক্ত করুন।"
+        },
+        {
+          "label": "মেটাডেটা পর্যালোচনা ও রপ্তানি করুন",
+          "detail": "শিরোনাম, কীওয়ার্ড, ফাইলের নাম ও পোর্টালের প্রয়োজনীয়তা পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "फ्लैट बागवानी वेक्टर आइकन संग्रह का मेटाडेटा",
+    "description": "बागवानी आइकन का वर्णन करने, संपादनयोग्य वेक्टर और रास्टर प्रीव्यू अलग रखने और सटीक मार्केटप्लेस मेटाडेटा तैयार करने की व्यावहारिक कार्यविधि।",
+    "intro": "बागवानी आइकन संग्रह के लिए मेटाडेटा तैयार करना केवल “plant” और “garden” जैसे शब्दों की सूची बनाना नहीं है। योगदानकर्ता को यह पहचानना होता है कि वास्तव में क्या बनाया गया है, दृश्य शैली समझानी होती है और ऐसी फ़ाइल-सुविधाओं का वादा नहीं करना होता जो जमा की गई संपत्ति में मौजूद नहीं हैं। यह मार्गदर्शिका संपादनयोग्य वेक्टर आइकन के एक काल्पनिक फ्लैट संग्रह का उपयोग करती है: हाथ का खुरपा, पानी देने की कैन, बीज का पैकेट, बागवानी के दस्ताने, गमले में अंकुर, रेक और ठेला। संग्रह में दिखाने के लिए एक PNG प्रीव्यू भी है। लक्ष्य उपयोगी अंग्रेज़ी मेटाडेटा बनाना है, साथ ही वेक्टर डिलिवरेबल, प्रीव्यू चित्र और असमर्थित फ़ॉर्मैट संबंधी दावों को स्पष्ट रूप से अलग रखना है।",
+    "sections": [
+      {
+        "heading": "१. लिखने से पहले संग्रह का निरीक्षण करें",
+        "paragraphs": [
+          "सिर्फ़ प्रीव्यू शीट नहीं, संपादनयोग्य स्रोत खोलकर हर आइकन की समीक्षा करें। दिखाई देने वाली वस्तुओं को दर्ज करें, देखें कि संग्रह अलग-अलग रखा गया है या पैटर्न के रूप में व्यवस्थित है, और यह तय करें कि शैली फ्लैट, आउटलाइन वाली, ज्यामितीय, रंगीन या मोनोक्रोम है।",
+          "इस उदाहरण में सटीक दृश्य-वर्णन सात अलग-अलग औज़ारों और पौधों से जुड़े प्रतीकों वाले फ्लैट बागवानी आइकन संग्रह का है। जब तक वे वास्तव में शामिल न हों, सब्ज़ियाँ, ग्रीनहाउस उपकरण, लैंडस्केप दृश्य या जैविक बनावट न जोड़ें। प्रीव्यू में सभी आइकन साथ दिख सकते हैं, लेकिन इससे संपत्ति सीमलेस पैटर्न या एकल रास्टर चित्र नहीं बन जाती।"
+        ],
+        "bullets": [
+          "कीवर्ड चुनने से पहले दिखाई देने वाली वस्तुओं की सूची बनाएं।",
+          "रचना और शैली का वर्णन तभी करें जब वे स्पष्ट रूप से दिखाई दें।",
+          "प्रीव्यू को रूप-रंग का प्रमाण मानें, हर डिलिवरेबल फ़ॉर्मैट का प्रमाण नहीं."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "२. संपत्ति के तथ्य और प्रीव्यू के तथ्य अलग रखें",
+        "paragraphs": [
+          "मेटाडेटा में उस वस्तु का वर्णन होना चाहिए जो खरीदार को मिल सकती है। यदि मुख्य डिलिवरेबल संपादनयोग्य वेक्टर फ़ाइल है, तो इसका उल्लेख तभी करें जब जमा किए गए पैकेज में वास्तव में मार्केटप्लेस या उत्पाद सूची द्वारा समर्थित संपादनयोग्य वेक्टर फ़ॉर्मैट मौजूद हो। PNG या JPEG प्रीव्यू आइकन का रूप दिखाता है; इससे यह सिद्ध नहीं होता कि प्रीव्यू स्वयं संपादनयोग्य है।",
+          "“SVG included”, “AI compatible”, “fully editable” या “print-ready” जैसे दावे तब तक न करें जब तक वे वास्तविक पैकेज के लिए सही और प्लेटफ़ॉर्म द्वारा अनुमत न हों। यदि .ai स्रोत दिया गया है, तो याद रखें कि उसका विश्लेषण करने के लिए मेटाडेटा टूल को पढ़ने योग्य प्रीव्यू की आवश्यकता हो सकती है; टूल अपठनीय स्रोत को विश्वसनीय नहीं बना सकता।"
+        ],
+        "bullets": [
+          "“editable vector icon collection” का उपयोग केवल वेक्टर डिलिवरेबल के लिए करें।",
+          "जहाँ यह अंतर महत्वपूर्ण हो, प्रदर्शन चित्र के लिए “raster preview” लिखें।",
+          "पिक्सेल या थंबनेल से फ़ाइल फ़ॉर्मैट का अनुमान न लगाएं."
+        ],
+        "example": "डिलिवरेबल तथ्य: सात editable vector icons.\nप्रीव्यू तथ्य: आइकन को साथ दिखाने वाली एक raster preview sheet.\nदावा न करें: “PNG icons are editable vectors.”"
+      },
+      {
+        "heading": "३. वर्णनात्मक शीर्षक बनाएं",
+        "paragraphs": [
+          "मुख्य विषय और फ़ॉर्मैट को शीर्षक की शुरुआत के पास रखें, लेकिन शीर्षक को कीवर्ड सूची में बदलने के बजाय स्वाभाविक रखें। इस उदाहरण के लिए उपयोगी शीर्षक है “Flat Gardening Tools and Plant Vector Icon Collection।” इसमें प्रीव्यू को उत्पाद बताए बिना विषय, शैली और संपत्ति का प्रकार स्पष्ट होता है।",
+          "यदि कोई प्लेटफ़ॉर्म शीर्षक की सीमा तय करता है, तो निर्यात से पहले उसकी वर्तमान योगदानकर्ता मार्गदर्शिका देखें। Adobe की CSV मार्गदर्शिका में वर्तमान में शीर्षक की सीमा ७० वर्ण बताई गई है, जबकि उसकी सामान्य कीवर्ड मार्गदर्शिका अधिकतम ४९ कीवर्ड की अनुमति देती है। सीमाएं और अपलोड नियम बदल सकते हैं, इसलिए वर्तमान पोर्टल की आवश्यकताओं को सत्यापित करें। मार्केटप्लेस इसे कीवर्ड फ़ील्ड के बिना दिखाए तब भी शीर्षक समझने योग्य रहना चाहिए।"
+        ],
+        "bullets": [
+          "मुख्य विषय से शुरू करें: बागवानी के औज़ार और पौधे।",
+          "“vector” का उल्लेख तभी करें जब डिलिवरेबल वेक्टर हो।",
+          "कॉमा से जुड़ी कीवर्ड की लंबी सूची के बजाय पढ़ने योग्य वाक्यांश चुनें."
+        ],
+        "example": "Flat Gardening Tools and Plant Vector Icon Collection"
+      },
+      {
+        "heading": "४. प्राथमिकता के अनुसार प्रासंगिक कीवर्ड चुनें",
+        "paragraphs": [
+          "सबसे महत्वपूर्ण अवधारणाओं से शुरू करें: gardening, tools, plant, icon, vector, flat design और collection। फिर केवल वही शब्द जोड़ें जिनका समर्थन कलाकृति करती है, जैसे watering can, trowel, rake, gloves, seed packet, potted plant और wheelbarrow। एक जैसे शब्दों को दोहराने के बजाय एकवचन और बहुवचन का उपयोग उद्देश्यपूर्ण रखें।",
+          "जिन सेवाओं में शुरुआती शब्दों को अधिक महत्व मिलता है, वहाँ पहले शब्दों पर विशेष ध्यान दें। कीवर्ड जनरेटर संभावित विकल्प सुझा सकता है, लेकिन योगदानकर्ता को ऐसे शब्द हटाने होंगे जो हर फ़ाइल या पूरे संग्रह पर लागू नहीं होते। यदि प्लेटफ़ॉर्म को अंग्रेज़ी मेटाडेटा चाहिए, तो लेख या इंटरफ़ेस किसी दूसरी भाषा में होने पर भी अंग्रेज़ी शब्दों का उपयोग करें। Adobe में मेटाडेटा की भाषा योगदानकर्ता खाते से मेल खानी चाहिए, इसलिए निर्यात से पहले खाते की सेटिंग जांचें।"
+        ],
+        "bullets": [
+          "विषय, संपत्ति का प्रकार, शैली और स्पष्ट रूप से दिखाई देने वाली वस्तुओं को प्राथमिकता दें।",
+          "यदि मौजूद न हों, तो vegetable, greenhouse, landscape या farming जैसे असंबंधित शब्द हटाएं।",
+          "वर्तमान मार्केटप्लेस की कीवर्ड सीमा और श्रेणी के नियम जांचें."
+        ],
+        "example": "gardening, garden tools, plant, vector, icon, flat design, collection, watering can, trowel, rake, garden gloves, seed packet, potted plant, wheelbarrow, editable"
+      },
+      {
+        "heading": "५. कार्य किया हुआ उदाहरण: एक संग्रह को उपयोगी मेटाडेटा में बदलें",
+        "paragraphs": [
+          "मान लें कि स्रोत में एक जैसी फ्लैट शैली के सात अलग-अलग आइकन हैं। पानी देने की कैन में हैंडल और टोंटी है, खुरपा हाथ में पकड़ने योग्य आकार का है, बीज के पैकेट पर पत्ते का सरल प्रतीक है, और बाकी आइकन दस्तानों की जोड़ी, गमले में अंकुर, रेक और ठेले के हैं। प्रीव्यू हल्की पृष्ठभूमि पर एक आयताकार PNG शीट है।",
+          "निर्णय यह है कि कोई दृश्य गढ़ने के बजाय संग्रह का वर्णन किया जाए। “Flat gardening tools and plant vector icon collection”, “farm landscape illustration” से अधिक सटीक है। “Colorful” तभी उचित है जब कलाकृति में कई रंग स्पष्ट रूप से दिखाई दें। “Isolated” का उपयोग तभी करें जब अलग-अलग आइकन आसपास के दृश्य या पृष्ठभूमि के बिना प्रस्तुत किए गए हों और इससे उनका इच्छित उपयोग न बदलता हो।"
+        ],
+        "bullets": [
+          "शीर्षक: Flat Gardening Tools and Plant Vector Icon Collection।",
+          "शैली के शब्द: flat design, simple shapes, colorful—केवल तब, जब दृश्य रूप से समर्थित हों।",
+          "वस्तु के शब्द: watering can, trowel, seed packet, gloves, potted sprout, rake, wheelbarrow।",
+          "फ़ॉर्मैट का शब्द: editable vector—केवल वास्तविक वेक्टर पैकेज के लिए."
+        ],
+        "example": "शीर्षक: Flat Gardening Tools and Plant Vector Icon Collection\nविवरण: Seven separate flat icons for gardening and plant-related projects, including a watering can, trowel, seed packet, gloves, potted sprout, rake, and wheelbarrow.\nकीवर्ड: gardening, garden tools, plant, vector, icon, flat design, watering can, trowel, seed packet, garden gloves, potted plant, rake, wheelbarrow, collection"
+      },
+      {
+        "heading": "६. परिणाम की समीक्षा, निर्यात और सत्यापन करें",
+        "paragraphs": [
+          "यदि आप MetaStocker का स्थानीय जनरेटर उपयोग करते हैं, तो उसके आउटपुट को संपादनयोग्य मसौदा मानें। इसके स्थानीय मॉडल विज़िटर के ब्राउज़र में चलते हैं और ऐप मार्केटप्लेस-उन्मुख CSV फ़ॉर्मैट निर्यात कर सकता है, लेकिन यह फ़ाइलें अपलोड या जमा नहीं करता, मूल कलाकृति में मेटाडेटा एम्बेड नहीं करता और स्वीकृति की गारंटी नहीं देता। निर्यात से पहले हर पंक्ति की समीक्षा करें, खासकर जब किसी बैच में अलग-अलग आइकन हों।",
+          "CSV कार्यप्रवाह में, जहाँ प्लेटफ़ॉर्म को मैपिंग चाहिए वहाँ फ़ाइल नाम अपलोड की गई संपत्तियों से हूबहू मेल खाने चाहिए, जिसमें एक्सटेंशन और बड़े-छोटे अक्षर भी शामिल हैं। Adobe के बताए कार्यप्रवाह में CSV आयात करने से पहले संपत्तियां अपलोड करना शामिल है, और परिणामी मेटाडेटा को योगदानकर्ता पोर्टल में जांचना चाहिए। Shutterstock की मार्गदर्शिका भी सटीक वर्णनात्मक वाक्यांश और प्रासंगिक, गैर-दोहराए गए कीवर्ड पर ज़ोर देती है। अंत में वर्तमान योगदानकर्ता पोर्टल जांचें, क्योंकि मार्केटप्लेस नीतियां और फ़ील्ड सीमाएं बदलती रहती हैं।"
+        ],
+        "bullets": [
+          "हर शीर्षक और कीवर्ड सूची की वास्तविक आइकन से तुलना करें।",
+          "फ़ाइल नाम, एक्सटेंशन, बड़े-छोटे अक्षर और आवश्यक श्रेणी फ़ील्ड की पुष्टि करें।",
+          "मार्केटप्लेस पोर्टल में आयात किया गया मेटाडेटा जांचें।",
+          "मूल वेक्टर स्रोत को प्रीव्यू और निर्यात की गई CSV से अलग रखें."
+        ],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "मैंने बागवानी संग्रह में केवल दिखाई देने वाली वस्तुओं के नाम दिए हैं।",
+      "मैंने संपादनयोग्य वेक्टर डिलिवरेबल को रास्टर प्रीव्यू से अलग किया है।",
+      "मैंने स्वाभाविक शीर्षक का उपयोग किया और सबसे महत्वपूर्ण शब्दों को प्राथमिकता दी।",
+      "मैंने असमर्थित फ़ॉर्मैट, दृश्य और विषय संबंधी दावे हटा दिए।",
+      "मैंने लक्ष्य मार्केटप्लेस की वर्तमान भाषा, सीमाएं और श्रेणी के नियम जांचे।",
+      "निर्यात या आयात से पहले मैंने हर फ़ाइल के लिए तैयार मेटाडेटा की समीक्षा की है."
+    ],
+    "illustration": {
+      "title": "आइकन निरीक्षण से मार्केटप्लेस मेटाडेटा तक",
+      "steps": [
+        {
+          "label": "दिखाई देने वाले आइकन गिनें",
+          "detail": "खुरपा, पानी देने की कैन, पौधों और अन्य बनाई गई वस्तुओं की सूची बनाएं।"
+        },
+        {
+          "label": "फ़ॉर्मैट के दावे अलग करें",
+          "detail": "वेक्टर डिलिवरेबल और रास्टर प्रीव्यू को अलग-अलग तथ्यों के रूप में दर्ज करें।"
+        },
+        {
+          "label": "मेटाडेटा की समीक्षा और निर्यात करें",
+          "detail": "शीर्षक, कीवर्ड, फ़ाइल नाम और पोर्टल की आवश्यकताएं जांचें।"
+        }
+      ]
+    }
+  }
+}

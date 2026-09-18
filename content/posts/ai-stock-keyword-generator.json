@@ -1,0 +1,487 @@
+{
+  "slug": "ai-stock-keyword-generator",
+  "category": "local-ai",
+  "source_ids": [
+    "metastocker",
+    "adobe-keywords",
+    "adobe-csv"
+  ],
+  "en": {
+    "title": "How to Generate and Review Stock Keywords Locally with AI",
+    "description": "A practical walkthrough for generating stock keywords locally from one bread photo, checking AI mistakes, and exporting clean marketplace metadata.",
+    "intro": "This guide shows a complete local workflow for one example image: a photo of fresh bread on a kitchen table. The aim is not to accept every suggestion from an AI model. It is to create a useful first draft, inspect what the image actually supports, remove invented details, and export only a row you would be comfortable reviewing again in a stock contributor portal.\n\nMetaStocker can run its local vision and thinking models in the visitor’s browser. In local mode, model inference stays on the device rather than going to an AI server. The first model download requires internet access, and the browser needs a compatible WebGPU setup with sufficient memory. Downloaded browser files are not the same as a model actively loaded in memory, so the interface’s Download/Load and unload controls matter. This example starts conservatively with one local thread.",
+    "sections": [
+      {
+        "heading": "1. Prepare the image and the facts",
+        "paragraphs": [
+          "Before opening the generator, write down only what you can defend from the photo. In this example, the visible facts are a whole rustic loaf, several slices, a wooden table, a neutral kitchen setting, warm natural-looking light, and a close food composition. Do not add ingredients, a recipe, a named bakery, a country, a person, or a dietary claim unless you know those facts independently.",
+          "Use a short batch description as context, not as a list of blanket tags. For one file, a precise sentence is enough: “Food photo of sliced fresh bread on a wooden kitchen table; no people or packaging visible.” This helps frame the request while leaving the model responsible for suggestions that still need review."
+        ],
+        "bullets": [
+          "Separate visible facts from assumptions.",
+          "Keep the original filename unchanged if you may export CSV metadata later.",
+          "Decide which marketplace language is required before editing the final terms."
+        ],
+        "example": "Visible facts: sliced bread, whole loaf, wooden table, indoor food setting.\nUnsupported assumptions: wheat ingredients, homemade recipe, bakery name, country, gluten-free status."
+      },
+      {
+        "heading": "2. Download, load, and start with one thread",
+        "paragraphs": [
+          "Open the local generator and choose a local model. Explicitly select Download/Load and wait for the model to become ready. The initial download needs internet access. Afterward, the model may remain available in browser storage, but that cached download is different from the model copy currently loaded for inference.",
+          "Set the local parallel thread count to one for the first pass. Multiple local threads can load separate model copies, which may increase memory pressure. After you understand the workflow, you can test a second thread if your browser, GPU, and available memory handle it reliably. A browser that supports WebGPU does not automatically guarantee that a particular model will fit.",
+          "Select the bread image and start generation. If the preview does not appear or the browser struggles, pause and check the model state, browser compatibility, and available memory before changing the metadata."
+        ],
+        "bullets": [
+          "Use local mode when you want the photo, prompt, and result to remain on the device during generation.",
+          "Do not expect automatic cloud fallback if local inference cannot run.",
+          "Unload the model when finished if you want to release active memory; deleting browser model files is a separate action."
+        ],
+        "example": "Starting setup: local model; Download/Load completed; local threads: 1; input: fresh-bread.jpg."
+      },
+      {
+        "heading": "3. Observe the preview before judging keywords",
+        "paragraphs": [
+          "Let the generator produce its editable preview, then inspect the image and the draft side by side. The preview is useful for finding candidate concepts, but it is not evidence that every word is true. Read the title, description, and tags as a draft made for human correction.",
+          "For this bread photo, the draft might correctly suggest terms such as bread, sliced bread, loaf, bakery food, table, and close up. It might also suggest wheat, flour, butter, breakfast, homemade, or sourdough. Some of those may be visually plausible; plausibility is not verification. A cut surface can hint at a recipe, but pixels cannot prove the ingredients or preparation method.",
+          "Keep the filename tied to the result while reviewing. The app can validate a requested number of tags, but a correct count says nothing about relevance or accuracy."
+        ],
+        "bullets": [
+          "Check the preview against the physical scene, not against the model’s confidence or wording.",
+          "Mark every term as confirmed, uncertain, or unsupported.",
+          "Treat visual suggestions as candidates, never as automatic facts."
+        ],
+        "example": "Draft review: keep “sliced bread” and “wooden table”; question “breakfast”; remove “sourdough,” “wheat,” and “butter” unless independently verified."
+      },
+      {
+        "heading": "4. Remove hallucinated ingredients and overreach",
+        "paragraphs": [
+          "The most important edit in this example is the ingredient check. Suppose the loaf has a brown crust and an open crumb. That appearance does not establish wheat flour, rye, sourdough culture, butter, or a homemade recipe. Delete those terms unless your production notes or packaging confirm them. The same caution applies to claims such as healthy, organic, traditional, or artisanal.",
+          "Then remove repeated, overly broad, or irrelevant tags. Keep terms that describe the subject, visible form, setting, and useful concept without pretending to know hidden context. A compact list of accurate words is more defensible than a longer list filled with guesses.",
+          "If the target marketplace requires English metadata, edit the final title and keywords in English even if your working notes or this guide are in another language. Follow the current contributor portal rules for the specific platform."
+        ],
+        "bullets": [
+          "Keep visible subjects and composition terms.",
+          "Remove unverified ingredients, processes, identities, locations, and commercial claims.",
+          "Avoid repeating the same idea with minor word changes."
+        ],
+        "example": "Candidate final keywords: bread, sliced bread, loaf, bakery food, baked food, crust, crumb, food close up, wooden table, kitchen, rustic food, fresh food, still life."
+      },
+      {
+        "heading": "5. Build a conservative final metadata row",
+        "paragraphs": [
+          "Write a descriptive title or phrase rather than a title made from a keyword list. Put the most important concepts first. For Adobe Stock, the relevant guide allows up to 49 keywords and emphasizes the first ten; its CSV guidance currently gives a 70-character title limit. Use a conservative maximum of 49 and check the current upload screen because platform requirements can change.",
+          "For the example, “Sliced fresh bread loaf on a wooden kitchen table” is specific without claiming a recipe or ingredient. The first keywords should carry the core subject: bread, sliced bread, loaf, baked food, food close up. Add setting and composition terms only when they remain relevant.",
+          "If you later adapt the row for another marketplace, do not assume the same limits or fields apply. Requirements differ by platform and content type."
+        ],
+        "bullets": [
+          "Put the strongest subject terms first.",
+          "Keep the title natural and descriptive.",
+          "Confirm current marketplace limits before export or upload."
+        ],
+        "example": "Filename: fresh-bread.jpg\nTitle: Sliced fresh bread loaf on a wooden kitchen table\nKeywords: bread, sliced bread, loaf, baked food, food close up, crust, crumb, wooden table, kitchen, rustic food, fresh food, still life"
+      },
+      {
+        "heading": "6. Export only after the human review",
+        "paragraphs": [
+          "When the row is ready, export the format required by your workflow, such as an Adobe, Envato, Shutterstock, or Freepik CSV. Exporting does not upload or submit the file, guarantee acceptance, or embed metadata into the original image. It also does not replace inspecting the final metadata in the contributor portal.",
+          "For an Adobe CSV workflow, upload the assets before importing the CSV, and make sure the filename, including extension and case, matches exactly. Treat the export as a prepared handoff. Open it, verify the row, and then inspect the resulting metadata in the portal. If the portal’s current rules differ from your saved checklist, follow the current portal instructions.",
+          "Keep the original image and your reviewed metadata together. If a tab closes, the app does not promise to preserve unfinished work, so export a ready row before leaving the session."
+        ],
+        "bullets": [
+          "Export only rows you have reviewed.",
+          "Check exact filenames and extensions.",
+          "Inspect imported metadata in the contributor portal.",
+          "Verify current platform rules before submission."
+        ],
+        "example": "Final handoff: fresh-bread.jpg paired with the reviewed title and 12 accurate English keywords; no invented ingredients or location claims."
+      }
+    ],
+    "checklist": [
+      "Download and load the local model explicitly.",
+      "Start with one local thread.",
+      "Describe only facts you can defend.",
+      "Observe the generated preview before editing.",
+      "Remove invented ingredients such as wheat, butter, or sourdough unless verified.",
+      "Place the most important keywords first.",
+      "Use a conservative keyword count and check current platform rules.",
+      "Export only reviewed rows, then inspect the contributor portal.",
+      "Remember that local browser inference is separate from downloaded browser cache."
+    ],
+    "illustration": {
+      "title": "Three-step local keyword workflow",
+      "steps": [
+        {
+          "label": "Load one local model",
+          "detail": "Download/load the model and begin with one browser thread."
+        },
+        {
+          "label": "Audit the bread preview",
+          "detail": "Keep visible facts; remove invented ingredients and claims."
+        },
+        {
+          "label": "Export a reviewed row",
+          "detail": "Save accurate metadata and inspect it in the contributor portal."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как локально создать и проверить ключевые слова для стока",
+    "description": "Практическое руководство: создайте локальные AI-ключевые слова для фото хлеба, удалите ошибки и экспортируйте проверенные метаданные.",
+    "intro": "Ниже показан полный локальный процесс на одном примере: фотография свежего хлеба на кухонном столе. Задача не в том, чтобы без проверки принять все предложения AI. Сначала нужно получить черновик, затем сопоставить каждое слово с тем, что действительно видно на снимке, удалить выдуманные детали и только после этого экспортировать строку метаданных для дальнейшей проверки на стоковой площадке.\n\nMetaStocker может запускать локальные модели зрения и рассуждения в браузере посетителя. В локальном режиме вывод модели выполняется на устройстве, а не на AI-сервере. Первое скачивание модели требует интернета; также нужны совместимые браузер, WebGPU, GPU и достаточная память. Файлы модели, сохранённые в кэше браузера, не равны модели, загруженной в активную память. Поэтому в примере мы явно выполняем Download/Load и начинаем с одного локального потока.",
+    "sections": [
+      {
+        "heading": "1. Подготовьте фото и проверяемые факты",
+        "paragraphs": [
+          "Перед запуском генератора выпишите только то, что можно защитить наблюдением или собственными записями. В нашем примере видны целая буханка, несколько ломтиков, деревянный стол, нейтральная кухонная обстановка и крупный натюрморт с тёплым естественным на вид светом. Не добавляйте ингредиенты, название пекарни, страну, человека или диетическое свойство, если это не подтверждено отдельно.",
+          "Для одного файла достаточно точного контекста, а не списка будущих тегов: «Фотография ломтиков свежего хлеба на деревянном кухонном столе; людей и упаковки не видно». Такой текст задаёт рамку, но не делает каждое предположение фактом."
+        ],
+        "bullets": [
+          "Отделите видимые факты от догадок.",
+          "Сохраните исходное имя файла для будущего CSV.",
+          "Заранее определите язык метаданных целевой площадки."
+        ],
+        "example": "Видимые факты: ломтики хлеба, целая буханка, деревянный стол, кухонная сцена.\nНе подтверждено: пшеничный состав, домашний рецепт, название пекарни, страна, отсутствие глютена."
+      },
+      {
+        "heading": "2. Скачайте модель и начните с одного потока",
+        "paragraphs": [
+          "Откройте локальный генератор, выберите локальную модель и явно нажмите Download/Load. Дождитесь готовности. Первое скачивание требует интернета. После этого файлы могут оставаться в хранилище браузера, но сохранённый браузерный кэш — не то же самое, что копия модели, загруженная для текущего вывода.",
+          "Для первого запуска установите один локальный поток. Несколько потоков могут загружать отдельные копии модели и сильнее нагружать память. Позже можно осторожно проверить второй поток, если конкретные браузер, GPU и объём памяти справляются. Поддержка WebGPU сама по себе не означает, что выбранная модель поместится в памяти.",
+          "Выберите фото хлеба и запустите генерацию. Если предпросмотр не появляется или браузер испытывает трудности, сначала проверьте состояние модели, совместимость и память, а не исправляйте метаданные наугад."
+        ],
+        "bullets": [
+          "В локальном режиме фото, запрос и результат остаются на устройстве во время генерации.",
+          "Автоматического облачного резервного режима нет.",
+          "Выгрузка модели из памяти и удаление её файлов браузера — разные действия."
+        ],
+        "example": "Начальная настройка: локальная модель; Download/Load завершён; локальных потоков: 1; файл: fresh-bread.jpg."
+      },
+      {
+        "heading": "3. Сначала наблюдайте предпросмотр",
+        "paragraphs": [
+          "Дождитесь редактируемого предпросмотра и сравните его с фотографией рядом. Предпросмотр помогает собрать кандидатов, но не доказывает истинность каждого слова. Читайте заголовок, описание и теги как черновик, который должен исправить человек.",
+          "Для хлеба модель может правильно предложить bread, sliced bread, loaf, bakery food, table и close up. Но она также способна написать wheat, flour, butter, breakfast, homemade или sourdough. Визуальная правдоподобность не равна проверке. Разрез может напоминать определённый рецепт, однако пиксели не подтверждают ингредиенты или способ приготовления.",
+          "Во время проверки сохраняйте связь результата с именем файла. Приложение может проверить запрошенное количество тегов, но правильное количество ничего не говорит о точности и уместности."
+        ],
+        "bullets": [
+          "Сверяйте слова с реальной сценой, а не с уверенностью модели.",
+          "Помечайте термин как подтверждённый, сомнительный или неподдержанный.",
+          "Воспринимайте предложения AI только как кандидатов."
+        ],
+        "example": "Проверка черновика: оставить “sliced bread” и “wooden table”; проверить “breakfast”; удалить “sourdough”, “wheat” и “butter”, если нет независимого подтверждения."
+      },
+      {
+        "heading": "4. Удалите выдуманные ингредиенты",
+        "paragraphs": [
+          "Главная редакторская проверка в этом примере касается ингредиентов. Коричневая корка и пористый мякиш не доказывают наличие пшеничной муки, ржи, закваски, масла или домашнего рецепта. Удалите такие слова, если их не подтверждают производственные записи или упаковка. То же относится к словам healthy, organic, traditional и artisanal: это не нейтральные описания, а утверждения.",
+          "Затем уберите повторы, слишком общие и нерелевантные термины. Оставьте слова о видимом объекте, форме, обстановке и композиции, не приписывая снимку скрытый контекст. Короткий точный список полезнее длинного списка догадок.",
+          "Если целевая площадка требует английские метаданные, финальные заголовок и ключевые слова должны быть на английском, даже если рабочие заметки и статья на русском. Перед экспортом сверяйтесь с актуальными правилами кабинета автора."
+        ],
+        "bullets": [
+          "Сохраняйте термины о видимом объекте и композиции.",
+          "Удаляйте неподтверждённые ингредиенты, процессы, личности и места.",
+          "Не повторяйте одну идею несколькими почти одинаковыми словами."
+        ],
+        "example": "Итоговые кандидаты: bread, sliced bread, loaf, bakery food, baked food, crust, crumb, food close up, wooden table, kitchen, rustic food, fresh food, still life."
+      },
+      {
+        "heading": "5. Составьте консервативную строку метаданных",
+        "paragraphs": [
+          "Сделайте заголовок естественным описанием, а не цепочкой ключевых слов. Самые важные понятия поставьте в начало. Для Adobe Stock актуальное руководство указывает максимум 49 ключевых слов и уделяет особое внимание первым десяти; руководство по CSV сейчас указывает ограничение заголовка в 70 символов. Используйте консервативный предел 49 и проверяйте текущий экран загрузки, потому что требования могут меняться.",
+          "Для нашего фото подойдёт заголовок “Sliced fresh bread loaf on a wooden kitchen table”. Он описывает сцену, но не утверждает рецепт или состав. Первые ключевые слова должны обозначить основу: bread, sliced bread, loaf, baked food, food close up. Затем можно добавить стол, кухню и натюрморт, если они действительно уместны.",
+          "При адаптации строки для другой площадки не переносите лимиты автоматически. Требования зависят от платформы и типа материала."
+        ],
+        "bullets": [
+          "Поставьте главные термины первыми.",
+          "Сделайте заголовок естественным описанием.",
+          "Перед экспортом проверьте актуальные лимиты выбранной площадки."
+        ],
+        "example": "Файл: fresh-bread.jpg\nЗаголовок: Sliced fresh bread loaf on a wooden kitchen table\nКлючевые слова: bread, sliced bread, loaf, baked food, food close up, crust, crumb, wooden table, kitchen, rustic food, fresh food, still life"
+      },
+      {
+        "heading": "6. Экспортируйте только проверенную строку",
+        "paragraphs": [
+          "После проверки экспортируйте формат, который нужен вашему рабочему процессу: например, CSV для Adobe, Envato, Shutterstock или Freepik. Экспорт не загружает и не отправляет файл автоматически, не гарантирует принятие и не встраивает метаданные в исходную фотографию. Он также не заменяет проверку результата в кабинете автора.",
+          "Для процесса Adobe сначала загрузите сами материалы, затем импортируйте CSV. Имя файла, включая расширение и регистр букв, должно совпадать точно. Относитесь к экспорту как к подготовленной передаче: откройте его, ещё раз проверьте строку и после импорта осмотрите получившиеся метаданные в кабинете.",
+          "Храните исходник и проверенные метаданные вместе. Приложение не обещает сохранение незавершённой работы после закрытия вкладки, поэтому готовую строку лучше экспортировать до завершения сессии."
+        ],
+        "bullets": [
+          "Экспортируйте только проверенные строки.",
+          "Сверьте имена файлов и расширения посимвольно.",
+          "Проверьте импортированные метаданные в кабинете автора.",
+          "Перед отправкой следуйте актуальным правилам платформы."
+        ],
+        "example": "Готовая передача: fresh-bread.jpg связан с проверенным заголовком и 12 точными английскими ключевыми словами; выдуманных ингредиентов и мест нет."
+      }
+    ],
+    "checklist": [
+      "Явно скачайте и загрузите локальную модель.",
+      "Начните с одного локального потока.",
+      "Опишите только факты, которые можете подтвердить.",
+      "Просмотрите результат до редактирования.",
+      "Удалите неподтверждённые ингредиенты: wheat, butter, sourdough.",
+      "Поставьте самые важные ключевые слова в начало.",
+      "Используйте консервативное количество тегов и проверьте актуальные правила.",
+      "Экспортируйте только проверенные строки и осмотрите их в кабинете автора.",
+      "Помните: локальный вывод и кэш браузера — разные вещи."
+    ],
+    "illustration": {
+      "title": "Три шага локальной работы с ключевыми словами",
+      "steps": [
+        {
+          "label": "Загрузите одну модель",
+          "detail": "Скачайте модель и начните с одного потока в браузере."
+        },
+        {
+          "label": "Проверьте хлебный черновик",
+          "detail": "Оставьте видимые факты, удалите выдуманные ингредиенты."
+        },
+        {
+          "label": "Экспортируйте проверенную строку",
+          "detail": "Сохраните точные метаданные и осмотрите их в кабинете автора."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "AI দিয়ে স্থানীয়ভাবে স্টক কীওয়ার্ড তৈরি ও পর্যালোচনা করার পদ্ধতি",
+    "description": "একটি রুটির ছবির মেটাডেটা স্থানীয়ভাবে তৈরি, AI-এর ভুল যাচাই এবং পরিষ্কার মার্কেটপ্লেস মেটাডেটা রপ্তানির ব্যবহারিক নির্দেশিকা।",
+    "intro": "এই নির্দেশিকায় একটি উদাহরণ ছবির জন্য সম্পূর্ণ স্থানীয় কর্মপ্রবাহ দেখানো হয়েছে: রান্নাঘরের টেবিলে রাখা তাজা রুটির ছবি। লক্ষ্য হলো AI মডেলের প্রতিটি পরামর্শ গ্রহণ করা নয়। লক্ষ্য হলো একটি কার্যকর প্রাথমিক খসড়া তৈরি করা, ছবিটি আসলে কী সমর্থন করে তা পরীক্ষা করা, বানানো তথ্য বাদ দেওয়া এবং এমন একটি সারি রপ্তানি করা যা স্টক কনট্রিবিউটর পোর্টালে আবার পর্যালোচনা করতে আপনার আপত্তি থাকবে না।\n\nMetaStocker দর্শকের ব্রাউজারে তার স্থানীয় ভিশন ও চিন্তন মডেল চালাতে পারে। স্থানীয় মোডে মডেলের ইনফারেন্স AI সার্ভারে না গিয়ে ডিভাইসেই থাকে। প্রথম মডেল ডাউনলোডের জন্য ইন্টারনেট দরকার এবং ব্রাউজারে পর্যাপ্ত মেমোরিসহ সামঞ্জস্যপূর্ণ WebGPU সেটআপ থাকা প্রয়োজন। ব্রাউজারে ডাউনলোড করা ফাইল মেমোরিতে সক্রিয়ভাবে লোড থাকা মডেলের সমান নয়, তাই ইন্টারফেসের Download/Load এবং আনলোড নিয়ন্ত্রণ গুরুত্বপূর্ণ। এই উদাহরণে শুরুতে সতর্কভাবে একটি স্থানীয় থ্রেড ব্যবহার করা হয়েছে।",
+    "sections": [
+      {
+        "heading": "১. ছবি ও তথ্য প্রস্তুত করুন",
+        "paragraphs": [
+          "জেনারেটর খোলার আগে ছবিটি দেখে যেসব তথ্যের পক্ষে আপনি যুক্তি দিতে পারেন, শুধু সেগুলো লিখে রাখুন। এই উদাহরণে দৃশ্যমান তথ্য হলো একটি সম্পূর্ণ গ্রাম্য রুটি, কয়েকটি স্লাইস, কাঠের টেবিল, নিরপেক্ষ রান্নাঘরের পরিবেশ, উষ্ণ প্রাকৃতিক ধরনের আলো এবং কাছ থেকে তোলা খাবারের কম্পোজিশন। উপাদান, রেসিপি, নির্দিষ্ট বেকারি, দেশ, ব্যক্তি বা খাদ্যসংক্রান্ত দাবি যোগ করবেন না, যদি না আপনি স্বাধীনভাবে সেসব তথ্য জানেন।",
+          "ব্যাচের সংক্ষিপ্ত বর্ণনাকে প্রেক্ষাপট হিসেবে ব্যবহার করুন, নির্বিচারে ট্যাগের তালিকা হিসেবে নয়। একটি ফাইলের জন্য নির্দিষ্ট একটি বাক্যই যথেষ্ট: “কাঠের রান্নাঘরের টেবিলে কাটা তাজা রুটির খাবারের ছবি; কোনো মানুষ বা প্যাকেজিং দৃশ্যমান নয়।” এটি অনুরোধের কাঠামো নির্ধারণে সাহায্য করে, কিন্তু এমন পরামর্শের দায় মডেলের ওপরই রাখে যেগুলো এখনও পর্যালোচনা করা দরকার।"
+        ],
+        "bullets": [
+          "দৃশ্যমান তথ্যকে অনুমান থেকে আলাদা করুন।",
+          "পরে CSV মেটাডেটা রপ্তানি করতে পারেন মনে হলে মূল ফাইলের নাম অপরিবর্তিত রাখুন।",
+          "চূড়ান্ত শব্দ সম্পাদনার আগে কোন মার্কেটপ্লেসের ভাষা প্রয়োজন তা ঠিক করুন।"
+        ],
+        "example": "দৃশ্যমান তথ্য: কাটা রুটি, সম্পূর্ণ রুটি, কাঠের টেবিল, ঘরের ভেতরের খাবারের পরিবেশ।\nসমর্থনহীন অনুমান: গমের উপাদান, ঘরোয়া রেসিপি, বেকারির নাম, দেশ, গ্লুটেন-মুক্ত হওয়া।"
+      },
+      {
+        "heading": "২. ডাউনলোড, লোড করে একটি থ্রেড দিয়ে শুরু করুন",
+        "paragraphs": [
+          "স্থানীয় জেনারেটর খুলে একটি স্থানীয় মডেল বেছে নিন। স্পষ্টভাবে Download/Load নির্বাচন করুন এবং মডেল প্রস্তুত হওয়া পর্যন্ত অপেক্ষা করুন। প্রাথমিক ডাউনলোডের জন্য ইন্টারনেট দরকার। এরপর মডেলটি ব্রাউজারের স্টোরেজে থাকতে পারে, কিন্তু ক্যাশে থাকা ডাউনলোডটি ইনফারেন্সের জন্য বর্তমানে লোড থাকা মডেল কপির থেকে আলাদা।",
+          "প্রথম ধাপে স্থানীয় সমান্তরাল থ্রেডের সংখ্যা এক রাখুন। একাধিক স্থানীয় থ্রেড আলাদা মডেল কপি লোড করতে পারে, ফলে মেমোরির ওপর চাপ বাড়তে পারে। কর্মপ্রবাহ বুঝে গেলে, আপনার ব্রাউজার, GPU এবং উপলব্ধ মেমোরি নির্ভরযোগ্যভাবে সামলাতে পারলে দ্বিতীয় থ্রেড পরীক্ষা করতে পারেন। WebGPU সমর্থনকারী ব্রাউজার থাকলেই নির্দিষ্ট কোনো মডেল সেখানে ফিট করবে—এমন নিশ্চয়তা নেই।",
+          "রুটির ছবিটি নির্বাচন করে তৈরি করা শুরু করুন। প্রিভিউ দেখা না গেলে বা ব্রাউজার ধীর হয়ে গেলে মেটাডেটা বদলানোর আগে মডেলের অবস্থা, ব্রাউজারের সামঞ্জস্য এবং উপলব্ধ মেমোরি পরীক্ষা করুন।"
+        ],
+        "bullets": [
+          "তৈরির সময় ছবি, প্রম্পট ও ফলাফল ডিভাইসেই রাখতে চাইলে স্থানীয় মোড ব্যবহার করুন।",
+          "স্থানীয় ইনফারেন্স চালাতে না পারলে স্বয়ংক্রিয় ক্লাউড বিকল্প পাওয়া যাবে—এমন আশা করবেন না।",
+          "কাজ শেষ হলে সক্রিয় মেমোরি মুক্ত করতে মডেল আনলোড করুন; ব্রাউজারের মডেল ফাইল মুছে ফেলা আলাদা কাজ।"
+        ],
+        "example": "শুরুর সেটআপ: স্থানীয় মডেল; Download/Load সম্পন্ন; স্থানীয় থ্রেড: ১; ইনপুট: fresh-bread.jpg।"
+      },
+      {
+        "heading": "৩. কীওয়ার্ড বিচার করার আগে প্রিভিউ দেখুন",
+        "paragraphs": [
+          "জেনারেটরকে সম্পাদনাযোগ্য প্রিভিউ তৈরি করতে দিন, তারপর ছবি ও খসড়াটি পাশাপাশি পরীক্ষা করুন। প্রিভিউ সম্ভাব্য ধারণা খুঁজে পেতে সাহায্য করে, কিন্তু প্রতিটি শব্দ সত্য—এর প্রমাণ নয়। শিরোনাম, বর্ণনা ও ট্যাগকে মানুষের সংশোধনের জন্য তৈরি খসড়া হিসেবে পড়ুন।",
+          "এই রুটির ছবির জন্য খসড়ায় bread, sliced bread, loaf, bakery food, table এবং close up-এর মতো শব্দ সঠিকভাবে আসতে পারে। wheat, flour, butter, breakfast, homemade বা sourdough-ও আসতে পারে। কিছু শব্দ দেখতে বিশ্বাসযোগ্য মনে হতে পারে; বিশ্বাসযোগ্য মনে হওয়া যাচাই নয়। কাটা অংশ কোনো রেসিপির ইঙ্গিত দিতে পারে, কিন্তু পিক্সেল উপাদান বা তৈরির পদ্ধতি প্রমাণ করতে পারে না।",
+          "পর্যালোচনার সময় ফাইলের নামটি ফলাফলের সঙ্গে যুক্ত রাখুন। অ্যাপটি চাওয়া সংখ্যক ট্যাগ যাচাই করতে পারে, কিন্তু সঠিক সংখ্যা প্রাসঙ্গিকতা বা নির্ভুলতা সম্পর্কে কিছু বলে না।"
+        ],
+        "bullets": [
+          "মডেলের আত্মবিশ্বাস বা শব্দচয়নের সঙ্গে নয়, বাস্তব দৃশ্যের সঙ্গে প্রিভিউ মিলিয়ে দেখুন।",
+          "প্রতিটি শব্দকে নিশ্চিত, অনিশ্চিত বা সমর্থনহীন হিসেবে চিহ্নিত করুন।",
+          "দৃশ্যভিত্তিক পরামর্শকে কেবল সম্ভাব্য শব্দ হিসেবে নিন, স্বয়ংক্রিয় তথ্য হিসেবে নয়।"
+        ],
+        "example": "খসড়া পর্যালোচনা: “sliced bread” এবং “wooden table” রাখুন; “breakfast” নিয়ে প্রশ্ন তুলুন; স্বাধীনভাবে যাচাই না হলে “sourdough,” “wheat” এবং “butter” বাদ দিন।"
+      },
+      {
+        "heading": "৪. বানানো উপাদান ও অতিরঞ্জিত দাবি বাদ দিন",
+        "paragraphs": [
+          "এই উদাহরণে সবচেয়ে গুরুত্বপূর্ণ সম্পাদনা হলো উপাদান যাচাই। ধরুন, রুটিটির খোসা বাদামি এবং ভেতরের অংশ ছিদ্রযুক্ত। এই চেহারা থেকে গমের ময়দা, রাই, টক রুটির কালচার, মাখন বা ঘরোয়া রেসিপি প্রমাণিত হয় না। আপনার উৎপাদন নোট বা প্যাকেজিংয়ে নিশ্চিত না থাকলে এসব শব্দ মুছে দিন। healthy, organic, traditional বা artisanal-এর মতো দাবির ক্ষেত্রেও একই সতর্কতা প্রযোজ্য।",
+          "এরপর পুনরাবৃত্ত, অতিরিক্ত বিস্তৃত বা অপ্রাসঙ্গিক ট্যাগ বাদ দিন। বিষয়, দৃশ্যমান রূপ, পরিবেশ এবং উপযোগী ধারণা বর্ণনা করে এমন শব্দ রাখুন, কিন্তু লুকানো প্রেক্ষাপট জানেন—এমন ভান করবেন না। অনুমানে ভরা দীর্ঘ তালিকার চেয়ে নির্ভুল শব্দের সংক্ষিপ্ত তালিকা বেশি গ্রহণযোগ্য।",
+          "লক্ষ্য মার্কেটপ্লেসে ইংরেজি মেটাডেটা দরকার হলে, আপনার কাজের নোট বা এই নির্দেশিকা অন্য ভাষায় হলেও চূড়ান্ত শিরোনাম ও কীওয়ার্ড ইংরেজিতেই সম্পাদনা করুন। নির্দিষ্ট প্ল্যাটফর্মের বর্তমান কনট্রিবিউটর পোর্টাল নিয়ম অনুসরণ করুন।"
+        ],
+        "bullets": [
+          "দৃশ্যমান বিষয় ও কম্পোজিশন-সংক্রান্ত শব্দ রাখুন।",
+          "যাচাই না করা উপাদান, প্রক্রিয়া, পরিচয়, স্থান ও বাণিজ্যিক দাবি বাদ দিন।",
+          "সামান্য শব্দবদলে একই ধারণা বারবার লিখবেন না।"
+        ],
+        "example": "চূড়ান্ত সম্ভাব্য কীওয়ার্ড: bread, sliced bread, loaf, bakery food, baked food, crust, crumb, food close up, wooden table, kitchen, rustic food, fresh food, still life।"
+      },
+      {
+        "heading": "৫. সতর্কতার সঙ্গে চূড়ান্ত মেটাডেটা সারি তৈরি করুন",
+        "paragraphs": [
+          "কীওয়ার্ডের তালিকা দিয়ে তৈরি শিরোনামের বদলে বর্ণনামূলক শিরোনাম বা বাক্যাংশ লিখুন। সবচেয়ে গুরুত্বপূর্ণ ধারণাগুলো শুরুতে রাখুন। Adobe Stock-এর প্রাসঙ্গিক নির্দেশিকায় সর্বোচ্চ 49টি কীওয়ার্ডের অনুমতি এবং প্রথম 10টির ওপর গুরুত্ব দেওয়া হয়েছে; এর CSV নির্দেশিকায় বর্তমানে 70 অক্ষরের শিরোনাম সীমা দেওয়া আছে। সতর্ক সর্বোচ্চ সীমা হিসেবে 49 ব্যবহার করুন এবং বর্তমান আপলোড স্ক্রিন পরীক্ষা করুন, কারণ প্ল্যাটফর্মের নিয়ম বদলাতে পারে।",
+          "এই উদাহরণে “Sliced fresh bread loaf on a wooden kitchen table” রেসিপি বা উপাদানের দাবি না করেই নির্দিষ্ট। প্রথম কীওয়ার্ডগুলোতে মূল বিষয় থাকা উচিত: bread, sliced bread, loaf, baked food, food close up। প্রাসঙ্গিক থাকলেই পরিবেশ ও কম্পোজিশনের শব্দ যোগ করুন।",
+          "পরে অন্য মার্কেটপ্লেসের জন্য সারিটি মানিয়ে নিলে একই সীমা বা ক্ষেত্র প্রযোজ্য—এমন ধরে নেবেন না। প্ল্যাটফর্ম ও কনটেন্টের ধরন অনুযায়ী নিয়ম আলাদা হয়।"
+        ],
+        "bullets": [
+          "সবচেয়ে শক্তিশালী বিষয়বাচক শব্দগুলো শুরুতে রাখুন।",
+          "শিরোনাম স্বাভাবিক ও বর্ণনামূলক রাখুন।",
+          "রপ্তানি বা আপলোডের আগে বর্তমান মার্কেটপ্লেসের সীমা নিশ্চিত করুন।"
+        ],
+        "example": "ফাইলের নাম: fresh-bread.jpg\nশিরোনাম: Sliced fresh bread loaf on a wooden kitchen table\nকীওয়ার্ড: bread, sliced bread, loaf, baked food, food close up, crust, crumb, wooden table, kitchen, rustic food, fresh food, still life"
+      },
+      {
+        "heading": "৬. মানুষের পর্যালোচনার পরেই রপ্তানি করুন",
+        "paragraphs": [
+          "সারি প্রস্তুত হলে আপনার কর্মপ্রবাহে প্রয়োজনীয় ফরম্যাটে রপ্তানি করুন, যেমন Adobe, Envato, Shutterstock বা Freepik CSV। রপ্তানি ফাইল আপলোড বা জমা দেয় না, গ্রহণযোগ্যতার নিশ্চয়তা দেয় না এবং মূল ছবিতে মেটাডেটা বসায় না। কনট্রিবিউটর পোর্টালে চূড়ান্ত মেটাডেটা পরীক্ষা করার প্রয়োজনও এটি দূর করে না।",
+          "Adobe CSV কর্মপ্রবাহে CSV আমদানি করার আগে সম্পদগুলো আপলোড করুন এবং এক্সটেনশন ও অক্ষরের বড়-ছোট ধরনসহ ফাইলের নাম হুবহু মিলে কিনা নিশ্চিত করুন। রপ্তানিকে প্রস্তুত হস্তান্তর হিসেবে বিবেচনা করুন। এটি খুলে সারি যাচাই করুন, তারপর পোর্টালে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন। পোর্টালের বর্তমান নিয়ম আপনার সংরক্ষিত চেকলিস্টের সঙ্গে না মিললে বর্তমান পোর্টালের নির্দেশনা অনুসরণ করুন।",
+          "মূল ছবি ও পর্যালোচিত মেটাডেটা একসঙ্গে রাখুন। ট্যাব বন্ধ হয়ে গেলে অসমাপ্ত কাজ সংরক্ষিত থাকবে—অ্যাপ এমন নিশ্চয়তা দেয় না; তাই সেশন ছাড়ার আগে প্রস্তুত সারি রপ্তানি করুন।"
+        ],
+        "bullets": [
+          "শুধু পর্যালোচিত সারি রপ্তানি করুন।",
+          "ফাইলের নাম ও এক্সটেনশন হুবহু পরীক্ষা করুন।",
+          "কনট্রিবিউটর পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।",
+          "জমা দেওয়ার আগে বর্তমান প্ল্যাটফর্মের নিয়ম যাচাই করুন।"
+        ],
+        "example": "চূড়ান্ত হস্তান্তর: fresh-bread.jpg-এর সঙ্গে পর্যালোচিত শিরোনাম ও 12টি নির্ভুল ইংরেজি কীওয়ার্ড; কোনো বানানো উপাদান বা অবস্থান-সংক্রান্ত দাবি নেই।"
+      }
+    ],
+    "checklist": [
+      "স্থানীয় মডেল স্পষ্টভাবে ডাউনলোড ও লোড করুন।",
+      "একটি স্থানীয় থ্রেড দিয়ে শুরু করুন।",
+      "শুধু যেসব তথ্যের পক্ষে যুক্তি দিতে পারেন, সেগুলো বর্ণনা করুন।",
+      "সম্পাদনার আগে তৈরি হওয়া প্রিভিউ দেখুন।",
+      "যাচাই না করা পর্যন্ত wheat, butter বা sourdough-এর মতো বানানো উপাদান বাদ দিন।",
+      "সবচেয়ে গুরুত্বপূর্ণ কীওয়ার্ডগুলো শুরুতে রাখুন।",
+      "সতর্ক কীওয়ার্ড সংখ্যা ব্যবহার করুন এবং বর্তমান প্ল্যাটফর্মের নিয়ম পরীক্ষা করুন।",
+      "শুধু পর্যালোচিত সারি রপ্তানি করুন, তারপর কনট্রিবিউটর পোর্টালে পরীক্ষা করুন।",
+      "মনে রাখুন, স্থানীয় ব্রাউজার ইনফারেন্স ডাউনলোড করা ব্রাউজার ক্যাশে থেকে আলাদা।"
+    ],
+    "illustration": {
+      "title": "স্থানীয় কীওয়ার্ড কর্মপ্রবাহের তিনটি ধাপ",
+      "steps": [
+        {
+          "label": "একটি স্থানীয় মডেল লোড করুন",
+          "detail": "মডেল ডাউনলোড/লোড করে একটি ব্রাউজার থ্রেড দিয়ে শুরু করুন।"
+        },
+        {
+          "label": "রুটির প্রিভিউ যাচাই করুন",
+          "detail": "দৃশ্যমান তথ্য রাখুন; বানানো উপাদান ও দাবি বাদ দিন।"
+        },
+        {
+          "label": "পর্যালোচিত সারি রপ্তানি করুন",
+          "detail": "নির্ভুল মেটাডেটা সংরক্ষণ করে কনট্রিবিউটর পোর্টালে পরীক্ষা করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "AI से स्थानीय रूप से स्टॉक कीवर्ड बनाना और जाँचना",
+    "description": "एक ब्रेड फ़ोटो से स्थानीय रूप से स्टॉक कीवर्ड बनाने, AI की गलतियाँ जाँचने और साफ़ मार्केटप्लेस मेटाडेटा निर्यात करने की व्यावहारिक मार्गदर्शिका।",
+    "intro": "यह मार्गदर्शिका एक उदाहरण छवि के लिए पूरा स्थानीय कार्यप्रवाह दिखाती है: रसोई की मेज़ पर रखी ताज़ी ब्रेड की फ़ोटो। उद्देश्य AI मॉडल के हर सुझाव को स्वीकार करना नहीं है। उद्देश्य उपयोगी प्रारंभिक मसौदा बनाना, यह जाँचना कि छवि वास्तव में क्या समर्थित करती है, गढ़े हुए विवरण हटाना और केवल ऐसी पंक्ति निर्यात करना है जिसे स्टॉक योगदानकर्ता पोर्टल में दोबारा जाँचने में आपको संकोच न हो।\n\nMetaStocker अपने स्थानीय विज़न और सोचने वाले मॉडल आगंतुक के ब्राउज़र में चला सकता है। स्थानीय मोड में मॉडल का इनफ़रेंस AI सर्वर पर जाने के बजाय डिवाइस पर ही रहता है। पहले मॉडल डाउनलोड के लिए इंटरनेट आवश्यक है और ब्राउज़र में पर्याप्त मेमोरी वाला संगत WebGPU सेटअप होना चाहिए। ब्राउज़र में डाउनलोड की गई फ़ाइलें मेमोरी में सक्रिय रूप से लोड मॉडल के समान नहीं होतीं, इसलिए इंटरफ़ेस के Download/Load और अनलोड नियंत्रण महत्वपूर्ण हैं। यह उदाहरण सावधानी से एक स्थानीय थ्रेड से शुरू होता है।",
+    "sections": [
+      {
+        "heading": "१. छवि और तथ्यों को तैयार करें",
+        "paragraphs": [
+          "जेनरेटर खोलने से पहले फ़ोटो से केवल वही लिखें जिसे आप प्रमाणित कर सकते हैं। इस उदाहरण में दिखाई देने वाले तथ्य हैं: एक पूरी देहाती लोफ़, कई स्लाइस, लकड़ी की मेज़, तटस्थ रसोई का वातावरण, गर्म प्राकृतिक जैसी रोशनी और पास से लिया गया भोजन-केंद्रित संयोजन। जब तक आप स्वतंत्र रूप से न जानते हों, सामग्री, रेसिपी, किसी नामित बेकरी, देश, व्यक्ति या आहार संबंधी दावे न जोड़ें।",
+          "छोटी बैच-विवरण पंक्ति को संदर्भ के रूप में इस्तेमाल करें, मनमाने टैगों की सूची के रूप में नहीं। एक फ़ाइल के लिए सटीक वाक्य पर्याप्त है: “लकड़ी की रसोई की मेज़ पर कटी हुई ताज़ी ब्रेड की भोजन-फ़ोटो; कोई व्यक्ति या पैकेजिंग दिखाई नहीं देती।” इससे अनुरोध का संदर्भ स्पष्ट होता है, जबकि ऐसे सुझावों की ज़िम्मेदारी मॉडल पर रहती है जिनकी अभी जाँच आवश्यक है।"
+        ],
+        "bullets": [
+          "दिखाई देने वाले तथ्यों को अनुमानों से अलग रखें।",
+          "यदि बाद में CSV मेटाडेटा निर्यात करना हो सकता है, तो मूल फ़ाइल नाम अपरिवर्तित रखें।",
+          "अंतिम शब्दों को संपादित करने से पहले तय करें कि किस मार्केटप्लेस की भाषा आवश्यक है।"
+        ],
+        "example": "दिखाई देने वाले तथ्य: कटी हुई ब्रेड, पूरी लोफ़, लकड़ी की मेज़, घर के भीतर भोजन का दृश्य।\nअसमर्थित अनुमान: गेहूँ की सामग्री, घर की रेसिपी, बेकरी का नाम, देश, ग्लूटेन-मुक्त स्थिति।"
+      },
+      {
+        "heading": "२. डाउनलोड, लोड करें और एक थ्रेड से शुरू करें",
+        "paragraphs": [
+          "स्थानीय जेनरेटर खोलें और स्थानीय मॉडल चुनें। स्पष्ट रूप से Download/Load चुनें और मॉडल तैयार होने तक प्रतीक्षा करें। प्रारंभिक डाउनलोड के लिए इंटरनेट आवश्यक है। इसके बाद मॉडल ब्राउज़र स्टोरेज में उपलब्ध रह सकता है, लेकिन कैश में रखा डाउनलोड इनफ़रेंस के लिए वर्तमान में लोड मॉडल कॉपी से अलग है।",
+          "पहले चरण में स्थानीय समानांतर थ्रेड की संख्या एक रखें। कई स्थानीय थ्रेड अलग-अलग मॉडल कॉपी लोड कर सकते हैं, जिससे मेमोरी पर दबाव बढ़ सकता है। कार्यप्रवाह समझने के बाद, यदि आपका ब्राउज़र, GPU और उपलब्ध मेमोरी इसे भरोसेमंद ढंग से संभालते हों, तो दूसरा थ्रेड आज़मा सकते हैं। WebGPU समर्थित ब्राउज़र होने से अपने-आप यह सुनिश्चित नहीं होता कि कोई विशेष मॉडल उसमें चल पाएगा।",
+          "ब्रेड की छवि चुनें और निर्माण शुरू करें। यदि प्रीव्यू दिखाई न दे या ब्राउज़र धीमा हो जाए, तो मेटाडेटा बदलने से पहले मॉडल की स्थिति, ब्राउज़र की संगतता और उपलब्ध मेमोरी जाँचें।"
+        ],
+        "bullets": [
+          "यदि आप चाहते हैं कि निर्माण के दौरान फ़ोटो, प्रॉम्प्ट और परिणाम डिवाइस पर ही रहें, तो स्थानीय मोड इस्तेमाल करें।",
+          "स्थानीय इनफ़रेंस न चल पाने पर स्वचालित क्लाउड विकल्प मिलने की अपेक्षा न करें।",
+          "काम पूरा होने पर सक्रिय मेमोरी मुक्त करने के लिए मॉडल अनलोड करें; ब्राउज़र की मॉडल फ़ाइलें हटाना अलग कार्रवाई है।"
+        ],
+        "example": "प्रारंभिक सेटअप: स्थानीय मॉडल; Download/Load पूरा; स्थानीय थ्रेड: १; इनपुट: fresh-bread.jpg।"
+      },
+      {
+        "heading": "३. कीवर्ड पर निर्णय लेने से पहले प्रीव्यू देखें",
+        "paragraphs": [
+          "जेनरेटर को संपादन योग्य प्रीव्यू बनाने दें, फिर छवि और मसौदे को साथ-साथ जाँचें। प्रीव्यू संभावित अवधारणाएँ खोजने में उपयोगी है, लेकिन यह प्रमाण नहीं है कि हर शब्द सही है। शीर्षक, विवरण और टैगों को मानव सुधार के लिए बने मसौदे की तरह पढ़ें।",
+          "इस ब्रेड फ़ोटो के लिए मसौदा bread, sliced bread, loaf, bakery food, table और close up जैसे शब्द सही रूप से सुझा सकता है। यह wheat, flour, butter, breakfast, homemade या sourdough भी सुझा सकता है। इनमें से कुछ दृश्य रूप से संभव लग सकते हैं; संभव लगना सत्यापन नहीं है। कटी हुई सतह किसी रेसिपी का संकेत दे सकती है, लेकिन पिक्सेल सामग्री या बनाने की विधि सिद्ध नहीं कर सकते।",
+          "जाँच करते समय फ़ाइल नाम को परिणाम से जुड़ा रखें। ऐप माँगी गई टैग संख्या की जाँच कर सकता है, लेकिन सही संख्या प्रासंगिकता या सटीकता के बारे में कुछ नहीं बताती।"
+        ],
+        "bullets": [
+          "प्रीव्यू को मॉडल के आत्मविश्वास या शब्दों से नहीं, वास्तविक दृश्य से मिलाएँ।",
+          "हर शब्द को पुष्ट, अनिश्चित या असमर्थित के रूप में चिह्नित करें।",
+          "दृश्य सुझावों को उम्मीदवार मानें, स्वचालित तथ्य नहीं।"
+        ],
+        "example": "मसौदा जाँच: “sliced bread” और “wooden table” रखें; “breakfast” पर सवाल करें; स्वतंत्र रूप से सत्यापित न होने पर “sourdough,” “wheat” और “butter” हटाएँ।"
+      },
+      {
+        "heading": "४. गढ़ी हुई सामग्री और अतिशयोक्ति हटाएँ",
+        "paragraphs": [
+          "इस उदाहरण में सबसे महत्वपूर्ण संपादन सामग्री की जाँच है। मान लें कि लोफ़ की परत भूरी है और अंदर का क्रम्ब खुला हुआ है। यह रूप wheat flour, rye, sourdough culture, butter या घर की रेसिपी सिद्ध नहीं करता। यदि आपके उत्पादन नोट या पैकेजिंग इसकी पुष्टि नहीं करते, तो ये शब्द हटा दें। healthy, organic, traditional या artisanal जैसे दावों पर भी यही सावधानी लागू होती है।",
+          "इसके बाद दोहराए गए, बहुत व्यापक या अप्रासंगिक टैग हटाएँ। ऐसे शब्द रखें जो विषय, दिखाई देने वाले रूप, परिवेश और उपयोगी अवधारणा का वर्णन करें, लेकिन छिपे हुए संदर्भ को जानने का दिखावा न करें। अनुमानों से भरी लंबी सूची की तुलना में सटीक शब्दों की छोटी सूची अधिक बचाव योग्य होती है।",
+          "यदि लक्षित मार्केटप्लेस को अंग्रेज़ी मेटाडेटा चाहिए, तो अपने कामकाजी नोट या यह मार्गदर्शिका किसी दूसरी भाषा में होने पर भी अंतिम शीर्षक और कीवर्ड अंग्रेज़ी में संपादित करें। संबंधित प्लेटफ़ॉर्म के वर्तमान योगदानकर्ता पोर्टल नियमों का पालन करें।"
+        ],
+        "bullets": [
+          "दिखाई देने वाले विषय और संयोजन-संबंधी शब्द रखें।",
+          "असत्यापित सामग्री, प्रक्रियाएँ, पहचान, स्थान और व्यावसायिक दावे हटाएँ।",
+          "छोटे शब्द-परिवर्तनों से एक ही विचार दोहराने से बचें।"
+        ],
+        "example": "अंतिम संभावित कीवर्ड: bread, sliced bread, loaf, bakery food, baked food, crust, crumb, food close up, wooden table, kitchen, rustic food, fresh food, still life।"
+      },
+      {
+        "heading": "५. सावधानी से अंतिम मेटाडेटा पंक्ति बनाएँ",
+        "paragraphs": [
+          "कीवर्ड सूची से बने शीर्षक के बजाय वर्णनात्मक शीर्षक या वाक्यांश लिखें। सबसे महत्वपूर्ण अवधारणाएँ पहले रखें। Adobe Stock की संबंधित मार्गदर्शिका अधिकतम 49 कीवर्ड की अनुमति देती है और पहले 10 पर ज़ोर देती है; उसकी CSV मार्गदर्शिका वर्तमान में 70-अक्षर शीर्षक सीमा बताती है। सावधानी के लिए अधिकतम 49 रखें और वर्तमान अपलोड स्क्रीन जाँचें, क्योंकि प्लेटफ़ॉर्म की आवश्यकताएँ बदल सकती हैं।",
+          "इस उदाहरण में “Sliced fresh bread loaf on a wooden kitchen table” रेसिपी या सामग्री का दावा किए बिना विशिष्ट है। पहले कीवर्ड में मूल विषय होना चाहिए: bread, sliced bread, loaf, baked food, food close up। परिवेश और संयोजन-संबंधी शब्द तभी जोड़ें जब वे प्रासंगिक बने रहें।",
+          "यदि बाद में इस पंक्ति को किसी दूसरे मार्केटप्लेस के लिए ढालें, तो यह न मानें कि वही सीमाएँ या फ़ील्ड लागू होंगे। प्लेटफ़ॉर्म और सामग्री के प्रकार के अनुसार आवश्यकताएँ अलग होती हैं।"
+        ],
+        "bullets": [
+          "सबसे मजबूत विषय-संबंधी शब्द पहले रखें।",
+          "शीर्षक स्वाभाविक और वर्णनात्मक रखें।",
+          "निर्यात या अपलोड से पहले वर्तमान मार्केटप्लेस सीमाएँ सुनिश्चित करें।"
+        ],
+        "example": "फ़ाइल नाम: fresh-bread.jpg\nशीर्षक: Sliced fresh bread loaf on a wooden kitchen table\nकीवर्ड: bread, sliced bread, loaf, baked food, food close up, crust, crumb, wooden table, kitchen, rustic food, fresh food, still life"
+      },
+      {
+        "heading": "६. मानव जाँच के बाद ही निर्यात करें",
+        "paragraphs": [
+          "जब पंक्ति तैयार हो जाए, तो अपने कार्यप्रवाह के लिए आवश्यक प्रारूप में निर्यात करें, जैसे Adobe, Envato, Shutterstock या Freepik CSV। निर्यात करने से फ़ाइल अपलोड या जमा नहीं होती, स्वीकृति की गारंटी नहीं मिलती और मूल छवि में मेटाडेटा शामिल नहीं होता। यह योगदानकर्ता पोर्टल में अंतिम मेटाडेटा जाँचने की आवश्यकता भी समाप्त नहीं करता।",
+          "Adobe CSV कार्यप्रवाह में CSV आयात करने से पहले संपत्तियाँ अपलोड करें और सुनिश्चित करें कि एक्सटेंशन तथा बड़े-छोटे अक्षरों सहित फ़ाइल नाम बिल्कुल मेल खाता हो। निर्यात को तैयार हस्तांतरण मानें। उसे खोलकर पंक्ति जाँचें, फिर पोर्टल में बने मेटाडेटा का निरीक्षण करें। यदि पोर्टल के वर्तमान नियम आपकी सुरक्षित चेकलिस्ट से अलग हों, तो वर्तमान पोर्टल निर्देशों का पालन करें।",
+          "मूल छवि और जाँचा हुआ मेटाडेटा साथ रखें। टैब बंद होने पर ऐप अधूरे काम को सुरक्षित रखने का वादा नहीं करता, इसलिए सत्र छोड़ने से पहले तैयार पंक्ति निर्यात करें।"
+        ],
+        "bullets": [
+          "केवल जाँची हुई पंक्तियाँ निर्यात करें।",
+          "फ़ाइल नाम और एक्सटेंशन बिल्कुल जाँचें।",
+          "योगदानकर्ता पोर्टल में आयात किए गए मेटाडेटा का निरीक्षण करें।",
+          "जमा करने से पहले वर्तमान प्लेटफ़ॉर्म नियम सत्यापित करें।"
+        ],
+        "example": "अंतिम हस्तांतरण: fresh-bread.jpg के साथ जाँचा हुआ शीर्षक और 12 सटीक अंग्रेज़ी कीवर्ड; कोई गढ़ी हुई सामग्री या स्थान संबंधी दावा नहीं।"
+      }
+    ],
+    "checklist": [
+      "स्थानीय मॉडल को स्पष्ट रूप से डाउनलोड और लोड करें।",
+      "एक स्थानीय थ्रेड से शुरू करें।",
+      "केवल उन तथ्यों का वर्णन करें जिन्हें आप प्रमाणित कर सकते हैं।",
+      "संपादन से पहले बनाया गया प्रीव्यू देखें।",
+      "सत्यापन न होने तक wheat, butter या sourdough जैसी गढ़ी हुई सामग्री हटाएँ।",
+      "सबसे महत्वपूर्ण कीवर्ड पहले रखें।",
+      "सावधानीपूर्ण कीवर्ड संख्या रखें और वर्तमान प्लेटफ़ॉर्म नियम जाँचें।",
+      "केवल जाँची हुई पंक्तियाँ निर्यात करें, फिर योगदानकर्ता पोर्टल में निरीक्षण करें।",
+      "याद रखें कि स्थानीय ब्राउज़र इनफ़रेंस डाउनलोड किए गए ब्राउज़र कैश से अलग है।"
+    ],
+    "illustration": {
+      "title": "स्थानीय कीवर्ड कार्यप्रवाह के तीन चरण",
+      "steps": [
+        {
+          "label": "एक स्थानीय मॉडल लोड करें",
+          "detail": "मॉडल डाउनलोड/लोड करें और एक ब्राउज़र थ्रेड से शुरुआत करें।"
+        },
+        {
+          "label": "ब्रेड प्रीव्यू की जाँच करें",
+          "detail": "दिखाई देने वाले तथ्य रखें; गढ़ी हुई सामग्री और दावे हटाएँ।"
+        },
+        {
+          "label": "जाँची हुई पंक्ति निर्यात करें",
+          "detail": "सटीक मेटाडेटा सहेजें और योगदानकर्ता पोर्टल में उसका निरीक्षण करें।"
+        }
+      ]
+    }
+  }
+}

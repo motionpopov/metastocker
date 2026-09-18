@@ -1,0 +1,443 @@
+{
+  "slug": "microstock-metadata-csv-export",
+  "category": "exports",
+  "source_ids": [
+    "metastocker",
+    "adobe-csv",
+    "adobe-upload"
+  ],
+  "en": {
+    "title": "How to Export Stock Metadata CSV and Match Filenames Safely",
+    "description": "A practical workflow for exporting stock metadata CSV files, catching extension and case mismatches, and checking rows before marketplace import.",
+    "intro": "A metadata CSV is useful only when every row points to the correct uploaded asset. One changed filename, a different letter case, or a missing extension can leave metadata unmatched or attached to the wrong file. This guide shows a cautious workflow for three assets: two JPG images and one MOV video, including one punctuation mismatch and one renamed file. The example uses MetaStocker to generate and export editable metadata, but the reconciliation method also applies when you prepare CSV rows elsewhere. Treat the file as a mapping document, not as an upload shortcut: the marketplace still controls its current requirements and acceptance process.",
+    "sections": [
+      {
+        "heading": "1. Define the asset set before generating metadata",
+        "paragraphs": [
+          "Create a small inventory before opening the exporter. Record the exact filename, extension, intended marketplace, and whether the item is a photo or video. Preserve the spelling and capitalization from the actual folder. Do not rely on a shortened display name or a remembered filename.",
+          "For this example, the folder contains three files: city_bridge.JPG, coffee-cup.jpg, and metro_night.MOV. The contributor later renamed the video to metro-night.MOV, while the CSV draft still contains metro_night.MOV. That is a filename change, not a metadata problem, and it should be resolved before import."
+        ],
+        "bullets": [
+          "Use the exact extension, including .jpg or .mov.",
+          "Treat uppercase and lowercase as meaningful until the target portal confirms otherwise.",
+          "Keep one inventory row per asset."
+        ],
+        "example": "Inventory before export\ncity_bridge.JPG | image\ncoffee-cup.jpg | image\nmetro-night.MOV | video"
+      },
+      {
+        "heading": "2. Generate useful metadata with clear context",
+        "paragraphs": [
+          "If you use MetaStocker, local mode runs the selected model in the browser through WebGPU workers. The first model download requires internet access, and model memory is different from browser cache. Start with one local thread and review results file by file. The app can accept images and videos, but video descriptions are based on sampled previews, so inspect the complete motion yourself.",
+          "Give a batch description only when it is true for every selected asset. In this example, the shared context is too broad, so generate the two images together and the video separately. Keep extra tags relevant to each file; a tag that fits the bridge should not automatically appear on the coffee image."
+        ],
+        "bullets": [
+          "Describe visible subject, setting, action, and useful technical context.",
+          "Do not infer identities, locations, releases, species, or other sensitive facts from pixels.",
+          "Edit generated results before exporting."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "3. Keep marketplace rules separate from the CSV workflow",
+        "paragraphs": [
+          "A CSV schema is marketplace-specific. Adobe Stock maps filenames to titles and keywords and may include category and release filename fields. Its current CSV guidance gives a 70-character title limit; use a conservative maximum of 49 keywords and check the current upload screen before importing. Other marketplaces can use different fields or limits, so do not assume one exported schema fits every destination.",
+          "For Adobe Stock, metadata language must match the contributor account. Put the most important terms early, especially among the first ten keywords. A concise descriptive title is safer than a keyword list. If you later prepare Shutterstock or Envato metadata, consult their current contributor requirements separately; a platform’s rules can change."
+        ],
+        "bullets": [
+          "Choose the destination before exporting.",
+          "Validate title length, language, keyword count, and required fields.",
+          "Never treat a valid-looking CSV as proof of acceptance."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. Reconcile names using the actual folder as authority",
+        "paragraphs": [
+          "Before uploading a CSV, compare the exported filename column with the files that will be uploaded. Compare the complete string, including extension and case. Do not fix a mismatch by changing only the CSV unless the corresponding asset name is intentionally changed too. Decide which name is authoritative, then make both sides identical.",
+          "In the worked example, city_bridge.JPG matches exactly. coffee-cup.jpg also matches. The video has a mismatch: the folder contains metro-night.MOV, but the CSV contains metro_night.MOV. Rename the CSV value to metro-night.MOV, or rename the asset back to metro_night.MOV if that better fits your archive. After the decision, repeat the comparison; do not continue with a remembered correction."
+        ],
+        "bullets": [
+          "Check spelling, punctuation, extension, and capitalization.",
+          "Resolve renamed files before import.",
+          "Do not silently merge two assets that merely have similar names."
+        ],
+        "example": "Reconciliation table\nCSV value          Folder value       Action\ncity_bridge.JPG    city_bridge.JPG     Keep\ncoffee-cup.jpg     coffee-cup.jpg      Keep\nmetro_night.MOV    metro-night.MOV     Change CSV to metro-night.MOV"
+      },
+      {
+        "heading": "5. Inspect rows before exporting the final CSV",
+        "paragraphs": [
+          "Open the editable metadata results and inspect each row against its preview. Confirm that the title describes the correct asset, keywords are relevant rather than repetitive, and the video row does not claim details absent from the sampled or full footage. Remove blanket tags that do not apply to all files.",
+          "Export only rows that are ready. Keep a simple preflight record showing the final filename, title status, keyword status, and destination. MetaStocker exports CSV formats for several stock platforms, but it does not upload or submit the file, embed metadata into originals, guarantee acceptance, or preserve unfinished work after a tab closes."
+        ],
+        "bullets": [
+          "Preview the asset beside its metadata row.",
+          "Check the filename again after edits.",
+          "Export a fresh final file after reconciliation."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Upload assets first, then inspect the imported metadata",
+        "paragraphs": [
+          "For Adobe Stock, upload the assets before importing the CSV. The filenames, including extensions and case, must match. After import, inspect the resulting metadata in the contributor portal rather than assuming that a successful file selection means every row matched.",
+          "If a row is missing or attached incorrectly, stop and correct the source names and CSV. Marketplace policies and upload screens can change, so check the current contributor portal instructions at the time of submission. The CSV is a convenience for transferring fields; your final review remains the safety check."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Inventory every asset using its exact filename and extension.",
+      "Resolve renamed, case-sensitive, and punctuation mismatches.",
+      "Generate metadata with asset-specific context.",
+      "Review titles, keywords, language, and platform limits.",
+      "Export only reconciled, ready rows.",
+      "Upload assets first when the marketplace requires it.",
+      "Inspect imported metadata in the contributor portal.",
+      "Check current marketplace requirements before submission."
+    ],
+    "illustration": {
+      "title": "Three-step CSV reconciliation",
+      "steps": [
+        {
+          "label": "Inventory exact names",
+          "detail": "Record every filename, extension, and capitalization from the folder."
+        },
+        {
+          "label": "Reconcile before export",
+          "detail": "Compare CSV rows with assets and fix the renamed MOV file."
+        },
+        {
+          "label": "Inspect after import",
+          "detail": "Upload assets first, then verify each metadata row in the portal."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Как экспортировать CSV и проверить имена стоковых файлов",
+    "description": "Практическая схема экспорта CSV для стоков: проверка расширений, регистра и переименованных файлов перед импортом метаданных.",
+    "intro": "CSV с метаданными полезен только тогда, когда каждая строка указывает на правильный загруженный файл. Одна изменённая буква, другой регистр или пропущенное расширение могут оставить метаданные без пары или связать их не с тем объектом. Ниже разобран безопасный сценарий для трёх файлов: двух изображений JPG и одного видео MOV. В примере есть несовпадение символов в имени и переименованный файл. Для подготовки метаданных используется MetaStocker, но сама процедура сверки подходит и для CSV, созданного вручную. Воспринимайте CSV как таблицу соответствий, а не как гарантию успешной отправки: актуальные правила всё равно определяет конкретная площадка.",
+    "sections": [
+      {
+        "heading": "1. Сначала составьте инвентарь файлов",
+        "paragraphs": [
+          "До генерации метаданных запишите точные имена файлов, расширения, назначенную площадку и тип контента. Берите написание непосредственно из папки, включая заглавные буквы, дефисы и подчёркивания. Сокращённое имя в интерфейсе или память автора не являются надёжным источником.",
+          "В нашем примере в папке находятся city_bridge.JPG, coffee-cup.jpg и metro-night.MOV. Видео было переименовано из metro_night.MOV, однако в черновике CSV осталось старое имя metro_night.MOV. Это ошибка соответствия имён, а не проблема описания видео; её нужно исправить до импорта."
+        ],
+        "bullets": [
+          "Записывайте расширение полностью: .jpg или .mov.",
+          "Считайте регистр значимым, пока требования площадки не подтверждают обратное.",
+          "Создавайте одну строку инвентаря на каждый файл."
+        ],
+        "example": "Инвентарь до экспорта\ncity_bridge.JPG | изображение\ncoffee-cup.jpg | изображение\nmetro-night.MOV | видео"
+      },
+      {
+        "heading": "2. Генерируйте описание с контекстом конкретного файла",
+        "paragraphs": [
+          "В локальном режиме MetaStocker выбранная модель работает в браузере пользователя через WebGPU workers. Для первой загрузки модели нужен интернет; память активной модели и кэш браузера — разные вещи. Начните с одного локального потока и проверяйте результат для каждого файла. Приложение принимает изображения и видео, но описание видео строится по выборочным превью, поэтому полный ролик нужно просмотреть самостоятельно.",
+          "Общий контекст партии используйте только тогда, когда он действительно относится ко всем выбранным объектам. В нашем примере изображения можно обработать вместе лишь при очень нейтральном контексте, а видео лучше описать отдельно. Дополнительные теги проверяйте по каждому файлу: слово, подходящее мосту, не должно автоматически попасть к чашке."
+        ],
+        "bullets": [
+          "Опирайтесь на видимые объект, обстановку, действие и уместные технические признаки.",
+          "Не угадывайте личности, места, наличие релизов, виды животных или другие чувствительные сведения по пикселям.",
+          "Редактируйте результат до экспорта."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "3. Не смешивайте правила площадок",
+        "paragraphs": [
+          "Формат CSV зависит от назначения. В Adobe Stock CSV связывает имена файлов с заголовками и ключевыми словами; также могут использоваться номер категории и имена файлов релизов. В текущих требованиях Adobe указан лимит заголовка 70 символов. Для осторожной проверки используйте не более 49 ключевых слов и перед импортом сверяйтесь с актуальным экраном загрузки. У других площадок поля и ограничения могут отличаться.",
+          "Для Adobe Stock язык метаданных должен соответствовать языку аккаунта автора. Важные термины ставьте в начало, особенно среди первых десяти ключевых слов. Заголовок должен быть нормальным описанием, а не перечнем тегов. Если тот же контент готовится для Shutterstock или Envato, отдельно проверьте их действующие требования: правила и формы могут обновляться."
+        ],
+        "bullets": [
+          "Выберите площадку до экспорта.",
+          "Проверьте язык, длину заголовка, число ключевых слов и обязательные поля.",
+          "Корректный вид CSV не означает гарантированное принятие."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. Сверяйте CSV с папкой, а не с предположением",
+        "paragraphs": [
+          "Перед загрузкой сравните колонку filename с реальными файлами, которые будут отправлены. Сверяйте всю строку целиком: имя, расширение, дефисы, подчёркивания и регистр. Не исправляйте несовпадение только в CSV, если одновременно не принято осознанное решение о новом имени файла. Выберите источник истины, затем приведите обе стороны к одному написанию.",
+          "В нашем примере city_bridge.JPG совпадает полностью, как и coffee-cup.jpg. У видео есть ошибка: в папке находится metro-night.MOV, а в CSV — metro_night.MOV. Можно заменить значение в CSV на metro-night.MOV или вернуть файлу старое имя metro_night.MOV. После решения повторите сверку заново, не полагаясь на то, что исправление запомнилось."
+        ],
+        "bullets": [
+          "Проверяйте написание, знаки, расширение и регистр.",
+          "Исправляйте переименованные файлы до импорта.",
+          "Не объединяйте разные файлы только из-за похожих имён."
+        ],
+        "example": "Таблица сверки\nЗначение CSV       Значение в папке    Действие\ncity_bridge.JPG    city_bridge.JPG     Оставить\ncoffee-cup.jpg     coffee-cup.jpg      Оставить\nmetro_night.MOV    metro-night.MOV     Заменить в CSV на metro-night.MOV"
+      },
+      {
+        "heading": "5. Проверьте строки перед финальным экспортом",
+        "paragraphs": [
+          "Откройте редактируемые результаты и сопоставьте каждую строку с превью. Убедитесь, что заголовок относится именно к этому файлу, ключевые слова не повторяются без пользы и видео не заявляет деталей, которых нет в полном ролике. Удаляйте общие теги, не подходящие отдельным объектам.",
+          "Экспортируйте только готовые строки. Полезно сохранить короткий предвыгрузочный список: финальное имя, состояние заголовка, состояние ключевых слов и назначенная площадка. MetaStocker экспортирует CSV для нескольких стоков, но не загружает и не отправляет его, не встраивает метаданные в оригиналы, не гарантирует принятие и не сохраняет незавершённую работу после закрытия вкладки."
+        ],
+        "bullets": [
+          "Смотрите на превью рядом со строкой метаданных.",
+          "После редактирования ещё раз проверьте имя файла.",
+          "Экспортируйте новый финальный CSV после сверки."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Сначала загрузите файлы, затем проверьте импорт",
+        "paragraphs": [
+          "Для Adobe Stock сначала загружаются сами файлы, а затем импортируется CSV. Имена, включая расширения и регистр, должны совпадать. После импорта осмотрите получившиеся метаданные в кабинете автора: успешный выбор CSV ещё не доказывает, что каждая строка сопоставилась правильно.",
+          "Если строка пропала или прикрепилась не к тому объекту, остановитесь и исправьте исходные имена и CSV. Перед отправкой проверьте текущие инструкции портала, поскольку требования площадок и интерфейсы меняются. CSV экономит ручной ввод, но финальная визуальная и текстовая проверка остаётся ответственностью автора."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Составьте инвентарь с точными именами и расширениями.",
+      "Исправьте различия в регистре, знаках и переименованных файлах.",
+      "Генерируйте метаданные с контекстом конкретного объекта.",
+      "Проверьте заголовки, ключевые слова, язык и лимиты площадки.",
+      "Экспортируйте только согласованные готовые строки.",
+      "При необходимости сначала загрузите сами файлы.",
+      "После импорта проверьте каждую строку в кабинете автора.",
+      "Перед отправкой сверяйтесь с актуальными требованиями площадки."
+    ],
+    "illustration": {
+      "title": "Три шага сверки CSV",
+      "steps": [
+        {
+          "label": "Записать точные имена",
+          "detail": "Зафиксируйте имя, расширение и регистр каждого файла в папке."
+        },
+        {
+          "label": "Сверить до экспорта",
+          "detail": "Сопоставьте строки CSV с файлами и исправьте имя MOV."
+        },
+        {
+          "label": "Проверить после импорта",
+          "detail": "Сначала загрузите файлы, затем проверьте каждую строку на площадке."
+        }
+      ]
+    }
+  },
+  "published": "2026-09-18",
+  "modified": "2026-09-18",
+  "bn": {
+    "title": "স্টক মেটাডেটা CSV নিরাপদে রপ্তানি ও ফাইলনাম মেলানোর পদ্ধতি",
+    "description": "স্টক মেটাডেটা CSV রপ্তানি, এক্সটেনশন ও অক্ষরের বড়-ছোটের অমিল ধরা, এবং মার্কেটপ্লেসে আমদানির আগে সারি যাচাইয়ের ব্যবহারিক নির্দেশিকা।",
+    "intro": "মেটাডেটা CSV তখনই উপযোগী, যখন প্রতিটি সারি সঠিক আপলোড করা সম্পদের দিকে নির্দেশ করে। একটি বদলে যাওয়া ফাইলনাম, অক্ষরের বড়-ছোটের পার্থক্য, অথবা অনুপস্থিত এক্সটেনশনের কারণে মেটাডেটা অমিল হতে পারে বা ভুল ফাইলের সঙ্গে যুক্ত হতে পারে। এই নির্দেশিকায় তিনটি সম্পদের জন্য সতর্ক কর্মপদ্ধতি দেখানো হয়েছে: দুটি JPG ছবি এবং একটি MOV ভিডিও; এর মধ্যে রয়েছে একটি বিরামচিহ্নের অমিল এবং একটি পুনঃনামকরণ করা ফাইল। উদাহরণে সম্পাদনাযোগ্য মেটাডেটা তৈরি ও রপ্তানির জন্য MetaStocker ব্যবহার করা হয়েছে, তবে অন্যত্র CSV সারি প্রস্তুত করলেও একই মিল-যাচাই পদ্ধতি প্রযোজ্য। ফাইলটিকে আপলোডের শর্টকাট নয়, বরং একটি ম্যাপিং নথি হিসেবে দেখুন: মার্কেটপ্লেসই তার বর্তমান প্রয়োজনীয়তা ও গ্রহণপ্রক্রিয়া নিয়ন্ত্রণ করে।",
+    "sections": [
+      {
+        "heading": "১. মেটাডেটা তৈরির আগে সম্পদের সেট নির্ধারণ করুন",
+        "paragraphs": [
+          "রপ্তানিকারক খোলার আগে একটি ছোট তালিকা তৈরি করুন। সঠিক ফাইলনাম, এক্সটেনশন, নির্ধারিত মার্কেটপ্লেস এবং আইটেমটি ছবি না ভিডিও—সব লিখে রাখুন। প্রকৃত ফোল্ডারে থাকা বানান ও অক্ষরের বড়-ছোট অপরিবর্তিত রাখুন। সংক্ষিপ্ত প্রদর্শিত নাম বা মনে থাকা ফাইলনামের ওপর নির্ভর করবেন না।",
+          "এই উদাহরণে ফোল্ডারে তিনটি ফাইল আছে: city_bridge.JPG, coffee-cup.jpg, এবং metro_night.MOV। পরে অবদানকারী ভিডিওটির নাম metro-night.MOV করেছেন, কিন্তু CSV খসড়ায় এখনও metro_night.MOV রয়েছে। এটি মেটাডেটার সমস্যা নয়, ফাইলনামের পরিবর্তন; আমদানির আগে এটি সমাধান করা উচিত।"
+        ],
+        "bullets": [
+          ".jpg বা .mov সহ সঠিক এক্সটেনশন ব্যবহার করুন।",
+          "লক্ষ্য পোর্টাল ভিন্ন কিছু নিশ্চিত না করা পর্যন্ত বড় হাতের ও ছোট হাতের অক্ষরকে গুরুত্বপূর্ণ ধরুন।",
+          "প্রতিটি সম্পদের জন্য একটি করে তালিকা-সারি রাখুন।"
+        ],
+        "example": "রপ্তানির আগে তালিকা\ncity_bridge.JPG | ছবি\ncoffee-cup.jpg | ছবি\nmetro-night.MOV | ভিডিও"
+      },
+      {
+        "heading": "২. স্পষ্ট প্রেক্ষাপটসহ উপযোগী মেটাডেটা তৈরি করুন",
+        "paragraphs": [
+          "MetaStocker ব্যবহার করলে স্থানীয় মোডে WebGPU কর্মীর মাধ্যমে নির্বাচিত মডেলটি ব্রাউজারে চলে। প্রথম মডেল ডাউনলোডে ইন্টারনেট সংযোগ লাগে, আর মডেলের মেমরি ব্রাউজারের ক্যাশ থেকে আলাদা। একটি স্থানীয় থ্রেড দিয়ে শুরু করুন এবং প্রতিটি ফাইলের ফলাফল আলাদাভাবে পর্যালোচনা করুন। অ্যাপটি ছবি ও ভিডিও নিতে পারে, তবে ভিডিওর বর্ণনা নমুনা প্রিভিউয়ের ওপর ভিত্তি করে তৈরি হয়; তাই সম্পূর্ণ চলমান দৃশ্য নিজে পরীক্ষা করুন।",
+          "ব্যাচের বর্ণনা কেবল তখনই দিন, যখন তা নির্বাচিত প্রতিটি সম্পদের ক্ষেত্রে সত্য। এই উদাহরণে অভিন্ন প্রেক্ষাপটটি অতিরিক্ত বিস্তৃত, তাই দুটি ছবি একসঙ্গে এবং ভিডিওটি আলাদাভাবে তৈরি করুন। প্রতিটি ফাইলের জন্য অতিরিক্ত ট্যাগ প্রাসঙ্গিক রাখুন; সেতুর সঙ্গে মানানসই একটি ট্যাগ যেন স্বয়ংক্রিয়ভাবে কফির ছবিতে না আসে।"
+        ],
+        "bullets": [
+          "দৃশ্যমান বিষয়, পরিবেশ, কাজ এবং উপযোগী প্রযুক্তিগত প্রেক্ষাপট বর্ণনা করুন।",
+          "পিক্সেল দেখে পরিচয়, স্থান, রিলিজ, প্রজাতি বা অন্যান্য সংবেদনশীল তথ্য অনুমান করবেন না।",
+          "রপ্তানির আগে তৈরি ফলাফল সম্পাদনা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৩. মার্কেটপ্লেসের নিয়মকে CSV কর্মপদ্ধতি থেকে আলাদা রাখুন",
+        "paragraphs": [
+          "CSV স্কিমা মার্কেটপ্লেসভেদে আলাদা। Adobe Stock ফাইলনামকে শিরোনাম ও কীওয়ার্ডের সঙ্গে মিলিয়ে দেয় এবং এতে শ্রেণি ও রিলিজ ফাইলনামের ক্ষেত্র থাকতে পারে। এর বর্তমান CSV নির্দেশিকায় শিরোনামের সীমা 70 অক্ষর; 49টি কীওয়ার্ডকে সতর্কতামূলক সর্বোচ্চ সংখ্যা হিসেবে ব্যবহার করুন এবং আমদানির আগে বর্তমান আপলোড স্ক্রিন পরীক্ষা করুন। অন্য মার্কেটপ্লেসে ভিন্ন ক্ষেত্র বা সীমা থাকতে পারে, তাই একটি রপ্তানি করা স্কিমা সব গন্তব্যে উপযুক্ত ধরে নেবেন না।",
+          "Adobe Stock-এর ক্ষেত্রে মেটাডেটার ভাষা অবদানকারী অ্যাকাউন্টের ভাষার সঙ্গে মিলতে হবে। সবচেয়ে গুরুত্বপূর্ণ শব্দগুলো শুরুতেই রাখুন, বিশেষ করে প্রথম দশটি কীওয়ার্ডের মধ্যে। কীওয়ার্ডের তালিকার চেয়ে সংক্ষিপ্ত বর্ণনামূলক শিরোনাম নিরাপদ। পরে Shutterstock বা Envato-এর জন্য মেটাডেটা তৈরি করলে তাদের বর্তমান অবদানকারী-সংক্রান্ত প্রয়োজনীয়তা আলাদাভাবে দেখুন; প্ল্যাটফর্মের নিয়ম বদলাতে পারে।"
+        ],
+        "bullets": [
+          "রপ্তানির আগে গন্তব্য নির্বাচন করুন।",
+          "শিরোনামের দৈর্ঘ্য, ভাষা, কীওয়ার্ডের সংখ্যা এবং প্রয়োজনীয় ক্ষেত্র যাচাই করুন।",
+          "দেখতে সঠিক CSV গ্রহণ করা হবে—এমন প্রমাণ হিসেবে কখনও ব্যবহার করবেন না।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৪. প্রকৃত ফোল্ডারকে কর্তৃপক্ষ ধরে নাম মিলিয়ে নিন",
+        "paragraphs": [
+          "CSV আপলোডের আগে রপ্তানি করা ফাইলনামের কলামটি আপলোড হতে যাওয়া ফাইলগুলোর সঙ্গে তুলনা করুন। এক্সটেনশন ও অক্ষরের বড়-ছোটসহ সম্পূর্ণ স্ট্রিং মিলিয়ে দেখুন। সংশ্লিষ্ট সম্পদের নামও ইচ্ছাকৃতভাবে বদলানো না হলে শুধু CSV বদলে অমিল ঠিক করবেন না। কোন নামটি কর্তৃত্বপূর্ণ তা নির্ধারণ করুন, তারপর দুই পাশের নাম অভিন্ন করুন।",
+          "কাজ করা উদাহরণে city_bridge.JPG হুবহু মিলে গেছে। coffee-cup.jpg-ও মিলে গেছে। ভিডিওটিতে অমিল আছে: ফোল্ডারে metro-night.MOV, কিন্তু CSV-তে metro_night.MOV। CSV-এর মান metro-night.MOV করুন, অথবা আপনার সংরক্ষণাগারের জন্য সুবিধাজনক হলে সম্পদটির নাম আবার metro_night.MOV করুন। সিদ্ধান্তের পর তুলনা পুনরায় করুন; মনে থাকা সংশোধনের ভিত্তিতে এগিয়ে যাবেন না।"
+        ],
+        "bullets": [
+          "বানান, বিরামচিহ্ন, এক্সটেনশন এবং অক্ষরের বড়-ছোট পরীক্ষা করুন।",
+          "আমদানির আগে পুনঃনামকরণ করা ফাইল সমাধান করুন।",
+          "শুধু নাম কাছাকাছি বলে দুটি সম্পদকে নীরবে একত্র করবেন না।"
+        ],
+        "example": "মিল-যাচাই সারণি\nCSV মান            ফোল্ডারের মান       পদক্ষেপ\ncity_bridge.JPG    city_bridge.JPG     অপরিবর্তিত রাখুন\ncoffee-cup.jpg     coffee-cup.jpg      অপরিবর্তিত রাখুন\nmetro_night.MOV    metro-night.MOV     CSV-তে metro-night.MOV করুন"
+      },
+      {
+        "heading": "৫. চূড়ান্ত CSV রপ্তানির আগে সারি পরীক্ষা করুন",
+        "paragraphs": [
+          "সম্পাদনাযোগ্য মেটাডেটার ফলাফল খুলে প্রতিটি সারি তার প্রিভিউয়ের সঙ্গে মিলিয়ে দেখুন। শিরোনামটি সঠিক সম্পদ বর্ণনা করছে কি না, কীওয়ার্ডগুলো পুনরাবৃত্তিমূলক না হয়ে প্রাসঙ্গিক কি না, এবং ভিডিওর সারিতে নমুনা বা সম্পূর্ণ দৃশ্যে অনুপস্থিত কোনো দাবি আছে কি না নিশ্চিত করুন। সব ফাইলে প্রযোজ্য নয় এমন সাধারণ ট্যাগ সরিয়ে দিন।",
+          "শুধু প্রস্তুত সারিগুলো রপ্তানি করুন। চূড়ান্ত ফাইলনাম, শিরোনামের অবস্থা, কীওয়ার্ডের অবস্থা এবং গন্তব্য দেখিয়ে একটি সহজ প্রাক-পরীক্ষা নথি রাখুন। MetaStocker কয়েকটি স্টক প্ল্যাটফর্মের জন্য CSV ফরম্যাট রপ্তানি করে, কিন্তু এটি ফাইল আপলোড বা জমা দেয় না, মূল ফাইলে মেটাডেটা বসানোর নিশ্চয়তা দেয় না, গ্রহণের নিশ্চয়তা দেয় না, এবং ট্যাব বন্ধ হলে অসমাপ্ত কাজ সংরক্ষণ করে না।"
+        ],
+        "bullets": [
+          "সম্পদের প্রিভিউ তার মেটাডেটা সারির পাশে দেখুন।",
+          "সম্পাদনার পর আবার ফাইলনাম পরীক্ষা করুন।",
+          "মিল-যাচাই শেষ করে নতুন চূড়ান্ত ফাইল রপ্তানি করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৬. আগে সম্পদ আপলোড করুন, পরে আমদানি করা মেটাডেটা পরীক্ষা করুন",
+        "paragraphs": [
+          "Adobe Stock-এর ক্ষেত্রে CSV আমদানির আগে সম্পদ আপলোড করুন। এক্সটেনশন ও অক্ষরের বড়-ছোটসহ ফাইলনাম মিলতে হবে। আমদানির পর অবদানকারী পোর্টালে তৈরি হওয়া মেটাডেটা পরীক্ষা করুন; সফলভাবে ফাইল নির্বাচন করা হয়েছে মানেই প্রতিটি সারি মিলেছে—এমন ধরে নেবেন না।",
+          "কোনো সারি অনুপস্থিত থাকলে বা ভুলভাবে যুক্ত হলে থামুন এবং উৎসের নাম ও CSV সংশোধন করুন। মার্কেটপ্লেসের নীতি ও আপলোড স্ক্রিন বদলাতে পারে, তাই জমা দেওয়ার সময় বর্তমান অবদানকারী পোর্টালের নির্দেশনা পরীক্ষা করুন। CSV ক্ষেত্র স্থানান্তরের সুবিধা দেয়; চূড়ান্ত পর্যালোচনাই আপনার নিরাপত্তা যাচাই।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "সঠিক ফাইলনাম ও এক্সটেনশন দিয়ে প্রতিটি সম্পদের তালিকা করুন।",
+      "পুনঃনামকরণ, অক্ষর-সংবেদনশীলতা এবং বিরামচিহ্নের অমিল সমাধান করুন।",
+      "সম্পদভিত্তিক প্রেক্ষাপটসহ মেটাডেটা তৈরি করুন।",
+      "শিরোনাম, কীওয়ার্ড, ভাষা এবং প্ল্যাটফর্মের সীমা পর্যালোচনা করুন।",
+      "শুধু মিল-যাচাই করা প্রস্তুত সারি রপ্তানি করুন।",
+      "মার্কেটপ্লেসে প্রয়োজন হলে আগে সম্পদ আপলোড করুন।",
+      "অবদানকারী পোর্টালে আমদানি করা মেটাডেটা পরীক্ষা করুন।",
+      "জমা দেওয়ার আগে বর্তমান মার্কেটপ্লেসের প্রয়োজনীয়তা পরীক্ষা করুন।"
+    ],
+    "illustration": {
+      "title": "CSV মিল-যাচাইয়ের তিন ধাপ",
+      "steps": [
+        {
+          "label": "সঠিক নামের তালিকা করুন",
+          "detail": "ফোল্ডার থেকে প্রতিটি ফাইলনাম, এক্সটেনশন ও অক্ষরের বড়-ছোট লিখে রাখুন।"
+        },
+        {
+          "label": "রপ্তানির আগে মিলিয়ে নিন",
+          "detail": "CSV সারি ও সম্পদ তুলনা করে পুনঃনামকরণ করা MOV ফাইলটি ঠিক করুন।"
+        },
+        {
+          "label": "আমদানির পর পরীক্ষা করুন",
+          "detail": "আগে সম্পদ আপলোড করুন, তারপর পোর্টালে প্রতিটি মেটাডেটা সারি যাচাই করুন।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "स्टॉक मेटाडेटा CSV सुरक्षित रूप से निर्यात और फ़ाइलनाम मिलान",
+    "description": "स्टॉक मेटाडेटा CSV निर्यात करने, एक्सटेंशन और अक्षर-रूप के अंतर पकड़ने और मार्केटप्लेस आयात से पहले पंक्तियाँ जाँचने की व्यावहारिक मार्गदर्शिका।",
+    "intro": "मेटाडेटा CSV तभी उपयोगी है, जब हर पंक्ति सही अपलोड की गई संपत्ति की ओर संकेत करे। बदला हुआ फ़ाइलनाम, अक्षरों के बड़े-छोटे रूप का अंतर या गायब एक्सटेंशन मेटाडेटा को बेमेल कर सकता है या उसे गलत फ़ाइल से जोड़ सकता है। यह मार्गदर्शिका तीन संपत्तियों के लिए सावधान कार्यप्रवाह दिखाती है: दो JPG चित्र और एक MOV वीडियो; इनमें विराम-चिह्न का एक अंतर और बदली गई एक फ़ाइल शामिल है। उदाहरण में संपादनयोग्य मेटाडेटा बनाने और निर्यात करने के लिए MetaStocker का उपयोग किया गया है, लेकिन CSV पंक्तियाँ कहीं और तैयार करने पर भी यही मिलान विधि लागू होती है। फ़ाइल को अपलोड के शॉर्टकट के रूप में नहीं, बल्कि मैपिंग दस्तावेज़ के रूप में देखें: मार्केटप्लेस अपनी वर्तमान आवश्यकताओं और स्वीकृति प्रक्रिया को नियंत्रित करता है।",
+    "sections": [
+      {
+        "heading": "१. मेटाडेटा बनाने से पहले संपत्तियों का समूह तय करें",
+        "paragraphs": [
+          "निर्यातक खोलने से पहले एक छोटी सूची बनाएँ। सटीक फ़ाइलनाम, एक्सटेंशन, निर्धारित मार्केटप्लेस और यह कि वस्तु चित्र है या वीडियो—सब दर्ज करें। वास्तविक फ़ोल्डर में मौजूद वर्तनी और अक्षरों के बड़े-छोटे रूप को सुरक्षित रखें। छोटे दिखने वाले नाम या याद किए हुए फ़ाइलनाम पर निर्भर न रहें।",
+          "इस उदाहरण में फ़ोल्डर में तीन फ़ाइलें हैं: city_bridge.JPG, coffee-cup.jpg और metro_night.MOV। योगदानकर्ता ने बाद में वीडियो का नाम metro-night.MOV कर दिया, जबकि CSV प्रारूप में अभी भी metro_night.MOV है। यह मेटाडेटा की समस्या नहीं, फ़ाइलनाम का बदलाव है और आयात से पहले इसे ठीक किया जाना चाहिए।"
+        ],
+        "bullets": [
+          ".jpg या .mov सहित सटीक एक्सटेंशन का उपयोग करें।",
+          "लक्षित पोर्टल कुछ और निश्चित न करे तब तक बड़े और छोटे अक्षरों को अर्थपूर्ण मानें।",
+          "हर संपत्ति के लिए सूची में एक पंक्ति रखें।"
+        ],
+        "example": "निर्यात से पहले सूची\ncity_bridge.JPG | चित्र\ncoffee-cup.jpg | चित्र\nmetro-night.MOV | वीडियो"
+      },
+      {
+        "heading": "२. स्पष्ट संदर्भ के साथ उपयोगी मेटाडेटा बनाएँ",
+        "paragraphs": [
+          "यदि आप MetaStocker का उपयोग करते हैं, तो स्थानीय मोड में WebGPU कर्मियों के माध्यम से चुना गया मॉडल ब्राउज़र में चलता है। पहले मॉडल को डाउनलोड करने के लिए इंटरनेट चाहिए, और मॉडल मेमोरी ब्राउज़र कैश से अलग होती है। एक स्थानीय थ्रेड से शुरू करें और परिणामों की फ़ाइल-दर-फ़ाइल समीक्षा करें। ऐप चित्र और वीडियो स्वीकार कर सकता है, लेकिन वीडियो का वर्णन नमूना प्रीव्यू पर आधारित होता है; इसलिए पूरी गति-छवि स्वयं जाँचें।",
+          "बैच का वर्णन तभी दें, जब वह चुनी गई हर संपत्ति के लिए सही हो। इस उदाहरण में साझा संदर्भ बहुत व्यापक है, इसलिए दोनों चित्रों को साथ और वीडियो को अलग से बनाएँ। अतिरिक्त टैग हर फ़ाइल के लिए प्रासंगिक रखें; पुल के लिए उपयुक्त टैग अपने-आप कॉफी के चित्र में नहीं आना चाहिए।"
+        ],
+        "bullets": [
+          "दिखने वाले विषय, परिवेश, क्रिया और उपयोगी तकनीकी संदर्भ का वर्णन करें।",
+          "पिक्सेल से पहचान, स्थान, रिलीज़, प्रजाति या अन्य संवेदनशील तथ्यों का अनुमान न लगाएँ।",
+          "निर्यात से पहले बनाए गए परिणामों को संपादित करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "३. मार्केटप्लेस के नियमों को CSV कार्यप्रवाह से अलग रखें",
+        "paragraphs": [
+          "CSV स्कीमा मार्केटप्लेस के अनुसार अलग होती है। Adobe Stock फ़ाइलनामों को शीर्षकों और कीवर्ड से मिलाता है और इसमें श्रेणी तथा रिलीज़ फ़ाइलनाम के फ़ील्ड हो सकते हैं। इसकी वर्तमान CSV मार्गदर्शिका में शीर्षक की सीमा 70 अक्षर है; सावधानी के लिए अधिकतम 49 कीवर्ड रखें और आयात से पहले वर्तमान अपलोड स्क्रीन जाँचें। अन्य मार्केटप्लेस में अलग फ़ील्ड या सीमाएँ हो सकती हैं, इसलिए एक निर्यात की गई स्कीमा को हर गंतव्य के लिए उपयुक्त न मानें।",
+          "Adobe Stock के लिए मेटाडेटा की भाषा योगदानकर्ता खाते की भाषा से मेल खानी चाहिए। सबसे महत्वपूर्ण शब्दों को शुरुआत में रखें, खासकर पहले दस कीवर्ड में। कीवर्ड सूची की तुलना में संक्षिप्त वर्णनात्मक शीर्षक अधिक सुरक्षित है। बाद में Shutterstock या Envato के लिए मेटाडेटा तैयार करते समय उनकी वर्तमान योगदानकर्ता आवश्यकताओं को अलग से देखें; प्लेटफ़ॉर्म के नियम बदल सकते हैं।"
+        ],
+        "bullets": [
+          "निर्यात से पहले गंतव्य चुनें।",
+          "शीर्षक की लंबाई, भाषा, कीवर्ड संख्या और आवश्यक फ़ील्ड जाँचें।",
+          "सिर्फ सही दिखने वाली CSV को स्वीकृति का प्रमाण न मानें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "४. वास्तविक फ़ोल्डर को आधार मानकर नामों का मिलान करें",
+        "paragraphs": [
+          "CSV अपलोड करने से पहले निर्यात किए गए फ़ाइलनाम कॉलम की तुलना उन फ़ाइलों से करें जिन्हें अपलोड किया जाएगा। एक्सटेंशन और अक्षरों के बड़े-छोटे रूप सहित पूरी स्ट्रिंग मिलाएँ। संबंधित संपत्ति का नाम जानबूझकर न बदला गया हो तो केवल CSV बदलकर अंतर ठीक न करें। तय करें कि कौन-सा नाम आधिकारिक है, फिर दोनों ओर के नाम समान करें।",
+          "काम किए गए उदाहरण में city_bridge.JPG बिल्कुल मेल खाता है। coffee-cup.jpg भी मेल खाता है। वीडियो में अंतर है: फ़ोल्डर में metro-night.MOV है, लेकिन CSV में metro_night.MOV है। CSV के मान को metro-night.MOV करें, या यदि आपके संग्रह के लिए बेहतर हो तो संपत्ति का नाम फिर से metro_night.MOV कर दें। निर्णय के बाद तुलना दोहराएँ; याद के आधार पर किए गए सुधार के साथ आगे न बढ़ें।"
+        ],
+        "bullets": [
+          "वर्तनी, विराम-चिह्न, एक्सटेंशन और अक्षरों के बड़े-छोटे रूप जाँचें।",
+          "आयात से पहले बदली हुई फ़ाइलों के नाम ठीक करें।",
+          "सिर्फ मिलते-जुलते नाम होने पर दो संपत्तियों को चुपचाप एक न करें।"
+        ],
+        "example": "मिलान तालिका\nCSV मान            फ़ोल्डर मान         कार्रवाई\ncity_bridge.JPG    city_bridge.JPG     रखें\ncoffee-cup.jpg     coffee-cup.jpg      रखें\nmetro_night.MOV    metro-night.MOV     CSV को metro-night.MOV में बदलें"
+      },
+      {
+        "heading": "५. अंतिम CSV निर्यात से पहले पंक्तियों की जाँच करें",
+        "paragraphs": [
+          "संपादनयोग्य मेटाडेटा परिणाम खोलें और हर पंक्ति को उसके प्रीव्यू से मिलाकर देखें। सुनिश्चित करें कि शीर्षक सही संपत्ति का वर्णन करता है, कीवर्ड दोहरावपूर्ण होने के बजाय प्रासंगिक हैं, और वीडियो की पंक्ति में नमूना या पूरे फ़ुटेज में अनुपस्थित विवरण का दावा नहीं है। ऐसे सामान्य टैग हटा दें जो सभी फ़ाइलों पर लागू नहीं होते।",
+          "केवल तैयार पंक्तियों को निर्यात करें। अंतिम फ़ाइलनाम, शीर्षक की स्थिति, कीवर्ड की स्थिति और गंतव्य दिखाने वाला सरल पूर्व-जाँच रिकॉर्ड रखें। MetaStocker कई स्टॉक प्लेटफ़ॉर्म के लिए CSV प्रारूप निर्यात करता है, लेकिन यह फ़ाइल अपलोड या जमा नहीं करता, मूल फ़ाइलों में मेटाडेटा भरने की गारंटी नहीं देता, स्वीकृति की गारंटी नहीं देता और टैब बंद होने के बाद अधूरा काम सुरक्षित नहीं रखता।"
+        ],
+        "bullets": [
+          "संपत्ति का प्रीव्यू उसकी मेटाडेटा पंक्ति के साथ देखें।",
+          "संपादन के बाद फ़ाइलनाम फिर जाँचें।",
+          "मिलान पूरा होने के बाद नई अंतिम फ़ाइल निर्यात करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "६. पहले संपत्तियाँ अपलोड करें, फिर आयातित मेटाडेटा जाँचें",
+        "paragraphs": [
+          "Adobe Stock के लिए CSV आयात करने से पहले संपत्तियाँ अपलोड करें। एक्सटेंशन और अक्षरों के बड़े-छोटे रूप सहित फ़ाइलनाम मेल खाने चाहिए। आयात के बाद योगदानकर्ता पोर्टल में बने मेटाडेटा की जाँच करें; फ़ाइल का सफल चयन यह नहीं साबित करता कि हर पंक्ति का मिलान हुआ है।",
+          "यदि कोई पंक्ति गायब है या गलत तरीके से जुड़ी है, तो रुकें और स्रोत नाम तथा CSV ठीक करें। मार्केटप्लेस की नीतियाँ और अपलोड स्क्रीन बदल सकती हैं, इसलिए जमा करते समय वर्तमान योगदानकर्ता पोर्टल के निर्देश जाँचें। CSV फ़ील्ड स्थानांतरित करने की सुविधा है; अंतिम समीक्षा ही आपकी सुरक्षा जाँच है।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "सटीक फ़ाइलनाम और एक्सटेंशन से हर संपत्ति की सूची बनाएँ।",
+      "बदले हुए नाम, अक्षर-संवेदी और विराम-चिह्न के अंतर ठीक करें।",
+      "संपत्ति-विशिष्ट संदर्भ के साथ मेटाडेटा बनाएँ।",
+      "शीर्षक, कीवर्ड, भाषा और प्लेटफ़ॉर्म सीमाओं की समीक्षा करें।",
+      "केवल मिलान की गई तैयार पंक्तियाँ निर्यात करें।",
+      "मार्केटप्लेस की आवश्यकता हो तो पहले संपत्तियाँ अपलोड करें।",
+      "योगदानकर्ता पोर्टल में आयातित मेटाडेटा जाँचें।",
+      "जमा करने से पहले वर्तमान मार्केटप्लेस आवश्यकताएँ जाँचें।"
+    ],
+    "illustration": {
+      "title": "CSV मिलान के तीन चरण",
+      "steps": [
+        {
+          "label": "सटीक नामों की सूची बनाएँ",
+          "detail": "फ़ोल्डर से हर फ़ाइलनाम, एक्सटेंशन और अक्षर-रूप दर्ज करें।"
+        },
+        {
+          "label": "निर्यात से पहले मिलान करें",
+          "detail": "CSV पंक्तियों और संपत्तियों की तुलना कर बदली हुई MOV फ़ाइल ठीक करें।"
+        },
+        {
+          "label": "आयात के बाद जाँचें",
+          "detail": "पहले संपत्तियाँ अपलोड करें, फिर पोर्टल में हर मेटाडेटा पंक्ति सत्यापित करें।"
+        }
+      ]
+    }
+  }
+}

@@ -80,11 +80,22 @@ export function makeServer({ store, credentials, origin = 'https://metastocker.n
         return send(404, { error: 'not_found' });
       }
       if (req.method !== 'GET' && req.method !== 'HEAD') return send(405, { error: 'method' });
-      if (path === '/health') { store.db.prepare('SELECT 1').get(); return send(200, { ok: true, version: '2.11' }); }
+      if (path === '/health') { store.db.prepare('SELECT 1').get(); return send(200, { ok: true, version: '2.12' }); }
       if (path === '/admin') return redirect('/admin/');
       if (path === '/admin/api/summary') {
         if (!loggedIn) return send(401, { error: 'unauthorized' });
         return send(200, store.summary(dateRange(url.searchParams)));
+      }
+      if (path === '/admin/api/editorial') {
+        if (!loggedIn) return send(401, { error: 'unauthorized' });
+        let editorial = { status: 'not_configured' }, published = {};
+        try { editorial = JSON.parse(readFileSync(process.env.EDITORIAL_STATUS || '/data/editorial-status.json', 'utf8')); } catch { }
+        try { published = JSON.parse(readFileSync(join(directory, 'editorial.json'), 'utf8')); } catch { }
+        const safe = {};
+        for (const key of ['status', 'checked_at', 'last_success', 'failed_at', 'last_topic', 'current_topic', 'remaining_topics', 'schedule', 'cadence', 'error']) {
+          if (typeof editorial[key] === 'string' || typeof editorial[key] === 'number') safe[key] = editorial[key];
+        }
+        return send(200, { ...safe, articles: published.articles || 0, topics: published.topics || 0 });
       }
       const asset = assets.get(path);
       if (asset) {

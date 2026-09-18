@@ -1,0 +1,35 @@
+name: metastocker-editorial
+services:
+  writer:
+    # Existing trusted, locally built runtime; never pulls or recreates a Luka service.
+    image: metastocker-editorial-runtime:codex-0.144.5
+    pull_policy: never
+    container_name: metastocker-editorial
+    entrypoint:
+      - /bin/sh
+      - -c
+      - 'umask 077; mkdir -p /tmp/codex-home; cp /var/lib/vintage-inventory/codex/auth.json /tmp/codex-home/auth.json; exec sleep infinity'
+    restart: unless-stopped
+    user: "10001:10001"
+    environment:
+      HOME: /tmp
+      CODEX_HOME: /tmp/codex-home
+      TOKIO_WORKER_THREADS: "2"
+    volumes:
+      # Authorized CLI is read-only. Its private runtime/auth copy lives only in tmpfs.
+      - /var/lib/vintage-inventory/codex:/var/lib/vintage-inventory/codex:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m,uid=10001,gid=10001,mode=1770,nosuid
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 768m
+    cpus: 1.0
+    pids_limit: 256
+    healthcheck:
+      disable: true
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "2"
