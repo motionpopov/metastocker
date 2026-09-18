@@ -22,7 +22,7 @@ git archive HEAD | tar -x -C "$stage/source"
 python3 deploy/build_release.py --source "$stage/source" --output "$stage/release" \
   --release "$release_id" --commit "$commit" >"$stage/release-metadata.json"
 ssh -o BatchMode=yes "$deploy_host" "test ! -e /opt/metastocker/releases/$release_id && mkdir -p /opt/metastocker/releases/$release_id"
-rsync -az --chmod=D755,F644 "$stage/release/" "$deploy_host:/opt/metastocker/releases/$release_id/"
+rsync -az "$stage/release/" "$deploy_host:/opt/metastocker/releases/$release_id/"
 ssh -o BatchMode=yes "$deploy_host" "bash /opt/metastocker/releases/$release_id/deploy/activate-release.sh $release_id"
 if [[ "$mode" == --bootstrap ]]; then
   echo 'Initial internal deployment ready. Add the shared Caddy fragment, then run verify_production.py.'

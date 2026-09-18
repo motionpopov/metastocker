@@ -80,6 +80,10 @@ def build(source, output, release, commit):
     manifest = ''.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.relative_to(output)}\n'
                        for p in sorted(output.rglob('*')) if p.is_file())
     (output / 'SHA256SUMS').write_text(manifest)
+    # Portable rsync on macOS does not accept GNU-style --chmod=D755,F644.
+    output.chmod(0o755)
+    for path in output.rglob('*'):
+        path.chmod(0o755 if path.is_dir() else 0o644)
     return metadata
 
 
