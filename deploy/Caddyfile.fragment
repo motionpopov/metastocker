@@ -1,0 +1,18 @@
+# BEGIN METASTOCKER
+# Append once to the server-owned /opt/vintage-inventory/Caddyfile.
+# Routine MetaStocker releases must never replace the shared Caddyfile.
+metastocker.net {
+	encode zstd gzip
+	header Strict-Transport-Security "max-age=31536000"
+	reverse_proxy metastocker-web:8080
+}
+
+www.metastocker.net {
+	header Strict-Transport-Security "max-age=31536000"
+	redir https://metastocker.net{uri} permanent
+}
+
+http://metastocker.net, http://www.metastocker.net {
+	redir https://metastocker.net{uri} permanent
+}
+# END METASTOCKER

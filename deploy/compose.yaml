@@ -1,0 +1,38 @@
+name: metastocker
+services:
+  web:
+    image: caddy@sha256:ec18ee54aab3315c22e25f3b2babda73ff8007d39b13b3bd1bfffa2f0444c7d9
+    container_name: metastocker-web
+    restart: unless-stopped
+    user: "1000:1000"
+    command: ["caddy", "run", "--config", "/srv/metastocker/current/Staticfile", "--adapter", "caddyfile"]
+    volumes:
+      - /opt/metastocker:/srv/metastocker:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid
+      - /data:size=1m,noexec,nosuid
+      - /config:size=1m,noexec,nosuid
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 100
+    environment:
+      GOMEMLIMIT: 96MiB
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/release.json"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+    networks: [proxy]
+networks:
+  proxy:
+    external: true
+    name: vintage-inventory_default

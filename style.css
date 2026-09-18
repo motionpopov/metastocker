@@ -325,12 +325,34 @@ html.dark .step-badge {
 }
 
 .flip-card-front {
+  position: relative;
+  height: auto;
+  min-height: 100%;
   border: 1px solid var(--border);
 }
 
 .flip-card-back {
   border: 1px solid var(--border);
 }
+
+#openPromptBtn { margin-left: auto; flex-shrink: 0; }
+#cloudConnection[hidden], #localModelPanel[hidden], .local-model-panel [hidden] { display: none !important; }
+.local-model-panel {
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+.local-model-panel p { margin: 0; }
+.local-model-heading, .local-model-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.local-model-heading { justify-content: space-between; }
+.local-model-heading a { color: var(--accent); text-decoration: underline; }
+.local-model-status { font-size: 13px; overflow-wrap: anywhere; }
+.local-model-error { color: #b42318; }
+html.dark .local-model-error { color: #ffb4aa; }
+.local-model-panel progress { width: 100%; height: 8px; accent-color: var(--accent); }
+.local-model-actions .btn { white-space: normal; }
+.local-model-actions .btn.primary { color: #fff; }
 
 /* Dots Button - Integrated horizontally next to input */
 .menu-btn {

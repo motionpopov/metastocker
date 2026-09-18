@@ -13,10 +13,11 @@
       }
     } catch { }
   </script>
-  <title>MetaStocker</title>
+  <title>Free Stock Metadata Generator | MetaStocker</title>
+  <meta name="description" content="Generate titles, keywords and categories for stock photos and videos for free with local AI. No account, subscription or API key. Export CSV files for your stock platforms.">
   <link rel="icon" href="assets/metalogo.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/metalogo.png" />
-  <link rel="stylesheet" href="style.css?v=2.4">
+  <link rel="stylesheet" href="style.css?v=2.9">
 
   <!-- Tailwind только для раскладки -->
   <link rel="stylesheet" href="tailwind.generated.css?v=2.4">
@@ -46,7 +47,7 @@
         <img id="brandLogo" src="assets/metalogo.png" alt="" width="41" height="41" class="rounded" />
         <span id="brandText">MetaStocker</span>
       </div>
-      <span class="badge version-badge">v2.6</span>
+      <span class="badge version-badge">v2.10</span>
       <span id="tokenCounter" class="badge hidden" title="Total tokens used in this session">0 tokens</span>
       <div class="grow"></div>
       <button type="button" id="themeToggle" class="btn ghost theme-toggle" aria-label="Switch to dark theme"
@@ -66,14 +67,14 @@
     <!-- Lead -->
     <section class="card pad hero-card">
       <div class="hero-copy">
-        <div class="eyebrow">AI metadata workspace</div>
-        <h1 class="hero-title">Stock-ready titles and tags in one pass.</h1>
-        <p class="hero-subtitle">Import photos or videos and export marketplace-ready CSV files. Original files stay in your browser; selected previews and metadata are sent directly to your chosen AI provider.</p>
+        <div class="eyebrow">Free stock metadata generator</div>
+        <h1 class="hero-title">Help buyers find your stock content.</h1>
+        <p class="hero-subtitle">Generate titles, keywords and categories for your photos and videos. Spend less time tagging and give your portfolio more chances to sell. Export CSV files ready for your stock platforms.</p>
       </div>
       <ul class="hero-points">
+        <li>100% free with local AI</li>
+        <li>No account, subscription or API key</li>
         <li>Adobe · Envato · Shutterstock · Freepik</li>
-        <li>Browser-based workflow</li>
-        <li>CSV export included</li>
       </ul>
     </section>
 
@@ -87,11 +88,16 @@
               <div class="section-heading">
                 <span class="step-badge">1</span>
                 <div>
-                  <h2>Connect OpenAI</h2>
-                  <p>Add your API key, then choose the model and limits for this batch.</p>
+                  <h2>Choose your model</h2>
+                  <p>Start free on your device. Cloud API models are optional.</p>
                 </div>
+                <button type="button" id="openPromptBtn" class="menu-btn" title="Edit System Prompt" aria-label="Edit system prompt">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="12" cy="12" r="1.5" /><circle cx="12" cy="5" r="1.5" /><circle cx="12" cy="19" r="1.5" />
+                  </svg>
+                </button>
               </div>
-              <div class="block access-token-field">
+              <div id="cloudConnection" class="block access-token-field" hidden>
                 <div class="label flex items-center gap-2"><label for="accessKey">OpenAI API key</label>
                   <span class="hint-tooltip">
                     <a class="qmark" href="blog/how-to-get-openai-api-key.html" target="_blank" rel="noopener"
@@ -110,16 +116,8 @@
                       </svg>
                     </button>
                   </div>
-                  <button type="button" id="openPromptBtn" class="menu-btn" title="Edit System Prompt" aria-label="Edit system prompt">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="1.5" />
-                      <circle cx="12" cy="5" r="1.5" />
-                      <circle cx="12" cy="19" r="1.5" />
-                    </svg>
-                  </button>
                 </div>
-                <div class="hint api-key-hint mt-1">Kept only in this browser tab and sent directly to OpenAI with your requests. Use a dedicated key on a trusted device.
+                <div class="hint api-key-hint mt-1">Optional paid API: OpenAI bills usage to your account. Your key is kept in this browser tab and sent directly to OpenAI with your requests.
                   <a class="api-key-guide-link" href="blog/how-to-get-openai-api-key.html" target="_blank" rel="noopener">How to create a key safely&nbsp;→</a>
                 </div>
               </div>
@@ -127,9 +125,11 @@
                 <div class="block">
                   <label for="model" class="label flex items-center gap-2">Model</label>
                   <select id="model" class="select">
-                    <option value="gpt-5.6-luna" selected>GPT-5.6 Luna</option>
+                    <optgroup label="OpenAI API · paid usage">
+                    <option value="gpt-5.6-luna">GPT-5.6 Luna</option>
                     <option value="gpt-5.4-mini">gpt-5.4-mini</option>
                     <option value="gpt-5.4-nano">gpt-5.4-nano</option>
+                    </optgroup>
                   </select>
                   <div id="modelHint" class="hint mt-1.5 min-h-[1.25rem]"></div>
                 </div>
@@ -143,6 +143,21 @@
                   </div>
                   <input id="tagsCount" type="number" min="10" max="49" value="20" class="input" />
                 </div>
+              </div>
+              <div id="localModelPanel" class="local-model-panel" hidden>
+                <div class="local-model-heading"><span class="badge">Free local AI · thinking · beta</span><a id="localModelSource" class="hint" target="_blank" rel="noopener">Model details</a></div>
+                <p id="localModelDetails" class="hint"></p>
+                <p class="hint">No API key or AI usage fees. Images and metadata stay on your device. The first download needs internet; model files are reused while saved in this browser.</p>
+                <p id="localModelStatus" class="local-model-status" role="status" aria-live="polite"></p>
+                <progress id="localModelProgress" max="100" aria-label="Local model download progress" hidden></progress>
+                <div class="local-model-actions">
+                  <button type="button" id="loadLocalModel" class="btn primary">Download &amp; load</button>
+                  <button type="button" id="cancelLocalModel" class="btn ghost" hidden>Cancel download</button>
+                  <button type="button" id="unloadLocalModel" class="btn ghost" title="Free memory and keep the downloaded model for later" hidden>Unload from memory</button>
+                  <button type="button" id="removeLocalModel" class="btn ghost" title="Delete this model's downloaded files from this browser" hidden>Delete model</button>
+                </div>
+                <p class="hint">Start with 1–2 threads. Each parallel file loads a separate model copy into memory; more threads need more RAM and GPU memory.</p>
+                <p class="hint">Keep this tab open and review generated metadata before export.</p>
               </div>
             </div>
           </div>
@@ -350,10 +365,11 @@
         <button type="button" id="aboutClose" class="btn ghost" aria-label="Close about dialog">&times;</button>
       </div>
       <div class="text-sm leading-relaxed">
-        MetaStocker helps creators attribute stock assets with high-quality metadata for Adobe Stock, Envato Elements,
-        and Shutterstock.
+        MetaStocker is a free metadata generator for stock photos and videos. Create titles, keywords and categories
+        for Adobe Stock, Envato, Shutterstock and Freepik, then export CSV files.
         Supported formats: images (JPEG, PNG, SVG, AI) and videos (MP4, WEBM, OGG, QuickTime). Original files remain
-        in your browser; previews and metadata are sent directly to the selected AI provider for generation.
+        in your browser. Local AI runs on your device without an account, subscription or API key.
+        Optional OpenAI models send previews and metadata directly to OpenAI and use your own paid API account.
         <br><br>
         <span class="hint">Note: .ai files must be saved with "PDF Compatibility" to be processed.</span>
       </div>
@@ -554,7 +570,8 @@
     <img id="imagePreviewImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" class="max-w-[420px] max-h-[420px] object-contain rounded-lg" alt="Enlarged asset preview" />
   </div>
 
-  <script src="app.js?v=2.6"></script>
+  <script src="local-ai.js?v=2.9"></script>
+  <script src="app.js?v=2.9"></script>
 </body>
 
 </html>

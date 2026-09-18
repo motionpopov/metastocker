@@ -346,8 +346,16 @@ function isLunaModel(model) {
   return model === MODEL_GPT_5_6_LUNA;
 }
 
+function isLocalModel(model) {
+  return typeof MetaStockerLocalAI !== 'undefined' && Boolean(MetaStockerLocalAI.getModel(model));
+}
+
+function requiresAdobeCategory(model) {
+  return isLunaModel(model) || isLocalModel(model);
+}
+
 function getAdobeTitleMax(model) {
-  if (isLunaModel(model)) return 70;
+  if (requiresAdobeCategory(model)) return 70;
   return model === 'gpt-5.4-nano' ? 100 : 80;
 }
 
@@ -357,7 +365,7 @@ function buildAdobeResponseSchema(model, tagsCount) {
     tags: { type: 'array', items: { type: 'string' }, minItems: tagsCount, maxItems: tagsCount }
   };
   const required = ['title', 'tags'];
-  if (isLunaModel(model)) {
+  if (requiresAdobeCategory(model)) {
     properties.category = { type: 'integer', enum: ADOBE_CATEGORY_IDS };
     required.push('category');
   }
@@ -374,7 +382,7 @@ function buildAdobeResponseSchema(model, tagsCount) {
 }
 
 function normalizeAdobeCategory(value, model) {
-  if (!isLunaModel(model) || typeof value !== 'number') return null;
+  if (!requiresAdobeCategory(model) || typeof value !== 'number') return null;
   return Number.isInteger(value) && ADOBE_CATEGORY_IDS.includes(value) ? value : null;
 }
 
@@ -444,7 +452,7 @@ Return ONLY a JSON object with exactly these fields:
 3. "category" - one integer category ID from 1 through 21`;
 
 function getAdobePrompt(model, tagsCount) {
-  if (isLunaModel(model)) return ADOBE_PROMPT_LUNA(tagsCount);
+  if (requiresAdobeCategory(model)) return ADOBE_PROMPT_LUNA(tagsCount);
   return model === 'gpt-5.4-nano' ? ADOBE_PROMPT_NANO(tagsCount) : ADOBE_PROMPT_EXPERT(tagsCount);
 }
 
@@ -624,8 +632,10 @@ function createRunConfig() {
   const editorPrompt = document.getElementById('systemPromptInp')?.value.trim() || '';
   const savedPrompt = promptEditorOpen ? editorPrompt : storedPrompt;
   return Object.freeze({
-    accessKey: $('#accessKey').value.trim(),
+    accessKey: isLocalModel(model) ? '' : $('#accessKey').value.trim(),
     model,
+    provider: isLocalModel(model) ? 'local' : 'cloud',
+    concurrency: Math.max(1, Math.min(20, Math.floor(Number($('#concurrency').value || 1)))),
     tagsCount,
     titleMax: getAdobeTitleMax(model),
     savedPrompt,
@@ -646,7 +656,7 @@ function buildPrompt(metadata, config = createRunConfig()) {
 
   if (savedPrompt) {
     prompt += `\n\nCRITICAL INSTRUCTION: You MUST generate EXACTLY ${tagsCount} tags.`;
-    if (isLunaModel(model)) {
+    if (requiresAdobeCategory(model)) {
       prompt += `\nReturn "category" as one integer Adobe Stock upload-CSV category ID using this mapping:\n${ADOBE_CATEGORY_PROMPT_LIST}`;
     }
   }
@@ -790,6 +800,7 @@ function getRetryDelay(result, attempt, isRateLimit) {
   return attempt * 1000 + (isRateLimit ? 2000 : 0) + Math.round(Math.random() * 750);
 }
 async function callOpenAI({ accessKey, model, imageDataUrl, prompt, responseFormat, contents, tagsCount = ADOBE_CONFIG.tagsMax, serviceTier = 'flex' }) {
+  if (isLocalModel(model) || model.startsWith('local-')) throw new Error('Configuration error: local models cannot use the cloud API.');
   const schema = buildAdobeResponseSchema(model, tagsCount);
   let body, messages = [];
   messages.push({ role: 'developer', content: prompt });
@@ -857,13 +868,59 @@ async function callOpenAI({ accessKey, model, imageDataUrl, prompt, responseForm
   }
 }
 
+// One routing boundary for Adobe, Envato, Shutterstock, and single-file retries.
+async function callAI(options) {
+  if (!isLocalModel(options.model)) return callOpenAI(options);
+  const { model, imageDataUrl, responseFormat, tagsCount = ADOBE_CONFIG.tagsMax } = options;
+  let prompt = options.prompt;
+  let candidate = null;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    checkLocalCancellation();
+    const text = await localAI.generate({ model, imageDataUrl, prompt });
+    checkLocalCancellation();
+    if (responseFormat?.type === 'text') return text;
+    try {
+      const match = text.match(/\{[\s\S]*\}/);
+      const parsed = JSON.parse(match ? match[0] : text);
+      const title = candidate?.title || (typeof parsed.title === 'string' ? parsed.title.trim() : '');
+      const tags = Array.isArray(parsed.tags) && parsed.tags.every(tag => typeof tag === 'string')
+        ? parsed.tags.map(tag => tag.trim()).filter(Boolean) : [];
+      const category = candidate?.category ?? normalizeAdobeCategory(parsed.category, model);
+      if (!title || !tags.length || category === null) {
+        throw new Error('Invalid metadata.');
+      }
+      const seen = new Set();
+      const combined = [...(candidate?.tags || []), ...tags].filter(tag => {
+        const key = tag.toLowerCase();
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+      candidate = { title, tags: combined.slice(0, tagsCount), category };
+      if (candidate.tags.length === tagsCount) return candidate;
+      // Small models often produce fewer keywords than requested. Ask for genuinely
+      // new image-grounded keywords; never pad the result with invented placeholders.
+      prompt = `Generate ${tagsCount - candidate.tags.length} ADDITIONAL unique English stock keywords for this image.\nExisting title: ${title}\nAlready used keywords (DO NOT repeat): ${candidate.tags.join(', ')}\nUse only relevant visible details or supported concepts. Return ONLY JSON: {"tags": ["new keyword", "another new keyword"]}.\nOriginal asset instructions for context:\n${options.prompt}\nFor this response, return only the additional keywords in the tags array.`;
+    } catch {
+      if (!candidate) prompt = `${options.prompt}\n\nReturn valid JSON only. Include a nonempty title, exactly ${tagsCount} different string tags and one numeric category from 1 to 21. Count the tags before answering. Do not repeat tags.`;
+    }
+  }
+  throw new Error(`The local model could not produce ${tagsCount} unique tags and a valid Adobe category. Try fewer tags or a larger model.`);
+}
+
+function checkLocalCancellation() {
+  if (typeof state !== 'undefined' && state.running && state.stopRequested) {
+    throw new DOMException('Local operation cancelled.', 'AbortError');
+  }
+}
+
 async function fetchEnvatoMeta({ accessKey, model, title, tags, isMG, imageDataUrl, serviceTier }) {
   const prompt = ENVATO_CONFIG.prompt({ title, tags, isMG });
   const contents = [{ type: 'text', text: "Process this asset." }];
   if (imageDataUrl) {
     contents.push({ type: 'image_url', image_url: { url: imageDataUrl } });
   }
-  const txt = await callOpenAI({ accessKey, model, imageDataUrl, prompt, responseFormat: { type: 'text' }, contents, serviceTier });
+  const txt = await callAI({ accessKey, model, imageDataUrl, prompt, responseFormat: { type: 'text' }, contents, serviceTier });
   let parsed;
   try { parsed = JSON.parse((txt.match(/\{[\s\S]*\}/) || [txt])[0]); }
   catch { throw new Error('Envato response was not valid JSON.'); }
@@ -881,7 +938,7 @@ async function fetchShutterstockCategories({ accessKey, model, filename, adobeTi
   const prompt = `Choose ONE or TWO ${type} categories for this asset from the list: ${allowed.join(' | ')}.
   Context: TITLE: ${adobeTitle}, KEYWORDS: ${Array.isArray(adobeKeywords) ? adobeKeywords.join(', ') : String(adobeKeywords)}.
   Return ONLY JSON: {"categories": "Category1, Category2"}`;
-  const txt = await callOpenAI({ accessKey, model, imageDataUrl: '', prompt, responseFormat: { type: 'text' }, serviceTier });
+  const txt = await callAI({ accessKey, model, imageDataUrl: '', prompt, responseFormat: { type: 'text' }, serviceTier });
   let parsed;
   try { parsed = JSON.parse((txt.match(/\{[\s\S]*\}/) || [txt])[0]); }
   catch { throw new Error('Shutterstock response was not valid JSON.'); }
@@ -1303,7 +1360,7 @@ window.deleteFile = function (idx) {
 
 window.regenerateFile = async function (idx) {
   if (state.running || processingFiles.has(idx) || fileStatuses[idx] === 'processing') return alert('Wait for the current processing to finish');
-  if (!$('#accessKey').value.trim()) return alert('Enter your OpenAI API key');
+  if (!validateAISelection()) return;
   if (selectedOutputKeys().length === 0) return alert('Select at least one output format');
   editingTags.delete(idx);
   const file = files[idx]; if (!file) return;
@@ -1410,7 +1467,7 @@ function addTokens(usage, model) {
   }
 }
 function isFatalApiError(message) {
-  return /invalid key|access forbidden|configuration error/i.test(String(message || ''));
+  return /invalid key|access forbidden|configuration error|local AI unavailable/i.test(String(message || ''));
 }
 async function processOne(idx, config = activeRunConfig || createRunConfig()) {
   const file = files[idx];
@@ -1418,6 +1475,7 @@ async function processOne(idx, config = activeRunConfig || createRunConfig()) {
   processingFiles.add(idx);
   fileStatuses[idx] = 'processing';
   let succeeded = false;
+  let cancelled = false;
   try {
     updateTableRow(idx, { status: 'processing', error: '' });
     const { accessKey, model, tagsCount: tagsMax, titleMax, alwaysTags, alwaysTagsPlacement, outputEnvato, outputShutter, serviceTier } = config;
@@ -1435,7 +1493,7 @@ async function processOne(idx, config = activeRunConfig || createRunConfig()) {
       throw new Error('Skipped: Image preview could not be decoded.');
     }
 
-    const raw = await callOpenAI({ accessKey, model, imageDataUrl: previewUrl, prompt, tagsCount: tagsMax, serviceTier });
+    const raw = await callAI({ accessKey, model, imageDataUrl: previewUrl, prompt, tagsCount: tagsMax, serviceTier });
     const title = clip(raw.title || '', titleMax);
     const tags = normalizeTags(raw.tags || [], alwaysTags, tagsMax, alwaysTagsPlacement);
     if (!title || tags.length !== tagsMax) throw new Error(`Invalid metadata: expected a title and exactly ${tagsMax} unique tags.`);
@@ -1450,6 +1508,7 @@ async function processOne(idx, config = activeRunConfig || createRunConfig()) {
         const env = await fetchEnvatoMeta({ accessKey, model, title, tags, isMG, imageDataUrl: previewUrl, serviceTier });
         envatoRows.set(file.name, { title90: String(env.title90 || title).slice(0, 90).trim(), description300: String(env.description300 || title).slice(0, 300).trim(), category: env.category });
       } catch (e) {
+        if (e.name === 'AbortError') throw e;
         const message = e?.message || String(e);
         outputErrors.push(`Envato: ${message}`);
         fatalOutputError = isFatalApiError(message);
@@ -1463,6 +1522,7 @@ async function processOne(idx, config = activeRunConfig || createRunConfig()) {
         const allowed = pickShutterListByName(file.name);
         shutterRows.set(file.name, { description: String(title).slice(0, 200), keywords: Array.isArray(tags) ? tags : [], categories: sanitizeShutterCategories(res?.categories, allowed) });
       } catch (e) {
+        if (e.name === 'AbortError') throw e;
         const message = e?.message || String(e);
         outputErrors.push(`Shutterstock: ${message}`);
         addLog(`Shutterstock categories failed for ${file.name}: ${message}`, 'warning');
@@ -1474,17 +1534,23 @@ async function processOne(idx, config = activeRunConfig || createRunConfig()) {
     state.succeeded++;
     succeeded = true;
   } catch (err) {
+    if (err.name === 'AbortError') {
+      cancelled = true;
+      fileStatuses[idx] = 'queued';
+      updateTableRow(idx, { status: 'queued', error: '' });
+      return false;
+    }
     const message = err?.message || String(err);
     fileStatuses[idx] = 'error';
     state.failed++;
     updateTableRow(idx, { status: 'error', error: 'Error: ' + message });
     if (isFatalApiError(message)) {
       state.stopRequested = true;
-      addLog('Batch stopped because the API credentials or model configuration were rejected.', 'error');
+      addLog('Batch stopped because the selected AI is unavailable.', 'error');
     }
   } finally {
     processingFiles.delete(idx);
-    state.completed++;
+    if (!cancelled) state.completed++;
     uiUpdate();
   }
   return succeeded;
@@ -1546,6 +1612,8 @@ async function workerLoop() {
 
 async function startProcessing() {
   if (state.running || processingFiles.size > 0) return;
+  if (!validateAISelection()) return;
+  if (selectedOutputKeys().length === 0) { alert('Select at least one output format'); return; }
   const total = activeFileCount();
   let pendingCount = activePendingCount();
   if (pendingCount === 0 && total > 0) {
@@ -1568,9 +1636,6 @@ async function startProcessing() {
   } else if (pendingCount === 0) {
     return;
   }
-  const accessKey = $('#accessKey').value.trim();
-  if (!accessKey) { alert('Enter your OpenAI API key'); return; }
-  if (selectedOutputKeys().length === 0) { alert('Select at least one output format'); return; }
   activeRunConfig = createRunConfig();
   state.running = true; state.paused = false; state.stopRequested = false; state.nextIdx = 0; state.inFlight = 0;
   state.succeeded = countActiveWithStatus('done'); state.failed = 0; state.completed = state.succeeded;
@@ -1578,7 +1643,7 @@ async function startProcessing() {
   const wakeLockPromise = requestWakeLock();
   startKeepAlive(); uiUpdate();
   const workers = [];
-  const concurrency = Math.max(1, Math.min(20, Number($('#concurrency').value || 1)));
+  const concurrency = activeRunConfig.concurrency;
   for (let w = 0; w < Math.min(concurrency, pendingCount); w++) workers.push(workerLoop());
   try {
     await Promise.all(workers);
@@ -1831,8 +1896,6 @@ document.getElementById('fileInput').addEventListener('change', async e => {
 
 document.getElementById('startBtn').addEventListener('click', async () => {
   if (!state.running) {
-    const accessKey = $('#accessKey').value.trim();
-    if (!accessKey) { alert('Enter your OpenAI API key'); return; }
     if (!activeFileCount()) { alert('Add files'); return; }
     await startProcessing();
   } else {
@@ -1905,8 +1968,9 @@ document.getElementById('accessKeyToggle').addEventListener('click', () => {
 
 document.getElementById('outEnvato').addEventListener('change', () => document.getElementById('envatoSettingsBtn').classList.toggle('hidden', !$('#outEnvato').checked));
 document.getElementById('concurrency').addEventListener('change', e => {
-  const value = Math.max(1, Math.min(20, Number(e.target.value) || 1));
+  const value = Math.max(1, Math.min(20, Math.floor(Number(e.target.value) || 1)));
   e.target.value = String(value);
+  uiUpdate();
 });
 document.getElementById('tagsCount').addEventListener('change', e => {
   const value = Math.max(10, Math.min(49, parseInt(e.target.value, 10) || 20));
@@ -1918,14 +1982,14 @@ function updateModelHint() {
   const model = $('#model').value;
   const hintEl = $('#modelHint');
   const hintText = isLunaModel(model)
-    ? 'Default for efficient batches; also generates Adobe category IDs.'
+    ? 'Cloud option for efficient batches; also generates Adobe category IDs.'
     : model === 'gpt-5.4-nano'
       ? 'Fast and economical for large batches.'
       : model === 'gpt-5.4-mini'
         ? 'Higher-quality descriptions for complex scenes.'
         : isGrokModel(model)
           ? 'Requires a compatible xAI API key.'
-          : '';
+          : isLocalModel(model) ? MetaStockerLocalAI.getModel(model).description : '';
 
   if (hintEl) hintEl.textContent = hintText;
 
@@ -1937,7 +2001,124 @@ function updateModelHint() {
   }
 }
 
-document.getElementById('model').addEventListener('change', updateModelHint);
+document.getElementById('model').addEventListener('change', () => {
+  if (localAI.state.modelId && localAI.state.modelId !== $('#model').value) localAI.cancel();
+  localAI.update({ message: '' });
+  try { localStorage.setItem('meta_ai_model', $('#model').value); } catch { }
+  updateModelHint();
+  refreshLocalModelInfo();
+  uiUpdate();
+});
+
+/************** Local browser models **************/
+const DEFAULT_LOCAL_MODEL = 'local-gemma-e2b';
+const localModelCache = new Map();
+let localSupportError = '';
+let localSupportChecked = false;
+let cloudConcurrency = null;
+const localAI = new MetaStockerLocalAI.Pool(() => uiUpdate());
+
+function localThreadCount() {
+  return Math.max(1, Math.min(20, Math.floor(Number($('#concurrency').value) || 1)));
+}
+
+function validateAISelection() {
+  const model = $('#model').value;
+  if (isLocalModel(model)) {
+    if (localAI.isReady(model, localThreadCount())) return true;
+    alert('Prepare the selected local model and thread count before starting.');
+    return false;
+  }
+  if (!$('#accessKey').value.trim()) { alert('Enter your OpenAI API key'); return false; }
+  return true;
+}
+
+async function refreshLocalModelInfo() {
+  const id = $('#model').value;
+  if (!isLocalModel(id)) return;
+  const checks = await Promise.allSettled([MetaStockerLocalAI.checkSupport(), MetaStockerLocalAI.inspectCache(id)]);
+  localSupportChecked = true;
+  localSupportError = checks[0].status === 'rejected' ? checks[0].reason.message : '';
+  localModelCache.set(id, checks[1].status === 'fulfilled' ? checks[1].value : { cached: false, partial: false });
+  renderLocalAI();
+}
+
+function renderLocalAI() {
+  const selected = MetaStockerLocalAI.getModel($('#model').value);
+  const status = localAI.state;
+  const loading = status.phase === 'checking' || status.phase === 'loading';
+  $('#cloudConnection').hidden = Boolean(selected);
+  $('#localModelPanel').hidden = !selected;
+  const concurrency = $('#concurrency');
+  if (selected && cloudConcurrency === null) { cloudConcurrency = concurrency.value; concurrency.value = '1'; }
+  if (!selected && cloudConcurrency !== null) { concurrency.value = cloudConcurrency; cloudConcurrency = null; }
+  concurrency.disabled = state.running || importing || loading;
+  $('#threadsHelp').textContent = selected ? 'Parallel files on your GPU. Each thread loads its own model into memory. Start with 1–2; more threads require more RAM and GPU memory.' : 'This setting determines how many parallel requests go to the selected AI provider.';
+  $('#model').disabled = state.running || importing || loading;
+  if (!selected) return;
+  const cache = localModelCache.get(selected.id) || {};
+  const ready = localAI.isReady(selected.id, localThreadCount());
+  $('#localModelDetails').textContent = `About ${selected.size} download · ${selected.memory}`;
+  $('#localModelSource').href = `https://huggingface.co/${selected.repo}/tree/${selected.revision}`;
+  const ownStatus = status.modelId === selected.id || !status.modelId;
+  $('#localModelStatus').textContent = (ownStatus && status.message) || localSupportError || (!localSupportChecked ? 'Checking browser compatibility…' : cache.cached ? 'Downloaded in this browser. Load it to begin.' : cache.partial ? 'Partial download saved. Continue to reuse completed files.' : 'Not downloaded. Requires a compatible GPU and browser storage.');
+  $('#localModelStatus').classList.toggle('local-model-error', (ownStatus && status.phase === 'error') || Boolean(localSupportError));
+  const progress = $('#localModelProgress');
+  progress.hidden = !loading;
+  if (status.progress === null) progress.removeAttribute('value');
+  else progress.value = status.progress;
+  const prepared = localAI.clients.length > 0 && status.modelId === selected.id && status.phase === 'ready';
+  $('#loadLocalModel').textContent = ready ? 'Model ready' : state.running ? 'Model in use' : loading ? 'Preparing model…' : prepared ? `Prepare ${localThreadCount()} threads` : cache.cached ? 'Load model' : cache.partial ? 'Continue download' : 'Download & load';
+  $('#loadLocalModel').disabled = state.running || importing || loading || ready || !localSupportChecked || Boolean(localSupportError);
+  $('#cancelLocalModel').hidden = !loading && !state.running;
+  $('#cancelLocalModel').textContent = state.running ? 'Stop local batch' : 'Cancel download';
+  $('#unloadLocalModel').hidden = status.modelId !== selected.id || !localAI.clients.some(client => client.worker);
+  $('#unloadLocalModel').disabled = state.running || importing || loading;
+  $('#removeLocalModel').hidden = !cache.cached && !cache.partial && !ready;
+  $('#removeLocalModel').disabled = state.running || importing || loading;
+  $('#startBtn').disabled = importing || (!state.running && !ready);
+}
+
+function initLocalModels() {
+  const group = document.createElement('optgroup');
+  group.label = 'Free local AI · on this device';
+  for (const model of MetaStockerLocalAI.MODELS) {
+    const option = document.createElement('option');
+    option.value = model.id;
+    option.textContent = `${model.label} · ${model.size}`;
+    if (model.id === DEFAULT_LOCAL_MODEL) group.prepend(option);
+    else group.appendChild(option);
+  }
+  $('#model').prepend(group);
+  $('#model').value = DEFAULT_LOCAL_MODEL;
+  try {
+    const saved = localStorage.getItem('meta_ai_model');
+    if ([...$('#model').options].some(option => option.value === saved)) $('#model').value = saved;
+  } catch { }
+  $('#loadLocalModel').addEventListener('click', async () => {
+    try { await localAI.load($('#model').value, localThreadCount()); }
+    catch (error) { if (error.name !== 'AbortError') addLog(`Local model: ${error.message}`, 'error'); }
+    await refreshLocalModelInfo();
+  });
+  $('#cancelLocalModel').addEventListener('click', () => {
+    if (state.running) { state.stopRequested = true; state.paused = false; }
+    localAI.cancel();
+    void refreshLocalModelInfo();
+  });
+  $('#unloadLocalModel').addEventListener('click', async () => {
+    try {
+      localAI.unload();
+      await refreshLocalModelInfo();
+    } catch (error) { addLog(`Could not unload model: ${error.message}`, 'error'); }
+  });
+  $('#removeLocalModel').addEventListener('click', async () => {
+    try {
+      await localAI.remove($('#model').value);
+      await refreshLocalModelInfo();
+    } catch (error) { localAI.update({ phase: 'error', message: `Could not remove model: ${error.message}` }); }
+  });
+  void refreshLocalModelInfo();
+}
 
 function selectedOutputKeys() {
   const selected = [];
@@ -2028,7 +2209,7 @@ function uiUpdate() {
       progressText = state.paused ? 'Paused...' : 'Processing...';
     } else if (state.stopRequested && completed < total) {
       const waiting = total - completed;
-      progressText = 'Batch stopped after an API authorization or configuration error';
+      progressText = 'Batch stopped. Remaining files can be resumed.';
       progressDetails = `${state.succeeded} ready • ${state.failed} failed • ${waiting} not processed`;
     } else if (completed < total) {
       const waiting = total - completed;
@@ -2057,6 +2238,7 @@ function uiUpdate() {
   document.querySelectorAll('.row-action').forEach(button => { button.disabled = state.running || importing; });
   drop.classList.toggle('is-disabled', state.running || importing);
   drop.setAttribute('aria-disabled', String(state.running || importing));
+  renderLocalAI();
   updateFileCount();
 }
 
@@ -2068,6 +2250,7 @@ function handleLocationHash() {
 (function init() {
   initThemeToggle();
   restoreApiKeyFromSession();
+  initLocalModels();
   const model = $('#model').value;
   const currentPrompt = localStorage.getItem(`meta_system_prompt_${model}`) || ADOBE_CONFIG.prompt(ADOBE_CONFIG.tagsMax);
   document.getElementById('systemPromptInp').value = currentPrompt;

@@ -48,7 +48,7 @@ const {
 } = context.lunaExports;
 
 assert.equal(MODEL_GPT_5_6_LUNA, 'gpt-5.6-luna');
-assert.match(indexSource, /<option value="gpt-5\.6-luna" selected>GPT-5\.6 Luna<\/option>/);
+assert.match(indexSource, /<option value="gpt-5\.6-luna">GPT-5\.6 Luna<\/option>/);
 assert.doesNotMatch(indexSource, /<option value="gpt-5\.4-(?:mini|nano)" selected>/);
 
 const expectedNames = [
@@ -98,4 +98,4 @@ assert.equal(normalizeAdobeCategory(22, MODEL_GPT_5_6_LUNA), null);
 assert.equal(normalizeAdobeCategory('3', MODEL_GPT_5_6_LUNA), null);
 assert.equal(normalizeAdobeCategory(3, 'gpt-5.4-nano'), null);
 
-console.log('Luna model regression tests passed: default model, Adobe categories, prompt, schema, and validation.');
+console.log('Luna model regression tests passed: optional cloud model, Adobe categories, prompt, schema, and validation.');
