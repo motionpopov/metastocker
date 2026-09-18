@@ -19,6 +19,7 @@ from write_articles import write_one, ROOT
 from translate_articles import translate,source_hash
 from plan_topics import plan_more
 from refresh_sources import refresh
+from repair_articles import repair
 
 BASE=Path('/opt/metastocker')
 STATE=BASE/'editorial'
@@ -94,30 +95,42 @@ def run(check_only=False, force=False):
                 feedback=''
                 fresh_sources=refresh(topic,sources,STATE/'logs')
                 atomic(STATE/'reviews'/(slug+'-sources.json'),fresh_sources)
+                article=None
                 for attempt in range(3):
-                    if not draft.exists() or attempt:
-                        write_one(topic,STATE/'drafts',feedback=feedback,fresh_sources=fresh_sources)
-                    article=json.loads(draft.read_text())
-                    try:
-                        validate(article,sources,schema,topic)
-                    except ValueError as error:
-                        feedback=str(error);continue
-                    result['status']='translating';status(result)
-                    translation_path=STATE/'translations'/(slug+'.json')
-                    translated=json.loads(translation_path.read_text()) if translation_path.exists() else {}
-                    if translated.get('source_hash')!=source_hash(article) or attempt > 0:
-                        translated=translate(article,translation_path,feedback=feedback)
-                    article.update({lang:translated[lang] for lang in ('bn','hi')})
+                    if article is None:
+                        result['status']='writing';status(result)
+                        if not draft.exists() or attempt:
+                            write_one(topic,STATE/'drafts',feedback=feedback,fresh_sources=fresh_sources)
+                        article=json.loads(draft.read_text())
+                        try:
+                            validate(article,sources,schema,topic)
+                        except ValueError as error:
+                            feedback=str(error);article=None;continue
+                        translation_path=STATE/'translations'/(slug+'.json')
+                        if not all(lang in article for lang in ('bn','hi')):
+                            result['status']='translating';status(result)
+                            translated=json.loads(translation_path.read_text()) if translation_path.exists() else {}
+                            if translated.get('source_hash')!=source_hash(article):
+                                translated=translate(article,translation_path,feedback=feedback)
+                            article.update({lang:translated[lang] for lang in ('bn','hi')})
                     try:
                         validate(article,sources,schema,topic,complete=True)
                     except ValueError as error:
-                        feedback=str(error);continue
-                    result['status']='reviewing';status(result)
-                    verdict=review([article],review_path,fresh_sources=fresh_sources)['articles'][0]
-                    if verdict['approved'] and not verdict['issues']:
-                        draft.write_text(json.dumps(article,ensure_ascii=False,indent=2)+'\n')
-                        break
-                    feedback='; '.join(verdict['issues'])
+                        issues=[str(error)]
+                    else:
+                        result['status']='reviewing';status(result)
+                        verdict=review([article],review_path,fresh_sources=fresh_sources)['articles'][0]
+                        if verdict['approved'] and not verdict['issues']:
+                            atomic(draft,article)
+                            break
+                        issues=verdict['issues'] or ['Reviewer did not approve the article.']
+                    if attempt < 2:
+                        result['status']='correcting';status(result)
+                        article=repair(article,issues,STATE/'reviews'/(slug+'-repair-'+str(attempt+1)+'.json'),fresh_sources=fresh_sources)
+                        # Persist only the exact field edits, including the translation cache,
+                        # so a service retry cannot silently restore the rejected text.
+                        atomic(draft,article)
+                        atomic(translation_path,dict(bn=article['bn'],hi=article['hi'],source_hash=source_hash(article)))
                 else:
                     raise RuntimeError('editorial_review_failed')
                 # Make approved content durable before publication. A failed release is retried,

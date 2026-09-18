@@ -55,18 +55,39 @@ class PublisherBoundaries(unittest.TestCase):
         def write(topic, destination, **kwargs):
             post = copy.deepcopy(original)
             post.update(slug=topic['slug'], category=topic['category'])
+            post.pop('bn'); post.pop('hi')
             (destination / (topic['slug'] + '.json')).write_text(json.dumps(post))
         def translated(post, output, **kwargs):
-            return dict(bn=post['bn'], hi=post['hi'], source_hash=source_hash(post))
+            return dict(bn=original['bn'], hi=original['hi'], source_hash=source_hash(post))
         def rejected(posts, output, **kwargs):
             return {'articles': [{'slug': posts[0]['slug'], 'approved': False, 'issues': ['Unsupported example claim']}]}
-        with patch.object(publisher, 'refresh', return_value={}), patch.object(publisher, 'write_one', side_effect=write) as writer, patch.object(publisher, 'translate', side_effect=translated), patch.object(publisher, 'review', side_effect=rejected), patch.object(publisher.subprocess, 'run') as external:
+        with patch.object(publisher, 'refresh', return_value={}), patch.object(publisher, 'write_one', side_effect=write) as writer, patch.object(publisher, 'translate', side_effect=translated) as translator, patch.object(publisher, 'repair', side_effect=lambda article, *args, **kwargs: copy.deepcopy(article)) as repair, patch.object(publisher, 'review', side_effect=rejected), patch.object(publisher.subprocess, 'run') as external:
             with self.assertRaisesRegex(RuntimeError, 'editorial_review_failed'): publisher.run()
-        self.assertEqual(writer.call_count, 3)
+        self.assertEqual(writer.call_count, 1)
+        self.assertEqual(translator.call_count, 1)
+        self.assertEqual(repair.call_count, 2)
         self.assertFalse(list((self.base / 'editorial/published').glob('*.json')))
         self.assertFalse((self.base / 'releases').exists())
         external.assert_not_called()
         self.assertEqual(json.loads((self.base / 'editorial/status.json').read_text())['status'], 'failed')
+
+    def test_restart_preserves_corrected_draft_even_if_translation_cache_is_old(self):
+        original = copy.deepcopy(load_posts(ROOT)[0][0])
+        original.update(slug='stock-drone-video-metadata', category='metadata')
+        old_translation = dict(bn=original['bn'], hi=original['hi'], source_hash=source_hash(original))
+        corrected = copy.deepcopy(original)
+        corrected['bn']['intro'] += '\n\nসংরক্ষিত সংশোধন।'
+        for name, data in [('drafts', corrected), ('translations', old_translation)]:
+            folder = self.base / 'editorial' / name
+            folder.mkdir()
+            (folder / 'stock-drone-video-metadata.json').write_text(json.dumps(data))
+        def rejected(posts, output, **kwargs):
+            self.assertEqual(posts[0]['bn']['intro'], corrected['bn']['intro'])
+            return {'articles': [{'slug': posts[0]['slug'], 'approved': False, 'issues': ['Still needs a correction']}]}
+        with patch.object(publisher, 'refresh', return_value={}), patch.object(publisher, 'write_one') as writer, patch.object(publisher, 'translate') as translator, patch.object(publisher, 'repair', side_effect=lambda article, *args, **kwargs: copy.deepcopy(article)), patch.object(publisher, 'review', side_effect=rejected):
+            with self.assertRaisesRegex(RuntimeError, 'editorial_review_failed'): publisher.run()
+        writer.assert_not_called()
+        translator.assert_not_called()
 
     def test_unverified_source_stops_before_generation(self):
         self.previous(status='failed', last_success=None)

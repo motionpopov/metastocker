@@ -26,7 +26,7 @@ def translate(post, output, host=None, feedback=''):
     remote(host,prefix+['tee',work+'/schema.json'],input=json.dumps(schema).encode(),stdout=subprocess.DEVNULL)
     output.parent.mkdir(parents=True,exist_ok=True)
     try:
-        cmd=prefix+['timeout','--kill-after=15s','1100s',BIN,'exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','-C',work,'-s','read-only','-m','gpt-5.6-luna','-c','model_reasoning_effort="medium"','-c','web_search="disabled"','--disable','shell_tool','--disable','multi_agent','--disable','apps','--disable','browser_use','--disable','computer_use','--output-schema',work+'/schema.json','-o',work+'/translation.json','--json','-']
+        cmd=prefix+['timeout','--kill-after=15s','1100s',BIN,'exec','--ignore-user-config','--ephemeral','--skip-git-repo-check','-C',work,'-s','read-only','-m','gpt-5.6-luna','-c','model_reasoning_effort="high"','-c','web_search="disabled"','--disable','shell_tool','--disable','multi_agent','--disable','apps','--disable','browser_use','--disable','computer_use','--output-schema',work+'/schema.json','-o',work+'/translation.json','--json','-']
         with output.with_suffix('.jsonl').open('wb') as log:
             remote(host,cmd,input=prompt.encode(),stdout=log,stderr=log,timeout=1200)
         result=json.loads(remote(host,prefix+['cat',work+'/translation.json'],capture_output=True).stdout)

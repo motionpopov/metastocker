@@ -108,7 +108,7 @@ async function loadEditorial() {
     const response = await fetch('/admin/api/editorial');
     if (!response.ok) throw new Error();
     const value = await response.json();
-    const names = { ready: 'Готов к ежедневному выпуску', planning: 'Подбираются новые темы', published: 'Последний выпуск опубликован', writing: 'Готовится новая статья', translating: 'Готовятся переводы', reviewing: 'Проверяется новая статья', publishing: 'Развёртывается новый выпуск', failed: 'Выпуск остановлен из-за ошибки', not_configured: 'Расписание ещё не настроено' };
+    const names = { ready: 'Готов к ежедневному выпуску', planning: 'Подбираются новые темы', published: 'Последний выпуск опубликован', writing: 'Готовится новая статья', translating: 'Готовятся переводы', reviewing: 'Проверяется новая статья', correcting: 'Исправляются замечания редактора', publishing: 'Развёртывается новый выпуск', failed: 'Выпуск остановлен из-за ошибки', not_configured: 'Расписание ещё не настроено' };
     $('editorialStatus').textContent = names[value.status] || 'Статус обновляется';
     const details = $('editorialDetails'); details.replaceChildren();
     details.append(node('p', `${number(value.articles)} статей · ${number(value.topics)} тем · английский, русский, бенгальский и хинди`));
