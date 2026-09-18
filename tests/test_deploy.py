@@ -17,11 +17,16 @@ class DeploymentSafety(unittest.TestCase):
             metadata = module.build(ROOT, output, 'test-release', 'a' * 40)
             public = output / 'public'
             self.assertEqual((public / 'local-ai-worker.mjs').read_bytes(), (ROOT / 'local-ai-worker.mjs').read_bytes())
-            for name in ('.git', 'deploy', 'tests', 'AGENTS.md', '_headers', 'README.md'):
+            for name in ('.git', 'deploy', 'tests', 'server', 'data', 'secrets', 'AGENTS.md', '_headers', 'README.md'):
                 self.assertFalse((public / name).exists(), name)
             self.assertIn('blog/how-to-get-openai-api-key.html', metadata['files'])
             self.assertIn('https://metastocker.net/blog/', (public / 'sitemap.xml').read_text())
             config = (output / 'Staticfile').read_text()
+            self.assertIn('reverse_proxy metastocker-analytics:8081', config)
+            self.assertIn('header_up X-Forwarded-For {http.request.header.X-Forwarded-For}', config)
+            self.assertNotIn('@RELEASE@', (output / 'deploy/compose.yaml').read_text())
+            self.assertTrue((output / 'server/pages.json').exists())
+            self.assertFalse((output / 'server/node_modules').exists())
             for value in module.read_headers(ROOT).values():
                 self.assertIn(value, config)
 

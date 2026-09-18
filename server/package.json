@@ -1,0 +1,11 @@
+{
+  "name": "metastocker-analytics",
+  "version": "2.11.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "dependencies": {
+    "@ip-location-db/geo-whois-asn-country-mmdb": "2.3.2026061719",
+    "mmdb-lib": "3.0.2"
+  }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru" class="light"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Статистика · MetaStocker</title><link rel="icon" href="/assets/metalogo.png"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/admin/assets/admin.css"><script src="/admin/assets/admin.js" defer></script>
+</head><body>
+<header class="admin-topbar"><div class="admin-width topbar-content"><a class="brand-link" href="/"><img src="/assets/metalogo.png" width="36" height="36" alt="">MetaStocker <span class="admin-badge">Статистика</span></a><nav aria-label="Админка"><button class="btn ghost" id="theme" aria-pressed="false">Тёмная тема</button><button class="btn ghost" id="logout">Выйти</button></nav></div></header>
+<main class="admin-width">
+  <section class="overview-header"><div><p class="eyebrow">Посещения и использование</p><h1>Что происходит на сайте</h1><p class="muted">От первого открытия до готового CSV.</p></div><button id="refresh" class="btn ghost">Обновить</button></section>
+  <form id="rangeForm" class="range-bar" aria-label="Период статистики"><div class="presets" aria-label="Быстрый выбор периода"><button class="btn ghost" type="button" data-days="1">Сегодня</button><button class="btn ghost" type="button" data-days="7" aria-pressed="true">7 дней</button><button class="btn ghost" type="button" data-days="30">30 дней</button><button class="btn ghost" type="button" data-days="90">90 дней</button></div><div class="date-fields"><label>С <input type="date" id="from" class="input" required></label><label>По <input type="date" id="to" class="input" required></label><button class="btn ghost" type="submit">Показать</button></div></form>
+  <p class="small muted" id="freshness" role="status">Загружаем статистику…</p><p id="requestError" class="error-message" role="alert" hidden></p>
+  <div id="dashboard" hidden>
+    <p class="collection-note" id="collectionNote"></p>
+    <div class="kpi-grid" id="kpis"></div>
+    <div class="two-columns primary-columns">
+      <section class="card pad"><div class="section-heading"><h2>Динамика по дням</h2><label class="small">Показатель <select class="select" id="chartMetric"><option value="visits">Посещения</option><option value="success">Успешные обработки</option><option value="exports">Экспорты CSV</option><option value="errors">Ошибки обработки</option></select></label></div><div id="chart"></div><p class="small muted" id="chartHint">Наведите на день, чтобы увидеть число.</p><details><summary>Числа по дням</summary><div class="table-scroll" id="dailyTable"></div></details></section>
+      <section class="card pad"><h2>Путь до результата</h2><p class="small muted">Открытия генератора, дошедшие до каждого этапа.</p><ol class="funnel" id="funnel"></ol><p class="small muted">В пределах одной страницы. Обновление страницы начинает новый визит.</p></section>
+    </div>
+    <section class="card pad"><h2>Какими моделями пользуются</h2><p class="small muted">Рейтинг по запускам обработки файлов. Выбор модели по умолчанию не увеличивает счётчик.</p><div class="table-scroll" id="models"></div></section>
+    <div class="two-columns"><section class="card pad"><h2>Страны</h2><p class="small muted">По посещениям. Приблизительно, с учётом VPN и сетей операторов.</p><div id="countries"></div></section><section class="card pad"><h2>Откуда приходят</h2><p class="small muted">Только название сайта. Поисковые запросы не сохраняются.</p><div id="referrers"></div></section></div>
+    <div class="two-columns"><section class="card pad"><h2>Популярные страницы</h2><div id="pages"></div></section><section class="card pad"><h2>Какие CSV скачивают</h2><p class="small muted">Повторное нажатие считается отдельным экспортом.</p><div class="table-scroll" id="formats"></div></section></div>
+    <section class="card pad"><h2>Загрузка локальных моделей</h2><p class="small muted">Подготовка модели к работе, включая повторную загрузку из кеша.</p><div class="table-scroll" id="loads"></div></section>
+    <div class="two-columns"><section class="card pad"><h2>Устройства и браузеры</h2><div class="mini-columns"><div id="devices"></div><div id="browsers"></div></div><p class="small muted" id="gpu"></p></section><section class="card pad"><h2>Что мешает обработке</h2><p class="small muted">Категории ошибок, без содержимого файлов и ответов AI.</p><div class="table-scroll" id="errors"></div></section></div>
+    <details class="card pad definitions"><summary>Как читать эти числа</summary>
+      <p>Посещение — одно открытие страницы. Постоянного ID нет: уникальных людей и возвращаемость мы не измеряем. Переход из блога в генератор считается новым открытием.</p>
+      <p>Запуск — одна попытка обработки файла, включая повторную генерацию. Внутренние AI-запросы и повторы одного файла не считаются отдельными запусками. Успех означает, что все запрошенные форматы готовы. Доля успеха = успешные / (успешные + ошибки); отменённые и незавершённые попытки не входят в знаменатель.</p>
+      <p>Время — среднее время успешной обработки одного файла. Оно включает все этапы генерации, зависит от компьютера и выбранных форматов. Закрытая вкладка может оставить запуск без результата.</p>
+      <p>График, модели и экспорты считают события в выбранные дни. Путь до результата связывает этапы только у открытий генератора, начавшихся в этот период, до его конца. Проценты пути рассчитаны от числа таких открытий.</p>
+      <p>Часовой пояс — Europe/Warsaw. События хранятся 90 дней, резервные копии — ещё до 7 дней. Ранее собранная статистика других систем сюда не импортирована. Известные боты, владелец, Do Not Track, Global Privacy Control и отключённая статистика исключены. Блокировщики и отсутствие сети могут уменьшать счётчики.</p>
+      <p>IP, фото, имена файлов, промпты, результаты и API-ключи в базу аналитики не записываются. Страна определяется локально по базе IP Location (2026-06-17); отдельного внешнего запроса с IP нет.</p>
+    </details>
+  </div>
+  <footer class="admin-footer small muted">Закрытая статистика MetaStocker · <a href="/privacy.html">Приватность</a> · <a href="/">Открыть генератор</a></footer>
+</main></body></html>

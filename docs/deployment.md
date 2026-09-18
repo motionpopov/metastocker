@@ -4,12 +4,15 @@ Production: **https://metastocker.net**, IPv4 **178.105.209.209**, SSH **vintage
 `www.metastocker.net` и HTTP перенаправляются на HTTPS основного домена с сохранением пути и query string.
 Netlify остаётся DNS-провайдером; проект и DNS-зона не удаляются. Push в GitHub сам по себе не выпускает новую версию на VPS.
 
+Статистика и доступ владельца: [analytics.md](analytics.md). С v2.11 для выпуска нужен Node 24+, а отдельный backend хранит только счётчики и обслуживает закрытую админку.
+
 ## Устройство хостинга
 
 - Общий входной Caddy: контейнер `vintage-inventory-caddy-1`, серверный файл `/opt/vintage-inventory/Caddyfile`.
 - Для MetaStocker в него добавлен только `deploy/Caddyfile.fragment`. Остальные сайты и настройки общего Caddy сохраняются.
 - Статический контейнер `metastocker-web` доступен Caddy по сети `vintage-inventory_default`, порт 8080. На хост дополнительные порты не публикуются.
 - Изолированный Compose-проект `metastocker`; конфигурация `/opt/metastocker/compose.yaml`. Образ Caddy закреплён по digest. Лимит памяти контейнера 128 MiB.
+- Backend `metastocker-analytics` (Node 24, 256 MiB) доступен только через внутреннюю сеть `metastocker_stats`. Данные и секреты находятся вне релизов.
 - `/opt/metastocker/releases/<UTC>-<commit>/public` — файлы конкретного релиза.
 - `/opt/metastocker/current` — активный релиз; `/opt/metastocker/previous` — предыдущий.
 - `Staticfile` внутри релиза — конфигурация статического сервера с перенесёнными `_headers`, корректным MIME для `.mjs`/`.wasm`, revalidation кеша и поддержкой существующих HTML URL без расширения.

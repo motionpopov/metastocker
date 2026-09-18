@@ -7,10 +7,14 @@ mode=${2:-verify}
 [[ "$deploy_host" =~ ^[a-zA-Z0-9._-]+$ ]] || exit 2
 [[ "$mode" == verify || "$mode" == --bootstrap ]] || exit 2
 test -z "$(git status --porcelain)" || { echo 'Commit repository changes before deploying.' >&2; exit 1; }
-node --check app.js
-node --check local-ai.js
-node --check local-ai-worker.mjs
-node --test tests/*.test.js
+node_bin=${METASTOCKER_NODE:-node}
+"$node_bin" -e 'if(Number(process.versions.node.split(".")[0])<24)throw Error("Use Node 24+ or set METASTOCKER_NODE")'
+(cd server && npm ci --ignore-scripts --no-audit --no-fund)
+"$node_bin" --check app.js
+"$node_bin" --check local-ai.js
+"$node_bin" --check local-ai-worker.mjs
+"$node_bin" --check analytics.js
+"$node_bin" --test tests/*.test.js tests/*.test.mjs
 python3 -m unittest discover -s tests -p 'test_deploy.py'
 git diff --check
 commit=$(git rev-parse HEAD)

@@ -1,4 +1,10 @@
 /************** Utils **************/
+function trackMetric(kind, properties) {
+  try { globalThis.MetaStockerStats?.event(kind, properties); } catch { }
+}
+function metricErrorCode(error) {
+  try { return globalThis.MetaStockerStats?.errorCode(error) || 'unknown'; } catch { return 'unknown'; }
+}
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const yieldToMain = () => new Promise(r => {
   const channel = new MessageChannel();
@@ -1474,6 +1480,9 @@ async function processOne(idx, config = activeRunConfig || createRunConfig()) {
   if (!file || fileStatuses[idx] === 'deleted' || fileStatuses[idx] === 'done' || processingFiles.has(idx)) return false;
   processingFiles.add(idx);
   fileStatuses[idx] = 'processing';
+  const metricStarted = performance.now();
+  let metricError = 'unknown';
+  trackMetric('file_start', { model: config.model, threads: config.concurrency });
   let succeeded = false;
   let cancelled = false;
   try {
@@ -1541,6 +1550,7 @@ async function processOne(idx, config = activeRunConfig || createRunConfig()) {
       return false;
     }
     const message = err?.message || String(err);
+    metricError = metricErrorCode(err);
     fileStatuses[idx] = 'error';
     state.failed++;
     updateTableRow(idx, { status: 'error', error: 'Error: ' + message });
@@ -1549,6 +1559,11 @@ async function processOne(idx, config = activeRunConfig || createRunConfig()) {
       addLog('Batch stopped because the selected AI is unavailable.', 'error');
     }
   } finally {
+    trackMetric(cancelled ? 'file_cancel' : succeeded ? 'file_success' : 'file_error', {
+      model: config.model, threads: config.concurrency,
+      duration: Math.min(86400000, Math.round(performance.now() - metricStarted)),
+      ...(succeeded || cancelled ? {} : { error: metricError })
+    });
     processingFiles.delete(idx);
     if (!cancelled) state.completed++;
     uiUpdate();
@@ -1750,6 +1765,7 @@ async function handleFiles(list) {
   const startIdx = files.length;
   try {
     files.push(...arr);
+    trackMetric('files_added', { count: Math.min(10000, arr.length) });
     for (let i = 0; i < arr.length; i++) {
       fileStatuses[startIdx + i] = 'queued'; addTableRow(startIdx + i, arr[i]);
       document.getElementById('loaderText1').textContent = `${i + 1} / ${arr.length}`;
@@ -2002,6 +2018,7 @@ function updateModelHint() {
 }
 
 document.getElementById('model').addEventListener('change', () => {
+  trackMetric('model_selected', { model: $('#model').value });
   if (localAI.state.modelId && localAI.state.modelId !== $('#model').value) localAI.cancel();
   localAI.update({ message: '' });
   try { localStorage.setItem('meta_ai_model', $('#model').value); } catch { }
@@ -2037,6 +2054,7 @@ async function refreshLocalModelInfo() {
   const id = $('#model').value;
   if (!isLocalModel(id)) return;
   const checks = await Promise.allSettled([MetaStockerLocalAI.checkSupport(), MetaStockerLocalAI.inspectCache(id)]);
+  if (!localSupportChecked) trackMetric(checks[0].status === 'fulfilled' ? 'gpu_available' : 'gpu_unavailable');
   localSupportChecked = true;
   localSupportError = checks[0].status === 'rejected' ? checks[0].reason.message : '';
   localModelCache.set(id, checks[1].status === 'fulfilled' ? checks[1].value : { cached: false, partial: false });
@@ -2096,8 +2114,16 @@ function initLocalModels() {
     if ([...$('#model').options].some(option => option.value === saved)) $('#model').value = saved;
   } catch { }
   $('#loadLocalModel').addEventListener('click', async () => {
-    try { await localAI.load($('#model').value, localThreadCount()); }
-    catch (error) { if (error.name !== 'AbortError') addLog(`Local model: ${error.message}`, 'error'); }
+    const model = $('#model').value, threads = localThreadCount(), began = performance.now();
+    const props = { model, threads, cached: Boolean(localModelCache.get(model)?.cached) };
+    trackMetric('model_load_start', props);
+    try {
+      await localAI.load(model, threads);
+      trackMetric('model_load_success', { ...props, duration: Math.min(86400000, Math.round(performance.now() - began)) });
+    } catch (error) {
+      trackMetric(error.name === 'AbortError' ? 'model_load_cancel' : 'model_load_error', { ...props, error: metricErrorCode(error) });
+      if (error.name !== 'AbortError') addLog(`Local model: ${error.message}`, 'error');
+    }
     await refreshLocalModelInfo();
   });
   $('#cancelLocalModel').addEventListener('click', () => {
@@ -2108,12 +2134,14 @@ function initLocalModels() {
   $('#unloadLocalModel').addEventListener('click', async () => {
     try {
       localAI.unload();
+      trackMetric('model_unload', { model: $('#model').value });
       await refreshLocalModelInfo();
     } catch (error) { addLog(`Could not unload model: ${error.message}`, 'error'); }
   });
   $('#removeLocalModel').addEventListener('click', async () => {
     try {
       await localAI.remove($('#model').value);
+      trackMetric('model_delete', { model: $('#model').value });
       await refreshLocalModelInfo();
     } catch (error) { localAI.update({ phase: 'error', message: `Could not remove model: ${error.message}` }); }
   });
@@ -2160,6 +2188,7 @@ function showDownloadModal() {
       else if (key === 'shutterstock') csv = buildShutterstockCsv();
       else if (key === 'freepik') csv = buildFreepikCsv();
       downloadBlob(csv, 'text/csv;charset=utf-8', `${key}_metadata.csv`);
+      trackMetric('export', { format: key, count: Math.min(10000, csvStore.size) });
     };
     downloadButtons.appendChild(b);
   });

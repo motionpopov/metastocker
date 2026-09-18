@@ -64,9 +64,18 @@ def verify(release=None, commit=None):
         status, remote, _, _ = fetch(ORIGIN + path)
         assert status == 200 and remote == IP, (path, status, remote)
     for path in ('/.git/config', '/.env', '/_headers', '/AGENTS.md', '/README.md',
-                 '/deploy/compose.yaml', '/tests/local-ai.test.js', '/not-a-page'):
+                 '/deploy/compose.yaml', '/tests/local-ai.test.js', '/server/package.json',
+                 '/data/analytics.sqlite', '/secrets/auth.json', '/not-a-page'):
         status, _, _, _ = fetch(ORIGIN + path)
         assert status == 404, (path, status)
+    if 'analytics.js' in metadata['files']:
+        status, _, headers, _ = fetch(ORIGIN + '/admin/')
+        assert status == 303 and headers.get('location') == '/admin/login'
+        assert headers.get('cache-control') == 'no-store'
+        for path in ('/admin/api/summary', '/admin/assets/admin.js'):
+            status, _, headers, _ = fetch(ORIGIN + path)
+            assert status == 401 and headers.get('cache-control') == 'no-store', path
+        assert fetch(ORIGIN + '/admin/login')[0] == 200
     return dict(release=metadata['release'], commit=metadata['commit'], version=metadata['version'],
                 remote_ip=remote, verified_files=len(files), checks='HTTPS, hashes, headers, MIME, redirects, blog, private-file 404')
 

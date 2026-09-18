@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" class="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy and anonymous statistics | MetaStocker</title>
+  <link rel="icon" href="/assets/metalogo.png"><link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/privacy.css"><script src="/privacy.js" defer></script>
+</head>
+<body><main class="privacy-page card pad">
+  <a href="/">← MetaStocker</a><h1>Privacy and anonymous statistics</h1>
+  <p>Your local AI model runs in your browser. We do not receive your photos, filenames, prompts, API keys or generated metadata through analytics.</p>
+  <h2>What we count</h2>
+  <p>Page openings, referring website names, approximate countries, broad browser and device types, model choices and loads, file counts, processing time, error categories, WebGPU compatibility and CSV export clicks. We do not store full referring URLs or search terms.</p>
+  <p>A random code joins events within one open page. It stays in memory, changes on reload or after 24 hours, and is never saved in a cookie or browser storage. We do not identify you across visits or use fingerprinting.</p>
+  <p>Your IP address is used briefly on our server to find an approximate country and limit abuse. It is not stored in the analytics database or sent to a geolocation service. VPNs and mobile networks may change the reported country.</p>
+  <h2>Storage and choice</h2>
+  <p>These counters stay on MetaStocker's server. Events are kept for 90 calendar days; rotating database backups may retain deleted events for up to 7 additional days. Only the owner can open the statistics dashboard.</p>
+  <p>We respect Do Not Track and Global Privacy Control. You can also disable statistics below. This saves only your preference in this browser; it does not create a visitor ID.</p>
+  <button class="btn primary" id="statsToggle" type="button">Loading preference…</button>
+  <p id="statsStatus" role="status" class="hint"></p>
+  <h2>Connections used by AI</h2>
+  <p>Downloading a local model connects to Hugging Face and jsDelivr. Choosing an API model sends your requests directly to that provider under its own terms. Anonymous analytics does not change how those features work.</p>
+  <p class="hint">Updated September 18, 2026.</p>
+</main></body></html>

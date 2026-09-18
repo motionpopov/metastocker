@@ -10,7 +10,8 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 PUBLIC_FILES = ('index.html', 'app.js', 'local-ai.js', 'local-ai-worker.mjs',
-                'style.css', 'tailwind.generated.css', 'robots.txt')
+                'style.css', 'tailwind.generated.css', 'robots.txt',
+                'analytics.js', 'privacy.html', 'privacy.css', 'privacy.js')
 
 
 def read_headers(source):
@@ -71,12 +72,22 @@ def build(source, output, release, commit):
     for name, value in headers.items():
         static += f'\t\t{name} {json.dumps(value)}\n'
     static += f'\t\tX-MetaStocker-Release "{release}"\n\t\tX-MetaStocker-Host "vintage-shop-prod"\n'
-    static += '\t\tCache-Control "public, max-age=0, must-revalidate"\n\t}\n'
+    static += '\t\t?Cache-Control "public, max-age=0, must-revalidate"\n\t}\n'
     static += '\t@modules path *.mjs\n\theader @modules Content-Type "text/javascript; charset=utf-8"\n'
     static += '\t@wasm path *.wasm\n\theader @wasm Content-Type "application/wasm"\n'
-    static += '\ttry_files {path} {path}.html\n\tfile_server\n}\n'
+    static += '\t@analytics path /api/analytics /admin /admin/*\n'
+    static += '\thandle @analytics {\n\t\theader Cache-Control "no-store"\n\t\treverse_proxy metastocker-analytics:8081 {\n'
+    static += '\t\t\theader_up X-Forwarded-For {http.request.header.X-Forwarded-For}\n\t\t}\n\t}\n'
+    static += '\thandle {\n\t\ttry_files {path} {path}.html\n\t\tfile_server\n\t}\n}\n'
     (output / 'Staticfile').write_text(static)
     shutil.copytree(source / 'deploy', output / 'deploy', ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+    compose = output / 'deploy/compose.yaml'
+    compose.write_text(compose.read_text().replace('@RELEASE@', release))
+    shutil.copytree(source / 'server', output / 'server',
+                    ignore=shutil.ignore_patterns('node_modules', '*.sqlite*', '__pycache__'))
+    pages = ['/', '/blog/'] + [f'/blog/{p.name}' for p in sorted((public / 'blog').glob('*.html'))
+                              if p.name not in ('index.html', 'article-template.html')]
+    (output / 'server/pages.json').write_text(json.dumps(pages) + '\n')
     manifest = ''.join(f'{hashlib.sha256(p.read_bytes()).hexdigest()}  {p.relative_to(output)}\n'
                        for p in sorted(output.rglob('*')) if p.is_file())
     (output / 'SHA256SUMS').write_text(manifest)

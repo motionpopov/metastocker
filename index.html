@@ -18,6 +18,7 @@
   <link rel="icon" href="assets/metalogo.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/metalogo.png" />
   <link rel="stylesheet" href="style.css?v=2.9">
+  <link rel="stylesheet" href="privacy.css">
 
   <!-- Tailwind только для раскладки -->
   <link rel="stylesheet" href="tailwind.generated.css?v=2.4">
@@ -47,7 +48,7 @@
         <img id="brandLogo" src="assets/metalogo.png" alt="" width="41" height="41" class="rounded" />
         <span id="brandText">MetaStocker</span>
       </div>
-      <span class="badge version-badge">v2.10</span>
+      <span class="badge version-badge">v2.11</span>
       <span id="tokenCounter" class="badge hidden" title="Total tokens used in this session">0 tokens</span>
       <div class="grow"></div>
       <button type="button" id="themeToggle" class="btn ghost theme-toggle" aria-label="Switch to dark theme"
@@ -339,6 +340,7 @@
       </table>
     </section>
   </main>
+  <footer class="privacy-footer"><a href="privacy.html">Privacy &amp; anonymous statistics</a></footer>
 
   <!-- Logs Panel -->
   <div id="logsPanel" class="fixed inset-0 bg-black/50 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="logsTitle" aria-hidden="true" tabindex="-1" inert>
@@ -570,8 +572,9 @@
     <img id="imagePreviewImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" class="max-w-[420px] max-h-[420px] object-contain rounded-lg" alt="Enlarged asset preview" />
   </div>
 
+  <script src="analytics.js?v=2.11"></script>
   <script src="local-ai.js?v=2.9"></script>
-  <script src="app.js?v=2.9"></script>
+  <script src="app.js?v=2.11"></script>
 </body>
 
 </html>

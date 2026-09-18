@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Runs on vintage-shop-prod. Changes only /opt/metastocker and metastocker-web.
+# Runs on vintage-shop-prod. Changes only MetaStocker's services and files.
 set -Eeuo pipefail
 base=/opt/metastocker
 release_id=${1:?Usage: activate-release.sh RELEASE}
@@ -9,7 +9,7 @@ test -d "$target/public"
 exec 9>"$base/.deploy.lock"
 flock -n 9 || { echo 'Another MetaStocker deployment is active.' >&2; exit 1; }
 (cd "$target" && sha256sum --check --quiet SHA256SUMS)
-image=$(sed -n 's/^    image: //p' "$target/deploy/compose.yaml")
+image=$(sed -n 's/^    image: \(caddy[^ ]*\)$/\1/p' "$target/deploy/compose.yaml")
 docker image inspect "$image" >/dev/null
 docker run --rm --network none --read-only -v "$base:/srv/metastocker:ro" "$image" \
   caddy validate --config "/srv/metastocker/releases/$release_id/Staticfile" --adapter caddyfile
@@ -20,6 +20,22 @@ mkdir -p "$backup"
 chmod 700 "$base/backups" "$backup"
 printf '%s\n' "$previous" >"$backup/previous-release"
 if test -f "$base/compose.yaml"; then cp -p "$base/compose.yaml" "$backup/compose.yaml"; fi
+if test -f "$base/data/analytics.sqlite"; then
+  # The online SQLite backup includes committed WAL data; never copy a live database file.
+  snapshot="analytics-before-$(date -u +%Y%m%dT%H%M%SZ).sqlite"
+  node_image=$(sed -n 's/^FROM //p' "$target/server/Dockerfile")
+  docker run --rm --network none --user 1001:1001 --cap-drop ALL --security-opt no-new-privileges \
+    -v "$base/data:/data" -v "$target/server:/app:ro" "$node_image" \
+    node /app/backup.mjs /data/analytics.sqlite "/data/backups/$snapshot"
+  chmod 600 "$base/data/backups/$snapshot"
+  printf '%s\n' "$base/data/backups/$snapshot" >"$backup/analytics-backup-path"
+fi
+test -f "$base/secrets/auth.json" || { echo 'Provision MetaStocker owner credentials first (docs/analytics.md).' >&2; exit 1; }
+mkdir -p "$base/data"
+chown 1001:1001 "$base/data"
+chmod 700 "$base/data"
+# Build before changing the running release. No shared Caddy/container is recreated.
+docker compose -p metastocker -f "$target/deploy/compose.yaml" build analytics
 
 switch_current() {
   ln -s "$1" "$base/.current-$$"
@@ -31,6 +47,11 @@ recover() {
   if test -n "$previous"; then
     switch_current "$previous"
     cp "$base/current/deploy/compose.yaml" "$base/compose.yaml"
+    if grep -q '^  analytics:' "$base/compose.yaml"; then
+      docker compose -p metastocker -f "$base/compose.yaml" up -d --no-deps analytics
+    else
+      docker stop metastocker-analytics >/dev/null 2>&1 || true
+    fi
     docker compose -p metastocker -f "$base/compose.yaml" up -d --no-deps web
     docker exec metastocker-web caddy reload --config /srv/metastocker/current/Staticfile --adapter caddyfile
   else
@@ -42,6 +63,16 @@ recover() {
 trap recover ERR
 switch_current "releases/$release_id"
 cp "$target/deploy/compose.yaml" "$base/compose.yaml"
+docker compose -p metastocker -f "$base/compose.yaml" up -d --no-deps analytics
+analytics_healthy=false
+for attempt in $(seq 1 30); do
+  if docker exec metastocker-analytics node -e "fetch('http://127.0.0.1:8081/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"; then
+    analytics_healthy=true
+    break
+  fi
+  sleep 1
+done
+$analytics_healthy
 docker compose -p metastocker -f "$base/compose.yaml" up -d --no-deps web
 for attempt in $(seq 1 20); do
   if docker exec metastocker-web wget -qO- http://127.0.0.1:2019/config/ >/dev/null 2>&1; then break; fi

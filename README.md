@@ -105,3 +105,7 @@ This project is for personal and commercial use in stock asset management. All p
 
 ---
 *Created with ❤️ for the Stock Contributor Community.*
+
+## Owner analytics
+
+The protected [owner dashboard](https://metastocker.net/admin/) shows first-party anonymous counters. No persistent visitor ID, photos, filenames, prompts, generated metadata or API keys are collected. A random page code exists only in memory. The public [privacy page](https://metastocker.net/privacy.html) provides opt-out; DNT/GPC and owner visits are excluded. Analytics requests may be sent while local inference runs, but contain only counters and approved categories. Local AI itself still runs entirely in the browser. See [metrics, access, backups and operation](docs/analytics.md).

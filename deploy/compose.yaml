@@ -33,8 +33,40 @@ services:
       options:
         max-size: 10m
         max-file: "3"
-    networks: [proxy]
+    networks: [proxy, stats]
+  analytics:
+    image: metastocker-analytics:@RELEASE@
+    build:
+      context: /opt/metastocker/releases/@RELEASE@/server
+    container_name: metastocker-analytics
+    restart: unless-stopped
+    user: "1001:1001"
+    volumes:
+      - /opt/metastocker/data:/data
+      - /opt/metastocker/secrets/auth.json:/run/secrets/auth.json:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 256m
+    cpus: 0.5
+    pids_limit: 64
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8081/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "2"
+    networks: [stats]
 networks:
+  stats:
+    internal: true
   proxy:
     external: true
     name: vintage-inventory_default

@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /private/
+Disallow: /admin
+Disallow: /api/
 
 Sitemap: https://metastocker.net/sitemap.xml
