@@ -80,7 +80,7 @@ export function makeServer({ store, credentials, origin = 'https://metastocker.n
         return send(404, { error: 'not_found' });
       }
       if (req.method !== 'GET' && req.method !== 'HEAD') return send(405, { error: 'method' });
-      if (path === '/health') { store.db.prepare('SELECT 1').get(); return send(200, { ok: true, version: '2.13' }); }
+      if (path === '/health') { store.db.prepare('SELECT 1').get(); return send(200, { ok: true, version: '2.14' }); }
       if (path === '/admin') return redirect('/admin/');
       if (path === '/admin/api/summary') {
         if (!loggedIn) return send(401, { error: 'unauthorized' });
