@@ -1812,7 +1812,7 @@ async function handleFiles(list) {
   }
 }
 
-const focusableSelector = 'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+const focusableSelector = 'a[href], button:not([disabled]), summary, input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 let activeDialog = null;
 let dialogReturnFocus = null;
 
@@ -1923,6 +1923,7 @@ document.getElementById('downloadAdobeBtn').addEventListener('click', () => show
 const logsDialog = wireDialog('showLogsBtn', 'logsPanel', ['logsClose']);
 document.getElementById('showLogsBtn').addEventListener('click', updateLogsDisplay);
 const aboutDialog = wireDialog('aboutBtn', 'aboutModal', ['aboutClose']);
+const modelHelpDialog = wireDialog('modelHelpBtn', 'modelHelpModal', ['modelHelpClose']);
 const contactDialog = wireDialog('contactBtn', 'contactModal', ['contactClose']);
 const guideDialog = wireDialog('guideBtn', 'guideModal', ['guideClose', 'guideCloseAlt']);
 const downloadDialog = wireDialog(null, 'downloadModal', ['downloadClose']);
@@ -2008,6 +2009,12 @@ function updateModelHint() {
           : isLocalModel(model) ? MetaStockerLocalAI.getModel(model).description : '';
 
   if (hintEl) hintEl.textContent = hintText;
+  const localModel = MetaStockerLocalAI.getModel(model);
+  $('#modelHelpTitle').textContent = localModel?.label || $('#model').selectedOptions[0].textContent;
+  $('#modelLocalHelp').hidden = !localModel;
+  $('#modelLocalHelp').inert = !localModel;
+  $('#modelCloudHelp').hidden = Boolean(localModel);
+  $('#modelCloudHelp').inert = Boolean(localModel);
 
   // Update prompt editor if it's currently showing
   const systemPromptInp = document.getElementById('systemPromptInp');
@@ -2078,8 +2085,9 @@ function renderLocalAI() {
   const ready = localAI.isReady(selected.id, localThreadCount());
   $('#localModelDetails').textContent = `About ${selected.size} download · ${selected.memory}`;
   $('#localModelSource').href = `https://huggingface.co/${selected.repo}/tree/${selected.revision}`;
+  $('#localMemoryWarning').hidden = localThreadCount() <= 2;
   const ownStatus = status.modelId === selected.id || !status.modelId;
-  $('#localModelStatus').textContent = (ownStatus && status.message) || localSupportError || (!localSupportChecked ? 'Checking browser compatibility…' : cache.cached ? 'Downloaded in this browser. Load it to begin.' : cache.partial ? 'Partial download saved. Continue to reuse completed files.' : 'Not downloaded. Requires a compatible GPU and browser storage.');
+  $('#localModelStatus').textContent = (ownStatus && status.message) || localSupportError || (!localSupportChecked ? 'Checking compatibility…' : cache.cached ? 'Downloaded' : cache.partial ? 'Download incomplete' : 'Not downloaded');
   $('#localModelStatus').classList.toggle('local-model-error', (ownStatus && status.phase === 'error') || Boolean(localSupportError));
   const progress = $('#localModelProgress');
   progress.hidden = !loading;

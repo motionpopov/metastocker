@@ -26,7 +26,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MetaStocker","url":"https://metastocker.net/","applicationCategory":"MultimediaApplication","operatingSystem":"Web browser with WebGPU","description":"Free browser-local AI generation of stock titles, keywords and CSV metadata. Optional cloud API usage is paid separately.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
   <link rel="icon" href="assets/metalogo.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/metalogo.png" />
-  <link rel="stylesheet" href="style.css?v=2.9">
+  <link rel="stylesheet" href="style.css?v=2.15">
   <link rel="stylesheet" href="privacy.css">
 
   <!-- Tailwind только для раскладки -->
@@ -57,7 +57,7 @@
         <img id="brandLogo" src="assets/metalogo.png" alt="" width="41" height="41" class="rounded" />
         <span id="brandText">MetaStocker</span>
       </div>
-      <span class="badge version-badge">v2.14</span>
+      <span class="badge version-badge">v2.15</span>
       <span id="tokenCounter" class="badge hidden" title="Total tokens used in this session">0 tokens</span>
       <div class="grow"></div>
       <button type="button" id="themeToggle" class="btn ghost theme-toggle" aria-label="Switch to dark theme"
@@ -99,7 +99,6 @@
                 <span class="step-badge">1</span>
                 <div>
                   <h2>Choose your model</h2>
-                  <p>Start free on your device. Cloud API models are optional.</p>
                 </div>
                 <button type="button" id="openPromptBtn" class="menu-btn" title="Edit System Prompt" aria-label="Edit system prompt">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -127,13 +126,14 @@
                     </button>
                   </div>
                 </div>
-                <div class="hint api-key-hint mt-1">Optional paid API: OpenAI bills usage to your account. Your key is kept in this browser tab and sent directly to OpenAI with your requests.
-                  <a class="api-key-guide-link" href="blog/how-to-get-openai-api-key.html" target="_blank" rel="noopener">How to create a key safely&nbsp;→</a>
-                </div>
+                <p class="hint api-key-hint mt-1">Paid API · billed by OpenAI.</p>
               </div>
               <div class="grid cols-2" style="gap:12px">
                 <div class="block">
-                  <label for="model" class="label flex items-center gap-2">Model</label>
+                  <div class="label flex items-center gap-2">
+                    <label for="model">Model</label>
+                    <button type="button" id="modelHelpBtn" class="qmark" aria-label="About the selected model" aria-haspopup="dialog" aria-controls="modelHelpModal">?</button>
+                  </div>
                   <select id="model" class="select">
                     <optgroup label="OpenAI API · paid usage">
                     <option value="gpt-5.6-luna">GPT-5.6 Luna</option>
@@ -141,7 +141,6 @@
                     <option value="gpt-5.4-nano">gpt-5.4-nano</option>
                     </optgroup>
                   </select>
-                  <div id="modelHint" class="hint mt-1.5 min-h-[1.25rem]"></div>
                 </div>
                 <div class="block">
                   <div class="label flex items-center gap-2"><label for="tagsCount">Tags Count</label>
@@ -155,10 +154,10 @@
                 </div>
               </div>
               <div id="localModelPanel" class="local-model-panel" hidden>
-                <div class="local-model-heading"><span class="badge">Free local AI · thinking · beta</span><a id="localModelSource" class="hint" target="_blank" rel="noopener">Model details</a></div>
-                <p id="localModelDetails" class="hint"></p>
-                <p class="hint">No API key or AI usage fees. Images and metadata stay on your device. The first download needs internet; model files are reused while saved in this browser.</p>
-                <p id="localModelStatus" class="local-model-status" role="status" aria-live="polite"></p>
+                <div class="local-model-heading">
+                  <span class="badge">Free local AI</span>
+                  <p id="localModelStatus" class="local-model-status" role="status" aria-live="polite"></p>
+                </div>
                 <progress id="localModelProgress" max="100" aria-label="Local model download progress" hidden></progress>
                 <div class="local-model-actions">
                   <button type="button" id="loadLocalModel" class="btn primary">Download &amp; load</button>
@@ -166,8 +165,7 @@
                   <button type="button" id="unloadLocalModel" class="btn ghost" title="Free memory and keep the downloaded model for later" hidden>Unload from memory</button>
                   <button type="button" id="removeLocalModel" class="btn ghost" title="Delete this model's downloaded files from this browser" hidden>Delete model</button>
                 </div>
-                <p class="hint">Start with 1–2 threads. Each parallel file loads a separate model copy into memory; more threads need more RAM and GPU memory.</p>
-                <p class="hint">Keep this tab open and review generated metadata before export.</p>
+                <p id="localMemoryWarning" class="hint" role="status" hidden>More threads use more RAM and GPU memory. Start with 1–2.</p>
               </div>
             </div>
           </div>
@@ -368,21 +366,54 @@
     </div>
   </div>
 
+  <!-- Model help -->
+  <div id="modelHelpModal" class="fixed inset-0 bg-black/50 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modelHelpTitle" aria-hidden="true" tabindex="-1" inert>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 card pad w-[min(520px,92vw)] compact-dialog">
+      <div class="flex items-center justify-between mb-2">
+        <h3 id="modelHelpTitle" class="text-lg font-semibold">About this model</h3>
+        <button type="button" id="modelHelpClose" class="btn ghost" aria-label="Close model help">&times;</button>
+      </div>
+      <div class="help-copy">
+        <p id="modelHint"></p>
+        <div id="modelLocalHelp">
+          <p id="localModelDetails" class="hint"></p>
+          <ul>
+            <li>Free and private. Images and metadata stay on your device.</li>
+            <li>Download once; reuse while saved in this browser. Requires WebGPU.</li>
+            <li>Thinking is on. Keep the tab open and review results before export.</li>
+            <li>Start with 1–2 threads. Each thread needs its own copy in memory.</li>
+          </ul>
+          <a id="localModelSource" class="api-key-guide-link" target="_blank" rel="noopener">Model documentation ↗</a>
+        </div>
+        <div id="modelCloudHelp" hidden inert>
+          <p>Optional paid API. OpenAI bills usage to your account; ChatGPT subscriptions do not cover it.</p>
+          <p>Your key stays in this browser tab. Previews, metadata and the key are sent directly to OpenAI with your requests.</p>
+          <a class="api-key-guide-link" href="blog/how-to-get-openai-api-key.html" target="_blank" rel="noopener">API key setup guide ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- About modal -->
   <div id="aboutModal" class="fixed inset-0 bg-black/50 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="aboutTitle" aria-hidden="true" tabindex="-1" inert>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 card pad w-[min(640px,92vw)]">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 card pad w-[min(520px,92vw)] compact-dialog">
       <div class="flex items-center justify-between mb-2">
         <h3 id="aboutTitle" class="text-lg font-semibold">About MetaStocker</h3>
         <button type="button" id="aboutClose" class="btn ghost" aria-label="Close about dialog">&times;</button>
       </div>
-      <div class="text-sm leading-relaxed">
-        MetaStocker is a free metadata generator for stock photos and videos. Create titles, keywords and categories
-        for Adobe Stock, Envato, Shutterstock and Freepik, then export CSV files.
-        Supported formats: images (JPEG, PNG, SVG, AI) and videos (MP4, WEBM, OGG, QuickTime). Original files remain
-        in your browser. Local AI runs on your device without an account, subscription or API key.
-        Optional OpenAI models send previews and metadata directly to OpenAI and use your own paid API account.
-        <br><br>
-        <span class="hint">Note: .ai files must be saved with "PDF Compatibility" to be processed.</span>
+      <div class="help-copy">
+        <p><strong>Stock metadata. Completely free.</strong><br>Titles, keywords and categories for your photos and videos.</p>
+        <ul>
+          <li>Local AI. Your files stay on your device.</li>
+          <li>No account, subscription or API key.</li>
+          <li>CSV for Adobe Stock, Envato, Shutterstock and Freepik.</li>
+        </ul>
+        <details class="about-details">
+          <summary>Formats &amp; optional API</summary>
+          <p>Images: JPEG, PNG, SVG and AI. Videos: MP4, WEBM, OGG and MOV, depending on browser support. Save .ai files with PDF Compatibility.</p>
+          <p>Local models need a first download and a WebGPU-compatible browser. Review generated metadata before uploading.</p>
+          <p>Optional OpenAI models use your own paid API account and send previews and metadata directly to OpenAI.</p>
+        </details>
       </div>
     </div>
   </div>
@@ -583,7 +614,7 @@
 
   <script src="analytics.js?v=2.13"></script>
   <script src="local-ai.js?v=2.9"></script>
-  <script src="app.js?v=2.11"></script>
+  <script src="app.js?v=2.15"></script>
 </body>
 
 </html>
