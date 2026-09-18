@@ -43,6 +43,10 @@ trap recover ERR
 switch_current "releases/$release_id"
 cp "$target/deploy/compose.yaml" "$base/compose.yaml"
 docker compose -p metastocker -f "$base/compose.yaml" up -d --no-deps web
+for attempt in $(seq 1 20); do
+  if docker exec metastocker-web wget -qO- http://127.0.0.1:2019/config/ >/dev/null 2>&1; then break; fi
+  sleep 1
+done
 docker exec metastocker-web caddy reload --config /srv/metastocker/current/Staticfile --adapter caddyfile
 healthy=false
 for attempt in $(seq 1 20); do
