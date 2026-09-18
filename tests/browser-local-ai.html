@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>MetaStocker local batch smoke test</title>
+<style>body{font:16px system-ui;margin:32px}button,select{padding:10px;margin:8px}pre{white-space:pre-wrap}canvas{width:128px;border:1px solid #ccc}</style>
+<h1>Local batch smoke test</h1>
+<p>Downloads a model only after Load. Synthetic images stay in this browser. This test page is excluded from production.</p>
+<label>Model <select id="model"></select></label>
+<label><input id="varySizes" type="checkbox">Different image proportions</label>
+<button id="load">Load</button><button id="imagesRun">Four images</button><button id="mixedRun">Mixed batch</button><button id="singleRun">One image</button><button id="stop">Stop / unload</button>
+<pre id="status">Idle</pre><div id="images"></div><pre id="results"></pre><pre id="trace"></pre>
+<script src="../local-ai.js"></script>
+<script>
+  const el = id => document.getElementById(id);
+  for (const model of MetaStockerLocalAI.MODELS) el('model').add(new Option(model.label, model.id));
+  let workers = 0, loads = 0, batches = [], tensorBatches = [];
+  const showTrace = () => el('trace').textContent = JSON.stringify({workers, loads, batches, tensorBatches});
+  const pool = new MetaStockerLocalAI.Pool(state => {
+    el('status').textContent = JSON.stringify(state, null, 2);
+  }, () => {
+    workers++;
+    const worker = new Worker('../local-ai-worker.mjs?v=2.17', {type:'module'});
+    worker.addEventListener('message', ({data}) => {
+      if (data.type === 'progress' && data.batchSize && data.tokens === 0) { tensorBatches.push(data.batchSize); showTrace(); }
+    });
+    const send = worker.postMessage.bind(worker);
+    worker.postMessage = data => {
+      if (data.type === 'load') loads++;
+      else batches.push(data.requests.length);
+      showTrace();
+      send(data);
+    };
+    return worker;
+  });
+  let images;
+  function createImages() {
+    el('images').replaceChildren();
+    images = ['red', 'blue', 'green', 'orange'].map((color, i) => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256 + (el('varySizes').checked ? i * 32 : 0); canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'white'; ctx.fillRect(0, 0, canvas.width, 256); ctx.fillStyle = color;
+    if (i % 2) ctx.fillRect(60, 60, 130, 130);
+    else { ctx.beginPath(); ctx.arc(128, 128, 70, 0, Math.PI * 2); ctx.fill(); }
+    el('images').append(canvas);
+    return canvas.toDataURL('image/png');
+    });
+  }
+  createImages();
+  el('varySizes').onchange = createImages;
+  el('load').onclick = async () => {
+    try { await pool.load(el('model').value, 4); }
+    catch (error) { el('results').textContent = error.message; }
+  };
+  async function run(mode) {
+    const start = performance.now(); el('results').textContent = 'Running…';
+    try {
+      pool.setBatchSize(mode === 'single' ? 1 : 4);
+      const indices = mode === 'single' ? [1] : [0, 1, 2, 3];
+      const results = await Promise.allSettled(indices.map(i => {
+        const textOnly = mode === 'mixed' && i % 2;
+        return pool.generate({model:el('model').value, imageDataUrl:textOnly ? '' : images[i],
+          prompt:textOnly ? `Return JSON {"number": ${i}, "word": "hello"}.` :
+            `Describe the image with JSON {"number": ${i}, "color": "...", "shape": "..."}. Use one word for color and shape.`});
+      }));
+      el('results').textContent = JSON.stringify({seconds:(performance.now()-start)/1000,
+        results:results.map(r => r.status === 'fulfilled' ? r.value : String(r.reason))}, null, 2);
+    } catch (error) { el('results').textContent = error.message; }
+  }
+  el('imagesRun').onclick = () => run('images');
+  el('mixedRun').onclick = () => run('mixed');
+  el('singleRun').onclick = () => run('single');
+  el('stop').onclick = () => pool.cancel();
+</script></html>

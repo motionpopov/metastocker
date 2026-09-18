@@ -194,9 +194,9 @@ test('ready client serializes inference and releases resources when cancelled', 
   const client=new env.api.Client(()=>{},()=>worker);
   await client.load('local-gemma-e2b');
   assert.ok(client.isReady('local-gemma-e2b'));
-  const generation=client.generate({model:'local-gemma-e2b',prompt:'Describe'});
+  const generation=client.generateBatch({model:'local-gemma-e2b',requests:[{requestId:1,prompt:'Describe'}]});
   const cancelled=assert.rejects(generation,e=>e.name==='AbortError');
-  await assert.rejects(client.generate({model:'local-gemma-e2b',prompt:'Another'}),/load the selected model/);
+  await assert.rejects(client.generateBatch({model:'local-gemma-e2b',requests:[{requestId:2,prompt:'Another'}]}),/load the selected model/);
   client.cancel();
   await cancelled;
   assert.equal(worker.stopped,true);
@@ -223,68 +223,131 @@ test('cache checks distinguish complete, evicted and partial models; removal is 
   await assert.rejects(client.remove('unrelated-user-data'),/Unknown local model/);
 });
 
-test('parallel pool uses independent workers, then cancels every in-flight request', async () => {
+function batchEnvironment() {
   const env=clientEnvironment();
   const workers=[];
   const pool=new env.api.Pool(()=>{},()=>{
-    const worker={postMessage(data){this.last=data;if(data.type==='load')queueMicrotask(()=>this.onmessage({data:{id:data.id,type:'result',result:{cached:true}}}));},terminate(){this.stopped=true;}};
+    const worker={messages:[],postMessage(data){this.messages.push(data);this.last=data;if(data.type==='load')queueMicrotask(()=>this.reply({cached:true}));},
+      reply(result){this.onmessage({data:{id:this.last.id,type:'result',result}});},terminate(){this.stopped=true;}};
     workers.push(worker);return worker;
   });
-  await pool.load('local-gemma-e2b',2);
-  assert.equal(workers.length,2);
-  assert.equal(pool.isReady('local-gemma-e2b',2),true);
-  assert.equal(pool.isReady('local-gemma-e2b',3),false);
-  const first=pool.generate({model:'local-gemma-e2b',prompt:'First file'});
-  const second=pool.generate({model:'local-gemma-e2b',prompt:'Second file'});
-  const rejections=[assert.rejects(first,e=>e.name==='AbortError'),assert.rejects(second,e=>e.name==='AbortError')];
-  assert.equal(workers[0].last.prompt,'First file');
-  assert.equal(workers[1].last.prompt,'Second file');
-  assert.equal(pool.clients.filter(c=>c.state.phase==='generating').length,2);
-  assert.throws(()=>pool.unload(), /Stop the local operation/);
-  assert.ok(workers.every(w=>!w.stopped));
+  return {...env,workers,pool};
+}
+const flushBatch=async pool=>{clearTimeout(pool.timer);pool.timer=null;const done=pool.flush();await nextTurn();return {done};};
+
+test('one model handles a real batch and routes out-of-order replies to the correct files', async () => {
+  const {pool,workers}=batchEnvironment();
+  const id='local-qwen-2b';
+  await pool.load(id,4);
+  const requests=Array.from({length:4},(_,i)=>pool.generate({model:id,prompt:`File ${i}`,imageDataUrl:i%2?'':'data:image/png;base64,AAAA'}));
+  const {done}=await flushBatch(pool);
+  assert.equal(workers.length,1);
+  assert.equal(workers[0].last.type,'generateBatch');
+  assert.equal(workers[0].last.requests.length,4);
+  assert.equal(pool.state.phase,'generating');
+  workers[0].reply([...workers[0].last.requests].reverse().map(r=>({requestId:r.requestId,text:r.prompt})));
+  assert.deepEqual(await Promise.all(requests),['File 0','File 1','File 2','File 3']);
+  await done;
+  assert.ok(pool.isReady(id));
   pool.cancel();
-  await Promise.all(rejections);
-  assert.ok(workers.every(w=>w.stopped));
-  assert.equal(pool.clients.length,0);
 });
 
-test('unloading releases every worker, retains downloaded files, and allows loading again', async () => {
-  const env=clientEnvironment(); const workers=[];
+test('cancellation rejects active and queued items and ignores stale batch results', async () => {
+  const {pool,workers}=batchEnvironment();
+  await pool.load('local-gemma-e2b',2);
+  assert.equal(workers.length,1);
+  assert.equal(pool.isReady('local-gemma-e2b',2),true);
+  const requests=Array.from({length:3},(_,i)=>pool.generate({model:'local-gemma-e2b',prompt:`File ${i}`}));
+  const rejections=requests.map(p=>assert.rejects(p,e=>e.name==='AbortError'));
+  const {done}=await flushBatch(pool);
+  assert.equal(pool.active.length,2);
+  assert.equal(pool.queue.length,1);
+  assert.throws(()=>pool.unload(), /Stop the local operation/);
+  pool.cancel();
+  workers[0].reply(workers[0].last.requests.map(r=>({requestId:r.requestId,text:'stale'})));
+  await Promise.all(rejections);
+  await done;
+  assert.ok(workers[0].stopped);
+  assert.equal(pool.client,null);
+  assert.equal(pool.queue.length,0);
+  assert.equal(pool.state.phase,'idle');
+});
+
+test('unloading releases the single worker, retains downloaded files, and allows loading again', async () => {
+  const env=batchEnvironment(); const {pool,workers}=env;
   const id='local-gemma-e2b';
   const cache=await env.caches.open(env.api.cacheName(id));
   const file='https://test.local/saved-model';
   await cache.put(file,new Response('saved weights'));
-  const pool=new env.api.Pool(()=>{},()=>{
-    const worker={postMessage(data){queueMicrotask(()=>this.onmessage({data:{id:data.id,type:'result',result:{cached:true}}}));},terminate(){this.stopped=true;}};
-    workers.push(worker);return worker;
-  });
   await pool.load(id,2);
   pool.unload();
-  assert.equal(pool.clients.length,0);
+  assert.equal(pool.client,null);
   assert.equal(pool.state.phase,'idle');
   assert.equal(pool.isReady(id,2),false);
   assert.ok(workers.every(w=>w.stopped));
   assert.equal(await (await cache.match(file)).text(),'saved weights');
   await pool.load(id,1);
-  assert.equal(workers.length,3);
+  assert.equal(workers.length,2);
   assert.equal(pool.isReady(id,1),true);
   await pool.remove(id);
-  assert.equal(workers[2].stopped,true);
+  assert.equal(workers[1].stopped,true);
   assert.equal(await env.caches.has(env.api.cacheName(id)),false);
 });
 
-test('changing thread count reuses loaded workers and releases surplus workers', async () => {
-  const env=clientEnvironment();const workers=[];
-  const pool=new env.api.Pool(()=>{},()=>{
-    const worker={postMessage(data){queueMicrotask(()=>this.onmessage({data:{id:data.id,type:'result',result:{cached:true}}}));},terminate(){this.stopped=true;}};
-    workers.push(worker);return worker;
-  });
+test('changing batch size never creates another model or reloads weights', async () => {
+  const {pool,workers}=batchEnvironment();
   await pool.load('local-gemma-e2b',1);
-  await pool.load('local-gemma-e2b',2);
-  assert.equal(workers.length,2);
+  pool.setBatchSize(4);
+  assert.ok(pool.isReady('local-gemma-e2b',4));
+  await pool.load('local-gemma-e2b',20);
+  assert.equal(pool.target,20);
+  assert.equal(workers.length,1);
+  assert.equal(workers[0].messages.length,1);
   assert.equal(workers[0].stopped,undefined);
-  await pool.load('local-gemma-e2b',1);
-  assert.equal(workers[1].stopped,true);
-  assert.equal(pool.isReady('local-gemma-e2b',1),true);
   pool.cancel();
+});
+
+test('partial batches flush without waiting for missing requests; later jobs reuse the same worker', async () => {
+  const {pool,workers}=batchEnvironment();const id='local-gemma-e2b';
+  await pool.load(id,4);
+  const first=pool.generate({model:id,prompt:'One file'});
+  // Exercise the actual collection timer, not only explicit flush calls.
+  await new Promise(resolve=>setTimeout(resolve,150));
+  assert.equal(workers[0].last.requests.length,1);
+  const second=pool.generate({model:id,prompt:'Arrives during inference'});
+  workers[0].reply([{requestId:workers[0].last.requests[0].requestId,text:'First'}]);
+  assert.equal(await first,'First');
+  const {done}=await flushBatch(pool);
+  workers[0].reply([{requestId:workers[0].last.requests[0].requestId,text:'Second'}]);
+  assert.equal(await second,'Second');await done;
+  assert.equal(workers.length,1);
+  assert.equal(workers[0].messages.filter(m=>m.type==='generateBatch').length,2);
+  pool.cancel();
+});
+
+test('a bad item does not discard good results; an invalid response envelope fails closed', async () => {
+  const {pool,workers}=batchEnvironment();const id='local-qwen-2b';
+  await pool.load(id,2);
+  const good=pool.generate({model:id,prompt:'Good'});
+  const bad=assert.rejects(pool.generate({model:id,prompt:'Bad'}),/thinking limit/);
+  let {done}=await flushBatch(pool);
+  let requests=workers[0].last.requests;
+  workers[0].reply([{requestId:requests[0].requestId,text:'Good'},{requestId:requests[1].requestId,error:'thinking limit'}]);
+  assert.equal(await good,'Good');await bad;await done;
+  assert.ok(pool.isReady(id));
+  const invalid=assert.rejects(pool.generate({model:id,prompt:'No matching id'}),/Invalid local batch response/);
+  ({done}=await flushBatch(pool));
+  workers[0].reply([{requestId:-1,text:'Wrong file'}]);
+  await invalid;await done;
+  assert.equal(pool.state.phase,'error');assert.ok(workers[0].stopped);
+});
+
+test('worker failure rejects the whole active batch and queued requests without fallback', async () => {
+  const {pool,workers}=batchEnvironment();const id='local-qwen-2b';
+  await pool.load(id,2);
+  const results=Array.from({length:3},()=>assert.rejects(pool.generate({model:id,prompt:'Metadata'}),/worker stopped/));
+  const {done}=await flushBatch(pool);
+  workers[0].onerror({preventDefault(){}});
+  await Promise.all(results);await done;
+  assert.equal(pool.queue.length,0);assert.ok(workers[0].stopped);
 });

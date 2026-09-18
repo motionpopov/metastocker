@@ -57,7 +57,7 @@
         <img id="brandLogo" src="assets/metalogo.png" alt="" width="41" height="41" class="rounded" />
         <span id="brandText">MetaStocker</span>
       </div>
-      <span class="badge version-badge">v2.16</span>
+      <span class="badge version-badge">v2.17</span>
       <span id="tokenCounter" class="badge hidden" title="Total tokens used in this session">0 tokens</span>
       <div class="grow"></div>
       <button type="button" id="themeToggle" class="btn ghost theme-toggle" aria-label="Switch to dark theme"
@@ -166,7 +166,7 @@
                   <button type="button" id="unloadLocalModel" class="btn ghost" title="Free memory and keep the downloaded model for later" hidden>Unload from memory</button>
                   <button type="button" id="removeLocalModel" class="btn ghost" title="Delete this model's downloaded files from this browser" hidden>Delete model</button>
                 </div>
-                <p id="localMemoryWarning" class="hint" role="status" hidden>More threads use more RAM and GPU memory. Start with 1–2.</p>
+                <p id="localMemoryWarning" class="hint" role="status" hidden>One model, more working memory. Start with a batch of 1–2.</p>
               </div>
             </div>
           </div>
@@ -261,7 +261,7 @@
         <button type="button" id="envatoSettingsBtn" class="btn ghost hidden ml-2">Edit Envato rows...</button>
         <div class="grow"></div>
         <div class="flex items-center gap-2 text-sm">
-          <div class="label !m-0 flex items-center gap-2"><label for="concurrency">Threads</label>
+          <div class="label !m-0 flex items-center gap-2"><label for="concurrency" id="concurrencyLabel">Batch size</label>
             <span class="hint-tooltip" id="threadsTooltip">
               <button type="button" class="qmark" aria-label="Threads help" aria-describedby="threadsHelp">?</button>
               <span class="tooltip" id="threadsHelp" role="tooltip">This setting determines how many parallel requests go to the selected AI provider.</span>
@@ -382,7 +382,7 @@
             <li>Free and private. Images and metadata stay on your device.</li>
             <li>Download once; reuse while saved in this browser. Requires WebGPU.</li>
             <li>Thinking is on. Keep the tab open and review results before export.</li>
-            <li>Start with 1–2 threads. Each thread needs its own copy in memory.</li>
+            <li>One model handles a batch of requests. Start with 1–2; larger batches need more working memory.</li>
           </ul>
           <a id="localModelSource" class="api-key-guide-link" target="_blank" rel="noopener">Model documentation ↗</a>
         </div>
@@ -614,8 +614,8 @@
   </div>
 
   <script src="analytics.js?v=2.13"></script>
-  <script src="local-ai.js?v=2.9"></script>
-  <script src="app.js?v=2.15"></script>
+  <script src="local-ai.js?v=2.17"></script>
+  <script src="app.js?v=2.17"></script>
 </body>
 
 </html>

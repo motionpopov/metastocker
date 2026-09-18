@@ -1582,6 +1582,7 @@ async function runSingleFile(idx) {
   state.completed = state.succeeded + state.failed;
   state.inFlight = 1;
   activeRunConfig = createRunConfig();
+  if (activeRunConfig.provider === 'local') localAI.setBatchSize(activeRunConfig.concurrency);
   const wakeLockPromise = requestWakeLock();
   startKeepAlive();
   uiUpdate();
@@ -1652,6 +1653,7 @@ async function startProcessing() {
     return;
   }
   activeRunConfig = createRunConfig();
+  if (activeRunConfig.provider === 'local') localAI.setBatchSize(activeRunConfig.concurrency);
   state.running = true; state.paused = false; state.stopRequested = false; state.nextIdx = 0; state.inFlight = 0;
   state.succeeded = countActiveWithStatus('done'); state.failed = 0; state.completed = state.succeeded;
   state.phaseTotal = total;
@@ -1987,6 +1989,7 @@ document.getElementById('outEnvato').addEventListener('change', () => document.g
 document.getElementById('concurrency').addEventListener('change', e => {
   const value = Math.max(1, Math.min(20, Math.floor(Number(e.target.value) || 1)));
   e.target.value = String(value);
+  if (isLocalModel($('#model').value)) localAI.setBatchSize(value);
   uiUpdate();
 });
 document.getElementById('tagsCount').addEventListener('change', e => {
@@ -2050,7 +2053,7 @@ function validateAISelection() {
   const model = $('#model').value;
   if (isLocalModel(model)) {
     if (localAI.isReady(model, localThreadCount())) return true;
-    alert('Prepare the selected local model and thread count before starting.');
+    alert('Load the selected local model before starting.');
     return false;
   }
   if (!$('#accessKey').value.trim()) { alert('Enter your OpenAI API key'); return false; }
@@ -2078,7 +2081,9 @@ function renderLocalAI() {
   if (selected && cloudConcurrency === null) { cloudConcurrency = concurrency.value; concurrency.value = '1'; }
   if (!selected && cloudConcurrency !== null) { concurrency.value = cloudConcurrency; cloudConcurrency = null; }
   concurrency.disabled = state.running || importing || loading;
-  $('#threadsHelp').textContent = selected ? 'Parallel files on your GPU. Each thread loads its own model into memory. Start with 1–2; more threads require more RAM and GPU memory.' : 'This setting determines how many parallel requests go to the selected AI provider.';
+  $('#concurrencyLabel').textContent = selected ? 'Batch size' : 'Threads';
+  $('#threadsTooltip .qmark').setAttribute('aria-label', selected ? 'Batch size help' : 'Threads help');
+  $('#threadsHelp').textContent = selected ? 'Up to this many requests share one model in memory. Ready requests run in compatible groups; Gemma may use smaller groups to preserve accuracy. Start with 1–2. Larger batches need more working memory and may not be faster.' : 'This setting determines how many parallel requests go to the selected AI provider.';
   $('#model').disabled = state.running || importing || loading;
   if (!selected) return;
   const cache = localModelCache.get(selected.id) || {};
@@ -2093,12 +2098,11 @@ function renderLocalAI() {
   progress.hidden = !loading;
   if (status.progress === null) progress.removeAttribute('value');
   else progress.value = status.progress;
-  const prepared = localAI.clients.length > 0 && status.modelId === selected.id && status.phase === 'ready';
-  $('#loadLocalModel').textContent = ready ? 'Model ready' : state.running ? 'Model in use' : loading ? 'Preparing model…' : prepared ? `Prepare ${localThreadCount()} threads` : cache.cached ? 'Load model' : cache.partial ? 'Continue download' : 'Download & load';
+  $('#loadLocalModel').textContent = ready ? 'Model ready' : state.running ? 'Model in use' : loading ? 'Preparing model…' : cache.cached ? 'Load model' : cache.partial ? 'Continue download' : 'Download & load';
   $('#loadLocalModel').disabled = state.running || importing || loading || ready || !localSupportChecked || Boolean(localSupportError);
   $('#cancelLocalModel').hidden = !loading && !state.running;
   $('#cancelLocalModel').textContent = state.running ? 'Stop local batch' : 'Cancel download';
-  $('#unloadLocalModel').hidden = status.modelId !== selected.id || !localAI.clients.some(client => client.worker);
+  $('#unloadLocalModel').hidden = status.modelId !== selected.id || !localAI.client?.worker;
   $('#unloadLocalModel').disabled = state.running || importing || loading;
   $('#removeLocalModel').hidden = !cache.cached && !cache.partial && !ready;
   $('#removeLocalModel').disabled = state.running || importing || loading;

@@ -97,7 +97,7 @@
   class Client {
     constructor(onChange = () => {}, workerFactory) {
       this.onChange = onChange;
-      this.workerFactory = workerFactory || (() => new Worker(new URL('local-ai-worker.mjs?v=2.9', scriptURL), { type: 'module' }));
+      this.workerFactory = workerFactory || (() => new Worker(new URL('local-ai-worker.mjs?v=2.17', scriptURL), { type: 'module' }));
       this.worker = null;
       this.pending = new Map();
       this.sequence = 0;
@@ -121,7 +121,7 @@
     }
     cancel() {
       this.terminate(new DOMException('Local operation cancelled.', 'AbortError'));
-      this.update({ phase: 'idle', modelId: null, progress: null, message: 'Stopped. Completed downloads can be reused.' });
+      this.update({ phase: 'idle', modelId: null, progress: null, batchSize: 0, tokens: 0, message: 'Stopped. Completed downloads can be reused.' });
     }
     fail(error) {
       this.terminate(error);
@@ -156,7 +156,8 @@
         this.worker.onmessage = ({ data }) => {
           if (epoch !== this.epoch || !this.pending.has(data.id)) return;
           if (data.type === 'progress') {
-            this.update({ progress: data.progress ?? null, tokens: data.tokens ?? this.state.tokens, message: data.message || 'Loading model…' });
+            this.update({ progress: data.progress ?? null, tokens: data.tokens ?? this.state.tokens,
+              batchSize: data.batchSize ?? this.state.batchSize, message: data.message || 'Loading model…' });
             return;
           }
           const pending = this.pending.get(data.id);
@@ -181,12 +182,12 @@
         throw error;
       }
     }
-    async generate({ model, prompt, imageDataUrl }) {
+    async generateBatch({ model, requests }) {
       if (!this.isReady(model)) throw new Error('Local AI unavailable: load the selected model first.');
       const epoch = this.epoch;
-      this.update({ phase: 'generating', progress: null, tokens: 0, message: 'Thinking and generating on this device…' });
+      this.update({ phase: 'generating', progress: null, tokens: 0, batchSize: requests.length, message: 'Thinking and generating on this device…' });
       try {
-        const result = await this.request('generate', { modelId: model, prompt, imageDataUrl }, 10 * 60 * 1000);
+        const result = await this.request('generateBatch', { modelId: model, requests }, 20 * 60 * 1000);
         if (epoch === this.epoch) this.update({ phase: 'ready', message: 'Ready on this device.' });
         return result;
       } catch (error) {
@@ -204,16 +205,19 @@
     }
   }
 
-  // Each slot owns an independent worker and GPU sessions. Sharing one model
-  // instance would only queue concurrent calls, not run them in parallel.
+  // One worker owns one model. A short collection window joins independent
+  // requests into a tensor batch; subsequent batches reuse the same weights.
   class Pool {
     constructor(onChange = () => {}, workerFactory) {
       this.onChange = onChange;
       this.workerFactory = workerFactory;
-      this.clients = [];
+      this.client = null;
+      this.queue = [];
+      this.active = [];
+      this.timer = null;
+      this.sequence = 0;
       this.epoch = 0;
       this.loading = false;
-      this.suspended = false;
       this.target = 1;
       this.state = { phase: 'idle', modelId: null, progress: null, message: '' };
     }
@@ -221,80 +225,112 @@
       this.state = { ...this.state, ...patch };
       this.onChange(this.state);
     }
-    isReady(id, count = 1) {
+    isReady(id) {
       return this.state.phase === 'ready' && this.state.modelId === id
-        && this.clients.length === count && this.clients.every(client => client.isReady(id));
+        && this.client?.isReady(id) && !this.active.length && !this.queue.length;
     }
     childChanged(client) {
-      if (this.suspended) return;
-      if (this.loading) {
-        const index = this.clients.indexOf(client);
-        this.update({ phase: 'loading', progress: client.state.progress,
-          message: `Thread ${index + 1} of ${this.target}: ${client.state.message}` });
-        return;
-      }
-      const failed = this.clients.find(item => item.state.phase === 'error');
-      if (failed) { this.update({ phase: 'error', progress: null, message: failed.state.message }); return; }
-      const active = this.clients.filter(item => item.state.phase === 'generating').length;
-      const tokens = this.clients.filter(item => item.state.phase === 'generating').reduce((sum, item) => sum + (item.state.tokens || 0), 0);
-      this.update({ phase: active ? 'generating' : 'ready', progress: null,
-        message: active ? `Thinking locally · ${active} of ${this.clients.length} threads active${tokens ? ` · ${tokens} tokens generated` : ''}` : `${this.clients.length} local thread${this.clients.length === 1 ? '' : 's'} ready.` });
+      if (client !== this.client) return;
+      if (client.state.phase === 'ready' && (this.active.length || this.queue.length)) return;
+      const size = client.state.batchSize ?? this.active.length;
+      this.update({ ...client.state, batchSize: size,
+        message: client.state.phase === 'generating'
+          ? `Thinking locally · batch of ${size}${client.state.tokens ? ` · ${client.state.tokens} tokens` : ''}`
+          : client.state.message });
+    }
+    setBatchSize(count) {
+      if (this.active.length || this.queue.length) throw new Error('Stop the local operation before changing batch size.');
+      this.target = Math.max(1, Math.min(20, Math.floor(Number(count) || 1)));
+    }
+    rejectRequests(error) {
+      clearTimeout(this.timer);
+      this.timer = null;
+      for (const item of [...this.active, ...this.queue]) item.reject(error);
+      this.active = [];
+      this.queue = [];
     }
     cancel() {
       this.epoch++;
       this.loading = false;
-      this.suspended = true;
-      this.clients.forEach(client => client.cancel());
-      this.clients = [];
-      this.suspended = false;
-      this.update({ phase: 'idle', modelId: null, progress: null, message: 'Stopped. Completed downloads can be reused.' });
+      this.rejectRequests(new DOMException('Local operation cancelled.', 'AbortError'));
+      const client = this.client;
+      this.client = null;
+      client?.cancel();
+      this.update({ phase: 'idle', modelId: null, progress: null, batchSize: 0, tokens: 0, message: 'Stopped. Completed downloads can be reused.' });
     }
     async load(id, count = 1) {
       if (!getModel(id)) throw new Error('Unknown local model.');
-      if (this.loading || this.clients.some(client => client.state.phase === 'generating')) throw new Error('Stop the local operation first.');
-      count = Math.max(1, Math.min(20, Math.floor(Number(count) || 1)));
-      if (this.isReady(id, count)) return;
-      if (this.state.modelId && this.state.modelId !== id) this.cancel();
+      if (this.loading || this.active.length || this.queue.length) throw new Error('Stop the local operation first.');
+      this.setBatchSize(count);
+      if (this.isReady(id)) return;
+      this.cancel();
       const epoch = this.epoch;
-      this.target = count;
       this.loading = true;
-      this.suspended = true;
-      this.clients.splice(count).forEach(client => client.cancel());
-      this.suspended = false;
-      this.update({ phase: 'loading', modelId: id, progress: null, message: `Preparing ${count} local thread${count === 1 ? '' : 's'}…` });
+      const client = new Client(() => this.childChanged(client), this.workerFactory);
+      this.client = client;
+      this.update({ phase: 'loading', modelId: id, progress: null, message: 'Preparing model…' });
       try {
-        // Initialize sequentially: the first slot downloads once; later slots
-        // read the same cache and allocate their own GPU memory.
-        for (let index = 0; index < count; index++) {
-          if (epoch !== this.epoch) throw new DOMException('Cancelled.', 'AbortError');
-          if (!this.clients[index]) {
-            const client = new Client(() => this.childChanged(client), this.workerFactory);
-            this.clients.push(client);
-          }
-          await this.clients[index].load(id);
-        }
+        await client.load(id);
         if (epoch !== this.epoch) throw new DOMException('Cancelled.', 'AbortError');
         this.loading = false;
-        const saved = await inspectCache(id);
-        if (epoch !== this.epoch) throw new DOMException('Cancelled.', 'AbortError');
-        this.update({ phase: 'ready', progress: 100,
-          message: `${count} local thread${count === 1 ? '' : 's'} ready. ${saved.cached ? 'Download saved in this browser.' : 'Ready for this tab; the browser could not save the full download.'}` });
+        this.update({ phase: 'ready', progress: 100, message: client.state.message });
       } catch (error) {
         if (epoch === this.epoch) {
           this.loading = false;
-          this.update({ phase: 'error', progress: null, message: `${error.message} Try fewer threads or a smaller model.` });
+          this.update({ phase: 'error', progress: null, message: error.message });
         }
         throw error;
       }
     }
-    async generate(options) {
-      if (this.loading || this.state.phase === 'error') throw new Error('Local AI unavailable: prepare the selected model and threads first.');
-      const client = this.clients.find(item => item.isReady(options.model));
-      if (!client) throw new Error('Local AI unavailable: no prepared worker is available.');
-      return client.generate(options);
+    async generate({ model, prompt, imageDataUrl }) {
+      if (this.loading || !this.client?.worker || this.state.modelId !== model || !['ready', 'generating'].includes(this.state.phase)) {
+        throw new Error('Local AI unavailable: load the selected model first.');
+      }
+      return new Promise((resolve, reject) => {
+        this.queue.push({ requestId: ++this.sequence, prompt, imageDataUrl, resolve, reject });
+        this.schedule();
+      });
+    }
+    schedule() {
+      if (this.active.length || this.timer !== null || !this.queue.length) return;
+      this.timer = setTimeout(() => {
+        this.timer = null;
+        void this.flush();
+      }, this.target === 1 ? 0 : 120);
+    }
+    async flush() {
+      if (this.active.length || !this.queue.length) return;
+      const epoch = this.epoch;
+      const batch = this.queue.splice(0, this.target);
+      this.active = batch;
+      try {
+        const results = await this.client.generateBatch({ model: this.state.modelId,
+          requests: batch.map(({ requestId, prompt, imageDataUrl }) => ({ requestId, prompt, imageDataUrl })) });
+        if (epoch !== this.epoch) return;
+        // Validate the entire envelope before resolving anything: never attach
+        // another file's metadata to a request after a malformed worker reply.
+        const byId = new Map(Array.isArray(results) ? results.map(item => [item.requestId, item]) : []);
+        if (!Array.isArray(results) || results.length !== batch.length || byId.size !== batch.length
+          || batch.some(item => !byId.has(item.requestId))) throw new Error('Invalid local batch response.');
+        this.active = [];
+        for (const item of batch) {
+          const result = byId.get(item.requestId);
+          if (typeof result.text === 'string' && result.text.trim() && !result.error) item.resolve(result.text);
+          else item.reject(new Error(`Local AI unavailable: ${result.error || 'Empty model response.'}`));
+        }
+        this.update({ phase: this.queue.length ? 'generating' : 'ready', batchSize: 0,
+          message: this.queue.length ? 'Preparing next local batch…' : 'Ready on this device. One model in memory.' });
+        this.schedule();
+      } catch (error) {
+        if (epoch !== this.epoch) return;
+        this.client.fail(error);
+        this.rejectRequests(error);
+        this.update({ phase: 'error', progress: null, batchSize: 0,
+          message: `${error.message} Try a smaller batch or model, then load it again.` });
+      }
     }
     unload() {
-      if (this.loading || this.clients.some(client => client.state.phase === 'generating')) {
+      if (this.loading || this.active.length || this.queue.length) {
         throw new Error('Stop the local operation before unloading the model.');
       }
       this.cancel();
@@ -302,7 +338,7 @@
     }
     async remove(id) {
       cacheName(id);
-      if (this.loading || this.clients.some(client => client.state.phase === 'generating')) throw new Error('Stop the local operation before removing a model.');
+      if (this.loading || this.active.length || this.queue.length) throw new Error('Stop the local operation before removing a model.');
       if (this.state.modelId === id) this.cancel();
       if (root.caches) await root.caches.delete(cacheName(id));
       this.update({ message: 'Model removed from this browser.' });
