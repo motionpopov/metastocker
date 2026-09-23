@@ -50,7 +50,7 @@ const {
 
 assert.equal(MODEL_GPT_6_LUNA, 'gpt-6-luna');
 assert.match(indexSource, /<option value="gpt-6-luna">GPT-6 Luna<\/option>/);
-assert.doesNotMatch(indexSource, /<option value="gpt-5\.4-(?:mini|nano)" selected>/);
+assert.doesNotMatch(indexSource, /<option\b[^>]*value="gpt-5\.4-(?:mini|nano)"/);
 
 const expectedNames = [
   'Animals', 'Buildings and Architecture', 'Business', 'Drinks', 'The Environment', 'States of Mind',

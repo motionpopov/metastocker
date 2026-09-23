@@ -156,10 +156,10 @@ test('stale previews, processing, importing and unfinished rows cannot modify me
 });
 
 test('API is the first/default model, with explicit saved choices preserved and obsolete choices ignored', () => {
-  for (const saved of [null, 'gpt-5.6-luna', 'gpt-6-luna', 'local-gemma-e2b', 'gpt-5.4-mini', 'obsolete-model']) {
+  for (const saved of [null, 'gpt-5.6-luna', 'gpt-6-luna', 'local-gemma-e2b', 'gpt-5.4-mini', 'gpt-5.4-nano', 'obsolete-model']) {
     const storage = new Map(saved ? [['meta_ai_model', saved]] : []);
     const select = {
-      value: '', options: ['gpt-6-luna', 'gpt-5.4-mini', 'gpt-5.4-nano'].map(value => ({ value })),
+      value: '', options: ['gpt-6-luna'].map(value => ({ value })),
       appendChild(group) { this.options.push(...group.children); }
     };
     const c = vm.createContext({
@@ -173,7 +173,7 @@ test('API is the first/default model, with explicit saved choices preserved and 
     vm.runInContext(section('function migrateLunaSettings', 'function selectedOutputKeys'), c);
     c.initLocalModels();
     assert.equal(select.options[0].value, 'gpt-6-luna');
-    assert.equal(select.value, saved && !['obsolete-model', 'gpt-5.6-luna'].includes(saved) ? saved : 'gpt-6-luna');
+    assert.equal(select.value, saved === 'local-gemma-e2b' ? saved : 'gpt-6-luna');
     if (saved === 'gpt-5.6-luna') assert.equal(storage.get('meta_ai_model'), 'gpt-6-luna');
   }
 });
