@@ -26,7 +26,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MetaStocker","url":"https://metastocker.net/","applicationCategory":"MultimediaApplication","operatingSystem":"Web browser with WebGPU","description":"Free browser-local AI generation of stock titles, keywords and CSV metadata. Optional cloud API usage is paid separately.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
   <link rel="icon" href="assets/metalogo.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/metalogo.png" />
-  <link rel="stylesheet" href="style.css?v=2.16">
+  <link rel="stylesheet" href="style.css?v=2.18">
   <link rel="stylesheet" href="privacy.css">
 
   <!-- Tailwind только для раскладки -->
@@ -57,7 +57,7 @@
         <img id="brandLogo" src="assets/metalogo.png" alt="" width="41" height="41" class="rounded" />
         <span id="brandText">MetaStocker</span>
       </div>
-      <span class="badge version-badge">v2.17</span>
+      <span class="badge version-badge">v2.18</span>
       <span id="tokenCounter" class="badge hidden" title="Total tokens used in this session">0 tokens</span>
       <div class="grow"></div>
       <button type="button" id="themeToggle" class="btn ghost theme-toggle" aria-label="Switch to dark theme"
@@ -83,7 +83,7 @@
       </div>
       <ul class="hero-points">
         <li>100% free with local AI</li>
-        <li>No account, subscription or API key</li>
+        <li>Local AI needs no account or API key</li>
         <li>Adobe · Envato · Shutterstock · Freepik</li>
       </ul>
     </section>
@@ -106,7 +106,7 @@
                   </svg>
                 </button>
               </div>
-              <div id="cloudConnection" class="block access-token-field" hidden>
+              <div id="cloudConnection" class="block access-token-field">
                 <div class="label flex items-center gap-2"><label for="accessKey">OpenAI API key</label>
                   <span class="hint-tooltip">
                     <a class="qmark" href="blog/how-to-get-openai-api-key.html" target="_blank" rel="noopener"
@@ -126,7 +126,7 @@
                     </button>
                   </div>
                 </div>
-                <p class="hint api-key-hint mt-1">Paid API · billed by OpenAI.</p>
+                <p class="hint api-key-hint mt-1">Paid API · billed by OpenAI. Local models are free.</p>
               </div>
               <div class="grid cols-2" style="gap:12px">
                 <div class="block">
@@ -325,6 +325,13 @@
     <button type="button" id="showLogsBtn" class="btn primary" aria-label="Open system logs">Logs</button>
 
     <!-- Live table -->
+    <div id="bulkToolbar" class="bulk-toolbar" hidden>
+      <div class="bulk-toolbar-copy">
+        <strong id="bulkSelectionCount">0 selected</strong>
+        <span id="bulkEditStatus" class="hint" role="status"></span>
+      </div>
+      <button type="button" id="bulkEditBtn" class="btn primary" aria-haspopup="dialog" aria-controls="bulkEditModal" disabled>Edit selected</button>
+    </div>
     <section class="table-wrap">
       <div class="table-empty" role="status">
         <strong>No files yet</strong>
@@ -333,7 +340,7 @@
       <table class="min-w-full text-sm table-fixed">
         <thead>
           <tr>
-            <th class="th-sticky w-14">#</th>
+            <th class="th-sticky selection-cell"><label class="row-selection"><input id="selectAllMetadata" type="checkbox" class="metadata-checkbox" aria-label="Select all ready works" title="Select all ready works" disabled><span>#</span></label></th>
             <th class="th-sticky w-28">Preview</th>
             <th class="th-sticky w-48">File</th>
             <th class="th-sticky col-title" id="th-title">Title<div class="resizer" data-col="title" role="separator" aria-orientation="vertical" aria-label="Resize title column" aria-valuemin="200" aria-valuemax="2400" aria-valuenow="300" tabindex="0"></div>
@@ -349,6 +356,55 @@
     </section>
   </main>
   <footer class="privacy-footer"><a href="privacy.html">Privacy &amp; anonymous statistics</a></footer>
+
+  <!-- Bulk metadata editor -->
+  <div id="bulkEditModal" class="fixed inset-0 bg-black/50 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="bulkEditTitle" aria-describedby="bulkEditSummary" aria-hidden="true" tabindex="-1" inert>
+    <form id="bulkEditForm" class="card bulk-edit-dialog">
+      <div class="bulk-edit-heading">
+        <h3 id="bulkEditTitle">Edit selected works</h3>
+        <button type="button" id="bulkEditClose" class="btn ghost" aria-label="Close bulk editor">&times;</button>
+      </div>
+      <p id="bulkEditSummary" class="hint"></p>
+      <div class="bulk-edit-field">
+        <label for="bulkTitleText" class="label">Add to titles</label>
+        <div class="bulk-edit-controls">
+          <input id="bulkTitleText" name="titleText" class="input" placeholder="e.g. 3D" maxlength="200" autocomplete="off">
+          <fieldset class="bulk-position">
+            <legend class="sr-only">Title position</legend>
+            <label><input type="radio" name="titlePosition" value="start" checked><span>Beginning</span></label>
+            <label><input type="radio" name="titlePosition" value="end"><span>End</span></label>
+          </fieldset>
+        </div>
+      </div>
+      <div class="bulk-edit-field">
+        <label for="bulkTagsText" class="label">Add tags</label>
+        <div class="bulk-edit-controls bulk-tags-controls">
+          <textarea id="bulkTagsText" name="tagsText" class="textarea" rows="2" placeholder="3D, animation, background" aria-describedby="bulkTagsHelp"></textarea>
+          <fieldset class="bulk-position">
+            <legend class="sr-only">Tag position</legend>
+            <label><input type="radio" name="tagsPosition" value="start" checked><span>Beginning</span></label>
+            <label><input type="radio" name="tagsPosition" value="random"><span>Random</span></label>
+            <label><input type="radio" name="tagsPosition" value="end"><span>End</span></label>
+          </fieldset>
+        </div>
+        <p id="bulkTagsHelp" class="hint">Separate with commas. Existing tags move to your chosen position without duplicates. Up to 49 tags.</p>
+      </div>
+      <div class="bulk-preview">
+        <div class="bulk-preview-heading">
+          <label for="bulkPreviewFile" class="label">Preview</label>
+          <select id="bulkPreviewFile" class="select"></select>
+        </div>
+        <p id="bulkPreviewTitle" class="bulk-preview-title"></p>
+        <span id="bulkPreviewTagCount" class="hint"></span>
+        <div id="bulkPreviewTags" class="bulk-preview-tags"></div>
+      </div>
+      <p id="bulkEditError" class="bulk-edit-error" role="alert"></p>
+      <div class="bulk-edit-actions">
+        <button type="button" id="bulkEditCancel" class="btn ghost">Cancel</button>
+        <button type="submit" id="bulkEditApply" class="btn primary" disabled>Apply changes</button>
+      </div>
+    </form>
+  </div>
 
   <!-- Logs Panel -->
   <div id="logsPanel" class="fixed inset-0 bg-black/50 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="logsTitle" aria-hidden="true" tabindex="-1" inert>
@@ -615,7 +671,7 @@
 
   <script src="analytics.js?v=2.13"></script>
   <script src="local-ai.js?v=2.17"></script>
-  <script src="app.js?v=2.17"></script>
+  <script src="app.js?v=2.18"></script>
 </body>
 
 </html>

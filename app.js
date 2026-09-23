@@ -284,6 +284,9 @@ let files = [];
 let fileStatuses = [];
 let csvStore = new Map();
 const editingTags = new Set();
+const selectedMetadataRows = new Set();
+let bulkEditIndices = [];
+let bulkEditPlan = { entries: [], error: '' };
 const processingFiles = new Set();
 let importing = false;
 const thumbCache = new Map();
@@ -961,7 +964,7 @@ function addTableRow(idx, file) {
   const displayName = file.name.length > 25 ? file.name.substring(0, 25) + '...' : file.name;
   const tr = document.createElement('tr'); tr.id = 'row-' + idx;
   tr.innerHTML = `
-    <td class="p-3 text-[color:var(--subtle)]">${idx + 1}</td>
+    <td class="p-3 selection-cell"><label class="row-selection"><input id="select-row-${idx}" type="checkbox" class="metadata-checkbox" disabled><span>${idx + 1}</span></label></td>
     <td class="p-3"><button id="preview-${idx}" type="button" class="preview-button h-16 w-16 rounded-lg overflow-hidden relative" style="background:var(--muted)" disabled><img id="thumb-${idx}" class="h-16 w-16 object-cover hidden cursor-zoom-in" alt="" /></button></td>
     <td class="p-3 cell" id="f-${idx}"></td>
     <td class="p-3 cell col-title" id="t-${idx}">—</td>
@@ -974,6 +977,15 @@ function addTableRow(idx, file) {
     </div>
   </td>`;
   document.getElementById('resultsBody').appendChild(tr);
+  const selection = document.getElementById('select-row-' + idx);
+  selection.setAttribute('aria-label', `Select ${file.name}`);
+  selection.addEventListener('change', () => {
+    if (state.running || importing) return;
+    if (selection.checked && isEditableMetadataRow(idx)) selectedMetadataRows.add(idx);
+    else selectedMetadataRows.delete(idx);
+    document.getElementById('bulkEditStatus').textContent = '';
+    updateBulkSelectionUI();
+  });
   const fileCell = document.getElementById('f-' + idx);
   if (fileCell) {
     fileCell.appendChild(document.createTextNode(displayName + ' '));
@@ -1377,6 +1389,160 @@ window.regenerateFile = async function (idx) {
   csvStore.delete(name); envatoRows.delete(name); shutterRows.delete(name);
   await runSingleFile(idx);
 };
+
+/************** Bulk metadata editing **************/
+function isEditableMetadataRow(idx) {
+  return Boolean(files[idx] && fileStatuses[idx] === 'done' && csvStore.has(files[idx].name));
+}
+
+function editableMetadataIndices() {
+  return files.flatMap((file, idx) => isEditableMetadataRow(idx) ? [idx] : []);
+}
+
+function updateBulkSelectionUI() {
+  const ready = editableMetadataIndices();
+  const readySet = new Set(ready);
+  for (const idx of selectedMetadataRows) {
+    if (!readySet.has(idx)) selectedMetadataRows.delete(idx);
+  }
+  const locked = state.running || importing;
+  const selected = selectedMetadataRows.size;
+  document.getElementById('bulkToolbar').hidden = ready.length === 0;
+  document.getElementById('bulkSelectionCount').textContent = `${selected} of ${ready.length} selected`;
+  document.getElementById('bulkEditBtn').disabled = locked || selected === 0;
+  const all = document.getElementById('selectAllMetadata');
+  all.disabled = locked || ready.length === 0;
+  all.checked = ready.length > 0 && selected === ready.length;
+  all.indeterminate = selected > 0 && selected < ready.length;
+  document.querySelectorAll('#resultsBody .metadata-checkbox').forEach(checkbox => {
+    const idx = Number(checkbox.id.replace('select-row-', ''));
+    checkbox.checked = selectedMetadataRows.has(idx);
+    checkbox.disabled = locked || !readySet.has(idx);
+    checkbox.closest('tr').classList.toggle('metadata-selected', checkbox.checked);
+  });
+}
+
+function parseBulkTags(raw) {
+  const seen = new Set();
+  return String(raw || '').split(/[,;\n|]+/).map(tag => tag.trim()).filter(tag => {
+    const key = tag.toLowerCase();
+    if (!tag || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function addBulkTitleText(title, text, position) {
+  if (!text.trim()) return title;
+  const parts = [String(title || '').trim(), text.trim()];
+  if (position !== 'end') parts.reverse();
+  return parts.filter(Boolean).join(' ');
+}
+
+function insertBulkTags(existing, added, position, random = Math.random) {
+  if (!added.length) return [...existing];
+  const addedKeys = new Set(added.map(tag => tag.toLowerCase()));
+  const rest = existing.filter(tag => !addedKeys.has(tag.toLowerCase()));
+  if (position === 'end') return [...rest, ...added];
+  if (position === 'random') {
+    for (const tag of added) rest.splice(Math.floor(random() * (rest.length + 1)), 0, tag);
+    return rest;
+  }
+  return [...added, ...rest];
+}
+
+function planBulkEdit(indices, options, random = Math.random) {
+  const titleText = options.titleText.trim();
+  const added = parseBulkTags(options.tagsText);
+  if (!titleText && !added.length) return { entries: [], error: '' };
+  const entries = [];
+  for (const idx of new Set(indices)) {
+    if (!isEditableMetadataRow(idx)) return { entries: [], error: 'The selection changed. Close this window and select ready works again.' };
+    const name = files[idx].name;
+    const row = csvStore.get(name);
+    const envato = envatoRows.get(name);
+    const shutter = shutterRows.get(name);
+    const title = addBulkTitleText(row.title, titleText, options.titlePosition);
+    const tags = insertBulkTags(row.tags || [], added, options.tagsPosition, random);
+    const envatoTitle = envato && addBulkTitleText(envato.title90 || row.title, titleText, options.titlePosition);
+    const shutterTitle = shutter && addBulkTitleText(shutter.description || row.title, titleText, options.titlePosition);
+    if (tags.length > 49) return { entries: [], error: `${name} would have ${tags.length} tags (maximum 49). Add fewer tags or remove existing ones first. Nothing has been changed.` };
+    if (titleText && (title.length > 200 || (shutterTitle && shutterTitle.length > 200))) {
+      return { entries: [], error: `${name} would exceed the 200-character title limit. Use shorter text. Nothing has been changed.` };
+    }
+    if (titleText && envatoTitle && envatoTitle.length > 90) {
+      return { entries: [], error: `${name} would exceed Envato's 90-character title limit. Use shorter text. Nothing has been changed.` };
+    }
+    entries.push({ idx, name, before: { row, envato, shutter },
+      row: { ...row, title, tags },
+      envato: envato && (titleText ? { ...envato, title90: envatoTitle } : envato),
+      shutter: shutter && { ...shutter, ...(titleText ? { description: shutterTitle } : {}), ...(added.length ? { keywords: [...tags] } : {}) }
+    });
+  }
+  return { entries, error: '' };
+}
+
+function applyBulkEditPlan(plan) {
+  if (state.running || importing || plan.error || !plan.entries.length) return false;
+  // Validate every row before writing any of them; a stale preview must never partially apply.
+  if (plan.entries.some(entry => !isEditableMetadataRow(entry.idx) || files[entry.idx].name !== entry.name ||
+      csvStore.get(entry.name) !== entry.before.row || envatoRows.get(entry.name) !== entry.before.envato ||
+      shutterRows.get(entry.name) !== entry.before.shutter)) return false;
+  for (const entry of plan.entries) {
+    csvStore.set(entry.name, entry.row);
+    if (entry.envato) envatoRows.set(entry.name, entry.envato);
+    if (entry.shutter) shutterRows.set(entry.name, entry.shutter);
+    updateTableRow(entry.idx, { title: entry.row.title, tags: entry.row.tags });
+  }
+  return true;
+}
+
+function refreshBulkEditPreview() {
+  const form = document.getElementById('bulkEditForm');
+  bulkEditPlan = planBulkEdit(bulkEditIndices, {
+    titleText: form.elements.titleText.value,
+    titlePosition: form.elements.titlePosition.value,
+    tagsText: form.elements.tagsText.value,
+    tagsPosition: form.elements.tagsPosition.value
+  });
+  document.getElementById('bulkEditError').textContent = bulkEditPlan.error;
+  document.getElementById('bulkEditApply').disabled = Boolean(bulkEditPlan.error) || !bulkEditPlan.entries.length;
+  renderBulkEditPreview();
+}
+
+function renderBulkEditPreview() {
+  const idx = Number(document.getElementById('bulkPreviewFile').value);
+  const entry = bulkEditPlan.entries.find(item => item.idx === idx);
+  const row = entry?.row || csvStore.get(files[idx]?.name);
+  document.getElementById('bulkPreviewTitle').textContent = row?.title || '';
+  const tags = document.getElementById('bulkPreviewTags');
+  tags.replaceChildren();
+  for (const tag of row?.tags || []) {
+    const chip = document.createElement('span');
+    chip.textContent = tag;
+    tags.appendChild(chip);
+  }
+  document.getElementById('bulkPreviewTagCount').textContent = `${(row?.tags || []).length} tags`;
+}
+
+function showBulkEditDialog() {
+  if (state.running || importing) return;
+  bulkEditIndices = [...selectedMetadataRows].filter(isEditableMetadataRow).sort((a, b) => a - b);
+  if (!bulkEditIndices.length) return;
+  document.getElementById('bulkEditForm').reset();
+  document.getElementById('bulkEditSummary').textContent = `${bulkEditIndices.length} ready work${bulkEditIndices.length === 1 ? '' : 's'} selected. Changes also update your CSV exports.`;
+  document.getElementById('bulkEditApply').textContent = `Apply to ${bulkEditIndices.length} work${bulkEditIndices.length === 1 ? '' : 's'}`;
+  const preview = document.getElementById('bulkPreviewFile');
+  preview.replaceChildren();
+  for (const idx of bulkEditIndices) {
+    const option = document.createElement('option');
+    option.value = idx;
+    option.textContent = files[idx].name;
+    preview.appendChild(option);
+  }
+  refreshBulkEditPreview();
+  openDialog(bulkEditDialog, document.getElementById('bulkEditBtn'));
+}
 
 /************** Build CSVs **************/
 const ENVATO_HEADERS = [
@@ -1819,7 +1985,7 @@ let activeDialog = null;
 let dialogReturnFocus = null;
 
 function setDialogBackgroundInert(inert) {
-  [document.querySelector('.topbar'), document.querySelector('main'), document.getElementById('showLogsBtn')]
+  [document.querySelector('.topbar'), document.querySelector('main'), document.querySelector('footer'), document.getElementById('showLogsBtn')]
     .filter(Boolean)
     .forEach(element => { element.inert = inert; });
   document.body.classList.toggle('modal-open', inert);
@@ -1842,6 +2008,10 @@ function openDialog(dialog, trigger = document.activeElement) {
 
 function closeDialog(dialog = activeDialog, restoreFocus = true) {
   if (!dialog) return;
+  if (dialog.id === 'bulkEditModal') {
+    bulkEditIndices = [];
+    bulkEditPlan = { entries: [], error: '' };
+  }
   dialog.classList.add('hidden');
   dialog.setAttribute('aria-hidden', 'true');
   dialog.inert = true;
@@ -1930,6 +2100,31 @@ const contactDialog = wireDialog('contactBtn', 'contactModal', ['contactClose'])
 const guideDialog = wireDialog('guideBtn', 'guideModal', ['guideClose', 'guideCloseAlt']);
 const downloadDialog = wireDialog(null, 'downloadModal', ['downloadClose']);
 const envatoDialog = wireDialog('envatoSettingsBtn', 'envatoModal', ['envatoClose']);
+const bulkEditDialog = wireDialog(null, 'bulkEditModal', ['bulkEditClose', 'bulkEditCancel']);
+document.getElementById('bulkEditBtn').addEventListener('click', showBulkEditDialog);
+document.getElementById('selectAllMetadata').addEventListener('change', event => {
+  if (state.running || importing) return;
+  selectedMetadataRows.clear();
+  if (event.target.checked) editableMetadataIndices().forEach(idx => selectedMetadataRows.add(idx));
+  document.getElementById('bulkEditStatus').textContent = '';
+  updateBulkSelectionUI();
+});
+document.getElementById('bulkEditForm').addEventListener('input', event => {
+  if (event.target.id !== 'bulkPreviewFile') refreshBulkEditPreview();
+});
+document.getElementById('bulkPreviewFile').addEventListener('change', renderBulkEditPreview);
+document.getElementById('bulkEditForm').addEventListener('submit', event => {
+  event.preventDefault();
+  const count = bulkEditPlan.entries.length;
+  if (!applyBulkEditPlan(bulkEditPlan)) {
+    document.getElementById('bulkEditError').textContent = bulkEditPlan.error || 'The selection changed. Close this window and try again.';
+    document.getElementById('bulkEditApply').disabled = true;
+    return;
+  }
+  closeDialog(bulkEditDialog);
+  document.getElementById('bulkEditStatus').textContent = `Updated ${count} work${count === 1 ? '' : 's'}.`;
+  updateBulkSelectionUI();
+});
 document.getElementById('debugClose')?.addEventListener('click', () => {
   document.getElementById('debugInfo').style.display = 'none';
 });
@@ -2038,7 +2233,7 @@ document.getElementById('model').addEventListener('change', () => {
 });
 
 /************** Local browser models **************/
-const DEFAULT_LOCAL_MODEL = 'local-gemma-e2b';
+const DEFAULT_AI_MODEL = MODEL_GPT_5_6_LUNA;
 const localModelCache = new Map();
 let localSupportError = '';
 let localSupportChecked = false;
@@ -2116,11 +2311,11 @@ function initLocalModels() {
     const option = document.createElement('option');
     option.value = model.id;
     option.textContent = `${model.label} · ${model.size}`;
-    if (model.id === DEFAULT_LOCAL_MODEL) group.prepend(option);
+    if (model.id === 'local-gemma-e2b') group.prepend(option);
     else group.appendChild(option);
   }
-  $('#model').prepend(group);
-  $('#model').value = DEFAULT_LOCAL_MODEL;
+  $('#model').appendChild(group);
+  $('#model').value = DEFAULT_AI_MODEL;
   try {
     const saved = localStorage.getItem('meta_ai_model');
     if ([...$('#model').options].some(option => option.value === saved)) $('#model').value = saved;
@@ -2281,6 +2476,7 @@ function uiUpdate() {
   drop.setAttribute('aria-disabled', String(state.running || importing));
   renderLocalAI();
   updateFileCount();
+  updateBulkSelectionUI();
 }
 
 function handleLocationHash() {
