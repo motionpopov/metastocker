@@ -1,6 +1,7 @@
 import { DatabaseSync } from 'node:sqlite';
 
-export const MODELS = ['local-gemma-e2b', 'local-qwen-2b', 'local-gemma-e4b', 'gpt-5.6-luna', 'gpt-5.4-mini', 'gpt-5.4-nano'];
+// Retain the old Luna ID for historical events and already-open browser sessions.
+export const MODELS = ['local-gemma-e2b', 'local-qwen-2b', 'local-gemma-e4b', 'gpt-6-luna', 'gpt-5.6-luna', 'gpt-5.4-mini', 'gpt-5.4-nano'];
 export const KINDS = ['page_view', 'files_added', 'model_selected', 'model_load_start', 'model_load_success', 'model_load_error', 'model_load_cancel', 'model_unload', 'model_delete', 'gpu_available', 'gpu_unavailable', 'file_start', 'file_success', 'file_error', 'file_cancel', 'export'];
 export const ERRORS = ['memory', 'gpu', 'network', 'auth', 'quota', 'invalid_output', 'preview', 'unknown'];
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;

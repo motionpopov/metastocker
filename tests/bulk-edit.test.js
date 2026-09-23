@@ -156,21 +156,24 @@ test('stale previews, processing, importing and unfinished rows cannot modify me
 });
 
 test('API is the first/default model, with explicit saved choices preserved and obsolete choices ignored', () => {
-  for (const saved of [null, 'local-gemma-e2b', 'gpt-5.4-mini', 'obsolete-model']) {
+  for (const saved of [null, 'gpt-5.6-luna', 'gpt-6-luna', 'local-gemma-e2b', 'gpt-5.4-mini', 'obsolete-model']) {
+    const storage = new Map(saved ? [['meta_ai_model', saved]] : []);
     const select = {
-      value: '', options: ['gpt-5.6-luna', 'gpt-5.4-mini', 'gpt-5.4-nano'].map(value => ({ value })),
+      value: '', options: ['gpt-6-luna', 'gpt-5.4-mini', 'gpt-5.4-nano'].map(value => ({ value })),
       appendChild(group) { this.options.push(...group.children); }
     };
     const c = vm.createContext({
-      DEFAULT_AI_MODEL: 'gpt-5.6-luna',
+      DEFAULT_AI_MODEL: 'gpt-6-luna',
+      MODEL_GPT_6_LUNA: 'gpt-6-luna',
       $: id => id === '#model' ? select : { addEventListener() {} },
       document: { createElement: () => ({ children: [], appendChild(option) { this.children.push(option); }, prepend(option) { this.children.unshift(option); } }) },
       MetaStockerLocalAI: { MODELS: [{ id: 'local-gemma-e2b', label: 'Gemma', size: '3.5 GB' }] },
-      localStorage: { getItem: () => saved }, refreshLocalModelInfo() {}
+      localStorage: { getItem: key => storage.get(key) ?? null, setItem: (key, value) => storage.set(key, value) }, refreshLocalModelInfo() {}
     });
-    vm.runInContext(section('function initLocalModels', 'function selectedOutputKeys'), c);
+    vm.runInContext(section('function migrateLunaSettings', 'function selectedOutputKeys'), c);
     c.initLocalModels();
-    assert.equal(select.options[0].value, 'gpt-5.6-luna');
-    assert.equal(select.value, saved && saved !== 'obsolete-model' ? saved : 'gpt-5.6-luna');
+    assert.equal(select.options[0].value, 'gpt-6-luna');
+    assert.equal(select.value, saved && !['obsolete-model', 'gpt-5.6-luna'].includes(saved) ? saved : 'gpt-6-luna');
+    if (saved === 'gpt-5.6-luna') assert.equal(storage.get('meta_ai_model'), 'gpt-6-luna');
   }
 });

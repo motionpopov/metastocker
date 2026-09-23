@@ -324,7 +324,7 @@ const ENVATO_DEFAULTS = {
 let envatoDefaults = { ...ENVATO_DEFAULTS };
 let envatoRows = new Map();
 let shutterRows = new Map();
-const MODEL_GPT_5_6_LUNA = 'gpt-5.6-luna';
+const MODEL_GPT_6_LUNA = 'gpt-6-luna';
 const ADOBE_CATEGORIES = Object.freeze([
   Object.freeze({ id: 1, name: 'Animals' }),
   Object.freeze({ id: 2, name: 'Buildings and Architecture' }),
@@ -352,7 +352,7 @@ const ADOBE_CATEGORY_IDS = Object.freeze(ADOBE_CATEGORIES.map(category => catego
 const ADOBE_CATEGORY_PROMPT_LIST = ADOBE_CATEGORIES.map(category => `${category.id}. ${category.name}`).join('\n');
 
 function isLunaModel(model) {
-  return model === MODEL_GPT_5_6_LUNA;
+  return model === MODEL_GPT_6_LUNA;
 }
 
 function isLocalModel(model) {
@@ -796,7 +796,7 @@ async function buildThumbDataUrl(file, maxEdge = 480) {
 function isGrokModel(m) { return m.startsWith('grok'); }
 function getApiEndpoint(m) { return isGrokModel(m) ? 'https://api.x.ai/v1/chat/completions' : 'https://api.openai.com/v1/chat/completions'; }
 function modelTemperature(m) {
-  if (m.startsWith('gpt-5')) return undefined;
+  if (m.startsWith('gpt-5') || isLunaModel(m)) return undefined;
   return 0.2;
 }
 function getRetryDelay(result, attempt, isRateLimit) {
@@ -824,7 +824,7 @@ async function callOpenAI({ accessKey, model, imageDataUrl, prompt, responseForm
   }
   const temp = modelTemperature(model);
   if (temp !== undefined) body.temperature = temp;
-  if (model.startsWith('gpt-5')) body.reasoning_effort = 'medium';
+  if (model.startsWith('gpt-5') || isLunaModel(model)) body.reasoning_effort = 'medium';
   if (!isGrokModel(model)) body.service_tier = serviceTier;
   const headers = { 'Authorization': `Bearer ${accessKey}`, 'Content-Type': 'application/json' };
   const fetchOptions = { method: 'POST', headers, body: JSON.stringify(body) };
@@ -1607,7 +1607,8 @@ function buildFreepikCsv() {
 
 /************** Processing pipeline **************/
 const PRICING = {
-  'gpt-5.6-luna': { in: 0.10 / 1000000, cachedIn: 0.010 / 1000000, out: 0.60 / 1000000 },
+  // Flex, short-context token rates: https://developers.openai.com/api/docs/pricing
+  'gpt-6-luna': { in: 0.05 / 1000000, cachedIn: 0.005 / 1000000, out: 0.25 / 1000000 },
   'gpt-5.4-mini': { in: 0.375 / 1000000, cachedIn: 0.0375 / 1000000, out: 2.25 / 1000000 },
   'gpt-5.4-nano': { in: 0.10 / 1000000, cachedIn: 0.010 / 1000000, out: 0.625 / 1000000 }
 };
@@ -2233,7 +2234,7 @@ document.getElementById('model').addEventListener('change', () => {
 });
 
 /************** Local browser models **************/
-const DEFAULT_AI_MODEL = MODEL_GPT_5_6_LUNA;
+const DEFAULT_AI_MODEL = MODEL_GPT_6_LUNA;
 const localModelCache = new Map();
 let localSupportError = '';
 let localSupportChecked = false;
@@ -2304,7 +2305,22 @@ function renderLocalAI() {
   $('#startBtn').disabled = importing || (!state.running && !ready);
 }
 
+function migrateLunaSettings() {
+  try {
+    const legacyModel = 'gpt-5.6-luna';
+    const oldPrompt = localStorage.getItem(`meta_system_prompt_${legacyModel}`);
+    const newPromptKey = `meta_system_prompt_${MODEL_GPT_6_LUNA}`;
+    if (oldPrompt !== null && localStorage.getItem(newPromptKey) === null) {
+      localStorage.setItem(newPromptKey, oldPrompt);
+    }
+    if (localStorage.getItem('meta_ai_model') === legacyModel) {
+      localStorage.setItem('meta_ai_model', MODEL_GPT_6_LUNA);
+    }
+  } catch { }
+}
+
 function initLocalModels() {
+  migrateLunaSettings();
   const group = document.createElement('optgroup');
   group.label = 'Free local AI · on this device';
   for (const model of MetaStockerLocalAI.MODELS) {

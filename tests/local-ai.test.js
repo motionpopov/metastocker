@@ -29,7 +29,7 @@ function pipeline(generate) {
     workerFetch: async () => { cloudCalls++; throw new Error('Unexpected cloud call'); }
   });
   vm.runInContext([
-    section('const MODEL_GPT_5_6_LUNA', '/************** Column widths **************/'),
+    section('const MODEL_GPT_6_LUNA', '/************** Column widths **************/'),
     section('function parseAlwaysTags', '/************** Preview builders **************/'),
     section('function isGrokModel', '/************** Table UI **************/')
   ].join('\n'), context);

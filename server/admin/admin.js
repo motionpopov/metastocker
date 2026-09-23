@@ -2,7 +2,7 @@
 const $ = id => document.getElementById(id);
 const number = value => new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 1 }).format(value || 0);
 const percent = (part, total) => total ? number(100 * part / total) + '%' : '—';
-const modelNames = { 'local-gemma-e2b': 'Gemma 4 E2B', 'local-gemma-e4b': 'Gemma 4 E4B', 'local-qwen-2b': 'Qwen3.5 2B', 'gpt-5.6-luna': 'GPT-5.6 Luna', 'gpt-5.4-mini': 'GPT-5.4 Mini', 'gpt-5.4-nano': 'GPT-5.4 Nano' };
+const modelNames = { 'local-gemma-e2b': 'Gemma 4 E2B', 'local-gemma-e4b': 'Gemma 4 E4B', 'local-qwen-2b': 'Qwen3.5 2B', 'gpt-6-luna': 'GPT-6 Luna', 'gpt-5.6-luna': 'GPT-5.6 Luna', 'gpt-5.4-mini': 'GPT-5.4 Mini', 'gpt-5.4-nano': 'GPT-5.4 Nano' };
 const errorNames = { memory: 'Не хватает памяти', gpu: 'WebGPU / GPU', network: 'Сеть или таймаут', auth: 'Доступ к API', quota: 'Лимит API', invalid_output: 'Некорректный результат', preview: 'Не удалось прочитать файл', unknown: 'Другая ошибка' };
 const model = value => modelNames[value] || 'Неизвестная модель';
 const duration = value => value === null ? '—' : value < 60000 ? number(value / 1000) + ' с' : number(value / 60000) + ' мин';

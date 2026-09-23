@@ -25,6 +25,17 @@ test('schema rejects content, arbitrary model names and paths, raw errors, URLs 
   assert.throws(() => validateBatch(batch([event('file_start', { model })], { page: '/blog/' }), pages));
   assert.equal(validateBatch(batch([event('file_success', { model, duration: 2000 })]), pages).events[0].model, model);
 });
+test('analytics accepts GPT-6 Luna and keeps historical GPT-5.6 Luna events separate', () => {
+  const s = new Store(':memory:', now);
+  for (const luna of ['gpt-5.6-luna', 'gpt-6-luna']) {
+    s.record(validateBatch(batch([event('file_start', { model: luna }), event('file_success', { model: luna, duration: 1000 })]), pages), context, now);
+  }
+  const summary = s.summary(range);
+  assert.equal(summary.totals.success, 2);
+  assert.deepEqual(summary.models.map(row => row.model).sort(), ['gpt-5.6-luna', 'gpt-6-luna']);
+  assert.ok(summary.models.every(row => row.attempts === 1 && row.success === 1));
+  s.close();
+});
 test('parallel attempts, duplicated deliveries, exports and empty days aggregate correctly', () => {
   const s = new Store(':memory:', now);
   const b = batch([event('page_view'), event('files_added', { count: 3 }), event('model_selected', { model: 'local-gemma-e2b' }), event('file_start', { model, threads: 2 }), event('file_start', { model, threads: 2 }), event('file_start', { model, threads: 2 }), event('file_success', { model, duration: 3000 }), event('file_error', { model, error: 'memory' }), event('file_cancel', { model }), event('export', { format: 'adobe', count: 1 })]);
