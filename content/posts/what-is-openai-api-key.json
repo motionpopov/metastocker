@@ -1,0 +1,529 @@
+{
+  "slug": "what-is-openai-api-key",
+  "category": "local-ai",
+  "source_ids": [
+    "openai-authentication",
+    "openai-production",
+    "openai-spend",
+    "openai-quickstart",
+    "metastocker"
+  ],
+  "published": "2026-10-02",
+  "modified": "2026-10-02",
+  "en": {
+    "title": "What Is an OpenAI API Key and Why Do You Need One?",
+    "description": "Understand what an OpenAI API key does, how apps use it, why API costs differ from ChatGPT, and when MetaStocker can work without a key.",
+    "intro": "An OpenAI API key is a secret credential that an application uses to authenticate requests to the OpenAI API. It connects those requests with the relevant developer account or project and its permissions and usage. The key is not an AI model, a ChatGPT password or a prepaid package of answers.\n\nYou may encounter an API key field in a photo tool, automation script or other application that asks you to use your own OpenAI access. This guide explains what that field means and whether you need it. The OpenAI documentation and MetaStocker implementation were checked on October 2, 2026.",
+    "sections": [
+      {
+        "heading": "1. A key is an access credential for a program",
+        "paragraphs": [
+          "API stands for application programming interface: a way for one program to communicate with another service. Instead of you opening a chat and typing each message, an application sends a structured request and receives a response. An API key is one way to authenticate that request.",
+          "Think of the key as a pass for a particular service, with an important limit to the analogy: what it can do depends on permissions and the associated project. Possessing a key does not give unlimited access to every model or feature, remove request limits or guarantee that billing is ready."
+        ],
+        "bullets": [
+          "The application supplies a request; the key authenticates it.",
+          "The model processes the request; the key is not the model.",
+          "Account settings determine access, usage controls and billing."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. What happens when an application uses your key",
+        "paragraphs": [
+          "Consider an application that describes a product photo. You choose an image and provide context. The application prepares the information needed for a model request and sends that request with API authentication. OpenAI checks access and, if the request is accepted, returns the model's result. The application then shows or processes the answer.",
+          "The key identifies the API access used for the request. It does not decide which image details are true, check the answer for you or make the result suitable for a particular stock marketplace. Usage belongs to the applicable API account or project, even when another application supplies the interface."
+        ],
+        "bullets": [
+          "Input: your selected content and the task you want performed.",
+          "Access: the key, project permissions and applicable limits.",
+          "Output: a model response that the application still needs to handle."
+        ],
+        "example": "Illustrative workflow, not a recorded customer result:\nPhoto: a red backpack on a neutral background.\nTask: draft a factual title and relevant keywords.\nThe app sends the preview and task using API access, then displays the draft.\nYou check that the draft describes the backpack and does not invent a brand."
+      },
+      {
+        "heading": "3. Why an app asks for an OpenAI API key",
+        "paragraphs": [
+          "A key field often means that the application expects you to provide your own developer API access. This arrangement is commonly called bring your own key, or BYOK. Depending on its implemented features, the application can use that access for tasks such as drafting text, interpreting images or helping automate a workflow.",
+          "The application controls which API operations it calls and which information it sends. Your account controls the access and costs attached to your credential. Another service may instead include model access in its own offer or use another sign-in method. Read the application's explanation before assuming you must create or share a key."
+        ],
+        "bullets": [
+          "Ask what task the application performs with the key.",
+          "Check where your input and credential will be sent or stored.",
+          "Confirm whether API usage is billed to you or supplied by the service."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. API key, password and ChatGPT are different things",
+        "paragraphs": [
+          "Your account password is used for signing in. An API key is a credential a program can use for API requests. Do not put an account password into an API key field, and do not give an application your password because it asks for API access.",
+          "Using ChatGPT through its interface and connecting an application with a developer API key are different access routes. For MetaStocker's personal API mode, a ChatGPT subscription does not pay for requests charged to your developer API account. Check API billing independently. The key also does not grant an application automatic access to your ChatGPT conversation history.",
+          "OPENAI_API_KEY is simply a common environment variable name for supplying a key to developer tools. It is not a different product or another credential you must buy. MetaStocker uses its own OpenAI API key input, so you do not need to set up a terminal variable to use the app."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "5. The key authorizes access; it is not a balance",
+        "paragraphs": [
+          "Creating a credential and paying for model usage are separate actions. A valid key can still fail when its account lacks usable credits, the selected model is unavailable to that project or a limit has been reached. Keeping a copy of the key does not itself mean that the application is currently sending requests.",
+          "When planning API use, examine current pricing and the developer usage dashboard rather than the length or appearance of the key. Spend alerts notify you about costs but do not stop traffic. An enforced hard spend limit stops affected requests at the tracked cap, with possible enforcement delay. Begin with a small task and inspect usage before committing to a larger workflow."
+        ],
+        "bullets": [
+          "A new key is not proof of free credits or ready billing.",
+          "A paid ChatGPT plan is not a balance for MetaStocker's API calls.",
+          "Review actual API usage and spending controls in your own account."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. When MetaStocker needs a key and when it does not",
+        "paragraphs": [
+          "In MetaStocker, choosing GPT-6 Luna under OpenAI API · paid usage uses your own API key. The application sends image previews and task context directly from your browser to OpenAI. Choose that route when you want that model and accept its data handling and API costs. The key is entered in OpenAI API key; API access and billing must be available.",
+          "Local models provide another route. Their inference runs in your browser, without an OpenAI API key or API charges, and your images and prompts are not sent to OpenAI for inference. The first model download still requires internet, and the device needs compatible hardware. Local and API results both require your review.",
+          "If you have decided to use the API route, follow the separate step-by-step guide: https://metastocker.net/blog/how-to-get-openai-api-key.html. It explains account access, key creation, billing checks and a one-image test. This article helps you make that decision before setup."
+        ],
+        "bullets": [
+          "Choose local generation if you want browser inference without API fees.",
+          "Choose the API model only after checking access, costs and data handling.",
+          "Review the generated metadata whichever route you choose."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "7. Why you must keep an API key private",
+        "paragraphs": [
+          "Someone who obtains a usable secret may be able to perform API operations allowed by that key and cause usage on the associated account. Do not publish it in a repository, screenshot, shared spreadsheet or public website code. In a service you build, keep credentials on the server in private environment configuration or a secret manager.",
+          "A personal BYOK input also requires trust in the application and browser environment. MetaStocker keeps your entered key in browser session storage and uses it for direct OpenAI requests. Session storage is not a password vault. Avoid shared browsers, consider extensions that can read page data and remove the key from the input when finished.",
+          "If disclosure is suspected, revoke the exposed credential and review usage. For routine rotation, create a replacement, update the applications using it, verify their operation and retire the old key. Replacing a key changes the credential; it does not automatically remove data already shared or repair a billing problem."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "8. Quick answers before you create a key",
+        "paragraphs": [
+          "Do I need programming skills? Not necessarily. An application such as MetaStocker can provide the interface for a task. You still need to understand what it sends, how it stores your credential and who pays for API usage.",
+          "Is a key a subscription? No. It is an access credential. Subscription offers, API billing, model availability and app features are separate matters to check.",
+          "Will a key make an AI answer correct? No. It authenticates access. Accuracy depends on the task, input, model and subsequent checks.",
+          "Can I skip the key? Yes, when your chosen workflow does not require your personal OpenAI API access. MetaStocker's local mode is one example. If a tool explicitly requires your key, use its documentation to assess that route rather than borrowing somebody else's secret."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "I know which task the application will perform through the API.",
+      "I understand what input it sends and how it handles my credential.",
+      "I have checked who pays for API usage and which limits apply.",
+      "I can identify the difference between an API key and my account password.",
+      "I have considered whether a local workflow meets my needs.",
+      "If I use a key, I will keep it private and start with a small test."
+    ],
+    "illustration": {
+      "title": "What the key does in an AI application",
+      "steps": [
+        {
+          "label": "The app prepares a task",
+          "detail": "Your chosen content and instructions become a request."
+        },
+        {
+          "label": "The key authenticates access",
+          "detail": "Project permissions, billing and limits still apply."
+        },
+        {
+          "label": "You review the result",
+          "detail": "The model returns an answer; the key does not verify it."
+        }
+      ]
+    }
+  },
+  "ru": {
+    "title": "Что такое ключ OpenAI API и зачем он нужен",
+    "description": "Разберитесь, как работает ключ OpenAI API, зачем его просят приложения, чем оплата API отличается от ChatGPT и когда MetaStocker обходится без ключа.",
+    "intro": "Ключ OpenAI API — это секретные данные, с помощью которых приложение подтверждает право отправлять запросы к API OpenAI. Он связывает запросы с нужным аккаунтом или проектом на платформе для разработчиков, его правами и учётом использования. Ключ — это не модель AI, не пароль от ChatGPT и не предоплаченный набор ответов.\n\nПоле для API-ключа можно встретить в инструменте для обработки фотографий, скрипте автоматизации или другом приложении, которое предлагает использовать ваш собственный доступ к OpenAI. Это руководство объясняет, что означает такое поле и нужен ли вам ключ. Документация OpenAI и реализация MetaStocker проверены 2 октября 2026 года.",
+    "sections": [
+      {
+        "heading": "1. Ключ подтверждает право программы на доступ",
+        "paragraphs": [
+          "API расшифровывается как application programming interface, то есть программный интерфейс приложения. Это способ, которым одна программа общается с другим сервисом. Вместо того чтобы вы открывали чат и вводили каждое сообщение, приложение отправляет структурированный запрос и получает ответ. API-ключ — один из способов подтвердить право на такой запрос.",
+          "Ключ можно представить как пропуск к определённому сервису, но у этого сравнения есть важная оговорка: его возможности зависят от прав и связанного проекта. Наличие ключа не даёт неограниченного доступа ко всем моделям и функциям, не отменяет лимиты запросов и не гарантирует, что оплата уже настроена."
+        ],
+        "bullets": [
+          "Приложение формирует запрос, а ключ подтверждает право его отправить.",
+          "Модель обрабатывает запрос; сам ключ моделью не является.",
+          "Настройки аккаунта определяют доступ, контроль использования и оплату."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. Что происходит, когда приложение использует ваш ключ",
+        "paragraphs": [
+          "Рассмотрим приложение, которое описывает фотографию товара. Вы выбираете изображение и добавляете контекст. Приложение подготавливает нужные данные и отправляет запрос к модели, подтверждая доступ к API. OpenAI проверяет права и, если запрос принят, возвращает результат работы модели. Затем приложение показывает ответ или обрабатывает его дальше.",
+          "Ключ определяет, какой доступ к API используется для запроса. Он не устанавливает, какие детали изображения правдивы, не проверяет ответ за вас и не делает результат автоматически подходящим для определённого стока. Использование учитывается в соответствующем аккаунте или проекте API, даже если интерфейс предоставляет другое приложение."
+        ],
+        "bullets": [
+          "Входные данные: выбранный вами материал и задача, которую нужно выполнить.",
+          "Доступ: ключ, права проекта и действующие ограничения.",
+          "Результат: ответ модели, который приложению ещё нужно обработать."
+        ],
+        "example": "Условный пример работы, а не зафиксированный результат клиента:\nФото: красный рюкзак на нейтральном фоне.\nЗадача: подготовить черновой заголовок с фактическим описанием и подходящие ключевые слова.\nПриложение отправляет превью и задачу через API, затем показывает черновик.\nВы проверяете, что черновик описывает рюкзак и не приписывает ему выдуманный бренд."
+      },
+      {
+        "heading": "3. Зачем приложение просит ключ OpenAI API",
+        "paragraphs": [
+          "Поле для ключа часто означает, что приложение ожидает от вас собственный доступ к API на платформе для разработчиков. Такой подход обычно называют bring your own key, или BYOK: вы используете свой ключ. В зависимости от реализованных функций приложение может применять этот доступ для подготовки текста, анализа изображений или автоматизации работы.",
+          "Приложение определяет, какие операции API оно вызывает и какие данные отправляет. Ваш аккаунт определяет доступ и расходы, связанные с вашим ключом. Другой сервис может включать доступ к моделям в своё предложение или использовать иной способ входа. Прочитайте пояснения приложения, прежде чем считать, что ключ обязательно нужно создать или передать ему."
+        ],
+        "bullets": [
+          "Выясните, какую задачу приложение выполняет с помощью ключа.",
+          "Проверьте, куда будут отправляться и где храниться ваши данные и ключ.",
+          "Уточните, оплачиваете ли вы использование API сами или доступ предоставляет сервис."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. API-ключ, пароль и ChatGPT — разные вещи",
+        "paragraphs": [
+          "Пароль от аккаунта нужен для входа. API-ключ позволяет программе подтверждать доступ при отправке API-запросов. Не вставляйте пароль от аккаунта в поле для API-ключа и не передавайте приложению пароль лишь потому, что оно просит доступ к API.",
+          "Работа в интерфейсе ChatGPT и подключение приложения через API-ключ платформы для разработчиков — разные способы доступа. В режиме MetaStocker с личным API-ключом подписка ChatGPT не оплачивает запросы, расходы по которым относятся к вашему аккаунту API. Проверяйте оплату API отдельно. Ключ также не предоставляет приложению автоматический доступ к истории ваших разговоров в ChatGPT.",
+          "OPENAI_API_KEY — всего лишь распространённое имя переменной окружения для передачи ключа инструментам разработчика. Это не другой продукт и не дополнительные данные для доступа, которые нужно покупать. В MetaStocker есть собственное поле OpenAI API key, поэтому для работы с приложением не нужно настраивать переменную в терминале."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "5. Ключ разрешает доступ, но не заменяет баланс",
+        "paragraphs": [
+          "Создание ключа и оплата использования модели — отдельные действия. Даже действующий ключ может не сработать, если на аккаунте нет доступных средств, выбранная модель недоступна этому проекту или достигнут лимит. Само наличие сохранённой копии ключа не означает, что приложение прямо сейчас отправляет запросы.",
+          "Планируя работу через API, изучайте актуальные цены и раздел учёта использования на платформе для разработчиков, а не длину или внешний вид ключа. Уведомления о расходах сообщают о затратах, но не останавливают запросы. Жёсткий лимит расходов, если он включён, останавливает соответствующие запросы при достижении учтённого предела; применение ограничения может происходить с задержкой. Начните с небольшой задачи и проверьте использование, прежде чем запускать большой объём работы."
+        ],
+        "bullets": [
+          "Новый ключ не подтверждает наличие бесплатных средств или готовность оплаты.",
+          "Платная подписка ChatGPT не является балансом для API-запросов MetaStocker.",
+          "Проверяйте фактическое использование API и настройки расходов в своём аккаунте."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. Когда MetaStocker нужен ключ, а когда можно без него",
+        "paragraphs": [
+          "Если в MetaStocker выбрать GPT-6 Luna в группе OpenAI API · paid usage, приложение будет использовать ваш собственный API-ключ. Превью изображений и контекст задачи отправляются напрямую из браузера в OpenAI. Выбирайте этот вариант, когда хотите работать с этой моделью и принимаете условия обработки данных и расходы на API. Ключ вводится в поле OpenAI API key; доступ к API должен быть разрешён, а оплата — настроена.",
+          "Локальные модели предлагают другой вариант. Их вычисления выполняются в браузере, без ключа OpenAI API и оплаты API; изображения и запросы не отправляются в OpenAI для обработки. Для первого скачивания модели всё равно нужен интернет, а устройство должно иметь совместимое оборудование. И локальные результаты, и результаты API требуют вашей проверки.",
+          "Если вы решили использовать API, следуйте отдельному пошаговому руководству: https://metastocker.net/blog/ru/how-to-get-openai-api-key.html. В нём описаны доступ к аккаунту, создание ключа, проверка оплаты и тест на одном изображении. Эта статья помогает принять решение до начала настройки."
+        ],
+        "bullets": [
+          "Выберите локальную генерацию, если хотите обработку в браузере без оплаты API.",
+          "Выбирайте модель через API после проверки доступа, расходов и обработки данных.",
+          "Проверяйте сгенерированные метаданные при любом варианте работы."
+        ],
+        "example": ""
+      },
+      {
+        "heading": "7. Почему API-ключ нужно хранить в тайне",
+        "paragraphs": [
+          "Человек, получивший действующий секретный ключ, может выполнить разрешённые этим ключом операции API и создать расход на связанном аккаунте. Не публикуйте ключ в репозитории, скриншоте, общей таблице или коде общедоступного сайта. В собственном сервисе храните ключи на сервере в закрытых настройках окружения или менеджере секретов.",
+          "Личное поле BYOK также требует доверия к приложению и окружению браузера. MetaStocker хранит введённый ключ в сессионном хранилище браузера и использует его для прямых запросов к OpenAI. Сессионное хранилище не является менеджером паролей. Избегайте общих браузеров, учитывайте расширения, которые могут читать данные страницы, и очищайте поле с ключом после работы.",
+          "Если вы подозреваете, что ключ был раскрыт, отзовите его и проверьте использование API. При плановой замене создайте новый ключ, обновите его в приложениях, проверьте их работу и отзовите старый. Замена ключа меняет данные для доступа; она не удаляет автоматически уже переданные сведения и не исправляет проблему с оплатой."
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "8. Короткие ответы перед созданием ключа",
+        "paragraphs": [
+          "Нужно ли уметь программировать? Не обязательно. Такое приложение, как MetaStocker, может предоставить интерфейс для выполнения задачи. Вам всё равно нужно понимать, что оно отправляет, как хранит ваш ключ и кто оплачивает использование API.",
+          "Ключ — это подписка? Нет. Он подтверждает право на доступ. Условия подписок, оплату API, доступность моделей и функции приложения нужно проверять отдельно.",
+          "Сделает ли ключ ответ AI правильным? Нет. Он подтверждает доступ. Точность зависит от задачи, входных данных, модели и последующих проверок.",
+          "Можно ли обойтись без ключа? Да, если выбранный способ работы не требует вашего личного доступа к OpenAI API. Один из примеров — локальный режим MetaStocker. Если инструмент прямо требует ваш ключ, изучите его документацию и оцените такой вариант, вместо того чтобы брать чужой секретный ключ."
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "Я знаю, какую задачу приложение будет выполнять через API.",
+      "Я понимаю, какие данные оно отправляет и как обращается с моим ключом.",
+      "Я проверил, кто оплачивает использование API и какие ограничения действуют.",
+      "Я понимаю разницу между API-ключом и паролем от аккаунта.",
+      "Я оценил, подходит ли мне локальный способ работы.",
+      "Если я использую ключ, то сохраню его в тайне и начну с небольшого теста."
+    ],
+    "illustration": {
+      "title": "Роль ключа в приложении с AI",
+      "steps": [
+        {
+          "label": "Приложение готовит задачу",
+          "detail": "Выбранные вами материалы и инструкции становятся запросом."
+        },
+        {
+          "label": "Ключ подтверждает доступ",
+          "detail": "Права проекта, оплата и ограничения продолжают действовать."
+        },
+        {
+          "label": "Вы проверяете результат",
+          "detail": "Модель возвращает ответ; ключ не проверяет его точность."
+        }
+      ]
+    }
+  },
+  "bn": {
+    "title": "OpenAI API key কী এবং কেন দরকার?",
+    "description": "OpenAI API key কী কাজ করে, অ্যাপ কীভাবে ব্যবহার করে, API ও ChatGPT-এর খরচ কেন আলাদা এবং কখন MetaStocker-এ কী দরকার হয় না, তা সহজে জানুন।",
+    "intro": "OpenAI API key হলো গোপন পরিচয়পত্র, যা দিয়ে কোনো অ্যাপ্লিকেশন OpenAI API-তে পাঠানো অনুরোধের পরিচয় যাচাই করে। এটি অনুরোধগুলোকে সংশ্লিষ্ট ডেভেলপার অ্যাকাউন্ট বা প্রকল্প এবং তার অনুমতি ও ব্যবহারের হিসাবের সঙ্গে যুক্ত করে। কী কোনো AI মডেল, ChatGPT-এর পাসওয়ার্ড বা অগ্রিম কেনা উত্তরের প্যাকেজ নয়।\n\nছবির কোনো টুল, স্বয়ংক্রিয় কাজের স্ক্রিপ্ট বা অন্য অ্যাপ্লিকেশনে API key দেওয়ার ঘর দেখতে পারেন, যেখানে নিজের OpenAI প্রবেশাধিকার ব্যবহার করতে বলা হয়। সেই ঘরের অর্থ কী এবং আপনার তা দরকার কি না, এই নির্দেশিকায় ব্যাখ্যা করা হয়েছে। OpenAI-এর নথি এবং MetaStocker-এর বাস্তবায়ন ২ অক্টোবর ২০২৬ তারিখে যাচাই করা হয়েছে।",
+    "sections": [
+      {
+        "heading": "১. কী হলো প্রোগ্রামের প্রবেশাধিকারের পরিচয়পত্র",
+        "paragraphs": [
+          "API-এর পূর্ণরূপ application programming interface: একটি প্রোগ্রামের অন্য সেবার সঙ্গে যোগাযোগ করার উপায়। আপনি চ্যাট খুলে প্রতিটি বার্তা লেখার বদলে অ্যাপ্লিকেশন নির্দিষ্ট কাঠামোর অনুরোধ পাঠায় এবং উত্তর পায়। API key সেই অনুরোধের পরিচয় যাচাই করার একটি উপায়।",
+          "কীকে নির্দিষ্ট একটি সেবায় প্রবেশের পাস হিসেবে ভাবতে পারেন, তবে তুলনাটির একটি গুরুত্বপূর্ণ সীমা আছে: কী দিয়ে কী করা যাবে, তা অনুমতি এবং সংশ্লিষ্ট প্রকল্পের ওপর নির্ভর করে। কী থাকলেই সব মডেল বা সুবিধায় সীমাহীন প্রবেশাধিকার পাওয়া যায় না, অনুরোধের সীমা উঠে যায় না বা বিলিং প্রস্তুত আছে বলে নিশ্চিত হওয়া যায় না।"
+        ],
+        "bullets": [
+          "অ্যাপ্লিকেশন অনুরোধ পাঠায়; কী তার পরিচয় যাচাই করে।",
+          "মডেল অনুরোধ প্রক্রিয়া করে; কী নিজে মডেল নয়।",
+          "অ্যাকাউন্টের সেটিংস প্রবেশাধিকার, ব্যবহার নিয়ন্ত্রণ এবং বিলিং নির্ধারণ করে।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "২. অ্যাপ্লিকেশন আপনার কী ব্যবহার করলে কী ঘটে",
+        "paragraphs": [
+          "ধরুন, একটি অ্যাপ্লিকেশন পণ্যের ছবির বর্ণনা তৈরি করে। আপনি ছবি বেছে নিয়ে প্রাসঙ্গিক তথ্য দেন। অ্যাপ্লিকেশন মডেলে অনুরোধ পাঠানোর জন্য প্রয়োজনীয় তথ্য প্রস্তুত করে এবং API পরিচয় যাচাইয়ের ব্যবস্থা দিয়ে অনুরোধটি পাঠায়। OpenAI প্রবেশাধিকার পরীক্ষা করে এবং অনুরোধ গ্রহণ করা হলে মডেলের ফলাফল ফেরত দেয়। তারপর অ্যাপ্লিকেশন উত্তর দেখায় বা প্রক্রিয়া করে।",
+          "কী অনুরোধে ব্যবহৃত API প্রবেশাধিকার শনাক্ত করে। ছবির কোন বিবরণ সত্য, তা এটি নির্ধারণ করে না, আপনার হয়ে উত্তর যাচাই করে না বা ফলাফল কোনো নির্দিষ্ট স্টক মার্কেটপ্লেসের উপযোগী করে না। অন্য অ্যাপ্লিকেশন ইন্টারফেস দিলেও ব্যবহার সংশ্লিষ্ট API অ্যাকাউন্ট বা প্রকল্পের হিসাবে জমা হয়।"
+        ],
+        "bullets": [
+          "ইনপুট: আপনার বেছে নেওয়া বিষয়বস্তু এবং যে কাজ করাতে চান।",
+          "প্রবেশাধিকার: কী, প্রকল্পের অনুমতি এবং প্রযোজ্য সীমা।",
+          "আউটপুট: মডেলের উত্তর, যা অ্যাপ্লিকেশনকে এরপরও সামলাতে হয়।"
+        ],
+        "example": "কাজের ধাপ বোঝানোর উদাহরণ; কোনো গ্রাহকের নথিবদ্ধ ফলাফল নয়:\nছবি: নিরপেক্ষ পটভূমিতে একটি লাল ব্যাকপ্যাক।\nকাজ: তথ্যনিষ্ঠ শিরোনাম ও প্রাসঙ্গিক কীওয়ার্ডের খসড়া তৈরি করা।\nঅ্যাপ API প্রবেশাধিকার দিয়ে প্রিভিউ ও কাজের নির্দেশনা পাঠায়, তারপর খসড়া দেখায়।\nখসড়ায় ব্যাকপ্যাকের বর্ণনা আছে এবং কোনো ব্র্যান্ড বানিয়ে যোগ করা হয়নি কি না, আপনি যাচাই করেন।"
+      },
+      {
+        "heading": "৩. অ্যাপ কেন OpenAI API key চায়",
+        "paragraphs": [
+          "কী দেওয়ার ঘর থাকলে প্রায়ই বোঝায় যে অ্যাপ্লিকেশন আপনার নিজের ডেভেলপার API প্রবেশাধিকার চায়। এই ব্যবস্থাকে সাধারণত bring your own key বা BYOK বলা হয়। অ্যাপ্লিকেশনে বাস্তবায়িত সুবিধা অনুযায়ী সে এই প্রবেশাধিকার দিয়ে লেখার খসড়া তৈরি, ছবির বিষয়বস্তু বোঝা বা কাজের ধাপ স্বয়ংক্রিয় করতে সাহায্য করার মতো কাজ করতে পারে।",
+          "অ্যাপ্লিকেশন কোন API কাজ চালায় এবং কোন তথ্য পাঠায়, তা অ্যাপ্লিকেশন নিয়ন্ত্রণ করে। আপনার পরিচয়পত্রের সঙ্গে যুক্ত প্রবেশাধিকার ও খরচ আপনার অ্যাকাউন্ট নিয়ন্ত্রণ করে। অন্য সেবায় মডেল ব্যবহারের সুযোগ তাদের অফারের অন্তর্ভুক্ত থাকতে পারে বা সাইন ইন করার অন্য পদ্ধতি থাকতে পারে। কী তৈরি বা ভাগ করে দিতেই হবে ধরে নেওয়ার আগে অ্যাপ্লিকেশনের ব্যাখ্যা পড়ুন।"
+        ],
+        "bullets": [
+          "অ্যাপ্লিকেশন কী দিয়ে কোন কাজ করে, তা জানুন।",
+          "আপনার ইনপুট ও পরিচয়পত্র কোথায় পাঠানো বা সংরক্ষণ করা হবে, তা দেখুন।",
+          "API ব্যবহারের বিল আপনাকে দিতে হবে, নাকি সেবাটি সেই সুবিধা দেয়, তা নিশ্চিত করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৪. API key, পাসওয়ার্ড ও ChatGPT আলাদা বিষয়",
+        "paragraphs": [
+          "অ্যাকাউন্টের পাসওয়ার্ড দিয়ে সাইন ইন করা হয়। API key হলো পরিচয়পত্র, যা প্রোগ্রাম API অনুরোধের জন্য ব্যবহার করতে পারে। API key দেওয়ার ঘরে অ্যাকাউন্টের পাসওয়ার্ড দেবেন না, এবং কোনো অ্যাপ্লিকেশন API প্রবেশাধিকার চাইলেই তাকে পাসওয়ার্ড দিয়ে দেবেন না।",
+          "ChatGPT-এর ইন্টারফেসে সেটি ব্যবহার করা এবং ডেভেলপার API key দিয়ে অ্যাপ্লিকেশন যুক্ত করা প্রবেশাধিকারের আলাদা পথ। MetaStocker-এর ব্যক্তিগত API মোডে ডেভেলপার API অ্যাকাউন্টে বিল হওয়া অনুরোধের খরচ ChatGPT-এর সাবস্ক্রিপশন মেটায় না। API বিলিং আলাদাভাবে যাচাই করুন। কী দিয়ে কোনো অ্যাপ্লিকেশন আপনার ChatGPT কথোপকথনের ইতিহাসেও স্বয়ংক্রিয় প্রবেশাধিকার পায় না।",
+          "OPENAI_API_KEY শুধু ডেভেলপার টুলে কী দেওয়ার জন্য ব্যবহৃত এনভায়রনমেন্ট ভেরিয়েবলের প্রচলিত নাম। এটি আলাদা পণ্য বা কিনতে হবে এমন অন্য পরিচয়পত্র নয়। MetaStocker নিজের OpenAI API key ইনপুট ব্যবহার করে, তাই অ্যাপটি ব্যবহার করতে টার্মিনালে ভেরিয়েবল সেট করার দরকার নেই।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "৫. কী প্রবেশের অনুমতি দেয়; এটি ব্যালেন্স নয়",
+        "paragraphs": [
+          "পরিচয়পত্র তৈরি করা এবং মডেল ব্যবহারের জন্য অর্থ দেওয়া আলাদা কাজ। বৈধ কীও কাজ না করতে পারে, যদি অ্যাকাউন্টে ব্যবহারযোগ্য ক্রেডিট না থাকে, নির্বাচিত মডেল প্রকল্পটির জন্য উপলভ্য না হয় বা কোনো সীমা পৌঁছে যায়। কীটির কপি রাখা মানেই অ্যাপ্লিকেশন এখন অনুরোধ পাঠাচ্ছে, এমন নয়।",
+          "API ব্যবহারের পরিকল্পনা করার সময় কীটির দৈর্ঘ্য বা চেহারার বদলে বর্তমান মূল্য এবং ডেভেলপার ব্যবহারের ড্যাশবোর্ড দেখুন। খরচের সতর্কতা ব্যয় সম্পর্কে জানায়, কিন্তু অনুরোধ বন্ধ করে না। কার্যকর করা কঠোর খরচের সীমা হিসাব করা ব্যয় নির্ধারিত সীমায় পৌঁছালে সংশ্লিষ্ট অনুরোধ বন্ধ করে; তবে কার্যকর হতে দেরি হতে পারে। ছোট একটি কাজ দিয়ে শুরু করুন এবং বড় পরিসরে কাজ করার সিদ্ধান্ত নেওয়ার আগে ব্যবহার দেখুন।"
+        ],
+        "bullets": [
+          "নতুন কী বিনামূল্যের ক্রেডিট বা প্রস্তুত বিলিংয়ের প্রমাণ নয়।",
+          "অর্থপ্রদত্ত ChatGPT পরিকল্পনা MetaStocker-এর API অনুরোধের ব্যালেন্স নয়।",
+          "নিজের অ্যাকাউন্টে প্রকৃত API ব্যবহার ও খরচ নিয়ন্ত্রণের ব্যবস্থা দেখুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৬. কখন MetaStocker-এ কী দরকার, কখন দরকার নেই",
+        "paragraphs": [
+          "MetaStocker-এ OpenAI API · paid usage অংশ থেকে GPT-6 Luna বেছে নিলে আপনার নিজের API key ব্যবহার হয়। অ্যাপ্লিকেশন ছবির প্রিভিউ ও কাজের প্রাসঙ্গিক তথ্য সরাসরি ব্রাউজার থেকে OpenAI-এ পাঠায়। সেই মডেল ব্যবহার করতে চাইলে এবং তথ্য ব্যবহারের পদ্ধতি ও API খরচ মেনে নিলে এই পথ বেছে নিন। কী OpenAI API key ঘরে দিতে হয়; API প্রবেশাধিকার ও বিলিং উপলভ্য থাকতে হবে।",
+          "স্থানীয় মডেল আরেকটি পথ দেয়। এগুলো ব্রাউজারেই চলে, OpenAI API key বা API খরচ লাগে না, এবং মডেল চালানোর জন্য আপনার ছবি ও প্রম্পট OpenAI-এ পাঠানো হয় না। প্রথমবার মডেল ডাউনলোড করতে অবশ্যই ইন্টারনেট লাগে এবং ডিভাইসে উপযুক্ত হার্ডওয়্যার থাকতে হয়। স্থানীয় মডেল ও API—দুটির ফলাফলই আপনার যাচাই করা দরকার।",
+          "API ব্যবহারের সিদ্ধান্ত নিয়ে থাকলে আলাদা ধাপে ধাপে নির্দেশিকা অনুসরণ করুন: https://metastocker.net/blog/bn/how-to-get-openai-api-key.html । সেখানে অ্যাকাউন্টে প্রবেশ, কী তৈরি, বিলিং যাচাই এবং একটি ছবি দিয়ে পরীক্ষার ব্যাখ্যা আছে। সেটআপের আগে সেই সিদ্ধান্ত নিতে এই নিবন্ধ আপনাকে সাহায্য করে।"
+        ],
+        "bullets": [
+          "API খরচ ছাড়া ব্রাউজারে মডেল চালাতে চাইলে স্থানীয়ভাবে তৈরি করার পথ বেছে নিন।",
+          "প্রবেশাধিকার, খরচ এবং তথ্য ব্যবহারের পদ্ধতি যাচাই করেই API মডেল বেছে নিন।",
+          "যে পথই বেছে নিন, তৈরি হওয়া মেটাডেটা পর্যালোচনা করুন।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "৭. API key কেন গোপন রাখতে হবে",
+        "paragraphs": [
+          "কেউ ব্যবহারযোগ্য গোপন মান পেলে সেই কী দিয়ে অনুমোদিত API কাজ করতে এবং সংশ্লিষ্ট অ্যাকাউন্টে ব্যবহার বাড়াতে সক্ষম হতে পারেন। রিপোজিটরি, স্ক্রিনশট, ভাগ করা স্প্রেডশিট বা সর্বজনীন ওয়েবসাইটের কোডে এটি প্রকাশ করবেন না। নিজের তৈরি সেবায় পরিচয়পত্র সার্ভারে ব্যক্তিগত এনভায়রনমেন্ট কনফিগারেশন বা সিক্রেট ম্যানেজারে রাখুন।",
+          "ব্যক্তিগত BYOK ইনপুট ব্যবহার করতেও অ্যাপ্লিকেশন ও ব্রাউজারের পরিবেশের ওপর আস্থা দরকার। MetaStocker দেওয়া কী ব্রাউজারের সেশন স্টোরেজে রাখে এবং সরাসরি OpenAI অনুরোধে ব্যবহার করে। সেশন স্টোরেজ পাসওয়ার্ড রাখার সুরক্ষিত ভান্ডার নয়। অন্যের সঙ্গে ভাগ করা ব্রাউজার এড়িয়ে চলুন, পাতার তথ্য পড়তে পারে এমন এক্সটেনশনের কথা বিবেচনা করুন এবং কাজ শেষে ইনপুট থেকে কী সরান।",
+          "ফাঁস হয়েছে বলে সন্দেহ হলে প্রকাশিত পরিচয়পত্র বাতিল করুন এবং ব্যবহার দেখুন। নিয়মিত কী বদলানোর ক্ষেত্রে নতুন কী তৈরি করুন, সেটি ব্যবহারকারী অ্যাপ্লিকেশনগুলোতে বসান, সেগুলোর কাজ যাচাই করুন এবং পুরোনো কী বাতিল করুন। কী বদলালে পরিচয়পত্র বদলে যায়; আগে ভাগ করা তথ্য স্বয়ংক্রিয়ভাবে মুছে যায় না বা বিলিংয়ের সমস্যা ঠিক হয় না।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "৮. কী তৈরির আগে কিছু প্রশ্নের সংক্ষিপ্ত উত্তর",
+        "paragraphs": [
+          "প্রোগ্রামিং জানতেই হবে? সব সময় নয়। MetaStocker-এর মতো অ্যাপ্লিকেশন কোনো কাজের জন্য ইন্টারফেস দিতে পারে। তবে অ্যাপ কী পাঠায়, পরিচয়পত্র কীভাবে রাখে এবং API ব্যবহারের খরচ কে দেয়, তা আপনাকে বুঝতে হবে।",
+          "কী কি সাবস্ক্রিপশন? না। এটি প্রবেশাধিকারের পরিচয়পত্র। সাবস্ক্রিপশনের অফার, API বিলিং, মডেলের প্রাপ্যতা এবং অ্যাপের সুবিধা আলাদাভাবে যাচাই করার বিষয়।",
+          "কী থাকলেই কি AI-এর উত্তর সঠিক হবে? না। এটি প্রবেশাধিকারের পরিচয় যাচাই করে। নির্ভুলতা নির্ভর করে কাজ, ইনপুট, মডেল এবং পরবর্তী যাচাইয়ের ওপর।",
+          "কী বাদ দিতে পারি? হ্যাঁ, যদি নির্বাচিত কাজের পদ্ধতিতে নিজের OpenAI API প্রবেশাধিকার দরকার না হয়। MetaStocker-এর স্থানীয় মোড একটি উদাহরণ। কোনো টুল স্পষ্টভাবে আপনার কী চাইলে অন্যের গোপন মান ধার করার বদলে সেই পথ বুঝতে টুলের নথি পড়ুন।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "অ্যাপ্লিকেশন API দিয়ে কোন কাজ করবে, তা আমি জানি।",
+      "অ্যাপ কোন ইনপুট পাঠায় এবং আমার পরিচয়পত্র কীভাবে সামলায়, তা আমি বুঝি।",
+      "API ব্যবহারের খরচ কে দেয় এবং কোন সীমা প্রযোজ্য, তা আমি যাচাই করেছি।",
+      "API key এবং আমার অ্যাকাউন্টের পাসওয়ার্ডের পার্থক্য আমি চিনতে পারি।",
+      "স্থানীয়ভাবে কাজ করার পদ্ধতি আমার চাহিদা মেটায় কি না, তা আমি বিবেচনা করেছি।",
+      "কী ব্যবহার করলে সেটি গোপন রাখব এবং ছোট একটি পরীক্ষা দিয়ে শুরু করব।"
+    ],
+    "illustration": {
+      "title": "AI অ্যাপ্লিকেশনে API key-এর ভূমিকা",
+      "steps": [
+        {
+          "label": "অ্যাপ কাজ প্রস্তুত করে",
+          "detail": "আপনার বেছে নেওয়া বিষয়বস্তু ও নির্দেশনা অনুরোধে রূপ নেয়।"
+        },
+        {
+          "label": "কী প্রবেশের পরিচয় যাচাই করে",
+          "detail": "প্রকল্পের অনুমতি, বিলিং এবং সীমা তারপরও প্রযোজ্য থাকে।"
+        },
+        {
+          "label": "আপনি ফলাফল পর্যালোচনা করেন",
+          "detail": "মডেল উত্তর দেয়; কী সেই উত্তর যাচাই করে না।"
+        }
+      ]
+    }
+  },
+  "hi": {
+    "title": "OpenAI API key क्या है और इसकी ज़रूरत क्यों पड़ती है?",
+    "description": "जानें कि OpenAI API कुंजी क्या करती है, अनुप्रयोग इसे कैसे इस्तेमाल करते हैं, API का खर्च ChatGPT से अलग क्यों है और MetaStocker बिना कुंजी कब काम करता है।",
+    "intro": "OpenAI API कुंजी एक गुप्त पहचान साधन है, जिससे कोई अनुप्रयोग OpenAI API को भेजे गए अनुरोधों का सत्यापन कराता है। यह उन अनुरोधों को संबंधित डेवलपर खाते या प्रोजेक्ट तथा उसकी अनुमतियों और इस्तेमाल से जोड़ती है। कुंजी कोई AI मॉडल, ChatGPT का पासवर्ड या पहले से खरीदा हुआ उत्तरों का पैकेज नहीं है।\n\nतस्वीरों के किसी उपकरण, स्वचालन स्क्रिप्ट या दूसरे अनुप्रयोग में API कुंजी का इनपुट दिखाई दे सकता है, जहाँ आपको अपनी OpenAI पहुँच इस्तेमाल करनी होती है। यह मार्गदर्शिका समझाती है कि उस इनपुट का क्या अर्थ है और क्या आपको उसकी ज़रूरत है। OpenAI के दस्तावेज़ों और MetaStocker के कार्यान्वयन की जाँच 2 अक्टूबर, 2026 को की गई थी।",
+    "sections": [
+      {
+        "heading": "1. कुंजी प्रोग्राम के लिए पहुँच सत्यापित करने का साधन है",
+        "paragraphs": [
+          "API का पूरा नाम अनुप्रयोग प्रोग्रामिंग इंटरफ़ेस है: यह एक प्रोग्राम के दूसरे सेवा तंत्र से संवाद करने का तरीका है। आपके चैट खोलकर हर संदेश लिखने के बजाय अनुप्रयोग एक संरचित अनुरोध भेजता है और उत्तर पाता है। API कुंजी उस अनुरोध का सत्यापन करने का एक तरीका है।",
+          "कुंजी को किसी खास सेवा का प्रवेश पत्र समझ सकते हैं, लेकिन इस तुलना की एक सीमा है: उससे क्या किया जा सकता है, यह अनुमतियों और संबंधित प्रोजेक्ट पर निर्भर करता है। कुंजी होने से हर मॉडल या सुविधा की असीमित पहुँच नहीं मिलती, अनुरोधों की सीमाएँ नहीं हटतीं और भुगतान व्यवस्था तैयार होने की गारंटी नहीं मिलती।"
+        ],
+        "bullets": [
+          "अनुप्रयोग अनुरोध भेजता है; कुंजी उसका सत्यापन करती है।",
+          "मॉडल अनुरोध संसाधित करता है; कुंजी स्वयं मॉडल नहीं है।",
+          "खाते की सेटिंग पहुँच, इस्तेमाल पर नियंत्रण और भुगतान तय करती हैं।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "2. अनुप्रयोग आपकी कुंजी इस्तेमाल करता है तो क्या होता है",
+        "paragraphs": [
+          "किसी उत्पाद की तस्वीर का वर्णन करने वाला अनुप्रयोग लें। आप तस्वीर चुनते हैं और संदर्भ देते हैं। अनुप्रयोग मॉडल के अनुरोध के लिए ज़रूरी जानकारी तैयार करता है और API सत्यापन के साथ वह अनुरोध भेजता है। OpenAI पहुँच जाँचता है और अनुरोध स्वीकार होने पर मॉडल का परिणाम लौटाता है। फिर अनुप्रयोग उत्तर दिखाता है या उसे आगे संसाधित करता है।",
+          "कुंजी अनुरोध के लिए इस्तेमाल होने वाली API पहुँच की पहचान करती है। यह तय नहीं करती कि तस्वीर की कौन-सी जानकारी सही है, आपके लिए उत्तर की जाँच नहीं करती और परिणाम को किसी खास स्टॉक बाज़ार के लिए उपयुक्त नहीं बनाती। इस्तेमाल संबंधित API खाते या प्रोजेक्ट में दर्ज होता है, भले ही इंटरफ़ेस किसी दूसरे अनुप्रयोग का हो।"
+        ],
+        "bullets": [
+          "इनपुट: आपकी चुनी हुई सामग्री और वह काम जो आप करवाना चाहते हैं।",
+          "पहुँच: कुंजी, प्रोजेक्ट की अनुमतियाँ और लागू सीमाएँ।",
+          "आउटपुट: मॉडल का उत्तर, जिसे अनुप्रयोग को आगे संभालना होता है।"
+        ],
+        "example": "प्रक्रिया समझाने का उदाहरण, किसी ग्राहक का दर्ज परिणाम नहीं:\nतस्वीर: तटस्थ पृष्ठभूमि पर लाल बैकपैक।\nकाम: तथ्यपरक शीर्षक और संबंधित कीवर्ड का मसौदा बनाएँ।\nअनुप्रयोग API पहुँच से पूर्वावलोकन और काम भेजता है, फिर मसौदा दिखाता है।\nआप जाँचते हैं कि मसौदा बैकपैक का वर्णन करे और कोई ब्रांड न गढ़े।"
+      },
+      {
+        "heading": "3. अनुप्रयोग OpenAI API कुंजी क्यों माँगता है",
+        "paragraphs": [
+          "कुंजी का इनपुट अक्सर यह बताता है कि अनुप्रयोग आपसे अपनी डेवलपर API पहुँच देने की अपेक्षा करता है। इस व्यवस्था को आम तौर पर अपनी कुंजी लाना, या BYOK कहते हैं। लागू सुविधाओं के अनुसार अनुप्रयोग इस पहुँच से पाठ का मसौदा बना सकता है, तस्वीरें समझ सकता है या किसी कार्य प्रक्रिया को स्वचालित करने में मदद कर सकता है।",
+          "अनुप्रयोग तय करता है कि वह कौन-सी API क्रियाएँ करेगा और कौन-सी जानकारी भेजेगा। आपकी कुंजी से जुड़ी पहुँच और खर्च आपका खाता नियंत्रित करता है। कोई दूसरी सेवा अपने प्रस्ताव में मॉडल की पहुँच शामिल कर सकती है या साइन इन का दूसरा तरीका इस्तेमाल कर सकती है। यह मानने से पहले कि आपको कुंजी बनानी या साझा करनी ही होगी, अनुप्रयोग का विवरण पढ़ें।"
+        ],
+        "bullets": [
+          "जानें कि अनुप्रयोग कुंजी से कौन-सा काम करता है।",
+          "जाँचें कि आपका इनपुट और गुप्त कुंजी कहाँ भेजे या रखे जाएँगे।",
+          "पुष्टि करें कि API इस्तेमाल का भुगतान आप करेंगे या सेवा वह पहुँच देगी।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "4. API कुंजी, पासवर्ड और ChatGPT अलग चीज़ें हैं",
+        "paragraphs": [
+          "खाते का पासवर्ड साइन इन करने के लिए इस्तेमाल होता है। API कुंजी वह गुप्त पहचान साधन है जिससे प्रोग्राम API अनुरोध कर सकता है। खाते का पासवर्ड API कुंजी वाले इनपुट में न डालें और API पहुँच माँगने पर किसी अनुप्रयोग को अपना पासवर्ड न दें।",
+          "ChatGPT के इंटरफ़ेस का इस्तेमाल करना और डेवलपर API कुंजी से अनुप्रयोग जोड़ना पहुँच के अलग तरीके हैं। MetaStocker के निजी API मोड में ChatGPT की सदस्यता आपके डेवलपर API खाते पर लगने वाले अनुरोधों का भुगतान नहीं करती। API भुगतान अलग से जाँचें। कुंजी से अनुप्रयोग को आपकी ChatGPT बातचीत के इतिहास की स्वतः पहुँच भी नहीं मिलती।",
+          "OPENAI_API_KEY केवल एक प्रचलित परिवेश चर का नाम है, जिससे डेवलपर उपकरणों को कुंजी दी जाती है। यह कोई दूसरा उत्पाद या अलग कुंजी नहीं है जिसे खरीदना पड़े। MetaStocker का अपना OpenAI API key इनपुट है, इसलिए अनुप्रयोग इस्तेमाल करने के लिए टर्मिनल में परिवेश चर सेट करना ज़रूरी नहीं है।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "5. कुंजी पहुँच का सत्यापन करती है; यह बैलेंस नहीं है",
+        "paragraphs": [
+          "कुंजी बनाना और मॉडल के इस्तेमाल का भुगतान करना अलग काम हैं। मान्य कुंजी भी काम नहीं कर सकती यदि खाते में इस्तेमाल योग्य क्रेडिट न हों, चुना हुआ मॉडल उस प्रोजेक्ट के लिए उपलब्ध न हो या कोई सीमा पहुँच गई हो। कुंजी की प्रति रखने का मतलब यह नहीं है कि अनुप्रयोग इस समय अनुरोध भेज रहा है।",
+          "API इस्तेमाल की योजना बनाते समय कुंजी की लंबाई या दिखावट के बजाय मौजूदा कीमतें और डेवलपर इस्तेमाल का डैशबोर्ड देखें। खर्च की चेतावनियाँ लागत की सूचना देती हैं, लेकिन अनुरोध रोकती नहीं हैं। लागू की गई कठोर खर्च सीमा, दर्ज खर्च तय सीमा तक पहुँचने पर संबंधित अनुरोध रोक देती है; इसे लागू होने में देरी संभव है। बड़े काम में आगे बढ़ने से पहले छोटे काम से शुरू करें और इस्तेमाल जाँचें।"
+        ],
+        "bullets": [
+          "नई कुंजी मुफ़्त क्रेडिट या तैयार भुगतान व्यवस्था का प्रमाण नहीं है।",
+          "भुगतान वाली ChatGPT योजना MetaStocker के API अनुरोधों का बैलेंस नहीं है।",
+          "अपने खाते में वास्तविक API इस्तेमाल और खर्च नियंत्रण की समीक्षा करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "6. MetaStocker को कुंजी कब चाहिए और कब नहीं",
+        "paragraphs": [
+          "MetaStocker में OpenAI API · paid usage के अंतर्गत GPT-6 Luna चुनने पर आपकी अपनी API कुंजी इस्तेमाल होती है। अनुप्रयोग तस्वीरों के पूर्वावलोकन और काम का संदर्भ सीधे आपके ब्राउज़र से OpenAI को भेजता है। यह तरीका तब चुनें जब आप वह मॉडल चाहते हों और जानकारी के इस्तेमाल की प्रक्रिया तथा API खर्च स्वीकार करते हों। कुंजी OpenAI API key में डालें; API पहुँच और भुगतान उपलब्ध होने चाहिए।",
+          "स्थानीय मॉडल दूसरा तरीका देते हैं। इनसे परिणाम बनाने का काम आपके ब्राउज़र में होता है, बिना OpenAI API कुंजी या API शुल्क के, और आपकी तस्वीरें तथा निर्देश इस काम के लिए OpenAI को नहीं भेजे जाते। पहली बार मॉडल डाउनलोड करने के लिए इंटरनेट चाहिए और उपकरण में संगत हार्डवेयर होना चाहिए। स्थानीय और API, दोनों के परिणामों की आपको समीक्षा करनी चाहिए।",
+          "यदि API वाला तरीका चुन लिया है, तो अलग चरण-दर-चरण मार्गदर्शिका पढ़ें: https://metastocker.net/blog/hi/how-to-get-openai-api-key.html। उसमें खाते की पहुँच, कुंजी बनाना, भुगतान जाँच और एक तस्वीर पर परीक्षण समझाया गया है। यह लेख सेटअप से पहले निर्णय लेने में आपकी मदद करता है।"
+        ],
+        "bullets": [
+          "यदि API शुल्क के बिना ब्राउज़र में परिणाम बनाना चाहते हैं, तो स्थानीय मॉडल चुनें।",
+          "पहुँच, खर्च और जानकारी के इस्तेमाल की प्रक्रिया जाँचकर ही API मॉडल चुनें।",
+          "जिस भी तरीके को चुनें, बने हुए मेटाडेटा की समीक्षा करें।"
+        ],
+        "example": ""
+      },
+      {
+        "heading": "7. API कुंजी निजी रखना क्यों ज़रूरी है",
+        "paragraphs": [
+          "इस्तेमाल योग्य गुप्त कुंजी पाने वाला व्यक्ति उससे अनुमत API क्रियाएँ कर सकता है और संबंधित खाते में इस्तेमाल दर्ज करवा सकता है। इसे कोड भंडार, स्क्रीनशॉट, साझा स्प्रेडशीट या सार्वजनिक वेबसाइट के कोड में प्रकाशित न करें। अपनी बनाई सेवा में कुंजियाँ सर्वर पर निजी परिवेश सेटिंग या गुप्त मानों के प्रबंधक में रखें।",
+          "निजी BYOK इनपुट के लिए भी अनुप्रयोग और ब्राउज़र परिवेश पर भरोसा आवश्यक है। MetaStocker आपकी डाली हुई कुंजी ब्राउज़र के सत्र भंडारण में रखता है और सीधे OpenAI अनुरोधों के लिए इस्तेमाल करता है। सत्र भंडारण सुरक्षित पासवर्ड भंडार नहीं है। साझा ब्राउज़र से बचें, पेज की जानकारी पढ़ सकने वाले एक्सटेंशन पर ध्यान दें और काम पूरा होने पर इनपुट से कुंजी हटा दें।",
+          "कुंजी उजागर होने का संदेह हो, तो उसे रद्द करें और इस्तेमाल की समीक्षा करें। नियमित बदलाव के लिए नई कुंजी बनाएँ, संबंधित अनुप्रयोगों में उसे बदलें, काम करने की पुष्टि करें और पुरानी कुंजी रद्द करें। कुंजी बदलने से पहचान साधन बदलता है; पहले साझा हो चुकी जानकारी स्वतः नहीं हटती और भुगतान की समस्या ठीक नहीं होती।"
+        ],
+        "bullets": [],
+        "example": ""
+      },
+      {
+        "heading": "8. कुंजी बनाने से पहले छोटे उत्तर",
+        "paragraphs": [
+          "क्या प्रोग्रामिंग आना ज़रूरी है? हमेशा नहीं। MetaStocker जैसा अनुप्रयोग किसी काम के लिए इंटरफ़ेस दे सकता है। फिर भी आपको समझना चाहिए कि वह क्या भेजता है, आपकी कुंजी कैसे रखता है और API इस्तेमाल का भुगतान कौन करता है।",
+          "क्या कुंजी सदस्यता है? नहीं। यह पहुँच सत्यापित करने का साधन है। सदस्यता के प्रस्ताव, API भुगतान, मॉडल की उपलब्धता और अनुप्रयोग की सुविधाएँ अलग विषय हैं जिन्हें जाँचना चाहिए।",
+          "क्या कुंजी AI के उत्तर को सही बना देगी? नहीं। यह पहुँच का सत्यापन करती है। सटीकता काम, इनपुट, मॉडल और बाद की जाँच पर निर्भर करती है।",
+          "क्या कुंजी के बिना काम कर सकते हैं? हाँ, यदि आपकी चुनी हुई प्रक्रिया को आपकी निजी OpenAI API पहुँच नहीं चाहिए। MetaStocker का स्थानीय मोड एक उदाहरण है। यदि कोई उपकरण स्पष्ट रूप से आपकी कुंजी माँगता है, तो किसी और की गुप्त कुंजी लेने के बजाय उसके दस्तावेज़ पढ़कर उस तरीके का आकलन करें।"
+        ],
+        "bullets": [],
+        "example": ""
+      }
+    ],
+    "checklist": [
+      "मुझे पता है कि अनुप्रयोग API से कौन-सा काम करेगा।",
+      "मैं समझता हूँ कि वह कौन-सा इनपुट भेजता है और मेरी कुंजी कैसे संभालता है।",
+      "मैंने जाँचा है कि API इस्तेमाल का भुगतान कौन करता है और कौन-सी सीमाएँ लागू हैं।",
+      "मैं API कुंजी और अपने खाते के पासवर्ड का अंतर पहचान सकता हूँ।",
+      "मैंने विचार किया है कि स्थानीय तरीका मेरी ज़रूरत पूरी करता है या नहीं।",
+      "यदि कुंजी इस्तेमाल करूँगा, तो उसे निजी रखूँगा और छोटे परीक्षण से शुरू करूँगा।"
+    ],
+    "illustration": {
+      "title": "AI अनुप्रयोग में कुंजी क्या करती है",
+      "steps": [
+        {
+          "label": "अनुप्रयोग काम तैयार करता है",
+          "detail": "आपकी चुनी हुई सामग्री और निर्देश से अनुरोध बनता है।"
+        },
+        {
+          "label": "कुंजी पहुँच का सत्यापन करती है",
+          "detail": "प्रोजेक्ट की अनुमतियाँ, भुगतान और सीमाएँ फिर भी लागू रहती हैं।"
+        },
+        {
+          "label": "आप परिणाम की समीक्षा करते हैं",
+          "detail": "मॉडल उत्तर लौटाता है; कुंजी उसकी जाँच नहीं करती।"
+        }
+      ]
+    }
+  }
+}

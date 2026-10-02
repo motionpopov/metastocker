@@ -112,5 +112,11 @@
     "url": "https://developers.openai.com/api/docs/guides/error-codes",
     "facts": "401 concerns authentication; access can depend on permissions and supported availability. For 429 inspect error.code to distinguish rate limits, exhausted credits and enforced spend limits. Billing retries alone do not restore access. A 400 service_tier error can reflect a project restriction on Flex.",
     "verified_on": "2026-10-02"
+  },
+  "openai-authentication": {
+    "title": "OpenAI: API authentication and credentials",
+    "url": "https://developers.openai.com/api/reference/overview#authentication",
+    "facts": "API keys are secret bearer credentials for authenticating API requests; usage belongs to the applicable organization/project. Short-lived workload identity credentials are another supported route. Do not expose secrets in public browser/app code; backend services should use private environment settings or key management.",
+    "verified_on": "2026-10-02"
   }
 }

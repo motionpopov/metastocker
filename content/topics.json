@@ -798,5 +798,13 @@
     "brief": "Troubleshooting CSV versus choosing a keyword tool; different deliverables.",
     "initial": false,
     "order": 100
+  },
+  {
+    "slug": "what-is-openai-api-key",
+    "category": "local-ai",
+    "intent": "Understand what an OpenAI API key is and decide whether a workflow needs it",
+    "brief": "Explain a secret API credential in plain language: app request, model response, project access, password versus API key versus ChatGPT, independent API billing, BYOK trust, local MetaStocker alternative and privacy. Link to the separate setup guide; do not repeat its creation steps.",
+    "initial": false,
+    "order": 101
   }
 ]
