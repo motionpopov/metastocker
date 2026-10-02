@@ -88,5 +88,29 @@
     "url": "https://metastocker.net/",
     "facts": "Verified implementation: static web app. Local vision and thinking models Gemma 4 E2B, Gemma 4 E4B and Qwen3.5 2B. Gemma E2B default. Explicit Download/Load, unload from memory retaining cache, delete browser model files. Local execution uses WebGPU workers in the user's browser; no AI server inference. First model download needs internet. Each local parallel thread can load its own model copy; begin with 1, then test 2. No automatic cloud fallback. Optional paid OpenAI API with user's key sends previews/context to OpenAI. Files input accepts images, videos and .ai; an .ai file needs a readable preview, not all files work. Video metadata is based on sampled previews, so humans must inspect full motion. Outputs Adobe, Envato, Shutterstock, Freepik CSV; exporter does not upload, submit, guarantee acceptance, embed metadata into originals, or preserve work across tab closure. UI English. Batch description is context sent with generation; use only facts, not blanket tags for mixed batches. Extra tags support start/end/random positions; review per-file relevance. App validates exact requested tag count but that is not proof of accuracy. Review editable results and only export ready rows. Minimal first-party aggregate analytics without permanent visitor ID; local mode keeps photos/prompts/results on device, model downloads still contact external hosts. No account/API key needed for local mode. Thinking is enabled for every local model request; the app has no thinking on/off switch and no standard-mode selection. Intermediate reasoning is not exported; only the final metadata is parsed. Qwen has a bounded reasoning budget, which does not guarantee factual accuracy.",
     "verified_on": "2026-09-18"
+  },
+  "openai-quickstart": {
+    "title": "OpenAI: developer quickstart and API key setup",
+    "url": "https://developers.openai.com/api/docs/quickstart",
+    "facts": "Create a secret in the official API dashboard. OPENAI_API_KEY is an environment variable read by OpenAI SDKs; it is not required for MetaStocker's key input. Dashboard access, billing and project permissions must be checked separately.",
+    "verified_on": "2026-10-02"
+  },
+  "openai-production": {
+    "title": "OpenAI: API key security and project controls",
+    "url": "https://developers.openai.com/api/docs/guides/production-best-practices",
+    "facts": "Keys must remain private and outside public code. Use environment variables or a secret manager. Configure expiration when appropriate; replace keys and verify applications before planned revocation. Organization/project governance can restrict new key creation.",
+    "verified_on": "2026-10-02"
+  },
+  "openai-spend": {
+    "title": "OpenAI: spend alerts and hard spend limits",
+    "url": "https://developers.openai.com/api/docs/guides/spend-limits",
+    "facts": "Spend alerts notify without stopping requests. Organization/project hard spend limits stop affected traffic with 429; enforcement can lag slightly. Configure Limits, Spend, Edit spend limit, Enforce a hard limit with appropriate permissions. Credit balances and usage-tier limits are separate.",
+    "verified_on": "2026-10-02"
+  },
+  "openai-errors": {
+    "title": "OpenAI: authentication, billing and API error codes",
+    "url": "https://developers.openai.com/api/docs/guides/error-codes",
+    "facts": "401 concerns authentication; access can depend on permissions and supported availability. For 429 inspect error.code to distinguish rate limits, exhausted credits and enforced spend limits. Billing retries alone do not restore access. A 400 service_tier error can reflect a project restriction on Flex.",
+    "verified_on": "2026-10-02"
   }
 }

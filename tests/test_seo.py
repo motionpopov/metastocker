@@ -8,7 +8,7 @@ import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'seo'))
-from build_blog import load_posts,validate,build,path_for,e,jsonld,svg_diagram
+from build_blog import load_posts,validate,build,path_for,e,jsonld,svg_diagram,link_text
 from validate_site import check
 
 
@@ -52,6 +52,25 @@ class EditorialQuality(unittest.TestCase):
         self.assertNotIn('<img',script)
         diagram=copy.deepcopy(self.posts[0]['en']['illustration']);diagram['title']=payload
         self.assertNotIn('<img',svg_diagram(diagram,'en'))
+
+    def test_official_setup_links_escape_text_and_preserve_punctuation(self):
+        url='https://platform.openai.com/settings/organization/api-keys'
+        rendered=link_text('Open '+url+'. <img src=x onerror=alert(1)>')
+        self.assertIn(f'href="{url}"',rendered)
+        self.assertIn('</a>. &lt;img',rendered)
+        self.assertNotIn('<img',rendered)
+        self.assertIn(f'href="{url}"',link_text(url+'।'))
+        self.assertIn('</a>।',link_text(url+'।'))
+        query=link_text('https://developers.openai.com/api/docs/quickstart?a=1&b=2')
+        self.assertIn('a=1&amp;b=2',query)
+
+    def test_setup_links_reject_unapproved_or_disguised_hosts(self):
+        for value in ('javascript:alert(1)',
+                      'https://platform.openai.com.evil.example/api-keys',
+                      'https://platform.openai.com@evil.example/api-keys',
+                      'https://platform.openai.com\\@evil.example/api-keys',
+                      'https://[invalid/api-keys'):
+            self.assertNotIn('<a ',link_text(value))
 
     def test_missing_indic_languages_or_corrupted_script_are_rejected(self):
         post=copy.deepcopy(self.posts[0]);del post['hi']

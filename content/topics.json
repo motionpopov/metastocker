@@ -90,8 +90,8 @@
   {
     "slug": "how-to-get-openai-api-key",
     "category": "local-ai",
-    "intent": "Use an optional personal OpenAI API key in MetaStocker",
-    "brief": "Local mode needs no key. Optional personal API mode, developer account billing separate from ChatGPT, key not shared/publicly embedded, avoid exact prices/UI guesses.",
+    "intent": "Create an OpenAI API key in the official platform and set up optional API use",
+    "brief": "Practical account/project/key creation steps, private saving, separate API billing, spend alerts versus hard limits, MetaStocker field names and one-image test, OPENAI_API_KEY, common errors and FAQ. Verify current official documentation; preserve existing route. Local mode needs no key.",
     "initial": true,
     "order": 12
   },

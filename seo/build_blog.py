@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 import textwrap
 import unicodedata
+from urllib.parse import urlsplit
 from xml.sax.saxutils import escape as xml_escape
 from locales import LANGUAGES, UI, CATEGORY_EXTRA, EDITORIAL_EXTRA
 
@@ -28,6 +29,28 @@ CATEGORIES = {
 
 def e(value):
     return escape(str(value), quote=True)
+
+
+def link_text(value):
+    """Make official setup addresses clickable while retaining escaped plain text."""
+    text = str(value)
+    pieces = []
+    end = 0
+    for match in re.finditer(r'https://[^\s<>"\']+', text):
+        pieces.append(e(text[end:match.start()]))
+        raw = match.group()
+        url = raw.rstrip('.,;:!?)]}।॥')
+        try:
+            allowed = '\\' not in url and urlsplit(url).netloc in ('platform.openai.com', 'developers.openai.com', 'metastocker.net')
+        except ValueError:
+            allowed = False
+        if allowed:
+            pieces.append(f'<a href="{e(url)}" rel="noopener noreferrer">{e(url)}</a>' + e(raw[len(url):]))
+        else:
+            pieces.append(e(raw))
+        end = match.end()
+    pieces.append(e(text[end:]))
+    return ''.join(pieces)
 
 
 def path_for(slug, lang):
@@ -253,13 +276,13 @@ def build(source, public, extra=None):
             write(public, img, svg_diagram(a['illustration'], lang))
             data = [{'@context':'https://schema.org','@type':'BlogPosting','headline':a['title'],'description':a['description'],'inLanguage':lang,'datePublished':p['published'],'dateModified':p['modified'],'mainEntityOfPage':BASE+path,'image':BASE+img,'author':{'@type':'Organization','name':'MetaStocker','url':BASE+home(lang)+'editorial.html'},'publisher':{'@type':'Organization','name':'MetaStocker','url':BASE,'logo':{'@type':'ImageObject','url':BASE+'/assets/metalogo.png'}}}, {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'MetaStocker','item':BASE},{'@type':'ListItem','position':2,'name':UI[lang]["guides"],'item':BASE+home(lang)},{'@type':'ListItem','position':3,'name':category,'item':BASE+category_path},{'@type':'ListItem','position':4,'name':a['title'],'item':BASE+path}]}]
             html = head(a['title'], a['description'], path, lang, alternates, data, img) + navigation(lang, alternates)
-            intro = ''.join('<p class="dek">'+e(t)+'</p>' for t in a['intro'].split('\n\n'))
+            intro = ''.join('<p class="dek">'+link_text(t)+'</p>' for t in a['intro'].split('\n\n'))
             html += f'<main id="main" class="article"><nav class="breadcrumbs" aria-label="{dict(en="Breadcrumb",ru="Навигационная цепочка",bn="অবস্থানের পথ",hi="पृष्ठ का रास्ता")[lang]}"><a href="{home(lang)}">{UI[lang]["guides"]}</a><span>/</span><a href="{category_path}">{e(category)}</a></nav><header class="article-heading"><p class="eyebrow">{e(category)}</p><h1>{e(a["title"])}</h1>{intro}<p class="byline">MetaStocker · <time datetime="{p["modified"]}">{p["modified"]}</time> · {max(3,math.ceil(len(words(a))/210))} {UI[lang]["minutes"]}</p></header>'
             html += '<figure><img class="diagram" src="'+img+'" width="1200" height="540" alt="'+e(a['illustration']['title']+': '+'; '.join(s['label']+' — '+s['detail'] for s in a['illustration']['steps']))+'"><figcaption>'+(UI[lang]["diagram"])+'</figcaption></figure>'
             html += '<nav class="toc" aria-label="'+(UI[lang]["toc"])+'"><strong>'+(UI[lang]["toc"])+'</strong><ol>'+''.join(f'<li><a href="#step-{i}">{e(re.sub(r'^\d+[.)]\s*', '', s['heading']))}</a></li>' for i,s in enumerate(a['sections'],1))+'</ol></nav><div class="prose">'
             for i,s in enumerate(a['sections'],1):
-                html += f'<section id="step-{i}"><h2>{e(s["heading"])}</h2>'+''.join('<p>'+e(t)+'</p>' for t in s['paragraphs'])
-                if s['bullets']: html += '<ul>'+''.join('<li>'+e(t)+'</li>' for t in s['bullets'])+'</ul>'
+                html += f'<section id="step-{i}"><h2>{e(s["heading"])}</h2>'+''.join('<p>'+link_text(t)+'</p>' for t in s['paragraphs'])
+                if s['bullets']: html += '<ul>'+''.join('<li>'+link_text(t)+'</li>' for t in s['bullets'])+'</ul>'
                 if s['example']: html += '<pre class="example">'+e(s['example'])+'</pre>'
                 html += '</section>'
             html += '<section class="checklist"><h2>'+(UI[lang]["checklist"])+'</h2><ul>'+''.join('<li>'+e(t)+'</li>' for t in a['checklist'])+'</ul></section></div>'+cta(lang)
